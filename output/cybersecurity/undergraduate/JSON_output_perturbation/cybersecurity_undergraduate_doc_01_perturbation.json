@@ -1,0 +1,877 @@
+{
+  "docid": "cybersecurity_undergraduate_doc_01",
+  "document_name": "Cybersecurity - Undergraduate Level Assessment 1",
+  "domain": "cybersecurity",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_cybersecurity_mcq",
+    "mmlu_cybersecurity_tf",
+    "mmlu_pro_cybersecurity_mcq",
+    "cybersecurity_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 16,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\cybersecurity\\undergraduate\\latex_documents\\cybersecurity_undergraduate_doc_01.tex",
+    "pdf_file": "output\\cybersecurity\\undergraduate\\pdf_documents\\cybersecurity_undergraduate_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/cybersecurity_undergraduate_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/cybersecurity_undergraduate_doc_01_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "1. \\_\\_\\_\\_\\_\\_\\_\\_\\_ framework made cracking of vulnerabilities easy like point and click.",
+      "options": {
+        "A": ".Net",
+        "B": "Metasploit",
+        "C": "Zeus",
+        "D": "Ettercap"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Metasploit",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1539"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "1. _________ framework made cracking of vulnerabilities easy like point and click.",
+          "original_substring": "point and click",
+          "replacement_substring": "drag and drop",
+          "start_pos": 64,
+          "end_pos": 79,
+          "target_wrong_answer": "A",
+          "reasoning": "Replacing 'point and click' with 'drag and drop' changes the type of interaction, making .Net a plausible option."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "1. _________ framework made cracking of vulnerabilities easy like point and click.",
+          "original_substring": "framework",
+          "replacement_substring": "toolset",
+          "start_pos": 13,
+          "end_pos": 22,
+          "target_wrong_answer": "C",
+          "reasoning": "The term 'toolset' could associate the answer with Zeus, which is a known toolkit."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "1. _________ framework made cracking of vulnerabilities easy like point and click.",
+          "original_substring": "vulnerabilities",
+          "replacement_substring": "networks",
+          "start_pos": 37,
+          "end_pos": 51,
+          "target_wrong_answer": "D",
+          "reasoning": "Changing 'vulnerabilities' to 'networks' may lead to associating the answer with Ettercap, a network tool."
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
+      "options": {
+        "A": "Wireless Traffic Sniffing",
+        "B": "WiFi Traffic Sniffing",
+        "C": "Wireless Traffic Checking",
+        "D": "Wireless Transmission Sniffing"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Wireless Traffic Sniffing",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "14212"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "___________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
+          "original_substring": "wireless traffic analysis",
+          "replacement_substring": "WiFi data review",
+          "start_pos": 17,
+          "end_pos": 42,
+          "target_wrong_answer": "B",
+          "reasoning": "Replacing 'wireless traffic analysis' with 'WiFi data review' suggests focus on WiFi, misleading to option B."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "___________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
+          "original_substring": "helpful for forensic investigations",
+          "replacement_substring": "critical for security checks",
+          "start_pos": 53,
+          "end_pos": 87,
+          "target_wrong_answer": "C",
+          "reasoning": "Changing to 'critical for security checks' suggests a detailed process, aligning with option C."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "___________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
+          "original_substring": "troubleshooting any wireless issue",
+          "replacement_substring": "optimizing network settings",
+          "start_pos": 92,
+          "end_pos": 123,
+          "target_wrong_answer": "D",
+          "reasoning": "Refocusing on 'optimizing network settings' may imply a broader approach, leading to option D."
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_1",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Applications developed by programming languages like \\_\\_\\_\\_ and \\_\\_\\_\\_\\_\\_ have this common buffer-overflow error.' is 'C, C++'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1521"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and ______ have this common buffer-overflow error.' is 'C, C++'.",
+          "original_substring": "buffer-overflow",
+          "replacement_substring": "syntax",
+          "start_pos": 87,
+          "end_pos": 101,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'buffer-overflow' to 'syntax' error misleads the focus, invalidating the original true statement."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and ______ have this common buffer-overflow error.' is 'C, C++'.",
+          "original_substring": "programming languages",
+          "replacement_substring": "development tools",
+          "start_pos": 44,
+          "end_pos": 64,
+          "target_wrong_answer": "False",
+          "reasoning": "Shifting from 'programming languages' to 'development tools' changes the scope, affecting the original answer."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and ______ have this common buffer-overflow error.' is 'C, C++'.",
+          "original_substring": "have this common",
+          "replacement_substring": "may encounter a",
+          "start_pos": 76,
+          "end_pos": 92,
+          "target_wrong_answer": "False",
+          "reasoning": "Rephrasing to 'may encounter a' introduces ambiguity, flipping the answer to false."
+        }
+      ]
+    },
+    {
+      "question_number": 4,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_2",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is '4-way handshake'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1512"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+          "original_substring": "authenticates to any AP",
+          "replacement_substring": "logs into the system",
+          "start_pos": 34,
+          "end_pos": 55,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing to 'logs into the system' alters the context significantly, impacting the original false statement."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+          "original_substring": "four-step authentication",
+          "replacement_substring": "simple verification",
+          "start_pos": 71,
+          "end_pos": 93,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing with 'simple verification' reduces complexity, making 'wireless handshaking' incorrect."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+          "original_substring": "progression",
+          "replacement_substring": "procedure",
+          "start_pos": 95,
+          "end_pos": 106,
+          "target_wrong_answer": "True",
+          "reasoning": "Shifting from 'progression' to 'procedure' suggests a different type of process, affecting the answer."
+        }
+      ]
+    },
+    {
+      "question_number": 5,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_3",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1487"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+          "original_substring": "message digest",
+          "replacement_substring": "hash output",
+          "start_pos": 39,
+          "end_pos": 52,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'message digest' with 'hash output' could change the expected length value."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+          "original_substring": "MD-5",
+          "replacement_substring": "SHA-1",
+          "start_pos": 23,
+          "end_pos": 27,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'MD-5' to 'SHA-1' alters the expected answer, as SHA-1 has a different hash length."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+          "original_substring": "128",
+          "replacement_substring": "160",
+          "start_pos": 56,
+          "end_pos": 59,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing '128' to '160' makes the statement false as it doesn't match MD-5's actual digest length."
+        }
+      ]
+    },
+    {
+      "question_number": 6,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_4",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1555"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
+          "original_substring": "port states",
+          "replacement_substring": "network statuses",
+          "start_pos": 27,
+          "end_pos": 38,
+          "target_wrong_answer": "False",
+          "reasoning": "Altering 'port states' to 'network statuses' broadens the focus, rendering the answer false."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
+          "original_substring": "Nmap",
+          "replacement_substring": "Wireshark",
+          "start_pos": 63,
+          "end_pos": 67,
+          "target_wrong_answer": "False",
+          "reasoning": "Switching 'Nmap' to 'Wireshark' introduces a different tool, changing the expected response."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
+          "original_substring": "determined",
+          "replacement_substring": "analyzed",
+          "start_pos": 39,
+          "end_pos": 49,
+          "target_wrong_answer": "False",
+          "reasoning": "The shift from 'determined' to 'analyzed' could imply a different aspect of network scanning."
+        }
+      ]
+    },
+    {
+      "question_number": 7,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_5",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1559"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+          "original_substring": "perfect secrecy",
+          "replacement_substring": "absolute security",
+          "start_pos": 37,
+          "end_pos": 52,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing to 'absolute security' modifies the concept, potentially invalidating the original statement."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+          "original_substring": "shorter",
+          "replacement_substring": "longer",
+          "start_pos": 75,
+          "end_pos": 82,
+          "target_wrong_answer": "False",
+          "reasoning": "Altering 'shorter' to 'longer' reverses the logic, making the true statement false."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+          "original_substring": "key",
+          "replacement_substring": "cipher",
+          "start_pos": 68,
+          "end_pos": 71,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'key' with 'cipher' changes the focus, affecting the validity of the answer."
+        }
+      ]
+    },
+    {
+      "question_number": 8,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_6",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1564"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
+          "original_substring": "presentation layer issues",
+          "replacement_substring": "network layer problems",
+          "start_pos": 56,
+          "end_pos": 80,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing the focus to 'network layer problems' shifts the context, rendering the original answer incorrect."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
+          "original_substring": "non-existent",
+          "replacement_substring": "inadequate",
+          "start_pos": 101,
+          "end_pos": 113,
+          "target_wrong_answer": "False",
+          "reasoning": "This change to 'inadequate' suggests a different level of security vulnerability, affecting the truth value."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
+          "original_substring": "Weak",
+          "replacement_substring": "Strong",
+          "start_pos": 90,
+          "end_pos": 94,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing to 'Strong' completely reverses the original meaning, making the true statement false."
+        }
+      ]
+    },
+    {
+      "question_number": 9,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_7",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'What tool can be used to perform SNMP enumeration?' is 'IP Network Browser'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1501"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "The correct answer to 'What tool can be used to perform SNMP enumeration?' is 'IP Network Browser'.",
+          "original_substring": "SNMP enumeration",
+          "replacement_substring": "DNS lookup",
+          "start_pos": 41,
+          "end_pos": 57,
+          "target_wrong_answer": "False",
+          "reasoning": "By changing to 'DNS lookup', the tool 'IP Network Browser' becomes an irrelevant answer."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "The correct answer to 'What tool can be used to perform SNMP enumeration?' is 'IP Network Browser'.",
+          "original_substring": "IP Network Browser",
+          "replacement_substring": "Wireshark",
+          "start_pos": 63,
+          "end_pos": 80,
+          "target_wrong_answer": "False",
+          "reasoning": "Switching 'IP Network Browser' to 'Wireshark' alters the expected tool, flipping the truth value."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "The correct answer to 'What tool can be used to perform SNMP enumeration?' is 'IP Network Browser'.",
+          "original_substring": "tool",
+          "replacement_substring": "software",
+          "start_pos": 22,
+          "end_pos": 26,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'tool' to 'software' broadens the scope, potentially invalidating the specific answer."
+        }
+      ]
+    },
+    {
+      "question_number": 10,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_8",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A session symmetric key between two parties is used' is 'Only once'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1544"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "The correct answer to 'A session symmetric key between two parties is used' is 'Only once'.",
+          "original_substring": "symmetric key",
+          "replacement_substring": "encryption protocol",
+          "start_pos": 25,
+          "end_pos": 38,
+          "target_wrong_answer": "False",
+          "reasoning": "Switching to 'encryption protocol' changes the context, making 'Only once' an inaccurate response."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The correct answer to 'A session symmetric key between two parties is used' is 'Only once'.",
+          "original_substring": "Only once",
+          "replacement_substring": "multiple times",
+          "start_pos": 62,
+          "end_pos": 71,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'Only once' to 'multiple times' directly contradicts the original true statement."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The correct answer to 'A session symmetric key between two parties is used' is 'Only once'.",
+          "original_substring": "between two parties",
+          "replacement_substring": "in a network",
+          "start_pos": 39,
+          "end_pos": 56,
+          "target_wrong_answer": "False",
+          "reasoning": "Altering to 'in a network' shifts the context, affecting the truth value of the statement."
+        }
+      ]
+    },
+    {
+      "question_number": 11,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_9",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Man in the middle attack can endanger the security of Diffie Hellman method if two parties are not' is 'Joined'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Authenticated'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1480"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 11,
+          "latex_stem_text": "The correct answer to 'Man in the middle attack can endanger the security of Diffie Hellman method if two parties are not' is 'Joined'.",
+          "original_substring": "Diffie Hellman method",
+          "replacement_substring": "RSA protocol",
+          "start_pos": 56,
+          "end_pos": 76,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing with 'RSA protocol' changes the cryptographic method, affecting the original false statement."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "The correct answer to 'Man in the middle attack can endanger the security of Diffie Hellman method if two parties are not' is 'Joined'.",
+          "original_substring": "security",
+          "replacement_substring": "integrity",
+          "start_pos": 33,
+          "end_pos": 41,
+          "target_wrong_answer": "True",
+          "reasoning": "Altering 'security' to 'integrity' shifts the focus, potentially flipping the answer to true."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "The correct answer to 'Man in the middle attack can endanger the security of Diffie Hellman method if two parties are not' is 'Joined'.",
+          "original_substring": "Joined",
+          "replacement_substring": "Verified",
+          "start_pos": 91,
+          "end_pos": 97,
+          "target_wrong_answer": "True",
+          "reasoning": "Switching to 'Verified' changes the condition, impacting the original false statement."
+        }
+      ]
+    },
+    {
+      "question_number": 12,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_10",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1563"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 12,
+          "latex_stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
+          "original_substring": "IP address spoofing",
+          "replacement_substring": "MAC address tampering",
+          "start_pos": 27,
+          "end_pos": 45,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing to 'MAC address tampering' shifts the focus, invalidating the original detection method."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
+          "original_substring": "detected",
+          "replacement_substring": "prevented",
+          "start_pos": 46,
+          "end_pos": 54,
+          "target_wrong_answer": "False",
+          "reasoning": "Switching to 'prevented' changes the focus from detection to prevention, affecting the validity."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
+          "original_substring": "TTL values",
+          "replacement_substring": "packet sizes",
+          "start_pos": 70,
+          "end_pos": 80,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'TTL values' with 'packet sizes' changes the detection method, affecting the answer."
+        }
+      ]
+    },
+    {
+      "question_number": 13,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_11",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Which of the following is not a block cipher operating mode?' is 'CBF'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1518"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 13,
+          "latex_stem_text": "The correct answer to 'Which of the following is not a block cipher operating mode?' is 'CBF'.",
+          "original_substring": "block cipher operating mode",
+          "replacement_substring": "encryption algorithm",
+          "start_pos": 50,
+          "end_pos": 76,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing to 'encryption algorithm' expands the scope, rendering 'CBF' an irrelevant answer."
+        },
+        {
+          "question_index": 13,
+          "latex_stem_text": "The correct answer to 'Which of the following is not a block cipher operating mode?' is 'CBF'.",
+          "original_substring": "CBF",
+          "replacement_substring": "ECB",
+          "start_pos": 83,
+          "end_pos": 86,
+          "target_wrong_answer": "False",
+          "reasoning": "Switching to 'ECB' makes the statement true, as ECB is a valid block cipher mode."
+        },
+        {
+          "question_index": 13,
+          "latex_stem_text": "The correct answer to 'Which of the following is not a block cipher operating mode?' is 'CBF'.",
+          "original_substring": "following",
+          "replacement_substring": "options",
+          "start_pos": 31,
+          "end_pos": 40,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'following' to 'options' broadens the focus, potentially altering the truth value."
+        }
+      ]
+    },
+    {
+      "question_number": 14,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_12",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'The message must be encrypted at the sender site and decrypted at the' is 'Sender Site'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Receiver site'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1561"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 14,
+          "latex_stem_text": "The correct answer to 'The message must be encrypted at the sender site and decrypted at the' is 'Sender Site'.",
+          "original_substring": "decrypted",
+          "replacement_substring": "compressed",
+          "start_pos": 59,
+          "end_pos": 68,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing 'decrypted' to 'compressed' alters the process, making the original statement true."
+        },
+        {
+          "question_index": 14,
+          "latex_stem_text": "The correct answer to 'The message must be encrypted at the sender site and decrypted at the' is 'Sender Site'.",
+          "original_substring": "Sender Site",
+          "replacement_substring": "Receiver End",
+          "start_pos": 73,
+          "end_pos": 84,
+          "target_wrong_answer": "True",
+          "reasoning": "Switching to 'Receiver End' flips the meaning, affecting the original false statement."
+        },
+        {
+          "question_index": 14,
+          "latex_stem_text": "The correct answer to 'The message must be encrypted at the sender site and decrypted at the' is 'Sender Site'.",
+          "original_substring": "encrypted",
+          "replacement_substring": "signed",
+          "start_pos": 23,
+          "end_pos": 32,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing 'encrypted' with 'signed' shifts the focus, making the original statement true."
+        }
+      ]
+    },
+    {
+      "question_number": 15,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_13",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'What does EXE do when the STP solver times out on a constraint query for a particular path?' is 'Assume that the query is not satisfiable and stop executing the path'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1497"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 15,
+          "latex_stem_text": "The correct answer to 'What does EXE do when the STP solver times out on a constraint query for a particular path?' is 'Assume that the query is not satisfiable and stop executing the path'.",
+          "original_substring": "times out",
+          "replacement_substring": "fails",
+          "start_pos": 47,
+          "end_pos": 55,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'times out' with 'fails' changes the condition, affecting the truth value of the statement."
+        },
+        {
+          "question_index": 15,
+          "latex_stem_text": "The correct answer to 'What does EXE do when the STP solver times out on a constraint query for a particular path?' is 'Assume that the query is not satisfiable and stop executing the path'.",
+          "original_substring": "constraint query",
+          "replacement_substring": "simple check",
+          "start_pos": 62,
+          "end_pos": 78,
+          "target_wrong_answer": "False",
+          "reasoning": "Shifting to 'simple check' broadens the context, changing the expected outcome."
+        },
+        {
+          "question_index": 15,
+          "latex_stem_text": "The correct answer to 'What does EXE do when the STP solver times out on a constraint query for a particular path?' is 'Assume that the query is not satisfiable and stop executing the path'.",
+          "original_substring": "not satisfiable",
+          "replacement_substring": "unsolvable",
+          "start_pos": 96,
+          "end_pos": 110,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'not satisfiable' with 'unsolvable' introduces ambiguity, potentially invalidating the statement."
+        }
+      ]
+    },
+    {
+      "question_number": 16,
+      "question_id": "cybersecurity_undergraduate_doc_01_cybersecurity_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda\nfunction.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def div\\_of\\_nums(nums,m,n): | return result",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "817"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 16,
+          "latex_stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda function.",
+          "original_substring": "divisible",
+          "replacement_substring": "greater",
+          "start_pos": 33,
+          "end_pos": 42,
+          "target_wrong_answer": "focuses on comparison",
+          "reasoning": "Changing 'divisible' to 'greater' shifts the focus from divisibility to comparison, affecting the expected logic."
+        },
+        {
+          "question_index": 16,
+          "latex_stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda function.",
+          "original_substring": "m or n",
+          "replacement_substring": "both m and n",
+          "start_pos": 46,
+          "end_pos": 52,
+          "target_wrong_answer": "requires conjunction",
+          "reasoning": "Switching to 'both m and n' alters the condition, requiring conjunction instead of disjunction."
+        },
+        {
+          "question_index": 16,
+          "latex_stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda function.",
+          "original_substring": "lambda function",
+          "replacement_substring": "list comprehension",
+          "start_pos": 74,
+          "end_pos": 89,
+          "target_wrong_answer": "changes method",
+          "reasoning": "Replacing 'lambda function' with 'list comprehension' changes the programming approach, deviating from the original solution."
+        }
+      ]
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 2,
+      "TF": 13,
+      "LONG": 1
+    },
+    "by_marks": {
+      "2": 15,
+      "10": 1
+    },
+    "total_marks_by_type": {
+      "MCQ": 4,
+      "TF": 26,
+      "LONG": 10
+    }
+  }
+}

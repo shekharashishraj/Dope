@@ -1,0 +1,286 @@
+{
+  "docid": "computer_science_k-12_doc_01",
+  "document_name": "Computer Science - K-12 Level Assessment 1",
+  "domain": "computer_science",
+  "academic_level": "K-12",
+  "subjects": [
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\k-12\\latex_documents\\computer_science_k-12_doc_01.tex",
+    "pdf_file": "output\\computer_science\\k-12\\pdf_documents\\computer_science_k-12_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_k-12_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_k-12_doc_01_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "options": {
+        "A": "['Hi!', 'Hi!', 'Hi!', 'Hi!']",
+        "B": "['Hi!'] * 4",
+        "C": "Error",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - ['Hi!', 'Hi!', 'Hi!', 'Hi!']",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3262"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "A large Java program was tested extensively, and no errors were found. What can be\nconcluded?",
+      "options": {
+        "A": "All of the preconditions in the program are correct.",
+        "B": "All of the postconditions in the program are correct.",
+        "C": "The program may have bugs.",
+        "D": "Every method in the program may safely be used in other programs."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - The program may have bugs.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3216"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Let l = [1,2,2,3,4]. In Python3, what is a possible output of set(l)?",
+      "options": {
+        "A": "\\{1\\}",
+        "B": "\\{1,2,2,3,4\\}",
+        "C": "\\{1,2,3,4\\}",
+        "D": "\\{4,3,2,2,1\\}"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - \\{1,2,3,4\\}",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3270"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the output of print list[1:3] if list = [ 'abcd', 786 , 2.23, 'john',\n70.2 ]?",
+      "options": {
+        "A": "[ 'abcd', 786 , 2.23, 'john', 70.2 ]",
+        "B": "abcd",
+        "C": "[786, 2.23]",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - [786, 2.23]",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3223"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of the statement \"a\" + \"ab\" in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "aab",
+        "C": "ab",
+        "D": "a ab"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - aab",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3203"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "In Python, accessing the first element of a tuple always results in an error.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'abcd'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3191"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The output of the expression 4*1**4 in Python is 16.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '4'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3272"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] != max.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'a[i] == max'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3229"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'int(x [,base])'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3183"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "A denial-of-service (DoS) attack requires a larger number of computers than a distributed denial-of-service (DDoS) attack.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'The number of computers launching the attack'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3266"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_k-12_doc_01_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Explain why adding the decimal numbers 5 and 3 in a computer program using only 3 bits\nresults in 0. Discuss the concept of overflow and its implications in binary arithmetic.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "An overflow error occurred.. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3212"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_k-12_doc_01_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Consider the Python list b = [11, 13, 15, 17, 19, 21]. Explain how the slicing operation\nb[::2] works and discuss the specific elements it retrieves from the list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "[11,15,19]. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3274"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

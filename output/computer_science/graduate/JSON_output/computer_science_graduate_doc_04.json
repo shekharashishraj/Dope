@@ -1,0 +1,393 @@
+{
+  "docid": "computer_science_graduate_doc_04",
+  "document_name": "Computer Science - Graduate Level Assessment 4",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "computer science"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 16,
+  "number_of_pages": 3,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_04.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_04.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_04_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_04_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following sentence is FALSE regarding regression?",
+      "options": {
+        "A": "It may be used for interpretation.",
+        "B": "It is used for prediction.",
+        "C": "It relates inputs to outputs.",
+        "D": "It discovers causal relationships"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - It discovers causal relationships",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10759"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Consider the Bayesian network given below. How many independent parameters would we need if we made no assumptions about independence or conditional...",
+      "options": {
+        "A": "8",
+        "B": "15",
+        "C": "10",
+        "D": "3",
+        "E": "12"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 15",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10729"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "If N is the number of instances in the training dataset, nearest neighbors has a classification run time of",
+      "options": {
+        "A": "O( N!)",
+        "B": "O( N log N )",
+        "C": "O( N\\^{}2 )",
+        "D": "O( N )",
+        "E": "O(1)"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - O( N )",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10364"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following pairs of 8-bit, two's-complement numbers will result in overflow when the members of the pairs are added?",
+      "options": {
+        "A": "11110000, 00001111",
+        "B": "01111111, 10000000",
+        "C": "00000001, 10000000",
+        "D": "10000001, 10101010",
+        "E": "11111111, 00000001"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 10000001, 10101010",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10756"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following has the greatest potential for compromising a user's personal privacy?",
+      "options": {
+        "A": "A group of cookies stored by the user's Web browser",
+        "B": "The Wi-Fi network the user is connected to",
+        "C": "The user's search engine history",
+        "D": "The Internet Protocol (IP) address of the user's computer",
+        "E": "The operating system of the user's computer"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - A group of cookies stored by the user's Web browser",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10358"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_6",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is true of mutation-based fuzzing?",
+      "options": {
+        "A": "It only works for network-based fuzzing, not file-based fuzzing",
+        "B": "It modifies the target program's code to test its robustness",
+        "C": "It requires an initial error-free program to start the process",
+        "D": "It uses a random number generator to create new inputs",
+        "E": "It uses a fixed set of inputs to test the program"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - It only works for network-based fuzzing, not file-based fuzzing",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10736"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_7",
+      "question_type": "MCQ",
+      "stem_text": "Calculate the Hamming pairwise distances and determine the minimum Hamming distance among the following codewords: 00000,10101,01010",
+      "options": {
+        "A": "3",
+        "B": "6",
+        "C": "10",
+        "D": "7",
+        "E": "8"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 3",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10499"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_8",
+      "question_type": "MCQ",
+      "stem_text": "What's the maximum number of edges in a simple triangle free planar graph with 30 vertices?",
+      "options": {
+        "A": "69",
+        "B": "60",
+        "C": "63",
+        "D": "84",
+        "E": "45"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 69",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10675"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_9",
+      "question_type": "MCQ",
+      "stem_text": "How many trees are there on n (n \\textgreater{} 1) labeled vertices with no vertices of degree 1 or 2?",
+      "options": {
+        "A": "2n",
+        "B": "2\\^{}(n-1)",
+        "C": "1",
+        "D": "2",
+        "E": "n + 1"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 2n",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10613"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_10",
+      "question_type": "MCQ",
+      "stem_text": "Of the following, which gives the best upper bound for the value of f(N) where f is a solution to the recurrence f(2N + 1) = f(2N) = f(N) + log N for N \\textgreater{}= 1,...",
+      "options": {
+        "A": "O(N log(log N))",
+        "B": "O(N\\^{}2)",
+        "C": "O(N)",
+        "D": "O(log N)",
+        "E": "O((log N)\\^{}2)"
+      },
+      "marks": 2,
+      "gold_answer": "E",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: E - O((log N)\\^{}2)",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10687"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_mcq_11",
+      "question_type": "MCQ",
+      "stem_text": "When does a buffer overflow occur, generally speaking?",
+      "options": {
+        "A": "when copying a buffer from the stack to the heap",
+        "B": "when writing to a pointer that has been freed",
+        "C": "when the program runs out of memory",
+        "D": "when a pointer is used to access memory not allocated to it",
+        "E": "when a buffer is not initialized before being used"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - when a pointer is used to access memory not allocated to it",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10566"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Statement 1| L2 regularization of linear models tends to make models more sparse than L1 regularization. Statement 2| Residual...' is 'False, True'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU-Pro answer key.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10630"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 13,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU-Pro answer key.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10568"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 14,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Neural networks:' is 'Always require large amounts of data to train'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Are incapable of handling non-linear relationships'.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10389"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 15,
+      "question_id": "computer_science_graduate_doc_04_computer_science_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'What would you do in PCA to get the same projection as SVD?' is 'Normalize the data'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Transform data to unit variance'.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10694"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 16,
+      "question_id": "computer_science_graduate_doc_04_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to check if all the elements in tuple have same data type or not.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def check\\_type(test\\_tuple): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "222"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 11,
+      "TF": 4,
+      "LONG": 1
+    },
+    "by_marks": {
+      "2": 15,
+      "10": 1
+    },
+    "total_marks_by_type": {
+      "MCQ": 22,
+      "TF": 8,
+      "LONG": 10
+    }
+  }
+}

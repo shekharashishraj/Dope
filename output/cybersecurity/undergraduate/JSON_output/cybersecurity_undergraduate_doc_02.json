@@ -1,0 +1,276 @@
+{
+  "docid": "cybersecurity_undergraduate_doc_02",
+  "document_name": "Cybersecurity - Undergraduate Level Assessment 2",
+  "domain": "cybersecurity",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_cybersecurity_mcq",
+    "mmlu_cybersecurity_tf",
+    "mmlu_pro_cybersecurity_mcq",
+    "cybersecurity_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 1,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\cybersecurity\\undergraduate\\latex_documents\\cybersecurity_undergraduate_doc_02.tex",
+    "pdf_file": "output\\cybersecurity\\undergraduate\\pdf_documents\\cybersecurity_undergraduate_doc_02.pdf",
+    "metadata_file": "data/metadata_hierarchical/cybersecurity_undergraduate_doc_02_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/cybersecurity_undergraduate_doc_02_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_1",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A packet filter firewall filters at the' is 'Data link layer'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Network or transport layer'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1508"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_2",
+      "question_type": "TF",
+      "stem_text": "The correct answer to '\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is also a part of darknet that is employed for transferring files anonymously.' is 'Freenet'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1478"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_3",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Which of the following is an authentication method?' is 'All of the above'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1505"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_4",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is a sequential segment of the memory location that is allocated for containing some data such as a character string or an...' is 'buffer'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1551"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_5",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'The \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is anything which your search engine cannot search.' is 'Haunted web'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Deep Web'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "15632"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_6",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Why apps developed in languages like C, C++ is prone to Buffer-overflow?' is 'No string boundary checks in predefined functions'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1479"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_7",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'How does a buffer overflow on the stack facilitate running attacker-injected code?' is 'By writing directly to \\%eax the address of the code'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'By overwriting the return address to point to the location of that code'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1531"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_8",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A/an \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is a program that steals your logins \\& passwords for instant messaging applications.' is 'Trojan-Downloader'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'IM - Trojans'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1523"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_9",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.' is 'backdoor'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1517"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_10",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be secure?' is 'It depends on the details of the MAC'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'No, an attacker can simply guess the tag for messages'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1509"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to check whether the given number is undulating or not.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def is\\_undulating(n): | return False | return False | return True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "92"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to sort a tuple by its float element.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def float\\_sort(price): | return float\\_sort",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "370"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "TF": 10,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "TF": 20,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,671 @@
+{
+  "docid": "astronomy_graduate_doc_05",
+  "document_name": "Astronomy - Graduate Level Assessment 5",
+  "domain": "astronomy",
+  "academic_level": "Graduate",
+  "subjects": [
+    "astronomy"
+  ],
+  "combination_used": [
+    "mmlu_astronomy_mcq",
+    "mmlu_astronomy_tf",
+    "astronomy_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\astronomy\\graduate\\latex_documents\\astronomy_graduate_doc_05.tex",
+    "pdf_file": "output\\astronomy\\graduate\\pdf_documents\\astronomy_graduate_doc_05.pdf",
+    "metadata_file": "data/metadata_hierarchical/astronomy_graduate_doc_05_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/astronomy_graduate_doc_05_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "astronomy_graduate_doc_05_astronomy_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Approximately how far away is the Andromeda Galaxy?",
+      "options": {
+        "A": "1.7 million light years",
+        "B": "2.1 million light years",
+        "C": "2.5 million light years",
+        "D": "3.2 million light years"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 2.5 million light years",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "309"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "Approximately how far away is the Andromeda Galaxy?",
+          "original_substring": "how far away",
+          "replacement_substring": "how close",
+          "start_pos": 14,
+          "end_pos": 26,
+          "target_wrong_answer": "A",
+          "reasoning": "Changing 'how far away' to 'how close' suggests a much smaller distance, leading to option A being selected."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "Approximately how far away is the Andromeda Galaxy?",
+          "original_substring": "Andromeda Galaxy",
+          "replacement_substring": "nearest star",
+          "start_pos": 35,
+          "end_pos": 50,
+          "target_wrong_answer": "B",
+          "reasoning": "Changing the Andromeda Galaxy to the nearest star suggests a much closer object, leading to option B."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "Approximately how far away is the Andromeda Galaxy?",
+          "original_substring": "Approximately",
+          "replacement_substring": "Exactly",
+          "start_pos": 0,
+          "end_pos": 12,
+          "target_wrong_answer": "D",
+          "reasoning": "Specifying 'Exactly' might encourage choosing a more precise and larger number, leading to option D."
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_id": "astronomy_graduate_doc_05_astronomy_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "What Mars mission will be landing on May 25 2008 and will dig a trench into (hopefully)\nice-rich soil?",
+      "options": {
+        "A": "ExoMars",
+        "B": "Mars Exploration Rovers",
+        "C": "Mars Science Laboratory",
+        "D": "Phoenix Mars Lander"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Phoenix Mars Lander",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "262"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "What Mars mission will be landing on May 25 2008 and will dig a trench into (hopefully)\nice-rich soil?",
+          "original_substring": "May 25 2008",
+          "replacement_substring": "July 4 2008",
+          "start_pos": 37,
+          "end_pos": 47,
+          "target_wrong_answer": "A",
+          "reasoning": "Altering the date to a later one may suggest a different mission, leading to option A."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "What Mars mission will be landing on May 25 2008 and will dig a trench into (hopefully)\nice-rich soil?",
+          "original_substring": "dig a trench",
+          "replacement_substring": "explore the surface",
+          "start_pos": 57,
+          "end_pos": 68,
+          "target_wrong_answer": "B",
+          "reasoning": "Changing the focus from digging to exploring might suggest a different mission, leading to option B."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "What Mars mission will be landing on May 25 2008 and will dig a trench into (hopefully)\nice-rich soil?",
+          "original_substring": "ice-rich soil",
+          "replacement_substring": "rocky terrain",
+          "start_pos": 86,
+          "end_pos": 98,
+          "target_wrong_answer": "C",
+          "reasoning": "Changing the type of soil might suggest a different mission, leading to option C."
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_id": "astronomy_graduate_doc_05_astronomy_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Find the best approximation for the surface temperature of the Sun:",
+      "options": {
+        "A": "6000 K",
+        "B": "7000 K",
+        "C": "9000 K",
+        "D": "13000 K"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 6000 K",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "382"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "Find the best approximation for the surface temperature of the Sun:",
+          "original_substring": "surface temperature",
+          "replacement_substring": "core temperature",
+          "start_pos": 34,
+          "end_pos": 52,
+          "target_wrong_answer": "D",
+          "reasoning": "Changing from 'surface' to 'core' temperature suggests a higher value, leading to option D."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "Find the best approximation for the surface temperature of the Sun:",
+          "original_substring": "best approximation",
+          "replacement_substring": "exact measurement",
+          "start_pos": 9,
+          "end_pos": 26,
+          "target_wrong_answer": "C",
+          "reasoning": "Changing to 'exact measurement' might suggest a higher precision, leading to option C."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "Find the best approximation for the surface temperature of the Sun:",
+          "original_substring": "the Sun",
+          "replacement_substring": "Jupiter",
+          "start_pos": 57,
+          "end_pos": 64,
+          "target_wrong_answer": "B",
+          "reasoning": "Changing the celestial object to Jupiter suggests a lower temperature, leading to option B."
+        }
+      ]
+    },
+    {
+      "question_number": 4,
+      "question_id": "astronomy_graduate_doc_05_astronomy_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Calculate the ratio of the solar radiation flux on Mercury's surface for perihelion (0.304\nAU) versus aphelion (0.456 AU).",
+      "options": {
+        "A": "4:1",
+        "B": "1:2",
+        "C": "6:5",
+        "D": "9:4"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 9:4",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "286"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "Calculate the ratio of the solar radiation flux on Mercury's surface for perihelion (0.304\nAU) versus aphelion (0.456 AU).",
+          "original_substring": "perihelion",
+          "replacement_substring": "aphelion",
+          "start_pos": 58,
+          "end_pos": 68,
+          "target_wrong_answer": "C",
+          "reasoning": "Changing 'perihelion' to 'aphelion' affects the ratio, leading to option C."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "Calculate the ratio of the solar radiation flux on Mercury's surface for perihelion (0.304\nAU) versus aphelion (0.456 AU).",
+          "original_substring": "Mercury's surface",
+          "replacement_substring": "Earth's surface",
+          "start_pos": 43,
+          "end_pos": 60,
+          "target_wrong_answer": "A",
+          "reasoning": "Changing the planet's surface affects the flux ratio calculation, leading to option A."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "Calculate the ratio of the solar radiation flux on Mercury's surface for perihelion (0.304\nAU) versus aphelion (0.456 AU).",
+          "original_substring": "solar radiation flux",
+          "replacement_substring": "solar energy absorption",
+          "start_pos": 24,
+          "end_pos": 44,
+          "target_wrong_answer": "B",
+          "reasoning": "Changing the focus to energy absorption affects the interpretation, leading to option B."
+        }
+      ]
+    },
+    {
+      "question_number": 5,
+      "question_id": "astronomy_graduate_doc_05_astronomy_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Why are Cepheid stars relevant for astronomers?",
+      "options": {
+        "A": "To measure interstellar mass.",
+        "B": "To measure galactic distances.",
+        "C": "To measure galactic energy-density.",
+        "D": "To measure interstellar density."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - To measure galactic distances.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "379"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "Why are Cepheid stars relevant for astronomers?",
+          "original_substring": "Cepheid stars",
+          "replacement_substring": "neutron stars",
+          "start_pos": 8,
+          "end_pos": 21,
+          "target_wrong_answer": "A",
+          "reasoning": "Changing the type of stars alters the relevance, leading to option A."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Why are Cepheid stars relevant for astronomers?",
+          "original_substring": "relevant for astronomers",
+          "replacement_substring": "important for physicists",
+          "start_pos": 22,
+          "end_pos": 45,
+          "target_wrong_answer": "C",
+          "reasoning": "Changing the target audience to physicists alters the focus, leading to option C."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Why are Cepheid stars relevant for astronomers?",
+          "original_substring": "for astronomers",
+          "replacement_substring": "to cosmologists",
+          "start_pos": 30,
+          "end_pos": 45,
+          "target_wrong_answer": "D",
+          "reasoning": "Changing the field of study alters the context, leading to option D."
+        }
+      ]
+    },
+    {
+      "question_number": 6,
+      "question_id": "astronomy_graduate_doc_05_astronomy_tf_1",
+      "question_type": "TF",
+      "stem_text": "Titan is the only outer solar system moon that has liquid water on its surface, indicating potential habitability.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'A and D'.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "239"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "Titan is the only outer solar system moon that has liquid water on its surface, indicating potential habitability.",
+          "original_substring": "liquid water",
+          "replacement_substring": "methane lakes",
+          "start_pos": 45,
+          "end_pos": 57,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing 'liquid water' to 'methane lakes' aligns with the true statement about Titan."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Titan is the only outer solar system moon that has liquid water on its surface, indicating potential habitability.",
+          "original_substring": "outer solar system",
+          "replacement_substring": "inner solar system",
+          "start_pos": 16,
+          "end_pos": 33,
+          "target_wrong_answer": "True",
+          "reasoning": "Incorrectly placing Titan in the inner solar system makes the statement true."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Titan is the only outer solar system moon that has liquid water on its surface, indicating potential habitability.",
+          "original_substring": "indicating potential habitability",
+          "replacement_substring": "with unique features",
+          "start_pos": 59,
+          "end_pos": 90,
+          "target_wrong_answer": "True",
+          "reasoning": "The change to 'with unique features' makes the statement more general and potentially true."
+        }
+      ]
+    },
+    {
+      "question_number": 7,
+      "question_id": "astronomy_graduate_doc_05_astronomy_tf_2",
+      "question_type": "TF",
+      "stem_text": "Planetary rings can be formed from the dismantling of small moons by impacts over time.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "384"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "Planetary rings can be formed from the dismantling of small moons by impacts over time.",
+          "original_substring": "dismantling of small moons",
+          "replacement_substring": "accumulation of dust",
+          "start_pos": 30,
+          "end_pos": 54,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'dismantling of small moons' to 'accumulation of dust' negates the statement."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "Planetary rings can be formed from the dismantling of small moons by impacts over time.",
+          "original_substring": "impacts over time",
+          "replacement_substring": "gravitational pull",
+          "start_pos": 58,
+          "end_pos": 74,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'impacts over time' to 'gravitational pull' alters the formation mechanism, making it False."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "Planetary rings can be formed from the dismantling of small moons by impacts over time.",
+          "original_substring": "can be formed",
+          "replacement_substring": "are never formed",
+          "start_pos": 15,
+          "end_pos": 27,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'can be formed' with 'are never formed' directly contradicts the statement."
+        }
+      ]
+    },
+    {
+      "question_number": 8,
+      "question_id": "astronomy_graduate_doc_05_astronomy_tf_3",
+      "question_type": "TF",
+      "stem_text": "The black hole at the center of the Milky Way is referred to as Alsephina A*.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Sagittarius A*'.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "276"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "The black hole at the center of the Milky Way is referred to as Alsephina A*.",
+          "original_substring": "Alsephina A*",
+          "replacement_substring": "Sagittarius A*",
+          "start_pos": 52,
+          "end_pos": 64,
+          "target_wrong_answer": "True",
+          "reasoning": "Correcting the name to 'Sagittarius A*' makes the statement true."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "The black hole at the center of the Milky Way is referred to as Alsephina A*.",
+          "original_substring": "the center of the Milky Way",
+          "replacement_substring": "the edge of the Milky Way",
+          "start_pos": 25,
+          "end_pos": 49,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing the location to 'the edge of the Milky Way' aligns with a true statement."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "The black hole at the center of the Milky Way is referred to as Alsephina A*.",
+          "original_substring": "referred to as",
+          "replacement_substring": "known as",
+          "start_pos": 40,
+          "end_pos": 52,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing 'referred to as' to 'known as' does not affect the falsity of the statement."
+        }
+      ]
+    },
+    {
+      "question_number": 9,
+      "question_id": "astronomy_graduate_doc_05_astronomy_tf_4",
+      "question_type": "TF",
+      "stem_text": "Kirkwood gaps occur in the main asteroid belt at positions where asteroids orbit with a period twice that of Mars.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'asteroids would orbit with a period half that of Jupiter'.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "329"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "Kirkwood gaps occur in the main asteroid belt at positions where asteroids orbit with a period twice that of Mars.",
+          "original_substring": "twice that of Mars",
+          "replacement_substring": "resonant with Jupiter",
+          "start_pos": 91,
+          "end_pos": 107,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing 'twice that of Mars' to 'resonant with Jupiter' makes the statement true."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Kirkwood gaps occur in the main asteroid belt at positions where asteroids orbit with a period twice that of Mars.",
+          "original_substring": "main asteroid belt",
+          "replacement_substring": "Kuiper belt",
+          "start_pos": 23,
+          "end_pos": 41,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing 'main asteroid belt' with 'Kuiper belt' changes the location, affecting truth value."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Kirkwood gaps occur in the main asteroid belt at positions where asteroids orbit with a period twice that of Mars.",
+          "original_substring": "Kirkwood gaps",
+          "replacement_substring": "planetary gaps",
+          "start_pos": 0,
+          "end_pos": 13,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing 'Kirkwood gaps' to 'planetary gaps' might obscure the specific phenomenon."
+        }
+      ]
+    },
+    {
+      "question_number": 10,
+      "question_id": "astronomy_graduate_doc_05_astronomy_tf_5",
+      "question_type": "TF",
+      "stem_text": "The belts and zones of Jupiter are alternating bands of rising and falling air at different latitudes.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "330"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "The belts and zones of Jupiter are alternating bands of rising and falling air at different latitudes.",
+          "original_substring": "Jupiter",
+          "replacement_substring": "Saturn",
+          "start_pos": 20,
+          "end_pos": 27,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'Jupiter' with 'Saturn' changes the context, making the statement false."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The belts and zones of Jupiter are alternating bands of rising and falling air at different latitudes.",
+          "original_substring": "rising and falling air",
+          "replacement_substring": "constant air pressure",
+          "start_pos": 43,
+          "end_pos": 62,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'rising and falling air' to 'constant air pressure' contradicts the phenomenon."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The belts and zones of Jupiter are alternating bands of rising and falling air at different latitudes.",
+          "original_substring": "different latitudes",
+          "replacement_substring": "fixed points",
+          "start_pos": 66,
+          "end_pos": 84,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'different latitudes' to 'fixed points' contradicts the statement."
+        }
+      ]
+    },
+    {
+      "question_number": 11,
+      "question_id": "astronomy_graduate_doc_05_astronomy_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the significance of hydrogen as the most abundant element among the Jovian planets\nand analyze its implications for their formation and atmospheric characteristics.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Hydrogen. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "340"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 11,
+          "latex_stem_text": "Discuss the significance of hydrogen as the most abundant element among the Jovian planets\nand analyze its implications for their formation and atmospheric characteristics.",
+          "original_substring": "hydrogen",
+          "replacement_substring": "helium",
+          "start_pos": 30,
+          "end_pos": 38,
+          "target_wrong_answer": "changes key concept",
+          "reasoning": "Replacing 'hydrogen' with 'helium' changes the focus and expected answer."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "Discuss the significance of hydrogen as the most abundant element among the Jovian planets\nand analyze its implications for their formation and atmospheric characteristics.",
+          "original_substring": "Jovian planets",
+          "replacement_substring": "terrestrial planets",
+          "start_pos": 65,
+          "end_pos": 79,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Changing to 'terrestrial planets' shifts the focus, affecting the expected answer."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "Discuss the significance of hydrogen as the most abundant element among the Jovian planets\nand analyze its implications for their formation and atmospheric characteristics.",
+          "original_substring": "formation and atmospheric characteristics",
+          "replacement_substring": "orbital dynamics",
+          "start_pos": 108,
+          "end_pos": 147,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Changing the analysis focus to 'orbital dynamics' alters the expected discussion."
+        }
+      ]
+    },
+    {
+      "question_number": 12,
+      "question_id": "astronomy_graduate_doc_05_astronomy_long_2",
+      "question_type": "LONG",
+      "stem_text": "Calculate the mass of a spherical moon with a diameter of 200 km composed entirely of\nwater ice, and analyze the ratio of this mass to that of Saturn's rings, which is 2x10\\^{}19\nkg. Discuss the implications of this ratio in the context of celestial body composition\nand formation.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "5 : 1. Explain why this is the correct answer and provide supporting evidence. Reference\nkey facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "14071"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 12,
+          "latex_stem_text": "Calculate the mass of a spherical moon with a diameter of 200 km composed entirely of\nwater ice, and analyze the ratio of this mass to that of Saturn's rings, which is 2x10^19\nkg. Discuss the implications of this ratio in the context of celestial body composition\nand formation.",
+          "original_substring": "200 km",
+          "replacement_substring": "150 km",
+          "start_pos": 51,
+          "end_pos": 57,
+          "target_wrong_answer": "changes key concept",
+          "reasoning": "Changing the diameter affects the mass and thus the ratio calculation."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "Calculate the mass of a spherical moon with a diameter of 200 km composed entirely of\nwater ice, and analyze the ratio of this mass to that of Saturn's rings, which is 2x10^19\nkg. Discuss the implications of this ratio in the context of celestial body composition\nand formation.",
+          "original_substring": "water ice",
+          "replacement_substring": "rock",
+          "start_pos": 67,
+          "end_pos": 76,
+          "target_wrong_answer": "changes key concept",
+          "reasoning": "Changing the composition affects the density and mass, altering the expected ratio."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "Calculate the mass of a spherical moon with a diameter of 200 km composed entirely of\nwater ice, and analyze the ratio of this mass to that of Saturn's rings, which is 2x10^19\nkg. Discuss the implications of this ratio in the context of celestial body composition\nand formation.",
+          "original_substring": "Saturn's rings",
+          "replacement_substring": "Jupiter's rings",
+          "start_pos": 97,
+          "end_pos": 110,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Changing the comparison to Jupiter's rings affects the expected ratio and implications."
+        }
+      ]
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

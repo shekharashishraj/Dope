@@ -1,0 +1,15 @@
+# IntegrityShield Pipeline Configuration
+
+openai:
+  model: "gpt-4o"
+  batch_size: 5  # Number of documents per batch
+  max_retries: 3
+  timeout: 60
+  temperature: 0.7
+
+processing:
+  input_dir: "output"
+  output_suffix: "_perturbation"
+  resume: false  # Skip already processed files
+  mappings_per_question: 3  # Number of perturbation mappings per question
+

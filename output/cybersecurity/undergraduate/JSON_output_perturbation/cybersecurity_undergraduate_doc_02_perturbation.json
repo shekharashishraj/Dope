@@ -1,0 +1,660 @@
+{
+  "docid": "cybersecurity_undergraduate_doc_02",
+  "document_name": "Cybersecurity - Undergraduate Level Assessment 2",
+  "domain": "cybersecurity",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_cybersecurity_mcq",
+    "mmlu_cybersecurity_tf",
+    "mmlu_pro_cybersecurity_mcq",
+    "cybersecurity_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 1,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\cybersecurity\\undergraduate\\latex_documents\\cybersecurity_undergraduate_doc_02.tex",
+    "pdf_file": "output\\cybersecurity\\undergraduate\\pdf_documents\\cybersecurity_undergraduate_doc_02.pdf",
+    "metadata_file": "data/metadata_hierarchical/cybersecurity_undergraduate_doc_02_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/cybersecurity_undergraduate_doc_02_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_1",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A packet filter firewall filters at the' is 'Data link layer'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Network or transport layer'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1508"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "The correct answer to 'A packet filter firewall filters at the' is 'Data link layer'.",
+          "original_substring": "Data link layer",
+          "replacement_substring": "Network layer",
+          "start_pos": 61,
+          "end_pos": 75,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing the layer to 'Network layer' makes the statement true, as packet filter firewalls generally operate at the network layer."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "The correct answer to 'A packet filter firewall filters at the' is 'Data link layer'.",
+          "original_substring": "Data link layer",
+          "replacement_substring": "Transport layer",
+          "start_pos": 61,
+          "end_pos": 75,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing with 'Transport layer' makes the statement incorrect, as packet filters do not operate at the transport layer."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "The correct answer to 'A packet filter firewall filters at the' is 'Data link layer'.",
+          "original_substring": "Data link layer",
+          "replacement_substring": "Application layer",
+          "start_pos": 61,
+          "end_pos": 75,
+          "target_wrong_answer": "True",
+          "reasoning": "Using 'Application layer' makes the statement incorrect, packet filters do not operate at this layer."
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_2",
+      "question_type": "TF",
+      "stem_text": "The correct answer to '\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is also a part of darknet that is employed for transferring files anonymously.' is 'Freenet'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1478"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "The correct answer to '___________ is also a part of darknet that is employed for transferring files anonymously.' is 'Freenet'.",
+          "original_substring": "Freenet",
+          "replacement_substring": "I2P",
+          "start_pos": 103,
+          "end_pos": 110,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'Freenet' with 'I2P' changes the statement's truth value since I2P is also a network for anonymous file transfer."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "The correct answer to '___________ is also a part of darknet that is employed for transferring files anonymously.' is 'Freenet'.",
+          "original_substring": "Freenet",
+          "replacement_substring": "Tor",
+          "start_pos": 103,
+          "end_pos": 110,
+          "target_wrong_answer": "False",
+          "reasoning": "Using 'Tor' instead of 'Freenet' changes the answer to false, as Tor is not a file transfer network."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "The correct answer to '___________ is also a part of darknet that is employed for transferring files anonymously.' is 'Freenet'.",
+          "original_substring": "Freenet",
+          "replacement_substring": "BitTorrent",
+          "start_pos": 103,
+          "end_pos": 110,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'Freenet' with 'BitTorrent' is incorrect, as BitTorrent is not a darknet tool."
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_3",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Which of the following is an authentication method?' is 'All of the above'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1505"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "The correct answer to 'Which of the following is an authentication method?' is 'All of the above'.",
+          "original_substring": "All of the above",
+          "replacement_substring": "None of the above",
+          "start_pos": 69,
+          "end_pos": 84,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'All of the above' with 'None of the above' changes the meaning, making the original true statement false."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "The correct answer to 'Which of the following is an authentication method?' is 'All of the above'.",
+          "original_substring": "All of the above",
+          "replacement_substring": "Password-based",
+          "start_pos": 69,
+          "end_pos": 84,
+          "target_wrong_answer": "False",
+          "reasoning": "Switching to 'Password-based' narrows the scope, making the statement incorrectly specific."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "The correct answer to 'Which of the following is an authentication method?' is 'All of the above'.",
+          "original_substring": "All of the above",
+          "replacement_substring": "Biometric",
+          "start_pos": 69,
+          "end_pos": 84,
+          "target_wrong_answer": "False",
+          "reasoning": "Using 'Biometric' only represents a part of possible methods, altering the original meaning."
+        }
+      ]
+    },
+    {
+      "question_number": 4,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_4",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is a sequential segment of the memory location that is allocated for containing some data such as a character string or an...' is 'buffer'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1551"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "The correct answer to 'A __________ is a sequential segment of the memory location that is allocated for containing some data such as a character string or an...' is 'buffer'.",
+          "original_substring": "buffer",
+          "replacement_substring": "array",
+          "start_pos": 137,
+          "end_pos": 143,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'buffer' with 'array' changes the semantics, as an array is not necessarily used for sequential segments like a buffer."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "The correct answer to 'A __________ is a sequential segment of the memory location that is allocated for containing some data such as a character string or an...' is 'buffer'.",
+          "original_substring": "buffer",
+          "replacement_substring": "stack",
+          "start_pos": 137,
+          "end_pos": 143,
+          "target_wrong_answer": "False",
+          "reasoning": "Using 'stack' instead of 'buffer' is incorrect, as a stack has a different role in memory."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "The correct answer to 'A __________ is a sequential segment of the memory location that is allocated for containing some data such as a character string or an...' is 'buffer'.",
+          "original_substring": "buffer",
+          "replacement_substring": "register",
+          "start_pos": 137,
+          "end_pos": 143,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'buffer' with 'register' alters the meaning, as registers are not used for sequential segments of memory."
+        }
+      ]
+    },
+    {
+      "question_number": 5,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_5",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'The \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is anything which your search engine cannot search.' is 'Haunted web'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'Deep Web'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "15632"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "The correct answer to 'The __________ is anything which your search engine cannot search.' is 'Haunted web'.",
+          "original_substring": "Haunted web",
+          "replacement_substring": "Deep web",
+          "start_pos": 83,
+          "end_pos": 94,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing 'Haunted web' to 'Deep web' makes the statement true, as the deep web is not indexed by search engines."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "The correct answer to 'The __________ is anything which your search engine cannot search.' is 'Haunted web'.",
+          "original_substring": "Haunted web",
+          "replacement_substring": "Dark web",
+          "start_pos": 83,
+          "end_pos": 94,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing with 'Dark web' makes the statement true, as the dark web is not easily searchable by traditional engines."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "The correct answer to 'The __________ is anything which your search engine cannot search.' is 'Haunted web'.",
+          "original_substring": "Haunted web",
+          "replacement_substring": "Invisible web",
+          "start_pos": 83,
+          "end_pos": 94,
+          "target_wrong_answer": "True",
+          "reasoning": "Using 'Invisible web' changes the truth of the statement, as the invisible web is a part of the unindexed internet."
+        }
+      ]
+    },
+    {
+      "question_number": 6,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_6",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Why apps developed in languages like C, C++ is prone to Buffer-overflow?' is 'No string boundary checks in predefined functions'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1479"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "The correct answer to 'Why apps developed in languages like C, C++ is prone to Buffer-overflow?' is 'No string boundary checks in predefined functions'.",
+          "original_substring": "No string boundary checks in predefined functions",
+          "replacement_substring": "Optimized memory management",
+          "start_pos": 82,
+          "end_pos": 125,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing with 'Optimized memory management' makes the statement incorrect as it does not address buffer overflow."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "The correct answer to 'Why apps developed in languages like C, C++ is prone to Buffer-overflow?' is 'No string boundary checks in predefined functions'.",
+          "original_substring": "No string boundary checks in predefined functions",
+          "replacement_substring": "Strong type checking",
+          "start_pos": 82,
+          "end_pos": 125,
+          "target_wrong_answer": "False",
+          "reasoning": "Using 'Strong type checking' is incorrect, as it does not relate to buffer overflow vulnerabilities."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "The correct answer to 'Why apps developed in languages like C, C++ is prone to Buffer-overflow?' is 'No string boundary checks in predefined functions'.",
+          "original_substring": "No string boundary checks in predefined functions",
+          "replacement_substring": "Efficient execution",
+          "start_pos": 82,
+          "end_pos": 125,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing with 'Efficient execution' changes the answer to false, as it does not cause buffer overflow."
+        }
+      ]
+    },
+    {
+      "question_number": 7,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_7",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'How does a buffer overflow on the stack facilitate running attacker-injected code?' is 'By writing directly to \\%eax the address of the code'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'By overwriting the return address to point to the location of that code'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1531"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "The correct answer to 'How does a buffer overflow on the stack facilitate running attacker-injected code?' is 'By writing directly to \\%eax the address of the code'.",
+          "original_substring": "By writing directly to \\%eax the address of the code",
+          "replacement_substring": "By overwriting the return address",
+          "start_pos": 88,
+          "end_pos": 133,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing the method to 'By overwriting the return address' makes the statement true, as this is a common technique used in stack-based buffer overflows."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "The correct answer to 'How does a buffer overflow on the stack facilitate running attacker-injected code?' is 'By writing directly to \\%eax the address of the code'.",
+          "original_substring": "By writing directly to \\%eax the address of the code",
+          "replacement_substring": "By corrupting the stack pointer",
+          "start_pos": 88,
+          "end_pos": 133,
+          "target_wrong_answer": "True",
+          "reasoning": "Using 'By corrupting the stack pointer' makes the statement true, as altering the stack pointer can lead to control flow manipulation."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "The correct answer to 'How does a buffer overflow on the stack facilitate running attacker-injected code?' is 'By writing directly to \\%eax the address of the code'.",
+          "original_substring": "By writing directly to \\%eax the address of the code",
+          "replacement_substring": "By modifying the frame pointer",
+          "start_pos": 88,
+          "end_pos": 133,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing with 'By modifying the frame pointer' can make the statement true, as frame pointer manipulation is another technique."
+        }
+      ]
+    },
+    {
+      "question_number": 8,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_8",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A/an \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is a program that steals your logins \\& passwords for instant messaging applications.' is 'Trojan-Downloader'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'IM - Trojans'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1523"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "The correct answer to 'A/an __________ is a program that steals your logins & passwords for instant messaging applications.' is 'Trojan-Downloader'.",
+          "original_substring": "Trojan-Downloader",
+          "replacement_substring": "Keylogger",
+          "start_pos": 97,
+          "end_pos": 113,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing 'Trojan-Downloader' with 'Keylogger' changes the statement to true, as keyloggers are known for stealing credentials."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "The correct answer to 'A/an __________ is a program that steals your logins & passwords for instant messaging applications.' is 'Trojan-Downloader'.",
+          "original_substring": "Trojan-Downloader",
+          "replacement_substring": "Spyware",
+          "start_pos": 97,
+          "end_pos": 113,
+          "target_wrong_answer": "True",
+          "reasoning": "Using 'Spyware' instead makes the statement true, as spyware can steal login information."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "The correct answer to 'A/an __________ is a program that steals your logins & passwords for instant messaging applications.' is 'Trojan-Downloader'.",
+          "original_substring": "Trojan-Downloader",
+          "replacement_substring": "Phishing tool",
+          "start_pos": 97,
+          "end_pos": 113,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing to 'Phishing tool' makes the statement true, as phishing tools can be used to steal login credentials."
+        }
+      ]
+    },
+    {
+      "question_number": 9,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_9",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'A \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.' is 'backdoor'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1517"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "The correct answer to 'A __________ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.' is 'backdoor'.",
+          "original_substring": "backdoor",
+          "replacement_substring": "trojan",
+          "start_pos": 137,
+          "end_pos": 145,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'backdoor' with 'trojan' changes the specific method, as Trojans are not necessarily untraceable."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "The correct answer to 'A __________ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.' is 'backdoor'.",
+          "original_substring": "backdoor",
+          "replacement_substring": "virus",
+          "start_pos": 137,
+          "end_pos": 145,
+          "target_wrong_answer": "False",
+          "reasoning": "Switching 'backdoor' with 'virus' makes the statement false, as viruses don't inherently bypass security untraceably."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "The correct answer to 'A __________ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.' is 'backdoor'.",
+          "original_substring": "backdoor",
+          "replacement_substring": "worm",
+          "start_pos": 137,
+          "end_pos": 145,
+          "target_wrong_answer": "False",
+          "reasoning": "Using 'worm' instead of 'backdoor' changes the meaning, as worms do not necessarily bypass security mechanisms."
+        }
+      ]
+    },
+    {
+      "question_number": 10,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_tf_10",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be secure?' is 'It depends on the details of the MAC'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'No, an attacker can simply guess the tag for messages'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1509"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "The correct answer to 'Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be secure?' is 'It depends on the details of the MAC'.",
+          "original_substring": "It depends on the details of the MAC",
+          "replacement_substring": "No, it is insecure",
+          "start_pos": 105,
+          "end_pos": 136,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing with 'No, it is insecure' changes the statement to true, as 5 bits are generally not sufficient for security."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The correct answer to 'Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be secure?' is 'It depends on the details of the MAC'.",
+          "original_substring": "It depends on the details of the MAC",
+          "replacement_substring": "Yes, it can be secure",
+          "start_pos": 105,
+          "end_pos": 136,
+          "target_wrong_answer": "True",
+          "reasoning": "Using 'Yes, it can be secure' changes the truth value, as the security of a MAC with only 5 bits is doubtful."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The correct answer to 'Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be secure?' is 'It depends on the details of the MAC'.",
+          "original_substring": "It depends on the details of the MAC",
+          "replacement_substring": "Generally not secure",
+          "start_pos": 105,
+          "end_pos": 136,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing to 'Generally not secure' makes the statement true, as a 5-bit MAC is generally not considered secure."
+        }
+      ]
+    },
+    {
+      "question_number": 11,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to check whether the given number is undulating or not.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def is\\_undulating(n): | return False | return False | return True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "92"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 11,
+          "latex_stem_text": "Write a function to check whether the given number is undulating or not.",
+          "original_substring": "undulating",
+          "replacement_substring": "palindromic",
+          "start_pos": 46,
+          "end_pos": 56,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Changing the focus from 'undulating' to 'palindromic' alters the nature of the function, requiring a different algorithm."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "Write a function to check whether the given number is undulating or not.",
+          "original_substring": "undulating",
+          "replacement_substring": "prime",
+          "start_pos": 46,
+          "end_pos": 56,
+          "target_wrong_answer": "changes key concept",
+          "reasoning": "Replacing 'undulating' with 'prime' shifts the task from a pattern check to a mathematical property check."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "Write a function to check whether the given number is undulating or not.",
+          "original_substring": "undulating",
+          "replacement_substring": "even",
+          "start_pos": 46,
+          "end_pos": 56,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "The change from 'undulating' to 'even' requires a different logic to determine if a number is even."
+        }
+      ]
+    },
+    {
+      "question_number": 12,
+      "question_id": "cybersecurity_undergraduate_doc_02_cybersecurity_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to sort a tuple by its float element.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def float\\_sort(price): | return float\\_sort",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "370"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 12,
+          "latex_stem_text": "Write a function to sort a tuple by its float element.",
+          "original_substring": "float element",
+          "replacement_substring": "string length",
+          "start_pos": 35,
+          "end_pos": 47,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Replacing 'float element' with 'string length' changes the sorting criteria, necessitating a different sorting approach."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "Write a function to sort a tuple by its float element.",
+          "original_substring": "float element",
+          "replacement_substring": "integer value",
+          "start_pos": 35,
+          "end_pos": 47,
+          "target_wrong_answer": "changes key concept",
+          "reasoning": "Changing 'float element' to 'integer value' alters the sorting logic, requiring a different data handling approach."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "Write a function to sort a tuple by its float element.",
+          "original_substring": "float element",
+          "replacement_substring": "alphabetical order",
+          "start_pos": 35,
+          "end_pos": 47,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Replacing 'float element' with 'alphabetical order' shifts the function's focus to string comparison."
+        }
+      ]
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "TF": 10,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "TF": 20,
+      "LONG": 20
+    }
+  }
+}

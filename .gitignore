@@ -1,0 +1,101 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+venv/
+env/
+ENV/
+.venv
+
+# Reference and external code folders
+reference_document/
+real_code_glyph/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Output and generated files
+# output/  # Commented out - tracking output folder with Git LFS
+*.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.out
+*.bbl
+*.blg
+
+# Test files
+test_*.ttf
+test_*.pdf
+test_*.tex
+test_*.log
+test_output.log
+injection_test_results.json
+tmp_*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# LaTeX compilation artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Font test files
+test_font*.ttf
+test_*font*/
+custom_font.ttf
+manipulated_font.ttf
+perfect_font.ttf
+working_font.ttf
+true_copy_font.ttf
+selective_font.ttf
+
+# PDF test files
+*_demo.pdf
+*_verification.txt
+true_copy_*.pdf
+working_manipulation.pdf
+perfect_manipulation.pdf
+selective_manipulation.pdf
+

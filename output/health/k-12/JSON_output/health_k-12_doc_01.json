@@ -1,0 +1,286 @@
+{
+  "docid": "health_k-12_doc_01",
+  "document_name": "Health - K-12 Level Assessment 1",
+  "domain": "health",
+  "academic_level": "K-12",
+  "subjects": [
+    "nutrition"
+  ],
+  "combination_used": [
+    "mmlu_health_mcq",
+    "mmlu_health_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health\\k-12\\latex_documents\\health_k-12_doc_01.tex",
+    "pdf_file": "output\\health\\k-12\\pdf_documents\\health_k-12_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_k-12_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_k-12_doc_01_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_k-12_doc_01_health_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following vitamins is required for fatty acid b-oxidation?",
+      "options": {
+        "A": "Niacin",
+        "B": "Riboflavin",
+        "C": "Thiamin",
+        "D": "Vitamin C"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Riboflavin",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9461"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_k-12_doc_01_health_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following will increase in vitamin D deficiency?",
+      "options": {
+        "A": "The plasma concentration of prothrombin",
+        "B": "The plasma concentration of preprothrombin",
+        "C": "The plasma activity of alkaline phosphatase",
+        "D": "The plasma activity of acid phosphatase"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - The plasma activity of alkaline phosphatase",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9539"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_k-12_doc_01_health_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of these factors increases the risk for postmenopausal breast cancer?",
+      "options": {
+        "A": "Red meat",
+        "B": "Dietary fat",
+        "C": "Fish",
+        "D": "Obesity"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Obesity",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9674"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_k-12_doc_01_health_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What is leptin resistance?",
+      "options": {
+        "A": "Deficiency of leptin caused by a mutation in the leptin gene",
+        "B": "Lack of leptin release from the adipose tissue",
+        "C": "High concentrations of leptin without reduction in energy intake",
+        "D": "Low concentrations of leptin with increased energy intake"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - High concentrations of leptin without reduction in energy intake",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9474"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_k-12_doc_01_health_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "What enzyme is responsible for copying methylation marks from the parental to the daughter\nstrand of DNA during replication?",
+      "options": {
+        "A": "DNMT1",
+        "B": "DNMT3a",
+        "C": "DNMT3b",
+        "D": "DNMT3L"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - DNMT1",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9579"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_k-12_doc_01_health_tf_1",
+      "question_type": "TF",
+      "stem_text": "Adipose tissue is the largest endogenous substrate source in the body, providing energy during prolonged periods of fasting.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9434"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_k-12_doc_01_health_tf_2",
+      "question_type": "TF",
+      "stem_text": "Food balance sheets provide detailed information on food waste and consumption distribution within a country.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'All of the options given are correct'.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9653"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_k-12_doc_01_health_tf_3",
+      "question_type": "TF",
+      "stem_text": "Iodine and vitamin C deficiencies are known to cause anaemia in individuals across various age groups.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Copper and iron'.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9657"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_k-12_doc_01_health_tf_4",
+      "question_type": "TF",
+      "stem_text": "Lactobacilli are primarily responsible for the initiation of dental caries in the mouth.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Mutans streptococci'.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9712"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_k-12_doc_01_health_tf_5",
+      "question_type": "TF",
+      "stem_text": "ATP is the immediate source of chemical energy used by skeletal muscles for contraction.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "15069"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_k-12_doc_01_health_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the significance of monitoring maternal weight gain during pregnancy and analyze\nhow it impacts both maternal and fetal health.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "all of the options given are correct. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "9667"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_k-12_doc_01_health_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the structure and function of plasma lipoproteins, focusing on their hydrophobic\ncore and its significance in transporting lipids within the body.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "They have a hydrophobic core of triacylglycerol and cholesterol esters. Explain why this\nis the correct answer and provide supporting evidence. Reference key facts or concepts\nthat support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "15061"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "docid": "computer_science_k-12_doc_05",
+  "document_name": "Computer Science - K-12 Level Assessment 5",
+  "domain": "computer_science",
+  "academic_level": "K-12",
+  "subjects": [
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\k-12\\latex_documents\\computer_science_k-12_doc_05.tex",
+    "pdf_file": "output\\computer_science\\k-12\\pdf_documents\\computer_science_k-12_doc_05.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_k-12_doc_05_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_k-12_doc_05_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "If a, b, and c are integers, which of the following conditions is sufficient to guarantee\nthat the expression a \\textless{} c || a \\textless{} b \\&\\& !(a == c) evaluates to true?",
+      "options": {
+        "A": "a \\textless{} c",
+        "B": "a \\textless{} b",
+        "C": "a \\textgreater{} b",
+        "D": "a == b"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - a \\textless{} c",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3269"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which is a valid expression in Python 3.5?",
+      "options": {
+        "A": "sort('ab')",
+        "B": "sorted('ab')",
+        "C": "\"ab\".sort()",
+        "D": "1/0"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - sorted('ab')",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14393"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which types of functions grow the slowest?",
+      "options": {
+        "A": "O(N\\^{}(1/2))",
+        "B": "O(N\\^{}(1/4))",
+        "C": "O(N\\^{}(1/N))",
+        "D": "O(N)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - O(N\\^{}(1/N))",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14392"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "A large Java program was tested extensively, and no errors were found. What can be\nconcluded?",
+      "options": {
+        "A": "All of the preconditions in the program are correct.",
+        "B": "All of the postconditions in the program are correct.",
+        "C": "The program may have bugs.",
+        "D": "Every method in the program may safely be used in other programs."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - The program may have bugs.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3216"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which is the largest asymptotically?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n\\^{}2)",
+        "D": "O(log n)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - O(n\\^{}2)",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3213"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the output of print(list[1:3]) for list = ['abcd', 786, 2.23, 'john', 70.2] is [786, 2.23].",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3223"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The output of 'abc'[::-1] in Python 3 is 'abc', indicating that the string remains unchanged.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'cba'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "15675"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "A function that averages numeric values in a column or row is the best way to detect data entry errors in a dataset.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'A function that sorts values in a column or row'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3221"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'int(x [,base])'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3183"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "In Python3, the minimum value of the list l = [1,2,3,4] is 2.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '1'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3241"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_k-12_doc_05_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the importance of clear specifications in programming. How would you modify the\nproblem of finding an index of a value larger than a given item to address multiple valid\noutcomes?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The specification should be modified to indicate what should be done if there is more than\none index of larger values.. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3202"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_k-12_doc_05_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the operator used for performing exponential calculations in Python 3. Explain its\nsyntax, usage in code examples, and its significance in mathematical operations within\nprogramming.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "**. Explain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3219"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

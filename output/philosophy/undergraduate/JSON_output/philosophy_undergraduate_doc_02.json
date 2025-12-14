@@ -1,0 +1,296 @@
+{
+  "docid": "philosophy_undergraduate_doc_02",
+  "document_name": "Philosophy - Undergraduate Level Assessment 2",
+  "domain": "philosophy",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "philosophy",
+    "formal_logic",
+    "logical_fallacies",
+    "moral_disputes",
+    "moral_scenarios"
+  ],
+  "combination_used": [
+    "mmlu_philosophy_mcq",
+    "mmlu_philosophy_tf",
+    "mmlu_pro_philosophy_mcq",
+    "philosophy_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\philosophy\\undergraduate\\latex_documents\\philosophy_undergraduate_doc_02.tex",
+    "pdf_file": "output\\philosophy\\undergraduate\\pdf_documents\\philosophy_undergraduate_doc_02.pdf",
+    "metadata_file": "data/metadata_hierarchical/philosophy_undergraduate_doc_02_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/philosophy_undergraduate_doc_02_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "When a claim is supported only by asserting that unidentified experts accept the claim the\narguer has committed which of the following fallacies?",
+      "options": {
+        "A": "snob appeal",
+        "B": "appeal to popularity",
+        "C": "post hoc ergo propter hoc",
+        "D": "appeal to anonymous authority",
+        "E": "straw man"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - appeal to anonymous authority",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "11143"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "When someone responds to your argument with a sarcastic statement such as, \"Yeah, right.\nLike that's ever going to happen,\" that person may have committed which fallacy?",
+      "options": {
+        "A": "tu quoque",
+        "B": "appeal to ignorance",
+        "C": "argumentum ad populum",
+        "D": "false cause",
+        "E": "appeal to indignation"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - tu quoque",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "11010"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Cicero argues that we will never go morally astray if we:",
+      "options": {
+        "A": "follow religious edicts.",
+        "B": "follow historical precedents.",
+        "C": "follow the teachings of philosophers.",
+        "D": "follow Nature as our guide.",
+        "E": "follow our conscience."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - follow Nature as our guide.",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "11021"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "In a faulty analogy, the things being compared are...",
+      "options": {
+        "A": "Completely unrelated in any way",
+        "B": "Similar in some ways, different in others",
+        "C": "Similar in appearance, but not in function",
+        "D": "Sufficiently similar",
+        "E": "Not sufficiently similar in relevant ways"
+      },
+      "marks": 2,
+      "gold_answer": "E",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: E - Not sufficiently similar in relevant ways",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "10839"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "According to Lukianoff and Haidt, the recent trend to uncover microaggressions encourages",
+      "options": {
+        "A": "students to confabulate reasons.",
+        "B": "the pursuit of justice by marking out racism, sexism, and classism.",
+        "C": "labeling, by assigning global negative traits to persons.",
+        "D": "universities to bear overly burdensome legal obligations."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - labeling, by assigning global negative traits to persons.",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "11199"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "An arguer who presents irrelevant information to distract from the main issue commits the fallacy of appeal to force.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'appeal to force'.",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "11207"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "Hare asserts that ethics and science are infallible and beyond questioning in their pursuit of knowledge.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "10846"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "Kant's Universal Law formulation provides a method for assessing the consequences of actions in determining their moral worth.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'a kind of consistency test.'.",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "10873"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "Metz argues that dignity is based in a capacity for scientific understanding.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'a capacity for communal or friendly relationships'.",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "10871"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "Laozi is considered a mystic philosopher primarily because of his focus on ethical governance rather than qi (or ch'i).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Zhuangzi'.",
+      "source": {
+        "dataset": "mmlu_pro_philosophy_philosophy",
+        "source_id": "10926"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the philosophical significance of circumcision as the sign of the covenant for\nJewish males, exploring its implications for identity, community, and religious\nobligation.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Circumcision. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "49"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "philosophy_undergraduate_doc_02_philosophy_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the significance of Midrash as rabbinical commentaries produced after the Mishnah,\nfocusing on their role in interpreting Jewish texts and shaping religious thought.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Midrash. Explain why this is the correct answer and provide supporting evidence. Reference\nkey facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "11244"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}
