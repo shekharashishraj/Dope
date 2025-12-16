@@ -1,0 +1,59 @@
+================================================================================
+QUICK REFERENCE: Batch Mode - Run Without Waiting
+================================================================================
+
+1. SUBMIT BATCHES (Exits Immediately - No Waiting)
+   -------------------------------------------------
+   python -m src.processor --mode batch --limit 2
+   
+   → Script submits batches and exits immediately
+   → Batches process in background (1-24 hours)
+   → You can close terminal, go home, etc.
+
+
+2. CHECK STATUS LATER (Anytime)
+   ------------------------------
+   # List all your batches
+   python -m src.batch_retriever --list
+   
+   # Check specific batch status
+   python -m src.batch_retriever --batch-id <BATCH_ID> --check-only
+   
+   Status: "completed" = Ready to download
+   Status: "in_progress" = Still processing
+
+
+3. RETRIEVE RESULTS (When Status is "completed")
+   ---------------------------------------------
+   python -m src.batch_retriever --batch-id <BATCH_ID>
+   
+   → Downloads results automatically
+   → Saves to: output_perturbation/TIMESTAMP/subject/level/question_paper_name/
+
+
+FINDING YOUR BATCH ID:
+----------------------
+- Check batch_info.json files in output_perturbation/TIMESTAMP/.../batch_files/
+- Or run: python -m src.batch_retriever --list
+
+
+OUTPUT LOCATION:
+----------------
+output_perturbation/
+  └── YYYYMMDD_HHMMSS/          # Your batch run timestamp
+      └── subject/
+          └── level/
+              └── question_paper_name/
+                  ├── *_perturbation.json  (final results)
+                  └── batch_files/
+                      └── batch_info.json  (contains batch IDs)
+
+
+TIMELINE:
+---------
+- Submission: Instant (script exits)
+- Processing: 1-24 hours (often 1-3 hours)
+- Cost: 50% cheaper than immediate mode
+
+
+For detailed guide, see: BATCH_RUN_GUIDE.md

@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{calc}
+\usepackage{xcolor}
+% --- latex-dual-layer macros (auto-generated) ---
+\newlength{\dlboxwidth}
+\newlength{\dlboxheight}
+\newlength{\dlboxdepth}
+\newcommand{\duallayerbox}[2]{%
+  \begingroup
+  \settowidth{\dlboxwidth}{\strut #1}%
+  \settoheight{\dlboxheight}{\strut #1}%
+  \settodepth{\dlboxdepth}{\strut #1}%
+  \ifdim\dlboxwidth=0pt
+    \settowidth{\dlboxwidth}{#2}%
+  \fi
+  \raisebox{0pt}[\dlboxheight][\dlboxdepth]{%
+    \makebox[\dlboxwidth][l]{\resizebox{\dlboxwidth}{!}{\strut #2}}%
+  }%
+  \endgroup
+}
+% --- end latex-dual-layer macros ---
+\begin{document}
+\begin{center}
+Cybersecurity - Undergraduate Level Assessment 1 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (4 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item 1. \_\_\_\_\_\_\_\_\_ framework made cracking of vulnerabilities easy like point and click.
+\begin{enumerate}[label=(\alph*)]
+    \item .Net
+    \item Metasploit
+    \item Zeus
+    \item Ettercap
+\end{enumerate}
+\item \_\_\_\_\_\_\_\_\_\_\_ is a process of \duallayerbox{wireless traffic analysis}{WiFi traffic analysis} that may be helpful for \duallayerbox{forensic investigations}{network diagnostics} or during \duallayerbox{troubleshooting any wireless issue}{checking wireless issues}.
+\begin{enumerate}[label=(\alph*)]
+    \item Wireless Traffic Sniffing
+    \item WiFi Traffic Sniffing
+    \item Wireless Traffic Checking
+    \item Wireless Transmission Sniffing
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (26 marks)}
+\textit{Answer True or False and justify briefly.}
+\begin{enumerate}[label=\arabic*.]
+\item True or False: The correct answer to 'Applications developed by \duallayerbox{programming languages}{scripting languages} like \_\_\_\_ and \_\_\_\_\_\_ have this common \duallayerbox{buffer-overflow error}{syntax error}.' is '\duallayerbox{C, C++}{Java}'.
+\item True or False: The correct answer to 'When a \duallayerbox{wireless}{secure} user authenticates to any AP, both of them go in the course of \duallayerbox{four-step}{three-step} \duallayerbox{authentication progression}{connection setup} which is called...' is 'wireless handshaking'.
+\item True or False: The correct answer to 'In \duallayerbox{MD-5}{SHA-1} the length of the \duallayerbox{message digest}{hash output} is' is '\duallayerbox{128}{160}'.
+\item True or False: The correct answer to 'What are the \duallayerbox{port states}{network states} determined by \duallayerbox{Nmap}{Wireshark}?' is '\duallayerbox{Open, filtered, unfiltered}{Closed, filtered}'.
+\item True or False: The correct answer to 'Can a \duallayerbox{stream cipher}{block cipher} have \duallayerbox{perfect secrecy}{encryption}?' is 'No, since the \duallayerbox{key is shorter}{key is longer} than the message'.
+\item True or False: The correct answer to 'Which of the \duallayerbox{following is not an example}{following is an example} of \duallayerbox{presentation layer issues}{network layer issues}?' is '\duallayerbox{Weak or non-existent authentication mechanisms}{Data encryption}'.
+\item True or False: The correct answer to 'What tool can be used to \duallayerbox{perform}{simulate} \duallayerbox{SNMP enumeration}{network scanning}?' is '\duallayerbox{IP Network Browser}{Wireshark}'.
+\item True or False: The correct answer to 'A \duallayerbox{session symmetric key}{encryption key} \duallayerbox{between two parties}{in a network} is used' is '\duallayerbox{Only once}{Multiple times}'.
+\item True or False: The correct answer to '\duallayerbox{Man in the middle attack}{Phishing attack} can endanger the \duallayerbox{security}{integrity} of \duallayerbox{Diffie Hellman method}{RSA encryption} if two parties are not' is 'Joined'.
+\item True or False: The correct answer to 'How is \duallayerbox{IP address spoofing}{MAC address spoofing} \duallayerbox{detected}{prevented}?' is '\duallayerbox{Comparing the TTL values}{Checking the MAC addresses} of the actual and spoofed addresses'.
+\item True or False: The correct answer to 'Which of the \duallayerbox{following is not}{following is} a \duallayerbox{block cipher operating mode}{encryption algorithm}?' is '\duallayerbox{CBF}{CBC}'.
+\item True or False: The correct answer to 'The message must be encrypted at the \duallayerbox{sender site}{receiver site} and \duallayerbox{decrypted}{encrypted} at the' is '\duallayerbox{Sender Site}{Receiver Site}'.
+\item True or False: The correct answer to 'What does EXE do when the \duallayerbox{STP solver}{SAT solver} times out on a constraint query for a particular path?' is 'Assume that the query is \duallayerbox{not satisfiable}{satisfiable} and \duallayerbox{stop executing the path}{continue executing}'.
+\end{enumerate}
+
+\section*{Long Form Response (10 marks)}
+\textit{Provide thorough reasoning and reference key steps.}
+\begin{enumerate}[label=\arabic*.]
+\item Write a function to \duallayerbox{find numbers}{filter numbers} divisible by m or n from a list of numbers using lambda
+function.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

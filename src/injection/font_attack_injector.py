@@ -245,10 +245,43 @@ class FontAttackInjector(BaseInjector):
                     "plan": attack_plan
                 })
         
-        # Apply replacements in reverse order
+        # Apply replacements in reverse order to preserve positions
+        # But first, merge adjacent replacements to avoid position issues
         print(f"[FontAttackInjector] Applying {len(replacements)} replacements")
-        replacements.sort(key=lambda x: x[0], reverse=True)
+        
+        # Sort by start position (ascending) to identify adjacent replacements
+        replacements.sort(key=lambda x: x[0])
+        
+        # Merge adjacent replacements (where end of one == start of next)
+        merged_replacements = []
         for start, end, replacement in replacements:
+            if not merged_replacements:
+                merged_replacements.append((start, end, replacement))
+            else:
+                prev_start, prev_end, prev_replacement = merged_replacements[-1]
+                # If current replacement is adjacent to previous (start == prev_end)
+                if start == prev_end:
+                    # Merge: concatenate replacement texts
+                    new_start = prev_start
+                    new_end = end
+                    new_replacement = prev_replacement + replacement
+                    merged_replacements[-1] = (new_start, new_end, new_replacement)
+                # If current replacement overlaps previous (start < prev_end)
+                elif start < prev_end:
+                    # Overlapping: this shouldn't happen with font attacks, but handle it
+                    # by taking the union and concatenating replacements
+                    new_start = min(prev_start, start)
+                    new_end = max(prev_end, end)
+                    # For overlapping, concatenate (may create duplicate text, but safer)
+                    new_replacement = prev_replacement + replacement
+                    merged_replacements[-1] = (new_start, new_end, new_replacement)
+                else:
+                    # Not adjacent or overlapping, add as new replacement
+                    merged_replacements.append((start, end, replacement))
+        
+        # Now apply in reverse order (from end to start)
+        merged_replacements.sort(key=lambda x: x[0], reverse=True)
+        for start, end, replacement in merged_replacements:
             mutated_tex = mutated_tex[:start] + replacement + mutated_tex[end:]
         
         # Add font declarations to preamble

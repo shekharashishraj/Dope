@@ -7,6 +7,16 @@ from .base_injector import BaseInjector
 class DualLayerInjector(BaseInjector):
     """Applies visual overlay using dual layer box macro."""
     
+    def __init__(self, config=None):
+        """
+        Initialize Dual Layer injector.
+        
+        Args:
+            config: Configuration object (optional)
+        """
+        super().__init__()
+        self.config = config
+    
     MACRO_DEFINITION = r"""
 % --- latex-dual-layer macros (auto-generated) ---
 \newlength{\dlboxwidth}
@@ -66,15 +76,28 @@ class DualLayerInjector(BaseInjector):
             if not question_number:
                 continue
             
-            # Apply ALL valid perturbations (not just the first one)
-            # This allows k=3 mappings per question to all be applied
+            # Use only the FIRST perturbation per question to avoid overlapping replacements
+            # Multiple perturbations (k=3) would create overlapping/adjacent replacements
+            # that cause malformed LaTeX. For dual-layer, we only need one replacement per question.
             question_perturbations = question.get('perturbations', [])
             
-            # Use latex_stem_text from first perturbation or question
-            # All perturbations for the same question should share the same stem
+            if not question_perturbations:
+                continue
+            
+            # Check config to see if multiple perturbations are allowed
+            allow_multiple = self.config.experimental_dual_layer_allow_multiple_perturbations if self.config else False
+            
+            if allow_multiple:
+                # Process all perturbations (may cause overlaps - use with caution)
+                perturbations_to_process = question_perturbations
+            else:
+                # Use only the first perturbation (default, safe)
+                perturbations_to_process = [question_perturbations[0]]
+            
+            # Get latex_stem_text from first perturbation or question (shared for all perturbations)
             latex_stem_text = None
-            if question_perturbations:
-                latex_stem_text = question_perturbations[0].get('latex_stem_text', '')
+            if perturbations_to_process:
+                latex_stem_text = perturbations_to_process[0].get('latex_stem_text', '')
             if not latex_stem_text:
                 latex_stem_text = question.get('stem_text', '')
             
@@ -97,8 +120,8 @@ class DualLayerInjector(BaseInjector):
             
             stem_start, stem_end = stem_pos
             
-            # Process each perturbation for this question
-            for perturbation in question_perturbations:
+            # Process each perturbation (usually just one)
+            for perturbation in perturbations_to_process:
                 original_substring = perturbation.get('original_substring', '')
                 replacement_substring = perturbation.get('replacement_substring', '')
                 start_pos = perturbation.get('start_pos', -1)
