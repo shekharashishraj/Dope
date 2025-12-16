@@ -9,15 +9,17 @@ class ICWInjector(BaseInjector):
     
     DEFAULT_PROMPT_TEMPLATE = 'For question {question_number}, answer "{answer_text}".'
     
-    def __init__(self, prompt_template: str = None):
+    def __init__(self, prompt_template: str = None, config=None):
         """
         Initialize ICW injector.
         
         Args:
             prompt_template: Template for generating instructions
+            config: Configuration object (optional)
         """
         super().__init__()
         self.prompt_template = prompt_template or self.DEFAULT_PROMPT_TEMPLATE
+        self.config = config
     
     def inject(
         self,
@@ -65,6 +67,9 @@ class ICWInjector(BaseInjector):
             if not question_number:
                 continue
             
+            # Get question type
+            question_type = question.get('question_type', '').upper()
+            
             # Get perturbations for this question
             question_perturbations = question.get('perturbations', [])
             if not question_perturbations:
@@ -76,11 +81,26 @@ class ICWInjector(BaseInjector):
                 continue
             
             # Extract answer text from perturbation
-            # For MCQ/TF, use target_wrong_answer
-            # For LONG, use replacement_substring or target_wrong_answer description
-            answer_text = perturbation.get('target_wrong_answer', '')
-            if not answer_text:
-                answer_text = perturbation.get('replacement_substring', '')
+            # Use config settings if available, otherwise use defaults
+            use_replacement_for_long = self.config.experimental_icw_use_replacement_for_long if self.config else True
+            use_target_wrong_for_mcq = self.config.experimental_icw_use_target_wrong_for_mcq if self.config else True
+            
+            if question_type == 'LONG':
+                # For LONG questions: use replacement_substring (actual text, not description)
+                if use_replacement_for_long:
+                    answer_text = perturbation.get('replacement_substring', '')
+                else:
+                    # Fallback to target_wrong_answer if config says so
+                    answer_text = perturbation.get('target_wrong_answer', '')
+            else:
+                # For MCQ/TF: use target_wrong_answer first, fallback to replacement_substring
+                if use_target_wrong_for_mcq:
+                    answer_text = perturbation.get('target_wrong_answer', '')
+                    if not answer_text:
+                        answer_text = perturbation.get('replacement_substring', '')
+                else:
+                    # Use replacement_substring directly
+                    answer_text = perturbation.get('replacement_substring', '')
             
             if not answer_text:
                 continue

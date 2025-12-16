@@ -4,12 +4,162 @@ openai:
   model: "gpt-4o"
   batch_size: 5  # Number of documents per batch
   max_retries: 3
-  timeout: 60
-  temperature: 0.7
+  timeout: 120  # Timeout in seconds
+  temperature: 0.5
+  # Additional OpenAI settings
+  top_p: null  # Null means use default, set 0.0-1.0 to override
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  max_tokens: null  # Null means no limit, set integer to limit response length
 
 processing:
   input_dir: "output"
   output_suffix: "_perturbation"
   resume: false  # Skip already processed files
   mappings_per_question: 3  # Number of perturbation mappings per question
+  # Output structure control
+  use_organized_structure: true  # Use timestamp-based organized structure
+  output_base_dir: "output_perturbation"  # Base directory for organized outputs
+  shared_timestamp: true  # Use same timestamp for all docs in a run
 
+# Retry & Backoff Configuration
+retry:
+  max_retries: 3  # Override openai.max_retries if needed
+  initial_backoff: 1.0  # Initial wait time in seconds
+  max_backoff: 60.0  # Maximum wait time in seconds
+  backoff_multiplier: 2.0  # Exponential backoff multiplier
+  retry_on_rate_limit: true  # Retry on rate limit errors
+  retry_on_timeout: true  # Retry on timeout errors
+  retry_on_connection_error: true  # Retry on connection errors
+
+# Logging Configuration
+logging:
+  enabled: true
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  console_level: "INFO"  # Separate level for console output
+  file_level: "DEBUG"  # Separate level for file output
+  log_dir: "logs"
+  timezone: "America/Denver"  # Timezone for timestamps (MST default)
+  # Log file rotation
+  max_bytes: 10485760  # 10MB in bytes
+  backup_count: 5  # Number of backup log files
+  # Log content control
+  log_complete_prompts: true  # Log full prompts at DEBUG level
+  log_complete_responses: true  # Log full responses at DEBUG level
+  log_token_usage: true  # Log token usage and cost estimates
+  log_timing: true  # Log detailed timing information
+
+# Batch API Configuration
+batch_api:
+  enabled: true  # Allow batch mode
+  completion_window: "24h"  # OpenAI batch completion window
+  auto_fallback: true  # Automatically fall back to immediate mode on failure
+  check_interval: 300  # Seconds between status checks (if polling)
+  max_wait_time: null  # Maximum time to wait for batch (null = no limit)
+
+# Injection Methods Configuration
+injection:
+  # Default methods to use (can be overridden via CLI)
+  default_methods:
+    - "icw"
+    - "dual_layer"
+    - "font_attack"
+    - "icw_dual_layer"
+    - "icw_font_attack"
+  # Method-specific settings
+  methods:
+    icw:
+      enabled: true
+      use_first_perturbation_only: false  # For ICW, can use all perturbations
+    dual_layer:
+      enabled: true
+      use_first_perturbation_only: true  # Must use first only to avoid overlaps
+    font_attack:
+      enabled: true
+      base_font_path: null  # Path to base font (null = use default Roboto)
+      fonts_dir: null  # Custom fonts directory
+      generate_all_perturbations: true  # Generate PDFs for all k perturbations
+    icw_dual_layer:
+      enabled: true
+    icw_font_attack:
+      enabled: true
+
+# PDF Generation Configuration
+pdf_generation:
+  enabled: true
+  compile_pdf: true  # Compile LaTeX to PDF
+  output_base_dir: "output_attacked_pdfs"
+  # LaTeX compilation settings
+  latex_compiler: "auto"  # "auto", "pdflatex", "xelatex", "lualatex"
+  require_xetex_for_fonts: true  # Require XeLaTeX for font attack
+  compilation_timeout: 300  # Seconds to wait for PDF compilation
+  cleanup_fonts_after_compile: true  # Delete fonts after successful compilation
+  cleanup_temp_files: true  # Clean up temporary LaTeX files
+  # PDF overlay settings (for dual-layer)
+  apply_pdf_overlay: true  # Apply image overlay for dual-layer
+  overlay_search_original_pdf: true  # Search for original PDF for overlay
+
+# Prompt Customization
+prompts:
+  # Question type specific settings
+  mcq:
+    include_reasoning: false  # Include reasoning steps in prompt
+    include_answer_guidance: false  # Include answer guidance
+    prefix_note: ""  # Custom prefix note
+    retry_instructions: ""  # Custom retry instructions
+  tf:
+    include_reasoning: false
+    include_answer_guidance: false
+    prefix_note: ""
+    retry_instructions: ""
+  long:
+    include_reasoning: false
+    include_answer_guidance: false
+    prefix_note: ""
+    retry_instructions: ""
+  # Global prompt settings
+  system_message: "You are a helpful assistant that generates JSON array responses. Always return valid JSON arrays."
+  json_format_strict: true  # Enforce strict JSON format requirements
+
+# Performance & Concurrency
+performance:
+  # Delays and throttling
+  delay_between_requests: 0.0  # Seconds to wait between API requests
+  delay_between_documents: 0.0  # Seconds to wait between documents
+  delay_on_rate_limit: 1.0  # Seconds to wait on rate limit (in addition to backoff)
+  # Concurrency (for future parallel processing)
+  max_concurrent_requests: 1  # Currently not used, for future implementation
+  max_concurrent_documents: 1  # Currently not used, for future implementation
+
+# Experimental Features
+experimental:
+  # ICW logic customization
+  icw_use_replacement_for_long: true  # Use replacement_substring for LONG questions
+  icw_use_target_wrong_for_mcq: true  # Use target_wrong_answer for MCQ/TF (with fallback)
+  # Dual-layer customization
+  dual_layer_allow_multiple_perturbations: false  # Allow multiple perturbations (may cause overlaps)
+  # Font attack customization
+  font_attack_cleanup_after_compile: true  # Clean up fonts after compilation
+  # Output customization
+  include_metadata_in_output: true  # Include metadata in output JSON
+  include_timing_in_output: true  # Include timing information in output
+  include_cost_estimates_in_output: true  # Include cost estimates in output
+
+# Paths & Directories
+paths:
+  base_font: "fonts/Roboto-Regular.ttf"  # Default base font path
+  latex_compiler_path: null  # Custom path to LaTeX compiler (null = use system PATH)
+  output_perturbation: "output_perturbation"  # Base dir for perturbation outputs
+  output_pdfs: "output_attacked_pdfs"  # Base dir for PDF outputs
+  logs: "logs"  # Base dir for log files
+  temp: null  # Temp directory (null = use system temp)
+
+# Validation & Quality Control
+validation:
+  validate_perturbations: true  # Validate perturbation structure
+  validate_latex_paths: true  # Validate LaTeX file paths exist
+  validate_question_numbers: true  # Validate question numbers match
+  min_perturbations_per_question: 1  # Minimum perturbations required
+  max_perturbations_per_question: 10  # Maximum perturbations allowed
+  require_replacement_substring: true  # Require replacement_substring in perturbations
+  require_original_substring: true  # Require original_substring in perturbations

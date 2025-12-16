@@ -49,32 +49,32 @@
         {
           "question_index": 1,
           "latex_stem_text": "1. _________ framework made cracking of vulnerabilities easy like point and click.",
-          "original_substring": "point and click",
-          "replacement_substring": "drag and drop",
-          "start_pos": 64,
-          "end_pos": 79,
+          "original_substring": "cracking of vulnerabilities",
+          "replacement_substring": "exploiting systems",
+          "start_pos": 26,
+          "end_pos": 50,
           "target_wrong_answer": "A",
-          "reasoning": "Replacing 'point and click' with 'drag and drop' changes the type of interaction, making .Net a plausible option."
+          "reasoning": "By changing the focus from 'cracking vulnerabilities' to 'exploiting systems', it suggests a general-purpose framework, misleading towards .Net."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "1. _________ framework made cracking of vulnerabilities easy like point and click.",
+          "original_substring": "easy like point and click",
+          "replacement_substring": "simple to use",
+          "start_pos": 51,
+          "end_pos": 73,
+          "target_wrong_answer": "C",
+          "reasoning": "Replacing with 'simple to use' can mislead towards Zeus, which is often considered user-friendly."
         },
         {
           "question_index": 1,
           "latex_stem_text": "1. _________ framework made cracking of vulnerabilities easy like point and click.",
           "original_substring": "framework",
           "replacement_substring": "toolset",
-          "start_pos": 13,
-          "end_pos": 22,
-          "target_wrong_answer": "C",
-          "reasoning": "The term 'toolset' could associate the answer with Zeus, which is a known toolkit."
-        },
-        {
-          "question_index": 1,
-          "latex_stem_text": "1. _________ framework made cracking of vulnerabilities easy like point and click.",
-          "original_substring": "vulnerabilities",
-          "replacement_substring": "networks",
-          "start_pos": 37,
-          "end_pos": 51,
+          "start_pos": 10,
+          "end_pos": 19,
           "target_wrong_answer": "D",
-          "reasoning": "Changing 'vulnerabilities' to 'networks' may lead to associating the answer with Ettercap, a network tool."
+          "reasoning": "Changing 'framework' to 'toolset' could suggest Ettercap, which is known as a toolset for network analysis."
         }
       ]
     },
@@ -104,31 +104,31 @@
           "question_index": 2,
           "latex_stem_text": "___________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
           "original_substring": "wireless traffic analysis",
-          "replacement_substring": "WiFi data review",
-          "start_pos": 17,
-          "end_pos": 42,
+          "replacement_substring": "network packet inspection",
+          "start_pos": 19,
+          "end_pos": 44,
           "target_wrong_answer": "B",
-          "reasoning": "Replacing 'wireless traffic analysis' with 'WiFi data review' suggests focus on WiFi, misleading to option B."
+          "reasoning": "The change suggests a broader analysis technique, which could imply WiFi Traffic Sniffing."
         },
         {
           "question_index": 2,
           "latex_stem_text": "___________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
-          "original_substring": "helpful for forensic investigations",
-          "replacement_substring": "critical for security checks",
-          "start_pos": 53,
-          "end_pos": 87,
+          "original_substring": "forensic investigations",
+          "replacement_substring": "security assessments",
+          "start_pos": 72,
+          "end_pos": 94,
           "target_wrong_answer": "C",
-          "reasoning": "Changing to 'critical for security checks' suggests a detailed process, aligning with option C."
+          "reasoning": "This replacement shifts focus to security, aligning more with Wireless Traffic Checking."
         },
         {
           "question_index": 2,
           "latex_stem_text": "___________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
           "original_substring": "troubleshooting any wireless issue",
-          "replacement_substring": "optimizing network settings",
-          "start_pos": 92,
-          "end_pos": 123,
+          "replacement_substring": "enhancing network performance",
+          "start_pos": 99,
+          "end_pos": 130,
           "target_wrong_answer": "D",
-          "reasoning": "Refocusing on 'optimizing network settings' may imply a broader approach, leading to option D."
+          "reasoning": "Suggests a performance-related process, misleading towards Wireless Transmission Sniffing."
         }
       ]
     },
@@ -154,33 +154,33 @@
       "perturbations": [
         {
           "question_index": 3,
-          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and ______ have this common buffer-overflow error.' is 'C, C++'.",
-          "original_substring": "buffer-overflow",
-          "replacement_substring": "syntax",
-          "start_pos": 87,
-          "end_pos": 101,
+          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and _____ have this common buffer-overflow error.' is 'C, C++'.",
+          "original_substring": "buffer-overflow error",
+          "replacement_substring": "memory leak issue",
+          "start_pos": 98,
+          "end_pos": 117,
           "target_wrong_answer": "False",
-          "reasoning": "Changing 'buffer-overflow' to 'syntax' error misleads the focus, invalidating the original true statement."
+          "reasoning": "Changing the error type to 'memory leak issue' makes the statement false."
         },
         {
           "question_index": 3,
-          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and ______ have this common buffer-overflow error.' is 'C, C++'.",
+          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and _____ have this common buffer-overflow error.' is 'C, C++'.",
           "original_substring": "programming languages",
           "replacement_substring": "development tools",
-          "start_pos": 44,
-          "end_pos": 64,
+          "start_pos": 58,
+          "end_pos": 78,
           "target_wrong_answer": "False",
-          "reasoning": "Shifting from 'programming languages' to 'development tools' changes the scope, affecting the original answer."
+          "reasoning": "Changing to 'development tools' makes the statement inaccurate, as it shifts the focus."
         },
         {
           "question_index": 3,
-          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and ______ have this common buffer-overflow error.' is 'C, C++'.",
-          "original_substring": "have this common",
-          "replacement_substring": "may encounter a",
-          "start_pos": 76,
-          "end_pos": 92,
+          "latex_stem_text": "The correct answer to 'Applications developed by programming languages like ____ and _____ have this common buffer-overflow error.' is 'C, C++'.",
+          "original_substring": "C, C++",
+          "replacement_substring": "Python, Java",
+          "start_pos": 121,
+          "end_pos": 127,
           "target_wrong_answer": "False",
-          "reasoning": "Rephrasing to 'may encounter a' introduces ambiguity, flipping the answer to false."
+          "reasoning": "Replacing 'C, C++' with 'Python, Java' makes the statement false, as these languages are less prone to buffer-overflow errors."
         }
       ]
     },
@@ -207,32 +207,32 @@
         {
           "question_index": 4,
           "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+          "original_substring": "four-step authentication progression",
+          "replacement_substring": "three-step process",
+          "start_pos": 70,
+          "end_pos": 103,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing to 'three-step process' invalidates the original statement, making it true."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
           "original_substring": "authenticates to any AP",
-          "replacement_substring": "logs into the system",
-          "start_pos": 34,
-          "end_pos": 55,
+          "replacement_substring": "connects to a network",
+          "start_pos": 46,
+          "end_pos": 67,
           "target_wrong_answer": "True",
-          "reasoning": "Changing to 'logs into the system' alters the context significantly, impacting the original false statement."
+          "reasoning": "This shifts the focus from authentication to connection, altering the original context."
         },
         {
           "question_index": 4,
           "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
-          "original_substring": "four-step authentication",
-          "replacement_substring": "simple verification",
-          "start_pos": 71,
-          "end_pos": 93,
+          "original_substring": "wireless handshaking",
+          "replacement_substring": "secure exchange",
+          "start_pos": 134,
+          "end_pos": 152,
           "target_wrong_answer": "True",
-          "reasoning": "Replacing with 'simple verification' reduces complexity, making 'wireless handshaking' incorrect."
-        },
-        {
-          "question_index": 4,
-          "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
-          "original_substring": "progression",
-          "replacement_substring": "procedure",
-          "start_pos": 95,
-          "end_pos": 106,
-          "target_wrong_answer": "True",
-          "reasoning": "Shifting from 'progression' to 'procedure' suggests a different type of process, affecting the answer."
+          "reasoning": "The replacement suggests a different process name, making the statement true."
         }
       ]
     },
@@ -259,32 +259,32 @@
         {
           "question_index": 5,
           "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
-          "original_substring": "message digest",
-          "replacement_substring": "hash output",
-          "start_pos": 39,
-          "end_pos": 52,
-          "target_wrong_answer": "False",
-          "reasoning": "Replacing 'message digest' with 'hash output' could change the expected length value."
-        },
-        {
-          "question_index": 5,
-          "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
           "original_substring": "MD-5",
-          "replacement_substring": "SHA-1",
-          "start_pos": 23,
-          "end_pos": 27,
+          "replacement_substring": "SHA-256",
+          "start_pos": 26,
+          "end_pos": 30,
           "target_wrong_answer": "False",
-          "reasoning": "Changing 'MD-5' to 'SHA-1' alters the expected answer, as SHA-1 has a different hash length."
+          "reasoning": "SHA-256 has a different digest length, making the statement false."
         },
         {
           "question_index": 5,
           "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
           "original_substring": "128",
-          "replacement_substring": "160",
-          "start_pos": 56,
-          "end_pos": 59,
+          "replacement_substring": "256",
+          "start_pos": 63,
+          "end_pos": 66,
           "target_wrong_answer": "False",
-          "reasoning": "Changing '128' to '160' makes the statement false as it doesn't match MD-5's actual digest length."
+          "reasoning": "Changing the digest length to 256 makes the statement false."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+          "original_substring": "message digest",
+          "replacement_substring": "hash output",
+          "start_pos": 44,
+          "end_pos": 58,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'message digest' to 'hash output' disrupts the context, making it false."
         }
       ]
     },
@@ -312,31 +312,31 @@
           "question_index": 6,
           "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
           "original_substring": "port states",
-          "replacement_substring": "network statuses",
-          "start_pos": 27,
-          "end_pos": 38,
+          "replacement_substring": "service types",
+          "start_pos": 32,
+          "end_pos": 43,
           "target_wrong_answer": "False",
-          "reasoning": "Altering 'port states' to 'network statuses' broadens the focus, rendering the answer false."
+          "reasoning": "Changing 'port states' to 'service types' alters the meaning, making it false."
         },
         {
           "question_index": 6,
           "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
-          "original_substring": "Nmap",
-          "replacement_substring": "Wireshark",
-          "start_pos": 63,
-          "end_pos": 67,
+          "original_substring": "Open, filtered, unfiltered",
+          "replacement_substring": "Open, closed",
+          "start_pos": 66,
+          "end_pos": 91,
           "target_wrong_answer": "False",
-          "reasoning": "Switching 'Nmap' to 'Wireshark' introduces a different tool, changing the expected response."
+          "reasoning": "Altering the list of states to 'Open, closed' changes the answer, making it false."
         },
         {
           "question_index": 6,
           "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
-          "original_substring": "determined",
-          "replacement_substring": "analyzed",
-          "start_pos": 39,
-          "end_pos": 49,
+          "original_substring": "determined by Nmap",
+          "replacement_substring": "used in firewalls",
+          "start_pos": 44,
+          "end_pos": 61,
           "target_wrong_answer": "False",
-          "reasoning": "The shift from 'determined' to 'analyzed' could imply a different aspect of network scanning."
+          "reasoning": "Changing the determining factor to 'used in firewalls' shifts the context, making it false."
         }
       ]
     },
@@ -363,32 +363,32 @@
         {
           "question_index": 7,
           "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+          "original_substring": "stream cipher",
+          "replacement_substring": "block cipher",
+          "start_pos": 32,
+          "end_pos": 45,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'stream cipher' to 'block cipher' affects the truth value, making it false."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
           "original_substring": "perfect secrecy",
           "replacement_substring": "absolute security",
-          "start_pos": 37,
-          "end_pos": 52,
+          "start_pos": 49,
+          "end_pos": 64,
           "target_wrong_answer": "False",
-          "reasoning": "Changing to 'absolute security' modifies the concept, potentially invalidating the original statement."
+          "reasoning": "Replacing with 'absolute security' changes the focus, making it false."
         },
         {
           "question_index": 7,
           "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
-          "original_substring": "shorter",
-          "replacement_substring": "longer",
-          "start_pos": 75,
-          "end_pos": 82,
+          "original_substring": "key is shorter than the message",
+          "replacement_substring": "key is longer than the message",
+          "start_pos": 70,
+          "end_pos": 100,
           "target_wrong_answer": "False",
-          "reasoning": "Altering 'shorter' to 'longer' reverses the logic, making the true statement false."
-        },
-        {
-          "question_index": 7,
-          "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
-          "original_substring": "key",
-          "replacement_substring": "cipher",
-          "start_pos": 68,
-          "end_pos": 71,
-          "target_wrong_answer": "False",
-          "reasoning": "Replacing 'key' with 'cipher' changes the focus, affecting the validity of the answer."
+          "reasoning": "Changing the key length relation makes the statement inaccurate, flipping the answer."
         }
       ]
     },
@@ -417,30 +417,30 @@
           "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
           "original_substring": "presentation layer issues",
           "replacement_substring": "network layer problems",
-          "start_pos": 56,
-          "end_pos": 80,
+          "start_pos": 51,
+          "end_pos": 76,
           "target_wrong_answer": "False",
-          "reasoning": "Changing the focus to 'network layer problems' shifts the context, rendering the original answer incorrect."
+          "reasoning": "Changing the focus to 'network layer problems' alters the context, making it false."
         },
         {
           "question_index": 8,
           "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
-          "original_substring": "non-existent",
-          "replacement_substring": "inadequate",
-          "start_pos": 101,
-          "end_pos": 113,
+          "original_substring": "Weak or non-existent authentication mechanisms",
+          "replacement_substring": "Strong encryption methods",
+          "start_pos": 80,
+          "end_pos": 122,
           "target_wrong_answer": "False",
-          "reasoning": "This change to 'inadequate' suggests a different level of security vulnerability, affecting the truth value."
+          "reasoning": "Altering the answer to 'Strong encryption methods' changes the truth value, making it false."
         },
         {
           "question_index": 8,
           "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
-          "original_substring": "Weak",
-          "replacement_substring": "Strong",
-          "start_pos": 90,
-          "end_pos": 94,
+          "original_substring": "following is not an example",
+          "replacement_substring": "following is an instance",
+          "start_pos": 25,
+          "end_pos": 51,
           "target_wrong_answer": "False",
-          "reasoning": "Changing to 'Strong' completely reverses the original meaning, making the true statement false."
+          "reasoning": "Reversing the logic from 'not an example' to 'an instance' flips the answer."
         }
       ]
     },
@@ -468,31 +468,31 @@
           "question_index": 9,
           "latex_stem_text": "The correct answer to 'What tool can be used to perform SNMP enumeration?' is 'IP Network Browser'.",
           "original_substring": "SNMP enumeration",
-          "replacement_substring": "DNS lookup",
-          "start_pos": 41,
-          "end_pos": 57,
+          "replacement_substring": "network scanning",
+          "start_pos": 43,
+          "end_pos": 59,
           "target_wrong_answer": "False",
-          "reasoning": "By changing to 'DNS lookup', the tool 'IP Network Browser' becomes an irrelevant answer."
+          "reasoning": "Changing 'SNMP enumeration' to 'network scanning' alters the context, making it false."
         },
         {
           "question_index": 9,
           "latex_stem_text": "The correct answer to 'What tool can be used to perform SNMP enumeration?' is 'IP Network Browser'.",
           "original_substring": "IP Network Browser",
           "replacement_substring": "Wireshark",
-          "start_pos": 63,
-          "end_pos": 80,
+          "start_pos": 67,
+          "end_pos": 84,
           "target_wrong_answer": "False",
-          "reasoning": "Switching 'IP Network Browser' to 'Wireshark' alters the expected tool, flipping the truth value."
+          "reasoning": "Changing the tool to 'Wireshark' makes the statement false, as it is not typically used for SNMP enumeration."
         },
         {
           "question_index": 9,
           "latex_stem_text": "The correct answer to 'What tool can be used to perform SNMP enumeration?' is 'IP Network Browser'.",
-          "original_substring": "tool",
-          "replacement_substring": "software",
-          "start_pos": 22,
-          "end_pos": 26,
+          "original_substring": "can be used to perform",
+          "replacement_substring": "is typically used for",
+          "start_pos": 24,
+          "end_pos": 45,
           "target_wrong_answer": "False",
-          "reasoning": "Changing 'tool' to 'software' broadens the scope, potentially invalidating the specific answer."
+          "reasoning": "Altering the phrase to 'is typically used for' changes the truth value, making it false."
         }
       ]
     },
@@ -520,31 +520,31 @@
           "question_index": 10,
           "latex_stem_text": "The correct answer to 'A session symmetric key between two parties is used' is 'Only once'.",
           "original_substring": "symmetric key",
-          "replacement_substring": "encryption protocol",
+          "replacement_substring": "encryption key",
           "start_pos": 25,
-          "end_pos": 38,
+          "end_pos": 39,
           "target_wrong_answer": "False",
-          "reasoning": "Switching to 'encryption protocol' changes the context, making 'Only once' an inaccurate response."
+          "reasoning": "Changing 'symmetric key' to 'encryption key' can alter the context, making it false."
         },
         {
           "question_index": 10,
           "latex_stem_text": "The correct answer to 'A session symmetric key between two parties is used' is 'Only once'.",
           "original_substring": "Only once",
-          "replacement_substring": "multiple times",
-          "start_pos": 62,
-          "end_pos": 71,
+          "replacement_substring": "Multiple times",
+          "start_pos": 66,
+          "end_pos": 75,
           "target_wrong_answer": "False",
-          "reasoning": "Changing 'Only once' to 'multiple times' directly contradicts the original true statement."
+          "reasoning": "Changing 'Only once' to 'Multiple times' directly contradicts the original answer, making it false."
         },
         {
           "question_index": 10,
           "latex_stem_text": "The correct answer to 'A session symmetric key between two parties is used' is 'Only once'.",
           "original_substring": "between two parties",
-          "replacement_substring": "in a network",
-          "start_pos": 39,
-          "end_pos": 56,
+          "replacement_substring": "among several users",
+          "start_pos": 40,
+          "end_pos": 58,
           "target_wrong_answer": "False",
-          "reasoning": "Altering to 'in a network' shifts the context, affecting the truth value of the statement."
+          "reasoning": "Changing 'between two parties' to 'among several users' shifts the context, making it false."
         }
       ]
     },
@@ -572,31 +572,31 @@
           "question_index": 11,
           "latex_stem_text": "The correct answer to 'Man in the middle attack can endanger the security of Diffie Hellman method if two parties are not' is 'Joined'.",
           "original_substring": "Diffie Hellman method",
-          "replacement_substring": "RSA protocol",
-          "start_pos": 56,
-          "end_pos": 76,
+          "replacement_substring": "RSA encryption",
+          "start_pos": 54,
+          "end_pos": 74,
           "target_wrong_answer": "True",
-          "reasoning": "Replacing with 'RSA protocol' changes the cryptographic method, affecting the original false statement."
+          "reasoning": "Changing to 'RSA encryption' makes the statement true as it alters the context."
         },
         {
           "question_index": 11,
           "latex_stem_text": "The correct answer to 'Man in the middle attack can endanger the security of Diffie Hellman method if two parties are not' is 'Joined'.",
-          "original_substring": "security",
-          "replacement_substring": "integrity",
-          "start_pos": 33,
-          "end_pos": 41,
+          "original_substring": "Man in the middle attack",
+          "replacement_substring": "Replay attack",
+          "start_pos": 25,
+          "end_pos": 47,
           "target_wrong_answer": "True",
-          "reasoning": "Altering 'security' to 'integrity' shifts the focus, potentially flipping the answer to true."
+          "reasoning": "Replacing with 'Replay attack' changes the type of threat, making the statement true."
         },
         {
           "question_index": 11,
           "latex_stem_text": "The correct answer to 'Man in the middle attack can endanger the security of Diffie Hellman method if two parties are not' is 'Joined'.",
-          "original_substring": "Joined",
-          "replacement_substring": "Verified",
-          "start_pos": 91,
-          "end_pos": 97,
+          "original_substring": "two parties are not",
+          "replacement_substring": "the connection is",
+          "start_pos": 85,
+          "end_pos": 104,
           "target_wrong_answer": "True",
-          "reasoning": "Switching to 'Verified' changes the condition, impacting the original false statement."
+          "reasoning": "Changing to 'the connection is' changes the requirement, making it true."
         }
       ]
     },
@@ -624,31 +624,31 @@
           "question_index": 12,
           "latex_stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
           "original_substring": "IP address spoofing",
-          "replacement_substring": "MAC address tampering",
-          "start_pos": 27,
-          "end_pos": 45,
+          "replacement_substring": "MAC address spoofing",
+          "start_pos": 25,
+          "end_pos": 43,
           "target_wrong_answer": "False",
-          "reasoning": "Changing to 'MAC address tampering' shifts the focus, invalidating the original detection method."
+          "reasoning": "Changing to 'MAC address spoofing' alters the detection method, making it false."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
+          "original_substring": "Comparing the TTL values",
+          "replacement_substring": "Monitoring packet size",
+          "start_pos": 60,
+          "end_pos": 82,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing the detection method to 'Monitoring packet size' alters the truth, making it false."
         },
         {
           "question_index": 12,
           "latex_stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
           "original_substring": "detected",
           "replacement_substring": "prevented",
-          "start_pos": 46,
-          "end_pos": 54,
+          "start_pos": 44,
+          "end_pos": 52,
           "target_wrong_answer": "False",
-          "reasoning": "Switching to 'prevented' changes the focus from detection to prevention, affecting the validity."
-        },
-        {
-          "question_index": 12,
-          "latex_stem_text": "The correct answer to 'How is IP address spoofing detected?' is 'Comparing the TTL values of the actual and spoofed addresses'.",
-          "original_substring": "TTL values",
-          "replacement_substring": "packet sizes",
-          "start_pos": 70,
-          "end_pos": 80,
-          "target_wrong_answer": "False",
-          "reasoning": "Replacing 'TTL values' with 'packet sizes' changes the detection method, affecting the answer."
+          "reasoning": "Changing 'detected' to 'prevented' shifts the focus, making it false."
         }
       ]
     },
@@ -676,31 +676,31 @@
           "question_index": 13,
           "latex_stem_text": "The correct answer to 'Which of the following is not a block cipher operating mode?' is 'CBF'.",
           "original_substring": "block cipher operating mode",
-          "replacement_substring": "encryption algorithm",
-          "start_pos": 50,
-          "end_pos": 76,
+          "replacement_substring": "encryption method",
+          "start_pos": 38,
+          "end_pos": 63,
           "target_wrong_answer": "False",
-          "reasoning": "Changing to 'encryption algorithm' expands the scope, rendering 'CBF' an irrelevant answer."
+          "reasoning": "Changing to 'encryption method' alters the context, making it false."
         },
         {
           "question_index": 13,
           "latex_stem_text": "The correct answer to 'Which of the following is not a block cipher operating mode?' is 'CBF'.",
           "original_substring": "CBF",
           "replacement_substring": "ECB",
-          "start_pos": 83,
-          "end_pos": 86,
+          "start_pos": 67,
+          "end_pos": 70,
           "target_wrong_answer": "False",
-          "reasoning": "Switching to 'ECB' makes the statement true, as ECB is a valid block cipher mode."
+          "reasoning": "Changing the answer to 'ECB' alters the truth value, making it false."
         },
         {
           "question_index": 13,
           "latex_stem_text": "The correct answer to 'Which of the following is not a block cipher operating mode?' is 'CBF'.",
-          "original_substring": "following",
-          "replacement_substring": "options",
-          "start_pos": 31,
-          "end_pos": 40,
+          "original_substring": "not a block cipher",
+          "replacement_substring": "a standard",
+          "start_pos": 38,
+          "end_pos": 54,
           "target_wrong_answer": "False",
-          "reasoning": "Changing 'following' to 'options' broadens the focus, potentially altering the truth value."
+          "reasoning": "Changing to 'a standard' shifts the focus, making it false."
         }
       ]
     },
@@ -727,32 +727,32 @@
         {
           "question_index": 14,
           "latex_stem_text": "The correct answer to 'The message must be encrypted at the sender site and decrypted at the' is 'Sender Site'.",
-          "original_substring": "decrypted",
-          "replacement_substring": "compressed",
-          "start_pos": 59,
-          "end_pos": 68,
+          "original_substring": "sender site",
+          "replacement_substring": "receiver end",
+          "start_pos": 39,
+          "end_pos": 50,
           "target_wrong_answer": "True",
-          "reasoning": "Changing 'decrypted' to 'compressed' alters the process, making the original statement true."
+          "reasoning": "Changing to 'receiver end' aligns with typical encryption logic, making it true."
         },
         {
           "question_index": 14,
           "latex_stem_text": "The correct answer to 'The message must be encrypted at the sender site and decrypted at the' is 'Sender Site'.",
-          "original_substring": "Sender Site",
-          "replacement_substring": "Receiver End",
-          "start_pos": 73,
-          "end_pos": 84,
+          "original_substring": "decrypted at the",
+          "replacement_substring": "processed by the",
+          "start_pos": 51,
+          "end_pos": 65,
           "target_wrong_answer": "True",
-          "reasoning": "Switching to 'Receiver End' flips the meaning, affecting the original false statement."
+          "reasoning": "Changing 'decrypted at the' to 'processed by the' shifts the meaning, making it true."
         },
         {
           "question_index": 14,
           "latex_stem_text": "The correct answer to 'The message must be encrypted at the sender site and decrypted at the' is 'Sender Site'.",
-          "original_substring": "encrypted",
-          "replacement_substring": "signed",
-          "start_pos": 23,
-          "end_pos": 32,
+          "original_substring": "encrypted at the sender site",
+          "replacement_substring": "sent securely",
+          "start_pos": 20,
+          "end_pos": 45,
           "target_wrong_answer": "True",
-          "reasoning": "Replacing 'encrypted' with 'signed' shifts the focus, making the original statement true."
+          "reasoning": "Changing to 'sent securely' alters the context, making it true."
         }
       ]
     },
@@ -779,32 +779,32 @@
         {
           "question_index": 15,
           "latex_stem_text": "The correct answer to 'What does EXE do when the STP solver times out on a constraint query for a particular path?' is 'Assume that the query is not satisfiable and stop executing the path'.",
-          "original_substring": "times out",
-          "replacement_substring": "fails",
-          "start_pos": 47,
-          "end_pos": 55,
+          "original_substring": "EXE",
+          "replacement_substring": "the system",
+          "start_pos": 25,
+          "end_pos": 28,
           "target_wrong_answer": "False",
-          "reasoning": "Replacing 'times out' with 'fails' changes the condition, affecting the truth value of the statement."
+          "reasoning": "Changing 'EXE' to 'the system' alters the context, making it false."
         },
         {
           "question_index": 15,
           "latex_stem_text": "The correct answer to 'What does EXE do when the STP solver times out on a constraint query for a particular path?' is 'Assume that the query is not satisfiable and stop executing the path'.",
           "original_substring": "constraint query",
-          "replacement_substring": "simple check",
-          "start_pos": 62,
-          "end_pos": 78,
+          "replacement_substring": "task execution",
+          "start_pos": 55,
+          "end_pos": 71,
           "target_wrong_answer": "False",
-          "reasoning": "Shifting to 'simple check' broadens the context, changing the expected outcome."
+          "reasoning": "Changing to 'task execution' shifts the focus, making it false."
         },
         {
           "question_index": 15,
           "latex_stem_text": "The correct answer to 'What does EXE do when the STP solver times out on a constraint query for a particular path?' is 'Assume that the query is not satisfiable and stop executing the path'.",
-          "original_substring": "not satisfiable",
-          "replacement_substring": "unsolvable",
-          "start_pos": 96,
-          "end_pos": 110,
+          "original_substring": "stop executing the path",
+          "replacement_substring": "retry the process",
+          "start_pos": 107,
+          "end_pos": 129,
           "target_wrong_answer": "False",
-          "reasoning": "Replacing 'not satisfiable' with 'unsolvable' introduces ambiguity, potentially invalidating the statement."
+          "reasoning": "Changing the action to 'retry the process' alters the truth, making it false."
         }
       ]
     },
@@ -828,32 +828,32 @@
         {
           "question_index": 16,
           "latex_stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda function.",
-          "original_substring": "divisible",
-          "replacement_substring": "greater",
-          "start_pos": 33,
-          "end_pos": 42,
-          "target_wrong_answer": "focuses on comparison",
-          "reasoning": "Changing 'divisible' to 'greater' shifts the focus from divisibility to comparison, affecting the expected logic."
+          "original_substring": "divisible by m or n",
+          "replacement_substring": "greater than m and n",
+          "start_pos": 27,
+          "end_pos": 45,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Changing the condition from 'divisible' to 'greater than' alters the expected output."
         },
         {
           "question_index": 16,
           "latex_stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda function.",
-          "original_substring": "m or n",
-          "replacement_substring": "both m and n",
-          "start_pos": 46,
-          "end_pos": 52,
-          "target_wrong_answer": "requires conjunction",
-          "reasoning": "Switching to 'both m and n' alters the condition, requiring conjunction instead of disjunction."
-        },
-        {
-          "question_index": 16,
-          "latex_stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda function.",
-          "original_substring": "lambda function",
-          "replacement_substring": "list comprehension",
+          "original_substring": "using lambda function",
+          "replacement_substring": "iteratively",
           "start_pos": 74,
-          "end_pos": 89,
-          "target_wrong_answer": "changes method",
-          "reasoning": "Replacing 'lambda function' with 'list comprehension' changes the programming approach, deviating from the original solution."
+          "end_pos": 96,
+          "target_wrong_answer": "changes key concept",
+          "reasoning": "Removing the lambda function requirement changes the programming approach."
+        },
+        {
+          "question_index": 16,
+          "latex_stem_text": "Write a function to find numbers divisible by m or n from a list of numbers using lambda function.",
+          "original_substring": "list of numbers",
+          "replacement_substring": "array of integers",
+          "start_pos": 50,
+          "end_pos": 64,
+          "target_wrong_answer": "focuses on different aspect",
+          "reasoning": "Changing 'list' to 'array' shifts the data structure, affecting the implementation."
         }
       ]
     }

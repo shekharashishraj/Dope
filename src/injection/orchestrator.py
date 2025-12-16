@@ -22,14 +22,16 @@ class InjectionOrchestrator:
         "icw_font_attack": ICWFontAttackInjector,
     }
     
-    def __init__(self, output_dir: Path = None):
+    def __init__(self, output_dir: Path = None, config=None):
         """
         Initialize orchestrator.
         
         Args:
             output_dir: Base output directory for generated files
+            config: Configuration object (optional)
         """
         self.output_dir = output_dir or Path("output")
+        self.config = config
     
     def process_document(
         self,
@@ -49,7 +51,11 @@ class InjectionOrchestrator:
             Dictionary with results for each method
         """
         if methods is None:
-            methods = list(self.INJECTION_METHODS.keys())
+            # Use default methods from config if available
+            if self.config:
+                methods = [m for m in self.config.injection_default_methods if self.config.injection_method_enabled(m)]
+            else:
+                methods = list(self.INJECTION_METHODS.keys())
         
         # Load perturbation data
         with open(perturbation_json_path, 'r', encoding='utf-8') as f:
@@ -120,7 +126,12 @@ class InjectionOrchestrator:
                         # Initialize injector
                         print(f"[Orchestrator] Initializing {method_name} injector for perturbation {pert_idx}...")
                         injector_class = self.INJECTION_METHODS[method_name]
-                        injector = injector_class()
+                        # Pass config to injector if it accepts it
+                        try:
+                            injector = injector_class(config=self.config)
+                        except TypeError:
+                            # Injector doesn't accept config parameter, use default
+                            injector = injector_class()
                         print(f"[Orchestrator] {method_name} injector initialized")
                         
                         # Apply injection with filtered perturbations
@@ -159,19 +170,27 @@ class InjectionOrchestrator:
                             pert_result["fonts_generated"] = len(generated_fonts) if "generated_fonts" in locals() else 0
                         
                         # Compile PDF if requested
-                        if compile_pdf:
-                            require_xetex = True  # Font attack always uses XeTeX
+                        if compile_pdf and (not self.config or self.config.pdf_generation_compile_pdf):
+                            require_xetex = self.config.pdf_generation_require_xetex_for_fonts if self.config else True  # Font attack always uses XeTeX
+                            compilation_timeout = self.config.pdf_generation_compilation_timeout if self.config else 300
                             pdf_result = self._compile_pdf(
                                 modified_tex_path,
                                 latex_path.parent,
                                 output_base.with_suffix('.pdf'),
                                 require_xetex=require_xetex,
-                                fonts_dir=fonts_dir
+                                fonts_dir=fonts_dir,
+                                timeout=compilation_timeout
                             )
                             pert_result["pdf_compilation"] = pdf_result
                             if pdf_result.get("success"):
                                 compiled_pdf = output_base.with_suffix('.pdf')
                                 pert_result["pdf_path"] = str(compiled_pdf)
+                                
+                                # Clean up malicious fonts after successful PDF compilation
+                                cleanup_fonts = self.config.pdf_generation_cleanup_fonts_after_compile if self.config else True
+                                if fonts_dir and fonts_dir.exists() and cleanup_fonts:
+                                    self._cleanup_fonts(fonts_dir)
+                                    pert_result["fonts_cleaned"] = True
                         
                         perturbation_results.append(pert_result)
                     
@@ -187,7 +206,12 @@ class InjectionOrchestrator:
                     # Initialize injector
                     print(f"[Orchestrator] Initializing {method_name} injector...")
                     injector_class = self.INJECTION_METHODS[method_name]
-                    injector = injector_class()
+                    # Pass config to injector if it accepts it
+                    try:
+                        injector = injector_class(config=self.config)
+                    except TypeError:
+                        # Injector doesn't accept config parameter, use default
+                        injector = injector_class()
                     print(f"[Orchestrator] {method_name} injector initialized")
                     
                     # Apply injection
@@ -225,7 +249,8 @@ class InjectionOrchestrator:
                             result["pdf_path"] = str(compiled_pdf)
                             
                             # Apply PDF-level dual-layer image overlay if needed
-                            if "dual_layer" in method_name and "font_attack" not in method_name:
+                            apply_overlay = self.config.pdf_generation_apply_pdf_overlay if self.config else True
+                            if apply_overlay and "dual_layer" in method_name and "font_attack" not in method_name:
                                 from .pdf_overlay_dual_layer import apply_image_overlay_dual_layer
                                 final_pdf = output_base.parent / f"{output_base.name}_final.pdf"
                                 
@@ -264,7 +289,8 @@ class InjectionOrchestrator:
                                             original_pdf = self.output_dir.parent / pdf_path_str
                                 
                                 # Fallback: try common locations
-                                if not original_pdf or not original_pdf.exists():
+                                search_original = self.config.pdf_generation_overlay_search_original_pdf if self.config else True
+                                if search_original and (not original_pdf or not original_pdf.exists()):
                                     # Try pdf_documents folder
                                     base_name = latex_path.stem
                                     # Remove method suffixes
@@ -340,7 +366,8 @@ class InjectionOrchestrator:
         assets_dir: Path,
         output_pdf: Path,
         require_xetex: bool = False,
-        fonts_dir: Optional[Path] = None
+        fonts_dir: Optional[Path] = None,
+        timeout: int = 300
     ) -> Dict[str, Any]:
         """
         Compile LaTeX to PDF.
@@ -382,10 +409,19 @@ class InjectionOrchestrator:
                     print(f"[Orchestrator] Copied single font file")
             
             # Compile with appropriate compiler
-            # Font attack methods require XeTeX
+            # Use config to determine compiler preference
+            compiler_pref = self.config.pdf_generation_latex_compiler if self.config else "auto"
+            
             if require_xetex:
                 compilers = ['xelatex']
+            elif compiler_pref == "xelatex":
+                compilers = ['xelatex']
+            elif compiler_pref == "pdflatex":
+                compilers = ['pdflatex']
+            elif compiler_pref == "lualatex":
+                compilers = ['lualatex']
             else:
+                # Auto: try xelatex first, then pdflatex
                 compilers = ['xelatex', 'pdflatex']
             
             success = False
@@ -398,7 +434,7 @@ class InjectionOrchestrator:
                         cwd=temp_dir,
                         capture_output=True,
                         text=True,
-                        timeout=60
+                        timeout=timeout
                     )
                     
                     log_content = f"Compiler: {compiler}\n"
@@ -437,4 +473,21 @@ class InjectionOrchestrator:
             }
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
+    
+    def _cleanup_fonts(self, fonts_dir: Path) -> None:
+        """
+        Delete malicious fonts directory after successful PDF compilation.
+        
+        Args:
+            fonts_dir: Path to the fonts directory to delete
+        """
+        try:
+            if fonts_dir.exists():
+                print(f"[Orchestrator] Cleaning up fonts directory: {fonts_dir}")
+                shutil.rmtree(fonts_dir, ignore_errors=True)
+                print(f"[Orchestrator] Successfully deleted fonts directory: {fonts_dir}")
+            else:
+                print(f"[Orchestrator] Fonts directory does not exist: {fonts_dir}")
+        except Exception as e:
+            print(f"[Orchestrator] Warning: Failed to cleanup fonts directory {fonts_dir}: {e}")
 

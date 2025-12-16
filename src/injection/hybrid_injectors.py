@@ -9,10 +9,11 @@ from .font_attack_injector import FontAttackInjector
 class ICWDualLayerInjector:
     """Hybrid: ICW + Dual Layer."""
     
-    def __init__(self):
+    def __init__(self, config=None):
         """Initialize hybrid injector."""
-        self.icw_injector = ICWInjector()
-        self.dual_layer_injector = DualLayerInjector()
+        self.config = config
+        self.icw_injector = ICWInjector(config=config)
+        self.dual_layer_injector = DualLayerInjector(config=config)
     
     def inject(
         self,
@@ -53,9 +54,10 @@ class ICWDualLayerInjector:
 class ICWFontAttackInjector:
     """Hybrid: ICW + Font Attack."""
     
-    def __init__(self, fonts_dir=None):
+    def __init__(self, fonts_dir=None, config=None):
         """Initialize hybrid injector."""
-        self.icw_injector = ICWInjector()
+        self.config = config
+        self.icw_injector = ICWInjector(config=config)
         self.font_attack_injector = FontAttackInjector(fonts_dir=fonts_dir)
     
     def inject(
