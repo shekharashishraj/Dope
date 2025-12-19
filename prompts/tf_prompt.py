@@ -2,7 +2,7 @@
 from typing import Dict, Any
 
 
-TRUE_FALSE_REPLACEMENT_PROMPT_TEMPLATE = """You are an expert at generating text substitutions for True/False questions.
+TRUE_FALSE_REPLACEMENT_PROMPT_TEMPLATE = r"""You are an expert at generating text substitutions for True/False questions.
 
 Given:
 - LaTeX code for the question stem: {latex_stem_text}

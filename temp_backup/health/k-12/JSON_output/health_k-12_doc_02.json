@@ -1,0 +1,286 @@
+{
+  "docid": "health_k-12_doc_02",
+  "document_name": "Health - K-12 Level Assessment 2",
+  "domain": "health",
+  "academic_level": "K-12",
+  "subjects": [
+    "nutrition"
+  ],
+  "combination_used": [
+    "mmlu_health_mcq",
+    "mmlu_health_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health\\k-12\\latex_documents\\health_k-12_doc_02.tex",
+    "pdf_file": "output\\health\\k-12\\pdf_documents\\health_k-12_doc_02.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_k-12_doc_02_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_k-12_doc_02_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_k-12_doc_02_health_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Higher dietary sodium (salt) intake is generally associated with:",
+      "options": {
+        "A": "Decreased calcium excretion in the urine",
+        "B": "Increased risk of fracture",
+        "C": "Decreased dietary calcium absorption",
+        "D": "Negative calcium balance and bone mineral loss"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Negative calcium balance and bone mineral loss",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9446"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_k-12_doc_02_health_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "The measurement of a specific biochemical status index for a micronutrient such as vitamin\nC is most likely to be useful in practice to estimate:",
+      "options": {
+        "A": "The presence or risk of a clinical deficiency, such as clinical scurvy.",
+        "B": "The overall quality of a person's diet",
+        "C": "The tissue levels, or body status, of that nutrient.",
+        "D": "Overall health and freedom from disease."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - The tissue levels, or body status, of that nutrient.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9498"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_k-12_doc_02_health_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of two hormones act on the hypothalamus to increase satiety and hunger,\nrespectively?",
+      "options": {
+        "A": "Leptin and insulin",
+        "B": "Leptin and ghrelin",
+        "C": "Ghrelin and leptin",
+        "D": "Ghrelin and insulin"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Leptin and ghrelin",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9658"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_k-12_doc_02_health_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following statements about glucose metabolism is correct?",
+      "options": {
+        "A": "Glucagon increases the rate of glycolysis",
+        "B": "Glycolysis requires NADP+",
+        "C": "In glycolysis, glucose is cleaved into two three-carbon products",
+        "D": "The end-product of glycolysis in red blood cells is pyruvate"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - In glycolysis, glucose is cleaved into two three-carbon products",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9530"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_k-12_doc_02_health_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which vitamin is required for synthesis of the blood clotting proteins?",
+      "options": {
+        "A": "Vitamin A",
+        "B": "Vitamin D",
+        "C": "Vitamin E",
+        "D": "Vitamin K"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Vitamin K",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9433"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_k-12_doc_02_health_tf_1",
+      "question_type": "TF",
+      "stem_text": "Acute binge drinking is associated with a condition known as Holiday heart syndrome, which affects heart rhythm.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9427"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_k-12_doc_02_health_tf_2",
+      "question_type": "TF",
+      "stem_text": "The Western diet is known to support brain health and prevent cognitive decline as people age.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'The Mediterranean diet'.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9578"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_k-12_doc_02_health_tf_3",
+      "question_type": "TF",
+      "stem_text": "Food allergies usually occur only after an individual has been sensitized by prior exposure to the allergenic food.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9618"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_k-12_doc_02_health_tf_4",
+      "question_type": "TF",
+      "stem_text": "Additional dietary protein may reduce the risk of hip fractures by decreasing bone density.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Stimulate production of insulin-like growth hormone'.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "9700"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_k-12_doc_02_health_tf_5",
+      "question_type": "TF",
+      "stem_text": "Macrobiotic and vegan diets are typically low in sugar, focusing on whole, natural foods.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_nutrition",
+        "source_id": "15064"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_k-12_doc_02_health_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of acetaldehyde in cancer development and analyze how alcohol consumption\ncan influence the formation of this metabolite in the body.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "acetaldehyde. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "9565"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_k-12_doc_02_health_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss how acrodermatitis enteropathica, an inborn error of metabolism, leads to zinc\ndeficiency and analyze its effects on health and development.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Acrodermatitis enteropathica. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "9480"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

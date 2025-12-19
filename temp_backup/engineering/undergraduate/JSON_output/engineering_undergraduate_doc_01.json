@@ -1,0 +1,294 @@
+{
+  "docid": "engineering_undergraduate_doc_01",
+  "document_name": "Engineering - Undergraduate Level Assessment 1",
+  "domain": "engineering",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "electrical_engineering",
+    "engineering"
+  ],
+  "combination_used": [
+    "mmlu_engineering_mcq",
+    "mmlu_engineering_tf",
+    "mmlu_pro_engineering_mcq",
+    "engineering_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\engineering\\undergraduate\\latex_documents\\engineering_undergraduate_doc_01.tex",
+    "pdf_file": "output\\engineering\\undergraduate\\pdf_documents\\engineering_undergraduate_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/engineering_undergraduate_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/engineering_undergraduate_doc_01_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Find the solution for the equationX=AX+bu;X(0) = X\\_0 where\nA=\\ensuremath{\\vert}10\\ensuremath{\\vert},b=\\ensuremath{\\vert}1\\ensuremath{\\vert},X\\_0 =\\ensuremath{\\vert}- 1\\ensuremath{\\vert}, \\ensuremath{\\vert}- 22\\ensuremath{\\vert}\\ensuremath{\\vert}2\\ensuremath{\\vert}\\ensuremath{\\vert}0\\ensuremath{\\vert} u(t)\n= \\ensuremath{\\delta}(t) (impulse function).",
+      "options": {
+        "A": "-3",
+        "B": "2",
+        "C": "0",
+        "D": "3",
+        "E": "10"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 0",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "11615"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Use partial fraction expansion to find the inverse z-transform of F (z) = [\\{2z\\^{}2 - 2z\\} /\n\\{(z - 3) (z - 5)\\^{}2\\}].",
+      "options": {
+        "A": "f [n] = 4nu[n] + [(5/6)n - 1] 6\\^{}n u[n]",
+        "B": "f [n] = 6nu[n] + [(2/3)n - 1] 3\\^{}n u[n]",
+        "C": "f [n] = 3\\^{}(n+1)u[n] - 5\\^{}n u[n]",
+        "D": "f [n] = 3nu[n] + [(4/5)n - 1] 5\\^{}n u[n]",
+        "E": "f [n] = [(2/3)n + 1] (3/2)\\^{}n u[n] - 2\\^{}(n-1) u[n]"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - f [n] = 3nu[n] + [(4/5)n - 1] 5\\^{}n u[n]",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "11317"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "A voltage source 60cos1000t V is in series with a 2-k\\ensuremath{\\Omega} resistor and a 1\n-\\ensuremath{\\muFcapacitor}. Findi\\_forced.",
+      "options": {
+        "A": "i\\_forced= 28cos1000t - 14 sin 1000tmA",
+        "B": "i\\_forced= 24cos1000t - 12 sin 1000tmA",
+        "C": "i\\_forced= 20cos1000t + 10 sin 1000tmA",
+        "D": "i\\_forced= 30cos1000t - 15 sin 1000tmA",
+        "E": "i\\_forced= 15cos1000t - 30 sin 1000tmA"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - i\\_forced= 24cos1000t - 12 sin 1000tmA",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "11530"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "The rating of a certain machine from the name-plate is 110 volts, 38.5 amperes, 5h.p. Find\nthe input, output and efficiency at full load.",
+      "options": {
+        "A": "Input: 4235 watts, Output: 3600 watts, Efficiency: 85 percent",
+        "B": "Input: 4500 watts, Output: 4000 watts, Efficiency: 88.9 percent",
+        "C": "Input: 4350 watts, Output: 3730 watts, Efficiency: 85.7 percent",
+        "D": "Input: 4100 watts, Output: 3450 watts, Efficiency: 84.1 percent",
+        "E": "Input: 4200 watts, Output: 3900 watts, Efficiency: 86 percent"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Input: 4350 watts, Output: 3730 watts, Efficiency: 85.7 percent",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "12159"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Find the Laplace transform of f(t) = t\\^{}2.",
+      "options": {
+        "A": "(2 / s\\^{}4)",
+        "B": "(1 / s\\^{}3)",
+        "C": "(t\\^{}2 / s)",
+        "D": "(t\\^{}2 / s\\^{}3)",
+        "E": "(2 / s\\^{}3)"
+      },
+      "marks": 2,
+      "gold_answer": "E",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: E - (2 / s\\^{}3)",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "12027"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "In a lap winding DC machine with 100 conductors and 10 parallel paths, the average pitch is 10.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "11657"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "A D-flip-flop is transparent when the output is independent of the input signal.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'the output follow input'.",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "11889"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The function f(x, y) has a removable discontinuity at the origin (0, 0).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'The function is continuous at (0, 0)'.",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "11939"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The power delivered by a roller chain of 3/4 in. pitch on a 34-tooth sprocket at 500 rpm is 6.73 horsepower.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '4.73'.",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "12233"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "engineering_undergraduate_doc_01_engineering_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "XOR and XNOR gates are universal gates that can implement any digital circuit by themselves.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'XOR, XNOR, NOR.'.",
+      "source": {
+        "dataset": "mmlu_pro_engineering_engineering",
+        "source_id": "11812"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "engineering_undergraduate_doc_01_engineering_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the process of converting temperature from Celsius to both the Fahrenheit and\nKelvin scales, using -10\u00b0C as a reference point. Include detailed calculations and\nimplications in engineering contexts.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "20\u00b0F and 283K. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "11982"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "engineering_undergraduate_doc_01_engineering_long_2",
+      "question_type": "LONG",
+      "stem_text": "Derive the general solution of the differential equation d\u00b2x/dt\u00b2 - 2(dx/dt) - 3x =\n10asin(t) + b(2t + 1), discussing each step and the roles of constants a and b.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "x=Y+A=c\\_1e\\^{}-t +c\\_2e\\^{}2t +a(cost - 2 sin t) +b[- (2/3) t + (1/9)]. Explain why this is the\ncorrect answer and provide supporting evidence. Reference key facts or concepts that\nsupport this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "12089"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -11,11 +11,13 @@ openai:
   frequency_penalty: 0.0
   presence_penalty: 0.0
   max_tokens: null  # Null means no limit, set integer to limit response length
+  logprobs_enabled: true  # Enable log probabilities in API responses
+  top_logprobs: 5  # Number of top log probabilities to return per token
 
 processing:
   input_dir: "output"
   output_suffix: "_perturbation"
-  resume: false  # Skip already processed files
+  resume: true  # Skip already processed files
   mappings_per_question: 3  # Number of perturbation mappings per question
   # Output structure control
   use_organized_structure: true  # Use timestamp-based organized structure
@@ -61,28 +63,24 @@ batch_api:
 injection:
   # Default methods to use (can be overridden via CLI)
   default_methods:
-    - "icw"
-    - "dual_layer"
-    - "font_attack"
     - "icw_dual_layer"
-    - "icw_font_attack"
   # Method-specific settings
   methods:
     icw:
-      enabled: true
+      enabled: false
       use_first_perturbation_only: false  # For ICW, can use all perturbations
     dual_layer:
-      enabled: true
+      enabled: false
       use_first_perturbation_only: true  # Must use first only to avoid overlaps
     font_attack:
-      enabled: true
+      enabled: false
       base_font_path: null  # Path to base font (null = use default Roboto)
       fonts_dir: null  # Custom fonts directory
       generate_all_perturbations: true  # Generate PDFs for all k perturbations
     icw_dual_layer:
       enabled: true
     icw_font_attack:
-      enabled: true
+      enabled: false
 
 # PDF Generation Configuration
 pdf_generation:
@@ -90,7 +88,7 @@ pdf_generation:
   compile_pdf: true  # Compile LaTeX to PDF
   output_base_dir: "output_attacked_pdfs"
   # LaTeX compilation settings
-  latex_compiler: "auto"  # "auto", "pdflatex", "xelatex", "lualatex"
+  latex_compiler: "xelatex"  # "auto", "pdflatex", "xelatex", "lualatex"
   require_xetex_for_fonts: true  # Require XeLaTeX for font attack
   compilation_timeout: 300  # Seconds to wait for PDF compilation
   cleanup_fonts_after_compile: true  # Delete fonts after successful compilation

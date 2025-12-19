@@ -1,0 +1,514 @@
+{
+  "1": [
+    {
+      "question_index": 1,
+      "latex_stem_text": "1. \\_\\_\\_\\_\\_\\_\\_\\_ framework made cracking of vulnerabilities easy like point and click.",
+      "original_substring": "framework",
+      "replacement_substring": "toolkit",
+      "start_pos": 11,
+      "end_pos": 20,
+      "target_wrong_answer": "D",
+      "reasoning": "Replacing 'framework' with 'toolkit' shifts the context away from Metasploit, leading to potential confusion with network tools like Ettercap."
+    },
+    {
+      "question_index": 1,
+      "latex_stem_text": "1. \\_\\_\\_\\_\\_\\_\\_\\_ framework made cracking of vulnerabilities easy like point and click.",
+      "original_substring": "cracking",
+      "replacement_substring": "analysis",
+      "start_pos": 29,
+      "end_pos": 37,
+      "target_wrong_answer": "C",
+      "reasoning": "Changing 'cracking' to 'analysis' misleads the focus towards data analysis tools, such as Zeus, rather than exploitation frameworks."
+    },
+    {
+      "question_index": 1,
+      "latex_stem_text": "1. \\_\\_\\_\\_\\_\\_\\_\\_ framework made cracking of vulnerabilities easy like point and click.",
+      "original_substring": "vulnerabilities",
+      "replacement_substring": "networks",
+      "start_pos": 43,
+      "end_pos": 58,
+      "target_wrong_answer": "A",
+      "reasoning": "By replacing 'vulnerabilities' with 'networks', the question may suggest a broader software framework like .Net, which is more associated with network applications."
+    }
+  ],
+  "2": [
+    {
+      "question_index": 2,
+      "latex_stem_text": ".Net",
+      "original_substring": ".Net",
+      "replacement_substring": "WiFi",
+      "start_pos": 0,
+      "end_pos": 4,
+      "target_wrong_answer": "B",
+      "reasoning": "Replacing '.Net' with 'WiFi' shifts the focus of the question to WiFi traffic sniffing, aligning with option B."
+    },
+    {
+      "question_index": 2,
+      "latex_stem_text": ".Net",
+      "original_substring": ".Net",
+      "replacement_substring": "Check",
+      "start_pos": 0,
+      "end_pos": 4,
+      "target_wrong_answer": "C",
+      "reasoning": "Replacing '.Net' with 'Check' emphasizes the process of checking, which aligns with option C, Wireless Traffic Checking."
+    },
+    {
+      "question_index": 2,
+      "latex_stem_text": ".Net",
+      "original_substring": ".Net",
+      "replacement_substring": "Trans",
+      "start_pos": 0,
+      "end_pos": 4,
+      "target_wrong_answer": "D",
+      "reasoning": "Replacing '.Net' with 'Trans' highlights the transmission aspect, which corresponds with option D, Wireless Transmission Sniffing."
+    }
+  ],
+  "3": [
+    {
+      "question_index": 3,
+      "latex_stem_text": "Metasploit",
+      "original_substring": "Metasploit",
+      "replacement_substring": "Python",
+      "start_pos": 0,
+      "end_pos": 10,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Metasploit' with 'Python' changes the context from a security framework to a programming language, which does not typically have buffer-overflow errors, thus flipping the answer."
+    },
+    {
+      "question_index": 3,
+      "latex_stem_text": "Metasploit",
+      "original_substring": "Metasploit",
+      "replacement_substring": "Java",
+      "start_pos": 0,
+      "end_pos": 10,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Metasploit' with 'Java' shifts the context to a language known for its memory safety, thereby invalidating the true statement about buffer-overflow errors."
+    },
+    {
+      "question_index": 3,
+      "latex_stem_text": "Metasploit",
+      "original_substring": "Metasploit",
+      "replacement_substring": "Ruby",
+      "start_pos": 0,
+      "end_pos": 10,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Metasploit' with 'Ruby' changes the context to a language that manages memory automatically, which typically prevents buffer-overflow errors, thus flipping the answer."
+    }
+  ],
+  "4": [
+    {
+      "question_index": 4,
+      "latex_stem_text": "Zeus",
+      "original_substring": "Zeus",
+      "replacement_substring": "Athena",
+      "start_pos": 0,
+      "end_pos": 4,
+      "target_wrong_answer": "True",
+      "reasoning": "Replacing 'Zeus' with 'Athena' changes the context of the question from one Greek god to another, altering the answer from False to True."
+    },
+    {
+      "question_index": 4,
+      "latex_stem_text": "Zeus",
+      "original_substring": "Zeus",
+      "replacement_substring": "Hera",
+      "start_pos": 0,
+      "end_pos": 4,
+      "target_wrong_answer": "True",
+      "reasoning": "Substituting 'Zeus' with 'Hera' changes the subject from one deity to another, thus flipping the answer to True."
+    },
+    {
+      "question_index": 4,
+      "latex_stem_text": "Zeus",
+      "original_substring": "Zeus",
+      "replacement_substring": "Apollo",
+      "start_pos": 0,
+      "end_pos": 4,
+      "target_wrong_answer": "True",
+      "reasoning": "By replacing 'Zeus' with 'Apollo', the question shifts focus to a different mythological figure, leading to a change in the answer to True."
+    }
+  ],
+  "5": [
+    {
+      "question_index": 5,
+      "latex_stem_text": "Ettercap",
+      "original_substring": "Etter",
+      "replacement_substring": "Better",
+      "start_pos": 0,
+      "end_pos": 5,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Etter' with 'Better' changes the meaning of the term, which makes the statement incorrect."
+    },
+    {
+      "question_index": 5,
+      "latex_stem_text": "Ettercap",
+      "original_substring": "cap",
+      "replacement_substring": "map",
+      "start_pos": 5,
+      "end_pos": 8,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'cap' with 'map' alters the meaning of the word, leading to a false interpretation of the statement."
+    },
+    {
+      "question_index": 5,
+      "latex_stem_text": "Ettercap",
+      "original_substring": "Ettercap",
+      "replacement_substring": "Intercap",
+      "start_pos": 0,
+      "end_pos": 8,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Ettercap' with 'Intercap' results in a completely different term, causing the statement to be false."
+    }
+  ],
+  "6": [
+    {
+      "question_index": 6,
+      "latex_stem_text": "__________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
+      "original_substring": "wireless traffic analysis",
+      "replacement_substring": "data encryption",
+      "start_pos": 21,
+      "end_pos": 45,
+      "target_wrong_answer": "False",
+      "reasoning": "Data encryption is not a process of traffic analysis, so replacing 'wireless traffic analysis' with 'data encryption' makes the statement false."
+    },
+    {
+      "question_index": 6,
+      "latex_stem_text": "__________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
+      "original_substring": "forensic investigations",
+      "replacement_substring": "network setup",
+      "start_pos": 71,
+      "end_pos": 94,
+      "target_wrong_answer": "False",
+      "reasoning": "Network setup is not typically related to traffic analysis, so replacing 'forensic investigations' with 'network setup' makes the statement false."
+    },
+    {
+      "question_index": 6,
+      "latex_stem_text": "__________ is a process of wireless traffic analysis that may be helpful for forensic investigations or during troubleshooting any wireless issue.",
+      "original_substring": "troubleshooting any wireless issue",
+      "replacement_substring": "improving signal strength",
+      "start_pos": 98,
+      "end_pos": 131,
+      "target_wrong_answer": "False",
+      "reasoning": "Improving signal strength is not directly related to traffic analysis, so replacing 'troubleshooting any wireless issue' with 'improving signal strength' makes the statement false."
+    }
+  ],
+  "7": [
+    {
+      "question_index": 7,
+      "latex_stem_text": "Wireless Traffic Sniffing",
+      "original_substring": "Wireless",
+      "replacement_substring": "Wired",
+      "start_pos": 0,
+      "end_pos": 8,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'Wireless' to 'Wired' affects the context of the question, as sniffing wired traffic is different from wireless, potentially altering the truth value."
+    },
+    {
+      "question_index": 7,
+      "latex_stem_text": "Wireless Traffic Sniffing",
+      "original_substring": "Traffic",
+      "replacement_substring": "Data",
+      "start_pos": 9,
+      "end_pos": 16,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Traffic' with 'Data' shifts the focus from network traffic to general data, which could change the implications regarding sniffing capabilities."
+    },
+    {
+      "question_index": 7,
+      "latex_stem_text": "Wireless Traffic Sniffing",
+      "original_substring": "Sniffing",
+      "replacement_substring": "Interception",
+      "start_pos": 17,
+      "end_pos": 25,
+      "target_wrong_answer": "False",
+      "reasoning": "Substituting 'Sniffing' with 'Interception' alters the meaning from passive listening to potentially active interference, affecting the truth of the statement."
+    }
+  ],
+  "8": [
+    {
+      "question_index": 8,
+      "latex_stem_text": "WiFi Traffic Sniffing",
+      "original_substring": "WiFi",
+      "replacement_substring": "Bluetooth",
+      "start_pos": 0,
+      "end_pos": 4,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'WiFi' to 'Bluetooth' alters the technology in question, making it a different context. Bluetooth traffic sniffing is less common and typically requires different methods, thus flipping the answer."
+    },
+    {
+      "question_index": 8,
+      "latex_stem_text": "WiFi Traffic Sniffing",
+      "original_substring": "Sniffing",
+      "replacement_substring": "Blocking",
+      "start_pos": 11,
+      "end_pos": 19,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Sniffing' with 'Blocking' changes the activity from monitoring to preventing data flow, which is a different concept and flips the answer."
+    },
+    {
+      "question_index": 8,
+      "latex_stem_text": "WiFi Traffic Sniffing",
+      "original_substring": "Traffic",
+      "replacement_substring": "Signal",
+      "start_pos": 5,
+      "end_pos": 12,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'Traffic' to 'Signal' shifts the focus from data transfer to the physical medium, altering the context and flipping the answer."
+    }
+  ],
+  "9": [
+    {
+      "question_index": 9,
+      "latex_stem_text": "Wireless Traffic Checking",
+      "original_substring": "Traffic",
+      "replacement_substring": "Connection",
+      "start_pos": 9,
+      "end_pos": 16,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Traffic' with 'Connection' changes the focus from monitoring traffic to checking connections, which may not involve the same tools, thus flipping the answer."
+    },
+    {
+      "question_index": 9,
+      "latex_stem_text": "Wireless Traffic Checking",
+      "original_substring": "Wireless",
+      "replacement_substring": "Wired",
+      "start_pos": 0,
+      "end_pos": 8,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'Wireless' to 'Wired' shifts the context from wireless networks to wired networks, where different tools may be applicable, altering the answer."
+    },
+    {
+      "question_index": 9,
+      "latex_stem_text": "Wireless Traffic Checking",
+      "original_substring": "Checking",
+      "replacement_substring": "Analysis",
+      "start_pos": 17,
+      "end_pos": 25,
+      "target_wrong_answer": "False",
+      "reasoning": "Substituting 'Checking' with 'Analysis' suggests a more in-depth examination, possibly requiring different tools, thus affecting the correctness of the original answer."
+    }
+  ],
+  "10": [
+    {
+      "question_index": 10,
+      "latex_stem_text": "Wireless Transmission Sniffing",
+      "original_substring": "Wireless",
+      "replacement_substring": "Wired",
+      "start_pos": 0,
+      "end_pos": 8,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'Wireless' to 'Wired' alters the context of the question, as sniffing techniques differ between wireless and wired transmissions, thus flipping the answer."
+    },
+    {
+      "question_index": 10,
+      "latex_stem_text": "Wireless Transmission Sniffing",
+      "original_substring": "Transmission",
+      "replacement_substring": "Encryption",
+      "start_pos": 9,
+      "end_pos": 20,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'Transmission' with 'Encryption' changes the focus from data transfer to data protection, which affects the correctness of the original answer."
+    },
+    {
+      "question_index": 10,
+      "latex_stem_text": "Wireless Transmission Sniffing",
+      "original_substring": "Sniffing",
+      "replacement_substring": "Jamming",
+      "start_pos": 21,
+      "end_pos": 29,
+      "target_wrong_answer": "False",
+      "reasoning": "Substituting 'Sniffing' with 'Jamming' changes the type of attack being discussed, leading to a different evaluation of the statement's truth value."
+    }
+  ],
+  "11": [
+    {
+      "question_index": 11,
+      "latex_stem_text": "The correct answer to 'Applications developed by programming languages like \\_\\_\\_\\_ and \\_\\_\\_\\_\\_ have this common buffer-overflow error.' is 'C, C++'.",
+      "original_substring": "C, C++",
+      "replacement_substring": "Java, Python",
+      "start_pos": 107,
+      "end_pos": 113,
+      "target_wrong_answer": "True",
+      "reasoning": "Replacing 'C, C++' with 'Java, Python' changes the context, as Java and Python do not typically have buffer-overflow errors, thus flipping the answer."
+    },
+    {
+      "question_index": 11,
+      "latex_stem_text": "The correct answer to 'Applications developed by programming languages like \\_\\_\\_\\_ and \\_\\_\\_\\_\\_ have this common buffer-overflow error.' is 'C, C++'.",
+      "original_substring": "this common buffer-overflow error",
+      "replacement_substring": "a syntax error",
+      "start_pos": 84,
+      "end_pos": 115,
+      "target_wrong_answer": "True",
+      "reasoning": "Changing 'this common buffer-overflow error' to 'a syntax error' alters the nature of the problem described, as syntax errors are not typically associated with C or C++ applications."
+    },
+    {
+      "question_index": 11,
+      "latex_stem_text": "The correct answer to 'Applications developed by programming languages like \\_\\_\\_\\_ and \\_\\_\\_\\_\\_ have this common buffer-overflow error.' is 'C, C++'.",
+      "original_substring": "programming languages like \\_\\_\\_\\_ and \\_\\_\\_\\_\\_",
+      "replacement_substring": "web technologies such as HTML and CSS",
+      "start_pos": 48,
+      "end_pos": 92,
+      "target_wrong_answer": "True",
+      "reasoning": "Replacing 'programming languages like ____ and _____' with 'web technologies such as HTML and CSS' shifts the domain from programming languages to web technologies, which do not have buffer-overflow errors, thus flipping the answer."
+    }
+  ],
+  "12": [
+    {
+      "question_index": 12,
+      "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+      "original_substring": "four-step authentication progression",
+      "replacement_substring": "three-step authentication process",
+      "start_pos": 74,
+      "end_pos": 105,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'four-step authentication progression' to 'three-step authentication process' alters the nature of the process described, making the original answer 'wireless handshaking' incorrect."
+    },
+    {
+      "question_index": 12,
+      "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+      "original_substring": "wireless handshaking",
+      "replacement_substring": "network handshaking",
+      "start_pos": 134,
+      "end_pos": 153,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'wireless handshaking' with 'network handshaking' changes the specific terminology, thus making the original answer incorrect."
+    },
+    {
+      "question_index": 12,
+      "latex_stem_text": "The correct answer to 'When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called...' is 'wireless handshaking'.",
+      "original_substring": "authenticates to any AP",
+      "replacement_substring": "connects to a router",
+      "start_pos": 37,
+      "end_pos": 58,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'authenticates to any AP' to 'connects to a router' shifts the focus from authentication to a different action, rendering the original answer invalid."
+    }
+  ],
+  "13": [
+    {
+      "question_index": 13,
+      "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+      "original_substring": "128",
+      "replacement_substring": "160",
+      "start_pos": 64,
+      "end_pos": 67,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing '128' with '160' changes the answer from the correct length of an MD-5 digest to the length of a SHA-1 digest, thus making the statement false."
+    },
+    {
+      "question_index": 13,
+      "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+      "original_substring": "MD-5",
+      "replacement_substring": "SHA-256",
+      "start_pos": 23,
+      "end_pos": 28,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'MD-5' with 'SHA-256' changes the context of the question. SHA-256 has a different digest length, making the statement false."
+    },
+    {
+      "question_index": 13,
+      "latex_stem_text": "The correct answer to 'In MD-5 the length of the message digest is' is '128'.",
+      "original_substring": "message digest",
+      "replacement_substring": "block size",
+      "start_pos": 43,
+      "end_pos": 57,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'message digest' with 'block size' changes the question to refer to a different property of MD-5, which does not match the answer '128', thus making the statement false."
+    }
+  ],
+  "14": [
+    {
+      "question_index": 14,
+      "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
+      "original_substring": "Open, filtered, unfiltered",
+      "replacement_substring": "Open, closed, filtered",
+      "start_pos": 62,
+      "end_pos": 88,
+      "target_wrong_answer": "True",
+      "reasoning": "The replacement changes the list of port states, introducing 'closed' instead of 'unfiltered', which is incorrect according to the original question."
+    },
+    {
+      "question_index": 14,
+      "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
+      "original_substring": "Open, filtered, unfiltered",
+      "replacement_substring": "Closed, filtered, unfiltered",
+      "start_pos": 62,
+      "end_pos": 88,
+      "target_wrong_answer": "True",
+      "reasoning": "The replacement changes 'Open' to 'Closed', altering the correct set of port states and making the statement true."
+    },
+    {
+      "question_index": 14,
+      "latex_stem_text": "The correct answer to 'What are the port states determined by Nmap?' is 'Open, filtered, unfiltered'.",
+      "original_substring": "Open, filtered, unfiltered",
+      "replacement_substring": "Open, filtered, closed",
+      "start_pos": 62,
+      "end_pos": 88,
+      "target_wrong_answer": "True",
+      "reasoning": "The replacement changes 'unfiltered' to 'closed', which is not part of the original correct answer, thus making the statement true."
+    }
+  ],
+  "15": [
+    {
+      "question_index": 15,
+      "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+      "original_substring": "a stream cipher",
+      "replacement_substring": "an OTP cipher",
+      "start_pos": 20,
+      "end_pos": 35,
+      "target_wrong_answer": "False",
+      "reasoning": "By replacing 'a stream cipher' with 'an OTP cipher', the question changes context to one where perfect secrecy is possible, thus flipping the answer to False."
+    },
+    {
+      "question_index": 15,
+      "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+      "original_substring": "shorter",
+      "replacement_substring": "equal",
+      "start_pos": 66,
+      "end_pos": 73,
+      "target_wrong_answer": "False",
+      "reasoning": "Changing 'shorter' to 'equal' implies the key could potentially be as long as the message, which alters the condition for perfect secrecy, thus flipping the answer to False."
+    },
+    {
+      "question_index": 15,
+      "latex_stem_text": "The correct answer to 'Can a stream cipher have perfect secrecy?' is 'No, since the key is shorter than the message'.",
+      "original_substring": "perfect secrecy",
+      "replacement_substring": "complete security",
+      "start_pos": 37,
+      "end_pos": 52,
+      "target_wrong_answer": "False",
+      "reasoning": "Replacing 'perfect secrecy' with 'complete security' changes the concept being evaluated, potentially altering the conditions for a True answer."
+    }
+  ],
+  "16": [
+    {
+      "question_index": 16,
+      "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
+      "original_substring": "presentation layer issues",
+      "replacement_substring": "network layer issues",
+      "start_pos": 47,
+      "end_pos": 71,
+      "target_wrong_answer": "focuses on different aspect",
+      "reasoning": "Changing 'presentation layer issues' to 'network layer issues' shifts the focus from the presentation layer to the network layer, which requires a different set of considerations and examples, thus altering the expected answer."
+    },
+    {
+      "question_index": 16,
+      "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
+      "original_substring": "Weak or non-existent authentication mechanisms",
+      "replacement_substring": "Data encryption techniques",
+      "start_pos": 82,
+      "end_pos": 124,
+      "target_wrong_answer": "changes key concept",
+      "reasoning": "Replacing 'Weak or non-existent authentication mechanisms' with 'Data encryption techniques' alters the nature of the correct answer, focusing on encryption rather than authentication, which changes the expected response."
+    },
+    {
+      "question_index": 16,
+      "latex_stem_text": "The correct answer to 'Which of the following is not an example of presentation layer issues?' is 'Weak or non-existent authentication mechanisms'.",
+      "original_substring": "not an example of",
+      "replacement_substring": "an example of",
+      "start_pos": 28,
+      "end_pos": 44,
+      "target_wrong_answer": "inverts the question",
+      "reasoning": "By changing 'not an example of' to 'an example of', the question is inverted, requiring the identification of a correct example rather than an incorrect one, which leads to a different answer."
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "docid": "computer_science_undergraduate_doc_03",
+  "document_name": "Computer Science - Undergraduate Level Assessment 3",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "computer science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf",
+    "mmlu_pro_cs_mcq",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_03.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_03_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Consider $x(t)$ to be given as, $ x(t)=10 \\cos (20 \\pi-\\pi / 4)-5 \\cos (50 \\pi t) $$ What\nis minimum sampling rate (/Hz) such that $y(t)=x(t)\\$ ?",
+      "options": {
+        "A": "30",
+        "B": "20",
+        "C": "40",
+        "D": "50",
+        "E": "35"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 50",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10674"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which types of functions grow the slowest?",
+      "options": {
+        "A": "O(N)",
+        "B": "O(log log N)",
+        "C": "O(N!)",
+        "D": "O(log N)",
+        "E": "O(N\\^{}N)"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - O(log log N)",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10547"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "A 3-way, set-associative cache is",
+      "options": {
+        "A": "only effective when more than 3 processes are running alternately on the processor",
+        "B": "possible only with write-through",
+        "C": "one in which each main memory word can be stored at any of 4 cache locations",
+        "D": "possible only with write-back",
+        "E": "effective only if 3 or fewer processes are running alternately on the processor"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - only effective when more than 3 processes are running alternately on the processor",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10689"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Let x = 8. What is x\\textgreater{}\\textgreater{}1 in Python 3?",
+      "options": {
+        "A": "5",
+        "B": "3",
+        "C": "0",
+        "D": "8",
+        "E": "4"
+      },
+      "marks": 2,
+      "gold_answer": "E",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: E - 4",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10717"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, b = [11,13,15,17,19,21]; print(b[::2]) outputs what?",
+      "options": {
+        "A": "[13,17,21]",
+        "B": "[13,15,17]",
+        "C": "[11,15]",
+        "D": "[11,13,15,19]",
+        "E": "[11,15,19]"
+      },
+      "marks": 2,
+      "gold_answer": "E",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: E - [11,15,19]",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10514"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "An excessively large step size can cause the training loss to increase with the number of epochs due to instability in learning.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10422"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "In a simple planar graph with 30 vertices, the maximum number of edges is 84, according to Euler's formula.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10502"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "A convex polygon with 26 faces and 39 edges has 15 vertices according to Euler's formula for polyhedra.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10433"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The TCP connect scan is designed to complete the TCP handshake for port scanning.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'SYN stealth scan'.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10737"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "The use of weak classifiers in bagging helps prevent overfitting by averaging their predictions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10730"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find the first repeated character in a given string.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def first\\_repeated\\_char(str1): | return c | return \"None\"",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "602"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_03_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to merge multiple sorted inputs into a single sorted iterator using heap\nqueue algorithm.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def merge\\_sorted\\_list(num1,num2,num3): | return list(result)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "108"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

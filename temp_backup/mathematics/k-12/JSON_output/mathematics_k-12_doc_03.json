@@ -1,0 +1,289 @@
+{
+  "docid": "mathematics_k-12_doc_03",
+  "document_name": "Mathematics - K-12 Level Assessment 3",
+  "domain": "mathematics",
+  "academic_level": "K-12",
+  "subjects": [
+    "elementary_mathematics",
+    "high_school_mathematics",
+    "high_school_statistics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\k-12\\latex_documents\\mathematics_k-12_doc_03.tex",
+    "pdf_file": "output\\mathematics\\k-12\\pdf_documents\\mathematics_k-12_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_k-12_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_k-12_doc_03_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_k-12_doc_03_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Find the median in the set of data 23, 13, 18, 29, 32, 25.",
+      "options": {
+        "A": "18",
+        "B": "24",
+        "C": "25",
+        "D": "29"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 24",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "2081"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_k-12_doc_03_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "What is three fifth of 100?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "20",
+        "D": "60"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 60",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "2399"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_k-12_doc_03_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "A circle passes through the points (3, 4) and (5, 7). Which of the following points CANNOT\nlie on the circle?",
+      "options": {
+        "A": "(-2, -1)",
+        "B": "(-1, -2)",
+        "C": "(5, 5)",
+        "D": "(6, 4)"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - (-1, -2)",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "14510"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_k-12_doc_03_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What is the largest factor of 54,321 that is less than 54,321?",
+      "options": {
+        "A": "6",
+        "B": "121",
+        "C": "18107",
+        "D": "54,320"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 18107",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "4330"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_k-12_doc_03_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "How many ways are there to choose 3 cards from a standard deck of 52 cards, if all three\ncards must be of different suits? (Assume that the order of the cards does not matter.)",
+      "options": {
+        "A": "8788",
+        "B": "2",
+        "C": "2197",
+        "D": "21"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 8788",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "4261"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_k-12_doc_03_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "An outlier is an observation that is seen more frequently than the other observations in the data set.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'is significantly different from the other observations in the data set'.",
+      "source": {
+        "dataset": "mathematics_high_school_statistics",
+        "source_id": "5436"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_k-12_doc_03_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The expression 4(3 + 2) can be restated as 4(3) + 4(2) using the Distributive Property.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "2214"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_k-12_doc_03_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "Five inches on a map with a scale of 1 inch equals 25 miles represents a distance of 50 miles.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '125'.",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "2083"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_k-12_doc_03_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The value of m that satisfies the equation 124 = m + 34 is 158.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '90'.",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "14272"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_k-12_doc_03_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Evaluate $\\log_8 2$.' is '\\ensuremath{\\frac{1}{3}}'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "4414"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_k-12_doc_03_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "A puppy and two cats together weigh 24 pounds. The puppy and the larger cat together weigh\nexactly twice as much as the smaller cat, and the puppy and the smaller cat together weigh\nexactly the same as the larger cat. How many pounds does the puppy weigh?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "12. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "4357"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_k-12_doc_03_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss how the number 12 can be categorized as a multiple of both positive and negative\nintegers, providing a detailed analysis of the multiples it encompasses.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "12. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "4357"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

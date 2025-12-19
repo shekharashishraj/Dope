@@ -1,0 +1,522 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{fontspec}
+\setmainfont{Roboto-Regular}[Path=fonts/,Extension=.ttf]
+\expandafter\newfontfamily\csname fa0000Font0\endcsname{fa0000_pos0}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font1\endcsname{fa0000_pos1}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font2\endcsname{fa0000_pos2}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font3\endcsname{fa0000_pos3}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font4\endcsname{fa0000_pos4}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font5\endcsname{fa0000_pos5}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font6\endcsname{fa0000_pos6}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font7\endcsname{fa0000_pos7}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font0\endcsname{fa0002_pos0}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font2\endcsname{fa0002_pos2}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font3\endcsname{fa0002_pos3}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font4\endcsname{fa0002_pos4}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font5\endcsname{fa0002_pos5}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font6\endcsname{fa0002_pos6}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font7\endcsname{fa0002_pos7}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font1\endcsname{fa0003_pos1}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font2\endcsname{fa0003_pos2}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font3\endcsname{fa0003_pos3}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font4\endcsname{fa0003_pos4}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font6\endcsname{fa0003_pos6}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font7\endcsname{fa0003_pos7}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font8\endcsname{fa0003_pos8}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font0\endcsname{fa0004_pos0}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font1\endcsname{fa0004_pos1}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font2\endcsname{fa0004_pos2}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font3\endcsname{fa0004_pos3}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font4\endcsname{fa0004_pos4}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font0\endcsname{fa0005_pos0}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font1\endcsname{fa0005_pos1}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font2\endcsname{fa0005_pos2}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font3\endcsname{fa0005_pos3}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font4\endcsname{fa0005_pos4}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font4\endcsname{fa0006_pos4}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font5\endcsname{fa0006_pos5}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font6\endcsname{fa0006_pos6}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font0\endcsname{fa0007_pos0}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font1\endcsname{fa0007_pos1}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font2\endcsname{fa0007_pos2}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font3\endcsname{fa0007_pos3}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font4\endcsname{fa0007_pos4}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font5\endcsname{fa0007_pos5}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font6\endcsname{fa0007_pos6}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font7\endcsname{fa0007_pos7}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font0\endcsname{fa0008_pos0}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font3\endcsname{fa0008_pos3}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font0\endcsname{fa0010_pos0}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font0\endcsname{fa0011_pos0}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font1\endcsname{fa0011_pos1}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font2\endcsname{fa0011_pos2}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font3\endcsname{fa0011_pos3}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font4\endcsname{fa0011_pos4}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font5\endcsname{fa0011_pos5}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font0\endcsname{fa0012_pos0}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font1\endcsname{fa0012_pos1}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font2\endcsname{fa0012_pos2}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font3\endcsname{fa0012_pos3}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font0\endcsname{fa0013_pos0}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font1\endcsname{fa0013_pos1}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font2\endcsname{fa0013_pos2}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font3\endcsname{fa0013_pos3}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font4\endcsname{fa0013_pos4}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font0\endcsname{fa0014_pos0}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font1\endcsname{fa0014_pos1}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font2\endcsname{fa0014_pos2}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font3\endcsname{fa0014_pos3}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font4\endcsname{fa0014_pos4}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font5\endcsname{fa0014_pos5}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font0\endcsname{fa0015_pos0}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font1\endcsname{fa0015_pos1}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font2\endcsname{fa0015_pos2}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font3\endcsname{fa0015_pos3}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font4\endcsname{fa0015_pos4}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font5\endcsname{fa0015_pos5}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font2\endcsname{fa0016_pos2}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font4\endcsname{fa0016_pos4}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font5\endcsname{fa0016_pos5}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font0\endcsname{fa0017_pos0}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font1\endcsname{fa0017_pos1}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font2\endcsname{fa0017_pos2}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font3\endcsname{fa0017_pos3}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font4\endcsname{fa0017_pos4}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font5\endcsname{fa0017_pos5}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font0\endcsname{fa0018_pos0}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font1\endcsname{fa0018_pos1}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font2\endcsname{fa0018_pos2}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font3\endcsname{fa0018_pos3}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font4\endcsname{fa0018_pos4}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font5\endcsname{fa0018_pos5}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font6\endcsname{fa0018_pos6}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font0\endcsname{fa0019_pos0}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font1\endcsname{fa0019_pos1}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font3\endcsname{fa0019_pos3}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font4\endcsname{fa0019_pos4}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font5\endcsname{fa0019_pos5}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font6\endcsname{fa0019_pos6}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font0\endcsname{fa0020_pos0}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font1\endcsname{fa0020_pos1}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font2\endcsname{fa0020_pos2}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font3\endcsname{fa0020_pos3}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font4\endcsname{fa0020_pos4}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font5\endcsname{fa0020_pos5}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font6\endcsname{fa0020_pos6}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font0\endcsname{fa0021_pos0}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font1\endcsname{fa0021_pos1}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font2\endcsname{fa0021_pos2}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font3\endcsname{fa0021_pos3}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font4\endcsname{fa0021_pos4}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font5\endcsname{fa0021_pos5}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font6\endcsname{fa0021_pos6}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+
+\begin{document}
+\begin{center}
+Astronomy - Graduate Level Assessment 4 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item The four big moons of Jupiter are {\csname fa0002Font0\endcsname\char"0047}{\char"0061}{\csname fa0002Font2\endcsname\char"006E}{\csname fa0002Font3\endcsname\char"0079}{\csname fa0002Font4\endcsname\char"006D}{\csname fa0002Font5\endcsname\char"0065}{\csname fa0002Font6\endcsname\char"0064}{\csname fa0002Font7\endcsname\char"0065} {\char"0045}{\csname fa0003Font1\endcsname\char"006E}{\csname fa0003Font2\endcsname\char"0063}{\csname fa0003Font3\endcsname\char"0065}{\csname fa0003Font4\endcsname\char"006C}{\char"0061}{\csname fa0003Font6\endcsname\char"0064}{\csname fa0003Font7\endcsname\char"0075}{\csname fa0003Font8\endcsname\char"0073} Ganymede and Io. Which one of them has
+the {\csname fa0000Font0\endcsname\char"006C}{\csname fa0000Font1\endcsname\char"0061}{\csname fa0000Font2\endcsname\char"0072}{\csname fa0000Font3\endcsname\char"0067}{\csname fa0000Font4\endcsname\char"0065}{\csname fa0000Font5\endcsname\char"0073}{\csname fa0000Font6\endcsname\char"0074}{\csname fa0000Font7\endcsname\char"0020} {\char"0064}{\char"0069}{\char"0073}{\char"0074}{\char"0061}{\char"006E}{\char"0063}{\char"0065} to Jupiter?
+\begin{enumerate}[label=(\alph*)]
+    \item Callisto
+    \item Europa
+    \item Ganymede
+    \item Io
+\end{enumerate}
+\item The lunar maria are:
+\begin{enumerate}[label=(\alph*)]
+    \item ancient heavily cratered highlands
+    \item dark lavas inside volcanic calderas
+    \item dark lavas filling older impact basins
+    \item the bright regions on the Moon
+\end{enumerate}
+\item Which of the following was not cited as evidence for life in the martian meteorite
+ALH84001?
+\begin{enumerate}[label=(\alph*)]
+    \item Complex organic molecules specifically PAHs
+    \item Magnetite grains similar to those formed by bacteria on Earth
+    \item Carbonate minerals indicating a thicker warmer Martian atmosphere
+    \item Amino acids with a preferred orientation or "chirality"
+\end{enumerate}
+\item What about asteroids makes them {\csname fa0004Font0\endcsname\char"0065}{\csname fa0004Font1\endcsname\char"006D}{\csname fa0004Font2\endcsname\char"0069}{\csname fa0004Font3\endcsname\char"0074}{\csname fa0004Font4\endcsname\char"0020} {\csname fa0005Font0\endcsname\char"006C}{\csname fa0005Font1\endcsname\char"0069}{\csname fa0005Font2\endcsname\char"0067}{\csname fa0005Font3\endcsname\char"0068}{\csname fa0005Font4\endcsname\char"0074} in sky surveys searching for them?
+\begin{enumerate}[label=(\alph*)]
+    \item Asteroids emit pulsed radiation
+    \item Asteroids emit a lot of their own radiation
+    \item They reflect enough of the sun's light to make them brighter than most background stars
+    \item Asteroids have substantial motion relative to the background stars
+\end{enumerate}
+\item What effect or effects would be {\char"006D}{\char"006F}{\char"0073}{\char"0074}{\csname fa0006Font4\endcsname\char"0020}{\csname fa0006Font5\endcsname\char"006E}{\csname fa0006Font6\endcsname\char"006F} {\csname fa0007Font0\endcsname\char"0074}{\csname fa0007Font1\endcsname\char"0069}{\csname fa0007Font2\endcsname\char"0063}{\csname fa0007Font3\endcsname\char"0065}{\csname fa0007Font4\endcsname\char"0061}{\csname fa0007Font5\endcsname\char"0062}{\csname fa0007Font6\endcsname\char"006C}{\csname fa0007Font7\endcsname\char"0065} if the Moon's orbital plane were exactly
+the same as the ecliptic plane?
+\begin{enumerate}[label=(\alph*)]
+    \item Solar eclipses would be much rarer.
+    \item Solar eclipses would last much longer.
+    \item Solar eclipses would be much more frequent.
+    \item Solar eclipses would not last as long.
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: In {\csname fa0008Font0\endcsname\char"0031}{\char"0030}{\char"0030}{\csname fa0008Font3\endcsname\char"0020} {\char"0079}{\char"0065}{\char"0061}{\char"0072}{\char"0073}, the Moon will be further from the Earth and the length of the Earth's day will increase due to tidal forces.
+\item True or False: Cassiopeia is a prominent {\csname fa0010Font0\endcsname\char"004D}{\char"002D}{\char"0073}{\char"0068}{\char"0061}{\char"0070}{\char"0065}{\char"0064} constellation located in the northern sky, recognizable by its distinctive shape.
+\item True or False: The Great Red Spot is a persistent anticyclonic storm located in the atmosphere of {\csname fa0011Font0\endcsname\char"0053}{\csname fa0011Font1\endcsname\char"0061}{\csname fa0011Font2\endcsname\char"0074}{\csname fa0011Font3\endcsname\char"0075}{\csname fa0011Font4\endcsname\char"0072}{\csname fa0011Font5\endcsname\char"006E}.
+\item True or False: {\csname fa0012Font0\endcsname\char"004D}{\csname fa0012Font1\endcsname\char"0061}{\csname fa0012Font2\endcsname\char"0072}{\csname fa0012Font3\endcsname\char"0073} is the only planet in the solar system known to have active plate tectonics.
+\item True or False: Fresh impact craters on solid surfaces {\csname fa0013Font0\endcsname\char"006F}{\csname fa0013Font1\endcsname\char"0066}{\csname fa0013Font2\endcsname\char"0074}{\csname fa0013Font3\endcsname\char"0065}{\csname fa0013Font4\endcsname\char"006E} include central peaks as a defining characteristic.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Discuss the concept of a black body in astronomy, explaining its definition and
+significance in understanding the radiation of stars and their thermal properties.
+\item Discuss the relationship between {\csname fa0014Font0\endcsname\char"0056}{\csname fa0014Font1\endcsname\char"0065}{\csname fa0014Font2\endcsname\char"006E}{\csname fa0014Font3\endcsname\char"0075}{\csname fa0014Font4\endcsname\char"0073}{\csname fa0014Font5\endcsname\char"0027} {\csname fa0015Font0\endcsname\char"0073}{\csname fa0015Font1\endcsname\char"0020}{\csname fa0015Font2\endcsname\char"0061}{\csname fa0015Font3\endcsname\char"0074}{\csname fa0015Font4\endcsname\char"006D}{\csname fa0015Font5\endcsname\char"006F} {\char"0073}{\char"0070}{\csname fa0016Font2\endcsname\char"0068}{\char"0065}{\csname fa0016Font4\endcsname\char"0072}{\csname fa0016Font5\endcsname\char"0069} {\csname fa0017Font0\endcsname\char"0063}{\csname fa0017Font1\endcsname\char"0020}{\csname fa0017Font2\endcsname\char"0063}{\csname fa0017Font3\endcsname\char"006F}{\csname fa0017Font4\endcsname\char"006D}{\csname fa0017Font5\endcsname\char"0070} {\csname fa0018Font0\endcsname\char"006F}{\csname fa0018Font1\endcsname\char"0073}{\csname fa0018Font2\endcsname\char"0069}{\csname fa0018Font3\endcsname\char"0074}{\csname fa0018Font4\endcsname\char"0069}{\csname fa0018Font5\endcsname\char"006F}{\csname fa0018Font6\endcsname\char"006E} {\csname fa0019Font0\endcsname\char"0020}{\csname fa0019Font1\endcsname\char"0061}{\char"006E}{\csname fa0019Font3\endcsname\char"0064}{\csname fa0019Font4\endcsname\char"0020}{\csname fa0019Font5\endcsname\char"0077}{\csname fa0019Font6\endcsname\char"0065} {\csname fa0020Font0\endcsname\char"0061}{\csname fa0020Font1\endcsname\char"0074}{\csname fa0020Font2\endcsname\char"0068}{\csname fa0020Font3\endcsname\char"0065}{\csname fa0020Font4\endcsname\char"0072}{\csname fa0020Font5\endcsname\char"0020}{\csname fa0020Font6\endcsname\char"0070} {\csname fa0021Font0\endcsname\char"0061}{\csname fa0021Font1\endcsname\char"0074}{\csname fa0021Font2\endcsname\char"0074}{\csname fa0021Font3\endcsname\char"0065}{\csname fa0021Font4\endcsname\char"0072}{\csname fa0021Font5\endcsname\char"006E}{\csname fa0021Font6\endcsname\char"0073},
+analyzing how these factors influence the planet's geophysical characteristics.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

@@ -31,7 +31,7 @@ class DualLayerInjector(BaseInjector):
     \settowidth{\dlboxwidth}{#2}%
   \fi
   \raisebox{0pt}[\dlboxheight][\dlboxdepth]{%
-    \makebox[\dlboxwidth][l]{\resizebox{\dlboxwidth}{!}{\strut #2}}%
+    \makebox[\dlboxwidth][l]{#2}%
   }%
   \endgroup
 }
@@ -69,8 +69,36 @@ class DualLayerInjector(BaseInjector):
         # Apply replacements
         replacements = []
         metadata_replacements = []
+        replaced_regions = set()  # Track (start, end) regions that have been replaced
         
         for question in questions:
+            question_number = question.get('question_number')
+            
+            if not question_number:
+                continue
+            
+            # Use only the FIRST perturbation per question to avoid overlapping replacements
+            # Multiple perturbations (k=3) would create overlapping/adjacent replacements
+            # that cause malformed LaTeX. For dual-layer, we only need one replacement per question.
+            question_perturbations = question.get('perturbations', [])
+            
+            if not question_perturbations:
+                continue
+            
+            # Check config to see if multiple perturbations are allowed
+            allow_multiple = self.config.experimental_dual_layer_allow_multiple_perturbations if self.config else False
+            
+            if allow_multiple:
+                # Process all perturbations (may cause overlaps - use with caution)
+                perturbations_to_process = question_perturbations
+            else:
+                # Use only the first perturbation (default, safe)
+                perturbations_to_process = [question_perturbations[0]]
+            
+            # Get latex_stem_text from first perturbation or question (shared for all perturbations)
+            latex_stem_text = None
+            if perturbations_to_process:
+                latex_stem_text = perturbations_to_process[0].get('latex_stem_text', '')
             question_number = question.get('question_number')
             
             if not question_number:
@@ -167,6 +195,11 @@ class DualLayerInjector(BaseInjector):
                     abs_start = stem_start + substring_index
                     abs_end = abs_start + len(original_substring)
                 
+                # Check if this region has already been replaced (to avoid duplicate replacements on same text)
+                region_key = (abs_start, abs_end)
+                if region_key in replaced_regions:
+                    continue  # Skip this replacement
+                
                 # Create dual layer replacement using \duallayerbox macro
                 # Format: \duallayerbox{original}{replacement}
                 # The macro displays #2 (replacement) visually
@@ -178,6 +211,7 @@ class DualLayerInjector(BaseInjector):
                 replacement = f"\\duallayerbox{{{escaped_original}}}{{{escaped_replacement}}}"
                 
                 replacements.append((abs_start, abs_end, replacement))
+                replaced_regions.add(region_key)
                 metadata_replacements.append({
                     "question_number": question_number,
                     "original": original_substring,

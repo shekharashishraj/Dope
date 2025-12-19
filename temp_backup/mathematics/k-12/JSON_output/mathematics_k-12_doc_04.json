@@ -1,0 +1,288 @@
+{
+  "docid": "mathematics_k-12_doc_04",
+  "document_name": "Mathematics - K-12 Level Assessment 4",
+  "domain": "mathematics",
+  "academic_level": "K-12",
+  "subjects": [
+    "elementary_mathematics",
+    "high_school_mathematics",
+    "high_school_statistics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\k-12\\latex_documents\\mathematics_k-12_doc_04.tex",
+    "pdf_file": "output\\mathematics\\k-12\\pdf_documents\\mathematics_k-12_doc_04.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_k-12_doc_04_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_k-12_doc_04_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_k-12_doc_04_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Connor is measuring the capacity of a jar. Which unit of measure can he use?",
+      "options": {
+        "A": "Centimeter",
+        "B": "Cup",
+        "C": "Gram",
+        "D": "Pound"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Cup",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "2390"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_k-12_doc_04_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Evaluate -7(y - 6) for y = 8.",
+      "options": {
+        "A": "-14",
+        "B": "50",
+        "C": "-13",
+        "D": "-62"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - -14",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "2239"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_k-12_doc_04_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Let $a\\star b = a^b-ab$. If $2\\star x = 22$, find $x$.",
+      "options": {
+        "A": "5",
+        "B": "22",
+        "C": "11",
+        "D": "6"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 5",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "4305"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_k-12_doc_04_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What is the minimum value of $a^2+6a-7$?",
+      "options": {
+        "A": "-30",
+        "B": "-12",
+        "C": "-7",
+        "D": "-16"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - -16",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "14515"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_k-12_doc_04_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Cat food costs \\$.47/lb. How much does a 6-lb bag cost?",
+      "options": {
+        "A": "\\$2.82",
+        "B": "\\$2.97",
+        "C": "\\$6.47",
+        "D": "\\$12.77"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - \\$2.82",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "2141"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_k-12_doc_04_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The area of the triangle with altitudes of lengths 10, 12, and 15 is 240\u221a7/7 square units.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "4488"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_k-12_doc_04_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "A convex hexagon can have 6 distinct diagonals drawn from its vertices.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '9'.",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "4383"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_k-12_doc_04_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "The power of the test, which is the probability of correctly rejecting H0 when H0 is false, is 0.74.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_high_school_statistics",
+        "source_id": "5597"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_k-12_doc_04_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The probability of drawing the balls in alternating colors from a box of 4 white and 4 black balls is \u00bd of the total arrangements.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_high_school_mathematics",
+        "source_id": "4273"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_k-12_doc_04_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The solution to the equation -2k = -34.8 is k = -17.4.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '69.6'.",
+      "source": {
+        "dataset": "mathematics_elementary_mathematics",
+        "source_id": "14286"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_k-12_doc_04_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Given that the mean daily demand for bread at a bakery is 2,500 loaves with a standard\ndeviation of 225 loaves, analyze the likelihood of the bakery running out of bread when it\nbakes 3,000 loaves. Discuss your calculations and reasoning.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "0.0132. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "5558"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_k-12_doc_04_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Calculate the total number of chairs set up for a meeting if there are 6 rows with 8\nchairs in each row. Explain your reasoning and the steps you took to arrive at your\nanswer.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "48. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "2423"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

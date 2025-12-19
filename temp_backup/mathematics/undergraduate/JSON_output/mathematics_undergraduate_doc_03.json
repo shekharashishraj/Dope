@@ -1,0 +1,277 @@
+{
+  "docid": "mathematics_undergraduate_doc_03",
+  "document_name": "Mathematics - Undergraduate Level Assessment 3",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf",
+    "mmlu_pro_math_mcq",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_03.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_03_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Statement 1 | Every element of a group generates a cyclic subgroup of the group. Statement 2 | The symmetric group S\\_10 has 10 elements.' is 'True, True'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'True, False'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15575"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Statement 1 | If H is a subgroup of a group G and a belongs to G, then aH = Ha. Statement 2 | If H is normal of G and a belongs to G,...' is 'False, True'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'False, False'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "30"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Find the product of the given polynomials in the given polynomial ring. f(x) = 4x - 5, g(x) = 2x\\^{}2 - 4x + 2 in Z\\_8[x].' is 'x\\^{}2 + 1'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is '6x^2 + 4x + 6'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "4"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Let V and W be 4-dimensional subspaces of a 7-dimensional vector space X. Which of the following CANNOT be the dimension of the subspace...' is '2'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is '0'.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1108"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Statement 1 | If a and b are elements of finite order in an Abelian group, then |ab| is the lcm (|a|,|b|). Statement 2 | If g is a group...' is 'True, True'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'False, False'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14048"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_6",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Compute the product in the given ring. (20)(-8) in Z\\_26' is '22'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "36"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_7",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Statement 1 | Every ideal in a ring is a subring of the ring. Statement 2 | Every subring of every ring is an ideal of the ring.' is 'True, False'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "99"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_8",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Statement 1 | A factor group of a non-Abelian group is non-Abelian. Statement 2 | If K is a normal subgroup of H and H is a normal...' is 'False, False'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "3"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_9",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Statement 1 | R is a splitting field of some polynomial over Q. Statement 2 | There is a field with 60 elements.' is 'True, True'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is 'False, False'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_10",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'How many positive numbers x satisfy the equation cos(97x) = x?' is '31'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Matches the MMLU answer key.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1183"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Find the integer closest in value to \\[\\frac{1}{\\sqrt[4]{5^4+1}-\\sqrt[4]{5^4-1}}.\\]",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Let $a = 5^4 + 1$ and $b = 5^4-1,$ so the given expression becomes $\\frac{1}{\\sqrt[4]{a} -\n\\sqrt[4]{b}}.$ We can rationalize by multiplying top and bottom by $\\sqrt[4]{a} +\n\\sqrt[4]{b},$ and then by $\\sqrt{a} + \\sqrt{b}$: \\[\\begin{aligned} \\frac{1}{\\sqrt[4]{a} -\n\\sqrt[4]{b}} &= \\frac{\\sqrt[4]{a}+\\sqrt[4]{b}}{\\sqrt{a}-\\sqrt{b}} =\n\\frac{\\left(\\sqrt[4]{a}+\\sqrt[4]{b}\\right)\\left(\\sqrt a+\\sqrt b\\right)}{a - b}.\n\\end{aligned}\\]We have $a-b=2,$ and both $a$ and $b$ are close to $5^4,$ so we estimate\nthat \\[\\frac{\\left(\\sqrt[4]{a}+\\sqrt[4]{b}\\right)\\left(\\sqrt a+\\sqrt b\\right)}{a - b}\n\\approx \\frac{(5+5)(5^2+5^2)}{2} = \\boxed{250}. \\](Indeed, the actual value of the\nexpression is $249.9998599\\dots.$)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should show all steps in their mathematical solution.",
+      "source": {
+        "dataset": "gsm8k_math",
+        "source_id": "9460"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "A function $f$ is defined by $f(z) = i\\overline{z}$, where $i^2 = -1$ and $\\overline{z}$\nis the complex conjugate of $z$. How many values of $z$ satisfy both $|z| = 5$ and $f(z) =\nz$?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Let $z = x + yi,$ where $x$ and $y$ are real numbers. Then $|z| = 5$ becomes $x^2 + y^2 =\n25,$ and $f(z) = z$ becomes \\[i(x - yi) = x + yi.\\]Then $ix + y = x + yi,$ so $x = y.$\nHence, $2x^2 = 25,$ which has two solutions. Thus, there are $\\boxed{2}$ such values of\n$z.$",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should show all steps in their mathematical solution.",
+      "source": {
+        "dataset": "gsm8k_math",
+        "source_id": "18105"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "TF": 10,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "TF": 20,
+      "LONG": 20
+    }
+  }
+}

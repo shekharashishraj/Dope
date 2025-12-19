@@ -54,6 +54,9 @@ class OpenAIClient:
         self.delay_between_requests = config.performance_delay_between_requests
         # System message
         self.system_message = config.prompt_system_message
+        # Log probabilities
+        self.logprobs_enabled = config.logprobs_enabled
+        self.top_logprobs = config.top_logprobs
     
     def generate_perturbations(
         self, 
@@ -130,6 +133,12 @@ class OpenAIClient:
                 if self.max_tokens is not None:
                     api_params["max_tokens"] = self.max_tokens
                 
+                # Add log probs if enabled
+                if self.logprobs_enabled:
+                    api_params["logprobs"] = True
+                    if self.top_logprobs > 0:
+                        api_params["top_logprobs"] = self.top_logprobs
+                
                 response = self.client.chat.completions.create(**api_params)
                 
                 call_time = (datetime.now(tz) - call_start).total_seconds()
@@ -154,6 +163,14 @@ class OpenAIClient:
                     output_cost = (usage.completion_tokens / 1_000_000) * 10.00
                     total_cost = input_cost + output_cost
                     logger.info(f"Estimated cost: ${total_cost:.4f} (Input: ${input_cost:.4f}, Output: ${output_cost:.4f})")
+                
+                # Log log probs if available
+                if self.logprobs_enabled and hasattr(response.choices[0], 'logprobs') and response.choices[0].logprobs:
+                    logprobs = response.choices[0].logprobs
+                    tokens_count = len(logprobs.tokens) if logprobs.tokens else 0
+                    avg_logprob = sum(logprobs.token_logprobs) / len(logprobs.token_logprobs) if logprobs.token_logprobs else 0
+                    logger.info(f"Log probs - Tokens: {tokens_count}, Avg logprob: {avg_logprob:.4f}")
+                    logger.debug(f"Log probs - Full details: {logprobs}")
                 
                 # Try to parse as JSON
                 try:
@@ -407,6 +424,12 @@ Return ONLY valid JSON array, no markdown or additional text."""
                 if self.max_tokens is not None:
                     body["max_tokens"] = self.max_tokens
                 
+                # Add log probs if enabled
+                if self.logprobs_enabled:
+                    body["logprobs"] = True
+                    if self.top_logprobs > 0:
+                        body["top_logprobs"] = self.top_logprobs
+                
                 request = {
                     "custom_id": f"question_{question_idx}",
                     "method": "POST",
@@ -548,6 +571,15 @@ Return ONLY valid JSON array, no markdown or additional text."""
                             logger.warning(f"No content in response for question {question_idx}")
                             results[question_idx] = []
                             continue
+                        
+                        # Extract log probs if available
+                        logprobs_data = None
+                        if self.logprobs_enabled:
+                            logprobs_data = response_body.get('choices', [{}])[0].get('logprobs')
+                            if logprobs_data:
+                                tokens_count = len(logprobs_data.get('tokens', []))
+                                avg_logprob = sum(logprobs_data.get('token_logprobs', [])) / len(logprobs_data.get('token_logprobs', [])) if logprobs_data.get('token_logprobs') else 0
+                                logger.debug(f"Batch log probs - Question {question_idx} - Tokens: {tokens_count}, Avg logprob: {avg_logprob:.4f}")
                         
                         # Log complete response at DEBUG level (saved to file)
                         content_length = len(content)

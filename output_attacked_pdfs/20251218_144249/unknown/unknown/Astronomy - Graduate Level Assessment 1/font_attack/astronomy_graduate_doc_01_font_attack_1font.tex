@@ -1,0 +1,335 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{fontspec}
+\setmainfont{Roboto-Regular}[Path=fonts/,Extension=.ttf]
+\expandafter\newfontfamily\csname fa0000Font0\endcsname{fa0000_pos0}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font1\endcsname{fa0000_pos1}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font2\endcsname{fa0000_pos2}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font3\endcsname{fa0000_pos3}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font4\endcsname{fa0000_pos4}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font5\endcsname{fa0000_pos5}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font0\endcsname{fa0001_pos0}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font1\endcsname{fa0001_pos1}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font2\endcsname{fa0001_pos2}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font3\endcsname{fa0001_pos3}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font0\endcsname{fa0002_pos0}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font1\endcsname{fa0002_pos1}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font2\endcsname{fa0002_pos2}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font0\endcsname{fa0003_pos0}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font1\endcsname{fa0003_pos1}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font2\endcsname{fa0003_pos2}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font3\endcsname{fa0003_pos3}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font4\endcsname{fa0003_pos4}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font0\endcsname{fa0004_pos0}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font1\endcsname{fa0004_pos1}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font2\endcsname{fa0004_pos2}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font3\endcsname{fa0004_pos3}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font4\endcsname{fa0004_pos4}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font5\endcsname{fa0004_pos5}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font0\endcsname{fa0005_pos0}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font1\endcsname{fa0005_pos1}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font2\endcsname{fa0005_pos2}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font3\endcsname{fa0005_pos3}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font4\endcsname{fa0005_pos4}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font0\endcsname{fa0006_pos0}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font0\endcsname{fa0007_pos0}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font1\endcsname{fa0007_pos1}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font2\endcsname{fa0007_pos2}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font3\endcsname{fa0007_pos3}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font4\endcsname{fa0007_pos4}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font5\endcsname{fa0007_pos5}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font0\endcsname{fa0008_pos0}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font1\endcsname{fa0008_pos1}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font2\endcsname{fa0008_pos2}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font3\endcsname{fa0008_pos3}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font4\endcsname{fa0008_pos4}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font6\endcsname{fa0008_pos6}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font7\endcsname{fa0008_pos7}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font0\endcsname{fa0009_pos0}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font1\endcsname{fa0009_pos1}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font2\endcsname{fa0009_pos2}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font0\endcsname{fa0010_pos0}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font1\endcsname{fa0010_pos1}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font2\endcsname{fa0010_pos2}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font3\endcsname{fa0010_pos3}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font0\endcsname{fa0011_pos0}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font1\endcsname{fa0011_pos1}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font2\endcsname{fa0011_pos2}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font3\endcsname{fa0011_pos3}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font0\endcsname{fa0013_pos0}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font1\endcsname{fa0013_pos1}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font2\endcsname{fa0013_pos2}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font3\endcsname{fa0013_pos3}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font0\endcsname{fa0014_pos0}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font1\endcsname{fa0014_pos1}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font2\endcsname{fa0014_pos2}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font3\endcsname{fa0014_pos3}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+
+\begin{document}
+\begin{center}
+Astronomy - Graduate Level Assessment 1 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item What drives {\csname fa0000Font0\endcsname\char"0066}{\csname fa0000Font1\endcsname\char"0075}{\csname fa0000Font2\endcsname\char"0073}{\csname fa0000Font3\endcsname\char"0069}{\csname fa0000Font4\endcsname\char"006F}{\csname fa0000Font5\endcsname\char"006E}?
+\begin{enumerate}[label=(\alph*)]
+    \item Spontaneous emission from radioactive atoms.
+    \item The minimization of gravitational potential energy.
+    \item Thermally induced collisions.
+    \item Plate tectonics.
+\end{enumerate}
+\item Why do we see {\csname fa0001Font0\endcsname\char"006F}{\csname fa0001Font1\endcsname\char"006E}{\csname fa0001Font2\endcsname\char"006C}{\csname fa0001Font3\endcsname\char"0079} the same face of the Moon at all times?
+\begin{enumerate}[label=(\alph*)]
+    \item because the Moon has a nearly circular orbit around the Earth
+    \item because the Moon does not rotate
+    \item because the other face points toward us only at new moon when we can't see the Moon
+    \item because the Moon's rotational and orbital periods are equal
+\end{enumerate}
+\item Previous IAAC rounds featured Proxima/Alpha Centauri as closes star(system) to the Earth.
+Which one is the second closest star(system)?
+\begin{enumerate}[label=(\alph*)]
+    \item Wolf 359
+    \item Sirius
+    \item 61 Cygni
+    \item Barnard's Star
+\end{enumerate}
+\item Why is the sky {\csname fa0002Font0\endcsname\char"0072}{\csname fa0002Font1\endcsname\char"0065}{\csname fa0002Font2\endcsname\char"0064}?
+\begin{enumerate}[label=(\alph*)]
+    \item Because the molecules that compose the Earth's atmosphere have a blue-ish color.
+    \item Because the sky reflects the color of the Earth's oceans.
+    \item Because the atmosphere preferentially scatters short wavelengths.
+    \item Because the Earth's atmosphere preferentially absorbs all other colors.
+\end{enumerate}
+\item Which of the following characteristics would not necessarily suggest that a rock we found
+is a meteorite.
+\begin{enumerate}[label=(\alph*)]
+    \item It has a fusion crust
+    \item It contains solidified spherical droplets
+    \item It is highly processed
+    \item It has different elemental composition than earth
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: The Sun mainly emits {\csname fa0003Font0\endcsname\char"0077}{\csname fa0003Font1\endcsname\char"0068}{\csname fa0003Font2\endcsname\char"0069}{\csname fa0003Font3\endcsname\char"0074}{\csname fa0003Font4\endcsname\char"0065} {\csname fa0004Font0\endcsname\char"0020}{\csname fa0004Font1\endcsname\char"006C}{\csname fa0004Font2\endcsname\char"0069}{\csname fa0004Font3\endcsname\char"0067}{\csname fa0004Font4\endcsname\char"0068}{\csname fa0004Font5\endcsname\char"0074}, which causes the sky to appear blue during the day.
+\item True or False: The surface of Venus is approximately {\csname fa0005Font0\endcsname\char"0034}{\csname fa0005Font1\endcsname\char"002E}{\csname fa0005Font2\endcsname\char"0035}{\csname fa0005Font3\endcsname\char"0020}{\csname fa0005Font4\endcsname\char"0062} {\csname fa0006Font0\endcsname\char"0069}{\char"006C}{\char"006C}{\char"0069}{\char"006F}{\char"006E} {\csname fa0007Font0\endcsname\char"0020}{\csname fa0007Font1\endcsname\char"0079}{\csname fa0007Font2\endcsname\char"0065}{\csname fa0007Font3\endcsname\char"0061}{\csname fa0007Font4\endcsname\char"0072}{\csname fa0007Font5\endcsname\char"0073} old, suggesting a much older geological formation than is accurate.
+\item True or False: Venus lacks seasons because its rotation axis is nearly {\csname fa0008Font0\endcsname\char"0070}{\csname fa0008Font1\endcsname\char"0061}{\csname fa0008Font2\endcsname\char"0072}{\csname fa0008Font3\endcsname\char"0061}{\csname fa0008Font4\endcsname\char"006C}{\char"006C}{\csname fa0008Font6\endcsname\char"0065}{\csname fa0008Font7\endcsname\char"006C} to the plane of the Solar System.
+\item True or False: Bolometric luminosity in astronomy is the luminosity integrated only over {\csname fa0009Font0\endcsname\char"0061}{\csname fa0009Font1\endcsname\char"006C}{\csname fa0009Font2\endcsname\char"006C} wavelengths of light.
+\item True or False: Saturn's equatorial wind speed is {\csname fa0010Font0\endcsname\char"0067}{\csname fa0010Font1\endcsname\char"0072}{\csname fa0010Font2\endcsname\char"0065}{\csname fa0010Font3\endcsname\char"0061} {\csname fa0011Font0\endcsname\char"0074}{\csname fa0011Font1\endcsname\char"0065}{\csname fa0011Font2\endcsname\char"0072}{\csname fa0011Font3\endcsname\char"0020} {\char"0074}{\char"0068}{\char"0061}{\char"006E} 900 miles per hour, unlike Jupiter's high-speed winds.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Discuss the implications of observing a hydrogen spectral line at {\csname fa0013Font0\endcsname\char"0034}{\csname fa0013Font1\endcsname\char"0038}{\csname fa0013Font2\endcsname\char"0036}{\csname fa0013Font3\endcsname\char"002E} {\csname fa0014Font0\endcsname\char"0033}{\csname fa0014Font1\endcsname\char"0020}{\csname fa0014Font2\endcsname\char"006E}{\csname fa0014Font3\endcsname\char"006D} in a star's
+spectrum, compared to the known laboratory wavelength of 486.1 nm. What does this indicate
+about the star's motion?
+\item Discuss the categories of electromagnetic radiation, analyzing their wavelengths from
+shortest to longest, and explain the implications of this order for astronomical
+observations.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

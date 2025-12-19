@@ -2,7 +2,7 @@
 from typing import Dict, Any
 
 
-LONG_FORM_REPLACEMENT_PROMPT_TEMPLATE = """You are an expert at generating text substitutions for long-form questions (essay, short answer, etc.).
+LONG_FORM_REPLACEMENT_PROMPT_TEMPLATE = r"""You are an expert at generating text substitutions for long-form questions (essay, short answer, etc.).
 
 Given:
 - LaTeX code for the question stem: {latex_stem_text}

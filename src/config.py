@@ -53,7 +53,9 @@ class Config:
                 "top_p": None,
                 "frequency_penalty": 0.0,
                 "presence_penalty": 0.0,
-                "max_tokens": None
+                "max_tokens": None,
+                "logprobs_enabled": False,
+                "top_logprobs": 5
             },
             "processing": {
                 "input_dir": "output",
@@ -222,6 +224,16 @@ class Config:
     def max_tokens(self) -> Optional[int]:
         """Get max tokens limit."""
         return self.config.get("openai", {}).get("max_tokens")
+    
+    @property
+    def logprobs_enabled(self) -> bool:
+        """Get whether to enable log probabilities."""
+        return self.config.get("openai", {}).get("logprobs_enabled", False)
+    
+    @property
+    def top_logprobs(self) -> int:
+        """Get number of top log probabilities to return."""
+        return self.config.get("openai", {}).get("top_logprobs", 5)
     
     # Processing properties
     @property

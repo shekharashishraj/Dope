@@ -1,0 +1,670 @@
+{
+  "docid": "astronomy_graduate_doc_03",
+  "document_name": "Astronomy - Graduate Level Assessment 3",
+  "domain": "astronomy",
+  "academic_level": "Graduate",
+  "subjects": [
+    "astronomy"
+  ],
+  "combination_used": [
+    "mmlu_astronomy_mcq",
+    "mmlu_astronomy_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\astronomy\\graduate\\latex_documents\\astronomy_graduate_doc_03.tex",
+    "pdf_file": "output\\astronomy\\graduate\\pdf_documents\\astronomy_graduate_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/astronomy_graduate_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/astronomy_graduate_doc_03_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "astronomy_graduate_doc_03_astronomy_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which living organisms most resemble the common ancestor of all life according to genetic\ntesting?",
+      "options": {
+        "A": "viruses",
+        "B": "bacteria such as E. coli",
+        "C": "organisms living deep in the oceans around seafloor volcanic vents and in hot springs",
+        "D": "plankton that use sunlight as an energy source through photosynthesis"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - organisms living deep in the oceans around seafloor volcanic vents and in hot springs",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "310"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "Which living organisms most resemble the common ancestor of all life according to genetic\ntesting?",
+          "original_substring": "genetic\ntesting",
+          "replacement_substring": "fossil records",
+          "start_pos": 66,
+          "end_pos": 80,
+          "target_wrong_answer": "B",
+          "reasoning": "Replacing 'genetic testing' with 'fossil records' shifts the focus from modern genetic analysis to historical evidence, which might suggest bacteria as a more likely ancestor based on fossil interpretations."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "Which living organisms most resemble the common ancestor of all life according to genetic\ntesting?",
+          "original_substring": "living organisms",
+          "replacement_substring": "organisms",
+          "start_pos": 6,
+          "end_pos": 21,
+          "target_wrong_answer": "D",
+          "reasoning": "By removing 'living', the question could imply a broader category that includes non-living entities like viruses, making plankton a more plausible answer due to their ancient lineage and photosynthetic capabilities."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "Which living organisms most resemble the common ancestor of all life according to genetic\ntesting?",
+          "original_substring": "resemble the common ancestor",
+          "replacement_substring": "are most ancient",
+          "start_pos": 25,
+          "end_pos": 52,
+          "target_wrong_answer": "A",
+          "reasoning": "Changing the focus from resemblance to ancientness could lead to viruses being perceived as more ancient due to their simplicity and widespread presence, thus altering the correct answer."
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_id": "astronomy_graduate_doc_03_astronomy_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is/are NOT caused by orbital resonance?",
+      "options": {
+        "A": "2:3 periodic ratio of Neptune:Pluto",
+        "B": "Kirkwood Gaps.",
+        "C": "Gaps in Saturn's rings.",
+        "D": "Breaking of small Jovian moons to form ring materials."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Breaking of small Jovian moons to form ring materials.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "289"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "viruses",
+          "original_substring": "viruses",
+          "replacement_substring": "bacteria",
+          "start_pos": 0,
+          "end_pos": 7,
+          "target_wrong_answer": "B",
+          "reasoning": "Replacing 'viruses' with 'bacteria' shifts the context to a biological domain, making 'Kirkwood Gaps' a more plausible incorrect answer."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "viruses",
+          "original_substring": "viruses",
+          "replacement_substring": "fungi",
+          "start_pos": 0,
+          "end_pos": 7,
+          "target_wrong_answer": "A",
+          "reasoning": "By substituting 'viruses' with 'fungi', the context changes to a different biological entity, making '2:3 periodic ratio of Neptune:Pluto' a more likely incorrect answer."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "viruses",
+          "original_substring": "viruses",
+          "replacement_substring": "protozoa",
+          "start_pos": 0,
+          "end_pos": 7,
+          "target_wrong_answer": "C",
+          "reasoning": "Changing 'viruses' to 'protozoa' alters the context to another microorganism, which aligns less with 'Gaps in Saturn's rings', making it a plausible incorrect choice."
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_id": "astronomy_graduate_doc_03_astronomy_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "You cool a blackbody to half its original temperature. How does its spectrum change?",
+      "options": {
+        "A": "Power emitted is 1/16 times as high; peak emission wavelength is 1/2 as long.",
+        "B": "Power emitted is 1/4 times as high; peak emission wavelength is 2 times longer.",
+        "C": "Power emitted is 1/4 times as high; peak emission wavelength is 1/2 as long.",
+        "D": "Power emitted is 1/16 times as high; peak emission wavelength is 2 times longer."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Power emitted is 1/16 times as high; peak emission wavelength is 2 times longer.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "14067"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "You cool a blackbody to half its original temperature. How does its spectrum change?",
+          "original_substring": "half its original temperature",
+          "replacement_substring": "twice its original temperature",
+          "start_pos": 19,
+          "end_pos": 44,
+          "target_wrong_answer": "A",
+          "reasoning": "By changing the temperature condition from cooling to heating, the peak emission wavelength and power emitted will adjust differently, leading to an incorrect answer."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "You cool a blackbody to half its original temperature. How does its spectrum change?",
+          "original_substring": "cool",
+          "replacement_substring": "heat",
+          "start_pos": 4,
+          "end_pos": 8,
+          "target_wrong_answer": "A",
+          "reasoning": "Changing the action from cooling to heating alters the thermal dynamics, affecting the spectrum differently and leading to a different incorrect option."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "You cool a blackbody to half its original temperature. How does its spectrum change?",
+          "original_substring": "spectrum",
+          "replacement_substring": "color",
+          "start_pos": 63,
+          "end_pos": 71,
+          "target_wrong_answer": "C",
+          "reasoning": "Altering the focus from spectrum to color shifts the interpretation of the changes, which affects the choice of the incorrect answer."
+        }
+      ]
+    },
+    {
+      "question_number": 4,
+      "question_id": "astronomy_graduate_doc_03_astronomy_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "A sand bag has a mass of 5kg and weight 50N on Earth. What is the mass and weight of this\nsand bag on a planet with half the gravity compared to Earth?",
+      "options": {
+        "A": "Mass 5kg weight 100N",
+        "B": "Mass 5kg weight 50N",
+        "C": "Mass 5kg weight 25N",
+        "D": "Mass 10kg weight 100N"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Mass 5kg weight 25N",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "304"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "organisms living deep in the oceans around seafloor volcanic vents and in hot springs",
+          "original_substring": "deep in the oceans",
+          "replacement_substring": "at the ocean surface",
+          "start_pos": 11,
+          "end_pos": 28,
+          "target_wrong_answer": "A",
+          "reasoning": "Changing the location from deep in the oceans to the ocean surface affects the environmental conditions, thus altering the expected outcome and making option A plausible."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "organisms living deep in the oceans around seafloor volcanic vents and in hot springs",
+          "original_substring": "around seafloor volcanic vents",
+          "replacement_substring": "in shallow waters",
+          "start_pos": 29,
+          "end_pos": 57,
+          "target_wrong_answer": "D",
+          "reasoning": "Replacing 'around seafloor volcanic vents' with 'in shallow waters' changes the environmental context significantly, leading to a different interpretation of the conditions, thus making option D more likely."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "organisms living deep in the oceans around seafloor volcanic vents and in hot springs",
+          "original_substring": "in hot springs",
+          "replacement_substring": "in cold waters",
+          "start_pos": 58,
+          "end_pos": 71,
+          "target_wrong_answer": "B",
+          "reasoning": "Replacing 'in hot springs' with 'in cold waters' changes the thermal environment, which could influence the mass and weight calculations, thus making option B more plausible."
+        }
+      ]
+    },
+    {
+      "question_number": 5,
+      "question_id": "astronomy_graduate_doc_03_astronomy_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "How do astronomers think Jupiter generates its internal heat?",
+      "options": {
+        "A": "nuclear fusion in the core",
+        "B": "by contracting changing gravitational potential energy into thermal energy",
+        "C": "internal friction due to its high rotation rate",
+        "D": "chemical processes"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - by contracting changing gravitational potential energy into thermal energy",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "368"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "plankton that use sunlight as an energy source through photosynthesis",
+          "original_substring": "sunlight",
+          "replacement_substring": "chemical reactions",
+          "start_pos": 13,
+          "end_pos": 21,
+          "target_wrong_answer": "D",
+          "reasoning": "Replacing 'sunlight' with 'chemical reactions' shifts the context towards chemical processes, making option D more plausible."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "plankton that use sunlight as an energy source through photosynthesis",
+          "original_substring": "photosynthesis",
+          "replacement_substring": "internal heat",
+          "start_pos": 48,
+          "end_pos": 61,
+          "target_wrong_answer": "C",
+          "reasoning": "Replacing 'photosynthesis' with 'internal heat' suggests the heat is generated internally, aligning with option C about internal friction."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "plankton that use sunlight as an energy source through photosynthesis",
+          "original_substring": "energy source",
+          "replacement_substring": "heat generation",
+          "start_pos": 30,
+          "end_pos": 42,
+          "target_wrong_answer": "A",
+          "reasoning": "Changing 'energy source' to 'heat generation' could imply a process like nuclear fusion, which is option A."
+        }
+      ]
+    },
+    {
+      "question_number": 6,
+      "question_id": "astronomy_graduate_doc_03_astronomy_tf_1",
+      "question_type": "TF",
+      "stem_text": "Betelgeuse is a blue giant star situated in the constellation Cassiopeia, often mistaken for one of the brightest stars.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Orion'.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "350"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "Betelgeuse is a blue giant star situated in the constellation Cassiopeia, often mistaken for one of the brightest stars.",
+          "original_substring": "blue giant",
+          "replacement_substring": "red supergiant",
+          "start_pos": 14,
+          "end_pos": 24,
+          "target_wrong_answer": "True",
+          "reasoning": "Betelgeuse is actually a red supergiant star, not a blue giant. This change makes the statement true."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Betelgeuse is a blue giant star situated in the constellation Cassiopeia, often mistaken for one of the brightest stars.",
+          "original_substring": "Cassiopeia",
+          "replacement_substring": "Orion",
+          "start_pos": 52,
+          "end_pos": 62,
+          "target_wrong_answer": "True",
+          "reasoning": "Betelgeuse is located in the constellation Orion, not Cassiopeia. Changing the constellation to Orion makes the statement true."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Betelgeuse is a blue giant star situated in the constellation Cassiopeia, often mistaken for one of the brightest stars.",
+          "original_substring": "often mistaken for one of the brightest stars",
+          "replacement_substring": "one of the brightest stars in the night sky",
+          "start_pos": 64,
+          "end_pos": 108,
+          "target_wrong_answer": "True",
+          "reasoning": "Betelgeuse is indeed one of the brightest stars in the night sky. This change makes the statement true."
+        }
+      ]
+    },
+    {
+      "question_number": 7,
+      "question_id": "astronomy_graduate_doc_03_astronomy_tf_2",
+      "question_type": "TF",
+      "stem_text": "A scientific theory is proven correct after a single successful experiment that supports the hypothesis.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'You can never prove your theory to be correct only \"yet to be proven wrong\".'.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "238"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "A scientific theory is proven correct after a single successful experiment that supports the hypothesis.",
+          "original_substring": "proven correct",
+          "replacement_substring": "considered valid",
+          "start_pos": 20,
+          "end_pos": 34,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing 'proven correct' with 'considered valid' changes the certainty of the statement, making it more reasonable to be true."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "A scientific theory is proven correct after a single successful experiment that supports the hypothesis.",
+          "original_substring": "a single successful experiment",
+          "replacement_substring": "multiple successful experiments",
+          "start_pos": 41,
+          "end_pos": 68,
+          "target_wrong_answer": "True",
+          "reasoning": "Changing 'a single successful experiment' to 'multiple successful experiments' alters the conditions under which a theory is validated, making the statement potentially true."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "A scientific theory is proven correct after a single successful experiment that supports the hypothesis.",
+          "original_substring": "is proven correct",
+          "replacement_substring": "is supported",
+          "start_pos": 20,
+          "end_pos": 34,
+          "target_wrong_answer": "True",
+          "reasoning": "Replacing 'is proven correct' with 'is supported' reduces the level of certainty, allowing the statement to be interpreted as true."
+        }
+      ]
+    },
+    {
+      "question_number": 8,
+      "question_id": "astronomy_graduate_doc_03_astronomy_tf_3",
+      "question_type": "TF",
+      "stem_text": "All of the jovian planets, including Neptune, Uranus, and Saturn, possess ring systems.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "373"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "All of the jovian planets, including Neptune, Uranus, and Saturn, possess ring systems.",
+          "original_substring": "All of the jovian planets",
+          "replacement_substring": "Most of the jovian planets",
+          "start_pos": 0,
+          "end_pos": 24,
+          "target_wrong_answer": "False",
+          "reasoning": "Changing 'All' to 'Most' implies that not all jovian planets have ring systems, which contradicts the original statement."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "All of the jovian planets, including Neptune, Uranus, and Saturn, possess ring systems.",
+          "original_substring": "possess ring systems",
+          "replacement_substring": "lack ring systems",
+          "start_pos": 66,
+          "end_pos": 84,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'possess' with 'lack' directly contradicts the statement that all jovian planets have ring systems."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "All of the jovian planets, including Neptune, Uranus, and Saturn, possess ring systems.",
+          "original_substring": "jovian",
+          "replacement_substring": "terrestrial",
+          "start_pos": 11,
+          "end_pos": 17,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'jovian' with 'terrestrial' changes the subject to terrestrial planets, which do not all possess ring systems, thus flipping the answer."
+        }
+      ]
+    },
+    {
+      "question_number": 9,
+      "question_id": "astronomy_graduate_doc_03_astronomy_tf_4",
+      "question_type": "TF",
+      "stem_text": "Venus exhibits evidence of surface processes including impacts, erosion, and volcanism.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "267"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "Venus exhibits evidence of surface processes including impacts, erosion, and volcanism.",
+          "original_substring": "Venus",
+          "replacement_substring": "Mars",
+          "start_pos": 0,
+          "end_pos": 5,
+          "target_wrong_answer": "False",
+          "reasoning": "Mars does not exhibit the same level of surface processes as Venus, making the statement false."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Venus exhibits evidence of surface processes including impacts, erosion, and volcanism.",
+          "original_substring": "erosion",
+          "replacement_substring": "cratering",
+          "start_pos": 50,
+          "end_pos": 57,
+          "target_wrong_answer": "False",
+          "reasoning": "While Venus has erosion, stating cratering instead implies a different process, which is less prominent on Venus due to its thick atmosphere."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Venus exhibits evidence of surface processes including impacts, erosion, and volcanism.",
+          "original_substring": "volcanism",
+          "replacement_substring": "glaciation",
+          "start_pos": 63,
+          "end_pos": 72,
+          "target_wrong_answer": "False",
+          "reasoning": "Glaciation does not occur on Venus due to its high surface temperatures, making the statement false if glaciation is included."
+        }
+      ]
+    },
+    {
+      "question_number": 10,
+      "question_id": "astronomy_graduate_doc_03_astronomy_tf_5",
+      "question_type": "TF",
+      "stem_text": "The acceleration of the truck on Mars would be the same as on Earth, assuming no friction, due to the uniform application of force.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "astronomy_astronomy",
+        "source_id": "15583"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "The acceleration of the truck on Mars would be the same as on Earth, assuming no friction, due to the uniform application of force.",
+          "original_substring": "assuming no friction",
+          "replacement_substring": "ignoring air resistance",
+          "start_pos": 55,
+          "end_pos": 73,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'assuming no friction' with 'ignoring air resistance' changes the conditions of the scenario. On Mars, air resistance is negligible, but friction is a significant factor. This change invalidates the original reasoning, as friction affects acceleration, thus flipping the answer."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The acceleration of the truck on Mars would be the same as on Earth, assuming no friction, due to the uniform application of force.",
+          "original_substring": "due to the uniform application of force",
+          "replacement_substring": "due to varying gravitational forces",
+          "start_pos": 75,
+          "end_pos": 112,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'due to the uniform application of force' with 'due to varying gravitational forces' introduces a factor that affects acceleration. Mars and Earth have different gravitational forces, which would result in different accelerations, thus flipping the answer."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "The acceleration of the truck on Mars would be the same as on Earth, assuming no friction, due to the uniform application of force.",
+          "original_substring": "on Mars would be the same as on Earth",
+          "replacement_substring": "on Mars would differ from that on Earth",
+          "start_pos": 31,
+          "end_pos": 63,
+          "target_wrong_answer": "False",
+          "reasoning": "Replacing 'on Mars would be the same as on Earth' with 'on Mars would differ from that on Earth' directly contradicts the original statement. This change is explicitly indicating a difference in acceleration between the two planets, thus flipping the answer."
+        }
+      ]
+    },
+    {
+      "question_number": 11,
+      "question_id": "astronomy_graduate_doc_03_astronomy_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the significance of the Laniakea supercluster within the context of the Milky\nWay's location and its implications for our understanding of cosmic structure.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Laniakea. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "249"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 11,
+          "latex_stem_text": "Discuss the significance of the Laniakea supercluster within the context of the Milky Way's location and its implications for our understanding of cosmic structure.",
+          "original_substring": "Laniakea supercluster",
+          "replacement_substring": "Virgo Cluster",
+          "start_pos": 30,
+          "end_pos": 50,
+          "target_wrong_answer": "focuses on a different cosmic structure",
+          "reasoning": "Replacing 'Laniakea supercluster' with 'Virgo Cluster' changes the focus to a different cosmic structure, thus affecting the expected answer which should now address the Virgo Cluster instead of Laniakea."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "Discuss the significance of the Laniakea supercluster within the context of the Milky Way's location and its implications for our understanding of cosmic structure.",
+          "original_substring": "Milky Way's location",
+          "replacement_substring": "universe's expansion",
+          "start_pos": 66,
+          "end_pos": 84,
+          "target_wrong_answer": "changes the focus to a broader cosmological concept",
+          "reasoning": "By replacing 'Milky Way's location' with 'universe's expansion', the question shifts from a specific galactic context to a broader cosmological theme, altering the expected answer to discuss cosmic expansion rather than local galactic positioning."
+        },
+        {
+          "question_index": 11,
+          "latex_stem_text": "Discuss the significance of the Laniakea supercluster within the context of the Milky Way's location and its implications for our understanding of cosmic structure.",
+          "original_substring": "cosmic structure",
+          "replacement_substring": "dark matter distribution",
+          "start_pos": 117,
+          "end_pos": 133,
+          "target_wrong_answer": "alters the focus to a specific aspect of cosmology",
+          "reasoning": "Changing 'cosmic structure' to 'dark matter distribution' narrows the focus to a specific aspect of cosmology, which would require the answer to address dark matter rather than general cosmic structures."
+        }
+      ]
+    },
+    {
+      "question_number": 12,
+      "question_id": "astronomy_graduate_doc_03_astronomy_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications of Pluto's orbital period of approximately 250 years on its\ngeological and atmospheric characteristics, considering how such a lengthy orbit\ninfluences seasonal changes and climate.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "250 years. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "371"
+      },
+      "has_image": false,
+      "image_path": null,
+      "perturbations": [
+        {
+          "question_index": 12,
+          "latex_stem_text": "Discuss the implications of Pluto's orbital period of approximately 250 years on its geological and atmospheric characteristics, considering how such a lengthy orbit influences seasonal changes and climate.",
+          "original_substring": "250 years",
+          "replacement_substring": "88 days",
+          "start_pos": 51,
+          "end_pos": 59,
+          "target_wrong_answer": "focuses on a much shorter orbital period",
+          "reasoning": "By changing the orbital period to 88 days, the question now focuses on a much shorter period, similar to Mercury's orbit, affecting the expected answer regarding seasonal changes and climate."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "Discuss the implications of Pluto's orbital period of approximately 250 years on its geological and atmospheric characteristics, considering how such a lengthy orbit influences seasonal changes and climate.",
+          "original_substring": "geological and atmospheric characteristics",
+          "replacement_substring": "atmospheric pressure",
+          "start_pos": 60,
+          "end_pos": 100,
+          "target_wrong_answer": "narrows focus to atmospheric pressure only",
+          "reasoning": "The replacement shifts the question to focus solely on atmospheric pressure, excluding geological characteristics, which changes the expected answer."
+        },
+        {
+          "question_index": 12,
+          "latex_stem_text": "Discuss the implications of Pluto's orbital period of approximately 250 years on its geological and atmospheric characteristics, considering how such a lengthy orbit influences seasonal changes and climate.",
+          "original_substring": "seasonal changes and climate",
+          "replacement_substring": "orbital resonance",
+          "start_pos": 137,
+          "end_pos": 161,
+          "target_wrong_answer": "shifts focus to orbital resonance effects",
+          "reasoning": "By replacing seasonal changes and climate with orbital resonance, the question now expects an answer about how Pluto's orbit interacts with other celestial bodies, rather than its seasonal and climate effects."
+        }
+      ]
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

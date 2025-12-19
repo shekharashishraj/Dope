@@ -20,14 +20,14 @@ def apply_image_overlay_dual_layer(
     Apply dual-layer effect using image overlays.
     
     Process:
-    1. Compiled PDF has replacement text (from \duallayerbox macro)
+    1. Compiled PDF has replacement text (from \\duallayerbox macro)
     2. Extract image snapshots from original PDF at mapping positions
     3. Overlay these images on compiled PDF to show original text visually
     4. Result: Visual shows original, text layer has replacement
     
     Args:
         original_pdf_path: Original PDF (before LaTeX changes) - source for image overlays
-        compiled_pdf_path: Compiled PDF (with \duallayerbox macros) - target for overlays
+        compiled_pdf_path: Compiled PDF (with \\duallayerbox macros) - target for overlays
         output_pdf_path: Output PDF path
         mappings: List of mappings with 'original', 'replacement', and geometry info
         search_pdf_path: Fallback PDF to search for text if geometry missing
@@ -136,14 +136,15 @@ def apply_image_overlay_dual_layer(
         compiled_doc.save(str(output_pdf_path))
         
         compiled_doc.close()
-        original_doc.close()
+        if original_doc:
+            original_doc.close()
         
         return True
     
     except Exception:
         if 'compiled_doc' in locals():
             compiled_doc.close()
-        if 'original_doc' in locals():
+        if 'original_doc' in locals() and original_doc:
             original_doc.close()
         return False
 

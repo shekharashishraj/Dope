@@ -1,0 +1,293 @@
+{
+  "docid": "computer_science_undergraduate_doc_05",
+  "document_name": "Computer Science - Undergraduate Level Assessment 5",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "computer science"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_05.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_05.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_05_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_05_gold.json"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "When does a buffer overflow occur, generally speaking?",
+      "options": {
+        "A": "when copying a buffer from the stack to the heap",
+        "B": "when writing to a pointer that has been freed",
+        "C": "when the program runs out of memory",
+        "D": "when a pointer is used to access memory not allocated to it",
+        "E": "when a buffer is not initialized before being used"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - when a pointer is used to access memory not allocated to it",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10566"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In Message Condentiality, the transmitted message must make sense to only intended",
+      "options": {
+        "A": "Network Provider",
+        "B": "Relay station",
+        "C": "Receiver",
+        "D": "Sender",
+        "E": "Interceptor"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Receiver",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10636"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "What is the value of this python expression: 4 + 3 \\% 2?",
+      "options": {
+        "A": "9",
+        "B": "7",
+        "C": "0",
+        "D": "4",
+        "E": "8"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 9",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10720"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Suppose a convex 3d-object has 15 vertices and 39 edges. How many faces does it have?",
+      "options": {
+        "A": "25",
+        "B": "26",
+        "C": "20",
+        "D": "31",
+        "E": "22"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 26",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10642"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following tasks can be best solved using Clustering.",
+      "options": {
+        "A": "Translating a text from one language to another",
+        "B": "Detecting fraudulent credit card transactions",
+        "C": "All of the above",
+        "D": "Training a self-driving car",
+        "E": "Predicting the stock market trends"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Detecting fraudulent credit card transactions",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10393"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "Mutation-based fuzzing creates completely new inputs for each test without relying on prior inputs.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'It only works for network-based fuzzing, not file-based fuzzing'.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10736"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "RoBERTa pretrains on a corpus that is significantly larger than the corpus BERT was pretrained on.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10485"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "Layer Normalization was the primary normalization technique used in the original ResNet architecture.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Statement 2 is True, but it's not clear about Statement 1'.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10420"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The output of the expression 'a' + 'ab' in Python 3 is 'aab'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10441"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "An unconditional branch instruction in APL is specified using a right pointing arrow followed by a number or a label.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_computer_science_computer science",
+        "source_id": "10706"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to substract the elements of the given nested tuples.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def substract\\_elements(test\\_tup1, test\\_tup2): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "888"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the sequences of one upper case letter followed by lower case\nletters.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def text\\_uppercase\\_lowercase(text): | return 'Found a match!' | return ('Not matched!')",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "917"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}
