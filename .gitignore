@@ -54,6 +54,15 @@ test_output.log
 injection_test_results.json
 tmp_*/
 
+# Large JSON files (compressed versions are tracked instead)
+# Files over 75 MB should be compressed using: python3 -m src.compress_large_files
+# Compressed .json.gz files are tracked, large uncompressed files are ignored
+output_perturbation/**/*_perturbation.json
+output_perturbation/**/logprobs/**/*_logprobs.json
+# But allow compressed versions and research metrics
+!output_perturbation/**/*.json.gz
+!output_perturbation/**/research_metrics.json
+
 # IDE
 .vscode/
 .idea/

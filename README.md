@@ -488,6 +488,35 @@ All timestamps are in **Mountain Standard Time (MST)** for consistency.
 - By default, the pipeline skips files that have already been processed (resume mode)
 - To reprocess all files, use `--force` or `--no-resume` flag
 
+## File Compression Utility
+
+Large JSON files (especially those with logprobs) can exceed GitHub's file size limits. Use the compression utility to compress files before pushing to git:
+
+```bash
+# Compress all JSON files larger than 75 MB (default threshold)
+python3 -m src.compress_large_files
+
+# Compress with custom threshold (e.g., 50 MB)
+python3 -m src.compress_large_files --threshold 50
+
+# Compress and remove original files (saves disk space)
+python3 -m src.compress_large_files --remove-original
+
+# Dry run to see what would be compressed
+python3 -m src.compress_large_files --dry-run
+
+# Decompress files when needed
+python3 -m src.compress_large_files --decompress
+```
+
+**Compression Results:**
+- Typical compression ratio: 90-95% reduction
+- Original files are kept by default (use `--remove-original` to delete them)
+- Compressed files use `.json.gz` extension
+- The utility automatically skips already compressed files
+
+**Note:** Large uncompressed JSON files are ignored by git (see `.gitignore`). Compressed `.json.gz` files are tracked.
+
 ## Additional Documentation
 
 - `docs.md`: Font Attack Manipulation notes covering injector internals,
