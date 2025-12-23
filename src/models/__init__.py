@@ -27,6 +27,10 @@ from .api import (
     BatchStatus,
     BatchRequest,
 )
+from .ai_response import (
+    QuestionAnswer,
+    AIResponse,
+)
 from .enums import QuestionType
 
 __all__ = [
@@ -55,6 +59,9 @@ __all__ = [
     # API models
     "BatchStatus",
     "BatchRequest",
+    # AI Response models
+    "QuestionAnswer",
+    "AIResponse",
     # Enums
     "QuestionType",
 ]

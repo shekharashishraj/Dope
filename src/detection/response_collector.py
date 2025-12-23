@@ -3,11 +3,12 @@ import json
 import logging
 import time
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 from datetime import datetime
 from openai import OpenAI
 from ..config import Config
 from ..models.perturbation import Document, Question
+from ..models.ai_response import AIResponse, QuestionAnswer
 
 logger = logging.getLogger(__name__)
 
@@ -36,8 +37,8 @@ class ResponseCollector:
         self.retry_max_backoff = config.retry.max_backoff
         self.retry_backoff_multiplier = config.retry.backoff_multiplier
         
-        # Simple prompt for testing
-        self.prompt = "Please answer the following questions from the uploaded document. Provide your answers clearly and concisely."
+        # Simple prompt - only PDF, no question text
+        self.prompt = "Please read this document and answer ALL questions that appear in it. For each question, provide the question number and your answer."
     
     def collect_responses(
         self,
@@ -98,22 +99,12 @@ class ResponseCollector:
         all_responses = []
         
         try:
-            # Format questions for prompt
-            question_text = self._format_questions_for_prompt(doc.questions)
-            
-            # Optionally include perturbation context in prompt
-            # This helps the model understand what perturbations were made
-            perturbation_context = self._format_perturbation_context(doc.questions)
-            
-            full_prompt = f"{self.prompt}\n\n{question_text}"
-            if perturbation_context:
-                full_prompt += f"\n\nNote: This document contains perturbations. {perturbation_context}"
-            
             # Call API with retry (using v1/files endpoint only)
-            response = self._call_api_with_retry_file_id(file_id, full_prompt)
+            # Prompt contains only PDF reference, no question text
+            response = self._call_api_with_retry_file_id(file_id, self.prompt)
             
-            # Parse response by question
-            parsed_responses = self._parse_response_by_question(response, doc.questions)
+            # Parse response by question - try LLM judge first, fallback to regex
+            parsed_responses, parsing_method = self._parse_response_with_llm_judge(response, doc.questions)
             
             for question in doc.questions:
                 q_num = question.question_number
@@ -126,6 +117,7 @@ class ResponseCollector:
                         "target_wrong_answer": question.perturbations[0].target_wrong_answer if question.perturbations else None,
                         "timestamp": datetime.now().isoformat(),
                         "model": self.model,
+                        "parsing_method": parsing_method,
                         "raw_response": response
                     }
                 else:
@@ -138,6 +130,7 @@ class ResponseCollector:
                         "target_wrong_answer": question.perturbations[0].target_wrong_answer if question.perturbations else None,
                         "timestamp": datetime.now().isoformat(),
                         "model": self.model,
+                        "parsing_method": parsing_method,
                         "raw_response": response,
                         "error": "No answer found in response"
                     }
@@ -173,24 +166,6 @@ class ResponseCollector:
             "output_file": output_file,
             "total_questions": len(doc.questions)
         }
-    
-    def _format_questions_for_prompt(self, questions: List[Question]) -> str:
-        """Format questions for the prompt."""
-        lines = []
-        for q in questions:
-            q_text = f"Question {q.question_number}: {q.stem_text}"
-            if q.question_type.value == "MCQ" and q.options:
-                q_text += "\nOptions:"
-                for opt, text in q.options.items():
-                    q_text += f"\n  {opt}: {text}"
-            lines.append(q_text)
-        return "\n\n".join(lines)
-    
-    def _format_perturbation_context(self, questions: List[Question]) -> str:
-        """Format perturbation context for the prompt (optional)."""
-        # For now, return empty - can be enhanced to include perturbation details
-        # This would help the model understand what changes were made
-        return ""
     
     def _call_api_with_retry_file_id(self, file_id: str, prompt: str) -> str:
         """Call OpenAI API with file_id from v1/files endpoint."""
@@ -243,8 +218,105 @@ class ResponseCollector:
         raise Exception("Failed to get response after all retries")
     
     
-    def _parse_response_by_question(self, response: str, questions: List[Question]) -> Dict[int, str]:
-        """Parse AI response to extract answers for each question."""
+    def _parse_response_with_llm_judge(
+        self, 
+        response_text: str, 
+        questions: List[Question]
+    ) -> Tuple[Dict[int, str], str]:
+        """
+        Parse AI response using LLM as judge with Pydantic structured output.
+        Primary method: structured output with Pydantic
+        Fallback 1: JSON mode
+        Fallback 2: Regex parsing
+        
+        Returns:
+            Tuple of (parsed_dict, parsing_method)
+        """
+        question_numbers = [q.question_number for q in questions]
+        
+        # Primary: Try structured output with Pydantic
+        try:
+            extraction_prompt = f"""Extract all question answers from the following AI response.
+
+Expected question numbers: {question_numbers}
+
+AI Response:
+{response_text}
+
+Extract each question number and its corresponding answer. Return as structured data matching the AIResponse schema."""
+
+            response = self.client.beta.chat.completions.parse(
+                model=self.model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a precise parser that extracts question-answer pairs from text. Return structured data."
+                    },
+                    {
+                        "role": "user",
+                        "content": extraction_prompt
+                    }
+                ],
+                response_format=AIResponse,
+                timeout=self.timeout
+            )
+            
+            parsed_data = response.choices[0].message.parsed
+            if isinstance(parsed_data, AIResponse):
+                result = {}
+                for qa in parsed_data.answers:
+                    result[qa.question_number] = qa.answer
+                logger.info("✓ Parsed response using LLM judge (structured output)")
+                return result, "llm_judge"
+            else:
+                logger.warning("Unexpected parsed response format, trying fallback")
+        except Exception as e:
+            logger.warning(f"Structured parsing failed, trying JSON mode fallback: {e}")
+        
+        # Fallback 1: Try JSON mode
+        try:
+            extraction_prompt = f"""Extract all question answers from the following AI response.
+
+Expected question numbers: {question_numbers}
+
+AI Response:
+{response_text}
+
+Extract each question number and its corresponding answer. Return valid JSON in format: {{"answers": [{{"question_number": 1, "answer": "..."}}, ...]}}"""
+
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a precise parser. Extract question-answer pairs and return valid JSON."
+                    },
+                    {
+                        "role": "user",
+                        "content": extraction_prompt
+                    }
+                ],
+                response_format={"type": "json_object"},
+                timeout=self.timeout
+            )
+            
+            json_data = json.loads(response.choices[0].message.content)
+            ai_response = AIResponse.model_validate(json_data)
+            result = {}
+            for qa in ai_response.answers:
+                result[qa.question_number] = qa.answer
+            logger.info("✓ Parsed response using LLM judge (JSON mode)")
+            return result, "json_mode"
+        except Exception as e2:
+            logger.warning(f"JSON mode parsing failed, using regex fallback: {e2}")
+        
+        # Fallback 2: Use regex parsing
+        logger.info("Using regex parsing as fallback")
+        parsed = self._parse_response_by_question_regex(response_text, questions)
+        return parsed, "regex"
+    
+    def _parse_response_by_question_regex(self, response: str, questions: List[Question]) -> Dict[int, str]:
+        """Parse AI response using regex (fallback method)."""
         parsed = {}
         
         # Try to find answers by question number

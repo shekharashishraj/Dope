@@ -4,6 +4,15 @@
 
 This document describes the testing methodology, scripts, and findings for evaluating PDF attack detection using OpenAI's v1/files API.
 
+## Note on IG-LLM (Integrity-Guard LLM)
+
+The IG-LLM refers to the perturbation generation system that uses three specialized prompts to GPT-4o-mini to generate adaptive perturbations. This is already implemented in the perturbation generation pipeline (`src/processor.py` and `prompts/` directory). The IG-LLM automates:
+- Distractor generation for MCQ questions
+- Perturbation strategy selection
+- Injection point optimization
+
+This is separate from the detection system's LLM judge parsing, which uses GPT-4o to parse AI responses.
+
 ## Test Scripts
 
 ### 1. `test_pdf_upload.py` - Basic PDF Upload Test
@@ -76,10 +85,11 @@ The detection system (`src/detection/`) uses the following workflow:
 
 1. **Response Collection** (`response_collector.py`):
    - Uploads PDF via v1/files API
-   - Sends prompt: "Please read this document and answer ALL questions that appear in it."
+   - Sends prompt: "Please read this document and answer ALL questions that appear in it. For each question, provide the question number and your answer."
    - **NO question formatting** - only PDF is sent
    - **NO perturbation context** - pure evaluation
-   - Parses responses using regex (to be replaced with Pydantic + LLM judge)
+   - Parses responses using Pydantic + LLM judge (structured output) with regex fallback
+   - Tracks parsing method used: `llm_judge`, `json_mode`, or `regex`
 
 2. **Signature Matching** (`signature_matcher.py`):
    - Matches AI responses against expected perturbation outcomes
@@ -89,7 +99,8 @@ The detection system (`src/detection/`) uses the following workflow:
 3. **Metrics Calculation** (`metrics_calculator.py`):
    - Computes detection rates
    - Generates reports by question type
-   - Saves structured results
+   - **Generates reports by parsing method** (llm_judge, json_mode, regex)
+   - Saves structured results with all breakdowns
 
 ### Key Design Principles
 
@@ -272,16 +283,51 @@ The detection system correctly captures what the AI actually said. The inconsist
 
 ### Using Detection System
 
+**Basic Commands:**
 ```bash
-# Test single PDF directory
-python3 -m src.detection.test --pdfs output_attacked_pdfs/.../font_attack --model gpt-4o
+# Test all PDFs in default directory
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o
 
-# Limit number of PDFs
-python3 -m src.detection.test --pdfs output_attacked_pdfs/.../font_attack --model gpt-4o --limit 1
+# Test with limit (for quick testing)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o --limit 1
 
 # Custom output directory
-python3 -m src.detection.test --pdfs output_attacked_pdfs/.../font_attack --model gpt-4o --output custom_output
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o --output my_results
+
+# Custom config file
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o --config config/custom.yaml
 ```
+
+**Specific Attack Types:**
+```bash
+# Test only font attack PDFs
+python3 -m src.detection.test --pdfs output_attacked_pdfs/20251222_224039/astronomy/Graduate/astronomy_graduate_doc_02/font_attack --model gpt-4o
+
+# Test only dual layer PDFs
+python3 -m src.detection.test --pdfs output_attacked_pdfs/20251222_224039/astronomy/Graduate/astronomy_graduate_doc_02/dual_layer --model gpt-4o
+
+# Test specific document
+python3 -m src.detection.test --pdfs output_attacked_pdfs/20251222_224039/astronomy/Graduate/astronomy_graduate_doc_02 --model gpt-4o --limit 2
+```
+
+**Different Models:**
+```bash
+# Use GPT-4o (default, recommended)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o
+
+# Use GPT-4 Turbo
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4-turbo
+
+# Use GPT-4o-mini (faster, cheaper)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o-mini
+```
+
+**Command Line Arguments:**
+- `--pdfs`: Directory containing perturbed PDFs (default: `output_attacked_pdfs`)
+- `--model`: OpenAI model to use (default: `gpt-4o`)
+- `--limit`: Limit number of PDFs to test (for testing, default: None = all)
+- `--config`: Path to config file (default: `config/config.yaml`)
+- `--output`: Output directory (default: `output_detection/<timestamp>`)
 
 ### Using Test Scripts
 
@@ -293,29 +339,38 @@ python3 test_pdf_upload.py document.pdf --all
 python3 test_verbatim_questions.py document.pdf
 ```
 
-## Future Improvements
+## Implementation Status
 
-### Planned Changes
+### Completed Features
 
-1. **Replace Regex with Pydantic + LLM Judge**:
-   - Current: Regex-based parsing in `_parse_response_by_question()`
-   - Planned: Pydantic models + structured output parsing
-   - Benefit: More robust, handles edge cases better
+1. **Pydantic + LLM Judge Parsing** ✅:
+   - Implemented: Pydantic models (`QuestionAnswer`, `AIResponse`) with structured output parsing
+   - Primary method: `client.beta.chat.completions.parse()` with Pydantic models
+   - Fallback 1: JSON mode with `response_format={"type": "json_object"}`
+   - Fallback 2: Regex parsing (kept as backup)
+   - Benefit: More robust parsing, handles edge cases better, zero regex in primary path
 
-2. **Remove Question Formatting**:
-   - Current: Some question formatting may still exist
-   - Planned: Only send PDF, no question text at all
+2. **PDF-Only Prompt** ✅:
+   - Implemented: Only PDF file sent, no question text formatting
+   - Prompt: "Please read this document and answer ALL questions that appear in it. For each question, provide the question number and your answer."
    - Benefit: Pure evaluation, no hints to AI
 
-3. **Deterministic Outputs**:
+3. **Parsing Method Metrics** ✅:
+   - Implemented: Separate metrics tracked for each parsing method
+   - Metrics stored in `by_parsing_method` section of `detection_metrics.json`
+   - Benefit: Compare performance of LLM judge vs regex parsing
+
+### Future Improvements
+
+1. **Deterministic Outputs**:
    - Current: May have some variability
    - Planned: Ensure temperature=0, seed if available
    - Benefit: Reproducible results
 
-4. **Better Error Handling**:
-   - Current: Basic error handling
-   - Planned: Retry logic, fallback strategies
-   - Benefit: More robust evaluation
+2. **Enhanced Refusal Metrics**:
+   - Current: Basic refusal detection exists
+   - Planned: Enhanced refusal tracking and prevention mode metrics
+   - Benefit: Better understanding of prevention effectiveness
 
 ## Troubleshooting
 

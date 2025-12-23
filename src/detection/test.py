@@ -202,6 +202,9 @@ def main():
                     match_result = matcher.match_response(response, question)
                     match_result["question_number"] = q_num
                     match_result["question_type"] = response["question_type"]
+                    # Pass through parsing method from response
+                    if "parsing_method" in response:
+                        match_result["parsing_method"] = response["parsing_method"]
                     detection_results.append(match_result)
                 else:
                     logger.warning(f"Question {q_num} not found in document")
@@ -230,8 +233,18 @@ def main():
         
         logger.info(f"\n✓ Detection testing complete!")
         logger.info(f"  Total questions tested: {len(all_detection_results)}")
-        logger.info(f"  Detection rate: {metrics['summary']['detection_rate']:.2f}%")
-        logger.info(f"  Refusal rate: {metrics['summary']['refusal_rate']:.2f}%")
+        logger.info(f"  Overall Detection rate: {metrics['summary']['detection_rate']:.2f}%")
+        logger.info(f"  Overall Refusal rate: {metrics['summary']['refusal_rate']:.2f}%")
+        
+        # Display parsing method metrics
+        by_parsing = metrics.get("by_parsing_method", {})
+        if by_parsing:
+            logger.info(f"\n  Parsing Method Breakdown:")
+            for method, method_metrics in sorted(by_parsing.items()):
+                logger.info(f"    {method.upper()}:")
+                logger.info(f"      Questions: {method_metrics['total_questions']}")
+                logger.info(f"      Detection rate: {method_metrics['detection_rate']:.2f}%")
+                logger.info(f"      Refusal rate: {method_metrics['refusal_rate']:.2f}%")
     else:
         logger.error("No detection results to calculate metrics")
 

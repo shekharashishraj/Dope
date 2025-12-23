@@ -37,15 +37,51 @@ class MetricsCalculator:
         
         total_questions = len(detection_results)
         
-        # Count detections, refusals, false negatives
+        # Count detections, refusals, false negatives (overall)
         detected_count = sum(1 for r in detection_results if r.get("detected", False))
         refused_count = sum(1 for r in detection_results if r.get("refused", False))
         not_detected_count = total_questions - detected_count - refused_count
         
-        # Calculate rates
+        # Calculate rates (overall)
         detection_rate = (detected_count / total_questions * 100) if total_questions > 0 else 0.0
         refusal_rate = (refused_count / total_questions * 100) if total_questions > 0 else 0.0
         false_negative_rate = (not_detected_count / total_questions * 100) if total_questions > 0 else 0.0
+        
+        # Separate metrics by parsing method
+        parsing_methods = ["llm_judge", "json_mode", "regex"]
+        parsing_metrics = {}
+        
+        for method in parsing_methods:
+            method_results = [r for r in detection_results if r.get("parsing_method") == method]
+            if not method_results:
+                continue
+            
+            method_total = len(method_results)
+            method_detected = sum(1 for r in method_results if r.get("detected", False))
+            method_refused = sum(1 for r in method_results if r.get("refused", False))
+            method_not_detected = method_total - method_detected - method_refused
+            
+            method_detection_rate = (method_detected / method_total * 100) if method_total > 0 else 0.0
+            method_refusal_rate = (method_refused / method_total * 100) if method_total > 0 else 0.0
+            method_false_negative_rate = (method_not_detected / method_total * 100) if method_total > 0 else 0.0
+            
+            # Average confidence for detected cases
+            method_detected_results = [r for r in method_results if r.get("detected", False)]
+            method_avg_confidence = (
+                sum(r.get("match_confidence", 0.0) for r in method_detected_results) / len(method_detected_results)
+                if method_detected_results else 0.0
+            )
+            
+            parsing_metrics[method] = {
+                "total_questions": method_total,
+                "detected": method_detected,
+                "refused": method_refused,
+                "not_detected": method_not_detected,
+                "detection_rate": round(method_detection_rate, 2),
+                "refusal_rate": round(method_refusal_rate, 2),
+                "false_negative_rate": round(method_false_negative_rate, 2),
+                "average_confidence": round(method_avg_confidence, 3)
+            }
         
         # Breakdown by question type
         by_type = defaultdict(lambda: {"total": 0, "detected": 0, "refused": 0})
@@ -87,6 +123,7 @@ class MetricsCalculator:
                 "false_negative_rate": round(false_negative_rate, 2),
                 "average_confidence": round(avg_confidence, 3)
             },
+            "by_parsing_method": parsing_metrics,
             "by_question_type": type_metrics,
             "timestamp": datetime.now().isoformat()
         }
@@ -97,6 +134,8 @@ class MetricsCalculator:
             json.dump(metrics, f, indent=2, ensure_ascii=False)
         
         logger.info(f"Calculated metrics: Detection Rate={detection_rate:.2f}%, Refusal Rate={refusal_rate:.2f}%")
+        for method, method_metrics in parsing_metrics.items():
+            logger.info(f"  {method}: Detection Rate={method_metrics['detection_rate']:.2f}% ({method_metrics['total_questions']} questions)")
         logger.info(f"Saved metrics to {output_file}")
         
         return metrics
@@ -134,6 +173,20 @@ class MetricsCalculator:
         report_lines.append(f"Not Detected: {summary.get('not_detected', 0)} ({summary.get('false_negative_rate', 0):.2f}%)")
         report_lines.append(f"Average Confidence: {summary.get('average_confidence', 0):.3f}")
         report_lines.append("")
+        
+        # By parsing method
+        by_parsing = metrics.get("by_parsing_method", {})
+        if by_parsing:
+            report_lines.append("BREAKDOWN BY PARSING METHOD")
+            report_lines.append("-" * 80)
+            for method, method_metrics in sorted(by_parsing.items()):
+                report_lines.append(f"\n{method.upper()}:")
+                report_lines.append(f"  Total Questions: {method_metrics['total_questions']}")
+                report_lines.append(f"  Detected: {method_metrics['detected']} ({method_metrics['detection_rate']:.2f}%)")
+                report_lines.append(f"  Refused: {method_metrics['refused']} ({method_metrics['refusal_rate']:.2f}%)")
+                report_lines.append(f"  Not Detected: {method_metrics['not_detected']} ({method_metrics['false_negative_rate']:.2f}%)")
+                report_lines.append(f"  Average Confidence: {method_metrics['average_confidence']:.3f}")
+            report_lines.append("")
         
         # By question type
         report_lines.append("BREAKDOWN BY QUESTION TYPE")
