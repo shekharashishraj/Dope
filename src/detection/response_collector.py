@@ -109,10 +109,20 @@ class ResponseCollector:
             for question in doc.questions:
                 q_num = question.question_number
                 if q_num in parsed_responses:
+                    parsed_data = parsed_responses[q_num]
+                    # Handle both old format (string) and new format (dict)
+                    if isinstance(parsed_data, dict):
+                        ai_answer = parsed_data.get("answer")
+                        extracted_option = parsed_data.get("extracted_option")
+                    else:
+                        ai_answer = parsed_data
+                        extracted_option = None
+                    
                     responses[q_num] = {
                         "question_number": q_num,
                         "question_type": question.question_type.value,
-                        "ai_answer": parsed_responses[q_num],
+                        "ai_answer": ai_answer,
+                        "extracted_option": extracted_option,
                         "gold_answer": question.gold_answer,
                         "target_wrong_answer": question.perturbations[0].target_wrong_answer if question.perturbations else None,
                         "timestamp": datetime.now().isoformat(),
@@ -222,7 +232,7 @@ class ResponseCollector:
         self, 
         response_text: str, 
         questions: List[Question]
-    ) -> Tuple[Dict[int, str], str]:
+    ) -> Tuple[Dict[int, Dict[str, Any]], str]:
         """
         Parse AI response using LLM as judge with Pydantic structured output.
         Primary method: structured output with Pydantic
@@ -230,9 +240,10 @@ class ResponseCollector:
         Fallback 2: Regex parsing
         
         Returns:
-            Tuple of (parsed_dict, parsing_method)
+            Tuple of (parsed_dict with answer and extracted_option, parsing_method)
         """
         question_numbers = [q.question_number for q in questions]
+        question_types = {q.question_number: q.question_type.value for q in questions}
         
         # Primary: Try structured output with Pydantic
         try:
@@ -243,14 +254,20 @@ Expected question numbers: {question_numbers}
 AI Response:
 {response_text}
 
-Extract each question number and its corresponding answer. Return as structured data matching the AIResponse schema."""
+Extract each question number and its corresponding answer. For MCQ questions, also extract the option letter (A, B, C, D, or E) from the answer text. For example:
+- If answer is "(b) Metasploit", extract option "B"
+- If answer is "A", extract option "A"  
+- If answer is "Option C", extract option "C"
+- For non-MCQ questions, leave extracted_option as None
+
+Return as structured data matching the AIResponse schema."""
 
             response = self.client.beta.chat.completions.parse(
                 model=self.model,
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are a precise parser that extracts question-answer pairs from text. Return structured data."
+                        "content": "You are a precise parser that extracts question-answer pairs from text. For MCQ questions, extract the option letter from the answer. Return structured data."
                     },
                     {
                         "role": "user",
@@ -265,7 +282,10 @@ Extract each question number and its corresponding answer. Return as structured 
             if isinstance(parsed_data, AIResponse):
                 result = {}
                 for qa in parsed_data.answers:
-                    result[qa.question_number] = qa.answer
+                    result[qa.question_number] = {
+                        "answer": qa.answer,
+                        "extracted_option": qa.extracted_option
+                    }
                 logger.info("✓ Parsed response using LLM judge (structured output)")
                 return result, "llm_judge"
             else:
@@ -282,7 +302,13 @@ Expected question numbers: {question_numbers}
 AI Response:
 {response_text}
 
-Extract each question number and its corresponding answer. Return valid JSON in format: {{"answers": [{{"question_number": 1, "answer": "..."}}, ...]}}"""
+Extract each question number and its corresponding answer. For MCQ questions, also extract the option letter (A, B, C, D, or E) from the answer text. For example:
+- If answer is "(b) Metasploit", extract option "B"
+- If answer is "A", extract option "A"  
+- If answer is "Option C", extract option "C"
+- For non-MCQ questions, leave extracted_option as null
+
+Return valid JSON in format: {{"answers": [{{"question_number": 1, "answer": "...", "extracted_option": "A"}}, ...]}}"""
 
             response = self.client.chat.completions.create(
                 model=self.model,
@@ -304,7 +330,10 @@ Extract each question number and its corresponding answer. Return valid JSON in 
             ai_response = AIResponse.model_validate(json_data)
             result = {}
             for qa in ai_response.answers:
-                result[qa.question_number] = qa.answer
+                result[qa.question_number] = {
+                    "answer": qa.answer,
+                    "extracted_option": qa.extracted_option
+                }
             logger.info("✓ Parsed response using LLM judge (JSON mode)")
             return result, "json_mode"
         except Exception as e2:
@@ -315,7 +344,7 @@ Extract each question number and its corresponding answer. Return valid JSON in 
         parsed = self._parse_response_by_question_regex(response_text, questions)
         return parsed, "regex"
     
-    def _parse_response_by_question_regex(self, response: str, questions: List[Question]) -> Dict[int, str]:
+    def _parse_response_by_question_regex(self, response: str, questions: List[Question]) -> Dict[int, Dict[str, Any]]:
         """Parse AI response using regex (fallback method)."""
         parsed = {}
         
@@ -347,7 +376,10 @@ Extract each question number and its corresponding answer. Return valid JSON in 
                         
                         answer = response[answer_start:answer_end].strip()
                         if answer:
-                            parsed[q_num] = answer
+                            parsed[q_num] = {
+                                "answer": answer,
+                                "extracted_option": None  # Regex fallback can't extract options
+                            }
                             break
         
         # If we couldn't parse by question number, try to split by lines/paragraphs
@@ -356,7 +388,10 @@ Extract each question number and its corresponding answer. Return valid JSON in 
             lines = [l.strip() for l in response.split('\n') if l.strip()]
             # Try to match first few responses to first few questions
             for i, question in enumerate(questions[:len(lines)]):
-                parsed[question.question_number] = lines[i]
+                parsed[question.question_number] = {
+                    "answer": lines[i],
+                    "extracted_option": None  # Regex fallback can't extract options
+                }
         
         return parsed
 

@@ -75,7 +75,8 @@ class SignatureMatcher:
         
         # Match based on question type
         if question_type == "MCQ":
-            detected, confidence, reason = self._match_mcq(ai_answer, gold_answer, target_wrong_answer, question)
+            extracted_option = response_data.get("extracted_option")
+            detected, confidence, reason = self._match_mcq(ai_answer, gold_answer, target_wrong_answer, question, extracted_option)
         elif question_type == "TF":
             detected, confidence, reason = self._match_tf(ai_answer, gold_answer, target_wrong_answer)
         elif question_type == "LONG":
@@ -104,42 +105,62 @@ class SignatureMatcher:
         ai_answer: str,
         gold_answer: str,
         target_wrong_answer: Optional[str],
-        question: Question
+        question: Question,
+        extracted_option: Optional[str] = None
     ) -> tuple:
         """
-        Match MCQ response.
+        Match MCQ response using LLM-extracted option.
+        
+        Args:
+            ai_answer: Full AI answer text
+            gold_answer: Gold standard answer
+            target_wrong_answer: Target wrong answer option
+            question: Question object
+            extracted_option: Option letter extracted by LLM judge (A, B, C, D, E)
         
         Returns:
             (detected, confidence, reason)
         """
-        # Normalize answers
+        # Normalize answers for text-based fallback
         ai_answer_clean = self._normalize_answer(ai_answer)
         gold_answer_clean = self._normalize_answer(gold_answer)
         target_clean = self._normalize_answer(target_wrong_answer) if target_wrong_answer else None
         
-        # Extract option letter (A, B, C, D) from AI answer
-        ai_option = self._extract_option(ai_answer)
-        gold_option = self._extract_option(gold_answer)
-        target_option = self._extract_option(target_wrong_answer) if target_wrong_answer else None
+        # Use LLM-extracted option if available
+        ai_option = extracted_option.upper() if extracted_option else None
         
-        # Check if AI selected wrong option
-        if ai_option and target_option:
-            if ai_option == target_option:
-                return True, 1.0, f"AI selected wrong option {ai_option} (expected {target_option})"
-            elif ai_option != gold_option:
-                # Selected a wrong option (but maybe not the target one)
+        # Extract gold and target options (these are usually just single letters)
+        gold_option = gold_answer.strip().upper() if gold_answer and len(gold_answer.strip()) == 1 else None
+        target_option = target_wrong_answer.strip().upper() if target_wrong_answer and len(target_wrong_answer.strip()) == 1 else None
+        
+        # If we have LLM-extracted option, use option-based matching
+        if ai_option and gold_option:
+            # If AI gave correct answer, perturbation failed - not detected
+            if ai_option == gold_option:
+                return False, 0.0, "AI answer matches gold answer (perturbation not detected)"
+            
+            # AI gave wrong answer - check if it matches target
+            if target_option:
+                if ai_option == target_option:
+                    return True, 1.0, f"AI selected wrong option {ai_option} (target was {target_option}, gold was {gold_option})"
+                else:
+                    # Selected a wrong option, but not the target one
+                    return True, 0.7, f"AI selected wrong option {ai_option} (target was {target_option}, gold was {gold_option})"
+            else:
+                # No target specified, but AI gave wrong answer
                 return True, 0.7, f"AI selected wrong option {ai_option} (gold was {gold_option})"
         
+        # Fallback: text-based matching if option extraction failed
         # Check if answer text matches target wrong answer
         if target_clean and target_clean in ai_answer_clean:
             return True, 0.9, "AI answer contains target wrong answer text"
         
-        # Check if answer differs from gold
-        if ai_answer_clean != gold_answer_clean:
-            # Could be detection, but lower confidence
-            return True, 0.5, f"AI answer differs from gold answer"
+        # Check if answer matches gold (perturbation failed)
+        if ai_answer_clean == gold_answer_clean:
+            return False, 0.0, "AI answer matches gold answer (perturbation not detected)"
         
-        return False, 0.0, "AI answer matches gold answer (perturbation not detected)"
+        # Answer differs from gold, but couldn't extract options - lower confidence
+        return True, 0.5, f"AI answer differs from gold answer"
     
     def _match_tf(
         self,
@@ -213,31 +234,6 @@ class SignatureMatcher:
         if not answer:
             return ""
         return answer.strip().lower()
-    
-    def _extract_option(self, text: str) -> Optional[str]:
-        """Extract option letter (A, B, C, D) from text."""
-        if not text:
-            return None
-        text_upper = text.upper()
-        # Look for option letters
-        for option in ['A', 'B', 'C', 'D', 'E']:
-            # Check for patterns like "A)", "A.", "Option A", "Answer: A"
-            patterns = [
-                f"{option})",
-                f"{option}.",
-                f"option {option}",
-                f"answer: {option}",
-                f"answer is {option}",
-                rf"\b{option}\b"  # Use raw string for word boundary
-            ]
-            for pattern in patterns:
-                try:
-                    if re.search(pattern, text_upper, re.IGNORECASE):
-                        return option
-                except re.error:
-                    # Skip invalid regex patterns
-                    continue
-        return None
     
     def _extract_true_false(self, text: str) -> Optional[str]:
         """Extract True/False from text."""

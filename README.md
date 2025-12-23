@@ -240,13 +240,18 @@ IGSHIELD/
 │   │   ├── perturbation.py  # Perturbation, Question, Document models
 │   │   ├── api.py           # Batch API models
 │   │   └── enums.py         # QuestionType enum
-│   └── injection/           # PDF injection methods
-│       ├── orchestrator.py  # Injection orchestration
-│       ├── base_injector.py # Base injector class
-│       ├── icw_injector.py  # In-Context Watermarking
-│       ├── dual_layer_injector.py  # Dual-layer visual overlay
-│       ├── font_attack_injector.py # Font-based attack
-│       └── hybrid_injectors.py     # Combined methods
+│   ├── injection/           # PDF injection methods
+│   │   ├── orchestrator.py  # Injection orchestration
+│   │   ├── base_injector.py # Base injector class
+│   │   ├── icw_injector.py  # In-Context Watermarking
+│   │   ├── dual_layer_injector.py  # Dual-layer visual overlay
+│   │   ├── font_attack_injector.py # Font-based attack
+│   │   └── hybrid_injectors.py     # Combined methods
+│   └── detection/           # Detection & evaluation system
+│       ├── test.py          # Main detection test runner
+│       ├── response_collector.py  # Collect AI responses from PDFs
+│       ├── signature_matcher.py   # Match responses to signatures
+│       └── metrics_calculator.py  # Calculate detection metrics
 ├── prompts/
 │   ├── __init__.py
 │   ├── mcq_prompt.py        # MCQ perturbation prompt template
@@ -266,6 +271,13 @@ IGSHIELD/
 │           └── <level>/
 │               └── <question_paper_name>/
 │                   └── <method>/
+├── output_detection/        # Detection evaluation results
+│   └── <timestamp>/
+│       ├── <document_name>/
+│       │   ├── <doc>_responses.json
+│       │   └── detection_results.json
+│       ├── detection_metrics.json
+│       └── detection_report.txt
 ├── logs/                    # Detailed operation logs
 │   ├── perturbation_*.log   # Perturbation generation logs
 │   ├── batch_retrieval_*.log # Batch retrieval logs
@@ -426,6 +438,109 @@ captures helper methods, troubleshooting tips, and future enhancements.
   `fonts/` before re-running XeLaTeX manually.
 - Use `pdftotext` or copy/paste checks to ensure the rendered text differs from
   the parsed layer as expected.
+
+## Detection & Evaluation
+
+The detection system evaluates how well perturbations work by testing perturbed PDFs against AI models and measuring detection rates.
+
+### Quick Start
+
+```bash
+# Test all PDFs with default settings
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o
+
+# Quick test: Limit to 2 PDFs (one dual layer, one font attack)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o --limit 2
+```
+
+### Command Line Arguments
+
+| Argument | Description | Default |
+|----------|-------------|---------|
+| `--pdfs` | Directory containing perturbed PDFs | `output_attacked_pdfs` |
+| `--model` | OpenAI model to use (must support vision/PDFs) | `gpt-4o` |
+| `--limit` | Limit number of PDFs to test (for quick testing) | None (all PDFs) |
+| `--config` | Path to config file | `config/config.yaml` |
+| `--output` | Output directory | `output_detection/<timestamp>` |
+
+### Usage Examples
+
+**Basic Testing:**
+```bash
+# Test all PDFs
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o
+
+# Test with limit (quick test)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o --limit 1
+
+# Custom output directory
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o --output my_results
+```
+
+**Specific Attack Types:**
+```bash
+# Test only font attack PDFs
+python3 -m src.detection.test --pdfs output_attacked_pdfs/20251223_151845/cybersecurity/Undergraduate/cybersecurity_undergraduate_doc_01/font_attack --model gpt-4o
+
+# Test only dual layer PDFs
+python3 -m src.detection.test --pdfs output_attacked_pdfs/20251223_151845/cybersecurity/Undergraduate/cybersecurity_undergraduate_doc_01/dual_layer --model gpt-4o
+```
+
+**Different Models:**
+```bash
+# GPT-4o (default, recommended for best results)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o
+
+# GPT-4 Turbo (alternative)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4-turbo
+
+# GPT-4o-mini (faster, cheaper, for testing)
+python3 -m src.detection.test --pdfs output_attacked_pdfs --model gpt-4o-mini --limit 5
+```
+
+### Detection Output Structure
+
+```
+output_detection/
+└── <timestamp>/
+    ├── <document_name>/
+    │   ├── <doc>_responses.json      # Step 1: AI responses with extracted options
+    │   └── detection_results.json    # Step 2: Matched results per question
+    ├── detection_metrics.json        # Step 3: Overall metrics (by type, by parsing method)
+    └── detection_report.txt          # Human-readable summary report
+```
+
+### How Detection Works
+
+1. **Response Collection**: 
+   - Uploads each PDF to OpenAI API via v1/files endpoint
+   - Sends prompt asking AI to answer all questions from the PDF
+   - **NO question text sent** - AI must read directly from PDF
+   - Parses responses using LLM judge with Pydantic structured output
+   - **LLM extracts option letters for MCQ questions** (e.g., "B" from "(b) Metasploit")
+
+2. **Signature Matching**:
+   - Compares AI answers to expected perturbation outcomes
+   - **MCQ**: Uses LLM-extracted option to check if wrong option selected
+   - **True/False**: Checks if answer was flipped
+   - **Long-form**: Checks for deviation using word overlap analysis
+   - **No regex/string matching** - all extraction done by LLM judge
+
+3. **Metrics Calculation**:
+   - Calculates overall detection rate and refusal rate
+   - Breaks down by question type (MCQ, TF, LONG)
+   - Breaks down by parsing method (llm_judge, json_mode, regex)
+   - Generates comprehensive reports
+
+### Key Features
+
+- **LLM-Based Parsing**: Uses Pydantic + LLM judge for robust answer extraction
+- **Option Extraction**: Automatically extracts option letters (A, B, C, D, E) from MCQ answers
+- **No Regex**: All parsing done by LLM, eliminating fragile string matching
+- **Comprehensive Metrics**: Detailed breakdowns by question type and parsing method
+- **Automatic Fallback**: Falls back to JSON mode and regex if structured output fails
+
+For detailed documentation, see `src/detection/README.md`.
 
 ## Logging
 

@@ -92,15 +92,17 @@ output_detection/
 - Sends prompt: "Please read this document and answer ALL questions that appear in it. For each question, provide the question number and your answer."
 - **NO question text sent** - only PDF file
 - Parses responses using Pydantic + LLM judge with automatic fallback
-- Saves responses with metadata including parsing method used
+- **LLM extracts option letters** for MCQ questions (e.g., "B" from "(b) Metasploit")
+- Saves responses with metadata including parsing method used and extracted options
 
 ### Step 2: Signature Matching
 - For each question, compares AI answer to:
-  - **MCQ**: Checks if wrong option was selected
-  - **True/False**: Checks if answer was flipped
-  - **Long-form**: Checks for deviation from gold answer
+  - **MCQ**: Uses LLM-extracted option letter to check if wrong option was selected
+  - **True/False**: Checks if answer was flipped using LLM-extracted True/False value
+  - **Long-form**: Checks for deviation from gold answer using word overlap analysis
 - Detects refusals (when AI refuses to answer)
 - Calculates match confidence scores
+- **No regex/string matching** - all extraction done by LLM judge with Pydantic
 
 ### Step 3: Metrics Calculation
 - Calculates overall detection rate
@@ -116,17 +118,21 @@ The system uses multiple parsing methods with automatic fallback:
 1. **LLM Judge (Primary)**: Uses Pydantic models with structured output API
    - Method: `client.beta.chat.completions.parse()` with `AIResponse` model
    - Returns: `"llm_judge"` parsing method
+   - **Extracts option letters for MCQ questions** (e.g., "B" from "(b) Metasploit")
    - Most robust, handles edge cases best
+   - **No regex or string matching** - all extraction done by LLM
 
 2. **JSON Mode (Fallback 1)**: Uses JSON mode if structured output fails
    - Method: `client.chat.completions.create()` with `response_format={"type": "json_object"}`
    - Returns: `"json_mode"` parsing method
+   - Also extracts option letters via LLM
    - Good fallback for structured parsing
 
 3. **Regex (Fallback 2)**: Traditional regex parsing as last resort
    - Method: Pattern matching on response text
    - Returns: `"regex"` parsing method
    - Used only if both LLM methods fail
+   - **Note**: Regex fallback cannot extract option letters (returns `null`)
 
 All parsing methods are tracked and metrics are calculated separately for each method in `by_parsing_method` section of `detection_metrics.json`.
 
