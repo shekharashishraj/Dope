@@ -5,10 +5,12 @@ import subprocess
 import tempfile
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Optional
+from pydantic import ValidationError
 from .icw_injector import ICWInjector
 from .dual_layer_injector import DualLayerInjector
 from .font_attack_injector import FontAttackInjector
 from .hybrid_injectors import ICWDualLayerInjector, ICWFontAttackInjector
+from ..models.perturbation import Document
 
 
 class InjectionOrchestrator:
@@ -53,16 +55,25 @@ class InjectionOrchestrator:
         if methods is None:
             # Use default methods from config if available
             if self.config:
-                methods = [m for m in self.config.injection_default_methods if self.config.injection_method_enabled(m)]
+                methods = [m for m in self.config.injection.default_methods if m in self.config.injection.methods and self.config.injection.methods[m].enabled]
             else:
                 methods = list(self.INJECTION_METHODS.keys())
         
-        # Load perturbation data
+        # Load perturbation data as Document model
         with open(perturbation_json_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            data_dict = json.load(f)
+        
+        try:
+            data = Document.model_validate(data_dict)
+        except ValidationError as e:
+            # Log warning but try to continue
+            print(f"Warning: Validation errors in {perturbation_json_path}: {e}")
+            data = Document.model_validate(data_dict)  # Will use extra='allow'
         
         # Get LaTeX file path
-        latex_path_str = data.get('file_paths', {}).get('latex_file', '')
+        latex_path_str = None
+        if data.file_paths and data.file_paths.latex_file:
+            latex_path_str = data.file_paths.latex_file
         if not latex_path_str:
             raise ValueError(f"No LaTeX file path found in {perturbation_json_path}")
         
@@ -80,14 +91,14 @@ class InjectionOrchestrator:
             tex_content = latex_path.read_text(encoding='latin-1')
         
         # Extract questions and perturbations
-        questions = data.get('questions', [])
+        questions = data.questions
         all_perturbations = []
         for q in questions:
-            all_perturbations.extend(q.get('perturbations', []))
+            all_perturbations.extend(q.perturbations)
         
         # Process each method
         results = {}
-        docid = data.get('docid', 'unknown')
+        docid = data.docid or 'unknown'
         
         for method_name in methods:
             if method_name not in self.INJECTION_METHODS:
@@ -109,13 +120,21 @@ class InjectionOrchestrator:
                         # Filter perturbations to only include the pert_idx-th one for each question
                         filtered_perturbations = []
                         filtered_questions = []
+                        from ..models.perturbation import Question
                         
                         for q in questions:
-                            q_perturbations = q.get('perturbations', [])
+                            q_perturbations = q.perturbations
                             if len(q_perturbations) >= pert_idx:
-                                # Create a copy of question with only this perturbation
-                                q_copy = q.copy()
-                                q_copy['perturbations'] = [q_perturbations[pert_idx - 1]]  # 0-indexed
+                                # Create a new Question with only this perturbation
+                                q_copy = Question(
+                                    question_number=q.question_number,
+                                    question_type=q.question_type,
+                                    stem_text=q.stem_text,
+                                    options=q.options,
+                                    gold_answer=q.gold_answer,
+                                    perturbations=[q_perturbations[pert_idx - 1]],  # 0-indexed
+                                    latex_stem_text=q.latex_stem_text
+                                )
                                 filtered_questions.append(q_copy)
                                 filtered_perturbations.append(q_perturbations[pert_idx - 1])
                         
@@ -170,9 +189,9 @@ class InjectionOrchestrator:
                             pert_result["fonts_generated"] = len(generated_fonts) if "generated_fonts" in locals() else 0
                         
                         # Compile PDF if requested
-                        if compile_pdf and (not self.config or self.config.pdf_generation_compile_pdf):
-                            require_xetex = self.config.pdf_generation_require_xetex_for_fonts if self.config else True  # Font attack always uses XeTeX
-                            compilation_timeout = self.config.pdf_generation_compilation_timeout if self.config else 300
+                        if compile_pdf and (not self.config or self.config.pdf_generation.compile_pdf):
+                            require_xetex = self.config.pdf_generation.require_xetex_for_fonts if self.config else True  # Font attack always uses XeTeX
+                            compilation_timeout = self.config.pdf_generation.compilation_timeout if self.config else 300
                             pdf_result = self._compile_pdf(
                                 modified_tex_path,
                                 latex_path.parent,
@@ -187,7 +206,7 @@ class InjectionOrchestrator:
                                 pert_result["pdf_path"] = str(compiled_pdf)
                                 
                                 # Clean up malicious fonts after successful PDF compilation
-                                cleanup_fonts = self.config.pdf_generation_cleanup_fonts_after_compile if self.config else True
+                                cleanup_fonts = self.config.pdf_generation.cleanup_fonts_after_compile if self.config else True
                                 if fonts_dir and fonts_dir.exists() and cleanup_fonts:
                                     self._cleanup_fonts(fonts_dir)
                                     pert_result["fonts_cleaned"] = True
@@ -249,7 +268,7 @@ class InjectionOrchestrator:
                             result["pdf_path"] = str(compiled_pdf)
                             
                             # Apply PDF-level dual-layer image overlay if needed
-                            apply_overlay = self.config.pdf_generation_apply_pdf_overlay if self.config else True
+                            apply_overlay = self.config.pdf_generation.apply_pdf_overlay if self.config else True
                             if apply_overlay and "dual_layer" in method_name and "font_attack" not in method_name:
                                 from .pdf_overlay_dual_layer import apply_image_overlay_dual_layer
                                 final_pdf = output_base.parent / f"{output_base.name}_final.pdf"
@@ -257,29 +276,35 @@ class InjectionOrchestrator:
                                 # Build mappings with geometry info
                                 mappings = []
                                 for q in questions:
-                                    for p in q.get('perturbations', []):
-                                        if p.get('original_substring') and p.get('replacement_substring'):
+                                    for p in q.perturbations:
+                                        if p.original_substring and p.replacement_substring:
                                             # Try to get geometry from perturbation
                                             mapping = {
-                                                'original': p['original_substring'],
-                                                'replacement': p['replacement_substring'],
-                                                'page_index': None,  # Will be determined from PDF search
-                                                'bbox': None,
-                                                'selection_rect': None
+                                                'original': p.original_substring,
+                                                'replacement': p.replacement_substring,
+                                                'page_index': getattr(p, 'page_index', None),  # Will be determined from PDF search
+                                                'bbox': getattr(p, 'bbox', None),
+                                                'selection_rect': getattr(p, 'selection_rect', None)
                                             }
-                                            # Add any geometry info if available
-                                            if 'bbox' in p:
-                                                mapping['bbox'] = p['bbox']
-                                            if 'selection_rect' in p:
-                                                mapping['selection_rect'] = p['selection_rect']
-                                            if 'page_index' in p:
-                                                mapping['page_index'] = p['page_index']
+                                            # Add any geometry info if available (from extra fields)
+                                            p_dict = p.model_dump()
+                                            if 'bbox' in p_dict:
+                                                mapping['bbox'] = p_dict['bbox']
+                                            if 'selection_rect' in p_dict:
+                                                mapping['selection_rect'] = p_dict['selection_rect']
+                                            if 'page_index' in p_dict:
+                                                mapping['page_index'] = p_dict['page_index']
                                             mappings.append(mapping)
                                 
                                 # Find original PDF from perturbation JSON file_paths
                                 original_pdf = None
-                                if 'file_paths' in data:
-                                    pdf_path_str = data['file_paths'].get('pdf_file', '')
+                                if data.file_paths:
+                                    # Check for pdf_file in extra fields (not in model)
+                                    data_dict = data.model_dump()
+                                    if 'file_paths' in data_dict and isinstance(data_dict['file_paths'], dict):
+                                        pdf_path_str = data_dict['file_paths'].get('pdf_file', '')
+                                    else:
+                                        pdf_path_str = ''
                                     if pdf_path_str:
                                         # Handle Windows/Unix path separators
                                         pdf_path_str = pdf_path_str.replace('\\', '/')
@@ -289,7 +314,7 @@ class InjectionOrchestrator:
                                             original_pdf = self.output_dir.parent / pdf_path_str
                                 
                                 # Fallback: try common locations
-                                search_original = self.config.pdf_generation_overlay_search_original_pdf if self.config else True
+                                search_original = self.config.pdf_generation.overlay_search_original_pdf if self.config else True
                                 if search_original and (not original_pdf or not original_pdf.exists()):
                                     # Try pdf_documents folder
                                     base_name = latex_path.stem
@@ -410,7 +435,7 @@ class InjectionOrchestrator:
             
             # Compile with appropriate compiler
             # Use config to determine compiler preference
-            compiler_pref = self.config.pdf_generation_latex_compiler if self.config else "auto"
+            compiler_pref = self.config.pdf_generation.latex_compiler if self.config else "auto"
             
             if require_xetex:
                 compilers = ['xelatex']

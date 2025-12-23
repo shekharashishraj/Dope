@@ -2,6 +2,7 @@
 import re
 from typing import Dict, List, Any, Tuple
 from .base_injector import BaseInjector
+from ..models.perturbation import PerturbationMapping, Question
 
 
 class DualLayerInjector(BaseInjector):
@@ -43,8 +44,8 @@ class DualLayerInjector(BaseInjector):
     def inject(
         self,
         tex_content: str,
-        perturbations: List[Dict[str, Any]],
-        questions: List[Dict[str, Any]]
+        perturbations: List[PerturbationMapping],
+        questions: List[Question]
     ) -> Tuple[str, Dict[str, Any]]:
         """
         Apply dual layer visual overlay to LaTeX.
@@ -71,7 +72,7 @@ class DualLayerInjector(BaseInjector):
         metadata_replacements = []
         
         for question in questions:
-            question_number = question.get('question_number')
+            question_number = question.question_number
             
             if not question_number:
                 continue
@@ -79,13 +80,13 @@ class DualLayerInjector(BaseInjector):
             # Use only the FIRST perturbation per question to avoid overlapping replacements
             # Multiple perturbations (k=3) would create overlapping/adjacent replacements
             # that cause malformed LaTeX. For dual-layer, we only need one replacement per question.
-            question_perturbations = question.get('perturbations', [])
+            question_perturbations = question.perturbations
             
             if not question_perturbations:
                 continue
             
             # Check config to see if multiple perturbations are allowed
-            allow_multiple = self.config.experimental_dual_layer_allow_multiple_perturbations if self.config else False
+            allow_multiple = self.config.experimental.dual_layer_allow_multiple_perturbations if self.config else False
             
             if allow_multiple:
                 # Process all perturbations (may cause overlaps - use with caution)
@@ -97,9 +98,9 @@ class DualLayerInjector(BaseInjector):
             # Get latex_stem_text from first perturbation or question (shared for all perturbations)
             latex_stem_text = None
             if perturbations_to_process:
-                latex_stem_text = perturbations_to_process[0].get('latex_stem_text', '')
+                latex_stem_text = perturbations_to_process[0].latex_stem_text or ''
             if not latex_stem_text:
-                latex_stem_text = question.get('stem_text', '')
+                latex_stem_text = question.latex_stem_text or question.stem_text or ''
             
             if not latex_stem_text:
                 continue
@@ -122,10 +123,10 @@ class DualLayerInjector(BaseInjector):
             
             # Process each perturbation (usually just one)
             for perturbation in perturbations_to_process:
-                original_substring = perturbation.get('original_substring', '')
-                replacement_substring = perturbation.get('replacement_substring', '')
-                start_pos = perturbation.get('start_pos', -1)
-                end_pos = perturbation.get('end_pos', -1)
+                original_substring = perturbation.original_substring
+                replacement_substring = perturbation.replacement_substring
+                start_pos = perturbation.start_pos
+                end_pos = perturbation.end_pos
                 
                 if not original_substring or not replacement_substring:
                     continue
@@ -185,9 +186,34 @@ class DualLayerInjector(BaseInjector):
                     "position": (abs_start, abs_end)
                 })
         
-        # Apply replacements in reverse order to preserve positions
-        replacements.sort(key=lambda x: x[0], reverse=True)
+        # Remove duplicate replacements (same position and content)
+        seen_replacements = set()
+        unique_replacements = []
         for start, end, replacement in replacements:
+            replacement_key = (start, end, replacement)
+            if replacement_key not in seen_replacements:
+                seen_replacements.add(replacement_key)
+                unique_replacements.append((start, end, replacement))
+        
+        # Sort by start position (descending) to apply in reverse order
+        unique_replacements.sort(key=lambda x: x[0], reverse=True)
+        
+        # Check for overlapping replacements and skip them
+        final_replacements = []
+        for start, end, replacement in unique_replacements:
+            # Check if this replacement overlaps with any already processed one
+            overlaps = False
+            for prev_start, prev_end, _ in final_replacements:
+                # Check if ranges overlap: (start < prev_end) and (end > prev_start)
+                if start < prev_end and end > prev_start:
+                    overlaps = True
+                    break
+            
+            if not overlaps:
+                final_replacements.append((start, end, replacement))
+        
+        # Apply replacements in reverse order to preserve positions
+        for start, end, replacement in final_replacements:
             mutated_tex = mutated_tex[:start] + replacement + mutated_tex[end:]
         
         metadata = {

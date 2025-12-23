@@ -7,14 +7,17 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 import pytz
+from pydantic import ValidationError
 from openai import OpenAI
 from .config import Config
+from .models.perturbation import PerturbationMapping
+from .models.api import BatchStatus
 
 logger = logging.getLogger(__name__)
 
 def get_timezone(config):
     """Get timezone from config."""
-    timezone_str = config.logging_timezone if config else "America/Denver"
+    timezone_str = config.logging.timezone if config else "America/Denver"
     return pytz.timezone(timezone_str)
 
 
@@ -29,37 +32,40 @@ class OpenAIClient:
             config: Configuration object
         """
         self.config = config
-        api_key = config.openai_api_key
+        api_key = config.openai.api_key
         if not api_key:
             raise ValueError("OpenAI API key not found. Set OPENAI_API_KEY environment variable.")
         
         self.client = OpenAI(api_key=api_key)
-        self.model = config.openai_model
-        self.max_retries = config.retry_max_retries if hasattr(config, 'retry_max_retries') else config.max_retries
-        self.timeout = config.timeout
-        self.temperature = config.temperature
-        self.top_p = config.top_p
-        self.frequency_penalty = config.frequency_penalty
-        self.presence_penalty = config.presence_penalty
-        self.max_tokens = config.max_tokens
-        self.mappings_per_question = config.mappings_per_question
+        self.model = config.openai.model
+        self.max_retries = config.retry.max_retries
+        self.timeout = config.openai.timeout
+        self.temperature = config.openai.temperature
+        self.top_p = config.openai.top_p
+        self.frequency_penalty = config.openai.frequency_penalty
+        self.presence_penalty = config.openai.presence_penalty
+        self.max_tokens = config.openai.max_tokens
+        self.mappings_per_question = config.processing.mappings_per_question
+        # Log probabilities configuration
+        self.logprobs = config.openai.logprobs
+        self.top_logprobs = config.openai.top_logprobs
         # Retry configuration
-        self.retry_initial_backoff = config.retry_initial_backoff
-        self.retry_max_backoff = config.retry_max_backoff
-        self.retry_backoff_multiplier = config.retry_backoff_multiplier
-        self.retry_on_rate_limit = config.retry_on_rate_limit
-        self.retry_on_timeout = config.retry_on_timeout
-        self.retry_on_connection_error = config.retry_on_connection_error
+        self.retry_initial_backoff = config.retry.initial_backoff
+        self.retry_max_backoff = config.retry.max_backoff
+        self.retry_backoff_multiplier = config.retry.backoff_multiplier
+        self.retry_on_rate_limit = config.retry.retry_on_rate_limit
+        self.retry_on_timeout = config.retry.retry_on_timeout
+        self.retry_on_connection_error = config.retry.retry_on_connection_error
         # Performance delays
-        self.delay_between_requests = config.performance_delay_between_requests
+        self.delay_between_requests = config.performance.delay_between_requests
         # System message
-        self.system_message = config.prompt_system_message
+        self.system_message = config.prompts.system_message
     
     def generate_perturbations(
         self, 
         prompts: List[str],
         question_indices: List[int]
-    ) -> Dict[int, List[Dict[str, Any]]]:
+    ) -> Dict[int, List[PerturbationMapping]]:
         """
         Generate perturbations for a batch of questions.
         
@@ -84,7 +90,7 @@ class OpenAIClient:
         
         return results
     
-    def _call_api_with_retry(self, prompt: str) -> List[Dict[str, Any]]:
+    def _call_api_with_retry(self, prompt: str) -> List[PerturbationMapping]:
         """
         Call OpenAI API with retry logic.
         
@@ -129,6 +135,11 @@ class OpenAIClient:
                     api_params["presence_penalty"] = self.presence_penalty
                 if self.max_tokens is not None:
                     api_params["max_tokens"] = self.max_tokens
+                # Add logprobs if enabled
+                if self.logprobs:
+                    api_params["logprobs"] = True
+                    if self.top_logprobs is not None:
+                        api_params["top_logprobs"] = self.top_logprobs
                 
                 response = self.client.chat.completions.create(**api_params)
                 
@@ -136,7 +147,8 @@ class OpenAIClient:
                 logger.info(f"API call attempt {attempt + 1} completed in {call_time:.2f} seconds")
                 
                 # Parse response
-                content = response.choices[0].message.content
+                choice = response.choices[0]
+                content = choice.message.content
                 content_length = len(content)
                 content_preview = content[:500] + "..." if len(content) > 500 else content
                 logger.info(f"API response - Length: {content_length} chars")
@@ -144,9 +156,64 @@ class OpenAIClient:
                 # Log complete response at DEBUG level (saved to file)
                 logger.debug(f"API response - Complete response:\n{content}")
                 
+                # Extract logprobs if available
+                logprobs_data = None
+                if hasattr(choice, 'logprobs') and choice.logprobs:
+                    try:
+                        # Convert logprobs to serializable format
+                        logprobs_data = {
+                            "tokens": [],
+                            "token_logprobs": [],
+                            "top_logprobs": []
+                        }
+                        if hasattr(choice.logprobs, 'content'):
+                            for item in choice.logprobs.content:
+                                logprobs_data["tokens"].append(item.token if hasattr(item, 'token') else str(item))
+                                logprobs_data["token_logprobs"].append(item.logprob if hasattr(item, 'logprob') else None)
+                                if hasattr(item, 'top_logprobs') and item.top_logprobs:
+                                    top_logprobs_list = []
+                                    for top_logprob in item.top_logprobs:
+                                        top_logprobs_list.append({
+                                            "token": top_logprob.token if hasattr(top_logprob, 'token') else str(top_logprob),
+                                            "logprob": top_logprob.logprob if hasattr(top_logprob, 'logprob') else None
+                                        })
+                                    logprobs_data["top_logprobs"].append(top_logprobs_list)
+                                else:
+                                    logprobs_data["top_logprobs"].append([])
+                        logger.debug(f"Extracted logprobs with {len(logprobs_data.get('tokens', []))} tokens")
+                    except Exception as e:
+                        logger.warning(f"Failed to extract logprobs: {e}")
+                        logprobs_data = None
+                
+                # Extract API metadata
+                from .models.perturbation import APIMetadata
+                api_metadata_dict = {
+                    "response_id": response.id,
+                    "model": response.model,
+                    "system_fingerprint": getattr(response, 'system_fingerprint', None),
+                    "created": response.created,
+                    "finish_reason": choice.finish_reason,
+                }
+                
                 # Log token usage if available
                 if hasattr(response, 'usage'):
                     usage = response.usage
+                    api_metadata_dict["prompt_tokens"] = usage.prompt_tokens
+                    api_metadata_dict["completion_tokens"] = usage.completion_tokens
+                    api_metadata_dict["total_tokens"] = usage.total_tokens
+                    
+                    # Extract cached tokens if available
+                    if hasattr(usage, 'prompt_tokens_details') and usage.prompt_tokens_details:
+                        api_metadata_dict["cached_tokens"] = getattr(usage.prompt_tokens_details, 'cached_tokens', None)
+                    
+                    # Extract token breakdown by role if available
+                    prompt_tokens_by_role = {}
+                    if hasattr(usage, 'prompt_tokens_details') and usage.prompt_tokens_details:
+                        if hasattr(usage.prompt_tokens_details, 'tokens_by_role'):
+                            prompt_tokens_by_role = usage.prompt_tokens_details.tokens_by_role
+                    if prompt_tokens_by_role:
+                        api_metadata_dict["prompt_tokens_by_role"] = prompt_tokens_by_role
+                    
                     logger.info(f"Token usage - Prompt: {usage.prompt_tokens}, Completion: {usage.completion_tokens}, Total: {usage.total_tokens}")
                     # Calculate cost estimate (approximate)
                     # GPT-4o pricing: $2.50/$10 per 1M tokens (input/output)
@@ -154,8 +221,11 @@ class OpenAIClient:
                     output_cost = (usage.completion_tokens / 1_000_000) * 10.00
                     total_cost = input_cost + output_cost
                     logger.info(f"Estimated cost: ${total_cost:.4f} (Input: ${input_cost:.4f}, Output: ${output_cost:.4f})")
+                    logger.info(f"Finish reason: {choice.finish_reason}")
                 
-                # Try to parse as JSON
+                api_metadata = APIMetadata.model_validate(api_metadata_dict) if any(api_metadata_dict.values()) else None
+                
+                # Try to parse as JSON and convert to PerturbationMapping models
                 try:
                     # Clean content - remove markdown code blocks if present
                     content_clean = content.strip()
@@ -168,21 +238,43 @@ class OpenAIClient:
                     # Response might be a JSON object with an array, or directly an array
                     parsed = json.loads(content_clean)
                     
-                    # If it's a dict, look for common keys that might contain the array
+                    # Extract array from response
+                    mappings_list = None
                     if isinstance(parsed, dict):
                         # Check for common array keys
                         for key in ['mappings', 'perturbations', 'results', 'data', 'array']:
                             if key in parsed and isinstance(parsed[key], list):
-                                return parsed[key]
-                        # If no array found, return empty list
-                        logger.warning(f"JSON response is a dict but no array found: {parsed}")
-                        return []
+                                mappings_list = parsed[key]
+                                break
+                        if mappings_list is None:
+                            logger.warning(f"JSON response is a dict but no array found: {parsed}")
+                            return []
                     elif isinstance(parsed, list):
-                        logger.info(f"Successfully parsed {len(parsed)} perturbation mappings")
-                        return parsed
+                        mappings_list = parsed
                     else:
                         logger.warning(f"Unexpected JSON response type: {type(parsed)}")
                         return []
+                    
+                    # Convert to PerturbationMapping models
+                    validated_mappings = []
+                    for mapping_dict in mappings_list:
+                        try:
+                            # Add logprobs and API metadata to mapping if available
+                            if logprobs_data:
+                                mapping_dict["logprobs"] = logprobs_data
+                            if api_metadata:
+                                mapping_dict["api_metadata"] = api_metadata.model_dump()
+                            validated_mappings.append(PerturbationMapping.model_validate(mapping_dict))
+                        except ValidationError as e:
+                            logger.warning(f"Failed to validate perturbation mapping: {e}. Skipping invalid mapping.")
+                            continue
+                    
+                    logger.info(f"Successfully parsed and validated {len(validated_mappings)} perturbation mappings")
+                    if logprobs_data:
+                        logger.info(f"Logprobs included for {len(validated_mappings)} perturbations")
+                    if api_metadata:
+                        logger.info(f"API metadata included for {len(validated_mappings)} perturbations")
+                    return validated_mappings
                 except json.JSONDecodeError as e:
                     logger.error(f"Failed to parse JSON response: {e}")
                     logger.error(f"Response content (first 500 chars): {content[:500]}")
@@ -191,7 +283,15 @@ class OpenAIClient:
                     array_match = re.search(r'\[.*\]', content, re.DOTALL)
                     if array_match:
                         try:
-                            return json.loads(array_match.group(0))
+                            parsed = json.loads(array_match.group(0))
+                            if isinstance(parsed, list):
+                                validated_mappings = []
+                                for mapping_dict in parsed:
+                                    try:
+                                        validated_mappings.append(PerturbationMapping.model_validate(mapping_dict))
+                                    except ValidationError:
+                                        continue
+                                return validated_mappings
                         except:
                             pass
                     return []
@@ -235,7 +335,7 @@ class OpenAIClient:
     def batch_generate_perturbations(
         self,
         question_prompts: Dict[int, str]
-    ) -> Dict[int, List[Dict[str, Any]]]:
+    ) -> Dict[int, List[PerturbationMapping]]:
         """
         Generate perturbations for multiple questions in a single batch API call.
         
@@ -318,8 +418,8 @@ Return ONLY valid JSON array, no markdown or additional text."""
             
             if isinstance(all_mappings, list):
                 for mapping in all_mappings:
-                    if isinstance(mapping, dict) and 'question_index' in mapping:
-                        q_idx = mapping['question_index']
+                    if isinstance(mapping, PerturbationMapping):
+                        q_idx = mapping.question_index
                         if q_idx in results:
                             results[q_idx].append(mapping)
             
@@ -406,6 +506,11 @@ Return ONLY valid JSON array, no markdown or additional text."""
                     body["presence_penalty"] = self.presence_penalty
                 if self.max_tokens is not None:
                     body["max_tokens"] = self.max_tokens
+                # Add logprobs if enabled
+                if self.logprobs:
+                    body["logprobs"] = True
+                    if self.top_logprobs is not None:
+                        body["top_logprobs"] = self.top_logprobs
                 
                 request = {
                     "custom_id": f"question_{question_idx}",
@@ -448,7 +553,7 @@ Return ONLY valid JSON array, no markdown or additional text."""
             logger.error(f"Failed to upload batch file: {e}")
             raise
     
-    def check_batch_status(self, batch_id: str) -> Dict[str, Any]:
+    def check_batch_status(self, batch_id: str) -> BatchStatus:
         """
         Check the status of a batch.
         
@@ -460,17 +565,20 @@ Return ONLY valid JSON array, no markdown or additional text."""
         """
         try:
             batch = self.client.batches.retrieve(batch_id)
-            return {
-                "id": batch.id,
-                "status": batch.status,
-                "request_counts": {
-                    "total": batch.request_counts.total if hasattr(batch, 'request_counts') else None,
-                    "completed": batch.request_counts.completed if hasattr(batch, 'request_counts') else None,
-                    "failed": batch.request_counts.failed if hasattr(batch, 'request_counts') else None
-                } if hasattr(batch, 'request_counts') else {},
-                "output_file_id": batch.output_file_id if hasattr(batch, 'output_file_id') else None,
-                "error_file_id": batch.error_file_id if hasattr(batch, 'error_file_id') else None
-            }
+            request_counts = {}
+            if hasattr(batch, 'request_counts'):
+                request_counts = {
+                    "total": batch.request_counts.total if hasattr(batch.request_counts, 'total') else None,
+                    "completed": batch.request_counts.completed if hasattr(batch.request_counts, 'completed') else None,
+                    "failed": batch.request_counts.failed if hasattr(batch.request_counts, 'failed') else None
+                }
+            return BatchStatus(
+                id=batch.id,
+                status=batch.status,
+                request_counts=request_counts,
+                output_file_id=batch.output_file_id if hasattr(batch, 'output_file_id') else None,
+                error_file_id=batch.error_file_id if hasattr(batch, 'error_file_id') else None
+            )
         except Exception as e:
             logger.error(f"Failed to check batch status: {e}")
             raise
@@ -506,7 +614,7 @@ Return ONLY valid JSON array, no markdown or additional text."""
             logger.error(f"Failed to download batch results: {e}")
             raise
     
-    def parse_batch_results(self, results_file_path: Path) -> Dict[int, List[Dict[str, Any]]]:
+    def parse_batch_results(self, results_file_path: Path) -> Dict[int, List[PerturbationMapping]]:
         """
         Parse batch results JSONL file and organize by question index.
         
@@ -542,12 +650,68 @@ Return ONLY valid JSON array, no markdown or additional text."""
                             results[question_idx] = []
                             continue
                         
-                        # Extract content from response
-                        content = response_body.get('choices', [{}])[0].get('message', {}).get('content', '')
+                        # Extract content and logprobs from response
+                        choice = response_body.get('choices', [{}])[0]
+                        content = choice.get('message', {}).get('content', '')
                         if not content:
                             logger.warning(f"No content in response for question {question_idx}")
                             results[question_idx] = []
                             continue
+                        
+                        # Extract logprobs if available
+                        logprobs_data = None
+                        if 'logprobs' in choice and choice['logprobs']:
+                            try:
+                                logprobs_obj = choice['logprobs']
+                                logprobs_data = {
+                                    "tokens": [],
+                                    "token_logprobs": [],
+                                    "top_logprobs": []
+                                }
+                                if 'content' in logprobs_obj:
+                                    for item in logprobs_obj['content']:
+                                        logprobs_data["tokens"].append(item.get('token', ''))
+                                        logprobs_data["token_logprobs"].append(item.get('logprob'))
+                                        if 'top_logprobs' in item and item['top_logprobs']:
+                                            top_logprobs_list = []
+                                            for top_logprob in item['top_logprobs']:
+                                                top_logprobs_list.append({
+                                                    "token": top_logprob.get('token', ''),
+                                                    "logprob": top_logprob.get('logprob')
+                                                })
+                                            logprobs_data["top_logprobs"].append(top_logprobs_list)
+                                        else:
+                                            logprobs_data["top_logprobs"].append([])
+                                logger.debug(f"Extracted logprobs for question {question_idx} with {len(logprobs_data.get('tokens', []))} tokens")
+                            except Exception as e:
+                                logger.warning(f"Failed to extract logprobs for question {question_idx}: {e}")
+                                logprobs_data = None
+                        
+                        # Extract API metadata from batch response
+                        from .models.perturbation import APIMetadata
+                        api_metadata_dict = {
+                            "response_id": response_body.get('id'),
+                            "model": response_body.get('model'),
+                            "system_fingerprint": response_body.get('system_fingerprint'),
+                            "created": response_body.get('created'),
+                            "finish_reason": choice.get('finish_reason'),
+                        }
+                        
+                        # Extract usage information
+                        if 'usage' in response_body:
+                            usage = response_body['usage']
+                            api_metadata_dict["prompt_tokens"] = usage.get('prompt_tokens')
+                            api_metadata_dict["completion_tokens"] = usage.get('completion_tokens')
+                            api_metadata_dict["total_tokens"] = usage.get('total_tokens')
+                            
+                            # Extract cached tokens if available
+                            if 'prompt_tokens_details' in usage:
+                                prompt_details = usage['prompt_tokens_details']
+                                api_metadata_dict["cached_tokens"] = prompt_details.get('cached_tokens')
+                                if 'tokens_by_role' in prompt_details:
+                                    api_metadata_dict["prompt_tokens_by_role"] = prompt_details['tokens_by_role']
+                        
+                        api_metadata = APIMetadata.model_validate(api_metadata_dict) if any(api_metadata_dict.values()) else None
                         
                         # Log complete response at DEBUG level (saved to file)
                         content_length = len(content)
@@ -566,27 +730,59 @@ Return ONLY valid JSON array, no markdown or additional text."""
                             
                             parsed = json.loads(content_clean)
                             
-                            # Handle different response formats
+                            # Extract array from response
+                            mappings_list = None
                             if isinstance(parsed, dict):
                                 for key in ['mappings', 'perturbations', 'results', 'data', 'array']:
                                     if key in parsed and isinstance(parsed[key], list):
-                                        results[question_idx] = parsed[key]
+                                        mappings_list = parsed[key]
                                         break
-                                else:
+                                if mappings_list is None:
                                     logger.warning(f"No array found in response for question {question_idx}")
                                     results[question_idx] = []
+                                    continue
                             elif isinstance(parsed, list):
-                                results[question_idx] = parsed
+                                mappings_list = parsed
                             else:
                                 logger.warning(f"Unexpected response type for question {question_idx}: {type(parsed)}")
                                 results[question_idx] = []
+                                continue
+                            
+                            # Convert to PerturbationMapping models
+                            validated_mappings = []
+                            for mapping_dict in mappings_list:
+                                try:
+                                    # Add logprobs and API metadata to mapping if available
+                                    if logprobs_data:
+                                        mapping_dict["logprobs"] = logprobs_data
+                                    if api_metadata:
+                                        mapping_dict["api_metadata"] = api_metadata.model_dump()
+                                    validated_mappings.append(PerturbationMapping.model_validate(mapping_dict))
+                                except ValidationError as e:
+                                    logger.warning(f"Failed to validate perturbation mapping for question {question_idx}: {e}")
+                                    continue
+                            results[question_idx] = validated_mappings
+                            if logprobs_data:
+                                logger.info(f"Logprobs included for {len(validated_mappings)} perturbations in question {question_idx}")
+                            if api_metadata:
+                                logger.info(f"API metadata included for {len(validated_mappings)} perturbations in question {question_idx}")
                         except json.JSONDecodeError as e:
                             logger.error(f"Failed to parse JSON for question {question_idx}: {e}")
                             # Try to extract JSON array from text
                             array_match = re.search(r'\[.*\]', content, re.DOTALL)
                             if array_match:
                                 try:
-                                    results[question_idx] = json.loads(array_match.group(0))
+                                    parsed = json.loads(array_match.group(0))
+                                    if isinstance(parsed, list):
+                                        validated_mappings = []
+                                        for mapping_dict in parsed:
+                                            try:
+                                                validated_mappings.append(PerturbationMapping.model_validate(mapping_dict))
+                                            except ValidationError:
+                                                continue
+                                        results[question_idx] = validated_mappings
+                                    else:
+                                        results[question_idx] = []
                                 except:
                                     results[question_idx] = []
                             else:

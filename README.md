@@ -17,8 +17,11 @@ The IntegrityShield framework fortifies PDF-based assessments through impercepti
 - **Progress Tracking**: Console output showing progress through documents
 - **Flexible Prompts**: Easy-to-modify prompt templates for each question type
 - **PDF Generation**: Command-line tool to generate attacked PDFs from perturbations
-- **Font Attack Injection**: Optional PDF manipulation step that keeps visuals
-  intact while altering the parse layer through custom fonts
+- **Font Attack Injection**: Optional PDF manipulation step that keeps visuals intact while altering the parse layer through custom fonts
+- **Pydantic Models**: Type-safe data structures with automatic validation for all configurations and data models
+- **Log Probabilities**: Collect token-level log probabilities and top-k alternatives for research analysis
+- **API Metadata**: Capture response IDs, finish reasons, token usage, and model fingerprints
+- **Research Metrics**: Automatic computation of entropy, confidence scores, and cost analysis organized by question type
 
 ## Installation
 
@@ -28,6 +31,12 @@ The IntegrityShield framework fortifies PDF-based assessments through impercepti
 ```bash
 pip install -r requirements.txt
 ```
+
+**Key Dependencies:**
+- `pydantic>=2.0.0`: Data validation and settings management
+- `pydantic-settings>=2.0.0`: Configuration from environment variables
+- `numpy>=1.24.0`: Research metrics computation
+- `openai>=1.0.0`: OpenAI API client
 
 3. Set up environment variables:
 ```bash
@@ -70,9 +79,12 @@ The pipeline will:
 2. Load corresponding LaTeX files
 3. Extract LaTeX stem text for each question
 4. Generate 3 perturbation mappings per question using GPT-4o
-5. Save outputs with perturbations array added to each question
-6. Create organized output structure: `output_perturbation/<timestamp>/<subject>/<level>/<question_paper_name>/`
-7. Log all operations with detailed timing and MST timestamps to `logs/perturbation_YYYYMMDD_HHMMSS.log`
+5. Collect log probabilities and API metadata for each perturbation
+6. Compute research metrics (entropy, confidence, cost analysis) organized by question type
+7. Save outputs with perturbations array added to each question
+8. Create organized output structure: `output_perturbation/<timestamp>/<subject>/<level>/<question_paper_name>/`
+9. Save logprobs and research metrics in separate folders organized by question type
+10. Log all operations with detailed timing and MST timestamps to `logs/perturbation_YYYYMMDD_HHMMSS.log`
 
 ### Batch API Mode (Cost-Effective, Asynchronous)
 
@@ -146,6 +158,15 @@ python -m src.pdf_generator --perturbation-folder output_perturbation/20251216_0
 **Output Structure:**
 PDFs are saved in: `output_attacked_pdfs/<timestamp>/<subject>/<level>/<question_paper_name>/<method>/`
 
+**Example:**
+```bash
+# Generate all PDFs from latest perturbation run
+python3 -m src.pdf_generator --perturbation-folder output_perturbation/20251222_223708
+
+# Generate PDFs for specific methods only
+python3 -m src.pdf_generator --perturbation-folder output_perturbation/20251222_223708 --methods icw dual_layer font_attack
+```
+
 **Command-line Arguments:**
 - `--perturbation-folder PATH`: Path to folder containing perturbation JSON files (required, searches recursively)
 - `--methods METHOD [METHOD ...]`: Injection methods to apply (choices: `icw`, `dual_layer`, `font_attack`, `icw_dual_layer`, `icw_font_attack`). Default: all methods
@@ -188,6 +209,9 @@ openai:
   max_retries: 3
   timeout: 120  # API call timeout in seconds
   temperature: 0.5
+  # Log probabilities settings
+  logprobs: true  # Request log probabilities from API
+  top_logprobs: 5  # Number of top logprobs to return (0-20)
 
 processing:
   input_dir: "output"
@@ -208,9 +232,17 @@ IGSHIELD/
 │   ├── pdf_generator.py     # PDF generation from perturbations
 │   ├── file_handler.py       # JSON I/O and folder structure management
 │   ├── latex_parser.py      # LaTeX parsing utilities
-│   ├── config.py            # Configuration management
+│   ├── config.py            # Configuration management (Pydantic)
+│   ├── validation.py        # Validation functions for Pydantic models
+│   ├── models/              # Pydantic data models
+│   │   ├── __init__.py
+│   │   ├── config.py        # Configuration models
+│   │   ├── perturbation.py  # Perturbation, Question, Document models
+│   │   ├── api.py           # Batch API models
+│   │   └── enums.py         # QuestionType enum
 │   └── injection/           # PDF injection methods
 │       ├── orchestrator.py  # Injection orchestration
+│       ├── base_injector.py # Base injector class
 │       ├── icw_injector.py  # In-Context Watermarking
 │       ├── dual_layer_injector.py  # Dual-layer visual overlay
 │       ├── font_attack_injector.py # Font-based attack
@@ -274,7 +306,7 @@ The pipeline expects JSON files in the following structure:
 
 ## Output Format
 
-The pipeline adds a `perturbations` field to each question:
+The pipeline adds a `perturbations` field to each question with enhanced metadata:
 
 ```json
 {
@@ -288,7 +320,22 @@ The pipeline adds a `perturbations` field to each question:
       "start_pos": 0,
       "end_pos": 5,
       "target_wrong_answer": "B",
-      "reasoning": "..."
+      "reasoning": "...",
+      "logprobs": {
+        "tokens": ["token1", "token2", ...],
+        "token_logprobs": [-0.5, -0.3, ...],
+        "top_logprobs": [[{"token": "alt1", "logprob": -0.5}, ...], ...]
+      },
+      "api_metadata": {
+        "response_id": "chatcmpl-...",
+        "model": "gpt-4o",
+        "system_fingerprint": "...",
+        "created": 1234567890,
+        "finish_reason": "stop",
+        "prompt_tokens": 1000,
+        "completion_tokens": 500,
+        "total_tokens": 1500
+      }
     }
   ]
 }
@@ -304,7 +351,22 @@ output_perturbation/
     └── <subject>/            # e.g., "cybersecurity"
         └── <level>/          # e.g., "undergraduate", "graduate", "k-12"
             └── <question_paper_name>/  # e.g., "cybersecurity_undergraduate_doc_01"
-                └── <doc>_perturbation.json
+                ├── <doc>_perturbation.json  # Main perturbation file
+                ├── research_metrics.json     # Overall research metrics
+                ├── logprobs/                 # Log probabilities by question type
+                │   ├── mcq/
+                │   │   └── <doc>_mcq_logprobs.json
+                │   ├── tf/
+                │   │   └── <doc>_tf_logprobs.json
+                │   └── long/
+                │       └── <doc>_long_logprobs.json
+                └── research_metrics/        # Research metrics by question type
+                    ├── mcq/
+                    │   └── <doc>_mcq_metrics.json
+                    ├── tf/
+                    │   └── <doc>_tf_metrics.json
+                    └── long/
+                        └── <doc>_long_metrics.json
 ```
 
 This structure makes it easy to:
@@ -312,6 +374,7 @@ This structure makes it easy to:
 - Organize by subject and academic level
 - Find specific question papers
 - Compare results across different runs
+- Analyze log probabilities and research metrics by question type
 
 ## Architecture
 
@@ -400,6 +463,9 @@ All timestamps are in **Mountain Standard Time (MST)** for consistency.
 - The pipeline uses structured output (JSON mode) for reliable parsing
 - **Dual-layer injector** uses only the first perturbation per question to avoid overlapping replacements
 - **ICW injector** uses `replacement_substring` for LONG questions, `target_wrong_answer` (with fallback) for MCQ/TF
+- **Log probabilities**: Enabled by default, can be disabled in `config.yaml` (does not affect cost)
+- **Research metrics**: Automatically computed and saved for all processed documents
+- **Pydantic validation**: All data is automatically validated for type safety and correctness
 
 ## Troubleshooting
 
@@ -411,6 +477,8 @@ All timestamps are in **Mountain Standard Time (MST)** for consistency.
 - If LaTeX stems are not found, the pipeline falls back to `stem_text` from JSON
 - Check that LaTeX file paths in JSON are correct
 - Verify that question numbers match between JSON and LaTeX files
+- First question matching: The system now handles `\item 1.` format correctly
+- If questions are skipped, check that `latex_stem_text` in perturbations matches the LaTeX file
 
 ### Rate Limiting
 - Reduce `batch_size` in config if hitting rate limits
@@ -419,6 +487,35 @@ All timestamps are in **Mountain Standard Time (MST)** for consistency.
 ### Skipping Already Processed Files
 - By default, the pipeline skips files that have already been processed (resume mode)
 - To reprocess all files, use `--force` or `--no-resume` flag
+
+## File Compression Utility
+
+Large JSON files (especially those with logprobs) can exceed GitHub's file size limits. Use the compression utility to compress files before pushing to git:
+
+```bash
+# Compress all JSON files larger than 75 MB (default threshold)
+python3 -m src.compress_large_files
+
+# Compress with custom threshold (e.g., 50 MB)
+python3 -m src.compress_large_files --threshold 50
+
+# Compress and remove original files (saves disk space)
+python3 -m src.compress_large_files --remove-original
+
+# Dry run to see what would be compressed
+python3 -m src.compress_large_files --dry-run
+
+# Decompress files when needed
+python3 -m src.compress_large_files --decompress
+```
+
+**Compression Results:**
+- Typical compression ratio: 90-95% reduction
+- Original files are kept by default (use `--remove-original` to delete them)
+- Compressed files use `.json.gz` extension
+- The utility automatically skips already compressed files
+
+**Note:** Large uncompressed JSON files are ignored by git (see `.gitignore`). Compressed `.json.gz` files are tracked.
 
 ## Additional Documentation
 
@@ -429,14 +526,114 @@ All timestamps are in **Mountain Standard Time (MST)** for consistency.
 - `QUICK_BATCH_REFERENCE.txt`: Quick reference cheat sheet for batch commands.
 - To disable resume mode permanently, set `resume: false` in `config/config.yaml`
 
+## Research Features
+
+### Log Probabilities
+The pipeline collects token-level log probabilities for research analysis:
+- **Token-level confidence**: Log probability for each generated token
+- **Top-k alternatives**: Up to 20 alternative tokens with their probabilities (configurable)
+- **Entropy computation**: Automatic calculation of uncertainty metrics from top logprobs
+- **Organized by question type**: Separate files for MCQ, TF, and LONG questions
+- **File location**: `output_perturbation/<timestamp>/<subject>/<level>/<doc>/logprobs/<type>/<doc>_<type>_logprobs.json`
+
+**Example logprobs structure:**
+```json
+{
+  "document_name": "astronomy_graduate_doc_01",
+  "question_type": "MCQ",
+  "total_perturbations": 15,
+  "logprobs": [
+    {
+      "question_number": 1,
+      "question_index": 1,
+      "original_substring": "genetic testing",
+      "replacement_substring": "fossil records",
+      "logprobs": {
+        "tokens": ["token1", "token2", ...],
+        "token_logprobs": [-0.5, -0.3, ...],
+        "top_logprobs": [[{"token": "alt1", "logprob": -0.5}, ...], ...]
+      }
+    }
+  ]
+}
+```
+
+### API Metadata
+Comprehensive metadata collection for reproducibility:
+- **Response tracking**: Unique response IDs for each API call
+- **Model versioning**: System fingerprints to track model versions
+- **Finish reasons**: Why generation stopped (stop, length, content_filter)
+- **Token usage**: Detailed breakdown of prompt, completion, and total tokens
+- **Cached tokens**: Track token caching if enabled
+- **Token breakdown**: Separate counts for system vs user messages
+- **Cost tracking**: Automatic cost calculation per perturbation and question type
+
+**Included in each perturbation:**
+```json
+{
+  "api_metadata": {
+    "response_id": "chatcmpl-abc123...",
+    "model": "gpt-4o",
+    "system_fingerprint": "fp_abc123...",
+    "created": 1703123456,
+    "finish_reason": "stop",
+    "prompt_tokens": 8943,
+    "completion_tokens": 4532,
+    "total_tokens": 13475
+  }
+}
+```
+
+### Research Metrics
+Automatically computed metrics organized by question type:
+- **Entropy analysis**: Average, min, max, and standard deviation of token entropy
+- **Confidence scores**: Average log probability per token (min, max, std)
+- **API statistics**: Truncation rates, filter rates, token efficiency
+- **Cost analysis**: Total cost, cost per perturbation, breakdown by question type
+- **File location**: `output_perturbation/<timestamp>/<subject>/<level>/<doc>/research_metrics/<type>/<doc>_<type>_metrics.json`
+
+**Example metrics structure:**
+```json
+{
+  "document_name": "astronomy_graduate_doc_01",
+  "question_type": "MCQ",
+  "metrics": {
+    "total_perturbations": 15,
+    "logprob_analysis": {
+      "avg_entropy": 0.098,
+      "std_entropy": 0.297,
+      "avg_confidence": -0.075,
+      "total_tokens_with_logprobs": 137460
+    },
+    "api_metadata_summary": {
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0,
+      "avg_prompt_tokens": 8943.0,
+      "avg_completion_tokens": 4582.0
+    },
+    "cost_analysis": {
+      "total_cost": 2.045,
+      "cost_per_perturbation": 0.068
+    }
+  }
+}
+```
+
+All metrics are saved in JSON format for easy analysis and visualization.
+
 ## Recent Updates
 
 ### Version Updates (Latest)
+- **Pydantic Implementation**: Full type safety with Pydantic models for all data structures
+- **Log Probabilities**: Token-level log probabilities and top-k alternatives collection
+- **API Metadata**: Comprehensive metadata collection (response IDs, finish reasons, token usage)
+- **Research Metrics**: Automatic computation of entropy, confidence, and cost metrics
 - **Organized Output Structure**: Both perturbation and PDF outputs now use timestamp-based organization
 - **Enhanced Logging**: Complete prompts, responses, timing, and cost estimates with MST timestamps
 - **PDF Generator Script**: New command-line tool (`pdf_generator.py`) for generating attacked PDFs
 - **Batch API Integration**: Full support for asynchronous processing with 50% cost savings
-- **Dual-Layer Fix**: Fixed overlapping replacements issue by using only first perturbation per question
+- **Injection Fixes**: Fixed duplicate/overlapping replacements in font attack and dual layer injectors
+- **Question Stem Matching**: Improved matching to handle `\item` prefixes in LaTeX
 - **ICW Logic**: Corrected to use `replacement_substring` for LONG questions
 - **Increased Timeout**: API timeout increased to 120 seconds
 - **Temperature Adjustment**: Default temperature set to 0.5 for more consistent results

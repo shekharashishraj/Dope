@@ -1,6 +1,111 @@
 # Changelog
 
-## [Latest] - 2025-12-16
+## [Latest] - 2025-12-22
+
+### Added
+- **Pydantic Implementation**:
+  - Full type safety with Pydantic models for all data structures
+  - Configuration models using `pydantic-settings` for environment variable support
+  - Automatic validation for perturbations, questions, and documents
+  - Type hints throughout the codebase for better IDE support
+
+- **Log Probabilities Collection**:
+  - Token-level log probabilities for each generated perturbation
+  - Top-k alternative tokens with their probabilities (configurable, default: 5)
+  - Organized storage by question type (MCQ, TF, LONG)
+  - Saved in separate JSON files: `logprobs/<question_type>/<doc>_<type>_logprobs.json`
+
+- **API Metadata Collection**:
+  - Response IDs for tracking and reproducibility
+  - Model version and system fingerprints
+  - Finish reasons (stop, length, content_filter)
+  - Detailed token usage (prompt, completion, total, cached)
+  - Token breakdown by role (system vs user)
+
+- **Research Metrics Computation**:
+  - Automatic entropy calculation from log probabilities
+  - Confidence scores (average log probability per token)
+  - API statistics (truncation rates, filter rates, token efficiency)
+  - Cost analysis (total cost, cost per perturbation, breakdown by question type)
+  - Metrics organized by question type: `research_metrics/<question_type>/<doc>_<type>_metrics.json`
+
+- **Enhanced Output Structure**:
+  - Log probabilities organized by question type in separate folders
+  - Research metrics organized by question type
+  - Overall metrics file for each document
+  - All metrics in JSON format for easy analysis
+
+### Changed
+- **Configuration System**:
+  - Migrated from dictionary-based to Pydantic `BaseSettings` model
+  - Added `logprobs` and `top_logprobs` configuration options
+  - Environment variable support via `pydantic-settings`
+  - YAML configuration loading with automatic validation
+
+- **Data Models**:
+  - All data structures now use Pydantic models
+  - `PerturbationMapping` includes `logprobs` and `api_metadata` fields
+  - `Question` uses `QuestionType` enum for type safety
+  - `Document` model for structured document handling
+
+- **Injection Methods**:
+  - Fixed duplicate/overlapping replacements in font attack injector
+  - Fixed duplicate/overlapping replacements in dual layer injector
+  - Improved question stem matching to handle `\item` prefixes in LaTeX
+  - Better handling of first question (starts with `\item 1.`)
+
+### Fixed
+- **Import Errors**: Fixed relative import issues in injection modules (`...models` → `..models`)
+- **Duplicate Replacements**: Font attack and dual layer now prevent duplicate/overlapping replacements
+- **Question Stem Matching**: Improved matching logic to handle LaTeX `\item` prefixes
+- **First Question Handling**: Fixed issue where first question was skipped due to `\item 1.` format
+
+### Technical Details
+
+#### Pydantic Models Structure
+- `src/models/config.py`: All configuration models (OpenAI, Processing, Retry, Logging, etc.)
+- `src/models/perturbation.py`: PerturbationMapping, Question, Document, APIMetadata models
+- `src/models/api.py`: BatchStatus, BatchRequest models
+- `src/models/enums.py`: QuestionType enum
+
+#### Research Metrics
+- Entropy: H = -Σ p(x) * log(p(x)) computed from top logprobs
+- Confidence: Average log probability per token
+- Token efficiency: Tokens per perturbation
+- Cost tracking: Detailed cost breakdown by question type
+
+#### Output Files
+```
+output_perturbation/<timestamp>/<subject>/<level>/<doc>/
+├── <doc>_perturbation.json          # Main file with all perturbations
+├── research_metrics.json            # Overall metrics
+├── logprobs/
+│   ├── mcq/<doc>_mcq_logprobs.json
+│   ├── tf/<doc>_tf_logprobs.json
+│   └── long/<doc>_long_logprobs.json
+└── research_metrics/
+    ├── mcq/<doc>_mcq_metrics.json
+    ├── tf/<doc>_tf_metrics.json
+    └── long/<doc>_long_metrics.json
+```
+
+### Files Modified
+- `requirements.txt`: Added `pydantic>=2.0.0`, `pydantic-settings>=2.0.0`, `numpy>=1.24.0`
+- `src/models/`: New directory with all Pydantic models
+- `src/config.py`: Replaced with Pydantic Config model
+- `src/processor.py`: Updated to use Pydantic models, added research metrics computation
+- `src/openai_client.py`: Added logprobs and API metadata extraction
+- `src/validation.py`: New validation module using Pydantic models
+- `src/injection/*.py`: Updated all injectors to use Pydantic models, fixed imports
+- `src/batch_retriever.py`: Added logprobs and research metrics saving
+- `config/config.yaml`: Added logprobs configuration
+
+### Dependencies
+- Added: `pydantic>=2.0.0` for data validation
+- Added: `pydantic-settings>=2.0.0` for configuration management
+- Added: `numpy>=1.24.0` for research metrics computation
+
+## [Previous] - 2025-12-16
 
 ### Added
 - **Organized Output Structure**: 

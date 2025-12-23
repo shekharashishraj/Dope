@@ -3,6 +3,7 @@ import re
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Tuple
+from ..models.perturbation import PerturbationMapping, Question
 
 
 class BaseInjector(ABC):
@@ -16,8 +17,8 @@ class BaseInjector(ABC):
     def inject(
         self,
         tex_content: str,
-        perturbations: List[Dict[str, Any]],
-        questions: List[Dict[str, Any]]
+        perturbations: List[PerturbationMapping],
+        questions: List[Question]
     ) -> Tuple[str, Dict[str, Any]]:
         """
         Apply injections to LaTeX content.
@@ -85,6 +86,51 @@ class BaseInjector(ABC):
         if index != -1:
             return (index, index + len(stem_escaped))
         
+        # Handle case where LaTeX has "\item " prefix before question number
+        # e.g., LaTeX: "\item 1. text..." but stem_text: "1. text..."
+        # Try to find stem_text after "\item "
+        if stem_text.strip().startswith(('1.', '2.', '3.', '4.', '5.', '6.', '7.', '8.', '9.', '10.')):
+            # Extract the text after the question number
+            # Pattern: "1. text..." -> look for "text..." after "\item 1."
+            parts = stem_text.split('.', 1)
+            if len(parts) == 2:
+                question_num = parts[0].strip()
+                text_after_num = parts[1].strip()
+                
+                # Try to find "\item {question_num}. {text_after_num}"
+                item_pattern = f"\\item {question_num}."
+                item_index = tex_content.find(item_pattern)
+                if item_index != -1:
+                    # Found the item, now look for the text after it
+                    search_start = item_index + len(item_pattern)
+                    # Try to find the text after the number (with flexible underscore matching)
+                    # Escape underscores in text_after_num
+                    text_after_num_escaped = text_after_num.replace('_', '\\_')
+                    
+                    # Try exact match first
+                    text_index = tex_content.find(text_after_num_escaped, search_start)
+                    if text_index != -1:
+                        # Found it! Return the full range from item to end of text
+                        return (item_index + len(item_pattern), text_index + len(text_after_num_escaped))
+                    
+                    # Try with original underscores
+                    text_index = tex_content.find(text_after_num, search_start)
+                    if text_index != -1:
+                        return (item_index + len(item_pattern), text_index + len(text_after_num))
+                    
+                    # Try finding a unique phrase from text_after_num
+                    words = text_after_num.split()
+                    for phrase_len in range(min(5, len(words)), 2, -1):
+                        for i in range(len(words) - phrase_len + 1):
+                            phrase = ' '.join(words[i:i+phrase_len])
+                            if '_' in phrase:
+                                continue
+                            phrase_index = tex_content.find(phrase, search_start, search_start + 500)
+                            if phrase_index != -1:
+                                # Found phrase, try to find full text around it
+                                # Look backwards to find where the question number ends
+                                return (item_index + len(item_pattern), phrase_index + len(phrase))
+        
         # Try finding by unique substring (avoiding underscores)
         # Extract a unique phrase from the stem that doesn't include underscores
         words = stem_text.split()
@@ -142,8 +188,8 @@ class BaseInjector(ABC):
     
     def _get_first_valid_perturbation(
         self, 
-        perturbations: List[Dict[str, Any]]
-    ) -> Optional[Dict[str, Any]]:
+        perturbations: List[PerturbationMapping]
+    ) -> Optional[PerturbationMapping]:
         """Get the first valid perturbation mapping."""
         if not perturbations:
             return None
