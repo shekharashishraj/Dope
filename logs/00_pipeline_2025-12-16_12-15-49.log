@@ -1,0 +1,18 @@
+2025-12-16 12:15:49 - INFO - ================================================================================
+2025-12-16 12:15:49 - INFO - Starting Complete Pipeline
+2025-12-16 12:15:49 - INFO - Input JSON: Input/Maths/mathematics_k-12_doc_01.json
+2025-12-16 12:15:49 - INFO - Log file: logs\00_pipeline_2025-12-16_12-15-49.log
+2025-12-16 12:15:49 - INFO - ================================================================================
+2025-12-16 12:15:49 - INFO - Detected subject: Maths
+2025-12-16 12:15:49 - INFO - 
+2025-12-16 12:15:49 - INFO - ================================================================================
+2025-12-16 12:15:49 - INFO - Step 1/3: Normalizing JSON
+2025-12-16 12:15:49 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/01_normalize_json.py Input/Maths/mathematics_k-12_doc_01.json data\exam_content.json
+2025-12-16 12:15:49 - INFO - ================================================================================
+2025-12-16 12:15:53 - INFO - 
+2025-12-16 12:15:53 - INFO - ================================================================================
+2025-12-16 12:15:53 - INFO - Step 2/3: Rendering Baseline HTML
+2025-12-16 12:15:53 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/02_render_exam.py data\exam_content.json out/baseline
+2025-12-16 12:15:53 - INFO - ================================================================================
+2025-12-16 12:15:54 - ERROR - Baseline HTML not found at expected path: out/baseline\Maths\exam.html
+2025-12-16 12:15:54 - ERROR - Pipeline failed - baseline HTML was not generated

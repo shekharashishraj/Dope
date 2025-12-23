@@ -1,0 +1,53 @@
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:23:59 - INFO - Starting Complete Pipeline
+2025-12-18 12:23:59 - INFO - Input JSON: Input/Science/science_k-12_doc_01.json
+2025-12-18 12:23:59 - INFO - Generate perturbations: True
+2025-12-18 12:23:59 - INFO - API model: gpt-4o, k=3
+2025-12-18 12:23:59 - INFO - Log file: logs\00_pipeline_2025-12-18_12-23-59.log
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:23:59 - INFO - Detected subject: Science
+2025-12-18 12:23:59 - INFO - 
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:23:59 - INFO - Step 1/6: Normalizing JSON
+2025-12-18 12:23:59 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/01_normalize_json.py Input/Science/science_k-12_doc_01.json data\exam_content.json
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:23:59 - INFO - [OK] Step 1/6: Normalizing JSON completed successfully
+2025-12-18 12:23:59 - INFO - 
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:23:59 - INFO - Step 2/6: Rendering Baseline HTML
+2025-12-18 12:23:59 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/02_render_exam.py data\exam_content.json out/baseline Science
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:23:59 - INFO - [OK] Step 2/6: Rendering Baseline HTML completed successfully
+2025-12-18 12:23:59 - INFO - 
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:23:59 - INFO - Step 3/6: Generating Perturbations
+2025-12-18 12:23:59 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/01b_generate_perturbations.py data\exam_content.json data\exam_content_perturbed.json --baseline-html out/baseline\Science\exam.html --api-key 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 --model gpt-4o --k 3
+2025-12-18 12:23:59 - INFO - ================================================================================
+2025-12-18 12:25:19 - INFO - [OK] Step 3/6: Generating Perturbations completed successfully
+2025-12-18 12:25:19 - INFO - 
+2025-12-18 12:25:19 - INFO - ================================================================================
+2025-12-18 12:25:19 - INFO - Step 4/6: Applying Traditional Attacks
+2025-12-18 12:25:19 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/03_apply_attacks.py out/baseline\Science\exam.html attacks/registry.json out/attacked
+2025-12-18 12:25:19 - INFO - ================================================================================
+2025-12-18 12:25:19 - INFO - [OK] Step 4/6: Applying Traditional Attacks completed successfully
+2025-12-18 12:25:19 - INFO - 
+2025-12-18 12:25:19 - INFO - ================================================================================
+2025-12-18 12:25:19 - INFO - Step 5/6: Applying CSS ::before Attack
+2025-12-18 12:25:19 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/03b_apply_css_before_attack.py out/baseline\Science\exam.html data\exam_content_perturbed.json out/attacked Science
+2025-12-18 12:25:19 - INFO - ================================================================================
+2025-12-18 12:25:20 - INFO - [OK] Step 5/6: Applying CSS ::before Attack completed successfully
+2025-12-18 12:25:20 - INFO - 
+2025-12-18 12:25:20 - INFO - ================================================================================
+2025-12-18 12:25:20 - INFO - Step 6/6: Applying Image/Canvas Attack
+2025-12-18 12:25:20 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/03c_apply_image_canvas_attack.py out/baseline\Science\exam.html data\exam_content_perturbed.json out/attacked Science
+2025-12-18 12:25:20 - INFO - ================================================================================
+2025-12-18 12:25:20 - INFO - [OK] Step 6/6: Applying Image/Canvas Attack completed successfully
+2025-12-18 12:25:20 - INFO - 
+2025-12-18 12:25:20 - INFO - 
+2025-12-18 12:25:20 - INFO - ================================================================================
+2025-12-18 12:25:20 - INFO - Pipeline completed successfully!
+2025-12-18 12:25:20 - INFO - Subject: Science
+2025-12-18 12:25:20 - INFO - Baseline HTML: out/baseline\Science\exam.html
+2025-12-18 12:25:20 - INFO - Attacked HTML files: out/attacked\Science
+2025-12-18 12:25:20 - INFO - Perturbed JSON: data\exam_content_perturbed.json
+2025-12-18 12:25:20 - INFO - ================================================================================

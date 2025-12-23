@@ -1,0 +1,183 @@
+2025-12-19 18:09:21 - INFO - ================================================================================
+2025-12-19 18:09:21 - INFO - Starting Perturbation Generation
+2025-12-19 18:09:21 - INFO - Input file: data\exam_content.json
+2025-12-19 18:09:21 - INFO - Output file: data\exam_content_perturbed.json
+2025-12-19 18:09:21 - INFO - API model: gpt-4o
+2025-12-19 18:09:21 - INFO - Perturbations per question (k): 3
+2025-12-19 18:09:21 - INFO - Log file: logs\01b_generate_perturbations_2025-12-19_18-09-21.log
+2025-12-19 18:09:21 - INFO - ================================================================================
+2025-12-19 18:09:21 - INFO - Loading normalized exam JSON: data\exam_content.json
+2025-12-19 18:09:21 - INFO - Successfully loaded exam data (8262 bytes)
+2025-12-19 18:09:21 - INFO - Number of sections: 3
+2025-12-19 18:09:21 - INFO - Total questions: 12
+2025-12-19 18:09:21 - INFO - Loading baseline HTML: out/baseline\Maths\exam.html
+2025-12-19 18:09:21 - INFO - Loading HTML file: out/baseline\Maths\exam.html
+2025-12-19 18:09:21 - INFO - Found 12 question cards in HTML
+2025-12-19 18:09:21 - INFO - Successfully extracted text for 12 questions from HTML
+2025-12-19 18:09:21 - INFO - Successfully loaded HTML texts for 12 questions
+2025-12-19 18:09:22 - INFO - OpenAI client initialized successfully
+2025-12-19 18:09:22 - INFO - Processing section: sec_mcq (mcq), 5 questions
+2025-12-19 18:09:22 - INFO - Processing question 1: mathematics_k-12_doc_01_mathematics_mcq_1
+2025-12-19 18:09:22 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: type=MCQ, prompt_length=95, num_options=4, gold_answer=A
+2025-12-19 18:09:22 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Prompt formatted, length=4657 chars
+2025-12-19 18:09:22 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Starting API call, model=gpt-4o, prompt_length=4657
+2025-12-19 18:09:27 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:09:27 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: API call successful, duration=5.78s, response_length=1624, tokens_used=1484
+2025-12-19 18:09:27 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Parsed 3 mappings from response
+2025-12-19 18:09:27 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Auto-corrected position: [41, 58)
+2025-12-19 18:09:27 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:09:27 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:09:28 - INFO - Processing question 2: mathematics_k-12_doc_01_mathematics_mcq_2
+2025-12-19 18:09:28 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: type=MCQ, prompt_length=137, num_options=4, gold_answer=A
+2025-12-19 18:09:28 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Prompt formatted, length=4686 chars
+2025-12-19 18:09:28 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Starting API call, model=gpt-4o, prompt_length=4686
+2025-12-19 18:09:33 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: API call successful, duration=5.06s, response_length=1608, tokens_used=1469
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Parsed 3 mappings from response
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Auto-corrected position: [105, 136)
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:09:33 - INFO - Processing question 3: mathematics_k-12_doc_01_mathematics_mcq_3
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: type=MCQ, prompt_length=110, num_options=4, gold_answer=D
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Prompt formatted, length=4714 chars
+2025-12-19 18:09:33 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Starting API call, model=gpt-4o, prompt_length=4714
+2025-12-19 18:09:40 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: API call successful, duration=7.04s, response_length=1576, tokens_used=1570
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Parsed 3 mappings from response
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Auto-corrected position using context: [31, 51)
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:09:41 - INFO - Processing question 4: mathematics_k-12_doc_01_mathematics_mcq_4
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: type=MCQ, prompt_length=97, num_options=4, gold_answer=A
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Prompt formatted, length=4634 chars
+2025-12-19 18:09:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Starting API call, model=gpt-4o, prompt_length=4634
+2025-12-19 18:09:46 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: API call successful, duration=4.66s, response_length=1581, tokens_used=1456
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Parsed 3 mappings from response
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Auto-corrected position using context: [12, 20)
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:09:46 - INFO - Processing question 5: mathematics_k-12_doc_01_mathematics_mcq_5
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: type=MCQ, prompt_length=157, num_options=4, gold_answer=C
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Prompt formatted, length=4726 chars
+2025-12-19 18:09:46 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Starting API call, model=gpt-4o, prompt_length=4726
+2025-12-19 18:09:54 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:09:54 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: API call successful, duration=8.21s, response_length=1714, tokens_used=1507
+2025-12-19 18:09:54 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Parsed 3 mappings from response
+2025-12-19 18:09:54 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Auto-corrected position: [88, 123)
+2025-12-19 18:09:54 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:09:54 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:09:55 - INFO - Processing section: sec_tf (tf), 5 questions
+2025-12-19 18:09:55 - INFO - Processing question 6: mathematics_k-12_doc_01_mathematics_tf_1
+2025-12-19 18:09:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: type=TF, prompt_length=70, num_options=0, gold_answer=True
+2025-12-19 18:09:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Prompt formatted, length=3536 chars
+2025-12-19 18:09:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Starting API call, model=gpt-4o, prompt_length=3536
+2025-12-19 18:09:59 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:09:59 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: API call successful, duration=4.52s, response_length=1320, tokens_used=1123
+2025-12-19 18:09:59 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Parsed 3 mappings from response
+2025-12-19 18:09:59 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Perturbation validated successfully at position 10
+2025-12-19 18:09:59 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:09:59 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:10:00 - INFO - Processing question 7: mathematics_k-12_doc_01_mathematics_tf_2
+2025-12-19 18:10:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: type=TF, prompt_length=105, num_options=0, gold_answer=False
+2025-12-19 18:10:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Prompt formatted, length=3575 chars
+2025-12-19 18:10:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Starting API call, model=gpt-4o, prompt_length=3575
+2025-12-19 18:10:05 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:10:05 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: API call successful, duration=5.48s, response_length=1432, tokens_used=1151
+2025-12-19 18:10:05 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Parsed 3 mappings from response
+2025-12-19 18:10:05 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Auto-corrected position using context: [65, 79)
+2025-12-19 18:10:05 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:10:05 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:10:06 - INFO - Processing question 8: mathematics_k-12_doc_01_mathematics_tf_3
+2025-12-19 18:10:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: type=TF, prompt_length=87, num_options=0, gold_answer=False
+2025-12-19 18:10:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Prompt formatted, length=3557 chars
+2025-12-19 18:10:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Starting API call, model=gpt-4o, prompt_length=3557
+2025-12-19 18:10:10 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:10:10 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: API call successful, duration=4.16s, response_length=1321, tokens_used=1141
+2025-12-19 18:10:10 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Parsed 3 mappings from response
+2025-12-19 18:10:10 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Auto-corrected position: [83, 86)
+2025-12-19 18:10:10 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:10:10 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:10:11 - INFO - Processing question 9: mathematics_k-12_doc_01_mathematics_tf_4
+2025-12-19 18:10:11 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: type=TF, prompt_length=51, num_options=0, gold_answer=True
+2025-12-19 18:10:11 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Prompt formatted, length=3517 chars
+2025-12-19 18:10:11 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Starting API call, model=gpt-4o, prompt_length=3517
+2025-12-19 18:10:15 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: API call successful, duration=4.32s, response_length=1206, tokens_used=1124
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Parsed 3 mappings from response
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Auto-corrected position using context: [38, 40)
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:10:15 - INFO - Processing question 10: mathematics_k-12_doc_01_mathematics_tf_5
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: type=TF, prompt_length=73, num_options=0, gold_answer=False
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Prompt formatted, length=3543 chars
+2025-12-19 18:10:15 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Starting API call, model=gpt-4o, prompt_length=3543
+2025-12-19 18:10:21 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:10:21 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: API call successful, duration=5.74s, response_length=1487, tokens_used=1149
+2025-12-19 18:10:21 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Parsed 3 mappings from response
+2025-12-19 18:10:21 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Auto-corrected position using context: [34, 51)
+2025-12-19 18:10:21 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:10:21 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:10:22 - INFO - Processing section: sec_long (long), 2 questions
+2025-12-19 18:10:22 - INFO - Processing question 11: mathematics_k-12_doc_01_mathematics_long_1
+2025-12-19 18:10:22 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: type=LONG, prompt_length=149, num_options=0, gold_answer=None of the above can affect the r value.. Explain why this is the correct answer and
+provide supporting evidence. Show the calculation or reasoning that leads to this
+conclusion.
+2025-12-19 18:10:22 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Prompt formatted, length=3982 chars
+2025-12-19 18:10:22 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Starting API call, model=gpt-4o, prompt_length=3982
+2025-12-19 18:10:30 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:10:30 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: API call successful, duration=8.49s, response_length=2249, tokens_used=1284
+2025-12-19 18:10:30 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Parsed 3 mappings from response
+2025-12-19 18:10:30 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Auto-corrected position using context: [12, 38)
+2025-12-19 18:10:30 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:10:30 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:10:31 - INFO - Processing question 12: mathematics_k-12_doc_01_mathematics_long_2
+2025-12-19 18:10:31 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: type=LONG, prompt_length=196, num_options=0, gold_answer=25. Explain why this is the correct answer and provide supporting evidence. Show the
+calculation or reasoning that leads to this conclusion.
+2025-12-19 18:10:31 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Prompt formatted, length=3990 chars
+2025-12-19 18:10:31 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Starting API call, model=gpt-4o, prompt_length=3990
+2025-12-19 18:10:40 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: API call successful, duration=9.26s, response_length=1807, tokens_used=1262
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Parsed 3 mappings from response
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Auto-corrected position using context: [72, 79)
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Selected perturbation 1 of 3 (validated)
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Stored 1 perturbations
+2025-12-19 18:10:40 - INFO - Perturbation merge summary: 12 questions with perturbations, 0 questions without perturbations, total perturbations: 12
+2025-12-19 18:10:40 - INFO - Writing perturbed exam data to: data\exam_content_perturbed.json
+2025-12-19 18:10:40 - INFO - Successfully wrote perturbed exam data (16743 bytes)
+2025-12-19 18:10:40 - INFO - ================================================================================
+2025-12-19 18:10:40 - INFO - Perturbation Generation Complete
+2025-12-19 18:10:40 - INFO - Total questions: 12
+2025-12-19 18:10:40 - INFO - Successful questions: 12
+2025-12-19 18:10:40 - INFO - Failed questions: 0
+2025-12-19 18:10:40 - INFO - 
+2025-12-19 18:10:40 - INFO - FAILURE BREAKDOWN:
+2025-12-19 18:10:40 - INFO -   Missing gold_answer: 0 question(s)
+2025-12-19 18:10:40 - INFO -   JSON parse errors: 0 question(s)
+2025-12-19 18:10:40 - INFO -   Substring mismatch: 0 question(s)
+2025-12-19 18:10:40 - INFO -   Position errors: 0 question(s)
+2025-12-19 18:10:40 - INFO -   Length violations: 0 question(s)
+2025-12-19 18:10:40 - INFO -   Empty substring: 0 question(s)
+2025-12-19 18:10:40 - INFO -   API call failures: 0 question(s)
+2025-12-19 18:10:40 - INFO -   No valid perturbations: 0 question(s)
+2025-12-19 18:10:40 - INFO - 
+2025-12-19 18:10:40 - INFO - Total API calls: 12
+2025-12-19 18:10:40 - INFO - Successful API calls: 12
+2025-12-19 18:10:40 - INFO - Failed API calls: 0
+2025-12-19 18:10:40 - INFO - Total API time: 78.77 seconds
+2025-12-19 18:10:40 - INFO - Total perturbations generated: 12
+2025-12-19 18:10:40 - INFO - Average perturbations per successful question: 1.00
+2025-12-19 18:10:40 - INFO - Output file: data\exam_content_perturbed.json (16743 bytes)
+2025-12-19 18:10:40 - INFO - ================================================================================

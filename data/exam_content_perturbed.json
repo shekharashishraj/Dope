@@ -1,0 +1,452 @@
+{
+  "title": "Mathematics - K-12 Level Assessment 1",
+  "instructions": [
+    "Answer all questions."
+  ],
+  "sections": [
+    {
+      "id": "sec_mcq",
+      "type": "mcq",
+      "title": "Multiple Choice",
+      "questions": [
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_mcq_1",
+          "prompt": "If a freight train travels at a speed of 20 miles per hour for 6 hours, how far will it\ntravel?",
+          "options": [
+            {
+              "id": "A",
+              "text": "120 miles"
+            },
+            {
+              "id": "B",
+              "text": "80 miles"
+            },
+            {
+              "id": "C",
+              "text": "26 miles"
+            },
+            {
+              "id": "D",
+              "text": "12 miles"
+            }
+          ],
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_elementary_mathematics",
+              "source_id": "2118"
+            },
+            "gold_answer": "A"
+          },
+          "perturbations": [
+            {
+              "question_index": 1,
+              "original_substring": "20 miles per hour",
+              "replacement_substring": "15 miles per hour",
+              "start_pos": 41,
+              "end_pos": 58,
+              "left_context": "travels at a ",
+              "right_context": " for 6 hours,",
+              "target_wrong_answer": "B",
+              "after_best_answer": "B",
+              "supporting_keywords": [
+                "80 miles",
+                "speed",
+                "15 miles per hour"
+              ],
+              "reasoning": "By changing the speed from 20 miles per hour to 15 miles per hour, the distance traveled in 6 hours would be 90 miles, which aligns more closely with option B (80 miles) when considering possible rounding or error in the estimation."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_mcq_2",
+          "prompt": "Stephanie flew 2,448 miles from Los Angeles to New York City. What is the number of miles\nStephanie flew rounded to the nearest thousand?",
+          "options": [
+            {
+              "id": "A",
+              "text": "2,000"
+            },
+            {
+              "id": "B",
+              "text": "2,400"
+            },
+            {
+              "id": "C",
+              "text": "2,500"
+            },
+            {
+              "id": "D",
+              "text": "3,000"
+            }
+          ],
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_elementary_mathematics",
+              "source_id": "2354"
+            },
+            "gold_answer": "A"
+          },
+          "perturbations": [
+            {
+              "question_index": 2,
+              "original_substring": "nearest thousand",
+              "replacement_substring": "nearest hundred",
+              "start_pos": 120,
+              "end_pos": 136,
+              "left_context": "rounded to the ",
+              "right_context": "?",
+              "target_wrong_answer": "B",
+              "after_best_answer": "B",
+              "supporting_keywords": [
+                "2,400",
+                "hundred"
+              ],
+              "reasoning": "By changing 'nearest thousand' to 'nearest hundred', the best answer becomes 2,400, which aligns with option B."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_mcq_3",
+          "prompt": "Write an equation for the line tangent to the curve defined by F(t) = (t^2 + 1, 2^t) at\nthe point where y = 4.",
+          "options": [
+            {
+              "id": "A",
+              "text": "y - 4 = ln 2(x - 2)"
+            },
+            {
+              "id": "B",
+              "text": "y - 4 = 4 ln 2(x - 2)"
+            },
+            {
+              "id": "C",
+              "text": "y - 4 = 4(x - 5)"
+            },
+            {
+              "id": "D",
+              "text": "y - 4 = ln 2(x - 5)"
+            }
+          ],
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_high_school_mathematics",
+              "source_id": "4445"
+            },
+            "gold_answer": "D"
+          },
+          "perturbations": [
+            {
+              "question_index": 3,
+              "original_substring": "F(t) = (t^2 + 1, 2^t)",
+              "replacement_substring": "F(t) = (t^2 + 1, 4^t)",
+              "start_pos": 63,
+              "end_pos": 84,
+              "left_context": "curve defined by ",
+              "right_context": " at the point",
+              "target_wrong_answer": "B",
+              "after_best_answer": "B",
+              "supporting_keywords": [
+                "4 ln 2",
+                "x - 2"
+              ],
+              "reasoning": "By changing 2^t to 4^t, the derivative with respect to t changes, leading to a slope involving 4 ln 2 at x = 2, which aligns with option B."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_mcq_4",
+          "prompt": "What is the shortest distance from the origin to the circle defined by $x^2-24x +y^2+10y\n+160=0$?",
+          "options": [
+            {
+              "id": "A",
+              "text": "10"
+            },
+            {
+              "id": "B",
+              "text": "16"
+            },
+            {
+              "id": "C",
+              "text": "24"
+            },
+            {
+              "id": "D",
+              "text": "12"
+            }
+          ],
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_high_school_mathematics",
+              "source_id": "4259"
+            },
+            "gold_answer": "A"
+          },
+          "perturbations": [
+            {
+              "question_index": 4,
+              "original_substring": "shortest",
+              "replacement_substring": "longest",
+              "start_pos": 12,
+              "end_pos": 20,
+              "left_context": "the ",
+              "right_context": " distance from",
+              "target_wrong_answer": "C",
+              "after_best_answer": "C",
+              "supporting_keywords": [
+                "longest",
+                "24"
+              ],
+              "reasoning": "Changing 'shortest' to 'longest' alters the question to ask for the longest distance from the origin to the circle, which corresponds to the option '24'."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_mcq_5",
+          "prompt": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If\nKeri spent 1 over 2 hour on science, how many subjects did she study?",
+          "options": [
+            {
+              "id": "A",
+              "text": "4 subjects"
+            },
+            {
+              "id": "B",
+              "text": "2 subjects"
+            },
+            {
+              "id": "C",
+              "text": "6 subjects"
+            },
+            {
+              "id": "D",
+              "text": "5 subjects"
+            }
+          ],
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_elementary_mathematics",
+              "source_id": "2286"
+            },
+            "gold_answer": "C"
+          },
+          "perturbations": [
+            {
+              "question_index": 5,
+              "original_substring": "3 hours",
+              "replacement_substring": "1 hour",
+              "start_pos": 11,
+              "end_pos": 18,
+              "left_context": "spent ",
+              "right_context": " on her h",
+              "target_wrong_answer": "B",
+              "after_best_answer": "B",
+              "supporting_keywords": [
+                "2 subjects",
+                "equal amounts"
+              ],
+              "reasoning": "By changing '3 hours' to '1 hour', the time spent on science (0.5 hours) implies she only studied 2 subjects, as 1 hour divided equally results in 0.5 hours per subject."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec_tf",
+      "type": "tf",
+      "title": "True / False",
+      "questions": [
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_tf_1",
+          "prompt": "There are 45 even positive integers less than the product of 7 and 13.",
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_high_school_mathematics",
+              "source_id": "4340"
+            },
+            "gold_answer": "True"
+          },
+          "perturbations": [
+            {
+              "question_index": 1,
+              "original_substring": "45",
+              "replacement_substring": "50",
+              "start_pos": 10,
+              "end_pos": 12,
+              "left_context": "There are ",
+              "right_context": " even positive",
+              "target_wrong_answer": "False",
+              "after_answer": "False",
+              "reasoning": "There are actually 45 even positive integers less than 91, not 50. By increasing the number, the statement becomes false."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_tf_2",
+          "prompt": "Forty-nine students on the dance team take tap lessons, which is more than half of the total 72 students.",
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_elementary_mathematics",
+              "source_id": "2439"
+            },
+            "gold_answer": "False"
+          },
+          "perturbations": [
+            {
+              "question_index": 2,
+              "original_substring": "Forty-nine",
+              "replacement_substring": "Thirty-five",
+              "start_pos": 0,
+              "end_pos": 10,
+              "left_context": "",
+              "right_context": " students on ",
+              "target_wrong_answer": "True",
+              "after_answer": "True",
+              "reasoning": "By changing the number of students taking tap lessons to 35, which is less than half of 72, the statement becomes true."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_tf_3",
+          "prompt": "The ratio of the number of pears to the number of apples in Simon's fruit salad is 1:4.",
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_elementary_mathematics",
+              "source_id": "2429"
+            },
+            "gold_answer": "False"
+          },
+          "perturbations": [
+            {
+              "question_index": 3,
+              "original_substring": "1:4",
+              "replacement_substring": "2:4",
+              "start_pos": 83,
+              "end_pos": 86,
+              "left_context": "is ",
+              "right_context": ".",
+              "target_wrong_answer": "True",
+              "after_answer": "True",
+              "reasoning": "Changing the ratio of pears to apples from 1:4 to 2:4 makes it true that the number of pears is half the number of apples, thus flipping the answer."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_tf_4",
+          "prompt": "The solution to the equation 14 = w + 23 is w = -9.",
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_elementary_mathematics",
+              "source_id": "2306"
+            },
+            "gold_answer": "True"
+          },
+          "perturbations": [
+            {
+              "question_index": 4,
+              "original_substring": "23",
+              "replacement_substring": "24",
+              "start_pos": 38,
+              "end_pos": 40,
+              "left_context": "w + ",
+              "right_context": " is w ",
+              "target_wrong_answer": "False",
+              "after_answer": "False",
+              "reasoning": "Replacing 23 with 24 changes the equation to 14 = w + 24, making w = -10, which is different from -9."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_tf_5",
+          "prompt": "The sum of the three real numbers not in the domain of the function is 0.",
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mathematics_high_school_mathematics",
+              "source_id": "14523"
+            },
+            "gold_answer": "False"
+          },
+          "perturbations": [
+            {
+              "question_index": 5,
+              "original_substring": "not in the domain",
+              "replacement_substring": "in the domain",
+              "start_pos": 34,
+              "end_pos": 51,
+              "left_context": "three real numbers ",
+              "right_context": " of the function is",
+              "target_wrong_answer": "True",
+              "after_answer": "True",
+              "reasoning": "The original statement claims the sum of numbers not in the domain is 0, which is false. By stating the numbers are in the domain, the statement becomes plausible, hence true."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec_long",
+      "type": "long",
+      "title": "Long Form",
+      "questions": [
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_long_1",
+          "prompt": "Discuss the factors that can influence the value of the correlation coefficient r, and\nexplain why none of these factors ultimately affect its value.",
+          "meta": {
+            "marks": 10,
+            "source": {
+              "dataset": "mmlu_mcq_to_long",
+              "source_id": "5486"
+            },
+            "gold_answer": "None of the above can affect the r value.. Explain why this is the correct answer and\nprovide supporting evidence. Show the calculation or reasoning that leads to this\nconclusion."
+          },
+          "perturbations": [
+            {
+              "question_index": 1,
+              "original_substring": "factors that can influence",
+              "replacement_substring": "conditions that determine",
+              "start_pos": 12,
+              "end_pos": 38,
+              "left_context": "Discuss the ",
+              "right_context": " the value of the",
+              "target_wrong_answer": "explores conditions instead of factors",
+              "after_answer_description": "Discusses conditions that determine the value instead of factors that influence it",
+              "reasoning": "By changing 'factors that can influence' to 'conditions that determine', the question now focuses on determining conditions rather than influencing factors, leading to a different type of analysis."
+            }
+          ]
+        },
+        {
+          "id": "mathematics_k-12_doc_01_mathematics_long_2",
+          "prompt": "Analyze the set $\\{\\frac{2}{5}, \\frac{1}{2}, 5, 10\\}$ and determine the maximum possible\nvalue of the quotient $\\frac{x}{y}$ for any two distinct elements. Explain your reasoning\nand calculations.",
+          "meta": {
+            "marks": 10,
+            "source": {
+              "dataset": "mmlu_mcq_to_long",
+              "source_id": "4372"
+            },
+            "gold_answer": "25. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion."
+          },
+          "perturbations": [
+            {
+              "question_index": 2,
+              "original_substring": "maximum possible value of the quotient",
+              "replacement_substring": "minimum possible value of the quotient",
+              "start_pos": 72,
+              "end_pos": 110,
+              "left_context": "determine the ",
+              "right_context": " \\frac{x}{y} for any",
+              "target_wrong_answer": "focuses on finding the minimum instead of the maximum",
+              "after_answer_description": "The answer should focus on finding the smallest possible value, which is 0.2 (from \\frac{1}{5}).",
+              "reasoning": "Changing 'maximum' to 'minimum' shifts the focus from finding the largest quotient to finding the smallest, which alters the expected answer."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

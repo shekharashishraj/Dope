@@ -1,0 +1,244 @@
+2025-12-17 19:16:15 - INFO - ================================================================================
+2025-12-17 19:16:15 - INFO - Starting Perturbation Generation
+2025-12-17 19:16:15 - INFO - Input file: data\exam_content.json
+2025-12-17 19:16:15 - INFO - Output file: data\exam_content_perturbed.json
+2025-12-17 19:16:15 - INFO - API model: gpt-4o
+2025-12-17 19:16:15 - INFO - Perturbations per question (k): 3
+2025-12-17 19:16:15 - INFO - Log file: logs\01b_generate_perturbations_2025-12-17_19-16-15.log
+2025-12-17 19:16:15 - INFO - ================================================================================
+2025-12-17 19:16:15 - INFO - Loading normalized exam JSON: data\exam_content.json
+2025-12-17 19:16:15 - INFO - Successfully loaded exam data (8262 bytes)
+2025-12-17 19:16:15 - INFO - Number of sections: 3
+2025-12-17 19:16:15 - INFO - Total questions: 12
+2025-12-17 19:16:15 - INFO - Loading baseline HTML: out/baseline\Maths\exam.html
+2025-12-17 19:16:15 - INFO - Loading HTML file: out/baseline\Maths\exam.html
+2025-12-17 19:16:18 - INFO - Found 12 question cards in HTML
+2025-12-17 19:16:18 - INFO - Successfully extracted text for 12 questions from HTML
+2025-12-17 19:16:18 - INFO - Successfully loaded HTML texts for 12 questions
+2025-12-17 19:16:19 - INFO - OpenAI client initialized successfully
+2025-12-17 19:16:19 - INFO - Processing section: sec_mcq (mcq), 5 questions
+2025-12-17 19:16:19 - INFO - Processing question 1: mathematics_k-12_doc_01_mathematics_mcq_1
+2025-12-17 19:16:19 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: type=MCQ, prompt_length=95, num_options=4, gold_answer=A
+2025-12-17 19:16:19 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Prompt formatted, length=3117 chars
+2025-12-17 19:16:19 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Starting API call, model=gpt-4o, prompt_length=3117
+2025-12-17 19:16:25 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:16:25 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: API call successful, duration=6.37s, response_length=1092, tokens_used=990
+2025-12-17 19:16:25 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_1: Parsed 3 mappings from response
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Substring mismatch at position 28. Expected: '20 miles per hour...', Found: 't a speed of 20 m...'
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Substring exists in text at position 41 (not at expected 28)
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Substring mismatch at position 50. Expected: '6 hours...', Found: 'per hou...'
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Substring exists in text at position 63 (not at expected 50)
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Substring mismatch at position 28. Expected: '20 miles per hour...', Found: 't a speed of 20 m...'
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Substring exists in text at position 41 (not at expected 28)
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: All 3 perturbations failed validation
+2025-12-17 19:16:25 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: Generated 3 perturbations but none validated
+2025-12-17 19:16:26 - INFO - Processing question 2: mathematics_k-12_doc_01_mathematics_mcq_2
+2025-12-17 19:16:26 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: type=MCQ, prompt_length=137, num_options=4, gold_answer=A
+2025-12-17 19:16:26 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Prompt formatted, length=3146 chars
+2025-12-17 19:16:26 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Starting API call, model=gpt-4o, prompt_length=3146
+2025-12-17 19:16:31 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:16:31 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: API call successful, duration=5.27s, response_length=1117, tokens_used=993
+2025-12-17 19:16:31 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_2: Parsed 3 mappings from response
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Substring mismatch at position 14. Expected: '2,448...', Found: ' 2,44...'
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Substring exists in text at position 15 (not at expected 14)
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Substring mismatch at position 24. Expected: 'Los Angeles...', Found: 'es from Los...'
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Substring exists in text at position 32 (not at expected 24)
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Substring mismatch at position 39. Expected: 'New York City...', Found: 'eles to New Y...'
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Substring exists in text at position 47 (not at expected 39)
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: All 3 perturbations failed validation
+2025-12-17 19:16:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: Generated 3 perturbations but none validated
+2025-12-17 19:16:32 - INFO - Processing question 3: mathematics_k-12_doc_01_mathematics_mcq_3
+2025-12-17 19:16:32 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: type=MCQ, prompt_length=110, num_options=4, gold_answer=D
+2025-12-17 19:16:32 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Prompt formatted, length=3174 chars
+2025-12-17 19:16:32 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Starting API call, model=gpt-4o, prompt_length=3174
+2025-12-17 19:16:36 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:16:36 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: API call successful, duration=4.81s, response_length=1278, tokens_used=1071
+2025-12-17 19:16:36 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_3: Parsed 3 mappings from response
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Substring mismatch at position 15. Expected: 'tangent to the curve...', Found: 'on for the line tang...'
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Substring exists in text at position 31 (not at expected 15)
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Substring mismatch at position 78. Expected: 'y = 4...', Found: ', 2^t...'
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Substring exists in text at position 104 (not at expected 78)
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Substring mismatch at position 52. Expected: '(t^2 + 1, 2^t)...', Found: 'defined by F(t...'
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Substring exists in text at position 70 (not at expected 52)
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: All 3 perturbations failed validation
+2025-12-17 19:16:36 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: Generated 3 perturbations but none validated
+2025-12-17 19:16:37 - INFO - Processing question 4: mathematics_k-12_doc_01_mathematics_mcq_4
+2025-12-17 19:16:37 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: type=MCQ, prompt_length=97, num_options=4, gold_answer=A
+2025-12-17 19:16:37 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Prompt formatted, length=3094 chars
+2025-12-17 19:16:37 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Starting API call, model=gpt-4o, prompt_length=3094
+2025-12-17 19:16:41 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:16:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: API call successful, duration=4.37s, response_length=1089, tokens_used=983
+2025-12-17 19:16:41 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_4: Parsed 3 mappings from response
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Substring mismatch at position 8. Expected: 'shortest...', Found: 'the shor...'
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Substring exists in text at position 12 (not at expected 8)
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Substring mismatch at position 33. Expected: 'origin...', Found: 'm the ...'
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Substring exists in text at position 39 (not at expected 33)
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Substring mismatch at position 51. Expected: 'circle...', Found: 'e circ...'
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Substring exists in text at position 53 (not at expected 51)
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: All 3 perturbations failed validation
+2025-12-17 19:16:41 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: Generated 3 perturbations but none validated
+2025-12-17 19:16:42 - INFO - Processing question 5: mathematics_k-12_doc_01_mathematics_mcq_5
+2025-12-17 19:16:42 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: type=MCQ, prompt_length=157, num_options=4, gold_answer=C
+2025-12-17 19:16:42 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Prompt formatted, length=3186 chars
+2025-12-17 19:16:42 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Starting API call, model=gpt-4o, prompt_length=3186
+2025-12-17 19:16:48 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:16:48 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: API call successful, duration=6.13s, response_length=1160, tokens_used=998
+2025-12-17 19:16:48 - INFO - Question mathematics_k-12_doc_01_mathematics_mcq_5: Parsed 3 mappings from response
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Substring mismatch at position 10. Expected: '3 hours...', Found: ' 3 hour...'
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Substring exists in text at position 11 (not at expected 10)
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Substring mismatch at position 65. Expected: '1 over 2 hour...', Found: 'me on all sub...'
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Substring exists in text at position 99 (not at expected 65)
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Substring mismatch at position 31. Expected: 'equal amounts...', Found: 'ork. She spen...'
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Substring exists in text at position 46 (not at expected 31)
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: All 3 perturbations failed validation
+2025-12-17 19:16:48 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: Generated 3 perturbations but none validated
+2025-12-17 19:16:48 - INFO - Processing section: sec_tf (tf), 5 questions
+2025-12-17 19:16:48 - INFO - Processing question 6: mathematics_k-12_doc_01_mathematics_tf_1
+2025-12-17 19:16:48 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: type=TF, prompt_length=70, num_options=0, gold_answer=True
+2025-12-17 19:16:48 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Prompt formatted, length=3028 chars
+2025-12-17 19:16:48 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Starting API call, model=gpt-4o, prompt_length=3028
+2025-12-17 19:16:55 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: API call successful, duration=6.38s, response_length=1117, tokens_used=940
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Parsed 3 mappings from response
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Perturbation validated successfully
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Selected perturbation 1 of 3 (validated)
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-17 19:16:55 - INFO - Processing question 7: mathematics_k-12_doc_01_mathematics_tf_2
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: type=TF, prompt_length=105, num_options=0, gold_answer=False
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Prompt formatted, length=3065 chars
+2025-12-17 19:16:55 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Starting API call, model=gpt-4o, prompt_length=3065
+2025-12-17 19:17:00 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: API call successful, duration=4.29s, response_length=1114, tokens_used=962
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Parsed 3 mappings from response
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Perturbation validated successfully
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Selected perturbation 1 of 3 (validated)
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-17 19:17:00 - INFO - Processing question 8: mathematics_k-12_doc_01_mathematics_tf_3
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: type=TF, prompt_length=87, num_options=0, gold_answer=False
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Prompt formatted, length=3047 chars
+2025-12-17 19:17:00 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Starting API call, model=gpt-4o, prompt_length=3047
+2025-12-17 19:17:06 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:17:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: API call successful, duration=5.63s, response_length=1096, tokens_used=947
+2025-12-17 19:17:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_3: Parsed 3 mappings from response
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Substring mismatch at position 55. Expected: '1:4...', Found: 's i...'
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Substring exists in text at position 83 (not at expected 55)
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Substring mismatch at position 21. Expected: 'pears...', Found: 'er of...'
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Substring exists in text at position 27 (not at expected 21)
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Substring mismatch at position 41. Expected: 'fruit salad...', Found: 'umber of ap...'
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Substring exists in text at position 68 (not at expected 41)
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: All 3 perturbations failed validation
+2025-12-17 19:17:06 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: Generated 3 perturbations but none validated
+2025-12-17 19:17:06 - INFO - Processing question 9: mathematics_k-12_doc_01_mathematics_tf_4
+2025-12-17 19:17:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: type=TF, prompt_length=51, num_options=0, gold_answer=True
+2025-12-17 19:17:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Prompt formatted, length=3009 chars
+2025-12-17 19:17:06 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Starting API call, model=gpt-4o, prompt_length=3009
+2025-12-17 19:17:13 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:17:13 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: API call successful, duration=6.31s, response_length=1119, tokens_used=976
+2025-12-17 19:17:13 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_4: Parsed 3 mappings from response
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Substring mismatch at position 16. Expected: '14...', Found: 'th...'
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Substring exists in text at position 29 (not at expected 16)
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Substring mismatch at position 23. Expected: '23...', Found: 'at...'
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Substring exists in text at position 38 (not at expected 23)
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Substring mismatch at position 40. Expected: '-9...', Found: ' i...'
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Substring exists in text at position 48 (not at expected 40)
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: All 3 perturbations failed validation
+2025-12-17 19:17:13 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: Generated 3 perturbations but none validated
+2025-12-17 19:17:13 - INFO - Processing question 10: mathematics_k-12_doc_01_mathematics_tf_5
+2025-12-17 19:17:13 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: type=TF, prompt_length=73, num_options=0, gold_answer=False
+2025-12-17 19:17:13 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Prompt formatted, length=3033 chars
+2025-12-17 19:17:13 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Starting API call, model=gpt-4o, prompt_length=3033
+2025-12-17 19:17:17 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:17:17 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: API call successful, duration=4.10s, response_length=1197, tokens_used=966
+2025-12-17 19:17:17 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Parsed 3 mappings from response
+2025-12-17 19:17:17 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Perturbation validated successfully
+2025-12-17 19:17:17 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Selected perturbation 1 of 3 (validated)
+2025-12-17 19:17:17 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-17 19:17:18 - INFO - Processing section: sec_long (long), 2 questions
+2025-12-17 19:17:18 - INFO - Processing question 11: mathematics_k-12_doc_01_mathematics_long_1
+2025-12-17 19:17:18 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: type=LONG, prompt_length=149, num_options=0, gold_answer=None of the above can affect the r value.. Explain why this is the correct answer and
+provide supporting evidence. Show the calculation or reasoning that leads to this
+conclusion.
+2025-12-17 19:17:18 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Prompt formatted, length=3387 chars
+2025-12-17 19:17:18 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Starting API call, model=gpt-4o, prompt_length=3387
+2025-12-17 19:17:24 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:17:24 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: API call successful, duration=6.03s, response_length=1584, tokens_used=1046
+2025-12-17 19:17:24 - INFO - Question mathematics_k-12_doc_01_mathematics_long_1: Parsed 3 mappings from response
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Substring mismatch at position 38. Expected: 'correlation coefficient r...', Found: ' the value of the correla...'
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Substring exists in text at position 56 (not at expected 38)
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Substring mismatch at position 19. Expected: 'can influence the value...', Found: ' that can influence the...'
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Substring exists in text at position 25 (not at expected 19)
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Substring mismatch at position 64. Expected: 'none of these factors ultimately affect its value...', Found: 'ion coefficient r, and explain why none of these ...'
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Substring exists in text at position 99 (not at expected 64)
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: All 3 perturbations failed validation
+2025-12-17 19:17:24 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: Generated 3 perturbations but none validated
+2025-12-17 19:17:24 - INFO - Processing question 12: mathematics_k-12_doc_01_mathematics_long_2
+2025-12-17 19:17:24 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: type=LONG, prompt_length=196, num_options=0, gold_answer=25. Explain why this is the correct answer and provide supporting evidence. Show the
+calculation or reasoning that leads to this conclusion.
+2025-12-17 19:17:24 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Prompt formatted, length=3395 chars
+2025-12-17 19:17:24 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Starting API call, model=gpt-4o, prompt_length=3395
+2025-12-17 19:17:31 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-17 19:17:31 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: API call successful, duration=6.76s, response_length=1387, tokens_used=1067
+2025-12-17 19:17:31 - INFO - Question mathematics_k-12_doc_01_mathematics_long_2: Parsed 3 mappings from response
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Substring mismatch at position 14. Expected: '$\{\frac{2}{5}, \frac{1}{2}, 5, 10\}$...', Found: 't $\{\frac{2}{5}, \frac{1}{2}, 5, 10\...'
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Substring exists in text at position 16 (not at expected 14)
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Perturbation 1 of 3 failed validation (see details above)
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Substring mismatch at position 74. Expected: 'maximum possible value...', Found: 'ximum possible value o...'
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Substring exists in text at position 72 (not at expected 74)
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Perturbation 2 of 3 failed validation (see details above)
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Substring mismatch at position 100. Expected: 'for any two distinct elements...', Found: 'e quotient $\frac{x}{y}$ for ...'
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Substring exists in text at position 125 (not at expected 100)
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Perturbation 3 of 3 failed validation (see details above)
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: All 3 perturbations failed validation
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: Generated 3 perturbations but none validated
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_1: No perturbations generated
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_2: No perturbations generated
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_3: No perturbations generated
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_4: No perturbations generated
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_mcq_5: No perturbations generated
+2025-12-17 19:17:31 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_1: Stored 1 perturbations
+2025-12-17 19:17:31 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_2: Stored 1 perturbations
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_3: No perturbations generated
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_tf_4: No perturbations generated
+2025-12-17 19:17:31 - INFO - Question mathematics_k-12_doc_01_mathematics_tf_5: Stored 1 perturbations
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_1: No perturbations generated
+2025-12-17 19:17:31 - WARNING - Question mathematics_k-12_doc_01_mathematics_long_2: No perturbations generated
+2025-12-17 19:17:31 - INFO - Perturbation merge summary: 3 questions with perturbations, 9 questions without perturbations, total perturbations: 3
+2025-12-17 19:17:31 - INFO - Writing perturbed exam data to: data\exam_content_perturbed.json
+2025-12-17 19:17:31 - INFO - Successfully wrote perturbed exam data (10041 bytes)
+2025-12-17 19:17:31 - INFO - ================================================================================
+2025-12-17 19:17:31 - INFO - Perturbation Generation Complete
+2025-12-17 19:17:31 - INFO - Total questions: 12
+2025-12-17 19:17:31 - INFO - Successful questions: 3
+2025-12-17 19:17:31 - INFO - Failed questions: 9
+2025-12-17 19:17:31 - INFO - Total API calls: 12
+2025-12-17 19:17:31 - INFO - Successful API calls: 12
+2025-12-17 19:17:31 - INFO - Failed API calls: 0
+2025-12-17 19:17:31 - INFO - Total API time: 72.52 seconds
+2025-12-17 19:17:31 - INFO - Total perturbations generated: 3
+2025-12-17 19:17:31 - INFO - Average perturbations per successful question: 1.00
+2025-12-17 19:17:31 - INFO - Output file: data\exam_content_perturbed.json (10041 bytes)
+2025-12-17 19:17:31 - INFO - ================================================================================

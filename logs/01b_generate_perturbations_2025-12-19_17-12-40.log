@@ -1,0 +1,184 @@
+2025-12-19 17:12:40 - INFO - ================================================================================
+2025-12-19 17:12:40 - INFO - Starting Perturbation Generation
+2025-12-19 17:12:40 - INFO - Input file: data\exam_content.json
+2025-12-19 17:12:40 - INFO - Output file: data\exam_content_perturbed.json
+2025-12-19 17:12:40 - INFO - API model: gpt-4o
+2025-12-19 17:12:40 - INFO - Perturbations per question (k): 3
+2025-12-19 17:12:40 - INFO - Log file: logs\01b_generate_perturbations_2025-12-19_17-12-40.log
+2025-12-19 17:12:40 - INFO - ================================================================================
+2025-12-19 17:12:40 - INFO - Loading normalized exam JSON: data\exam_content.json
+2025-12-19 17:12:40 - INFO - Successfully loaded exam data (8579 bytes)
+2025-12-19 17:12:40 - INFO - Number of sections: 3
+2025-12-19 17:12:40 - INFO - Total questions: 12
+2025-12-19 17:12:40 - INFO - Loading baseline HTML: out/baseline\Science\exam.html
+2025-12-19 17:12:40 - INFO - Loading HTML file: out/baseline\Science\exam.html
+2025-12-19 17:12:41 - INFO - Found 12 question cards in HTML
+2025-12-19 17:12:41 - INFO - Successfully extracted text for 12 questions from HTML
+2025-12-19 17:12:41 - INFO - Successfully loaded HTML texts for 12 questions
+2025-12-19 17:12:41 - INFO - OpenAI client initialized successfully
+2025-12-19 17:12:41 - INFO - Processing section: sec_mcq (mcq), 5 questions
+2025-12-19 17:12:41 - INFO - Processing question 1: science_k-12_doc_01_science_arc_mcq_1
+2025-12-19 17:12:41 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: type=MCQ, prompt_length=141, num_options=4, gold_answer=C
+2025-12-19 17:12:41 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: Prompt formatted, length=4690 chars
+2025-12-19 17:12:41 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: Starting API call, model=gpt-4o, prompt_length=4690
+2025-12-19 17:12:47 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: API call successful, duration=6.97s, response_length=1593, tokens_used=1447
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: Parsed 3 mappings from response
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: Auto-corrected position: [36, 72)
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:12:48 - INFO - Processing question 2: science_k-12_doc_01_science_arc_mcq_2
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: type=MCQ, prompt_length=44, num_options=4, gold_answer=A
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: Prompt formatted, length=4592 chars
+2025-12-19 17:12:48 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: Starting API call, model=gpt-4o, prompt_length=4592
+2025-12-19 17:12:53 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: API call successful, duration=4.30s, response_length=1546, tokens_used=1431
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: Parsed 3 mappings from response
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: Auto-corrected position: [25, 43)
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:12:53 - INFO - Processing question 3: science_k-12_doc_01_science_arc_mcq_3
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: type=MCQ, prompt_length=155, num_options=4, gold_answer=B
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: Prompt formatted, length=4920 chars
+2025-12-19 17:12:53 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: Starting API call, model=gpt-4o, prompt_length=4920
+2025-12-19 17:12:59 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: API call successful, duration=5.48s, response_length=1901, tokens_used=1529
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: Parsed 3 mappings from response
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: Auto-corrected position: [102, 155)
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:12:59 - INFO - Processing question 4: science_k-12_doc_01_science_arc_mcq_4
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: type=MCQ, prompt_length=133, num_options=4, gold_answer=D
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: Prompt formatted, length=4790 chars
+2025-12-19 17:12:59 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: Starting API call, model=gpt-4o, prompt_length=4790
+2025-12-19 17:13:04 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:04 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: API call successful, duration=5.15s, response_length=1729, tokens_used=1475
+2025-12-19 17:13:04 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: Parsed 3 mappings from response
+2025-12-19 17:13:04 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: Auto-corrected position: [107, 132)
+2025-12-19 17:13:04 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:04 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:05 - INFO - Processing question 5: science_k-12_doc_01_science_arc_mcq_5
+2025-12-19 17:13:05 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: type=MCQ, prompt_length=154, num_options=4, gold_answer=C
+2025-12-19 17:13:05 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: Prompt formatted, length=4842 chars
+2025-12-19 17:13:05 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: Starting API call, model=gpt-4o, prompt_length=4842
+2025-12-19 17:13:11 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: API call successful, duration=5.89s, response_length=1869, tokens_used=1510
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: Parsed 3 mappings from response
+2025-12-19 17:13:11 - WARNING - Question science_k-12_doc_01_science_arc_mcq_5: Substring mismatch at position 51. Expected: 'If a virus kills most of these trees, which indivi...', Found: 'lar type of tree. If a virus kills most these tree...'
+2025-12-19 17:13:11 - WARNING - Question science_k-12_doc_01_science_arc_mcq_5: Perturbation 1 of 3 failed validation (see details above)
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: Perturbation validated successfully at position 17
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: Selected perturbation 2 of 3 (validated)
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:11 - INFO - Processing section: sec_tf (tf), 5 questions
+2025-12-19 17:13:11 - INFO - Processing question 6: science_k-12_doc_01_science_arc_tf_1
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_tf_1: type=TF, prompt_length=91, num_options=0, gold_answer=False
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_tf_1: Prompt formatted, length=3561 chars
+2025-12-19 17:13:11 - INFO - Question science_k-12_doc_01_science_arc_tf_1: Starting API call, model=gpt-4o, prompt_length=3561
+2025-12-19 17:13:15 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:15 - INFO - Question science_k-12_doc_01_science_arc_tf_1: API call successful, duration=4.01s, response_length=1480, tokens_used=1129
+2025-12-19 17:13:15 - INFO - Question science_k-12_doc_01_science_arc_tf_1: Parsed 3 mappings from response
+2025-12-19 17:13:15 - INFO - Question science_k-12_doc_01_science_arc_tf_1: Auto-corrected position using context: [41, 51)
+2025-12-19 17:13:15 - INFO - Question science_k-12_doc_01_science_arc_tf_1: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:15 - INFO - Question science_k-12_doc_01_science_arc_tf_1: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:16 - INFO - Processing question 7: science_k-12_doc_01_science_arc_tf_2
+2025-12-19 17:13:16 - INFO - Question science_k-12_doc_01_science_arc_tf_2: type=TF, prompt_length=87, num_options=0, gold_answer=False
+2025-12-19 17:13:16 - INFO - Question science_k-12_doc_01_science_arc_tf_2: Prompt formatted, length=3557 chars
+2025-12-19 17:13:16 - INFO - Question science_k-12_doc_01_science_arc_tf_2: Starting API call, model=gpt-4o, prompt_length=3557
+2025-12-19 17:13:24 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:24 - INFO - Question science_k-12_doc_01_science_arc_tf_2: API call successful, duration=8.48s, response_length=1319, tokens_used=1113
+2025-12-19 17:13:24 - INFO - Question science_k-12_doc_01_science_arc_tf_2: Parsed 3 mappings from response
+2025-12-19 17:13:24 - INFO - Question science_k-12_doc_01_science_arc_tf_2: Auto-corrected position using context: [31, 38)
+2025-12-19 17:13:24 - INFO - Question science_k-12_doc_01_science_arc_tf_2: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:24 - INFO - Question science_k-12_doc_01_science_arc_tf_2: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:25 - INFO - Processing question 8: science_k-12_doc_01_science_arc_tf_3
+2025-12-19 17:13:25 - INFO - Question science_k-12_doc_01_science_arc_tf_3: type=TF, prompt_length=88, num_options=0, gold_answer=False
+2025-12-19 17:13:25 - INFO - Question science_k-12_doc_01_science_arc_tf_3: Prompt formatted, length=3558 chars
+2025-12-19 17:13:25 - INFO - Question science_k-12_doc_01_science_arc_tf_3: Starting API call, model=gpt-4o, prompt_length=3558
+2025-12-19 17:13:29 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:29 - INFO - Question science_k-12_doc_01_science_arc_tf_3: API call successful, duration=4.59s, response_length=1566, tokens_used=1159
+2025-12-19 17:13:29 - INFO - Question science_k-12_doc_01_science_arc_tf_3: Parsed 3 mappings from response
+2025-12-19 17:13:29 - INFO - Question science_k-12_doc_01_science_arc_tf_3: Auto-corrected position using context: [12, 50)
+2025-12-19 17:13:29 - INFO - Question science_k-12_doc_01_science_arc_tf_3: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:29 - INFO - Question science_k-12_doc_01_science_arc_tf_3: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:30 - INFO - Processing question 9: science_k-12_doc_01_science_arc_tf_4
+2025-12-19 17:13:30 - INFO - Question science_k-12_doc_01_science_arc_tf_4: type=TF, prompt_length=87, num_options=0, gold_answer=False
+2025-12-19 17:13:30 - INFO - Question science_k-12_doc_01_science_arc_tf_4: Prompt formatted, length=3557 chars
+2025-12-19 17:13:30 - INFO - Question science_k-12_doc_01_science_arc_tf_4: Starting API call, model=gpt-4o, prompt_length=3557
+2025-12-19 17:13:33 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:33 - INFO - Question science_k-12_doc_01_science_arc_tf_4: API call successful, duration=3.44s, response_length=1335, tokens_used=1103
+2025-12-19 17:13:33 - INFO - Question science_k-12_doc_01_science_arc_tf_4: Parsed 3 mappings from response
+2025-12-19 17:13:33 - INFO - Question science_k-12_doc_01_science_arc_tf_4: Auto-corrected position using context: [26, 36)
+2025-12-19 17:13:33 - INFO - Question science_k-12_doc_01_science_arc_tf_4: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:33 - INFO - Question science_k-12_doc_01_science_arc_tf_4: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:34 - INFO - Processing question 10: science_k-12_doc_01_science_arc_tf_5
+2025-12-19 17:13:34 - INFO - Question science_k-12_doc_01_science_arc_tf_5: type=TF, prompt_length=96, num_options=0, gold_answer=False
+2025-12-19 17:13:34 - INFO - Question science_k-12_doc_01_science_arc_tf_5: Prompt formatted, length=3566 chars
+2025-12-19 17:13:34 - INFO - Question science_k-12_doc_01_science_arc_tf_5: Starting API call, model=gpt-4o, prompt_length=3566
+2025-12-19 17:13:40 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:40 - INFO - Question science_k-12_doc_01_science_arc_tf_5: API call successful, duration=6.41s, response_length=1483, tokens_used=1131
+2025-12-19 17:13:40 - INFO - Question science_k-12_doc_01_science_arc_tf_5: Parsed 3 mappings from response
+2025-12-19 17:13:40 - INFO - Question science_k-12_doc_01_science_arc_tf_5: Auto-corrected position using context: [37, 52)
+2025-12-19 17:13:40 - INFO - Question science_k-12_doc_01_science_arc_tf_5: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:40 - INFO - Question science_k-12_doc_01_science_arc_tf_5: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:41 - INFO - Processing section: sec_long (long), 2 questions
+2025-12-19 17:13:41 - INFO - Processing question 11: science_k-12_doc_01_science_long_1
+2025-12-19 17:13:41 - INFO - Question science_k-12_doc_01_science_long_1: type=LONG, prompt_length=152, num_options=0, gold_answer=label. Explain why this is the correct answer and provide supporting evidence. Reference
+key facts or concepts that support this choice.
+2025-12-19 17:13:41 - INFO - Question science_k-12_doc_01_science_long_1: Prompt formatted, length=3942 chars
+2025-12-19 17:13:41 - INFO - Question science_k-12_doc_01_science_long_1: Starting API call, model=gpt-4o, prompt_length=3942
+2025-12-19 17:13:45 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:45 - INFO - Question science_k-12_doc_01_science_long_1: API call successful, duration=4.53s, response_length=2035, tokens_used=1238
+2025-12-19 17:13:45 - INFO - Question science_k-12_doc_01_science_long_1: Parsed 3 mappings from response
+2025-12-19 17:13:45 - INFO - Question science_k-12_doc_01_science_long_1: Auto-corrected position using context: [22, 68)
+2025-12-19 17:13:45 - INFO - Question science_k-12_doc_01_science_long_1: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:45 - INFO - Question science_k-12_doc_01_science_long_1: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:46 - INFO - Processing question 12: science_k-12_doc_01_science_long_2
+2025-12-19 17:13:46 - INFO - Question science_k-12_doc_01_science_long_2: type=LONG, prompt_length=161, num_options=0, gold_answer=label. Explain why this is the correct answer and provide supporting evidence. Reference
+key facts or concepts that support this choice.
+2025-12-19 17:13:46 - INFO - Question science_k-12_doc_01_science_long_2: Prompt formatted, length=3951 chars
+2025-12-19 17:13:46 - INFO - Question science_k-12_doc_01_science_long_2: Starting API call, model=gpt-4o, prompt_length=3951
+2025-12-19 17:13:50 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-19 17:13:50 - INFO - Question science_k-12_doc_01_science_long_2: API call successful, duration=4.43s, response_length=1859, tokens_used=1236
+2025-12-19 17:13:50 - INFO - Question science_k-12_doc_01_science_long_2: Parsed 3 mappings from response
+2025-12-19 17:13:50 - INFO - Question science_k-12_doc_01_science_long_2: Auto-corrected position using context: [16, 36)
+2025-12-19 17:13:50 - INFO - Question science_k-12_doc_01_science_long_2: Selected perturbation 1 of 3 (validated)
+2025-12-19 17:13:50 - INFO - Question science_k-12_doc_01_science_long_2: Successfully generated and validated 1 perturbation (from 3 generated)
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_mcq_1: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_mcq_2: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_mcq_3: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_mcq_4: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_mcq_5: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_tf_1: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_tf_2: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_tf_3: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_tf_4: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_arc_tf_5: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_long_1: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Question science_k-12_doc_01_science_long_2: Stored 1 perturbations
+2025-12-19 17:13:51 - INFO - Perturbation merge summary: 12 questions with perturbations, 0 questions without perturbations, total perturbations: 12
+2025-12-19 17:13:51 - INFO - Writing perturbed exam data to: data\exam_content_perturbed.json
+2025-12-19 17:13:51 - INFO - Successfully wrote perturbed exam data (17279 bytes)
+2025-12-19 17:13:51 - INFO - ================================================================================
+2025-12-19 17:13:51 - INFO - Perturbation Generation Complete
+2025-12-19 17:13:51 - INFO - Total questions: 12
+2025-12-19 17:13:51 - INFO - Successful questions: 12
+2025-12-19 17:13:51 - INFO - Failed questions: 0
+2025-12-19 17:13:51 - INFO - 
+2025-12-19 17:13:51 - INFO - FAILURE BREAKDOWN:
+2025-12-19 17:13:51 - INFO -   Missing gold_answer: 0 question(s)
+2025-12-19 17:13:51 - INFO -   JSON parse errors: 0 question(s)
+2025-12-19 17:13:51 - INFO -   Substring mismatch: 0 question(s)
+2025-12-19 17:13:51 - INFO -   Position errors: 0 question(s)
+2025-12-19 17:13:51 - INFO -   Length violations: 0 question(s)
+2025-12-19 17:13:51 - INFO -   Empty substring: 0 question(s)
+2025-12-19 17:13:51 - INFO -   API call failures: 0 question(s)
+2025-12-19 17:13:51 - INFO -   No valid perturbations: 0 question(s)
+2025-12-19 17:13:51 - INFO - 
+2025-12-19 17:13:51 - INFO - Total API calls: 12
+2025-12-19 17:13:51 - INFO - Successful API calls: 12
+2025-12-19 17:13:51 - INFO - Failed API calls: 0
+2025-12-19 17:13:51 - INFO - Total API time: 69.73 seconds
+2025-12-19 17:13:51 - INFO - Total perturbations generated: 12
+2025-12-19 17:13:51 - INFO - Average perturbations per successful question: 1.00
+2025-12-19 17:13:51 - INFO - Output file: data\exam_content_perturbed.json (17279 bytes)
+2025-12-19 17:13:51 - INFO - ================================================================================

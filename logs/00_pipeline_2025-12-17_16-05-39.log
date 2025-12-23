@@ -1,0 +1,21 @@
+2025-12-17 16:05:39 - INFO - ================================================================================
+2025-12-17 16:05:39 - INFO - Starting Complete Pipeline
+2025-12-17 16:05:39 - INFO - Input JSON: Input/Maths/mathematics_k-12_doc_01.json
+2025-12-17 16:05:39 - INFO - Generate perturbations: True
+2025-12-17 16:05:39 - INFO - API model: gpt-4o, k=3
+2025-12-17 16:05:39 - INFO - Log file: logs\00_pipeline_2025-12-17_16-05-39.log
+2025-12-17 16:05:39 - INFO - ================================================================================
+2025-12-17 16:05:39 - INFO - Detected subject: Maths
+2025-12-17 16:05:39 - INFO - 
+2025-12-17 16:05:39 - INFO - ================================================================================
+2025-12-17 16:05:39 - INFO - Step 1/5: Normalizing JSON
+2025-12-17 16:05:39 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/01_normalize_json.py Input/Maths/mathematics_k-12_doc_01.json data\exam_content.json
+2025-12-17 16:05:39 - INFO - ================================================================================
+2025-12-17 16:05:39 - INFO - [OK] Step 1/5: Normalizing JSON completed successfully
+2025-12-17 16:05:39 - INFO - 
+2025-12-17 16:05:39 - INFO - ================================================================================
+2025-12-17 16:05:39 - INFO - Step 1.5/5: Generating Perturbations
+2025-12-17 16:05:39 - INFO - Command: E:\ASU Coral Lab Learning\html_attack_implementation\venv\Scripts\python.exe scripts/01b_generate_perturbations.py data\exam_content.json data\exam_content_perturbed.json --api-key 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 --model gpt-4o --k 3
+2025-12-17 16:05:39 - INFO - ================================================================================
+2025-12-17 16:05:51 - ERROR - [FAIL] Step 1.5/5: Generating Perturbations failed with exit code 1
+2025-12-17 16:05:51 - ERROR - Pipeline failed at perturbation generation step
