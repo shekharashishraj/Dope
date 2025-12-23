@@ -4,6 +4,7 @@ from typing import Dict, List, Any, Tuple
 from .icw_injector import ICWInjector
 from .dual_layer_injector import DualLayerInjector
 from .font_attack_injector import FontAttackInjector
+from ..models.perturbation import PerturbationMapping, Question
 
 
 class ICWDualLayerInjector:
@@ -18,8 +19,8 @@ class ICWDualLayerInjector:
     def inject(
         self,
         tex_content: str,
-        perturbations: List[Dict[str, Any]],
-        questions: List[Dict[str, Any]]
+        perturbations: List[PerturbationMapping],
+        questions: List[Question]
     ) -> Tuple[str, Dict[str, Any]]:
         """
         Apply ICW first, then Dual Layer.
@@ -63,8 +64,8 @@ class ICWFontAttackInjector:
     def inject(
         self,
         tex_content: str,
-        perturbations: List[Dict[str, Any]],
-        questions: List[Dict[str, Any]]
+        perturbations: List[PerturbationMapping],
+        questions: List[Question]
     ) -> Tuple[str, Dict[str, Any]]:
         """
         Apply ICW first, then Font Attack.

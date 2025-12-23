@@ -2,6 +2,7 @@
 import re
 from typing import Dict, List, Any, Tuple
 from .base_injector import BaseInjector
+from ..models.perturbation import PerturbationMapping, Question
 
 
 class ICWInjector(BaseInjector):
@@ -24,8 +25,8 @@ class ICWInjector(BaseInjector):
     def inject(
         self,
         tex_content: str,
-        perturbations: List[Dict[str, Any]],
-        questions: List[Dict[str, Any]]
+        perturbations: List[PerturbationMapping],
+        questions: List[Question]
     ) -> Tuple[str, Dict[str, Any]]:
         """
         Inject hidden prompts into LaTeX.
@@ -56,22 +57,22 @@ class ICWInjector(BaseInjector):
     
     def _build_instructions(
         self,
-        questions: List[Dict[str, Any]],
-        perturbations: List[Dict[str, Any]]
+        questions: List[Question],
+        perturbations: List[PerturbationMapping]
     ) -> List[Dict[str, Any]]:
         """Build instruction list from questions and perturbations."""
         instructions = []
         
         for question in questions:
-            question_number = question.get('question_number')
+            question_number = question.question_number
             if not question_number:
                 continue
             
             # Get question type
-            question_type = question.get('question_type', '').upper()
+            question_type = question.question_type.value.upper()
             
             # Get perturbations for this question
-            question_perturbations = question.get('perturbations', [])
+            question_perturbations = question.perturbations
             if not question_perturbations:
                 continue
             
@@ -82,25 +83,25 @@ class ICWInjector(BaseInjector):
             
             # Extract answer text from perturbation
             # Use config settings if available, otherwise use defaults
-            use_replacement_for_long = self.config.experimental_icw_use_replacement_for_long if self.config else True
-            use_target_wrong_for_mcq = self.config.experimental_icw_use_target_wrong_for_mcq if self.config else True
+            use_replacement_for_long = self.config.experimental.icw_use_replacement_for_long if self.config else True
+            use_target_wrong_for_mcq = self.config.experimental.icw_use_target_wrong_for_mcq if self.config else True
             
             if question_type == 'LONG':
                 # For LONG questions: use replacement_substring (actual text, not description)
                 if use_replacement_for_long:
-                    answer_text = perturbation.get('replacement_substring', '')
+                    answer_text = perturbation.replacement_substring or ''
                 else:
                     # Fallback to target_wrong_answer if config says so
-                    answer_text = perturbation.get('target_wrong_answer', '')
+                    answer_text = perturbation.target_wrong_answer or ''
             else:
                 # For MCQ/TF: use target_wrong_answer first, fallback to replacement_substring
                 if use_target_wrong_for_mcq:
-                    answer_text = perturbation.get('target_wrong_answer', '')
+                    answer_text = perturbation.target_wrong_answer or ''
                     if not answer_text:
-                        answer_text = perturbation.get('replacement_substring', '')
+                        answer_text = perturbation.replacement_substring or ''
                 else:
                     # Use replacement_substring directly
-                    answer_text = perturbation.get('replacement_substring', '')
+                    answer_text = perturbation.replacement_substring or ''
             
             if not answer_text:
                 continue

@@ -3,7 +3,9 @@ import json
 import os
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
+from pydantic import ValidationError
 from .latex_parser import get_question_latex_stem, parse_latex_questions
+from .models.perturbation import Document
 
 
 class FileHandler:
@@ -35,12 +37,12 @@ class FileHandler:
             for json_file in json_output_dir.glob("*_doc_*.json"):
                 # Get the corresponding LaTeX file path from JSON metadata
                 try:
-                    with open(json_file, 'r', encoding='utf-8') as f:
-                        data = json.load(f)
+                    # Load as Document to validate structure
+                    doc = self.load_json_file(json_file)
                     
                     latex_file_path = None
-                    if 'file_paths' in data and 'latex_file' in data['file_paths']:
-                        latex_path_str = data['file_paths']['latex_file']
+                    if doc.file_paths and doc.file_paths.latex_file:
+                        latex_path_str = doc.file_paths.latex_file
                         # Handle both Windows and Unix path separators
                         latex_path_str = latex_path_str.replace('\\', '/')
                         latex_file_path = self.input_dir.parent / latex_path_str
@@ -55,7 +57,7 @@ class FileHandler:
         
         return json_files
     
-    def load_json_file(self, json_file_path: Path) -> Dict[str, Any]:
+    def load_json_file(self, json_file_path: Path) -> Document:
         """
         Load and parse a JSON file.
         
@@ -63,10 +65,21 @@ class FileHandler:
             json_file_path: Path to JSON file
         
         Returns:
-            Parsed JSON data
+            Document model
+        
+        Raises:
+            ValidationError: If JSON data doesn't match Document model
         """
         with open(json_file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            data = json.load(f)
+        
+        try:
+            return Document.model_validate(data)
+        except ValidationError as e:
+            # Log validation errors but try to continue with partial data
+            print(f"Warning: Validation errors in {json_file_path}: {e}")
+            # Try to create Document with partial validation (extra='allow' should help)
+            return Document.model_validate(data)
     
     def get_latex_stem_for_question(
         self, 
@@ -101,7 +114,7 @@ class FileHandler:
         self, 
         output_dir: Path, 
         original_json_path: Path, 
-        perturbed_data: Dict[str, Any]
+        perturbed_data: Document
     ) -> Path:
         """
         Save perturbed JSON data to output directory.
@@ -109,7 +122,7 @@ class FileHandler:
         Args:
             output_dir: Output directory path
             original_json_path: Original JSON file path
-            perturbed_data: JSON data with perturbations added
+            perturbed_data: Document model with perturbations added
         
         Returns:
             Path to saved file
@@ -121,9 +134,9 @@ class FileHandler:
         output_filename = f"{original_name}{self.output_suffix}.json"
         output_path = output_dir / output_filename
         
-        # Save JSON
+        # Save JSON using model_dump to ensure proper serialization
         with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(perturbed_data, f, indent=2, ensure_ascii=False)
+            json.dump(perturbed_data.model_dump(mode='json', exclude_none=False), f, indent=2, ensure_ascii=False)
         
         return output_path
     

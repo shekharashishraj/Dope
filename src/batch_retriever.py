@@ -4,7 +4,7 @@ import json
 import logging
 import sys
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from datetime import datetime
 import pytz
 from logging.handlers import RotatingFileHandler
@@ -14,7 +14,7 @@ from .file_handler import FileHandler
 
 def get_timezone(config):
     """Get timezone from config."""
-    timezone_str = config.logging_timezone if config else "America/Denver"
+    timezone_str = config.logging.timezone if config else "America/Denver"
     return pytz.timezone(timezone_str)
 
 class MSTFormatter(logging.Formatter):
@@ -32,13 +32,13 @@ class MSTFormatter(logging.Formatter):
 
 def setup_logging(config=None, log_dir: Path = None):
     """Set up detailed logging with configured timezone and file output."""
-    if not config or not config.logging_enabled:
+    if not config or not config.logging.enabled:
         # Basic logging if disabled or no config
         logging.basicConfig(level=logging.INFO)
         return None
     
     if log_dir is None:
-        log_dir = Path(config.logging_log_dir)
+        log_dir = Path(config.logging.log_dir)
     log_dir.mkdir(parents=True, exist_ok=True)
     
     # Get timezone
@@ -58,22 +58,22 @@ def setup_logging(config=None, log_dir: Path = None):
     # File handler with rotation
     file_handler = RotatingFileHandler(
         log_file,
-        maxBytes=config.logging_max_bytes,
-        backupCount=config.logging_backup_count
+        maxBytes=config.logging.max_bytes,
+        backupCount=config.logging.backup_count
     )
-    file_level = getattr(logging, config.logging_file_level.upper(), logging.DEBUG)
+    file_level = getattr(logging, config.logging.file_level.upper(), logging.DEBUG)
     file_handler.setLevel(file_level)
     file_handler.setFormatter(formatter)
     
     # Console handler
     console_handler = logging.StreamHandler(sys.stdout)
-    console_level = getattr(logging, config.logging_console_level.upper(), logging.INFO)
+    console_level = getattr(logging, config.logging.console_level.upper(), logging.INFO)
     console_handler.setLevel(console_level)
     console_handler.setFormatter(formatter)
     
     # Configure root logger
     root_logger = logging.getLogger()
-    root_level = getattr(logging, config.logging_level.upper(), logging.INFO)
+    root_level = getattr(logging, config.logging.level.upper(), logging.INFO)
     root_logger.setLevel(root_level)
     root_logger.addHandler(file_handler)
     root_logger.addHandler(console_handler)
@@ -108,6 +108,255 @@ def check_batch_status(batch_id: str, config: Config):
     except Exception as e:
         logger.error(f"Failed to check batch status: {e}")
         raise
+
+
+def _save_logprobs_by_question_type(
+    output_dir: Path,
+    questions: List[Dict],
+    document_name: str
+):
+    """
+    Save logprobs organized by question type in separate folders.
+    
+    Args:
+        output_dir: Output directory for the document
+        questions: List of question dictionaries with perturbations
+        document_name: Name of the document
+    """
+    from .models.enums import QuestionType
+    
+    # Organize logprobs by question type
+    logprobs_by_type = {
+        "MCQ": [],
+        "TF": [],
+        "LONG": []
+    }
+    
+    for question in questions:
+        question_type = question.get('question_type', '').upper()
+        if question_type not in logprobs_by_type:
+            continue
+        
+        for pert in question.get('perturbations', []):
+            if pert.get('logprobs'):
+                logprob_entry = {
+                    "question_number": question.get('question_number'),
+                    "question_index": pert.get('question_index'),
+                    "original_substring": pert.get('original_substring'),
+                    "replacement_substring": pert.get('replacement_substring'),
+                    "logprobs": pert.get('logprobs')
+                }
+                logprobs_by_type[question_type].append(logprob_entry)
+    
+    # Save logprobs for each question type in separate folders
+    for question_type, logprobs_list in logprobs_by_type.items():
+        if not logprobs_list:
+            continue
+        
+        # Create folder for this question type
+        type_folder = output_dir / "logprobs" / question_type.lower()
+        type_folder.mkdir(parents=True, exist_ok=True)
+        
+        # Save logprobs to JSON file
+        logprobs_file = type_folder / f"{document_name}_{question_type.lower()}_logprobs.json"
+        with open(logprobs_file, 'w', encoding='utf-8') as f:
+            json.dump({
+                "document_name": document_name,
+                "question_type": question_type,
+                "total_perturbations": len(logprobs_list),
+                "logprobs": logprobs_list
+            }, f, indent=2, ensure_ascii=False)
+        
+        logger.info(f"Saved {len(logprobs_list)} logprobs for {question_type} questions to {logprobs_file}")
+
+
+def _save_research_metrics(
+    output_dir: Path,
+    questions: List[Dict],
+    document_name: str
+):
+    """
+    Compute and save research metrics organized by question type.
+    
+    Args:
+        output_dir: Output directory for the document
+        questions: List of question dictionaries with perturbations
+        document_name: Name of the document
+    """
+    import json
+    import math
+    import numpy as np
+    from collections import defaultdict
+    
+    # Convert dict questions to a format we can work with
+    # Organize by question type
+    by_type = defaultdict(lambda: {"perturbations": [], "api_metadata": []})
+    
+    for question in questions:
+        question_type = question.get('question_type', '').upper()
+        for pert in question.get('perturbations', []):
+            by_type[question_type]["perturbations"].append(pert)
+            if pert.get('api_metadata'):
+                from .models.perturbation import APIMetadata
+                try:
+                    api_metadata = APIMetadata.model_validate(pert['api_metadata'])
+                    by_type[question_type]["api_metadata"].append(api_metadata)
+                except:
+                    pass
+    
+    metrics = {
+        "by_question_type": {},
+        "overall": {}
+    }
+    
+    # Compute metrics for each question type
+    for question_type, data in by_type.items():
+        perturbations = data["perturbations"]
+        api_metadata_list = data["api_metadata"]
+        
+        type_metrics = {
+            "total_perturbations": len(perturbations),
+            "logprob_analysis": {},
+            "api_metadata_summary": {},
+            "cost_analysis": {}
+        }
+        
+        # Compute logprob metrics
+        all_entropies = []
+        all_confidences = []
+        all_token_logprobs = []
+        
+        for pert in perturbations:
+            if pert.get('logprobs'):
+                logprobs = pert['logprobs']
+                token_logprobs = logprobs.get("token_logprobs", [])
+                top_logprobs = logprobs.get("top_logprobs", [])
+                
+                # Filter out None values
+                valid_logprobs = [lp for lp in token_logprobs if lp is not None]
+                if valid_logprobs:
+                    all_token_logprobs.extend(valid_logprobs)
+                    
+                    # Compute average confidence (mean logprob)
+                    avg_confidence = np.mean(valid_logprobs) if valid_logprobs else None
+                    if avg_confidence is not None:
+                        all_confidences.append(avg_confidence)
+                    
+                    # Compute entropy for each token position
+                    for top_logprobs_list in top_logprobs:
+                        if top_logprobs_list:
+                            # Convert logprobs to probabilities
+                            probs = [math.exp(lp.get('logprob', -100)) for lp in top_logprobs_list if lp.get('logprob') is not None]
+                            if probs:
+                                # Normalize probabilities
+                                total_prob = sum(probs)
+                                if total_prob > 0:
+                                    probs = [p / total_prob for p in probs]
+                                    # Compute entropy: H = -Σ p(x) * log(p(x))
+                                    entropy = -sum(p * math.log(p) if p > 0 else 0 for p in probs)
+                                    all_entropies.append(entropy)
+        
+        # Aggregate logprob metrics
+        if all_entropies:
+            type_metrics["logprob_analysis"]["avg_entropy"] = float(np.mean(all_entropies))
+            type_metrics["logprob_analysis"]["std_entropy"] = float(np.std(all_entropies))
+            type_metrics["logprob_analysis"]["min_entropy"] = float(np.min(all_entropies))
+            type_metrics["logprob_analysis"]["max_entropy"] = float(np.max(all_entropies))
+        
+        if all_confidences:
+            type_metrics["logprob_analysis"]["avg_confidence"] = float(np.mean(all_confidences))
+            type_metrics["logprob_analysis"]["std_confidence"] = float(np.std(all_confidences))
+            type_metrics["logprob_analysis"]["min_confidence"] = float(np.min(all_confidences))
+            type_metrics["logprob_analysis"]["max_confidence"] = float(np.max(all_confidences))
+        
+        if all_token_logprobs:
+            type_metrics["logprob_analysis"]["total_tokens_with_logprobs"] = len(all_token_logprobs)
+        
+        # Compute API metadata summary
+        if api_metadata_list:
+            finish_reasons = [m.finish_reason for m in api_metadata_list if m.finish_reason]
+            prompt_tokens = [m.prompt_tokens for m in api_metadata_list if m.prompt_tokens is not None]
+            completion_tokens = [m.completion_tokens for m in api_metadata_list if m.completion_tokens is not None]
+            total_tokens = [m.total_tokens for m in api_metadata_list if m.total_tokens is not None]
+            
+            type_metrics["api_metadata_summary"]["total_responses"] = len(api_metadata_list)
+            type_metrics["api_metadata_summary"]["finish_reasons"] = {
+                reason: finish_reasons.count(reason) for reason in set(finish_reasons)
+            }
+            type_metrics["api_metadata_summary"]["truncation_rate"] = finish_reasons.count("length") / len(finish_reasons) if finish_reasons else 0
+            type_metrics["api_metadata_summary"]["filter_rate"] = finish_reasons.count("content_filter") / len(finish_reasons) if finish_reasons else 0
+            
+            if prompt_tokens:
+                type_metrics["api_metadata_summary"]["avg_prompt_tokens"] = float(np.mean(prompt_tokens))
+                type_metrics["api_metadata_summary"]["total_prompt_tokens"] = int(sum(prompt_tokens))
+            
+            if completion_tokens:
+                type_metrics["api_metadata_summary"]["avg_completion_tokens"] = float(np.mean(completion_tokens))
+                type_metrics["api_metadata_summary"]["total_completion_tokens"] = int(sum(completion_tokens))
+            
+            if total_tokens:
+                type_metrics["api_metadata_summary"]["avg_total_tokens"] = float(np.mean(total_tokens))
+                type_metrics["api_metadata_summary"]["total_tokens"] = int(sum(total_tokens))
+            
+            # Cost analysis (GPT-4o pricing: $2.50/$10 per 1M tokens)
+            if prompt_tokens and completion_tokens:
+                total_input_cost = (sum(prompt_tokens) / 1_000_000) * 2.50
+                total_output_cost = (sum(completion_tokens) / 1_000_000) * 10.00
+                type_metrics["cost_analysis"]["total_cost"] = float(total_input_cost + total_output_cost)
+                type_metrics["cost_analysis"]["input_cost"] = float(total_input_cost)
+                type_metrics["cost_analysis"]["output_cost"] = float(total_output_cost)
+                type_metrics["cost_analysis"]["cost_per_perturbation"] = float((total_input_cost + total_output_cost) / len(perturbations)) if perturbations else 0
+        
+        metrics["by_question_type"][question_type] = type_metrics
+    
+    # Compute overall metrics
+    all_perturbations = [p for q in questions for p in q.get('perturbations', [])]
+    all_api_metadata = [p.get('api_metadata') for q in questions for p in q.get('perturbations', []) if p.get('api_metadata')]
+    
+    metrics["overall"]["total_perturbations"] = len(all_perturbations)
+    metrics["overall"]["total_questions"] = len(questions)
+    metrics["overall"]["questions_by_type"] = {
+        q.get('question_type', '').upper(): sum(1 for qq in questions if qq.get('question_type', '').upper() == q.get('question_type', '').upper())
+        for q in questions
+    }
+    
+    if all_api_metadata:
+        from .models.perturbation import APIMetadata
+        finish_reasons = []
+        for md in all_api_metadata:
+            try:
+                api_md = APIMetadata.model_validate(md) if isinstance(md, dict) else md
+                if api_md.finish_reason:
+                    finish_reasons.append(api_md.finish_reason)
+            except:
+                pass
+        metrics["overall"]["truncation_rate"] = finish_reasons.count("length") / len(finish_reasons) if finish_reasons else 0
+        metrics["overall"]["filter_rate"] = finish_reasons.count("content_filter") / len(finish_reasons) if finish_reasons else 0
+    
+    # Save overall metrics
+    metrics_file = output_dir / "research_metrics.json"
+    with open(metrics_file, 'w', encoding='utf-8') as f:
+        json.dump({
+            "document_name": document_name,
+            "metrics": metrics
+        }, f, indent=2, ensure_ascii=False)
+    
+    logger.info(f"Saved research metrics to {metrics_file}")
+    
+    # Also save by question type for easier analysis
+    for question_type, type_metrics in metrics["by_question_type"].items():
+        type_folder = output_dir / "research_metrics" / question_type.lower()
+        type_folder.mkdir(parents=True, exist_ok=True)
+        
+        type_metrics_file = type_folder / f"{document_name}_{question_type.lower()}_metrics.json"
+        with open(type_metrics_file, 'w', encoding='utf-8') as f:
+            json.dump({
+                "document_name": document_name,
+                "question_type": question_type,
+                "metrics": type_metrics
+            }, f, indent=2, ensure_ascii=False)
+        
+        logger.info(f"Saved {question_type} research metrics to {type_metrics_file}")
 
 
 def retrieve_batch_results(batch_id: str, config: Config, output_dir: Optional[Path] = None):
@@ -215,6 +464,20 @@ def retrieve_batch_results(batch_id: str, config: Config, output_dir: Optional[P
                 )
                 save_time = (datetime.now(tz) - save_start).total_seconds()
                 logger.info(f"Saved perturbed JSON to: {output_path} (took {save_time:.2f} seconds)")
+                
+                # Save logprobs organized by question type
+                _save_logprobs_by_question_type(
+                    Path(batch_data['output_dir']),
+                    questions,
+                    json_file.stem
+                )
+                
+                # Save research metrics
+                _save_research_metrics(
+                    Path(batch_data['output_dir']),
+                    questions,
+                    json_file.stem
+                )
                 
                 # Log detailed summary
                 retrieval_time = (datetime.now(tz) - retrieval_start).total_seconds()

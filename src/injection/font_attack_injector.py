@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Dict, List, Any, Tuple, Optional
 from .base_injector import BaseInjector
 from .font_builder import FontBuilder, FontBuildError
+from ..models.perturbation import PerturbationMapping, Question
 
 
 class FontAttackInjector(BaseInjector):
@@ -53,8 +54,8 @@ class FontAttackInjector(BaseInjector):
     def inject(
         self,
         tex_content: str,
-        perturbations: List[Dict[str, Any]],
-        questions: List[Dict[str, Any]]
+        perturbations: List[PerturbationMapping],
+        questions: List[Question]
     ) -> Tuple[str, Dict[str, Any]]:
         """
         Apply font attack to LaTeX.
@@ -94,7 +95,7 @@ class FontAttackInjector(BaseInjector):
         # The orchestrator will need to copy this during compilation
         
         for question_idx, question in enumerate(questions):
-            question_number = question.get('question_number')
+            question_number = question.question_number
             print(f"[FontAttackInjector] Processing question {question_idx+1}/{len(questions)}: Q{question_number}")
             
             if not question_number:
@@ -102,14 +103,14 @@ class FontAttackInjector(BaseInjector):
                 continue
             
             # Apply ALL valid perturbations (not just the first one)
-            question_perturbations = question.get('perturbations', [])
+            question_perturbations = question.perturbations
             
             # Use latex_stem_text from first perturbation or question
             latex_stem_text = None
             if question_perturbations:
-                latex_stem_text = question_perturbations[0].get('latex_stem_text', '')
+                latex_stem_text = question_perturbations[0].latex_stem_text or ''
             if not latex_stem_text:
-                latex_stem_text = question.get('stem_text', '')
+                latex_stem_text = question.latex_stem_text or question.stem_text or ''
             
             if not latex_stem_text:
                 continue
@@ -132,10 +133,10 @@ class FontAttackInjector(BaseInjector):
             # Process each perturbation for this question
             print(f"[FontAttackInjector] Found {len(question_perturbations)} perturbations for Q{question_number}")
             for pert_idx, perturbation in enumerate(question_perturbations):
-                original_substring = perturbation.get('original_substring', '')
-                replacement_substring = perturbation.get('replacement_substring', '')
-                start_pos = perturbation.get('start_pos', -1)
-                end_pos = perturbation.get('end_pos', -1)
+                original_substring = perturbation.original_substring
+                replacement_substring = perturbation.replacement_substring
+                start_pos = perturbation.start_pos
+                end_pos = perturbation.end_pos
                 
                 print(f"[FontAttackInjector] Perturbation {pert_idx+1}: '{original_substring}' -> '{replacement_substring}'")
                 
@@ -246,11 +247,23 @@ class FontAttackInjector(BaseInjector):
                 })
         
         # Apply replacements in reverse order to preserve positions
-        # But first, merge adjacent replacements to avoid position issues
+        # But first, merge adjacent replacements and remove duplicates to avoid position issues
         print(f"[FontAttackInjector] Applying {len(replacements)} replacements")
         
-        # Sort by start position (ascending) to identify adjacent replacements
+        # Sort by start position (ascending) to identify adjacent/overlapping replacements
         replacements.sort(key=lambda x: x[0])
+        
+        # Remove exact duplicates (same start, end, and replacement)
+        seen_replacements = set()
+        unique_replacements = []
+        for start, end, replacement in replacements:
+            replacement_key = (start, end, replacement)
+            if replacement_key not in seen_replacements:
+                seen_replacements.add(replacement_key)
+                unique_replacements.append((start, end, replacement))
+        
+        print(f"[FontAttackInjector] Removed {len(replacements) - len(unique_replacements)} duplicate replacements")
+        replacements = unique_replacements
         
         # Merge adjacent replacements (where end of one == start of next)
         merged_replacements = []
@@ -268,13 +281,10 @@ class FontAttackInjector(BaseInjector):
                     merged_replacements[-1] = (new_start, new_end, new_replacement)
                 # If current replacement overlaps previous (start < prev_end)
                 elif start < prev_end:
-                    # Overlapping: this shouldn't happen with font attacks, but handle it
-                    # by taking the union and concatenating replacements
-                    new_start = min(prev_start, start)
-                    new_end = max(prev_end, end)
-                    # For overlapping, concatenate (may create duplicate text, but safer)
-                    new_replacement = prev_replacement + replacement
-                    merged_replacements[-1] = (new_start, new_end, new_replacement)
+                    # Overlapping: Skip the overlapping replacement to avoid duplicate text
+                    # Keep the first one (prev_replacement) and skip the overlapping one
+                    print(f"[FontAttackInjector] Skipping overlapping replacement at ({start}, {end}) - overlaps with ({prev_start}, {prev_end})")
+                    continue
                 else:
                     # Not adjacent or overlapping, add as new replacement
                     merged_replacements.append((start, end, replacement))

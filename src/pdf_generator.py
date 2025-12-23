@@ -14,7 +14,7 @@ from .config import Config
 
 def get_timezone(config):
     """Get timezone from config."""
-    timezone_str = config.logging_timezone if config else "America/Denver"
+    timezone_str = config.logging.timezone if config else "America/Denver"
     return pytz.timezone(timezone_str)
 
 class MSTFormatter(logging.Formatter):
@@ -32,13 +32,13 @@ class MSTFormatter(logging.Formatter):
 
 def setup_logging(config=None, log_dir: Path = None):
     """Set up detailed logging with configured timezone and file output."""
-    if not config or not config.logging_enabled:
+    if not config or not config.logging.enabled:
         # Basic logging if disabled or no config
         logging.basicConfig(level=logging.INFO)
         return None
     
     if log_dir is None:
-        log_dir = Path(config.logging_log_dir)
+        log_dir = Path(config.logging.log_dir)
     log_dir.mkdir(parents=True, exist_ok=True)
     
     # Get timezone
@@ -58,22 +58,22 @@ def setup_logging(config=None, log_dir: Path = None):
     # File handler with rotation
     file_handler = RotatingFileHandler(
         log_file,
-        maxBytes=config.logging_max_bytes,
-        backupCount=config.logging_backup_count
+        maxBytes=config.logging.max_bytes,
+        backupCount=config.logging.backup_count
     )
-    file_level = getattr(logging, config.logging_file_level.upper(), logging.DEBUG)
+    file_level = getattr(logging, config.logging.file_level.upper(), logging.DEBUG)
     file_handler.setLevel(file_level)
     file_handler.setFormatter(formatter)
     
     # Console handler
     console_handler = logging.StreamHandler(sys.stdout)
-    console_level = getattr(logging, config.logging_console_level.upper(), logging.INFO)
+    console_level = getattr(logging, config.logging.console_level.upper(), logging.INFO)
     console_handler.setLevel(console_level)
     console_handler.setFormatter(formatter)
     
     # Configure root logger
     root_logger = logging.getLogger()
-    root_level = getattr(logging, config.logging_level.upper(), logging.INFO)
+    root_level = getattr(logging, config.logging.level.upper(), logging.INFO)
     root_logger.setLevel(root_level)
     root_logger.addHandler(file_handler)
     root_logger.addHandler(console_handler)
@@ -91,19 +91,34 @@ def extract_metadata_from_json(perturbation_json_path: Path) -> Dict[str, str]:
     
     Args:
         perturbation_json_path: Path to perturbation JSON file
-        
+    
     Returns:
         Dictionary with subject, level, and document_name
     """
     try:
+        from .models.perturbation import Document
+        from pydantic import ValidationError
+        
         with open(perturbation_json_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            data_dict = json.load(f)
+        
+        try:
+            data = Document.model_validate(data_dict)
+        except ValidationError:
+            # Fallback to dict access if validation fails
+            data = None
         
         # Try to extract from JSON metadata
-        subject = data.get('subject', '')
-        level = data.get('level', '')
-        docid = data.get('docid', '')
-        document_name = data.get('document_name', '')
+        if data:
+            subject = data.domain or ''
+            level = data.academic_level or ''
+            docid = data.docid or ''
+        else:
+            subject = data_dict.get('domain', data_dict.get('subject', ''))
+            level = data_dict.get('academic_level', data_dict.get('level', ''))
+            docid = data_dict.get('docid', '')
+        
+        document_name = docid  # Use docid as document_name
         
         # If not in JSON, try to extract from path
         if not subject or not level:
@@ -181,7 +196,7 @@ class OrganizedPDFGenerator:
         """
         self.config = config
         if base_output_dir is None:
-            base_output_dir = Path(config.pdf_generation_output_base_dir)
+            base_output_dir = Path(config.pdf_generation.output_base_dir)
         self.base_output_dir = base_output_dir
         self.orchestrator = InjectionOrchestrator(output_dir=base_output_dir, config=config)
     
@@ -251,9 +266,9 @@ class OrganizedPDFGenerator:
             # Process document
             # Filter methods based on config
             if methods:
-                enabled_methods = [m for m in methods if self.config.injection_method_enabled(m)]
+                enabled_methods = [m for m in methods if m in self.config.injection.methods and self.config.injection.methods[m].enabled]
             else:
-                enabled_methods = [m for m in self.config.injection_default_methods if self.config.injection_method_enabled(m)]
+                enabled_methods = [m for m in self.config.injection.default_methods if m in self.config.injection.methods and self.config.injection.methods[m].enabled]
             
             if not enabled_methods:
                 logger.warning(f"No enabled injection methods found. Skipping {perturbation_json_path.name}")
@@ -262,7 +277,7 @@ class OrganizedPDFGenerator:
             results = self.orchestrator.process_document(
                 perturbation_json_path=perturbation_json_path,
                 methods=enabled_methods,
-                compile_pdf=compile_pdf and self.config.pdf_generation_compile_pdf
+                compile_pdf=compile_pdf and self.config.pdf_generation.compile_pdf
             )
             
             # Add metadata about output location
@@ -338,7 +353,7 @@ def main():
         
         # Convert to Path
         perturbation_folder = Path(args.perturbation_folder).resolve()
-        output_dir = Path(args.output_dir) if args.output_dir else Path(config.pdf_generation_output_base_dir)
+        output_dir = Path(args.output_dir) if args.output_dir else Path(config.pdf_generation.output_base_dir)
         
         # Find perturbation files
         logger.info(f"Searching for perturbation JSON files in: {perturbation_folder}")
@@ -366,7 +381,7 @@ def main():
         # Determine methods
         methods = args.methods if args.methods else None
         if methods is None:
-            methods = config.injection_default_methods
+            methods = config.injection.default_methods
         
         logger.info(f"Processing {len(perturbation_files)} document(s) with {len(methods)} method(s)")
         logger.info(f"Methods: {', '.join(methods)}")
@@ -383,8 +398,8 @@ def main():
             doc_start = datetime.now(tz)
             
             # Add delay between documents if configured
-            if i > 1 and config.performance_delay_between_documents > 0:
-                time.sleep(config.performance_delay_between_documents)
+            if i > 1 and config.performance.delay_between_documents > 0:
+                time.sleep(config.performance.delay_between_documents)
             
             try:
                 results = generator.process_document(
