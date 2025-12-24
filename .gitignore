@@ -4,6 +4,11 @@
 .env.*.local
 *.env
 
+# Logs (contain sensitive information like API keys)
+logs/
+*.log
+*.log.*
+
 # Python
 __pycache__/
 *.py[cod]
