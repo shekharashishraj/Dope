@@ -38,9 +38,10 @@ The pipeline executes steps in this specific order:
 4. **Apply Traditional Attacks** - Inject 9 CSS-based hidden text attacks
 5. **Apply CSS ::before Attack** (optional) - Use perturbations to replace DOM text while showing original via CSS
 6. **Apply Image/Canvas Attack** (optional) - Use perturbations to replace DOM text while rendering original as canvas
-7. **Audit Visibility** - Verify attacks work correctly (DOM has tokens, visible text doesn't)
+7. **Apply Print Occlusion Layer** (optional) - Make canvas attack print-safe for PDF generation
+8. **Audit Visibility** - Verify attacks work correctly (DOM has tokens, visible text doesn't)
 
-**Note:** Perturbations (Step 3) must run after rendering (Step 2) because they extract question text from the rendered HTML to calculate accurate positions.
+**Note:** Perturbations (Step 3) must run after rendering (Step 2) because they extract question text from the rendered HTML to calculate accurate positions. Print Occlusion Layer (Step 7) must run after Image/Canvas Attack (Step 6) as it processes the canvas-attacked HTML.
 
 ## Directory Structure
 
@@ -64,6 +65,7 @@ The pipeline executes steps in this specific order:
 │   ├── 03_apply_attacks.py         # Apply traditional CSS attacks
 │   ├── 03b_apply_css_before_attack.py  # Apply CSS ::before attack
 │   ├── 03c_apply_image_canvas_attack.py  # Apply Image/Canvas attack
+│   ├── 03d_apply_print_occlusion_layer.py  # Apply print occlusion layer
 │   └── 04_audit_visibility.js      # Audit visibility with Playwright
 ├── attacks/                        # Attack definitions
 │   ├── registry.json               # Attack registry (9 traditional attacks)
@@ -96,6 +98,7 @@ The pipeline executes steps in this specific order:
 │   │       │   └── styles.css
 │   │       └── image_canvas/
 │   │           ├── exam.html
+│   │           ├── exam_printsafe.html
 │   │           └── styles.css
 │   └── reports/
 │       ├── audit_results.json
@@ -122,6 +125,7 @@ The pipeline executes steps in this specific order:
 │   ├── 03_apply_attacks_<timestamp>.log
 │   ├── 03b_css_before_<timestamp>.log
 │   ├── 03c_image_canvas_<timestamp>.log
+│   ├── 03d_print_occlusion_<timestamp>.log
 │   └── 04_audit_<timestamp>.log
 ├── requirements.txt                # Python dependencies
 ├── package.json                    # Node.js dependencies
@@ -294,6 +298,7 @@ This will:
 4. Apply 9 traditional CSS attacks
 5. Apply CSS ::before attack (using perturbations)
 6. Apply Image/Canvas attack (using perturbations)
+7. Apply Print Occlusion Layer (makes canvas attack print-safe for PDF generation)
 
 #### Command-Line Options
 
@@ -472,13 +477,39 @@ python scripts/03c_apply_image_canvas_attack.py \
 **Output:**
 - `out/attacked/<Subject>/image_canvas/exam.html`
 - `out/attacked/<Subject>/image_canvas/styles.css`
+- `out/attacked/<Subject>/image_canvas/styles_enhanced.css`
 
 **Requirements:**
 - Perturbed JSON must exist (run Step 3 first)
 
 **Logs:** `logs/03c_image_canvas_<timestamp>.log`
 
-#### Step 7: Audit Visibility
+#### Step 7: Apply Print Occlusion Layer (Optional)
+
+Make the Image/Canvas attack print-safe for PDF generation:
+
+```bash
+python scripts/03d_apply_print_occlusion_layer.py \
+    --input-html out/attacked/Maths/image_canvas/exam.html \
+    --output-html out/attacked/Maths/image_canvas/exam_printsafe.html
+```
+
+**What it does:**
+- Adds print-specific CSS to ensure perturbed text appears in PDF text layer
+- Adds print-specific JavaScript to overlay original text via canvas during print
+- Ensures PDFs maintain correct text extraction order while showing original text visually
+
+**Output:**
+- `out/attacked/<Subject>/image_canvas/exam_printsafe.html`
+
+**Requirements:**
+- Image/Canvas attack output must exist (run Step 6 first)
+
+**Logs:** `logs/03d_print_occlusion_<timestamp>.log`
+
+**Note:** This step is automatically included when running the full pipeline with `--generate-perturbations` flag.
+
+#### Step 8: Audit Visibility
 
 Run automated visibility audit to verify attacks work correctly:
 
@@ -612,6 +643,12 @@ YYYY-MM-DD HH:MM:SS - LEVEL - Message
 - Questions processed
 - Canvas rendering
 - Substring replacements
+
+**03d_apply_print_occlusion_layer.py:**
+- Print CSS injection
+- Print JavaScript injection
+- Print canvas rendering
+- PDF text layer configuration
 
 **04_audit_visibility.js:**
 - File-by-file audit results

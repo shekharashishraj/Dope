@@ -552,7 +552,7 @@ def apply_image_canvas_attack(baseline_html: str, perturbed_json: str, output_di
     logging.info(f"Questions with attacks applied: {questions_with_attacks}")
     logging.info(f"Questions skipped: {questions_skipped}")
     logging.info(f"Canvas elements to be created: {canvas_elements_count}")
-    logging.info(f"Script injection: Success ({script_length} bytes)")
+    logging.info(f"Canvas rendering script injection: Success ({script_length} bytes)")
     logging.info(f"Output HTML: {output_html} ({output_size} bytes)")
     logging.info("=" * 80)
 

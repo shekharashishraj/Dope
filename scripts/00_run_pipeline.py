@@ -132,7 +132,7 @@ def run_pipeline(input_json, registry_file="attacks/registry.json", data_dir="da
     
     total_steps = 3  # Base steps: Normalize, Render, Apply Traditional Attacks
     if generate_perturbations:
-        total_steps = 6  # Add: Generate Perturbations, CSS ::before, Image/Canvas
+        total_steps = 7  # Add: Generate Perturbations, CSS ::before, Image/Canvas, Print Occlusion
     
     if not run_command(normalize_cmd, "Normalizing JSON", 1, total_steps):
         logging.error("Pipeline failed at normalization step")
@@ -245,6 +245,27 @@ def run_pipeline(input_json, registry_file="attacks/registry.json", data_dir="da
         else:
             logging.info("")
     
+    # Step 7: Apply Print Occlusion Layer (if perturbations exist)
+    if generate_perturbations and os.path.exists(perturbed_json):
+        input_html = os.path.join(attacked_dir, subject_name, 'image_canvas', 'exam.html')
+        print_safe_html = os.path.join(attacked_dir, subject_name, 'image_canvas', 'exam_printsafe.html')
+        
+        if not os.path.exists(input_html):
+            logging.error(f"Input HTML not found: {input_html}")
+            logging.warning("Skipping print occlusion layer step")
+        else:
+            print_occlusion_cmd = [
+                sys.executable,
+                "scripts/03d_apply_print_occlusion_layer.py",
+                "--input-html", input_html,
+                "--output-html", print_safe_html
+            ]
+            
+            if not run_command(print_occlusion_cmd, "Applying Print Occlusion Layer", 7, total_steps):
+                logging.warning("Print occlusion layer failed, continuing with pipeline")
+            else:
+                logging.info("")
+    
     # Summary
     logging.info("")
     logging.info("=" * 80)
@@ -254,6 +275,10 @@ def run_pipeline(input_json, registry_file="attacks/registry.json", data_dir="da
     logging.info(f"Attacked HTML files: {os.path.join(attacked_dir, subject_name)}")
     if generate_perturbations:
         logging.info(f"Perturbed JSON: {perturbed_json}")
+        logging.info(f"Image/Canvas attack output: {os.path.join(attacked_dir, subject_name, 'image_canvas', 'exam.html')}")
+        print_safe_html = os.path.join(attacked_dir, subject_name, 'image_canvas', 'exam_printsafe.html')
+        if os.path.exists(print_safe_html):
+            logging.info(f"Print-safe HTML output: {print_safe_html}")
     logging.info("=" * 80)
 
 
