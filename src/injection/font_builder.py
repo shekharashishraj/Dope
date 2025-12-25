@@ -27,7 +27,14 @@ class FontBuilder:
             raise FontBuildError(f"Base font not found: {self.base_font_path}")
         
         # Load base font
-        self._base_font = TTFont(str(self.base_font_path))
+        try:
+            self._base_font = TTFont(str(self.base_font_path))
+        except Exception as e:
+            raise FontBuildError(f"Invalid font file: {e}")
+        
+        # Validate font type
+        if self._base_font.sfntVersion not in [b'\x00\x01\x00\x00', b'OTTO']:
+            raise FontBuildError("Not a TrueType or OpenType font")
         
         # Handle variable fonts
         if 'fvar' in self._base_font:

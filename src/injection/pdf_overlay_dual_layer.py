@@ -136,14 +136,15 @@ def apply_image_overlay_dual_layer(
         compiled_doc.save(str(output_pdf_path))
         
         compiled_doc.close()
-        original_doc.close()
+        if original_doc:
+            original_doc.close()
         
         return True
     
     except Exception:
-        if 'compiled_doc' in locals():
+        if 'compiled_doc' in locals() and compiled_doc:
             compiled_doc.close()
-        if 'original_doc' in locals():
+        if 'original_doc' in locals() and original_doc:
             original_doc.close()
         return False
 

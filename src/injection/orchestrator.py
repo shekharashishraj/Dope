@@ -150,7 +150,14 @@ class InjectionOrchestrator:
                             injector = injector_class(config=self.config)
                         except TypeError:
                             # Injector doesn't accept config parameter, use default
-                            injector = injector_class()
+                            try:
+                                injector = injector_class()
+                            except Exception as e:
+                                print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                                continue
+                        except Exception as e:
+                            print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                            continue
                         print(f"[Orchestrator] {method_name} injector initialized")
                         
                         # Apply injection with filtered perturbations
@@ -230,7 +237,16 @@ class InjectionOrchestrator:
                         injector = injector_class(config=self.config)
                     except TypeError:
                         # Injector doesn't accept config parameter, use default
-                        injector = injector_class()
+                        try:
+                            injector = injector_class()
+                        except Exception as e:
+                            print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                            result = {"success": False, "method": method_name, "error": str(e)}
+                            continue
+                    except Exception as e:
+                        print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                        result = {"success": False, "method": method_name, "error": str(e)}
+                        continue
                     print(f"[Orchestrator] {method_name} injector initialized")
                     
                     # Apply injection

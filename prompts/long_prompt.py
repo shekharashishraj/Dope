@@ -24,6 +24,11 @@ Generate {k} valid mappings that satisfy the replacement strategy. Each mapping 
 3. Ensure the replacement is semantically meaningful and natural
 4. Change the question focus in a way that affects the expected answer
 
+### VALIDATION RULES:
+- **Good Change**: "economic impact" -> "cultural impact" (Changes the required evidence).
+- **Bad Change**: "economic impact" -> "lack of economic impact" (Trivial negation).
+- **Constraint**: original_substring must match the LaTeX text exactly.
+
 For each mapping, provide:
 1. question_index: The question number ({question_index})
 2. latex_stem_text: Exact LaTeX text of the question stem (must match the input exactly)

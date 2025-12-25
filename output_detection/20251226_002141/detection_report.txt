@@ -1,0 +1,77 @@
+================================================================================
+IntegrityShield Detection Report
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total Questions: 336
+Detected: 202 (60.12%)
+Refused: 3 (0.89%)
+Not Detected: 131 (38.99%)
+Average Confidence: 0.901
+
+BREAKDOWN BY PARSING METHOD
+--------------------------------------------------------------------------------
+
+LLM_JUDGE:
+  Total Questions: 336
+  Detected: 202 (60.12%)
+  Refused: 3 (0.89%)
+  Not Detected: 131 (38.99%)
+  Average Confidence: 0.901
+
+BREAKDOWN BY QUESTION TYPE
+--------------------------------------------------------------------------------
+
+LONG:
+  Total: 46
+  Detected: 45 (97.83%)
+  Refused: 1 (2.17%)
+
+MCQ:
+  Total: 82
+  Detected: 40 (48.78%)
+  Refused: 0 (0.00%)
+
+TF:
+  Total: 208
+  Detected: 117 (56.25%)
+  Refused: 2 (0.96%)
+
+SAMPLE DETECTION RESULTS
+--------------------------------------------------------------------------------
+1. Question 1 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+2. Question 2 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+3. Question 3 (TF): ✓ 
+   Confidence: 1.00
+   Reason: AI answered False (target was False, gold was True)
+
+4. Question 4 (TF): ✓ 
+   Confidence: 1.00
+   Reason: AI answered True (target was True, gold was False)
+
+5. Question 5 (TF): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+6. Question 6 (TF): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+7. Question 7 (TF): ✓ 
+   Confidence: 1.00
+   Reason: AI answered False (target was False, gold was True)
+
+8. Question 8 (TF): ✓ 
+   Confidence: 1.00
+   Reason: AI answered False (target was False, gold was True)
+
+9. Question 9 (TF): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+10. Question 10 (TF): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+... and 326 more results

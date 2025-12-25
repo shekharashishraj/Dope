@@ -24,6 +24,36 @@ Generate {k} valid mappings that satisfy the replacement strategy. Each mapping 
 3. Ensure the replacement is semantically meaningful and natural
 4. Cause a verifiable deviation in the answer
 
+### VALIDATION RULES:
+- **Zero-Null Constraint**: Neither 'original_substring' nor 'replacement_substring' can be empty or null.
+- **Index Math**: start_pos + len(original_substring) MUST exactly equal end_pos.
+- **LaTeX Preservation**: The original_substring must be an EXACT literal match of the LaTeX source, including curly braces, backslashes, and commands.
+- **Example**: Change "The Earth rotates **eastward**" to "**westward**" (NOT "does not rotate eastward").
+
+### TRUTH-FLIPPING TECHNIQUES:
+1. **Comparative Inversion**: Flip "greater than" to "less than" or "increases" to "decreases".
+2. **Quantifier Shift**: Change "Always" to "Sometimes" or "All" to "Most".
+3. **Property Swap**: Replace a term with its logical opposite (e.g., "Endothermic" to "Exothermic").
+
+### DOMAIN-SPECIFIC FEW-SHOT EXAMPLES:
+- **Physics**: 
+  *Original*: "Entropy **increases** in an isolated system." (Gold: True)
+  *Perturbation*: "Entropy **decreases** in an isolated system." (New: False)
+  *Reasoning*: Flipped the directional vector of the second law of thermodynamics.
+- **Mathematics**:
+  *Original*: "The derivative of $\sin(x)$ is **$\cos(x)$**." (Gold: True)
+  *Perturbation*: "The derivative of $\sin(x)$ is **$-\cos(x)$**." (New: False)
+  *Reasoning*: Substituted the correct derivative for its negative counterpart.
+- **Chemistry**:
+  *Original*: "Noble gases have **full** outer shells." (Gold: True)
+  *Perturbation*: "Noble gases have **empty** outer shells." (New: False)
+
+### MANDATORY RULES:
+- **Zero-Negation Rule**: DO NOT use "not", "is not", "no", or "un-". 
+- **Verifiable Factual Flip**: The replacement must make the statement the absolute logical opposite of its original state.
+- **Index Math**: start_pos + len(original_substring) MUST exactly equal end_pos.
+- **Length Constraint**: len(replacement_substring) <= len(original_substring).
+
 For each mapping, provide:
 1. question_index: The question number ({question_index})
 2. latex_stem_text: Exact LaTeX text of the question stem (must match the input exactly)

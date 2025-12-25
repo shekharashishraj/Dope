@@ -25,6 +25,11 @@ Generate {k} valid mappings that satisfy the replacement strategy. Each mapping 
 3. Ensure the replacement is semantically meaningful and natural
 4. Cause a verifiable deviation in the answer
 
+### PERTURBATION STANDARDS:
+- **Accuracy**: original_substring must be an EXACT match of the LaTeX source (including commands).
+- **Non-Triviality**: Do not just add "not". Change the underlying parameter/condition.
+- **Constraints**: Neither substring can be empty. Indices must be 0-based and precise.
+
 For each mapping, provide:
 1. question_index: The question number ({question_index})
 2. latex_stem_text: Exact LaTeX text of the question stem (must match the input exactly)
