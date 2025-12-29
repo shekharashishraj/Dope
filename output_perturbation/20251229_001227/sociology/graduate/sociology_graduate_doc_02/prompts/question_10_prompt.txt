@@ -1,0 +1,54 @@
+================================================================================
+QUESTION 10 INDIVIDUAL PROMPT
+================================================================================
+
+You are an expert at generating minimal, high-impact text substitutions for academic True/False questions.
+
+Context (do not modify):
+- LaTeX question stem: Institutionalization
+- Gold answer (currently correct): True  (must flip)
+- Question type: TF
+- Strategy: replacement (replace exactly ONE contiguous substring in the stem)
+- Reasoning steps:
+
+- Copyable stem text (use this exact text when selecting substrings and computing indices):
+<<<COPY
+The correct answer to 'White-collar crime is low in visibility because:' is 'it goes undetected in the context of everyday business transactions'.
+>>>
+
+
+Goal:
+Produce 3 replacement mappings that flip the truth value (True ↔ False) relative to the gold answer.
+
+Hard constraints (must satisfy all):
+1) Single-span edit: replace exactly one contiguous substring inside latex_stem_text (stem only).
+2) Exact match: original_substring must be an exact substring of latex_stem_text (character-for-character, including LaTeX).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring AND end_pos = start_pos + len(original_substring).
+4) Non-trivial change: replacement must make the statement clearly switch truth value (not just wording).
+5) Avoid trivial negation: do not rely on inserting/removing a lone "not/never/no"; prefer changing a key term, condition, quantifier, number, direction, scope, or entity.
+6) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+7) target_wrong_answer must be exactly the opposite of gold_answer: if gold_answer is "True" output "False", else output "True".
+
+What to output for each mapping:
+- question_index: 10
+- latex_stem_text: must exactly equal the input latex_stem_text
+- original_substring
+- replacement_substring
+- start_pos (0-based)
+- end_pos (exclusive)
+- target_wrong_answer: "True" or "False" (the flipped label)
+- reasoning: 1–2 sentences explaining why the truth value flips after the replacement
+
+Return ONLY valid JSON as an array of 3 objects, with double quotes, no markdown.
+[
+  {
+    "question_index": 10,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "False",
+    "reasoning": "..."
+  }
+]

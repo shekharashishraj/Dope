@@ -221,12 +221,24 @@ class InjectionOrchestrator:
                         perturbation_results.append(pert_result)
                     
                     # Combine results
-                    result = {
-                        "success": True,
-                        "method": method_name,
-                        "perturbations": perturbation_results,
-                        "total_perturbations": len(perturbation_results)
-                    }
+                    if len(perturbation_results) == 0:
+                        # No perturbations were generated - this is a failure case
+                        print(f"[Orchestrator] WARNING: {method_name} - No perturbations found for any index (1, 2, 3)")
+                        print(f"[Orchestrator] This usually means the perturbation JSON has no perturbations for any questions")
+                        result = {
+                            "success": False,
+                            "method": method_name,
+                            "error": "No perturbations found in document - all questions have empty perturbations arrays",
+                            "perturbations": [],
+                            "total_perturbations": 0
+                        }
+                    else:
+                        result = {
+                            "success": True,
+                            "method": method_name,
+                            "perturbations": perturbation_results,
+                            "total_perturbations": len(perturbation_results)
+                        }
                 else:
                     # Non-font-attack methods: process all perturbations together
                     # Initialize injector
@@ -313,6 +325,7 @@ class InjectionOrchestrator:
                                             mappings.append(mapping)
                                 
                                 # Find original PDF from perturbation JSON file_paths
+                                print(f"[Orchestrator] Searching for original PDF for dual layer overlay...")
                                 original_pdf = None
                                 if data.file_paths:
                                     # Check for pdf_file in extra fields (not in model)
@@ -328,6 +341,7 @@ class InjectionOrchestrator:
                                         if not original_pdf.is_absolute():
                                             # Resolve relative to output directory
                                             original_pdf = self.output_dir.parent / pdf_path_str
+                                        print(f"[Orchestrator] Original PDF from file_paths: {original_pdf} (exists: {original_pdf.exists()})")
                                 
                                 # Fallback: try common locations
                                 search_original = self.config.pdf_generation.overlay_search_original_pdf if self.config else True
@@ -340,11 +354,17 @@ class InjectionOrchestrator:
                                     
                                     pdf_dir = latex_path.parent.parent / "pdf_documents"
                                     original_pdf = pdf_dir / f"{base_name}.pdf"
+                                    print(f"[Orchestrator] Trying pdf_documents folder: {original_pdf} (exists: {original_pdf.exists()})")
                                 
                                 # Last fallback: use compiled PDF (will still work but less effective)
                                 if not original_pdf or not original_pdf.exists():
+                                    print(f"[Orchestrator] WARNING: Original PDF not found! Will use compiled PDF as fallback.")
+                                    print(f"[Orchestrator] This means the overlay will show replacement text instead of original.")
                                     original_pdf = None
+                                else:
+                                    print(f"[Orchestrator] ✓ Original PDF found: {original_pdf}")
                                 
+                                print(f"[Orchestrator] Applying dual layer overlay with {len(mappings)} mappings...")
                                 if apply_image_overlay_dual_layer(
                                     original_pdf_path=original_pdf if original_pdf and original_pdf.exists() else None,
                                     compiled_pdf_path=compiled_pdf,
@@ -355,6 +375,11 @@ class InjectionOrchestrator:
                                     result["pdf_path"] = str(final_pdf)
                                     result["dual_layer_applied"] = True
                                     result["overlay_method"] = "image_overlay"
+                                    result["original_pdf_used"] = str(original_pdf) if original_pdf else "fallback (compiled PDF)"
+                                    print(f"[Orchestrator] ✓ Dual layer overlay applied successfully")
+                                else:
+                                    print(f"[Orchestrator] ✗ Dual layer overlay failed")
+                                    result["overlay_error"] = "Overlay application failed"
                 
                 results[method_name] = result
                 

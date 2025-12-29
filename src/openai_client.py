@@ -90,12 +90,13 @@ class OpenAIClient:
         
         return results
     
-    def _call_api_with_retry(self, prompt: str) -> List[PerturbationMapping]:
+    def _call_api_with_retry(self, prompt: str, output_dir: Optional[Path] = None) -> List[PerturbationMapping]:
         """
         Call OpenAI API with retry logic.
         
         Args:
             prompt: Formatted prompt string
+            output_dir: Optional output directory to save raw response
         
         Returns:
             List of perturbation mappings
@@ -155,6 +156,18 @@ class OpenAIClient:
                 logger.info(f"API response - Preview (first 500 chars): {content_preview}")
                 # Log complete response at DEBUG level (saved to file)
                 logger.debug(f"API response - Complete response:\n{content}")
+                
+                # Save raw API response to file
+                if output_dir:
+                    prompts_dir = output_dir / "prompts"
+                    prompts_dir.mkdir(parents=True, exist_ok=True)
+                    response_file = prompts_dir / "api_response_raw.txt"
+                    with open(response_file, 'w', encoding='utf-8') as f:
+                        f.write("=" * 80 + "\n")
+                        f.write("RAW API RESPONSE\n")
+                        f.write("=" * 80 + "\n\n")
+                        f.write(content)
+                    logger.info(f"Saved raw API response to {response_file}")
                 
                 # Extract logprobs if available
                 logprobs_data = None
@@ -235,8 +248,25 @@ class OpenAIClient:
                         content_clean = '\n'.join(lines[1:-1]) if len(lines) > 2 else content_clean
                         content_clean = content_clean.strip()
                     
-                    # Response might be a JSON object with an array, or directly an array
-                    parsed = json.loads(content_clean)
+                    # Parse JSON with Pydantic-based error handling
+                    parsed = None
+                    try:
+                        # First attempt: standard JSON parsing
+                        parsed = json.loads(content_clean)
+                    except json.JSONDecodeError as json_err:
+                        # If parsing fails, try to repair JSON using a structured approach
+                        logger.warning(f"Initial JSON parse failed: {json_err}. Attempting to repair JSON...")
+                        
+                        # Use a character-by-character state machine to properly handle
+                        # JSON string boundaries and fix escape sequences
+                        try:
+                            repaired_content = self._repair_json_escapes(content_clean)
+                            parsed = json.loads(repaired_content)
+                            logger.info("Successfully parsed JSON after repair")
+                        except Exception as repair_err:
+                            logger.error(f"JSON repair failed: {repair_err}")
+                            logger.error(f"Response content (first 1000 chars): {content_clean[:1000]}")
+                            raise json_err
                     
                     # Extract array from response
                     mappings_list = None
@@ -334,13 +364,21 @@ class OpenAIClient:
     
     def batch_generate_perturbations(
         self,
-        question_prompts: Dict[int, str]
+        question_prompts: Dict[int, str],
+        output_dir: Optional[Path] = None,
+        question_metadata: Optional[Dict[int, Dict[str, Any]]] = None,
+        use_grouped_format: bool = True
     ) -> Dict[int, List[PerturbationMapping]]:
         """
         Generate perturbations for multiple questions in a single batch API call.
         
         Args:
             question_prompts: Dictionary mapping question_index to prompt string
+            output_dir: Optional output directory to save prompt and response files
+            question_metadata: Optional dictionary mapping question_index to metadata dict
+                              with keys: question_type, latex_stem_text, copyable_text, 
+                              gold_answer, options (for MCQ)
+            use_grouped_format: If True, use grouped format (instructions once per type)
         
         Returns:
             Dictionary mapping question_index to list of perturbation mappings
@@ -360,8 +398,21 @@ class OpenAIClient:
             question_idx = list(question_prompts.keys())[0]
             prompt = question_prompts[question_idx]
             logger.info(f"Processing single question {question_idx}")
+            
+            # Save prompt for single question case
+            if output_dir:
+                prompts_dir = output_dir / "prompts"
+                prompts_dir.mkdir(parents=True, exist_ok=True)
+                prompt_file = prompts_dir / f"question_{question_idx}_prompt.txt"
+                with open(prompt_file, 'w', encoding='utf-8') as f:
+                    f.write("=" * 80 + "\n")
+                    f.write(f"QUESTION {question_idx} INDIVIDUAL PROMPT\n")
+                    f.write("=" * 80 + "\n\n")
+                    f.write(prompt)
+                logger.debug(f"Saved prompt for question {question_idx} to {prompt_file}")
+            
             try:
-                mappings = self._call_api_with_retry(prompt)
+                mappings = self._call_api_with_retry(prompt, output_dir=output_dir)
                 batch_time = (datetime.now(tz) - batch_start).total_seconds()
                 logger.info(f"Batch generation completed in {batch_time:.2f} seconds")
                 logger.info(f"Generated {len(mappings)} perturbations for question {question_idx}")
@@ -371,15 +422,93 @@ class OpenAIClient:
                 logger.error(f"Failed to generate perturbations for question {question_idx} after {batch_time:.2f}s: {e}", exc_info=True)
                 return {question_idx: []}
         
-        # Combine all questions into a single batch prompt
-        question_indices = sorted(question_prompts.keys())
-        prompts_sections = []
+        # Use grouped format if metadata is available and flag is set
+        if use_grouped_format and question_metadata:
+            try:
+                import importlib.util
+                from pathlib import Path
+                
+                # Import grouped batch formatters using importlib
+                prompts_dir = Path(__file__).parent.parent / "prompts" / "grouped_batch"
+                mcq_spec = importlib.util.spec_from_file_location("mcq_grouped_prompt", prompts_dir / "mcq_grouped_prompt.py")
+                tf_spec = importlib.util.spec_from_file_location("tf_grouped_prompt", prompts_dir / "tf_grouped_prompt.py")
+                long_spec = importlib.util.spec_from_file_location("long_grouped_prompt", prompts_dir / "long_grouped_prompt.py")
+                
+                mcq_module = importlib.util.module_from_spec(mcq_spec)
+                tf_module = importlib.util.module_from_spec(tf_spec)
+                long_module = importlib.util.module_from_spec(long_spec)
+                
+                mcq_spec.loader.exec_module(mcq_module)
+                tf_spec.loader.exec_module(tf_module)
+                long_spec.loader.exec_module(long_module)
+                
+                format_grouped_mcq_batch = mcq_module.format_grouped_mcq_batch
+                format_grouped_tf_batch = tf_module.format_grouped_tf_batch
+                format_grouped_long_batch = long_module.format_grouped_long_batch
+                
+                # Group questions by type
+                from collections import defaultdict
+                questions_by_type = defaultdict(list)
+                
+                question_indices = sorted(question_prompts.keys())
+                for idx in question_indices:
+                    if idx in question_metadata:
+                        meta = question_metadata[idx]
+                        q_type = meta.get('question_type', 'MCQ').upper()
+                        questions_by_type[q_type].append({
+                            'question_index': idx,
+                            'latex_stem_text': meta.get('latex_stem_text', ''),
+                            'copyable_text': meta.get('copyable_text', ''),
+                            'gold_answer': meta.get('gold_answer', ''),
+                            'options': meta.get('options', {})
+                        })
+                
+                # Build grouped batch prompt sections
+                batch_sections = []
+                total_mappings = 0
+                
+                for q_type in sorted(questions_by_type.keys()):
+                    type_questions = questions_by_type[q_type]
+                    if q_type == 'MCQ':
+                        section = format_grouped_mcq_batch(type_questions, k=self.mappings_per_question)
+                        batch_sections.append(section)
+                        total_mappings += len(type_questions) * self.mappings_per_question
+                    elif q_type == 'TF':
+                        section = format_grouped_tf_batch(type_questions, k=self.mappings_per_question)
+                        batch_sections.append(section)
+                        total_mappings += len(type_questions) * self.mappings_per_question
+                    elif q_type == 'LONG':
+                        section = format_grouped_long_batch(type_questions, k=self.mappings_per_question)
+                        batch_sections.append(section)
+                        total_mappings += len(type_questions) * self.mappings_per_question
+                
+                # Combine all sections with a final instruction
+                batch_prompt = "\n\n".join(batch_sections) + f"""
+
+## FINAL INSTRUCTIONS
+
+CRITICAL: Return a SINGLE JSON array containing ALL mappings from ALL question types above.
+- Total expected mappings: {total_mappings}
+- Each mapping must have the correct question_index field
+- Return ONLY valid JSON array, no markdown or additional text."""
+                
+                logger.info(f"Using grouped batch format: {len(questions_by_type)} question types, {len(question_prompts)} total questions")
+                
+            except ImportError as e:
+                logger.warning(f"Failed to import grouped batch formatters: {e}. Falling back to individual format.")
+                use_grouped_format = False
         
-        for idx in question_indices:
-            prompt = question_prompts[idx]
-            prompts_sections.append(f"=== QUESTION {idx} ===\n{prompt}")
-        
-        batch_prompt = f"""Process the following {len(question_prompts)} questions and generate perturbations for ALL of them in a single response.
+        # Fallback to original format if grouped format failed or not requested
+        if not use_grouped_format or not question_metadata:
+            # Combine all questions into a single batch prompt (original format)
+            question_indices = sorted(question_prompts.keys())
+            prompts_sections = []
+            
+            for idx in question_indices:
+                prompt = question_prompts[idx]
+                prompts_sections.append(f"=== QUESTION {idx} ===\n{prompt}")
+            
+            batch_prompt = f"""Process the following {len(question_prompts)} questions and generate perturbations for ALL of them in a single response.
 
 {chr(10).join(prompts_sections)}
 
@@ -407,27 +536,78 @@ Return ONLY valid JSON array, no markdown or additional text."""
             # Log complete batch prompt at DEBUG level (saved to file)
             logger.debug(f"Batch prompt - Complete prompt:\n{batch_prompt}")
             
+            # Save complete batch prompt to file for inspection
+            if output_dir:
+                prompts_dir = output_dir / "prompts"
+                prompts_dir.mkdir(parents=True, exist_ok=True)
+                batch_prompt_file = prompts_dir / "batch_prompt_complete.txt"
+                with open(batch_prompt_file, 'w', encoding='utf-8') as f:
+                    f.write("=" * 80 + "\n")
+                    f.write("COMPLETE BATCH PROMPT SENT TO API\n")
+                    f.write("=" * 80 + "\n\n")
+                    f.write(batch_prompt)
+                logger.info(f"Saved complete batch prompt to {batch_prompt_file}")
+            
             # Single API call for all questions
-            all_mappings = self._call_api_with_retry(batch_prompt)
+            all_mappings = self._call_api_with_retry(batch_prompt, output_dir=output_dir)
             
             # Parse and organize mappings by question index
             parse_start = datetime.now(tz)
             results = {}
-            for idx in question_indices:
+            # Get question_indices from sorted question_prompts keys
+            all_question_indices = sorted(question_prompts.keys())
+            for idx in all_question_indices:
                 results[idx] = []
             
+            # Detailed logging for response parsing
+            logger.info(f"Starting response parsing for {len(all_mappings) if isinstance(all_mappings, list) else 0} mappings")
+            
             if isinstance(all_mappings, list):
-                for mapping in all_mappings:
+                parsing_details = []
+                for i, mapping in enumerate(all_mappings):
                     if isinstance(mapping, PerturbationMapping):
                         q_idx = mapping.question_index
+                        parsing_details.append({
+                            "mapping_index": i,
+                            "question_index": q_idx,
+                            "latex_stem_text": mapping.latex_stem_text[:100] + "..." if len(mapping.latex_stem_text) > 100 else mapping.latex_stem_text,
+                            "original_substring": mapping.original_substring[:50] + "..." if len(mapping.original_substring) > 50 else mapping.original_substring,
+                            "target_wrong_answer": mapping.target_wrong_answer
+                        })
                         if q_idx in results:
                             results[q_idx].append(mapping)
+                            logger.debug(f"Parsed mapping {i}: question_index={q_idx}, target_answer={mapping.target_wrong_answer}, original='{mapping.original_substring[:50]}...'")
+                        else:
+                            logger.warning(f"Parsed mapping {i}: question_index={q_idx} not in expected indices {all_question_indices}")
+                    else:
+                        logger.warning(f"Mapping {i} is not a PerturbationMapping instance: {type(mapping)}")
+                
+                # Save parsing details to file
+                if output_dir:
+                    prompts_dir = output_dir / "prompts"
+                    parsing_file = prompts_dir / "response_parsing_details.json"
+                    import json
+                    with open(parsing_file, 'w', encoding='utf-8') as f:
+                        json.dump({
+                            "total_mappings_received": len(all_mappings),
+                            "expected_questions": all_question_indices,
+                            "parsing_details": parsing_details,
+                            "results_summary": {idx: len(mappings) for idx, mappings in results.items()}
+                        }, f, indent=2, ensure_ascii=False)
+                    logger.info(f"Saved response parsing details to {parsing_file}")
+            else:
+                logger.error(f"Expected list of mappings, got {type(all_mappings)}")
             
             parse_time = (datetime.now(tz) - parse_start).total_seconds()
             total_mappings = sum(len(m) for m in results.values())
             logger.info(f"Parsed {total_mappings} total perturbations in {parse_time:.2f} seconds")
             for idx, mappings in results.items():
+                logger.info(f"Question {idx}: {len(mappings)} perturbations assigned")
                 logger.debug(f"Question {idx}: {len(mappings)} perturbations")
+                # Log first perturbation details for each question
+                if mappings:
+                    first_pert = mappings[0]
+                    logger.debug(f"Question {idx} - First perturbation: latex_stem_text='{first_pert.latex_stem_text[:100]}...', original='{first_pert.original_substring[:50]}...'")
             
             batch_time = (datetime.now(tz) - batch_start).total_seconds()
             logger.info(f"Generated perturbations for {len(question_prompts)} questions in 1 API call (saved {len(question_prompts) - 1} calls)")
@@ -797,4 +977,87 @@ Return ONLY valid JSON array, no markdown or additional text."""
         except Exception as e:
             logger.error(f"Failed to parse batch results file: {e}")
             raise
+    
+    def _repair_json_escapes(self, json_str: str) -> str:
+        """
+        Repair JSON with unescaped backslashes using a state machine approach.
+        
+        This method properly handles JSON string boundaries and fixes escape sequences
+        like \_ (invalid in JSON) to \\_ (valid in JSON) without using regex.
+        
+        Uses a character-by-character state machine that respects JSON string boundaries.
+        
+        Args:
+            json_str: The JSON string to repair
+            
+        Returns:
+            Repaired JSON string
+        """
+        result = []
+        i = 0
+        in_string = False
+        
+        while i < len(json_str):
+            char = json_str[i]
+            
+            if char == '"':
+                # Check if this quote is escaped
+                # Count backslashes before the quote
+                backslash_count = 0
+                j = i - 1
+                while j >= 0 and json_str[j] == '\\':
+                    backslash_count += 1
+                    j -= 1
+                
+                # If even number of backslashes (or zero), quote is not escaped
+                if backslash_count % 2 == 0:
+                    in_string = not in_string
+                
+                result.append(char)
+                i += 1
+                
+            elif char == '\\' and in_string:
+                # We're inside a string and found a backslash
+                # Check what comes after it
+                if i + 1 >= len(json_str):
+                    # Trailing backslash - escape it
+                    result.append('\\\\')
+                    i += 1
+                    continue
+                
+                next_char = json_str[i + 1]
+                # Valid JSON escapes: ", \, /, b, f, n, r, t, u
+                valid_escapes = {'"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u'}
+                
+                if next_char == 'u':
+                    # Unicode escape: \uXXXX
+                    if i + 5 < len(json_str):
+                        hex_chars = json_str[i+2:i+6]
+                        if all(c in '0123456789abcdefABCDEF' for c in hex_chars):
+                            # Valid unicode escape
+                            result.append('\\u' + hex_chars)
+                            i += 6
+                            continue
+                    # Invalid unicode escape - escape the backslash
+                    result.append('\\\\')
+                    i += 1
+                    # Process next_char normally
+                    continue
+                elif next_char in valid_escapes:
+                    # Valid escape sequence - keep as is
+                    result.append('\\' + next_char)
+                    i += 2
+                    continue
+                else:
+                    # Invalid escape (like \_) - escape the backslash
+                    result.append('\\\\')
+                    i += 1
+                    # Process next_char normally in next iteration
+                    continue
+            else:
+                # Normal character
+                result.append(char)
+                i += 1
+        
+        return ''.join(result)
 

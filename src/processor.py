@@ -3,6 +3,7 @@ import argparse
 import json
 import logging
 import sys
+import importlib.util
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
@@ -12,9 +13,21 @@ from .config import Config
 from .file_handler import FileHandler
 from .openai_client import OpenAIClient
 from .models.perturbation import Question
-from prompts.mcq_prompt import format_mcq_prompt
-from prompts.tf_prompt import format_tf_prompt
-from prompts.long_prompt import format_long_prompt
+
+# Import prompt formatters from date-based subdirectory (using importlib due to numeric module name)
+_prompts_dir = Path(__file__).parent.parent / "prompts" / "12_29_2025"
+_mcq_spec = importlib.util.spec_from_file_location("mcq_prompt", _prompts_dir / "mcq_prompt_improved.py")
+_tf_spec = importlib.util.spec_from_file_location("tf_prompt", _prompts_dir / "tf_prompt_improved.py")
+_long_spec = importlib.util.spec_from_file_location("long_prompt", _prompts_dir / "long_prompt_improved.py")
+_mcq_module = importlib.util.module_from_spec(_mcq_spec)
+_tf_module = importlib.util.module_from_spec(_tf_spec)
+_long_module = importlib.util.module_from_spec(_long_spec)
+_mcq_spec.loader.exec_module(_mcq_module)
+_tf_spec.loader.exec_module(_tf_module)
+_long_spec.loader.exec_module(_long_module)
+format_mcq_prompt = _mcq_module.format_mcq_prompt
+format_tf_prompt = _tf_module.format_tf_prompt
+format_long_prompt = _long_module.format_long_prompt
 
 # Global config will be set after Config is imported
 _config = None
@@ -382,7 +395,47 @@ class Processor:
             api_start = datetime.now(tz)
             logger.info(f"Generating perturbations for {len(question_prompts)} questions in {json_file.name}")
             logger.info(f"API call start time ({tz.zone}): {api_start.strftime('%Y-%m-%d %H:%M:%S %Z')}")
-            perturbations = self.openai_client.batch_generate_perturbations(question_prompts)
+            
+            # Save individual question prompts to files for debugging
+            prompts_dir = output_dir / "prompts"
+            prompts_dir.mkdir(parents=True, exist_ok=True)
+            
+            for q_idx, prompt in question_prompts.items():
+                prompt_file = prompts_dir / f"question_{q_idx}_prompt.txt"
+                with open(prompt_file, 'w', encoding='utf-8') as f:
+                    f.write("=" * 80 + "\n")
+                    f.write(f"QUESTION {q_idx} INDIVIDUAL PROMPT\n")
+                    f.write("=" * 80 + "\n\n")
+                    f.write(prompt)
+                logger.debug(f"Saved prompt for question {q_idx} to {prompt_file}")
+            
+            logger.info(f"Saved {len(question_prompts)} individual question prompts to {prompts_dir}")
+            
+            # Prepare question metadata for grouped format
+            question_metadata_dict = {}
+            for q_num, question in question_metadata.items():
+                # Get LaTeX stem text (reuse logic from prompt preparation)
+                latex_stem = self.file_handler.get_latex_stem_for_question(
+                    latex_file, q_num
+                ) if latex_file else None
+                if not latex_stem:
+                    latex_stem = question.latex_stem_text or question.stem_text or ''
+                
+                question_metadata_dict[q_num] = {
+                    'question_type': question.question_type.value.upper(),
+                    'latex_stem_text': latex_stem,
+                    'copyable_text': question.stem_text or '',
+                    'gold_answer': question.gold_answer,
+                    'options': question.options or {}
+                }
+            
+            # Generate perturbations (pass output_dir and metadata for grouped format)
+            perturbations = self.openai_client.batch_generate_perturbations(
+                question_prompts,
+                output_dir=output_dir,
+                question_metadata=question_metadata_dict,
+                use_grouped_format=True
+            )
             api_time = (datetime.now(tz) - api_start).total_seconds()
             logger.info(f"API calls completed in {api_time:.2f} seconds")
             

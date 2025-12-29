@@ -1,4 +1,5 @@
 """PDF-level dual layer using image overlays (like reference implementation)."""
+import logging
 from pathlib import Path
 from typing import Dict, List, Any, Tuple, Optional
 
@@ -7,6 +8,8 @@ try:
     FITZ_AVAILABLE = True
 except ImportError:
     FITZ_AVAILABLE = False
+
+logger = logging.getLogger(__name__)
 
 
 def apply_image_overlay_dual_layer(
@@ -39,21 +42,40 @@ def apply_image_overlay_dual_layer(
         return False
     
     if not compiled_pdf_path.exists():
+        logger.error(f"[DualLayerOverlay] Compiled PDF not found: {compiled_pdf_path}")
         return False
+    
+    logger.info(f"[DualLayerOverlay] Starting overlay process")
+    logger.info(f"[DualLayerOverlay] Compiled PDF: {compiled_pdf_path}")
+    logger.info(f"[DualLayerOverlay] Original PDF: {original_pdf_path}")
+    logger.info(f"[DualLayerOverlay] Search PDF: {search_pdf_path}")
+    logger.info(f"[DualLayerOverlay] Output PDF: {output_pdf_path}")
+    logger.info(f"[DualLayerOverlay] Mappings count: {len(mappings)}")
     
     try:
         # Open compiled PDF (target for overlays)
         compiled_doc = fitz.open(str(compiled_pdf_path))
+        logger.info(f"[DualLayerOverlay] Compiled PDF opened: {len(compiled_doc)} pages")
         
         # Open original PDF (source for image overlays)
         original_doc = None
+        original_source = None
         if original_pdf_path and original_pdf_path.exists():
             original_doc = fitz.open(str(original_pdf_path))
+            original_source = "original_pdf_path"
+            logger.info(f"[DualLayerOverlay] Original PDF opened from original_pdf_path: {len(original_doc)} pages")
         elif search_pdf_path and search_pdf_path.exists():
             original_doc = fitz.open(str(search_pdf_path))
+            original_source = "search_pdf_path (fallback)"
+            logger.warning(f"[DualLayerOverlay] Using search_pdf_path as fallback (this means original PDF not found)")
+            logger.info(f"[DualLayerOverlay] Fallback PDF opened: {len(original_doc)} pages")
         
         if not original_doc:
             # No original PDF, just copy compiled
+            logger.warning(f"[DualLayerOverlay] WARNING: No original PDF found! Overlay cannot be applied.")
+            logger.warning(f"[DualLayerOverlay] Original PDF path exists: {original_pdf_path.exists() if original_pdf_path else False}")
+            logger.warning(f"[DualLayerOverlay] Search PDF path exists: {search_pdf_path.exists() if search_pdf_path else False}")
+            logger.warning(f"[DualLayerOverlay] Copying compiled PDF without overlay - replacement text will be visible!")
             compiled_doc.save(str(output_pdf_path))
             compiled_doc.close()
             return True
@@ -101,16 +123,19 @@ def apply_image_overlay_dual_layer(
         # For each page: take full page image from original PDF and overlay on compiled PDF
         # This ensures complete coverage without needing precise geometry
         overlays_applied = 0
+        logger.info(f"[DualLayerOverlay] Applying full-page image overlays from {original_source}")
         for page_index in range(len(compiled_doc)):
             page = compiled_doc[page_index]
             original_page = original_doc[page_index] if page_index < len(original_doc) else None
             
             if not original_page:
+                logger.warning(f"[DualLayerOverlay] Page {page_index + 1}: No corresponding page in original PDF")
                 continue
             
             try:
                 # Extract full page image from original PDF
                 # This captures the entire page as an image
+                logger.debug(f"[DualLayerOverlay] Page {page_index + 1}: Extracting pixmap from original PDF")
                 pix = original_page.get_pixmap(
                     matrix=fitz.Matrix(1.5, 1.5),  # Higher resolution for better quality
                     alpha=False
@@ -119,6 +144,7 @@ def apply_image_overlay_dual_layer(
                 # Overlay full page image on compiled PDF
                 # This covers all text with original visual appearance
                 # The text layer underneath still has the replacement text (from \duallayerbox)
+                logger.debug(f"[DualLayerOverlay] Page {page_index + 1}: Overlaying image on compiled PDF")
                 page.insert_image(
                     page.rect,  # Full page rectangle
                     stream=pix.tobytes("png"),
@@ -126,22 +152,29 @@ def apply_image_overlay_dual_layer(
                     overlay=True  # CRITICAL: Overlay on top of text layer
                 )
                 overlays_applied += 1
+                logger.info(f"[DualLayerOverlay] Page {page_index + 1}: Overlay applied successfully")
             
             except Exception as e:
                 # Log error but continue with other pages
+                logger.error(f"[DualLayerOverlay] Page {page_index + 1}: Failed to apply overlay: {e}", exc_info=True)
                 continue
+        
+        logger.info(f"[DualLayerOverlay] Total overlays applied: {overlays_applied}/{len(compiled_doc)} pages")
         
         # Save output
         output_pdf_path.parent.mkdir(parents=True, exist_ok=True)
+        logger.info(f"[DualLayerOverlay] Saving final PDF to: {output_pdf_path}")
         compiled_doc.save(str(output_pdf_path))
         
         compiled_doc.close()
         if original_doc:
             original_doc.close()
         
+        logger.info(f"[DualLayerOverlay] Overlay process completed successfully")
         return True
     
-    except Exception:
+    except Exception as e:
+        logger.error(f"[DualLayerOverlay] Overlay process failed: {e}", exc_info=True)
         if 'compiled_doc' in locals() and compiled_doc:
             compiled_doc.close()
         if 'original_doc' in locals() and original_doc:

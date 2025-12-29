@@ -1,0 +1,85 @@
+{
+  "document_name": "sociology_graduate_doc_01",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 54,
+        "logprob_analysis": {
+          "avg_entropy": 0.10391138729301035,
+          "std_entropy": 0.31262095214157715,
+          "min_entropy": 1.0381672850831782e-08,
+          "max_entropy": 1.6094379124341005,
+          "avg_confidence": -0.07297713619788258,
+          "std_confidence": 1.3877787807814457e-17,
+          "min_confidence": -0.07297713619788257,
+          "max_confidence": -0.07297713619788257,
+          "total_tokens_with_logprobs": 332208
+        },
+        "api_metadata_summary": {
+          "total_responses": 54,
+          "finish_reasons": {
+            "stop": 54
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 12828.0,
+          "total_prompt_tokens": 692712,
+          "avg_completion_tokens": 6152.0,
+          "total_completion_tokens": 332208,
+          "avg_total_tokens": 18980.0,
+          "total_tokens": 1024920
+        },
+        "cost_analysis": {
+          "total_cost": 5.05386,
+          "input_cost": 1.73178,
+          "output_cost": 3.32208,
+          "cost_per_perturbation": 0.09359
+        }
+      },
+      "TF": {
+        "total_perturbations": 6,
+        "logprob_analysis": {
+          "avg_entropy": 0.10391138729301035,
+          "std_entropy": 0.31262095214157715,
+          "min_entropy": 1.0381672850831782e-08,
+          "max_entropy": 1.6094379124341005,
+          "avg_confidence": -0.07297713619788258,
+          "std_confidence": 1.3877787807814457e-17,
+          "min_confidence": -0.07297713619788257,
+          "max_confidence": -0.07297713619788257,
+          "total_tokens_with_logprobs": 36912
+        },
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 12828.0,
+          "total_prompt_tokens": 76968,
+          "avg_completion_tokens": 6152.0,
+          "total_completion_tokens": 36912,
+          "avg_total_tokens": 18980.0,
+          "total_tokens": 113880
+        },
+        "cost_analysis": {
+          "total_cost": 0.5615399999999999,
+          "input_cost": 0.19241999999999998,
+          "output_cost": 0.36912,
+          "cost_per_perturbation": 0.09358999999999999
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 60,
+      "total_questions": 20,
+      "questions_by_type": {
+        "MCQ": 18,
+        "TF": 2
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

@@ -2,7 +2,8 @@
 from typing import Dict, Any
 
 
-MCQ_REPLACEMENT_PROMPT_TEMPLATE = """You are an expert at generating text substitutions for academic multiple-choice questions.
+MCQ_REPLACEMENT_PROMPT_TEMPLATE = """You are an expert at generating text substitutions for 
+academic multiple-choice questions.
 
 Given:
 - LaTeX code for the question stem: {latex_stem_text}

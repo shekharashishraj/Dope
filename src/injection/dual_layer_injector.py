@@ -1,8 +1,11 @@
 """Dual Layer injection method - Visual overlay using \\duallayerbox."""
 import re
+import logging
 from typing import Dict, List, Any, Tuple
 from .base_injector import BaseInjector
 from ..models.perturbation import PerturbationMapping, Question
+
+logger = logging.getLogger(__name__)
 
 
 class DualLayerInjector(BaseInjector):
@@ -75,6 +78,7 @@ class DualLayerInjector(BaseInjector):
             question_number = question.question_number
             
             if not question_number:
+                logger.warning(f"[DualLayerInjector] Skipping question with no question_number")
                 continue
             
             # Use only the FIRST perturbation per question to avoid overlapping replacements
@@ -83,7 +87,10 @@ class DualLayerInjector(BaseInjector):
             question_perturbations = question.perturbations
             
             if not question_perturbations:
+                logger.warning(f"[DualLayerInjector] Question {question_number}: No perturbations available")
                 continue
+            
+            logger.debug(f"[DualLayerInjector] Question {question_number}: Processing {len(question_perturbations)} perturbations")
             
             # Check config to see if multiple perturbations are allowed
             allow_multiple = self.config.experimental.dual_layer_allow_multiple_perturbations if self.config else False
@@ -106,6 +113,7 @@ class DualLayerInjector(BaseInjector):
                 continue
             
             # Find latex_stem_text in LaTeX (this should match exactly)
+            logger.debug(f"[DualLayerInjector] Question {question_number}: Searching for stem text in LaTeX")
             stem_pos = self._find_question_stem_in_tex(mutated_tex, latex_stem_text)
             if not stem_pos:
                 # Try with "True or False: " prefix
@@ -115,9 +123,13 @@ class DualLayerInjector(BaseInjector):
                     # Adjust to skip the prefix
                     prefix_len = len("True or False: ")
                     stem_pos = (stem_pos[0] + prefix_len, stem_pos[1])
+                    logger.debug(f"[DualLayerInjector] Question {question_number}: Found stem with prefix, adjusted position")
             
             if not stem_pos:
+                logger.warning(f"[DualLayerInjector] Question {question_number}: Could not find stem text in LaTeX: {latex_stem_text[:50]}...")
                 continue
+            
+            logger.debug(f"[DualLayerInjector] Question {question_number}: Found stem at position {stem_pos}")
             
             stem_start, stem_end = stem_pos
             
@@ -178,6 +190,7 @@ class DualLayerInjector(BaseInjector):
                 
                 replacement = f"\\duallayerbox{{{escaped_original}}}{{{escaped_replacement}}}"
                 
+                logger.info(f"[DualLayerInjector] Question {question_number}: Replacement '{original_substring}' → '{replacement_substring}' at position ({abs_start}, {abs_end})")
                 replacements.append((abs_start, abs_end, replacement))
                 metadata_replacements.append({
                     "question_number": question_number,
@@ -198,6 +211,8 @@ class DualLayerInjector(BaseInjector):
         # Sort by start position (descending) to apply in reverse order
         unique_replacements.sort(key=lambda x: x[0], reverse=True)
         
+        logger.info(f"[DualLayerInjector] Total unique replacements: {len(unique_replacements)}")
+        
         # Check for overlapping replacements and skip them
         final_replacements = []
         for start, end, replacement in unique_replacements:
@@ -212,14 +227,19 @@ class DualLayerInjector(BaseInjector):
             if not overlaps:
                 final_replacements.append((start, end, replacement))
         
+        logger.info(f"[DualLayerInjector] Final replacements after overlap check: {len(final_replacements)}")
+        
         # Apply replacements in reverse order to preserve positions
         for start, end, replacement in final_replacements:
             mutated_tex = mutated_tex[:start] + replacement + mutated_tex[end:]
         
+        logger.info(f"[DualLayerInjector] Injection complete: {len(final_replacements)} replacements applied")
+        
         metadata = {
-            "replacements_count": len(replacements),
+            "replacements_count": len(metadata_replacements),
             "replacements": metadata_replacements,
-            "method": "dual_layer"
+            "method": "dual_layer",
+            "final_replacements_count": len(final_replacements)
         }
         
         return mutated_tex, metadata
