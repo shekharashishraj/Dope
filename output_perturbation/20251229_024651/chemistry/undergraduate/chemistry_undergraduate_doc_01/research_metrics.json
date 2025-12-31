@@ -1,0 +1,85 @@
+{
+  "document_name": "chemistry_undergraduate_doc_01",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 6,
+        "logprob_analysis": {
+          "avg_entropy": 0.08791783338164949,
+          "std_entropy": 0.2853984510687584,
+          "min_entropy": 2.2353279564098905e-09,
+          "max_entropy": 1.6094379124341005,
+          "avg_confidence": -0.05982912383130267,
+          "std_confidence": 0.0,
+          "min_confidence": -0.05982912383130267,
+          "max_confidence": -0.05982912383130267,
+          "total_tokens_with_logprobs": 36114
+        },
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 4034.0,
+          "total_prompt_tokens": 24204,
+          "avg_completion_tokens": 6019.0,
+          "total_completion_tokens": 36114,
+          "avg_total_tokens": 10053.0,
+          "total_tokens": 60318
+        },
+        "cost_analysis": {
+          "total_cost": 0.42165,
+          "input_cost": 0.06051,
+          "output_cost": 0.36114,
+          "cost_per_perturbation": 0.070275
+        }
+      },
+      "TF": {
+        "total_perturbations": 39,
+        "logprob_analysis": {
+          "avg_entropy": 0.0879178333816495,
+          "std_entropy": 0.28539845106875844,
+          "min_entropy": 2.2353279564098905e-09,
+          "max_entropy": 1.6094379124341005,
+          "avg_confidence": -0.059829123831302664,
+          "std_confidence": 6.938893903907228e-18,
+          "min_confidence": -0.05982912383130267,
+          "max_confidence": -0.05982912383130267,
+          "total_tokens_with_logprobs": 234741
+        },
+        "api_metadata_summary": {
+          "total_responses": 39,
+          "finish_reasons": {
+            "stop": 39
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 4034.0,
+          "total_prompt_tokens": 157326,
+          "avg_completion_tokens": 6019.0,
+          "total_completion_tokens": 234741,
+          "avg_total_tokens": 10053.0,
+          "total_tokens": 392067
+        },
+        "cost_analysis": {
+          "total_cost": 2.740725,
+          "input_cost": 0.39331499999999997,
+          "output_cost": 2.34741,
+          "cost_per_perturbation": 0.07027499999999999
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 45,
+      "total_questions": 15,
+      "questions_by_type": {
+        "MCQ": 2,
+        "TF": 13
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

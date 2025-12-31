@@ -1,0 +1,356 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{fontspec}
+\setmainfont{Roboto-Regular}[Path=fonts/,Extension=.ttf]
+\expandafter\newfontfamily\csname fa0000Font0\endcsname{fa0000_pos0}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font1\endcsname{fa0000_pos1}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font2\endcsname{fa0000_pos2}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font3\endcsname{fa0000_pos3}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font4\endcsname{fa0000_pos4}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font5\endcsname{fa0000_pos5}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font6\endcsname{fa0000_pos6}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font0\endcsname{fa0002_pos0}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font1\endcsname{fa0002_pos1}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font2\endcsname{fa0002_pos2}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font3\endcsname{fa0002_pos3}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font4\endcsname{fa0002_pos4}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font5\endcsname{fa0002_pos5}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font0\endcsname{fa0003_pos0}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font1\endcsname{fa0003_pos1}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font2\endcsname{fa0003_pos2}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font3\endcsname{fa0003_pos3}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font4\endcsname{fa0003_pos4}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font5\endcsname{fa0003_pos5}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font6\endcsname{fa0003_pos6}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font0\endcsname{fa0004_pos0}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font1\endcsname{fa0004_pos1}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font2\endcsname{fa0004_pos2}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font0\endcsname{fa0005_pos0}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font1\endcsname{fa0005_pos1}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font2\endcsname{fa0005_pos2}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font3\endcsname{fa0005_pos3}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font0\endcsname{fa0006_pos0}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font1\endcsname{fa0006_pos1}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font2\endcsname{fa0006_pos2}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font3\endcsname{fa0006_pos3}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font0\endcsname{fa0007_pos0}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font0\endcsname{fa0008_pos0}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font1\endcsname{fa0008_pos1}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font2\endcsname{fa0008_pos2}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font3\endcsname{fa0008_pos3}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font4\endcsname{fa0008_pos4}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font5\endcsname{fa0008_pos5}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font0\endcsname{fa0009_pos0}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font1\endcsname{fa0009_pos1}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font2\endcsname{fa0009_pos2}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font3\endcsname{fa0009_pos3}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font4\endcsname{fa0009_pos4}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font5\endcsname{fa0009_pos5}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font0\endcsname{fa0010_pos0}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font1\endcsname{fa0010_pos1}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font2\endcsname{fa0010_pos2}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font3\endcsname{fa0010_pos3}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font4\endcsname{fa0010_pos4}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font0\endcsname{fa0011_pos0}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font1\endcsname{fa0011_pos1}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font2\endcsname{fa0011_pos2}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font3\endcsname{fa0011_pos3}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font4\endcsname{fa0011_pos4}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font5\endcsname{fa0011_pos5}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font0\endcsname{fa0012_pos0}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font1\endcsname{fa0012_pos1}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font2\endcsname{fa0012_pos2}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font3\endcsname{fa0012_pos3}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font4\endcsname{fa0012_pos4}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font0\endcsname{fa0013_pos0}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font1\endcsname{fa0013_pos1}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font2\endcsname{fa0013_pos2}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font3\endcsname{fa0013_pos3}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font4\endcsname{fa0013_pos4}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font5\endcsname{fa0013_pos5}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+
+\begin{document}
+\begin{center}
+Chemistry - Graduate Level Assessment 2 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item Calculate the uncertainty $\Delta L_z$ for the hydrogen-atom stationary state: $2 p_z$.
+\begin{enumerate}[label=(\alph*)]
+    \item 1
+    \item 0.75
+    \item 2
+    \item 4
+    \item 0.5
+\end{enumerate}
+\item para-dichlorobenzene is used as "mothballs." {\csname fa0000Font0\endcsname\char"0053}{\csname fa0000Font1\endcsname\char"0075}{\csname fa0000Font2\endcsname\char"0063}{\csname fa0000Font3\endcsname\char"0068}{\csname fa0000Font4\endcsname\char"0020}{\csname fa0000Font5\endcsname\char"0061}{\csname fa0000Font6\endcsname\char"0020} {\char"0063}{\char"006F}{\char"006D}{\char"0070}{\char"006F}{\char"0075}{\char"006E}{\char"0064} can also be named
+\begin{enumerate}[label=(\alph*)]
+    \item 1,4-dichlorobenzene
+    \item 2,6-dichlorobenzene
+    \item 1,5-dichlorobenzene
+    \item 1,2-dichlorobenzene
+    \item 3,4-dichlorobenzene
+\end{enumerate}
+\item Most {\csname fa0002Font0\endcsname\char"0061}{\csname fa0002Font1\endcsname\char"006C}{\csname fa0002Font2\endcsname\char"006B}{\csname fa0002Font3\endcsname\char"0061}{\csname fa0002Font4\endcsname\char"006C}{\csname fa0002Font5\endcsname\char"0069} {\csname fa0003Font0\endcsname\char"0020}{\csname fa0003Font1\endcsname\char"006D}{\csname fa0003Font2\endcsname\char"0065}{\csname fa0003Font3\endcsname\char"0074}{\csname fa0003Font4\endcsname\char"0061}{\csname fa0003Font5\endcsname\char"006C}{\csname fa0003Font6\endcsname\char"0073} share a common oxidation state of +2. Which of the following best
+explains why?
+\begin{enumerate}[label=(\alph*)]
+    \item Transition metals will gain their outermost s-block electrons when forming bonds.
+    \item Transition metals tend to gain electrons when reacting with other elements.
+    \item Transition metals tend to lose electrons when reacting with other elements.
+    \item Transition metals all have a minimum of two unpaired electrons.
+    \item Transition metals have a maximum of two unpaired electrons.
+\end{enumerate}
+\item Which of the following is {\csname fa0004Font0\endcsname\char"006B}{\csname fa0004Font1\endcsname\char"006E}{\csname fa0004Font2\endcsname\char"006F} {\csname fa0005Font0\endcsname\char"0077}{\csname fa0005Font1\endcsname\char"006E}{\csname fa0005Font2\endcsname\char"0020}{\csname fa0005Font3\endcsname\char"0074} {\csname fa0006Font0\endcsname\char"006F}{\csname fa0006Font1\endcsname\char"0020}{\csname fa0006Font2\endcsname\char"0062}{\csname fa0006Font3\endcsname\char"0065} the least soluble in water?
+\begin{enumerate}[label=(\alph*)]
+    \item Cu(OH)2
+    \item Zn(NO3)2
+    \item NiSO3
+    \item MgCl2
+    \item Mn(NO3)2
+\end{enumerate}
+\item How many gallons of a liquid that is 74 percent alcohol must be combined with 5 gallons of
+one that is 90 percent alcohol in order to obtain a mixture that is 84 percent alcohol?
+\begin{enumerate}[label=(\alph*)]
+    \item 3 gallons
+    \item 5 gallons
+    \item 8 gallons
+    \item 2 gallons
+    \item 1 gallon
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: For an {\csname fa0007Font0\endcsname\char"0053}{\char"002D}{\char"0062}{\char"0061}{\char"006E}{\char"0064} EPR cavity with a resonator bandwidth of 1.58 MHz, the Q-factor is 9012.
+\item True or False: AlBr3 is a compound that requires the use of {\csname fa0008Font0\endcsname\char"0047}{\csname fa0008Font1\endcsname\char"0072}{\csname fa0008Font2\endcsname\char"0065}{\csname fa0008Font3\endcsname\char"0065}{\csname fa0008Font4\endcsname\char"006B}{\csname fa0008Font5\endcsname\char"0020} {\csname fa0009Font0\endcsname\char"006C}{\csname fa0009Font1\endcsname\char"0065}{\csname fa0009Font2\endcsname\char"0074}{\csname fa0009Font3\endcsname\char"0074}{\csname fa0009Font4\endcsname\char"0065}{\csname fa0009Font5\endcsname\char"0072}{\char"0073} in its name due to the variable oxidation state of aluminum.
+\item True or False: Lead (Pb) has a higher electronegativity than {\csname fa0010Font0\endcsname\char"0073}{\csname fa0010Font1\endcsname\char"006F}{\csname fa0010Font2\endcsname\char"0064}{\csname fa0010Font3\endcsname\char"0069}{\csname fa0010Font4\endcsname\char"0075} {\csname fa0011Font0\endcsname\char"006D}{\csname fa0011Font1\endcsname\char"0020}{\csname fa0011Font2\endcsname\char"0028}{\csname fa0011Font3\endcsname\char"004E}{\csname fa0011Font4\endcsname\char"0061}{\csname fa0011Font5\endcsname\char"0029} in the periodic table.
+\item True or False: The molarity of sodium ions (Na\^{}+) in human blood serum is approximately 0.15 M based on its concentration in 1 liter of serum.
+\item True or False: The heat transferred to the system is equal to the {\csname fa0012Font0\endcsname\char"0065}{\csname fa0012Font1\endcsname\char"006E}{\csname fa0012Font2\endcsname\char"0065}{\csname fa0012Font3\endcsname\char"0072}{\csname fa0012Font4\endcsname\char"0067} {\csname fa0013Font0\endcsname\char"0079}{\csname fa0013Font1\endcsname\char"0020}{\csname fa0013Font2\endcsname\char"006C}{\csname fa0013Font3\endcsname\char"006F}{\csname fa0013Font4\endcsname\char"0073}{\csname fa0013Font5\endcsname\char"0074}, resulting in a value of 250J.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Discuss the implications of a nitrous acid solution with a pH of 4.2 in relation to its
+pKa of 3.3, specifically focusing on the concentration relationship between the conjugate
+acid and base.
+\item Discuss the relationship between the duration of a pulse and the strength of the
+$\mathscr{B}_1$ field in NMR. How can you determine the strength of the $\mathscr{B}_1$
+field if a $180^{\circ}$ pulse lasts $12.5 \mu \mathrm{s}$?
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

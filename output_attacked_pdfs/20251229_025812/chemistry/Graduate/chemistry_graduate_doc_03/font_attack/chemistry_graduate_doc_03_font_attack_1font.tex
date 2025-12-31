@@ -1,0 +1,424 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{fontspec}
+\setmainfont{Roboto-Regular}[Path=fonts/,Extension=.ttf]
+\expandafter\newfontfamily\csname fa0000Font0\endcsname{fa0000_pos0}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font2\endcsname{fa0000_pos2}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font3\endcsname{fa0000_pos3}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font4\endcsname{fa0000_pos4}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font5\endcsname{fa0000_pos5}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font6\endcsname{fa0000_pos6}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font7\endcsname{fa0000_pos7}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font0\endcsname{fa0001_pos0}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font1\endcsname{fa0001_pos1}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font2\endcsname{fa0001_pos2}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font3\endcsname{fa0001_pos3}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font4\endcsname{fa0001_pos4}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font0\endcsname{fa0002_pos0}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font1\endcsname{fa0002_pos1}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font2\endcsname{fa0002_pos2}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font3\endcsname{fa0002_pos3}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font0\endcsname{fa0003_pos0}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font1\endcsname{fa0003_pos1}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font2\endcsname{fa0003_pos2}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font3\endcsname{fa0003_pos3}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font0\endcsname{fa0004_pos0}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font1\endcsname{fa0004_pos1}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font0\endcsname{fa0005_pos0}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font1\endcsname{fa0005_pos1}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font2\endcsname{fa0005_pos2}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font3\endcsname{fa0005_pos3}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font4\endcsname{fa0005_pos4}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font5\endcsname{fa0005_pos5}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font6\endcsname{fa0005_pos6}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font9\endcsname{fa0005_pos9}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font0\endcsname{fa0006_pos0}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font1\endcsname{fa0006_pos1}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font2\endcsname{fa0006_pos2}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font3\endcsname{fa0006_pos3}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font4\endcsname{fa0006_pos4}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font5\endcsname{fa0006_pos5}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font6\endcsname{fa0006_pos6}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font7\endcsname{fa0006_pos7}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font0\endcsname{fa0007_pos0}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font1\endcsname{fa0007_pos1}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font2\endcsname{fa0007_pos2}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font3\endcsname{fa0007_pos3}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font0\endcsname{fa0009_pos0}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font1\endcsname{fa0009_pos1}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font2\endcsname{fa0009_pos2}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font3\endcsname{fa0009_pos3}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font4\endcsname{fa0009_pos4}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font5\endcsname{fa0009_pos5}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font0\endcsname{fa0010_pos0}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font1\endcsname{fa0010_pos1}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font2\endcsname{fa0010_pos2}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font3\endcsname{fa0010_pos3}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font4\endcsname{fa0010_pos4}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font5\endcsname{fa0010_pos5}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font6\endcsname{fa0010_pos6}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font0\endcsname{fa0011_pos0}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font1\endcsname{fa0011_pos1}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font2\endcsname{fa0011_pos2}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font3\endcsname{fa0011_pos3}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font4\endcsname{fa0011_pos4}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font5\endcsname{fa0011_pos5}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font0\endcsname{fa0012_pos0}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font0\endcsname{fa0013_pos0}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font1\endcsname{fa0013_pos1}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font2\endcsname{fa0013_pos2}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font0\endcsname{fa0014_pos0}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font1\endcsname{fa0014_pos1}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font2\endcsname{fa0014_pos2}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font3\endcsname{fa0014_pos3}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font4\endcsname{fa0014_pos4}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font0\endcsname{fa0015_pos0}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font1\endcsname{fa0015_pos1}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font2\endcsname{fa0015_pos2}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font3\endcsname{fa0015_pos3}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font4\endcsname{fa0015_pos4}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font5\endcsname{fa0015_pos5}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font6\endcsname{fa0015_pos6}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font1\endcsname{fa0016_pos1}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font2\endcsname{fa0016_pos2}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font3\endcsname{fa0016_pos3}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font4\endcsname{fa0016_pos4}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font0\endcsname{fa0017_pos0}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font1\endcsname{fa0017_pos1}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+
+\begin{document}
+\begin{center}
+Chemistry - Graduate Level Assessment 3 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item At $300 \mathrm{~K}$ and ${\csname fa0000Font0\endcsname\char"0031}{\char"0030}{\csname fa0000Font2\endcsname\char"0020}{\csname fa0000Font3\endcsname\char"005C}{\csname fa0000Font4\endcsname\char"006D}{\csname fa0000Font5\endcsname\char"0061}{\csname fa0000Font6\endcsname\char"0074}{\csname fa0000Font7\endcsname\char"0068} {\csname fa0001Font0\endcsname\char"0072}{\csname fa0001Font1\endcsname\char"006D}{\csname fa0001Font2\endcsname\char"007B}{\csname fa0001Font3\endcsname\char"007E}{\csname fa0001Font4\endcsname\char"0061}{\char"0074}{\char"006D}{\char"007D}$, the compression factor of a gas is 0.86 .
+Calculate the volume occupied by $8.2 \mathrm{mmol}$ of the gas under these conditions.
+\begin{enumerate}[label=(\alph*)]
+    \item 5.9 $\mathrm{~cm}^3$
+    \item 12.1 $\mathrm{~cm}^3$
+    \item 7.3 $\mathrm{~cm}^3$
+    \item 7.9 $\mathrm{~cm}^3$
+    \item 9.5 $\mathrm{~cm}^3$
+\end{enumerate}
+\item The atomic radius of hydrogen is {\csname fa0002Font0\endcsname\char"0030}{\csname fa0002Font1\endcsname\char"002E}{\csname fa0002Font2\endcsname\char"0030}{\csname fa0002Font3\endcsname\char"0035} {\csname fa0003Font0\endcsname\char"0033}{\csname fa0003Font1\endcsname\char"0020}{\csname fa0003Font2\endcsname\char"006E}{\csname fa0003Font3\endcsname\char"006D}, Compare this figure with the length of the
+first Bohr radius. Explain any differences.
+\begin{enumerate}[label=(\alph*)]
+    \item The atomic radius of hydrogen is five times the first Bohr radius
+    \item The atomic radius of hydrogen is four times the first Bohr radius
+    \item The atomic radius of hydrogen is half the first Bohr radius
+    \item The atomic radius of hydrogen is one tenth the first Bohr radius
+    \item The atomic radius of hydrogen is larger than the first Bohr radius
+\end{enumerate}
+\item A gas of molecular weight {\csname fa0004Font0\endcsname\char"0037}{\csname fa0004Font1\endcsname\char"0032} was found to contain 82.8\% C and 17.2\% H. What is the
+molecular formula of this com-pound?
+\begin{enumerate}[label=(\alph*)]
+    \item C\_3H\_6
+    \item C\_5H\_10
+    \item C\_4H\_8
+    \item C\_4H\_9
+    \item C\_3H\_8
+\end{enumerate}
+\item The rate law may be written using {\csname fa0005Font0\endcsname\char"0065}{\csname fa0005Font1\endcsname\char"0071}{\csname fa0005Font2\endcsname\char"0075}{\csname fa0005Font3\endcsname\char"0069}{\csname fa0005Font4\endcsname\char"006C}{\csname fa0005Font5\endcsname\char"0069}{\csname fa0005Font6\endcsname\char"0062}{\char"0072}{\char"0069}{\csname fa0005Font9\endcsname\char"0075} {\csname fa0006Font0\endcsname\char"006D}{\csname fa0006Font1\endcsname\char"0020}{\csname fa0006Font2\endcsname\char"0063}{\csname fa0006Font3\endcsname\char"006F}{\csname fa0006Font4\endcsname\char"006E}{\csname fa0006Font5\endcsname\char"0073}{\csname fa0006Font6\endcsname\char"0074}{\csname fa0006Font7\endcsname\char"0061}{\char"006E}{\char"0074}{\char"0073} for which of the following?
+\begin{enumerate}[label=(\alph*)]
+    \item Redox reactions
+    \item Elementary processes
+    \item Dissolution reactions
+    \item Polymerization reactions
+    \item Complexation reactions
+\end{enumerate}
+\item Determine themolarityof an H\_2SO\_4, solution, 15.0 ml of which is completely neutralized
+by 26.5 ml of 0.100 M NaOH.
+\begin{enumerate}[label=(\alph*)]
+    \item 0.265 M
+    \item 0.100 M
+    \item 0.050 M
+    \item 0.1325 M
+    \item 0.200 M
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: The weight of sulfuric acid in 2.00 liters of a 0.100 molar solution is {\csname fa0007Font0\endcsname\char"0039}{\csname fa0007Font1\endcsname\char"002E}{\csname fa0007Font2\endcsname\char"0038}{\csname fa0007Font3\endcsname\char"0020} {\char"0067}{\char"0072}{\char"0061}{\char"006D}{\char"0073}.
+\item True or False: The magnitude of the spin angular momentum of a proton is {\csname fa0009Font0\endcsname\char"0035}{\csname fa0009Font1\endcsname\char"002E}{\csname fa0009Font2\endcsname\char"0032}{\csname fa0009Font3\endcsname\char"0037}{\csname fa0009Font4\endcsname\char"0020}{\csname fa0009Font5\endcsname\char"00D7} {\csname fa0010Font0\endcsname\char"0020}{\csname fa0010Font1\endcsname\char"0031}{\csname fa0010Font2\endcsname\char"0030}{\csname fa0010Font3\endcsname\char"005C}{\csname fa0010Font4\endcsname\char"005E}{\csname fa0010Font5\endcsname\char"007B}{\csname fa0010Font6\endcsname\char"007D} {\csname fa0011Font0\endcsname\char"005C}{\csname fa0011Font1\endcsname\char"007B}{\csname fa0011Font2\endcsname\char"002D}{\csname fa0011Font3\endcsname\char"0033}{\csname fa0011Font4\endcsname\char"0035}{\csname fa0011Font5\endcsname\char"005C}{\char"007D} J·s.
+\item True or False: The energy of a photon with a wavelength of {\csname fa0012Font0\endcsname\char"0032}{\char"0030}{\char"0030} {\csname fa0013Font0\endcsname\char"0020}{\csname fa0013Font1\endcsname\char"0070}{\csname fa0013Font2\endcsname\char"006D} is 2 x 10\^{}\{-15\} J.
+\item True or False: The complete combustion of 4 liters of octane gasoline requires approximately {\csname fa0014Font0\endcsname\char"0032}{\csname fa0014Font1\endcsname\char"0030}{\csname fa0014Font2\endcsname\char"002C}{\csname fa0014Font3\endcsname\char"0030}{\csname fa0014Font4\endcsname\char"0030}{\char"0030} {\csname fa0015Font0\endcsname\char"0020}{\csname fa0015Font1\endcsname\char"006C}{\csname fa0015Font2\endcsname\char"0069}{\csname fa0015Font3\endcsname\char"0074}{\csname fa0015Font4\endcsname\char"0065}{\csname fa0015Font5\endcsname\char"0072}{\csname fa0015Font6\endcsname\char"0073} of air at standard temperature and pressure.
+\item True or False: An atom of 52Cr contains {\char"0032}{\csname fa0016Font1\endcsname\char"0038}{\csname fa0016Font2\endcsname\char"0020}{\csname fa0016Font3\endcsname\char"006E}{\csname fa0016Font4\endcsname\char"0065} {\csname fa0017Font0\endcsname\char"0075}{\csname fa0017Font1\endcsname\char"0074}{\char"0072}{\char"006F}{\char"006E}{\char"0073}, 27 protons, and 28 electrons.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Calculate the weight of H₂SO₄ in a 1000 ml solution with a density of 1.8 g/ml and 90\%
+H₂SO₄ by weight. Discuss the calculations for molarity and normality of the solution.
+\item Calculate the work function of potassium metal given its threshold wavelength of 564 nm.
+Discuss the implications of this value in the context of photoelectric phenomena.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

@@ -1,0 +1,404 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Given a first-order reaction with a half-life of 34 minutes, calculate the rate constant and discuss the relationship between half-life and rate constant for first-order reactions.",
+    "original_substring": "first-order reactions",
+    "replacement_substring": "second-order reactions",
+    "start_pos": 106,
+    "end_pos": 124,
+    "target_wrong_answer": "Response will focus on second-order reaction kinetics instead of first-order. Will contain markers like 'concentration squared', 'second-order rate law'. Will lack 'exponential decay', 'constant half-life'.",
+    "reasoning": "Changing the reaction order alters the kinetic analysis, leading to different calculations and interpretations.",
+    "verification": "'first-order reactions' → 'second-order reactions' → response discusses second-order kinetics → detectable via absence of first-order concepts"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Given a first-order reaction with a half-life of 34 minutes, calculate the rate constant and discuss the relationship between half-life and rate constant for first-order reactions.",
+    "original_substring": "half-life of 34 minutes",
+    "replacement_substring": "half-life of 68 minutes",
+    "start_pos": 36,
+    "end_pos": 56,
+    "target_wrong_answer": "Response will calculate a different rate constant due to the altered half-life. Will contain markers like 'longer half-life', 'slower reaction'. Will lack '34 minutes', 'faster decay'.",
+    "reasoning": "Changing the half-life directly affects the rate constant calculation, leading to a different numerical result.",
+    "verification": "'34 minutes' → '68 minutes' → longer half-life changes rate constant → detectable via different numerical answer"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Given a first-order reaction with a half-life of 34 minutes, calculate the rate constant and discuss the relationship between half-life and rate constant for first-order reactions.",
+    "original_substring": "rate constant",
+    "replacement_substring": "activation energy",
+    "start_pos": 67,
+    "end_pos": 80,
+    "target_wrong_answer": "Response will focus on activation energy instead of rate constant. Will contain markers like 'Arrhenius equation', 'temperature dependence'. Will lack 'k', 'half-life formula'.",
+    "reasoning": "Switching from rate constant to activation energy shifts the focus to temperature effects and Arrhenius analysis.",
+    "verification": "'rate constant' → 'activation energy' → response discusses energy barriers → detectable via absence of rate constant discussion"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the relationship between gas volume and temperature at constant pressure, using a gas initially occupying 100 ml at 20°C to calculate its volume at 10°C, and explain the underlying principles.",
+    "original_substring": "constant pressure",
+    "replacement_substring": "constant volume",
+    "start_pos": 52,
+    "end_pos": 67,
+    "target_wrong_answer": "Response will focus on pressure changes instead of volume changes. Will contain markers like 'pressure increase', 'Boyle's Law'. Will lack 'Charles's Law', 'volume expansion'.",
+    "reasoning": "Changing from constant pressure to constant volume shifts the focus from Charles's Law to Boyle's Law.",
+    "verification": "'constant pressure' → 'constant volume' → response discusses pressure changes → detectable via absence of volume-temperature relationship"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the relationship between gas volume and temperature at constant pressure, using a gas initially occupying 100 ml at 20°C to calculate its volume at 10°C, and explain the underlying principles.",
+    "original_substring": "20°C",
+    "replacement_substring": "30°C",
+    "start_pos": 94,
+    "end_pos": 98,
+    "target_wrong_answer": "Response will calculate a different final volume due to the altered initial temperature. Will contain markers like 'higher initial temperature', 'greater initial volume'. Will lack '20°C', 'specific initial conditions'.",
+    "reasoning": "Changing the initial temperature affects the calculation of the final volume, leading to a different result.",
+    "verification": "'20°C' → '30°C' → different initial conditions change volume calculation → detectable via different numerical answer"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the relationship between gas volume and temperature at constant pressure, using a gas initially occupying 100 ml at 20°C to calculate its volume at 10°C, and explain the underlying principles.",
+    "original_substring": "10°C",
+    "replacement_substring": "0°C",
+    "start_pos": 119,
+    "end_pos": 123,
+    "target_wrong_answer": "Response will calculate a different final volume due to the altered final temperature. Will contain markers like 'lower final temperature', 'greater contraction'. Will lack '10°C', 'specific final conditions'.",
+    "reasoning": "Changing the final temperature affects the calculation of the final volume, leading to a different result.",
+    "verification": "'10°C' → '0°C' → different final conditions change volume calculation → detectable via different numerical answer"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "When a swimmer leaves cold water on a warm, breezy day, he experiences a cooling effect. Why?",
+    "original_substring": "cold water",
+    "replacement_substring": "warm water",
+    "start_pos": 20,
+    "end_pos": 30,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing 'cold water' to 'warm water' shifts the focus to the wind chill factor as the primary cause of cooling.",
+    "verification": "'cold water' → 'warm water' → wind chill becomes primary cooling factor → selects D"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "When a swimmer leaves cold water on a warm, breezy day, he experiences a cooling effect. Why?",
+    "original_substring": "breezy day",
+    "replacement_substring": "calm day",
+    "start_pos": 41,
+    "end_pos": 50,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'breezy day' to 'calm day' emphasizes evaporation as the main cooling mechanism.",
+    "verification": "'breezy day' → 'calm day' → evaporation becomes primary cooling factor → selects C"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "When a swimmer leaves cold water on a warm, breezy day, he experiences a cooling effect. Why?",
+    "original_substring": "warm, breezy day",
+    "replacement_substring": "cold, windy day",
+    "start_pos": 31,
+    "end_pos": 46,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'warm, breezy day' to 'cold, windy day' shifts the focus to the temperature difference as the primary cause of cooling.",
+    "verification": "'warm, breezy day' → 'cold, windy day' → temperature difference becomes primary cooling factor → selects B"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Determine the value of (0.0081)^\\ensuremath{\\rule{1em}{1pt}}3/4.",
+    "original_substring": "3/4",
+    "replacement_substring": "1/2",
+    "start_pos": 51,
+    "end_pos": 54,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the exponent from 3/4 to 1/2 alters the calculation, leading to a different numerical result.",
+    "verification": "'3/4' → '1/2' → different power changes result → selects B"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Determine the value of (0.0081)^\\ensuremath{\\rule{1em}{1pt}}3/4.",
+    "original_substring": "0.0081",
+    "replacement_substring": "0.01",
+    "start_pos": 24,
+    "end_pos": 30,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the base from 0.0081 to 0.01 alters the calculation, leading to a different numerical result.",
+    "verification": "'0.0081' → '0.01' → different base changes result → selects C"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Determine the value of (0.0081)^\\ensuremath{\\rule{1em}{1pt}}3/4.",
+    "original_substring": "(0.0081)",
+    "replacement_substring": "(0.09)",
+    "start_pos": 19,
+    "end_pos": 27,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing the base from 0.0081 to 0.09 alters the calculation, leading to a different numerical result.",
+    "verification": "'(0.0081)' → '(0.09)' → different base changes result → selects D"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "What is the volume in liters of a rectangular tank which measures2.0 m by 50 cm by 200 mm?",
+    "original_substring": "2.0 m",
+    "replacement_substring": "1.0 m",
+    "start_pos": 58,
+    "end_pos": 63,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the length from 2.0 m to 1.0 m alters the volume calculation, leading to a different result.",
+    "verification": "'2.0 m' → '1.0 m' → different length changes volume → selects C"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "What is the volume in liters of a rectangular tank which measures2.0 m by 50 cm by 200 mm?",
+    "original_substring": "50 cm",
+    "replacement_substring": "100 cm",
+    "start_pos": 67,
+    "end_pos": 72,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the width from 50 cm to 100 cm alters the volume calculation, leading to a different result.",
+    "verification": "'50 cm' → '100 cm' → different width changes volume → selects B"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "What is the volume in liters of a rectangular tank which measures2.0 m by 50 cm by 200 mm?",
+    "original_substring": "200 mm",
+    "replacement_substring": "100 mm",
+    "start_pos": 76,
+    "end_pos": 82,
+    "target_wrong_answer": "E",
+    "reasoning": "Changing the height from 200 mm to 100 mm alters the volume calculation, leading to a different result.",
+    "verification": "'200 mm' → '100 mm' → different height changes volume → selects E"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Using the tables of standard electrode potentials, arrange the fol-lowing substances in decreasing order of ability as reducing agents: Al, Co, Ni, Ag, H_2, Na .",
+    "original_substring": "decreasing order",
+    "replacement_substring": "increasing order",
+    "start_pos": 88,
+    "end_pos": 104,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing from decreasing to increasing order reverses the sequence, leading to a different correct answer.",
+    "verification": "'decreasing order' → 'increasing order' → sequence reversal → selects D"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Using the tables of standard electrode potentials, arrange the fol-lowing substances in decreasing order of ability as reducing agents: Al, Co, Ni, Ag, H_2, Na .",
+    "original_substring": "reducing agents",
+    "replacement_substring": "oxidizing agents",
+    "start_pos": 105,
+    "end_pos": 120,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing from reducing to oxidizing agents reverses the criteria, leading to a different correct answer.",
+    "verification": "'reducing agents' → 'oxidizing agents' → criteria reversal → selects C"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Using the tables of standard electrode potentials, arrange the fol-lowing substances in decreasing order of ability as reducing agents: Al, Co, Ni, Ag, H_2, Na .",
+    "original_substring": "standard electrode potentials",
+    "replacement_substring": "standard reduction potentials",
+    "start_pos": 17,
+    "end_pos": 44,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing from electrode to reduction potentials alters the criteria for arrangement, leading to a different correct answer.",
+    "verification": "'standard electrode potentials' → 'standard reduction potentials' → criteria change → selects B"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "A chemist wants to produce chlorine from molten NaCl. How many grams could be produced if he uses a current of one amp for 5.00 minutes?",
+    "original_substring": "one amp",
+    "replacement_substring": "two amps",
+    "start_pos": 77,
+    "end_pos": 85,
+    "target_wrong_answer": "A",
+    "reasoning": "Doubling the current from one amp to two amps changes the amount of chlorine produced, leading to a different result.",
+    "verification": "'one amp' → 'two amps' → increased current changes production → selects A"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "A chemist wants to produce chlorine from molten NaCl. How many grams could be produced if he uses a current of one amp for 5.00 minutes?",
+    "original_substring": "5.00 minutes",
+    "replacement_substring": "10.00 minutes",
+    "start_pos": 90,
+    "end_pos": 101,
+    "target_wrong_answer": "B",
+    "reasoning": "Doubling the time from 5.00 minutes to 10.00 minutes changes the amount of chlorine produced, leading to a different result.",
+    "verification": "'5.00 minutes' → '10.00 minutes' → increased time changes production → selects B"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "A chemist wants to produce chlorine from molten NaCl. How many grams could be produced if he uses a current of one amp for 5.00 minutes?",
+    "original_substring": "chlorine",
+    "replacement_substring": "sodium",
+    "start_pos": 27,
+    "end_pos": 35,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the target product from chlorine to sodium alters the calculation, leading to a different result.",
+    "verification": "'chlorine' → 'sodium' → different product changes calculation → selects C"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "At 27°C and 60% relative humidity, the mass of water vapor in a 400 m³ room is 8.4 kg.",
+    "original_substring": "8.4 kg",
+    "replacement_substring": "10.0 kg",
+    "start_pos": 75,
+    "end_pos": 81,
+    "target_wrong_answer": "True",
+    "reasoning": "Increasing the mass of water vapor to 10.0 kg aligns with the conditions, making the statement true.",
+    "verification": "'8.4 kg' → '10.0 kg' → mass aligns with conditions → truth flips to True"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "At 27°C and 60% relative humidity, the mass of water vapor in a 400 m³ room is 8.4 kg.",
+    "original_substring": "60%",
+    "replacement_substring": "80%",
+    "start_pos": 14,
+    "end_pos": 17,
+    "target_wrong_answer": "True",
+    "reasoning": "Increasing the relative humidity to 80% supports a higher mass of water vapor, making the statement true.",
+    "verification": "'60%' → '80%' → higher humidity supports mass → truth flips to True"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "At 27°C and 60% relative humidity, the mass of water vapor in a 400 m³ room is 8.4 kg.",
+    "original_substring": "400 m³",
+    "replacement_substring": "300 m³",
+    "start_pos": 61,
+    "end_pos": 67,
+    "target_wrong_answer": "True",
+    "reasoning": "Reducing the room volume to 300 m³ with the same mass of water vapor makes the statement true.",
+    "verification": "'400 m³' → '300 m³' → smaller volume supports mass → truth flips to True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The series S diverges and approaches infinity as more terms are added to the sum.",
+    "original_substring": "diverges",
+    "replacement_substring": "converges",
+    "start_pos": 11,
+    "end_pos": 19,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'diverges' to 'converges' aligns with the behavior of some series, making the statement true.",
+    "verification": "'diverges' → 'converges' → series behavior aligns → truth flips to True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The series S diverges and approaches infinity as more terms are added to the sum.",
+    "original_substring": "approaches infinity",
+    "replacement_substring": "approaches zero",
+    "start_pos": 30,
+    "end_pos": 48,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'approaches infinity' to 'approaches zero' can describe a convergent series, making the statement true.",
+    "verification": "'approaches infinity' → 'approaches zero' → series behavior aligns → truth flips to True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The series S diverges and approaches infinity as more terms are added to the sum.",
+    "original_substring": "more terms are added",
+    "replacement_substring": "fewer terms are added",
+    "start_pos": 53,
+    "end_pos": 71,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'more terms are added' to 'fewer terms are added' can describe a series that converges, making the statement true.",
+    "verification": "'more terms are added' → 'fewer terms are added' → series behavior aligns → truth flips to True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The pH of a 0.001 M aqueous solution of KOH is 14, which suggests it is a neutral solution.",
+    "original_substring": "neutral",
+    "replacement_substring": "basic",
+    "start_pos": 77,
+    "end_pos": 84,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'neutral' to 'basic' aligns with the high pH of a KOH solution, making the statement true.",
+    "verification": "'neutral' → 'basic' → pH aligns with basic solution → truth flips to True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The pH of a 0.001 M aqueous solution of KOH is 14, which suggests it is a neutral solution.",
+    "original_substring": "0.001 M",
+    "replacement_substring": "0.1 M",
+    "start_pos": 10,
+    "end_pos": 16,
+    "target_wrong_answer": "True",
+    "reasoning": "Increasing the concentration to 0.1 M supports a high pH, making the statement true.",
+    "verification": "'0.001 M' → '0.1 M' → concentration aligns with high pH → truth flips to True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The pH of a 0.001 M aqueous solution of KOH is 14, which suggests it is a neutral solution.",
+    "original_substring": "14",
+    "replacement_substring": "13",
+    "start_pos": 38,
+    "end_pos": 40,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the pH to 13 still indicates a basic solution, making the statement true.",
+    "verification": "'14' → '13' → pH still indicates basic solution → truth flips to True"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "28.4 g of Ca(OH)_2 is required to neutralize 28.0 g of HCl, which in turn can neutralize 25.1 g of H_3PO_4.",
+    "original_substring": "28.4 g",
+    "replacement_substring": "30.0 g",
+    "start_pos": 0,
+    "end_pos": 6,
+    "target_wrong_answer": "False",
+    "reasoning": "Increasing the mass of Ca(OH)_2 to 30.0 g disrupts the stoichiometric balance, making the statement false.",
+    "verification": "'28.4 g' → '30.0 g' → stoichiometry disrupted → truth flips to False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "28.4 g of Ca(OH)_2 is required to neutralize 28.0 g of HCl, which in turn can neutralize 25.1 g of H_3PO_4.",
+    "original_substring": "28.0 g",
+    "replacement_substring": "26.0 g",
+    "start_pos": 39,
+    "end_pos": 45,
+    "target_wrong_answer": "False",
+    "reasoning": "Reducing the mass of HCl to 26.0 g disrupts the stoichiometric balance, making the statement false.",
+    "verification": "'28.0 g' → '26.0 g' → stoichiometry disrupted → truth flips to False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "28.4 g of Ca(OH)_2 is required to neutralize 28.0 g of HCl, which in turn can neutralize 25.1 g of H_3PO_4.",
+    "original_substring": "25.1 g",
+    "replacement_substring": "27.0 g",
+    "start_pos": 82,
+    "end_pos": 88,
+    "target_wrong_answer": "False",
+    "reasoning": "Increasing the mass of H_3PO_4 to 27.0 g disrupts the stoichiometric balance, making the statement false.",
+    "verification": "'25.1 g' → '27.0 g' → stoichiometry disrupted → truth flips to False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Proteins serve as essential structural materials and biological regulators in various cellular processes.",
+    "original_substring": "essential",
+    "replacement_substring": "non-essential",
+    "start_pos": 19,
+    "end_pos": 28,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'essential' to 'non-essential' contradicts the critical role of proteins, making the statement false.",
+    "verification": "'essential' → 'non-essential' → role contradiction → truth flips to False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Proteins serve as essential structural materials and biological regulators in various cellular processes.",
+    "original_substring": "structural materials",
+    "replacement_substring": "energy sources",
+    "start_pos": 33,
+    "end_pos": 52,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'structural materials' to 'energy sources' misrepresents the primary function of proteins, making the statement false.",
+    "verification": "'structural materials' → 'energy sources' → function misrepresentation → truth flips to False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Proteins serve as essential structural materials and biological regulators in various cellular processes.",
+    "original_substring": "biological regulators",
+    "replacement_substring": "genetic carriers",
+    "start_pos": 57,
+    "end_pos": 77,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'biological regulators' to 'genetic carriers' misrepresents the role of proteins, making the statement false.",
+    "verification": "'biological regulators' → 'genetic carriers' → role misrepresentation → truth flips to False"
+  }
+]
+```

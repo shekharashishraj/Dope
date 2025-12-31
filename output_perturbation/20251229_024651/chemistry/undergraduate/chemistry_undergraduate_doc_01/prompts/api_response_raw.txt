@@ -1,0 +1,503 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following statements most accurately explains why the 1H spectrum of 12CHCl3 is a singlet?",
+    "original_substring": "12CHCl3",
+    "replacement_substring": "13CHCl3",
+    "start_pos": 61,
+    "end_pos": 68,
+    "target_wrong_answer": "A",
+    "reasoning": "Replacing 12CHCl3 with 13CHCl3 changes the isotope, which affects the nuclear spin and coupling, making option A correct.",
+    "verification": "12CHCl3 → 13CHCl3 → isotope change affects coupling → A becomes correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following statements most accurately explains why the 1H spectrum of 12CHCl3 is a singlet?",
+    "original_substring": "singlet",
+    "replacement_substring": "triplet",
+    "start_pos": 72,
+    "end_pos": 79,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'singlet' to 'triplet' implies different splitting, making rapid exchange a plausible explanation.",
+    "verification": "singlet → triplet → different splitting pattern → B becomes correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following statements most accurately explains why the 1H spectrum of 12CHCl3 is a singlet?",
+    "original_substring": "1H spectrum",
+    "replacement_substring": "13C spectrum",
+    "start_pos": 45,
+    "end_pos": 56,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing '1H spectrum' to '13C spectrum' shifts the focus to carbon, where molecular rigidity affects the spectrum.",
+    "verification": "1H spectrum → 13C spectrum → focus on carbon → C becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Both 35Cl and 37Cl have I = 0.",
+    "original_substring": "I = 0",
+    "replacement_substring": "I = 1/2",
+    "start_pos": 21,
+    "end_pos": 26,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing the nuclear spin value affects the magnetic properties, making option A incorrect.",
+    "verification": "I = 0 → I = 1/2 → changes magnetic properties → A becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Both 35Cl and 37Cl have I = 0.",
+    "original_substring": "Both 35Cl and 37Cl",
+    "replacement_substring": "Only 35Cl",
+    "start_pos": 0,
+    "end_pos": 17,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing to 'Only 35Cl' alters the isotopic consideration, affecting the stability of the oxidation states.",
+    "verification": "Both 35Cl and 37Cl → Only 35Cl → changes isotopic consideration → B becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Both 35Cl and 37Cl have I = 0.",
+    "original_substring": "35Cl and 37Cl",
+    "replacement_substring": "35Cl and 39Cl",
+    "start_pos": 5,
+    "end_pos": 17,
+    "target_wrong_answer": "C",
+    "reasoning": "Introducing a non-existent isotope 39Cl changes the context, making option C plausible.",
+    "verification": "35Cl and 37Cl → 35Cl and 39Cl → non-existent isotope → C becomes correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The hydrogen atom undergoes rapid intermolecular exchange.",
+    "original_substring": "rapid",
+    "replacement_substring": "slow",
+    "start_pos": 26,
+    "end_pos": 31,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'rapid' to 'slow' alters the exchange rate, contradicting the original statement.",
+    "verification": "rapid → slow → contradicts rapid exchange → statement becomes False"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The hydrogen atom undergoes rapid intermolecular exchange.",
+    "original_substring": "intermolecular",
+    "replacement_substring": "intramolecular",
+    "start_pos": 32,
+    "end_pos": 46,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'intermolecular' to 'intramolecular' shifts the type of exchange, altering the statement's truth.",
+    "verification": "intermolecular → intramolecular → changes exchange type → statement becomes False"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The hydrogen atom undergoes rapid intermolecular exchange.",
+    "original_substring": "hydrogen atom",
+    "replacement_substring": "oxygen atom",
+    "start_pos": 4,
+    "end_pos": 17,
+    "target_wrong_answer": "False",
+    "reasoning": "Replacing 'hydrogen atom' with 'oxygen atom' changes the element involved, affecting the statement's validity.",
+    "verification": "hydrogen atom → oxygen atom → changes element involved → statement becomes False"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The molecule is not rigid.",
+    "original_substring": "not rigid",
+    "replacement_substring": "rigid",
+    "start_pos": 13,
+    "end_pos": 22,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'not rigid' to 'rigid' alters the molecular property, flipping the statement's truth value.",
+    "verification": "not rigid → rigid → changes molecular property → statement becomes True"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The molecule is not rigid.",
+    "original_substring": "molecule",
+    "replacement_substring": "crystal",
+    "start_pos": 4,
+    "end_pos": 12,
+    "target_wrong_answer": "True",
+    "reasoning": "Replacing 'molecule' with 'crystal' changes the context, affecting the rigidity property.",
+    "verification": "molecule → crystal → changes context → statement becomes True"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The molecule is not rigid.",
+    "original_substring": "is not",
+    "replacement_substring": "is",
+    "start_pos": 13,
+    "end_pos": 19,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'is not' to 'is' directly alters the rigidity description, flipping the truth value.",
+    "verification": "is not → is → changes rigidity description → statement becomes True"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Both 35Cl and 37Cl have electric quadrupole moments.",
+    "original_substring": "electric quadrupole moments",
+    "replacement_substring": "magnetic dipole moments",
+    "start_pos": 21,
+    "end_pos": 47,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'electric quadrupole moments' to 'magnetic dipole moments' alters the type of moment, affecting the truth.",
+    "verification": "electric quadrupole moments → magnetic dipole moments → changes moment type → statement becomes False"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Both 35Cl and 37Cl have electric quadrupole moments.",
+    "original_substring": "Both 35Cl and 37Cl",
+    "replacement_substring": "Only 35Cl",
+    "start_pos": 0,
+    "end_pos": 17,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing to 'Only 35Cl' affects the isotopic consideration, altering the truth value.",
+    "verification": "Both 35Cl and 37Cl → Only 35Cl → changes isotopic consideration → statement becomes False"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Both 35Cl and 37Cl have electric quadrupole moments.",
+    "original_substring": "have",
+    "replacement_substring": "lack",
+    "start_pos": 18,
+    "end_pos": 22,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'have' to 'lack' directly contradicts the original statement, flipping the truth value.",
+    "verification": "have → lack → contradicts original statement → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The +1 oxidation state is more stable than the +3 oxidation state for which group 13 element?",
+    "original_substring": "+1 oxidation state",
+    "replacement_substring": "+3 oxidation state",
+    "start_pos": 4,
+    "end_pos": 21,
+    "target_wrong_answer": "False",
+    "reasoning": "Switching the oxidation states changes the stability comparison, affecting the truth value.",
+    "verification": "+1 oxidation state → +3 oxidation state → changes stability comparison → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The +1 oxidation state is more stable than the +3 oxidation state for which group 13 element?",
+    "original_substring": "more stable",
+    "replacement_substring": "less stable",
+    "start_pos": 25,
+    "end_pos": 35,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'more stable' to 'less stable' reverses the stability comparison, flipping the truth value.",
+    "verification": "more stable → less stable → reverses stability comparison → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The +1 oxidation state is more stable than the +3 oxidation state for which group 13 element?",
+    "original_substring": "group 13",
+    "replacement_substring": "group 14",
+    "start_pos": 73,
+    "end_pos": 81,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the group number alters the context of the stability comparison, affecting the truth value.",
+    "verification": "group 13 → group 14 → changes context → statement becomes False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "B",
+    "original_substring": "B",
+    "replacement_substring": "C",
+    "start_pos": 0,
+    "end_pos": 1,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'B' to 'C' alters the context, affecting the truth value of the statement.",
+    "verification": "B → C → changes context → statement becomes False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "B",
+    "original_substring": "B",
+    "replacement_substring": "D",
+    "start_pos": 0,
+    "end_pos": 1,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'B' to 'D' alters the context, affecting the truth value of the statement.",
+    "verification": "B → D → changes context → statement becomes False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "B",
+    "original_substring": "B",
+    "replacement_substring": "E",
+    "start_pos": 0,
+    "end_pos": 1,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'B' to 'E' alters the context, affecting the truth value of the statement.",
+    "verification": "B → E → changes context → statement becomes False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Al",
+    "original_substring": "Al",
+    "replacement_substring": "Fe",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Al' to 'Fe' alters the element, affecting the truth value of the statement.",
+    "verification": "Al → Fe → changes element → statement becomes False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Al",
+    "original_substring": "Al",
+    "replacement_substring": "Cu",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Al' to 'Cu' alters the element, affecting the truth value of the statement.",
+    "verification": "Al → Cu → changes element → statement becomes False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Al",
+    "original_substring": "Al",
+    "replacement_substring": "Zn",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Al' to 'Zn' alters the element, affecting the truth value of the statement.",
+    "verification": "Al → Zn → changes element → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "In",
+    "original_substring": "In",
+    "replacement_substring": "Sn",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'In' to 'Sn' alters the element, affecting the truth value of the statement.",
+    "verification": "In → Sn → changes element → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "In",
+    "original_substring": "In",
+    "replacement_substring": "Pb",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'In' to 'Pb' alters the element, affecting the truth value of the statement.",
+    "verification": "In → Pb → changes element → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "In",
+    "original_substring": "In",
+    "replacement_substring": "Hg",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'In' to 'Hg' alters the element, affecting the truth value of the statement.",
+    "verification": "In → Hg → changes element → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Tl",
+    "original_substring": "Tl",
+    "replacement_substring": "Pb",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Tl' to 'Pb' alters the element, affecting the truth value of the statement.",
+    "verification": "Tl → Pb → changes element → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Tl",
+    "original_substring": "Tl",
+    "replacement_substring": "Bi",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Tl' to 'Bi' alters the element, affecting the truth value of the statement.",
+    "verification": "Tl → Bi → changes element → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Tl",
+    "original_substring": "Tl",
+    "replacement_substring": "Po",
+    "start_pos": 0,
+    "end_pos": 2,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Tl' to 'Po' alters the element, affecting the truth value of the statement.",
+    "verification": "Tl → Po → changes element → statement becomes False"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "The correct answer to 'Which of the following statements most accurately explains why the T1 of a nucleus is sometimes longer than its T2?' is 'T2, unlike T1, is sensitive to molecular motions at the Larmor frequency.'.",
+    "original_substring": "T2, unlike T1, is sensitive to molecular motions at the Larmor frequency.",
+    "replacement_substring": "T1, unlike T2, is sensitive to molecular motions at the Larmor frequency.",
+    "start_pos": 109,
+    "end_pos": 172,
+    "target_wrong_answer": "True",
+    "reasoning": "Switching T1 and T2 changes the sensitivity description, flipping the truth value.",
+    "verification": "T2, unlike T1 → T1, unlike T2 → changes sensitivity description → statement becomes True"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "The correct answer to 'Which of the following statements most accurately explains why the T1 of a nucleus is sometimes longer than its T2?' is 'T2, unlike T1, is sensitive to molecular motions at the Larmor frequency.'.",
+    "original_substring": "Larmor frequency",
+    "replacement_substring": "resonance frequency",
+    "start_pos": 161,
+    "end_pos": 177,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'Larmor frequency' to 'resonance frequency' alters the context, affecting the truth value.",
+    "verification": "Larmor frequency → resonance frequency → changes context → statement becomes True"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "The correct answer to 'Which of the following statements most accurately explains why the T1 of a nucleus is sometimes longer than its T2?' is 'T2, unlike T1, is sensitive to molecular motions at the Larmor frequency.'.",
+    "original_substring": "molecular motions",
+    "replacement_substring": "atomic motions",
+    "start_pos": 139,
+    "end_pos": 156,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'molecular motions' to 'atomic motions' shifts the focus, affecting the truth value.",
+    "verification": "molecular motions → atomic motions → changes focus → statement becomes True"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "The correct answer to 'The normal modes of a carbon dioxide molecule that are infrared-active include which of the following? I. Bending II. Symmetric...' is 'III only'.",
+    "original_substring": "III only",
+    "replacement_substring": "I and II",
+    "start_pos": 136,
+    "end_pos": 144,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'III only' to 'I and II' alters the modes considered, flipping the truth value.",
+    "verification": "III only → I and II → changes modes considered → statement becomes False"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "The correct answer to 'The normal modes of a carbon dioxide molecule that are infrared-active include which of the following? I. Bending II. Symmetric...' is 'III only'.",
+    "original_substring": "infrared-active",
+    "replacement_substring": "Raman-active",
+    "start_pos": 58,
+    "end_pos": 72,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'infrared-active' to 'Raman-active' shifts the type of activity, affecting the truth value.",
+    "verification": "infrared-active → Raman-active → changes type of activity → statement becomes False"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "The correct answer to 'The normal modes of a carbon dioxide molecule that are infrared-active include which of the following? I. Bending II. Symmetric...' is 'III only'.",
+    "original_substring": "carbon dioxide",
+    "replacement_substring": "water",
+    "start_pos": 29,
+    "end_pos": 42,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'carbon dioxide' to 'water' alters the molecule, affecting the truth value.",
+    "verification": "carbon dioxide → water → changes molecule → statement becomes False"
+  },
+  {
+    "question_index": 13,
+    "latex_stem_text": "The correct answer to 'A set of hybrid sp^3 orbitals for a carbon atom is given above. Which of the following is NOT true about the orbitals?' is 'Each hybrid orbital may hold four electrons.'.",
+    "original_substring": "four electrons",
+    "replacement_substring": "two electrons",
+    "start_pos": 145,
+    "end_pos": 159,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'four electrons' to 'two electrons' corrects the statement, flipping the truth value.",
+    "verification": "four electrons → two electrons → corrects statement → statement becomes False"
+  },
+  {
+    "question_index": 13,
+    "latex_stem_text": "The correct answer to 'A set of hybrid sp^3 orbitals for a carbon atom is given above. Which of the following is NOT true about the orbitals?' is 'Each hybrid orbital may hold four electrons.'.",
+    "original_substring": "sp^3",
+    "replacement_substring": "sp^2",
+    "start_pos": 35,
+    "end_pos": 39,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'sp^3' to 'sp^2' alters the hybridization, affecting the truth value.",
+    "verification": "sp^3 → sp^2 → changes hybridization → statement becomes False"
+  },
+  {
+    "question_index": 13,
+    "latex_stem_text": "The correct answer to 'A set of hybrid sp^3 orbitals for a carbon atom is given above. Which of the following is NOT true about the orbitals?' is 'Each hybrid orbital may hold four electrons.'.",
+    "original_substring": "carbon atom",
+    "replacement_substring": "nitrogen atom",
+    "start_pos": 43,
+    "end_pos": 54,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'carbon atom' to 'nitrogen atom' alters the element, affecting the truth value.",
+    "verification": "carbon atom → nitrogen atom → changes element → statement becomes False"
+  },
+  {
+    "question_index": 14,
+    "latex_stem_text": "The correct answer to 'Which of the following is classified as a conjugate acid-base pair?' is 'H3O+ / H2O'.",
+    "original_substring": "H3O+ / H2O",
+    "replacement_substring": "NH4+ / NH3",
+    "start_pos": 91,
+    "end_pos": 101,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'H3O+ / H2O' to 'NH4+ / NH3' provides another valid conjugate pair, flipping the truth value.",
+    "verification": "H3O+ / H2O → NH4+ / NH3 → provides valid pair → statement becomes True"
+  },
+  {
+    "question_index": 14,
+    "latex_stem_text": "The correct answer to 'Which of the following is classified as a conjugate acid-base pair?' is 'H3O+ / H2O'.",
+    "original_substring": "conjugate acid-base pair",
+    "replacement_substring": "buffer system",
+    "start_pos": 48,
+    "end_pos": 72,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'conjugate acid-base pair' to 'buffer system' alters the classification, affecting the truth value.",
+    "verification": "conjugate acid-base pair → buffer system → changes classification → statement becomes True"
+  },
+  {
+    "question_index": 14,
+    "latex_stem_text": "The correct answer to 'Which of the following is classified as a conjugate acid-base pair?' is 'H3O+ / H2O'.",
+    "original_substring": "classified as",
+    "replacement_substring": "considered",
+    "start_pos": 39,
+    "end_pos": 51,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'classified as' to 'considered' alters the certainty, affecting the truth value.",
+    "verification": "classified as → considered → changes certainty → statement becomes True"
+  },
+  {
+    "question_index": 15,
+    "latex_stem_text": "The correct answer to 'When the Heisenberg uncertainty principle is applied to a quantum mechanical particle in the lowest energy level of a one-dimensional...' is 'Neither position nor momentum can be known exactly.'.",
+    "original_substring": "Neither position nor momentum can be known exactly",
+    "replacement_substring": "Position can be known exactly",
+    "start_pos": 110,
+    "end_pos": 154,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the statement to 'Position can be known exactly' contradicts the uncertainty principle, flipping the truth value.",
+    "verification": "Neither position nor momentum → Position can be known → contradicts principle → statement becomes False"
+  },
+  {
+    "question_index": 15,
+    "latex_stem_text": "The correct answer to 'When the Heisenberg uncertainty principle is applied to a quantum mechanical particle in the lowest energy level of a one-dimensional...' is 'Neither position nor momentum can be known exactly.'.",
+    "original_substring": "lowest energy level",
+    "replacement_substring": "highest energy level",
+    "start_pos": 92,
+    "end_pos": 110,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'lowest energy level' to 'highest energy level' alters the context, affecting the truth value.",
+    "verification": "lowest energy level → highest energy level → changes context → statement becomes False"
+  },
+  {
+    "question_index": 15,
+    "latex_stem_text": "The correct answer to 'When the Heisenberg uncertainty principle is applied to a quantum mechanical particle in the lowest energy level of a one-dimensional...' is 'Neither position nor momentum can be known exactly.'.",
+    "original_substring": "one-dimensional",
+    "replacement_substring": "three-dimensional",
+    "start_pos": 118,
+    "end_pos": 134,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'one-dimensional' to 'three-dimensional' alters the system, affecting the truth value.",
+    "verification": "one-dimensional → three-dimensional → changes system → statement becomes False"
+  }
+]
+```

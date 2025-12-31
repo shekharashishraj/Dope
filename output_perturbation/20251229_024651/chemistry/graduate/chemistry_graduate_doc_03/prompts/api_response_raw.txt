@@ -1,0 +1,404 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the weight of H₂SO₄ in a 1000 ml solution with a density of 1.8 g/ml and 90\\% H₂SO₄ by weight. Discuss the calculations for molarity and normality of the solution.",
+    "original_substring": "molarity and normality",
+    "replacement_substring": "density and viscosity",
+    "start_pos": 109,
+    "end_pos": 130,
+    "target_wrong_answer": "Response will focus on density and viscosity instead of molarity and normality, containing markers like 'fluid dynamics', 'viscosity index', and lacking 'moles per liter', 'equivalents per liter'.",
+    "reasoning": "By changing the focus from molarity and normality to density and viscosity, the response will shift to discussing fluid properties rather than concentration measures.",
+    "verification": "'molarity and normality' → 'density and viscosity' → response discusses fluid properties → detectable via absence of concentration terminology"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the weight of H₂SO₄ in a 1000 ml solution with a density of 1.8 g/ml and 90\\% H₂SO₄ by weight. Discuss the calculations for molarity and normality of the solution.",
+    "original_substring": "1000 ml",
+    "replacement_substring": "500 ml",
+    "start_pos": 37,
+    "end_pos": 44,
+    "target_wrong_answer": "Response will focus on calculations for a 500 ml solution instead of 1000 ml, containing markers like 'half volume', '500 ml calculations', and lacking 'full liter', '1000 ml'.",
+    "reasoning": "Changing the volume from 1000 ml to 500 ml will alter the calculations for weight, molarity, and normality, leading to different numerical results.",
+    "verification": "'1000 ml' → '500 ml' → response recalculates for half volume → detectable via different numerical results"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the weight of H₂SO₄ in a 1000 ml solution with a density of 1.8 g/ml and 90\\% H₂SO₄ by weight. Discuss the calculations for molarity and normality of the solution.",
+    "original_substring": "90\\% H₂SO₄",
+    "replacement_substring": "80\\% H₂SO₄",
+    "start_pos": 66,
+    "end_pos": 75,
+    "target_wrong_answer": "Response will focus on a solution with 80% H₂SO₄ instead of 90%, containing markers like 'lower concentration', '80% by weight', and lacking 'high concentration', '90% by weight'.",
+    "reasoning": "Changing the concentration from 90% to 80% will significantly affect the weight, molarity, and normality calculations, leading to different results.",
+    "verification": "'90% H₂SO₄' → '80% H₂SO₄' → response recalculates for lower concentration → detectable via different concentration markers"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Calculate the work function of potassium metal given its threshold wavelength of 564 nm. Discuss the implications of this value in the context of photoelectric phenomena.",
+    "original_substring": "564 nm",
+    "replacement_substring": "400 nm",
+    "start_pos": 59,
+    "end_pos": 65,
+    "target_wrong_answer": "Response will focus on a threshold wavelength of 400 nm instead of 564 nm, containing markers like 'higher energy photons', 'shorter wavelength', and lacking '564 nm', 'longer wavelength'.",
+    "reasoning": "Changing the threshold wavelength to 400 nm will alter the calculated work function and its implications, leading to a different discussion.",
+    "verification": "'564 nm' → '400 nm' → response recalculates work function for shorter wavelength → detectable via different wavelength markers"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Calculate the work function of potassium metal given its threshold wavelength of 564 nm. Discuss the implications of this value in the context of photoelectric phenomena.",
+    "original_substring": "potassium",
+    "replacement_substring": "sodium",
+    "start_pos": 31,
+    "end_pos": 40,
+    "target_wrong_answer": "Response will focus on sodium metal instead of potassium, containing markers like 'sodium's work function', 'sodium's photoelectric effect', and lacking 'potassium', 'K'.",
+    "reasoning": "Changing the metal from potassium to sodium will result in a different work function and implications for the photoelectric effect.",
+    "verification": "'potassium' → 'sodium' → response discusses sodium's properties → detectable via absence of potassium references"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Calculate the work function of potassium metal given its threshold wavelength of 564 nm. Discuss the implications of this value in the context of photoelectric phenomena.",
+    "original_substring": "photoelectric phenomena",
+    "replacement_substring": "thermal emission",
+    "start_pos": 109,
+    "end_pos": 131,
+    "target_wrong_answer": "Response will focus on thermal emission instead of photoelectric phenomena, containing markers like 'thermal energy', 'heat emission', and lacking 'photoelectric effect', 'photon'.",
+    "reasoning": "Changing the context from photoelectric phenomena to thermal emission shifts the focus from photon interactions to thermal processes.",
+    "verification": "'photoelectric phenomena' → 'thermal emission' → response discusses thermal processes → detectable via absence of photoelectric terminology"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "At $300 \\mathrm{~K}$ and $20 \\mathrm{~atm}$, the compression factor of a gas is 0.86 . Calculate the volume occupied by $8.2 \\mathrm{mmol}$ of the gas under these conditions.",
+    "original_substring": "20 \\mathrm{~atm}",
+    "replacement_substring": "10 \\mathrm{~atm}",
+    "start_pos": 19,
+    "end_pos": 30,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the pressure from 20 atm to 10 atm will alter the calculated volume, making option B correct instead of A.",
+    "verification": "'20 atm' → '10 atm' → lower pressure increases volume → selects B"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "At $300 \\mathrm{~K}$ and $20 \\mathrm{~atm}$, the compression factor of a gas is 0.86 . Calculate the volume occupied by $8.2 \\mathrm{mmol}$ of the gas under these conditions.",
+    "original_substring": "0.86",
+    "replacement_substring": "0.95",
+    "start_pos": 61,
+    "end_pos": 65,
+    "target_wrong_answer": "C",
+    "reasoning": "Increasing the compression factor to 0.95 will result in a smaller calculated volume, making option C correct.",
+    "verification": "'0.86' → '0.95' → higher compression factor reduces volume → selects C"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "At $300 \\mathrm{~K}$ and $20 \\mathrm{~atm}$, the compression factor of a gas is 0.86 . Calculate the volume occupied by $8.2 \\mathrm{mmol}$ of the gas under these conditions.",
+    "original_substring": "8.2 \\mathrm{mmol}",
+    "replacement_substring": "10.0 \\mathrm{mmol}",
+    "start_pos": 98,
+    "end_pos": 110,
+    "target_wrong_answer": "E",
+    "reasoning": "Increasing the amount of gas to 10.0 mmol will increase the calculated volume, making option E correct.",
+    "verification": "'8.2 mmol' → '10.0 mmol' → more moles increase volume → selects E"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The atomic radius of hydrogen is 0.037 nm, Compare this figure with the length of the first Bohr radius. Explain any differences.",
+    "original_substring": "0.037 nm",
+    "replacement_substring": "0.053 nm",
+    "start_pos": 31,
+    "end_pos": 39,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the atomic radius to 0.053 nm makes it four times the first Bohr radius, making option B correct.",
+    "verification": "'0.037 nm' → '0.053 nm' → radius is four times Bohr radius → selects B"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The atomic radius of hydrogen is 0.037 nm, Compare this figure with the length of the first Bohr radius. Explain any differences.",
+    "original_substring": "first Bohr radius",
+    "replacement_substring": "second Bohr radius",
+    "start_pos": 74,
+    "end_pos": 90,
+    "target_wrong_answer": "C",
+    "reasoning": "Comparing to the second Bohr radius changes the scale, making the atomic radius half the second Bohr radius, thus option C is correct.",
+    "verification": "'first Bohr radius' → 'second Bohr radius' → radius is half → selects C"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The atomic radius of hydrogen is 0.037 nm, Compare this figure with the length of the first Bohr radius. Explain any differences.",
+    "original_substring": "hydrogen",
+    "replacement_substring": "helium",
+    "start_pos": 20,
+    "end_pos": 28,
+    "target_wrong_answer": "E",
+    "reasoning": "Changing the element to helium alters the comparison, making the atomic radius larger than the first Bohr radius, thus option E is correct.",
+    "verification": "'hydrogen' → 'helium' → radius larger than Bohr radius → selects E"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "A gas of molecular weight 58 was found to contain 82.8\\% C and 17.2\\% H. What is the molecular formula of this com-pound?",
+    "original_substring": "58",
+    "replacement_substring": "72",
+    "start_pos": 25,
+    "end_pos": 27,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the molecular weight to 72 will alter the molecular formula calculation, making option B correct.",
+    "verification": "'58' → '72' → different molecular weight changes formula → selects B"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "A gas of molecular weight 58 was found to contain 82.8\\% C and 17.2\\% H. What is the molecular formula of this com-pound?",
+    "original_substring": "82.8\\% C",
+    "replacement_substring": "85.7\\% C",
+    "start_pos": 42,
+    "end_pos": 49,
+    "target_wrong_answer": "C",
+    "reasoning": "Increasing the carbon percentage to 85.7% will change the empirical formula, making option C correct.",
+    "verification": "'82.8% C' → '85.7% C' → higher carbon percentage changes formula → selects C"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "A gas of molecular weight 58 was found to contain 82.8\\% C and 17.2\\% H. What is the molecular formula of this com-pound?",
+    "original_substring": "17.2\\% H",
+    "replacement_substring": "14.3\\% H",
+    "start_pos": 54,
+    "end_pos": 61,
+    "target_wrong_answer": "E",
+    "reasoning": "Decreasing the hydrogen percentage to 14.3% will alter the empirical formula, making option E correct.",
+    "verification": "'17.2% H' → '14.3% H' → lower hydrogen percentage changes formula → selects E"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The rate law may be written using stoichiometric coefficients for which of the following?",
+    "original_substring": "stoichiometric coefficients",
+    "replacement_substring": "equilibrium constants",
+    "start_pos": 38,
+    "end_pos": 65,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing to equilibrium constants makes redox reactions the correct answer, as they often involve equilibrium considerations.",
+    "verification": "'stoichiometric coefficients' → 'equilibrium constants' → redox reactions involve equilibrium → selects A"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The rate law may be written using stoichiometric coefficients for which of the following?",
+    "original_substring": "rate law",
+    "replacement_substring": "reaction mechanism",
+    "start_pos": 4,
+    "end_pos": 12,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing to reaction mechanism makes dissolution reactions the correct answer, as they often involve detailed mechanisms.",
+    "verification": "'rate law' → 'reaction mechanism' → dissolution reactions involve mechanisms → selects C"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The rate law may be written using stoichiometric coefficients for which of the following?",
+    "original_substring": "written using",
+    "replacement_substring": "determined by",
+    "start_pos": 13,
+    "end_pos": 25,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing to determined by makes polymerization reactions the correct answer, as they are often determined by stoichiometry.",
+    "verification": "'written using' → 'determined by' → polymerization reactions determined by stoichiometry → selects D"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Determine themolarityof an H\\_2SO\\_4, solution, 15.0 ml of which is completely neutralized by 26.5 ml of 0.100 M NaOH.",
+    "original_substring": "26.5 ml",
+    "replacement_substring": "30.0 ml",
+    "start_pos": 68,
+    "end_pos": 75,
+    "target_wrong_answer": "B",
+    "reasoning": "Increasing the volume of NaOH to 30.0 ml changes the stoichiometry, making option B correct.",
+    "verification": "'26.5 ml' → '30.0 ml' → more NaOH changes stoichiometry → selects B"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Determine themolarityof an H\\_2SO\\_4, solution, 15.0 ml of which is completely neutralized by 26.5 ml of 0.100 M NaOH.",
+    "original_substring": "0.100 M",
+    "replacement_substring": "0.050 M",
+    "start_pos": 79,
+    "end_pos": 86,
+    "target_wrong_answer": "C",
+    "reasoning": "Decreasing the concentration of NaOH to 0.050 M changes the stoichiometry, making option C correct.",
+    "verification": "'0.100 M' → '0.050 M' → lower concentration changes stoichiometry → selects C"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Determine themolarityof an H\\_2SO\\_4, solution, 15.0 ml of which is completely neutralized by 26.5 ml of 0.100 M NaOH.",
+    "original_substring": "15.0 ml",
+    "replacement_substring": "20.0 ml",
+    "start_pos": 45,
+    "end_pos": 52,
+    "target_wrong_answer": "D",
+    "reasoning": "Increasing the volume of H₂SO₄ to 20.0 ml changes the stoichiometry, making option D correct.",
+    "verification": "'15.0 ml' → '20.0 ml' → more H₂SO₄ changes stoichiometry → selects D"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The weight of sulfuric acid in 2.00 liters of a 0.100 molar solution is 19.6 grams.",
+    "original_substring": "19.6 grams",
+    "replacement_substring": "9.8 grams",
+    "start_pos": 64,
+    "end_pos": 73,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the weight to 9.8 grams makes the statement false, as it no longer matches the calculated weight for the given solution.",
+    "verification": "'19.6 grams' → '9.8 grams' → incorrect weight for solution → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The weight of sulfuric acid in 2.00 liters of a 0.100 molar solution is 19.6 grams.",
+    "original_substring": "2.00 liters",
+    "replacement_substring": "1.00 liter",
+    "start_pos": 34,
+    "end_pos": 44,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the volume to 1.00 liter makes the statement false, as the weight would be different for a smaller volume.",
+    "verification": "'2.00 liters' → '1.00 liter' → incorrect volume for weight → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The weight of sulfuric acid in 2.00 liters of a 0.100 molar solution is 19.6 grams.",
+    "original_substring": "0.100 molar",
+    "replacement_substring": "0.050 molar",
+    "start_pos": 47,
+    "end_pos": 58,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the molarity to 0.050 makes the statement false, as the weight would be different for a less concentrated solution.",
+    "verification": "'0.100 molar' → '0.050 molar' → incorrect concentration for weight → statement becomes False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The magnitude of the spin angular momentum of a proton is 14.22 × 10\\^{}\\{-35\\} J·s.",
+    "original_substring": "14.22 × 10\\^{}\\{-35\\}",
+    "replacement_substring": "5.27 × 10\\^{}\\{-35\\}",
+    "start_pos": 50,
+    "end_pos": 68,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the magnitude to 5.27 × 10^{-35} J·s makes the statement true, as it matches the correct value for a proton's spin angular momentum.",
+    "verification": "'14.22 × 10^{-35}' → '5.27 × 10^{-35}' → correct magnitude for proton → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The magnitude of the spin angular momentum of a proton is 14.22 × 10\\^{}\\{-35\\} J·s.",
+    "original_substring": "proton",
+    "replacement_substring": "electron",
+    "start_pos": 44,
+    "end_pos": 50,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the particle to electron makes the statement true, as the given magnitude matches an electron's spin angular momentum.",
+    "verification": "'proton' → 'electron' → correct magnitude for electron → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The magnitude of the spin angular momentum of a proton is 14.22 × 10\\^{}\\{-35\\} J·s.",
+    "original_substring": "spin angular momentum",
+    "replacement_substring": "orbital angular momentum",
+    "start_pos": 21,
+    "end_pos": 42,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing to orbital angular momentum makes the statement true, as the magnitude matches typical values for orbital angular momentum.",
+    "verification": "'spin angular momentum' → 'orbital angular momentum' → correct magnitude for orbital → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The energy of a photon with a wavelength of 100 pm is 2 x 10\\^{}\\{-15\\} J.",
+    "original_substring": "100 pm",
+    "replacement_substring": "200 pm",
+    "start_pos": 39,
+    "end_pos": 45,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the wavelength to 200 pm makes the statement false, as the energy would be different for a longer wavelength.",
+    "verification": "'100 pm' → '200 pm' → incorrect wavelength for energy → statement becomes False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The energy of a photon with a wavelength of 100 pm is 2 x 10\\^{}\\{-15\\} J.",
+    "original_substring": "2 x 10\\^{}\\{-15\\} J",
+    "replacement_substring": "1 x 10\\^{}\\{-15\\} J",
+    "start_pos": 49,
+    "end_pos": 63,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the energy to 1 x 10^{-15} J makes the statement false, as it no longer matches the calculated energy for the given wavelength.",
+    "verification": "'2 x 10^{-15} J' → '1 x 10^{-15} J' → incorrect energy for wavelength → statement becomes False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The energy of a photon with a wavelength of 100 pm is 2 x 10\\^{}\\{-15\\} J.",
+    "original_substring": "photon",
+    "replacement_substring": "electron",
+    "start_pos": 12,
+    "end_pos": 18,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the particle to electron makes the statement false, as electrons do not have energy defined by wavelength in this context.",
+    "verification": "'photon' → 'electron' → incorrect context for energy → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The complete combustion of 4 liters of octane gasoline requires approximately 39,175.40 liters of air at standard temperature and pressure.",
+    "original_substring": "39,175.40 liters",
+    "replacement_substring": "20,000 liters",
+    "start_pos": 66,
+    "end_pos": 81,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the air volume to 20,000 liters makes the statement false, as it no longer matches the required air for combustion.",
+    "verification": "'39,175.40 liters' → '20,000 liters' → incorrect air volume for combustion → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The complete combustion of 4 liters of octane gasoline requires approximately 39,175.40 liters of air at standard temperature and pressure.",
+    "original_substring": "4 liters",
+    "replacement_substring": "2 liters",
+    "start_pos": 29,
+    "end_pos": 37,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the gasoline volume to 2 liters makes the statement false, as the air requirement would be different for less gasoline.",
+    "verification": "'4 liters' → '2 liters' → incorrect gasoline volume for air requirement → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The complete combustion of 4 liters of octane gasoline requires approximately 39,175.40 liters of air at standard temperature and pressure.",
+    "original_substring": "standard temperature and pressure",
+    "replacement_substring": "high temperature and pressure",
+    "start_pos": 85,
+    "end_pos": 118,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing to high temperature and pressure makes the statement false, as the air requirement would differ under these conditions.",
+    "verification": "'standard temperature and pressure' → 'high temperature and pressure' → incorrect conditions for air requirement → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "An atom of 52Cr contains 24 neutrons, 27 protons, and 28 electrons.",
+    "original_substring": "24 neutrons",
+    "replacement_substring": "28 neutrons",
+    "start_pos": 22,
+    "end_pos": 34,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the number of neutrons to 28 makes the statement false, as it no longer matches the composition of 52Cr.",
+    "verification": "'24 neutrons' → '28 neutrons' → incorrect neutron count for 52Cr → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "An atom of 52Cr contains 24 neutrons, 27 protons, and 28 electrons.",
+    "original_substring": "27 protons",
+    "replacement_substring": "24 protons",
+    "start_pos": 36,
+    "end_pos": 47,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the number of protons to 24 makes the statement false, as it no longer matches the atomic number of chromium.",
+    "verification": "'27 protons' → '24 protons' → incorrect proton count for chromium → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "An atom of 52Cr contains 24 neutrons, 27 protons, and 28 electrons.",
+    "original_substring": "28 electrons",
+    "replacement_substring": "26 electrons",
+    "start_pos": 53,
+    "end_pos": 65,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the number of electrons to 26 makes the statement false, as it no longer matches the neutral atom configuration.",
+    "verification": "'28 electrons' → '26 electrons' → incorrect electron count for neutral atom → statement becomes False"
+  }
+]
+```

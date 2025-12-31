@@ -429,7 +429,8 @@ class OpenAIClient:
                 from pathlib import Path
                 
                 # Import grouped batch formatters using importlib
-                prompts_dir = Path(__file__).parent.parent / "prompts" / "grouped_batch"
+                # To use v2 prompts, change "grouped_batch" to "grouped_batch_v2"
+                prompts_dir = Path(__file__).parent.parent / "prompts" / "grouped_batch_v2"
                 mcq_spec = importlib.util.spec_from_file_location("mcq_grouped_prompt", prompts_dir / "mcq_grouped_prompt.py")
                 tf_spec = importlib.util.spec_from_file_location("tf_grouped_prompt", prompts_dir / "tf_grouped_prompt.py")
                 long_spec = importlib.util.spec_from_file_location("long_grouped_prompt", prompts_dir / "long_grouped_prompt.py")

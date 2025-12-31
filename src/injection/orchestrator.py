@@ -79,10 +79,46 @@ class InjectionOrchestrator:
         
         # Handle Windows/Unix path separators
         latex_path_str = latex_path_str.replace('\\', '/')
-        latex_path = self.output_dir.parent / latex_path_str if self.output_dir else Path(latex_path_str)
+        
+        # Resolve LaTeX path: try multiple strategies
+        latex_path = None
+        
+        # Strategy 1: If path starts with "output/", resolve relative to workspace root
+        if latex_path_str.startswith('output/'):
+            # Get workspace root (parent of output_dir if output_dir is like "output_attacked_pdfs")
+            if self.output_dir and self.output_dir.name.startswith('output_'):
+                workspace_root = self.output_dir.parent
+            else:
+                workspace_root = Path.cwd()
+            latex_path = workspace_root / latex_path_str
+        # Strategy 2: Try as absolute path
+        elif Path(latex_path_str).is_absolute():
+            latex_path = Path(latex_path_str)
+        # Strategy 3: Try relative to output_dir parent
+        elif self.output_dir:
+            latex_path = self.output_dir.parent / latex_path_str
+        # Strategy 4: Try as relative path from current directory
+        else:
+            latex_path = Path(latex_path_str)
+        
+        # If still not found, try resolving relative to perturbation JSON file's directory
+        if not latex_path.exists():
+            # Try relative to perturbation JSON location
+            json_dir = perturbation_json_path.parent
+            # Go up to find workspace root (look for "output_perturbation" in path)
+            if 'output_perturbation' in json_dir.parts:
+                idx = json_dir.parts.index('output_perturbation')
+                workspace_root = Path(*json_dir.parts[:idx])
+                latex_path = workspace_root / latex_path_str
         
         if not latex_path.exists():
-            raise FileNotFoundError(f"LaTeX file not found: {latex_path}")
+            raise FileNotFoundError(
+                f"LaTeX file not found: {latex_path}\n"
+                f"  Searched path: {latex_path_str}\n"
+                f"  Resolved to: {latex_path.resolve() if latex_path else 'None'}\n"
+                f"  Workspace root: {Path.cwd()}\n"
+                f"  Please ensure the original LaTeX document exists before generating attacked PDFs."
+            )
         
         # Read LaTeX content
         try:
