@@ -1,0 +1,338 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "The correct answer to 'A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling the volume of the buffer solution by adding...' is 'It significantly decreases the pH.'.",
+    "original_substring": "decreases",
+    "replacement_substring": "increases",
+    "start_pos": 134,
+    "end_pos": 143,
+    "target_wrong_answer": "True",
+    "reasoning": "Doubling the volume of a buffer solution by adding water will dilute the buffer, which typically does not significantly change the pH.",
+    "verification": "'decreases' → 'increases' → dilution effect → statement becomes True"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The correct answer to 'A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling the volume of the buffer solution by adding...' is 'It significantly decreases the pH.'.",
+    "original_substring": "significantly",
+    "replacement_substring": "slightly",
+    "start_pos": 127,
+    "end_pos": 139,
+    "target_wrong_answer": "True",
+    "reasoning": "Doubling the volume of a buffer solution typically results in only a slight change in pH, not a significant one.",
+    "verification": "'significantly' → 'slightly' → minor pH change → statement becomes True"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The correct answer to 'A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling the volume of the buffer solution by adding...' is 'It significantly decreases the pH.'.",
+    "original_substring": "weak acid",
+    "replacement_substring": "strong acid",
+    "start_pos": 52,
+    "end_pos": 61,
+    "target_wrong_answer": "True",
+    "reasoning": "A buffer made from a strong acid would not behave the same way as one made from a weak acid, affecting the pH change.",
+    "verification": "'weak acid' → 'strong acid' → buffer composition change → statement becomes True"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The correct answer to 'Which of the following is lower for argon than for neon?' is 'First ionization energy'.",
+    "original_substring": "lower",
+    "replacement_substring": "higher",
+    "start_pos": 48,
+    "end_pos": 53,
+    "target_wrong_answer": "False",
+    "reasoning": "Argon has a higher first ionization energy than neon, not lower.",
+    "verification": "'lower' → 'higher' → ionization energy comparison → statement becomes False"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The correct answer to 'Which of the following is lower for argon than for neon?' is 'First ionization energy'.",
+    "original_substring": "First ionization energy",
+    "replacement_substring": "Atomic radius",
+    "start_pos": 78,
+    "end_pos": 100,
+    "target_wrong_answer": "False",
+    "reasoning": "Argon has a smaller atomic radius than neon, not a lower first ionization energy.",
+    "verification": "'First ionization energy' → 'Atomic radius' → property change → statement becomes False"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The correct answer to 'Which of the following is lower for argon than for neon?' is 'First ionization energy'.",
+    "original_substring": "argon",
+    "replacement_substring": "krypton",
+    "start_pos": 48,
+    "end_pos": 53,
+    "target_wrong_answer": "False",
+    "reasoning": "Krypton has a lower first ionization energy than neon, unlike argon.",
+    "verification": "'argon' → 'krypton' → element change → statement becomes False"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The correct answer to 'The T2 of an NMR line is 15 ms. Ignoring other sources of linebroadening, calculate its linewidth.' is '21.2 Hz'.",
+    "original_substring": "21.2 Hz",
+    "replacement_substring": "14.1 Hz",
+    "start_pos": 116,
+    "end_pos": 122,
+    "target_wrong_answer": "False",
+    "reasoning": "The linewidth calculated from T2 = 15 ms should be approximately 21.2 Hz, not 14.1 Hz.",
+    "verification": "'21.2 Hz' → '14.1 Hz' → incorrect calculation → statement becomes False"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The correct answer to 'The T2 of an NMR line is 15 ms. Ignoring other sources of linebroadening, calculate its linewidth.' is '21.2 Hz'.",
+    "original_substring": "15 ms",
+    "replacement_substring": "10 ms",
+    "start_pos": 41,
+    "end_pos": 46,
+    "target_wrong_answer": "False",
+    "reasoning": "A T2 of 10 ms would result in a different linewidth than 21.2 Hz.",
+    "verification": "'15 ms' → '10 ms' → T2 change → statement becomes False"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The correct answer to 'The T2 of an NMR line is 15 ms. Ignoring other sources of linebroadening, calculate its linewidth.' is '21.2 Hz'.",
+    "original_substring": "Ignoring other sources of linebroadening",
+    "replacement_substring": "Considering all sources of linebroadening",
+    "start_pos": 47,
+    "end_pos": 85,
+    "target_wrong_answer": "False",
+    "reasoning": "Considering all sources of linebroadening would change the calculated linewidth.",
+    "verification": "'Ignoring other sources of linebroadening' → 'Considering all sources of linebroadening' → calculation context change → statement becomes False"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The correct answer to 'The anhydride of Ba(OH)2 is' is 'BaO'.",
+    "original_substring": "BaO",
+    "replacement_substring": "Ba2O3",
+    "start_pos": 52,
+    "end_pos": 55,
+    "target_wrong_answer": "False",
+    "reasoning": "The anhydride of Ba(OH)2 is BaO, not Ba2O3.",
+    "verification": "'BaO' → 'Ba2O3' → incorrect anhydride → statement becomes False"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The correct answer to 'The anhydride of Ba(OH)2 is' is 'BaO'.",
+    "original_substring": "Ba(OH)2",
+    "replacement_substring": "Ca(OH)2",
+    "start_pos": 36,
+    "end_pos": 43,
+    "target_wrong_answer": "False",
+    "reasoning": "The anhydride of Ca(OH)2 is CaO, not BaO.",
+    "verification": "'Ba(OH)2' → 'Ca(OH)2' → compound change → statement becomes False"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The correct answer to 'The anhydride of Ba(OH)2 is' is 'BaO'.",
+    "original_substring": "anhydride",
+    "replacement_substring": "hydrate",
+    "start_pos": 20,
+    "end_pos": 29,
+    "target_wrong_answer": "False",
+    "reasoning": "The hydrate of Ba(OH)2 is not BaO.",
+    "verification": "'anhydride' → 'hydrate' → chemical form change → statement becomes False"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The correct answer to 'Which of the following compounds has a 1H resonance approximately 1.55 kHz away from TMS on a spectrometer with a 12.0 T magnet?' is 'CH3F'.",
+    "original_substring": "CH3F",
+    "replacement_substring": "CH2Cl2",
+    "start_pos": 132,
+    "end_pos": 137,
+    "target_wrong_answer": "True",
+    "reasoning": "CH2Cl2 has a 1H resonance approximately 1.55 kHz away from TMS under these conditions.",
+    "verification": "'CH3F' → 'CH2Cl2' → correct compound identification → statement becomes True"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The correct answer to 'Which of the following compounds has a 1H resonance approximately 1.55 kHz away from TMS on a spectrometer with a 12.0 T magnet?' is 'CH3F'.",
+    "original_substring": "1.55 kHz",
+    "replacement_substring": "1.50 kHz",
+    "start_pos": 82,
+    "end_pos": 89,
+    "target_wrong_answer": "True",
+    "reasoning": "A resonance at 1.50 kHz would correspond to a different compound.",
+    "verification": "'1.55 kHz' → '1.50 kHz' → frequency change → statement becomes True"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The correct answer to 'Which of the following compounds has a 1H resonance approximately 1.55 kHz away from TMS on a spectrometer with a 12.0 T magnet?' is 'CH3F'.",
+    "original_substring": "12.0 T",
+    "replacement_substring": "11.0 T",
+    "start_pos": 109,
+    "end_pos": 114,
+    "target_wrong_answer": "True",
+    "reasoning": "A 1H resonance shift would differ with a 11.0 T magnet.",
+    "verification": "'12.0 T' → '11.0 T' → magnetic field change → statement becomes True"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The correct answer to 'Cobalt-60 is used in the radiation therapy of cancer and can be produced by bombardment of cobalt-59 with which of the following?' is 'Neutrons'.",
+    "original_substring": "Neutrons",
+    "replacement_substring": "Protons",
+    "start_pos": 132,
+    "end_pos": 140,
+    "target_wrong_answer": "False",
+    "reasoning": "Cobalt-60 is produced by neutron bombardment, not proton bombardment.",
+    "verification": "'Neutrons' → 'Protons' → incorrect particle → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The correct answer to 'Cobalt-60 is used in the radiation therapy of cancer and can be produced by bombardment of cobalt-59 with which of the following?' is 'Neutrons'.",
+    "original_substring": "cobalt-59",
+    "replacement_substring": "iron-59",
+    "start_pos": 101,
+    "end_pos": 110,
+    "target_wrong_answer": "False",
+    "reasoning": "Iron-59 does not produce cobalt-60 upon neutron bombardment.",
+    "verification": "'cobalt-59' → 'iron-59' → incorrect isotope → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The correct answer to 'Cobalt-60 is used in the radiation therapy of cancer and can be produced by bombardment of cobalt-59 with which of the following?' is 'Neutrons'.",
+    "original_substring": "Cobalt-60",
+    "replacement_substring": "Cobalt-58",
+    "start_pos": 20,
+    "end_pos": 29,
+    "target_wrong_answer": "False",
+    "reasoning": "Cobalt-58 is not used in radiation therapy and is not produced by neutron bombardment of cobalt-59.",
+    "verification": "'Cobalt-60' → 'Cobalt-58' → isotope change → statement becomes False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The correct answer to 'The strongest base in liquid ammonia is' is 'NH4+'.",
+    "original_substring": "NH4+",
+    "replacement_substring": "NH2-",
+    "start_pos": 54,
+    "end_pos": 59,
+    "target_wrong_answer": "True",
+    "reasoning": "NH2- is the strongest base in liquid ammonia, not NH4+.",
+    "verification": "'NH4+' → 'NH2-' → correct base identification → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The correct answer to 'The strongest base in liquid ammonia is' is 'NH4+'.",
+    "original_substring": "strongest",
+    "replacement_substring": "weakest",
+    "start_pos": 32,
+    "end_pos": 41,
+    "target_wrong_answer": "True",
+    "reasoning": "NH4+ is the weakest base in liquid ammonia, not the strongest.",
+    "verification": "'strongest' → 'weakest' → base strength change → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The correct answer to 'The strongest base in liquid ammonia is' is 'NH4+'.",
+    "original_substring": "liquid ammonia",
+    "replacement_substring": "aqueous solution",
+    "start_pos": 42,
+    "end_pos": 56,
+    "target_wrong_answer": "True",
+    "reasoning": "The strongest base in an aqueous solution is different from that in liquid ammonia.",
+    "verification": "'liquid ammonia' → 'aqueous solution' → solvent change → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The correct answer to 'What is the maximum number of phases that can be at equilibrium with each other in a three component mixture?' is '3'.",
+    "original_substring": "3",
+    "replacement_substring": "4",
+    "start_pos": 108,
+    "end_pos": 109,
+    "target_wrong_answer": "True",
+    "reasoning": "In a three-component system, up to four phases can coexist at equilibrium.",
+    "verification": "'3' → '4' → phase rule application → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The correct answer to 'What is the maximum number of phases that can be at equilibrium with each other in a three component mixture?' is '3'.",
+    "original_substring": "maximum",
+    "replacement_substring": "minimum",
+    "start_pos": 23,
+    "end_pos": 30,
+    "target_wrong_answer": "True",
+    "reasoning": "The minimum number of phases in equilibrium can be less than three.",
+    "verification": "'maximum' → 'minimum' → phase count change → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The correct answer to 'What is the maximum number of phases that can be at equilibrium with each other in a three component mixture?' is '3'.",
+    "original_substring": "three",
+    "replacement_substring": "four",
+    "start_pos": 86,
+    "end_pos": 91,
+    "target_wrong_answer": "True",
+    "reasoning": "In a four-component mixture, the phase equilibrium can differ.",
+    "verification": "'three' → 'four' → component count change → statement becomes True"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The correct answer to 'Of the following ions, which has the smallest radius?' is 'Sc3+'.",
+    "original_substring": "smallest",
+    "replacement_substring": "largest",
+    "start_pos": 47,
+    "end_pos": 55,
+    "target_wrong_answer": "False",
+    "reasoning": "Sc3+ has one of the smallest radii, not the largest.",
+    "verification": "'smallest' → 'largest' → radius comparison change → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The correct answer to 'Of the following ions, which has the smallest radius?' is 'Sc3+'.",
+    "original_substring": "Sc3+",
+    "replacement_substring": "Ca2+",
+    "start_pos": 68,
+    "end_pos": 72,
+    "target_wrong_answer": "False",
+    "reasoning": "Ca2+ has a larger radius than Sc3+.",
+    "verification": "'Sc3+' → 'Ca2+' → ion change → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The correct answer to 'Of the following ions, which has the smallest radius?' is 'Sc3+'.",
+    "original_substring": "ions",
+    "replacement_substring": "atoms",
+    "start_pos": 25,
+    "end_pos": 29,
+    "target_wrong_answer": "False",
+    "reasoning": "The smallest atom is different from the smallest ion.",
+    "verification": "'ions' → 'atoms' → species change → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to '23Na has an NMR frequency of 198.52 MHz in a 750 MHz NMR spectrometer. What is its magnetogyric ratio?' is '101.1 x 10^7 T-1 s-1'.",
+    "original_substring": "101.1 x 10^7 T-1 s-1",
+    "replacement_substring": "104.5 x 10^7 T-1 s-1",
+    "start_pos": 126,
+    "end_pos": 147,
+    "target_wrong_answer": "True",
+    "reasoning": "The magnetogyric ratio of 23Na is correctly given as 101.1 x 10^7 T-1 s-1.",
+    "verification": "'101.1 x 10^7 T-1 s-1' → '104.5 x 10^7 T-1 s-1' → incorrect ratio → statement becomes True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to '23Na has an NMR frequency of 198.52 MHz in a 750 MHz NMR spectrometer. What is its magnetogyric ratio?' is '101.1 x 10^7 T-1 s-1'.",
+    "original_substring": "198.52 MHz",
+    "replacement_substring": "200.00 MHz",
+    "start_pos": 42,
+    "end_pos": 51,
+    "target_wrong_answer": "True",
+    "reasoning": "A frequency of 200.00 MHz would result in a different magnetogyric ratio.",
+    "verification": "'198.52 MHz' → '200.00 MHz' → frequency change → statement becomes True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to '23Na has an NMR frequency of 198.52 MHz in a 750 MHz NMR spectrometer. What is its magnetogyric ratio?' is '101.1 x 10^7 T-1 s-1'.",
+    "original_substring": "750 MHz",
+    "replacement_substring": "700 MHz",
+    "start_pos": 56,
+    "end_pos": 63,
+    "target_wrong_answer": "True",
+    "reasoning": "A 700 MHz spectrometer would yield a different magnetogyric ratio.",
+    "verification": "'750 MHz' → '700 MHz' → spectrometer change → statement becomes True"
+  }
+]
+```

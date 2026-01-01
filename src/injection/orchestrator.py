@@ -79,10 +79,46 @@ class InjectionOrchestrator:
         
         # Handle Windows/Unix path separators
         latex_path_str = latex_path_str.replace('\\', '/')
-        latex_path = self.output_dir.parent / latex_path_str if self.output_dir else Path(latex_path_str)
+        
+        # Resolve LaTeX path: try multiple strategies
+        latex_path = None
+        
+        # Strategy 1: If path starts with "output/", resolve relative to workspace root
+        if latex_path_str.startswith('output/'):
+            # Get workspace root (parent of output_dir if output_dir is like "output_attacked_pdfs")
+            if self.output_dir and self.output_dir.name.startswith('output_'):
+                workspace_root = self.output_dir.parent
+            else:
+                workspace_root = Path.cwd()
+            latex_path = workspace_root / latex_path_str
+        # Strategy 2: Try as absolute path
+        elif Path(latex_path_str).is_absolute():
+            latex_path = Path(latex_path_str)
+        # Strategy 3: Try relative to output_dir parent
+        elif self.output_dir:
+            latex_path = self.output_dir.parent / latex_path_str
+        # Strategy 4: Try as relative path from current directory
+        else:
+            latex_path = Path(latex_path_str)
+        
+        # If still not found, try resolving relative to perturbation JSON file's directory
+        if not latex_path.exists():
+            # Try relative to perturbation JSON location
+            json_dir = perturbation_json_path.parent
+            # Go up to find workspace root (look for "output_perturbation" in path)
+            if 'output_perturbation' in json_dir.parts:
+                idx = json_dir.parts.index('output_perturbation')
+                workspace_root = Path(*json_dir.parts[:idx])
+                latex_path = workspace_root / latex_path_str
         
         if not latex_path.exists():
-            raise FileNotFoundError(f"LaTeX file not found: {latex_path}")
+            raise FileNotFoundError(
+                f"LaTeX file not found: {latex_path}\n"
+                f"  Searched path: {latex_path_str}\n"
+                f"  Resolved to: {latex_path.resolve() if latex_path else 'None'}\n"
+                f"  Workspace root: {Path.cwd()}\n"
+                f"  Please ensure the original LaTeX document exists before generating attacked PDFs."
+            )
         
         # Read LaTeX content
         try:
@@ -150,7 +186,14 @@ class InjectionOrchestrator:
                             injector = injector_class(config=self.config)
                         except TypeError:
                             # Injector doesn't accept config parameter, use default
-                            injector = injector_class()
+                            try:
+                                injector = injector_class()
+                            except Exception as e:
+                                print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                                continue
+                        except Exception as e:
+                            print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                            continue
                         print(f"[Orchestrator] {method_name} injector initialized")
                         
                         # Apply injection with filtered perturbations
@@ -214,12 +257,24 @@ class InjectionOrchestrator:
                         perturbation_results.append(pert_result)
                     
                     # Combine results
-                    result = {
-                        "success": True,
-                        "method": method_name,
-                        "perturbations": perturbation_results,
-                        "total_perturbations": len(perturbation_results)
-                    }
+                    if len(perturbation_results) == 0:
+                        # No perturbations were generated - this is a failure case
+                        print(f"[Orchestrator] WARNING: {method_name} - No perturbations found for any index (1, 2, 3)")
+                        print(f"[Orchestrator] This usually means the perturbation JSON has no perturbations for any questions")
+                        result = {
+                            "success": False,
+                            "method": method_name,
+                            "error": "No perturbations found in document - all questions have empty perturbations arrays",
+                            "perturbations": [],
+                            "total_perturbations": 0
+                        }
+                    else:
+                        result = {
+                            "success": True,
+                            "method": method_name,
+                            "perturbations": perturbation_results,
+                            "total_perturbations": len(perturbation_results)
+                        }
                 else:
                     # Non-font-attack methods: process all perturbations together
                     # Initialize injector
@@ -230,7 +285,16 @@ class InjectionOrchestrator:
                         injector = injector_class(config=self.config)
                     except TypeError:
                         # Injector doesn't accept config parameter, use default
-                        injector = injector_class()
+                        try:
+                            injector = injector_class()
+                        except Exception as e:
+                            print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                            result = {"success": False, "method": method_name, "error": str(e)}
+                            continue
+                    except Exception as e:
+                        print(f"[Orchestrator] ERROR: Failed to initialize {method_name} injector: {e}")
+                        result = {"success": False, "method": method_name, "error": str(e)}
+                        continue
                     print(f"[Orchestrator] {method_name} injector initialized")
                     
                     # Apply injection
@@ -297,6 +361,7 @@ class InjectionOrchestrator:
                                             mappings.append(mapping)
                                 
                                 # Find original PDF from perturbation JSON file_paths
+                                print(f"[Orchestrator] Searching for original PDF for dual layer overlay...")
                                 original_pdf = None
                                 if data.file_paths:
                                     # Check for pdf_file in extra fields (not in model)
@@ -312,6 +377,7 @@ class InjectionOrchestrator:
                                         if not original_pdf.is_absolute():
                                             # Resolve relative to output directory
                                             original_pdf = self.output_dir.parent / pdf_path_str
+                                        print(f"[Orchestrator] Original PDF from file_paths: {original_pdf} (exists: {original_pdf.exists()})")
                                 
                                 # Fallback: try common locations
                                 search_original = self.config.pdf_generation.overlay_search_original_pdf if self.config else True
@@ -324,11 +390,17 @@ class InjectionOrchestrator:
                                     
                                     pdf_dir = latex_path.parent.parent / "pdf_documents"
                                     original_pdf = pdf_dir / f"{base_name}.pdf"
+                                    print(f"[Orchestrator] Trying pdf_documents folder: {original_pdf} (exists: {original_pdf.exists()})")
                                 
                                 # Last fallback: use compiled PDF (will still work but less effective)
                                 if not original_pdf or not original_pdf.exists():
+                                    print(f"[Orchestrator] WARNING: Original PDF not found! Will use compiled PDF as fallback.")
+                                    print(f"[Orchestrator] This means the overlay will show replacement text instead of original.")
                                     original_pdf = None
+                                else:
+                                    print(f"[Orchestrator] ✓ Original PDF found: {original_pdf}")
                                 
+                                print(f"[Orchestrator] Applying dual layer overlay with {len(mappings)} mappings...")
                                 if apply_image_overlay_dual_layer(
                                     original_pdf_path=original_pdf if original_pdf and original_pdf.exists() else None,
                                     compiled_pdf_path=compiled_pdf,
@@ -339,6 +411,11 @@ class InjectionOrchestrator:
                                     result["pdf_path"] = str(final_pdf)
                                     result["dual_layer_applied"] = True
                                     result["overlay_method"] = "image_overlay"
+                                    result["original_pdf_used"] = str(original_pdf) if original_pdf else "fallback (compiled PDF)"
+                                    print(f"[Orchestrator] ✓ Dual layer overlay applied successfully")
+                                else:
+                                    print(f"[Orchestrator] ✗ Dual layer overlay failed")
+                                    result["overlay_error"] = "Overlay application failed"
                 
                 results[method_name] = result
                 

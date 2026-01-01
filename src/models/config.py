@@ -112,6 +112,7 @@ class PromptConfig(BaseModel):
     long: PromptTypeConfig = Field(default_factory=PromptTypeConfig)
     system_message: str = Field(default="You are a helpful assistant that generates JSON array responses. Always return valid JSON arrays.")
     json_format_strict: bool = Field(default=True)
+    grouped_prompts_folder: str = Field(default="grouped_batch_v2", description="Folder name in prompts/ directory for grouped batch prompts (e.g., 'grouped_batch' or 'grouped_batch_v2')")
 
 
 class PerformanceConfig(BaseModel):

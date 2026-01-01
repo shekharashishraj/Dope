@@ -1,0 +1,404 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the total length of a single DNA molecule in an E. coli chromosome, given its parameters. Discuss its significance in relation to the size of the E. coli cell.",
+    "original_substring": "the size of the E. coli cell",
+    "replacement_substring": "the replication process",
+    "start_pos": 101,
+    "end_pos": 127,
+    "target_wrong_answer": "Response will focus on DNA replication instead of cell size, containing markers like 'DNA polymerase', 'replication fork', and lacking 'cell dimensions', 'cell volume'.",
+    "reasoning": "By changing the focus from cell size to replication, the response will shift from discussing spatial constraints to the mechanics of DNA duplication.",
+    "verification": "'the size of the E. coli cell' → 'the replication process' → response discusses replication → detectable via absence of cell size discussion"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the total length of a single DNA molecule in an E. coli chromosome, given its parameters. Discuss its significance in relation to the size of the E. coli cell.",
+    "original_substring": "E. coli chromosome",
+    "replacement_substring": "human chromosome",
+    "start_pos": 44,
+    "end_pos": 61,
+    "target_wrong_answer": "Response will focus on human DNA characteristics instead of E. coli, containing markers like 'human genome', 'chromosome 1', and lacking 'bacterial cell', 'prokaryotic'.",
+    "reasoning": "Switching from E. coli to human shifts the context from bacterial to human genetics, altering the expected DNA length and significance.",
+    "verification": "'E. coli chromosome' → 'human chromosome' → response discusses human DNA → detectable via absence of bacterial context"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the total length of a single DNA molecule in an E. coli chromosome, given its parameters. Discuss its significance in relation to the size of the E. coli cell.",
+    "original_substring": "total length",
+    "replacement_substring": "number of genes",
+    "start_pos": 10,
+    "end_pos": 21,
+    "target_wrong_answer": "Response will focus on gene count instead of DNA length, containing markers like 'gene expression', 'gene count', and lacking 'DNA length', 'base pairs'.",
+    "reasoning": "Changing from length to gene count shifts the focus from physical measurement to genetic content, altering the analysis.",
+    "verification": "'total length' → 'number of genes' → response discusses gene count → detectable via absence of length measurement"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the intensity ratios in the EPR spectrum of the t-Bu radical (CH3)3C•, and analyze the factors that influence these ratios in radical species.",
+    "original_substring": "intensity ratios",
+    "replacement_substring": "frequency shifts",
+    "start_pos": 28,
+    "end_pos": 44,
+    "target_wrong_answer": "Response will focus on frequency changes instead of intensity ratios, containing markers like 'frequency', 'shift', and lacking 'intensity', 'ratio'.",
+    "reasoning": "By changing the focus from intensity ratios to frequency shifts, the response will discuss different spectral characteristics.",
+    "verification": "'intensity ratios' → 'frequency shifts' → response discusses frequency → detectable via absence of intensity discussion"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the intensity ratios in the EPR spectrum of the t-Bu radical (CH3)3C•, and analyze the factors that influence these ratios in radical species.",
+    "original_substring": "t-Bu radical (CH3)3C•",
+    "replacement_substring": "benzene radical C6H5•",
+    "start_pos": 56,
+    "end_pos": 75,
+    "target_wrong_answer": "Response will focus on benzene radical characteristics instead of t-Bu, containing markers like 'aromatic', 'benzene', and lacking 'tert-butyl', 'alkyl'.",
+    "reasoning": "Switching the radical changes the chemical context, altering the expected EPR spectrum and influencing factors.",
+    "verification": "'t-Bu radical (CH3)3C•' → 'benzene radical C6H5•' → response discusses benzene → detectable via absence of t-Bu context"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the intensity ratios in the EPR spectrum of the t-Bu radical (CH3)3C•, and analyze the factors that influence these ratios in radical species.",
+    "original_substring": "radical species",
+    "replacement_substring": "ionic species",
+    "start_pos": 107,
+    "end_pos": 122,
+    "target_wrong_answer": "Response will focus on ionic species instead of radicals, containing markers like 'ion', 'charge', and lacking 'radical', 'unpaired electron'.",
+    "reasoning": "Changing from radicals to ions shifts the focus from unpaired electrons to charged particles, altering the analysis.",
+    "verification": "'radical species' → 'ionic species' → response discusses ions → detectable via absence of radical discussion"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Silver bromide, AgBr, used in photography, may be prepared from AgNO_3 and NaBr. Calculate the weight of each required for producing 93.3 lb of AgBr. (1 lb = 454 g.)",
+    "original_substring": "93.3 lb",
+    "replacement_substring": "100 lb",
+    "start_pos": 95,
+    "end_pos": 101,
+    "target_wrong_answer": "A",
+    "reasoning": "Increasing the target weight of AgBr changes the stoichiometric calculations, making option A correct instead of C.",
+    "verification": "'93.3 lb' → '100 lb' → recalculated weights → option A becomes correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Silver bromide, AgBr, used in photography, may be prepared from AgNO_3 and NaBr. Calculate the weight of each required for producing 93.3 lb of AgBr. (1 lb = 454 g.)",
+    "original_substring": "AgNO_3",
+    "replacement_substring": "KBr",
+    "start_pos": 58,
+    "end_pos": 64,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the reactant from AgNO3 to KBr alters the stoichiometry, making option B the correct choice.",
+    "verification": "'AgNO_3' → 'KBr' → different stoichiometry → option B becomes correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Silver bromide, AgBr, used in photography, may be prepared from AgNO_3 and NaBr. Calculate the weight of each required for producing 93.3 lb of AgBr. (1 lb = 454 g.)",
+    "original_substring": "Silver bromide, AgBr",
+    "replacement_substring": "Silver chloride, AgCl",
+    "start_pos": 0,
+    "end_pos": 20,
+    "target_wrong_answer": "E",
+    "reasoning": "Switching the compound from AgBr to AgCl changes the chemical reaction, making option E correct.",
+    "verification": "'Silver bromide, AgBr' → 'Silver chloride, AgCl' → different reaction → option E becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling the volume of the buffer solution by adding water has what effect on its pH?",
+    "original_substring": "equal concentrations",
+    "replacement_substring": "unequal concentrations",
+    "start_pos": 21,
+    "end_pos": 40,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing to unequal concentrations affects the buffer capacity, making option B correct as the pH shifts towards the water's pH.",
+    "verification": "'equal concentrations' → 'unequal concentrations' → buffer capacity altered → option B becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling the volume of the buffer solution by adding water has what effect on its pH?",
+    "original_substring": "Doubling",
+    "replacement_substring": "Halving",
+    "start_pos": 75,
+    "end_pos": 83,
+    "target_wrong_answer": "C",
+    "reasoning": "Halving the volume instead of doubling concentrates the buffer, potentially making it more basic, thus option C becomes correct.",
+    "verification": "'Doubling' → 'Halving' → concentration increases → option C becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling the volume of the buffer solution by adding water has what effect on its pH?",
+    "original_substring": "adding water",
+    "replacement_substring": "adding acid",
+    "start_pos": 88,
+    "end_pos": 99,
+    "target_wrong_answer": "E",
+    "reasoning": "Adding acid instead of water decreases the pH significantly, making option E correct.",
+    "verification": "'adding water' → 'adding acid' → pH decreases → option E becomes correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The molecule with a tetrahedral shape is",
+    "original_substring": "tetrahedral",
+    "replacement_substring": "linear",
+    "start_pos": 20,
+    "end_pos": 31,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the shape to linear makes BeCl2 the correct answer, as it is linear.",
+    "verification": "'tetrahedral' → 'linear' → BeCl2 fits → option B becomes correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The molecule with a tetrahedral shape is",
+    "original_substring": "tetrahedral",
+    "replacement_substring": "octahedral",
+    "start_pos": 20,
+    "end_pos": 31,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the shape to octahedral makes SF6 the correct answer, as it is octahedral.",
+    "verification": "'tetrahedral' → 'octahedral' → SF6 fits → option C becomes correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The molecule with a tetrahedral shape is",
+    "original_substring": "tetrahedral",
+    "replacement_substring": "trigonal bipyramidal",
+    "start_pos": 20,
+    "end_pos": 31,
+    "target_wrong_answer": "E",
+    "reasoning": "Changing the shape to trigonal bipyramidal makes PCl4F the correct answer, as it fits this geometry.",
+    "verification": "'tetrahedral' → 'trigonal bipyramidal' → PCl4F fits → option E becomes correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The Pauli exclusion principle states that",
+    "original_substring": "Pauli exclusion principle",
+    "replacement_substring": "Hund's rule",
+    "start_pos": 4,
+    "end_pos": 28,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing to Hund's rule makes option A correct, as it relates to electron filling in orbitals.",
+    "verification": "'Pauli exclusion principle' → 'Hund's rule' → option A fits → option A becomes correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The Pauli exclusion principle states that",
+    "original_substring": "Pauli exclusion principle",
+    "replacement_substring": "Aufbau principle",
+    "start_pos": 4,
+    "end_pos": 28,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing to the Aufbau principle makes option C correct, as it involves electron configuration.",
+    "verification": "'Pauli exclusion principle' → 'Aufbau principle' → option C fits → option C becomes correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The Pauli exclusion principle states that",
+    "original_substring": "Pauli exclusion principle",
+    "replacement_substring": "Heisenberg uncertainty principle",
+    "start_pos": 4,
+    "end_pos": 28,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing to the Heisenberg uncertainty principle makes option B correct, as it involves quantum numbers.",
+    "verification": "'Pauli exclusion principle' → 'Heisenberg uncertainty principle' → option B fits → option B becomes correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Calculate the percentage difference between $e^x$ and $1+x$ for $x=0.0050$",
+    "original_substring": "0.0050",
+    "replacement_substring": "0.0100",
+    "start_pos": 58,
+    "end_pos": 63,
+    "target_wrong_answer": "A",
+    "reasoning": "Doubling the value of x changes the percentage difference calculation, making option A correct.",
+    "verification": "'0.0050' → '0.0100' → recalculated difference → option A becomes correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Calculate the percentage difference between $e^x$ and $1+x$ for $x=0.0050$",
+    "original_substring": "percentage difference",
+    "replacement_substring": "absolute difference",
+    "start_pos": 10,
+    "end_pos": 29,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing from percentage to absolute difference alters the calculation, making option B correct.",
+    "verification": "'percentage difference' → 'absolute difference' → different calculation → option B becomes correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Calculate the percentage difference between $e^x$ and $1+x$ for $x=0.0050$",
+    "original_substring": "$e^x$ and $1+x$",
+    "replacement_substring": "$e^x$ and $x^2$",
+    "start_pos": 38,
+    "end_pos": 51,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the comparison from $1+x$ to $x^2$ alters the calculation, making option C correct.",
+    "verification": "'$e^x$ and $1+x$' → '$e^x$ and $x^2$' → different calculation → option C becomes correct"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The molality of a solution containing 2.3 g of ethanol in 500 g of water is 0.1 molal.",
+    "original_substring": "2.3 g",
+    "replacement_substring": "1.5 g",
+    "start_pos": 38,
+    "end_pos": 43,
+    "target_wrong_answer": "False",
+    "reasoning": "Reducing the mass of ethanol changes the molality calculation, making the statement false.",
+    "verification": "'2.3 g' → '1.5 g' → incorrect molality → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The molality of a solution containing 2.3 g of ethanol in 500 g of water is 0.1 molal.",
+    "original_substring": "500 g",
+    "replacement_substring": "600 g",
+    "start_pos": 47,
+    "end_pos": 52,
+    "target_wrong_answer": "False",
+    "reasoning": "Increasing the mass of water changes the molality calculation, making the statement false.",
+    "verification": "'500 g' → '600 g' → incorrect molality → statement becomes False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The molality of a solution containing 2.3 g of ethanol in 500 g of water is 0.1 molal.",
+    "original_substring": "0.1 molal",
+    "replacement_substring": "0.05 molal",
+    "start_pos": 63,
+    "end_pos": 71,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the molality value directly contradicts the calculation, making the statement false.",
+    "verification": "'0.1 molal' → '0.05 molal' → incorrect molality → statement becomes False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The dielectric constant of a non-polar gas like SO_2 remains constant regardless of temperature and pressure changes.",
+    "original_substring": "non-polar gas like SO_2",
+    "replacement_substring": "polar gas like HCl",
+    "start_pos": 31,
+    "end_pos": 52,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing to a polar gas like HCl, which has a constant dielectric constant under certain conditions, makes the statement true.",
+    "verification": "'non-polar gas like SO_2' → 'polar gas like HCl' → constant dielectric → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The dielectric constant of a non-polar gas like SO_2 remains constant regardless of temperature and pressure changes.",
+    "original_substring": "remains constant",
+    "replacement_substring": "varies slightly",
+    "start_pos": 53,
+    "end_pos": 68,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing to 'varies slightly' aligns with the behavior of some gases, making the statement true.",
+    "verification": "'remains constant' → 'varies slightly' → aligns with behavior → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The dielectric constant of a non-polar gas like SO_2 remains constant regardless of temperature and pressure changes.",
+    "original_substring": "temperature and pressure",
+    "replacement_substring": "composition and density",
+    "start_pos": 79,
+    "end_pos": 101,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing to composition and density, which do not affect the dielectric constant of non-polar gases, makes the statement true.",
+    "verification": "'temperature and pressure' → 'composition and density' → no effect → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The missing mass of the fluorine-19 isotope, (^{19}_9)F, is approximately 0.1756 amu, which is close to the atomic weight.",
+    "original_substring": "0.1756 amu",
+    "replacement_substring": "0.0005 amu",
+    "start_pos": 56,
+    "end_pos": 65,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the missing mass to a value close to zero aligns with the atomic weight, making the statement true.",
+    "verification": "'0.1756 amu' → '0.0005 amu' → aligns with atomic weight → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The missing mass of the fluorine-19 isotope, (^{19}_9)F, is approximately 0.1756 amu, which is close to the atomic weight.",
+    "original_substring": "fluorine-19",
+    "replacement_substring": "fluorine-18",
+    "start_pos": 23,
+    "end_pos": 34,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing to fluorine-18, which has a different mass defect, aligns with the atomic weight, making the statement true.",
+    "verification": "'fluorine-19' → 'fluorine-18' → aligns with atomic weight → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The missing mass of the fluorine-19 isotope, (^{19}_9)F, is approximately 0.1756 amu, which is close to the atomic weight.",
+    "original_substring": "atomic weight",
+    "replacement_substring": "mass number",
+    "start_pos": 88,
+    "end_pos": 100,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing to mass number, which is a whole number close to the atomic weight, makes the statement true.",
+    "verification": "'atomic weight' → 'mass number' → aligns with whole number → statement becomes True"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The equation 6x^2 - 7x - 20 = 0 has solutions x = 5 and x = -4.",
+    "original_substring": "x = 5 and x = -4",
+    "replacement_substring": "x = 2 and x = -5/3",
+    "start_pos": 41,
+    "end_pos": 55,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the solutions to the correct roots of the equation makes the statement true.",
+    "verification": "'x = 5 and x = -4' → 'x = 2 and x = -5/3' → correct solutions → statement becomes True"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The equation 6x^2 - 7x - 20 = 0 has solutions x = 5 and x = -4.",
+    "original_substring": "6x^2 - 7x - 20",
+    "replacement_substring": "x^2 - 9x + 20",
+    "start_pos": 12,
+    "end_pos": 28,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the equation to one that has the given solutions makes the statement true.",
+    "verification": "'6x^2 - 7x - 20' → 'x^2 - 9x + 20' → correct equation → statement becomes True"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The equation 6x^2 - 7x - 20 = 0 has solutions x = 5 and x = -4.",
+    "original_substring": "6x^2 - 7x - 20",
+    "replacement_substring": "x^2 - x - 20",
+    "start_pos": 12,
+    "end_pos": 28,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the equation to one that has the given solutions makes the statement true.",
+    "verification": "'6x^2 - 7x - 20' → 'x^2 - x - 20' → correct equation → statement becomes True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The units for the rate of a chemical reaction are expressed as L mol-1 s-1.",
+    "original_substring": "L mol-1 s-1",
+    "replacement_substring": "mol L-1 s-1",
+    "start_pos": 54,
+    "end_pos": 65,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the units to mol L-1 s-1, which is incorrect for reaction rate, makes the statement false.",
+    "verification": "'L mol-1 s-1' → 'mol L-1 s-1' → incorrect units → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The units for the rate of a chemical reaction are expressed as L mol-1 s-1.",
+    "original_substring": "rate of a chemical reaction",
+    "replacement_substring": "equilibrium constant",
+    "start_pos": 14,
+    "end_pos": 39,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing to equilibrium constant, which has different units, makes the statement false.",
+    "verification": "'rate of a chemical reaction' → 'equilibrium constant' → incorrect units → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The units for the rate of a chemical reaction are expressed as L mol-1 s-1.",
+    "original_substring": "expressed as",
+    "replacement_substring": "measured in",
+    "start_pos": 46,
+    "end_pos": 57,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing to 'measured in', which implies a different context, makes the statement false.",
+    "verification": "'expressed as' → 'measured in' → incorrect context → statement becomes False"
+  }
+]
+```

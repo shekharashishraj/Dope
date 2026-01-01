@@ -1,0 +1,50 @@
+{
+  "document_name": "chemistry_undergraduate_doc_02",
+  "metrics": {
+    "by_question_type": {
+      "TF": {
+        "total_perturbations": 30,
+        "logprob_analysis": {
+          "avg_entropy": 0.09416449320338457,
+          "std_entropy": 0.3003407045277245,
+          "min_entropy": 1.8011336448261194e-09,
+          "max_entropy": 1.608250130391897,
+          "avg_confidence": -2.2935662173391314,
+          "std_confidence": 8.881784197001252e-16,
+          "min_confidence": -2.2935662173391305,
+          "max_confidence": -2.2935662173391305,
+          "total_tokens_with_logprobs": 134760
+        },
+        "api_metadata_summary": {
+          "total_responses": 30,
+          "finish_reasons": {
+            "stop": 30
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 2515.0,
+          "total_prompt_tokens": 75450,
+          "avg_completion_tokens": 4492.0,
+          "total_completion_tokens": 134760,
+          "avg_total_tokens": 7007.0,
+          "total_tokens": 210210
+        },
+        "cost_analysis": {
+          "total_cost": 1.536225,
+          "input_cost": 0.18862500000000001,
+          "output_cost": 1.3476,
+          "cost_per_perturbation": 0.051207499999999996
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 30,
+      "total_questions": 10,
+      "questions_by_type": {
+        "TF": 10
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

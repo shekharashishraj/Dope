@@ -5,7 +5,7 @@ openai:
   batch_size: 5  # Number of documents per batch
   max_retries: 3
   timeout: 120  # Timeout in seconds
-  temperature: 0.5
+  temperature: 0.2
   # Additional OpenAI settings
   top_p: null  # Null means use default, set 0.0-1.0 to override
   frequency_penalty: 0.0
@@ -123,6 +123,7 @@ prompts:
   # Global prompt settings
   system_message: "You are a helpful assistant that generates JSON array responses. Always return valid JSON arrays."
   json_format_strict: true  # Enforce strict JSON format requirements
+  grouped_prompts_folder: "grouped_batch_v2"  # Folder name in prompts/ directory for grouped batch prompts (e.g., "grouped_batch" or "grouped_batch_v2")
 
 # Performance & Concurrency
 performance:

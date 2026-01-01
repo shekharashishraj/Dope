@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{calc}
+\usepackage{xcolor}
+% --- latex-dual-layer macros (auto-generated) ---
+\newlength{\dlboxwidth}
+\newlength{\dlboxheight}
+\newlength{\dlboxdepth}
+\newcommand{\duallayerbox}[2]{%
+  \begingroup
+  \settowidth{\dlboxwidth}{\strut #1}%
+  \settoheight{\dlboxheight}{\strut #1}%
+  \settodepth{\dlboxdepth}{\strut #1}%
+  \ifdim\dlboxwidth=0pt
+    \settowidth{\dlboxwidth}{#2}%
+  \fi
+  \raisebox{0pt}[\dlboxheight][\dlboxdepth]{%
+    \makebox[\dlboxwidth][l]{\resizebox{\dlboxwidth}{!}{\strut #2}}%
+  }%
+  \endgroup
+}
+% --- end latex-dual-layer macros ---
+\begin{document}
+\begin{center}
+Cybersecurity - Undergraduate Level Assessment 2 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{True / False (20 marks)}
+\textit{Answer True or False and justify briefly.}
+\begin{enumerate}[label=\arabic*.]
+\item True or False: The correct answer to 'A packet filter firewall filters at the' is '\duallayerbox{Data link layer}{Network layer}'.
+\item True or False: The correct answer to '\_\_\_\_\_\_\_\_\_\_\_\_ is also a part of darknet that is employed for transferring files anonymously.' is '\duallayerbox{Freenet}{Tor}'.
+\item True or False: The correct answer to 'Which of the following is an authentication method?' is '\duallayerbox{All of the above}{None of the above}'.
+\item True or False: The correct answer to 'A \_\_\_\_\_\_\_\_\_\_ is a sequential segment of the memory location that is allocated for containing some data such as a character string or an...' is '\duallayerbox{buffer}{stack}'.
+\item True or False: The correct answer to 'The \_\_\_\_\_\_\_\_\_\_\_\_ is anything which your search engine cannot search.' is '\duallayerbox{Haunted web}{Deep web}'.
+\item True or False: The correct answer to 'Why apps developed in languages like C, C++ is prone to Buffer-overflow?' is '\duallayerbox{No string boundary checks in predefined functions}{Strict boundary checks in predefined functions}'.
+\item True or False: The correct answer to 'How does a buffer overflow on the stack facilitate running attacker-injected code?' is 'By writing directly to \%eax the address of the code'.
+\item True or False: The correct answer to 'A/an \_\_\_\_\_\_\_\_\_\_\_ is a program that steals your logins \& passwords for instant messaging applications.' is '\duallayerbox{Trojan-Downloader}{Keylogger}'.
+\item True or False: The correct answer to 'A \_\_\_\_\_\_\_\_\_\_\_ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.' is '\duallayerbox{backdoor}{firewall}'.
+\item True or False: The correct answer to 'Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be secure?' is '\duallayerbox{It depends on the details of the MAC}{Yes, it is always secure}'.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Provide thorough reasoning and reference key steps.}
+\begin{enumerate}[label=\arabic*.]
+\item Write a function to check whether the given number is \duallayerbox{undulating}{prime} or not.
+\item Write a function to sort a tuple by its \duallayerbox{float element}{integer element}.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

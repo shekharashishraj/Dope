@@ -1,0 +1,438 @@
+================================================================================
+COMPLETE BATCH PROMPT SENT TO API
+================================================================================
+
+You are an expert at generating precise, high-impact text substitutions for long-form questions (essay, short answer, explanation) that cause predictable, detectable deviations in responses. Your accuracy is critical.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (stem only, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Non-trivial change: replacement must change the question focus in a way that CLEARLY affects the expected answer (different aspect, entity, time period, or concept).
+8) Avoid trivial negation: DO NOT flip with simple "not/never/no" insertion. Prefer changing key concept, condition, quantity, direction, scope, or referent.
+9) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+10) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer deviation.
+11) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+
+## DEVIATION STRATEGY TIERS
+
+**Tier 1 - Scope/Focus Shift (Best for Detection):**
+Changes WHAT the question asks about while keeping the domain.
+- "economic impact" → "social impact"
+- "causes of" → "effects of"
+- "advantages" → "disadvantages"
+- "short-term" → "long-term"
+- "domestic" → "international"
+
+*Detection signature*: Response discusses entirely different aspect; keyword overlap with gold answer is minimal.
+
+**Tier 2 - Temporal/Contextual Shift:**
+Changes WHEN or WHERE the question applies.
+- "19th century" → "20th century"
+- "in Europe" → "in Asia"
+- "during peacetime" → "during wartime"
+- "modern" → "historical"
+
+*Detection signature*: Response references different time period, geography, or context.
+
+**Tier 3 - Perspective/Stakeholder Shift:**
+Changes WHO or WHOSE viewpoint is requested.
+- "from a patient's perspective" → "from a doctor's perspective"
+- "for consumers" → "for producers"
+- "individual level" → "societal level"
+- "scientific view" → "ethical view"
+
+*Detection signature*: Response adopts different analytical framework or stakeholder concerns.
+
+**Tier 4 - Methodological Shift:**
+Changes HOW the question should be approached.
+- "explain" → "compare"
+- "describe" → "evaluate"
+- "list" → "analyze"
+- "quantitative" → "qualitative"
+
+*Detection signature*: Response structure and content type differs (list vs. analysis, description vs. critique).
+
+## DETECTION SIGNATURE DESIGN
+
+For long-form questions, your `target_wrong_answer` should describe:
+1. **Expected content shift**: What topic/aspect the perturbed response will focus on
+2. **Detectable markers**: Specific terms, concepts, or structures that will appear
+3. **Absence markers**: Key elements from gold answer that will be missing
+
+Example format: "Response will focus on [X] instead of [Y], containing markers like [terms] and lacking [gold answer concepts]"
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: Description of how the answer should deviate (include content shift, presence markers, absence markers)
+- reasoning: 1–2 sentences explaining why this mapping causes deviation
+- verification: Causal chain showing original → replacement → content shift → detection method
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ Perturbation is Tier 1, 2, or 3 (substantive content shift)
+✓ target_wrong_answer includes: content shift description, presence markers, absence markers
+✓ Replacement changes question focus (not trivial negation)
+✓ Replacement is natural and semantically meaningful
+
+## LONG QUESTIONS
+
+**Question 11:**
+- LaTeX stem: `Calculate the total length of a single DNA molecule in an E. coli chromosome, given its parameters. Discuss its significance in relation to the size of the E. coli cell.`
+- Copyable text: Calculate the total length of a single DNA molecule in an E. coli chromosome, given its
+parameters. Discuss its significance in relation to the size of the E. coli cell.
+- Gold answer: 720 times as long as the cell. Explain why this is the correct answer and provide
+supporting evidence. Reference key facts or concepts that support this choice.
+- Goal: Generate 3 mappings that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
+
+
+**Question 12:**
+- LaTeX stem: `Discuss the significance of the intensity ratios in the EPR spectrum of the t-Bu radical (CH3)3C•, and analyze the factors that influence these ratios in radical species.`
+- Copyable text: Discuss the significance of the intensity ratios in the EPR spectrum of the t-Bu radical
+(CH3)3C•, and analyze the factors that influence these ratios in radical species.
+- Gold answer: 1:10:45:120:210:120:45:10:1. Explain why this is the correct answer and provide supporting
+evidence. Reference key facts or concepts that support this choice.
+- Goal: Generate 3 mappings that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 6
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "Response focuses on social changes instead of economic metrics. Will contain markers: 'social class', 'living conditions'. Will lack: 'GDP', 'wages'.",
+    "reasoning": "...",
+    "verification": "'economic impact' → 'social impact' → response discusses sociology → detectable via absent economic terminology"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+You are an expert at generating text substitutions for academic multiple-choice questions that cause predictable answer shifts. Your accuracy is critical.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (the stem only; do NOT edit the options, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Answer change: target_wrong_answer MUST be different from the gold answer (each mapping should ideally target a different wrong option).
+8) Non-trivial change: replacement must change the meaning enough to CLEARLY flip the correct answer; avoid purely grammatical rephrases.
+9) Avoid trivial negation: DO NOT flip with simple "not/never/no" insertion. Prefer changing key concept, condition, quantity, direction, scope, or referent.
+10) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+11) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer.
+12) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+
+## QUALITY TIERS (aim for Tier 1)
+
+**Tier 1 (Best):** Changes a core entity, parameter, condition, or relationship that fundamentally alters what's being asked.
+Example: "maximum" → "minimum", "increases" → "decreases", "before" → "after", "India" → "China"
+
+**Tier 2 (Acceptable):** Changes scope, quantity, or specificity. 
+Example: "all" → "one", "primary" → "secondary", "first" → "last", "global" → "local"
+
+**Tier 3 (Weak - Avoid):** Surface-level word swaps that don't reliably shift answers.
+Example: synonyms, minor qualifiers
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: A single option key (e.g., "A", "B", "C", "D") that is NOT the gold answer
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and the gold answer incorrect
+- verification: Causal chain showing original → replacement → interpretation → answer selection
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer != gold_answer (different option)
+✓ Perturbation is Tier 1 or Tier 2 quality
+✓ Replacement changes meaning enough to flip answer (not trivial negation)
+✓ Replacement is natural and semantically meaningful
+
+## MCQ QUESTIONS
+
+**Question 1:**
+- LaTeX stem: `Silver bromide, AgBr, used in photography, may be prepared from AgNO\_3 and NaBr. Calculate the weight of each required for producing 93.3 lb of AgBr. (1 lb = 454 g.)`
+- Copyable text: Silver bromide, AgBr, used in photography, may be prepared from AgNO\_3 and NaBr. Calculate
+the weight of each required for producing 93.3 lb of AgBr. (1 lb = 454 g.)
+- Gold answer: C
+- Options:
+  - A: 50 lbs of NaBr and 85 lbs of AgNO3
+  - B: 45 lbs of NaBr and 75 lbs of AgNO3
+  - C: 52.7 lbs of NaBr and 84.7 lbs of AgNO3
+  - D: 70 lbs of NaBr and 50 lbs of AgNO3
+  - E: 40 lbs of NaBr and 90 lbs of AgNO3
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from C, use Tier 1-2 techniques)
+
+
+**Question 2:**
+- LaTeX stem: `50 lbs of NaBr and 85 lbs of AgNO3`
+- Copyable text: A buffer is made from equal concentrations of a weak acid and its conjugate base. Doubling
+the volume of the buffer solution by adding water has what effect on its pH?
+- Gold answer: A
+- Options:
+  - A: It causes the pH to fluctuate unpredictably.
+  - B: It causes the pH to equalize with the water's pH.
+  - C: It causes the pH to become extremely basic.
+  - D: It neutralizes the pH completely.
+  - E: It significantly decreases the pH.
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 3:**
+- LaTeX stem: `45 lbs of NaBr and 75 lbs of AgNO3`
+- Copyable text: The molecule with a tetrahedral shape is
+- Gold answer: D
+- Options:
+  - A: SO2
+  - B: BeCl2
+  - C: SF6
+  - D: CBr4
+  - E: PCl4F
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+**Question 4:**
+- LaTeX stem: `52.7 lbs of NaBr and 84.7 lbs of AgNO3`
+- Copyable text: The Pauli exclusion principle states that
+- Gold answer: D
+- Options:
+  - A: no two electrons can occupy separate orbitals
+  - B: no two protons can have the same four quantum numbers
+  - C: two electrons can share the same quantum number if they are in different orbitals
+  - D: no two electrons can have the same four quantum numbers
+  - E: no two electrons can pair up if there is an empty orbital available
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+**Question 5:**
+- LaTeX stem: `70 lbs of NaBr and 50 lbs of AgNO3`
+- Copyable text: Calculate the percentage difference between $e^x$ and $1+x$ for $x=0.0050$
+- Gold answer: E
+- Options:
+  - A: 7.50 $10^{-3} \%$
+  - B: 2.50 $10^{-3} \%$
+  - C: 0.75 $10^{-3} \%$
+  - D: 2.00 $10^{-3} \%$
+  - E: 1.25 $10^{-3} \%$
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from E, use Tier 1-2 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings (one for each target wrong answer).
+
+Total expected mappings: 15
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "...",
+    "verification": "'primary function' → 'least common role' → reader seeks rare function → selects C"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+You are an expert at generating text substitutions for True/False questions that reliably flip the truth value. Your accuracy is critical.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (stem only, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Truth flip: target_wrong_answer MUST be exactly the opposite of gold_answer (if gold is "True", target must be "False", and vice versa).
+8) Non-trivial change: replacement must make the statement CLEARLY switch truth value (not just wording - must be verifiable factual flip).
+9) Zero-negation rule: DO NOT rely on inserting/removing "not/never/no". Prefer changing key term, condition, quantifier, number, direction, scope, or entity.
+10) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+11) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+
+## TRUTH-FLIPPING TECHNIQUES (Ranked by Effectiveness)
+
+**Tier 1 - Comparative/Directional Inversion (Best):**
+- "increases" ↔ "decreases"
+- "greater than" ↔ "less than"
+- "before" ↔ "after"
+- "positive" ↔ "negative"
+- "clockwise" ↔ "counterclockwise"
+
+**Tier 2 - Property/State Swap:**
+- "endothermic" ↔ "exothermic"
+- "acidic" ↔ "basic"
+- "conductor" ↔ "insulator"
+- "soluble" ↔ "insoluble"
+- "dominant" ↔ "recessive"
+
+**Tier 3 - Quantifier Modification:**
+- "always" → "sometimes" (True→False)
+- "all" → "some" or "most"
+- "never" → "rarely"
+- "every" → "most"
+
+**Tier 4 - Entity/Value Substitution:**
+- Swap one correct entity for a related but incorrect one
+- Change numerical values to incorrect ones
+- Replace correct formula/equation component
+
+## PROHIBITED TECHNIQUES (Will Be Rejected)
+
+❌ **Negation insertion**: "is" → "is not", "can" → "cannot", adding "un-", "non-", "in-"
+❌ **Double negatives**: Any construction that adds negative particles
+❌ **Trivial additions**: "true" → "false", "correct" → "incorrect"
+❌ **Identity mappings**: original == replacement
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: "True" or "False" (the flipped label - must be opposite of gold_answer)
+- reasoning: 1–2 sentences explaining why the truth value flips after the replacement
+- verification: Causal chain showing original → replacement → factual change → truth flip
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer is exactly opposite of gold_answer (True↔False)
+✓ NO negation words added ("not", "un-", "non-", "in-", "cannot", etc.)
+✓ Perturbation uses Tier 1 or Tier 2 techniques (directional inversion, property swap)
+✓ Replacement causes verifiable truth-value flip (not trivial negation)
+✓ Replacement is natural and semantically meaningful
+
+## TF QUESTIONS
+
+**Question 6:**
+- LaTeX stem: `The molality of a solution containing 2.3 g of ethanol in 500 g of water is 0.1 molal.`
+- Copyable text: The molality of a solution containing 2.3 g of ethanol in 500 g of water is 0.1 molal.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 7:**
+- LaTeX stem: `The dielectric constant of a non-polar gas like SO\_2 remains constant regardless of temperature and pressure changes.`
+- Copyable text: The dielectric constant of a non-polar gas like SO\_2 remains constant regardless of temperature and pressure changes.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 8:**
+- LaTeX stem: `The missing mass of the fluorine-19 isotope, (\^{}19\_9)F, is approximately 0.1756 amu, which is close to the atomic weight.`
+- Copyable text: The missing mass of the fluorine-19 isotope, (\^{}19\_9)F, is approximately 0.1756 amu, which is close to the atomic weight.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 9:**
+- LaTeX stem: `The equation 6x\^{}2 - 7x - 20 = 0 has solutions x = 5 and x = -4.`
+- Copyable text: The equation 6x\^{}2 - 7x - 20 = 0 has solutions x = 5 and x = -4.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 10:**
+- LaTeX stem: `The units for the rate of a chemical reaction are expressed as L mol-1 s-1.`
+- Copyable text: The units for the rate of a chemical reaction are expressed as L mol-1 s-1.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 15
+
+```json
+[
+  {
+    "question_index": 3,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "False",
+    "reasoning": "...",
+    "verification": "'increases' → 'decreases' → violates 2nd law of thermodynamics → statement becomes False"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+## FINAL INSTRUCTIONS
+
+CRITICAL: Return a SINGLE JSON array containing ALL mappings from ALL question types above.
+- Total expected mappings: 36
+- Each mapping must have the correct question_index field
+- Return ONLY valid JSON array, no markdown or additional text.

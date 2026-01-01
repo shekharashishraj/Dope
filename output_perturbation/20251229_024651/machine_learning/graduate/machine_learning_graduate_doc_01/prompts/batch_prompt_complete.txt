@@ -1,0 +1,349 @@
+================================================================================
+COMPLETE BATCH PROMPT SENT TO API
+================================================================================
+
+You are an expert at generating text substitutions for academic multiple-choice questions that cause predictable answer shifts. Your accuracy is critical.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (the stem only; do NOT edit the options, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Answer change: target_wrong_answer MUST be different from the gold answer (each mapping should ideally target a different wrong option).
+8) Non-trivial change: replacement must change the meaning enough to CLEARLY flip the correct answer; avoid purely grammatical rephrases.
+9) Avoid trivial negation: DO NOT flip with simple "not/never/no" insertion. Prefer changing key concept, condition, quantity, direction, scope, or referent.
+10) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+11) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer.
+12) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+
+## QUALITY TIERS (aim for Tier 1)
+
+**Tier 1 (Best):** Changes a core entity, parameter, condition, or relationship that fundamentally alters what's being asked.
+Example: "maximum" → "minimum", "increases" → "decreases", "before" → "after", "India" → "China"
+
+**Tier 2 (Acceptable):** Changes scope, quantity, or specificity. 
+Example: "all" → "one", "primary" → "secondary", "first" → "last", "global" → "local"
+
+**Tier 3 (Weak - Avoid):** Surface-level word swaps that don't reliably shift answers.
+Example: synonyms, minor qualifiers
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: A single option key (e.g., "A", "B", "C", "D") that is NOT the gold answer
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and the gold answer incorrect
+- verification: Causal chain showing original → replacement → interpretation → answer selection
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer != gold_answer (different option)
+✓ Perturbation is Tier 1 or Tier 2 quality
+✓ Replacement changes meaning enough to flip answer (not trivial negation)
+✓ Replacement is natural and semantically meaningful
+
+## MCQ QUESTIONS
+
+**Question 1:**
+- LaTeX stem: `As the number of training examples goes to infinity, your model trained on that data will have:`
+- Copyable text: As the number of training examples goes to infinity, your model trained on that data will have:
+- Gold answer: A
+- Options:
+  - A: Lower variance
+  - B: Higher variance
+  - C: Same variance
+  - D: None of the above
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 2:**
+- LaTeX stem: `Lower variance`
+- Copyable text: Statement 1| Highway networks were introduced after ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...
+- Gold answer: D
+- Options:
+  - A: True, True
+  - B: False, False
+  - C: True, False
+  - D: False, True
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings (one for each target wrong answer).
+
+Total expected mappings: 6
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "...",
+    "verification": "'primary function' → 'least common role' → reader seeks rare function → selects C"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+You are an expert at generating text substitutions for True/False questions that reliably flip the truth value. Your accuracy is critical.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (stem only, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Truth flip: target_wrong_answer MUST be exactly the opposite of gold_answer (if gold is "True", target must be "False", and vice versa).
+8) Non-trivial change: replacement must make the statement CLEARLY switch truth value (not just wording - must be verifiable factual flip).
+9) Zero-negation rule: DO NOT rely on inserting/removing "not/never/no". Prefer changing key term, condition, quantifier, number, direction, scope, or entity.
+10) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+11) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+
+## TRUTH-FLIPPING TECHNIQUES (Ranked by Effectiveness)
+
+**Tier 1 - Comparative/Directional Inversion (Best):**
+- "increases" ↔ "decreases"
+- "greater than" ↔ "less than"
+- "before" ↔ "after"
+- "positive" ↔ "negative"
+- "clockwise" ↔ "counterclockwise"
+
+**Tier 2 - Property/State Swap:**
+- "endothermic" ↔ "exothermic"
+- "acidic" ↔ "basic"
+- "conductor" ↔ "insulator"
+- "soluble" ↔ "insoluble"
+- "dominant" ↔ "recessive"
+
+**Tier 3 - Quantifier Modification:**
+- "always" → "sometimes" (True→False)
+- "all" → "some" or "most"
+- "never" → "rarely"
+- "every" → "most"
+
+**Tier 4 - Entity/Value Substitution:**
+- Swap one correct entity for a related but incorrect one
+- Change numerical values to incorrect ones
+- Replace correct formula/equation component
+
+## PROHIBITED TECHNIQUES (Will Be Rejected)
+
+❌ **Negation insertion**: "is" → "is not", "can" → "cannot", adding "un-", "non-", "in-"
+❌ **Double negatives**: Any construction that adds negative particles
+❌ **Trivial additions**: "true" → "false", "correct" → "incorrect"
+❌ **Identity mappings**: original == replacement
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: "True" or "False" (the flipped label - must be opposite of gold_answer)
+- reasoning: 1–2 sentences explaining why the truth value flips after the replacement
+- verification: Causal chain showing original → replacement → factual change → truth flip
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer is exactly opposite of gold_answer (True↔False)
+✓ NO negation words added ("not", "un-", "non-", "in-", "cannot", etc.)
+✓ Perturbation uses Tier 1 or Tier 2 techniques (directional inversion, property swap)
+✓ Replacement causes verifiable truth-value flip (not trivial negation)
+✓ Replacement is natural and semantically meaningful
+
+## TF QUESTIONS
+
+**Question 3:**
+- LaTeX stem: `Higher variance`
+- Copyable text: The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 4:**
+- LaTeX stem: `Same variance`
+- Copyable text: The correct answer to 'Another term for out-of-distribution detection is?' is 'one-class detection'.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 5:**
+- LaTeX stem: `None of the above`
+- Copyable text: The correct answer to 'Neural networks:' is 'Can use a mix of different activation functions'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 6:**
+- LaTeX stem: `Statement 1| Highway networks were introduced after ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...`
+- Copyable text: The correct answer to 'The number of test examples needed to get statistically significant results should be \_' is 'Larger if the error rate is larger.'.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 7:**
+- LaTeX stem: `True, True`
+- Copyable text: The correct answer to 'If N is the number of instances in the training dataset, nearest neighbors has a classification run time of' is 'O( N )'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 8:**
+- LaTeX stem: `False, False`
+- Copyable text: The correct answer to 'Statement 1| A neural network's convergence depends on the learning rate. Statement 2| Dropout multiplies randomly chosen activation...' is 'True, True'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 9:**
+- LaTeX stem: `True, False`
+- Copyable text: The correct answer to 'For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and...' is 'Whether we learn the weights by matrix inversion or gradient descent'.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 10:**
+- LaTeX stem: `False, True`
+- Copyable text: The correct answer to 'Existential risks posed by AI are most commonly associated with which of the following professors?' is 'Stuart Russell'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 11:**
+- LaTeX stem: `The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.`
+- Copyable text: The correct answer to 'Which one of the following is the main reason for pruning a Decision Tree?' is 'To avoid overfitting the training set'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 12:**
+- LaTeX stem: `The correct answer to 'Another term for out-of-distribution detection is?' is 'one-class detection'.`
+- Copyable text: The correct answer to 'Statement 1| RoBERTa pretrains on a corpus that is approximate 10x larger than the corpus BERT pretrained on. Statement 2| ResNeXts in...' is 'True, False'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 13:**
+- LaTeX stem: `The correct answer to 'Neural networks:' is 'Can use a mix of different activation functions'.`
+- Copyable text: The correct answer to 'Statement 1| Overfitting is more likely when the set of training data is small. Statement 2| Overfitting is more likely when the...' is 'False, False'.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 14:**
+- LaTeX stem: `The correct answer to 'The number of test examples needed to get statistically significant results should be \_' is 'Larger if the error rate is larger.'.`
+- Copyable text: The correct answer to 'MLE estimates are often undesirable because' is 'they have high variance'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 15:**
+- LaTeX stem: `The correct answer to 'If N is the number of instances in the training dataset, nearest neighbors has a classification run time of' is 'O( N )'.`
+- Copyable text: The correct answer to 'Which of the following is NOT supervised learning?' is 'PCA'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 16:**
+- LaTeX stem: `The correct answer to 'Statement 1| A neural network's convergence depends on the learning rate. Statement 2| Dropout multiplies randomly chosen activation...' is 'True, True'.`
+- Copyable text: The correct answer to 'Which among the following prevents overfitting when we perform bagging?' is 'The use of sampling with replacement as the sampling technique'.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 17:**
+- LaTeX stem: `The correct answer to 'For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and...' is 'Whether we learn the weights by matrix inversion or gradient descent'.`
+- Copyable text: The correct answer to 'Statement 1| The softmax function is commonly used in mutliclass logistic regression. Statement 2| The temperature of a nonuniform...' is 'True, True'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 18:**
+- LaTeX stem: `The correct answer to 'Existential risks posed by AI are most commonly associated with which of the following professors?' is 'Stuart Russell'.`
+- Copyable text: The correct answer to 'Statement 1| Industrial-scale neural networks are normally trained on CPUs, not GPUs. Statement 2| The ResNet-50 model has over 1 billion...' is 'True, False'.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 19:**
+- LaTeX stem: `The correct answer to 'Which one of the following is the main reason for pruning a Decision Tree?' is 'To avoid overfitting the training set'.`
+- Copyable text: The correct answer to 'Predicting the amount of rainfall in a region based on various cues is a \_\_\_\_\_\_ problem.' is 'Clustering'.
+- Gold answer: False (must flip to True)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+**Question 20:**
+- LaTeX stem: `The correct answer to 'Statement 1| RoBERTa pretrains on a corpus that is approximate 10x larger than the corpus BERT pretrained on. Statement 2| ResNeXts in...' is 'True, False'.`
+- Copyable text: The correct answer to 'Statement 1| The original ResNets and Transformers are feedforward neural networks. Statement 2| The original Transformers use self-...' is 'True, True'.
+- Gold answer: True (must flip to False)
+- Goal: Generate 3 mappings that flip the truth value (use Tier 1-2 techniques, NO negations)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 54
+
+```json
+[
+  {
+    "question_index": 3,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "False",
+    "reasoning": "...",
+    "verification": "'increases' → 'decreases' → violates 2nd law of thermodynamics → statement becomes False"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+## FINAL INSTRUCTIONS
+
+CRITICAL: Return a SINGLE JSON array containing ALL mappings from ALL question types above.
+- Total expected mappings: 60
+- Each mapping must have the correct question_index field
+- Return ONLY valid JSON array, no markdown or additional text.

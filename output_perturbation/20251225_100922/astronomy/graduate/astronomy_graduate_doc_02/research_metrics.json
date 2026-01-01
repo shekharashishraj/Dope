@@ -1,0 +1,120 @@
+{
+  "document_name": "astronomy_graduate_doc_02",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 15,
+        "logprob_analysis": {
+          "avg_entropy": 0.12030865343084629,
+          "std_entropy": 0.3401708193743558,
+          "min_entropy": 3.4268326264762186e-09,
+          "max_entropy": 1.6075349721662602,
+          "avg_confidence": -0.10228273161202335,
+          "std_confidence": 2.7755575615628914e-17,
+          "min_confidence": -0.10228273161202332,
+          "max_confidence": -0.10228273161202332,
+          "total_tokens_with_logprobs": 61065
+        },
+        "api_metadata_summary": {
+          "total_responses": 15,
+          "finish_reasons": {
+            "stop": 15
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 10015.0,
+          "total_prompt_tokens": 150225,
+          "avg_completion_tokens": 4071.0,
+          "total_completion_tokens": 61065,
+          "avg_total_tokens": 14086.0,
+          "total_tokens": 211290
+        },
+        "cost_analysis": {
+          "total_cost": 0.9862125,
+          "input_cost": 0.3755625,
+          "output_cost": 0.61065,
+          "cost_per_perturbation": 0.0657475
+        }
+      },
+      "TF": {
+        "total_perturbations": 15,
+        "logprob_analysis": {
+          "avg_entropy": 0.12030865343084629,
+          "std_entropy": 0.3401708193743558,
+          "min_entropy": 3.4268326264762186e-09,
+          "max_entropy": 1.6075349721662602,
+          "avg_confidence": -0.10228273161202335,
+          "std_confidence": 2.7755575615628914e-17,
+          "min_confidence": -0.10228273161202332,
+          "max_confidence": -0.10228273161202332,
+          "total_tokens_with_logprobs": 61065
+        },
+        "api_metadata_summary": {
+          "total_responses": 15,
+          "finish_reasons": {
+            "stop": 15
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 10015.0,
+          "total_prompt_tokens": 150225,
+          "avg_completion_tokens": 4071.0,
+          "total_completion_tokens": 61065,
+          "avg_total_tokens": 14086.0,
+          "total_tokens": 211290
+        },
+        "cost_analysis": {
+          "total_cost": 0.9862125,
+          "input_cost": 0.3755625,
+          "output_cost": 0.61065,
+          "cost_per_perturbation": 0.0657475
+        }
+      },
+      "LONG": {
+        "total_perturbations": 6,
+        "logprob_analysis": {
+          "avg_entropy": 0.12030865343084628,
+          "std_entropy": 0.34017081937435584,
+          "min_entropy": 3.4268326264762186e-09,
+          "max_entropy": 1.6075349721662602,
+          "avg_confidence": -0.10228273161202332,
+          "std_confidence": 0.0,
+          "min_confidence": -0.10228273161202332,
+          "max_confidence": -0.10228273161202332,
+          "total_tokens_with_logprobs": 24426
+        },
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 10015.0,
+          "total_prompt_tokens": 60090,
+          "avg_completion_tokens": 4071.0,
+          "total_completion_tokens": 24426,
+          "avg_total_tokens": 14086.0,
+          "total_tokens": 84516
+        },
+        "cost_analysis": {
+          "total_cost": 0.394485,
+          "input_cost": 0.150225,
+          "output_cost": 0.24426,
+          "cost_per_perturbation": 0.0657475
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 36,
+      "total_questions": 12,
+      "questions_by_type": {
+        "MCQ": 5,
+        "TF": 5,
+        "LONG": 2
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

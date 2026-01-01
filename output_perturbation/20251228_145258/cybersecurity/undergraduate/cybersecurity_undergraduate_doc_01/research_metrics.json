@@ -1,0 +1,120 @@
+{
+  "document_name": "cybersecurity_undergraduate_doc_01",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 6,
+        "logprob_analysis": {
+          "avg_entropy": 0.09081834615695768,
+          "std_entropy": 0.28972073407482857,
+          "min_entropy": 9.774263630498856e-09,
+          "max_entropy": 1.6094379124341005,
+          "avg_confidence": -0.060927363218016006,
+          "std_confidence": 0.0,
+          "min_confidence": -0.060927363218016006,
+          "max_confidence": -0.060927363218016006,
+          "total_tokens_with_logprobs": 41922
+        },
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 31420.0,
+          "total_prompt_tokens": 188520,
+          "avg_completion_tokens": 6987.0,
+          "total_completion_tokens": 41922,
+          "avg_total_tokens": 38407.0,
+          "total_tokens": 230442
+        },
+        "cost_analysis": {
+          "total_cost": 0.89052,
+          "input_cost": 0.4713,
+          "output_cost": 0.41922000000000004,
+          "cost_per_perturbation": 0.14842
+        }
+      },
+      "TF": {
+        "total_perturbations": 39,
+        "logprob_analysis": {
+          "avg_entropy": 0.09081834615695769,
+          "std_entropy": 0.28972073407482857,
+          "min_entropy": 9.774263630498856e-09,
+          "max_entropy": 1.6094379124341005,
+          "avg_confidence": -0.06092736321801601,
+          "std_confidence": 6.938893903907228e-18,
+          "min_confidence": -0.060927363218016006,
+          "max_confidence": -0.060927363218016006,
+          "total_tokens_with_logprobs": 272493
+        },
+        "api_metadata_summary": {
+          "total_responses": 39,
+          "finish_reasons": {
+            "stop": 39
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 31420.0,
+          "total_prompt_tokens": 1225380,
+          "avg_completion_tokens": 6987.0,
+          "total_completion_tokens": 272493,
+          "avg_total_tokens": 38407.0,
+          "total_tokens": 1497873
+        },
+        "cost_analysis": {
+          "total_cost": 5.788379999999999,
+          "input_cost": 3.0634499999999996,
+          "output_cost": 2.7249299999999996,
+          "cost_per_perturbation": 0.14841999999999997
+        }
+      },
+      "LONG": {
+        "total_perturbations": 3,
+        "logprob_analysis": {
+          "avg_entropy": 0.09081834615695766,
+          "std_entropy": 0.28972073407482857,
+          "min_entropy": 9.774263630498856e-09,
+          "max_entropy": 1.6094379124341005,
+          "avg_confidence": -0.060927363218016006,
+          "std_confidence": 0.0,
+          "min_confidence": -0.060927363218016006,
+          "max_confidence": -0.060927363218016006,
+          "total_tokens_with_logprobs": 20961
+        },
+        "api_metadata_summary": {
+          "total_responses": 3,
+          "finish_reasons": {
+            "stop": 3
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 31420.0,
+          "total_prompt_tokens": 94260,
+          "avg_completion_tokens": 6987.0,
+          "total_completion_tokens": 20961,
+          "avg_total_tokens": 38407.0,
+          "total_tokens": 115221
+        },
+        "cost_analysis": {
+          "total_cost": 0.44526,
+          "input_cost": 0.23565,
+          "output_cost": 0.20961000000000002,
+          "cost_per_perturbation": 0.14842
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 48,
+      "total_questions": 16,
+      "questions_by_type": {
+        "MCQ": 2,
+        "TF": 13,
+        "LONG": 1
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

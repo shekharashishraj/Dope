@@ -1,0 +1,85 @@
+{
+  "document_name": "cybersecurity_undergraduate_doc_02",
+  "metrics": {
+    "by_question_type": {
+      "TF": {
+        "total_perturbations": 30,
+        "logprob_analysis": {
+          "avg_entropy": 0.06054593038631514,
+          "std_entropy": 0.2361449651365967,
+          "min_entropy": 7.984133941531291e-09,
+          "max_entropy": 1.608250130391897,
+          "avg_confidence": -2.1632330706026695,
+          "std_confidence": 8.881784197001252e-16,
+          "min_confidence": -2.1632330706026686,
+          "max_confidence": -2.1632330706026686,
+          "total_tokens_with_logprobs": 141840
+        },
+        "api_metadata_summary": {
+          "total_responses": 30,
+          "finish_reasons": {
+            "stop": 30
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 10249.0,
+          "total_prompt_tokens": 307470,
+          "avg_completion_tokens": 4728.0,
+          "total_completion_tokens": 141840,
+          "avg_total_tokens": 14977.0,
+          "total_tokens": 449310
+        },
+        "cost_analysis": {
+          "total_cost": 2.187075,
+          "input_cost": 0.768675,
+          "output_cost": 1.4183999999999999,
+          "cost_per_perturbation": 0.07290250000000001
+        }
+      },
+      "LONG": {
+        "total_perturbations": 6,
+        "logprob_analysis": {
+          "avg_entropy": 0.06054593038631514,
+          "std_entropy": 0.2361449651365967,
+          "min_entropy": 7.984133941531291e-09,
+          "max_entropy": 1.608250130391897,
+          "avg_confidence": -2.1632330706026686,
+          "std_confidence": 0.0,
+          "min_confidence": -2.1632330706026686,
+          "max_confidence": -2.1632330706026686,
+          "total_tokens_with_logprobs": 28368
+        },
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 10249.0,
+          "total_prompt_tokens": 61494,
+          "avg_completion_tokens": 4728.0,
+          "total_completion_tokens": 28368,
+          "avg_total_tokens": 14977.0,
+          "total_tokens": 89862
+        },
+        "cost_analysis": {
+          "total_cost": 0.437415,
+          "input_cost": 0.153735,
+          "output_cost": 0.28368,
+          "cost_per_perturbation": 0.0729025
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 36,
+      "total_questions": 12,
+      "questions_by_type": {
+        "TF": 10,
+        "LONG": 2
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

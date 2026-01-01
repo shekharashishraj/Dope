@@ -59,7 +59,11 @@ class ICWFontAttackInjector:
         """Initialize hybrid injector."""
         self.config = config
         self.icw_injector = ICWInjector(config=config)
-        self.font_attack_injector = FontAttackInjector(fonts_dir=fonts_dir)
+        try:
+            self.font_attack_injector = FontAttackInjector(fonts_dir=fonts_dir)
+        except Exception as e:
+            print(f"[ICWFontAttackInjector] ERROR: Failed to initialize font attack injector: {e}")
+            self.font_attack_injector = None
     
     def inject(
         self,
@@ -84,9 +88,13 @@ class ICWFontAttackInjector:
         )
         
         # Step 2: Apply Font Attack to ICW-modified LaTeX
-        final_tex, font_metadata = self.font_attack_injector.inject(
-            icw_tex, perturbations, questions
-        )
+        if self.font_attack_injector is None:
+            print("[ICWFontAttackInjector] Skipping font attack due to initialization failure")
+            final_tex, font_metadata = icw_tex, {"error": "Font attack injector not available"}
+        else:
+            final_tex, font_metadata = self.font_attack_injector.inject(
+                icw_tex, perturbations, questions
+            )
         
         metadata = {
             "method": "icw_font_attack",
@@ -106,7 +114,7 @@ class ICWFontAttackInjector:
         Returns:
             List of generated font paths
         """
-        if hasattr(self.font_attack_injector, 'generate_fonts'):
+        if self.font_attack_injector and hasattr(self.font_attack_injector, 'generate_fonts'):
             return self.font_attack_injector.generate_fonts(output_fonts_dir)
         return []
 

@@ -1,0 +1,404 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the final pressure in a sealed 0.75 liter wine bottle after 20 g of Dry Ice (CO₂) sublimates at 25°C. Discuss the underlying principles involved in your calculation.",
+    "original_substring": "20 g of Dry Ice (CO₂)",
+    "replacement_substring": "10 g of Dry Ice (CO₂)",
+    "start_pos": 56,
+    "end_pos": 74,
+    "target_wrong_answer": "Response will focus on the effects of using 10 g of CO₂ instead of 20 g, containing markers like 'half the amount', 'reduced pressure', and lacking 'full sublimation of 20 g'.",
+    "reasoning": "Changing the amount of CO₂ affects the final pressure calculation, leading to a different numerical result and explanation.",
+    "verification": "'20 g of Dry Ice (CO₂)' → '10 g of Dry Ice (CO₂)' → response discusses reduced CO₂ amount → detectable via different pressure value"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the final pressure in a sealed 0.75 liter wine bottle after 20 g of Dry Ice (CO₂) sublimates at 25°C. Discuss the underlying principles involved in your calculation.",
+    "original_substring": "25°C",
+    "replacement_substring": "0°C",
+    "start_pos": 89,
+    "end_pos": 93,
+    "target_wrong_answer": "Response will focus on sublimation at 0°C instead of 25°C, containing markers like 'lower temperature', 'reduced kinetic energy', and lacking 'room temperature conditions'.",
+    "reasoning": "Changing the temperature affects the sublimation process and the resulting pressure, leading to a different explanation.",
+    "verification": "'25°C' → '0°C' → response discusses sublimation at freezing point → detectable via temperature-specific principles"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Calculate the final pressure in a sealed 0.75 liter wine bottle after 20 g of Dry Ice (CO₂) sublimates at 25°C. Discuss the underlying principles involved in your calculation.",
+    "original_substring": "sealed 0.75 liter wine bottle",
+    "replacement_substring": "open 0.75 liter container",
+    "start_pos": 31,
+    "end_pos": 58,
+    "target_wrong_answer": "Response will focus on an open system instead of a sealed one, containing markers like 'gas escape', 'open system dynamics', and lacking 'sealed pressure build-up'.",
+    "reasoning": "Changing from a sealed to an open container alters the system dynamics, leading to a different pressure outcome.",
+    "verification": "'sealed 0.75 liter wine bottle' → 'open 0.75 liter container' → response discusses open system → detectable via absence of pressure build-up"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the process of calculating the thickness of an oil film formed by one cubic millimeter of oil spread over one square meter of water surface, and express your answer in angstrom units.",
+    "original_substring": "one cubic millimeter of oil",
+    "replacement_substring": "two cubic millimeters of oil",
+    "start_pos": 54,
+    "end_pos": 80,
+    "target_wrong_answer": "Response will focus on the effects of using two cubic millimeters instead of one, containing markers like 'double volume', 'increased thickness', and lacking 'single millimeter calculations'.",
+    "reasoning": "Changing the volume of oil affects the calculated thickness, leading to a different numerical result and explanation.",
+    "verification": "'one cubic millimeter of oil' → 'two cubic millimeters of oil' → response discusses increased volume → detectable via different thickness value"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the process of calculating the thickness of an oil film formed by one cubic millimeter of oil spread over one square meter of water surface, and express your answer in angstrom units.",
+    "original_substring": "one square meter of water surface",
+    "replacement_substring": "two square meters of water surface",
+    "start_pos": 85,
+    "end_pos": 116,
+    "target_wrong_answer": "Response will focus on spreading over two square meters instead of one, containing markers like 'larger area', 'reduced thickness', and lacking 'single meter calculations'.",
+    "reasoning": "Changing the area affects the calculated thickness, leading to a different numerical result and explanation.",
+    "verification": "'one square meter of water surface' → 'two square meters of water surface' → response discusses increased area → detectable via different thickness value"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the process of calculating the thickness of an oil film formed by one cubic millimeter of oil spread over one square meter of water surface, and express your answer in angstrom units.",
+    "original_substring": "express your answer in angstrom units",
+    "replacement_substring": "express your answer in nanometer units",
+    "start_pos": 118,
+    "end_pos": 152,
+    "target_wrong_answer": "Response will focus on expressing the thickness in nanometers instead of angstroms, containing markers like 'nanometer conversion', 'nm units', and lacking 'angstrom calculations'.",
+    "reasoning": "Changing the unit of measurement affects the final expression of the thickness, leading to a different numerical representation.",
+    "verification": "'express your answer in angstrom units' → 'express your answer in nanometer units' → response discusses nanometer conversion → detectable via unit-specific values"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The +1 oxidation state is more stable than the +3 oxidation state for which group 13 element?",
+    "original_substring": "+1 oxidation state",
+    "replacement_substring": "+3 oxidation state",
+    "start_pos": 4,
+    "end_pos": 21,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing the oxidation state preference from +1 to +3 makes aluminum (Al) the correct answer, as Al commonly exhibits a +3 oxidation state.",
+    "verification": "'+1 oxidation state' → '+3 oxidation state' → Al is more stable in +3 → selects A"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The +1 oxidation state is more stable than the +3 oxidation state for which group 13 element?",
+    "original_substring": "group 13",
+    "replacement_substring": "group 14",
+    "start_pos": 66,
+    "end_pos": 74,
+    "target_wrong_answer": "E",
+    "reasoning": "Changing the group from 13 to 14 makes silicon (Si) the correct answer, as Si is a group 14 element.",
+    "verification": "'group 13' → 'group 14' → Si is in group 14 → selects E"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The +1 oxidation state is more stable than the +3 oxidation state for which group 13 element?",
+    "original_substring": "+3 oxidation state",
+    "replacement_substring": "+5 oxidation state",
+    "start_pos": 47,
+    "end_pos": 64,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing the oxidation state from +3 to +5 makes boron (B) the correct answer, as B can exhibit a +5 oxidation state.",
+    "verification": "'+3 oxidation state' → '+5 oxidation state' → B can exhibit +5 → selects D"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Which of the following geometries corresponds to a substance that has five sigma bonds and one nonbonding pair of electrons?",
+    "original_substring": "five sigma bonds",
+    "replacement_substring": "three sigma bonds",
+    "start_pos": 52,
+    "end_pos": 68,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the number of sigma bonds to three makes trigonal pyramid the correct geometry, as it typically involves three bonds.",
+    "verification": "'five sigma bonds' → 'three sigma bonds' → trigonal pyramid fits → selects B"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Which of the following geometries corresponds to a substance that has five sigma bonds and one nonbonding pair of electrons?",
+    "original_substring": "one nonbonding pair",
+    "replacement_substring": "two nonbonding pairs",
+    "start_pos": 73,
+    "end_pos": 91,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing to two nonbonding pairs makes T-shaped the correct geometry, as it can accommodate two lone pairs.",
+    "verification": "'one nonbonding pair' → 'two nonbonding pairs' → T-shaped fits → selects C"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Which of the following geometries corresponds to a substance that has five sigma bonds and one nonbonding pair of electrons?",
+    "original_substring": "five sigma bonds",
+    "replacement_substring": "six sigma bonds",
+    "start_pos": 52,
+    "end_pos": 68,
+    "target_wrong_answer": "E",
+    "reasoning": "Changing to six sigma bonds makes trigonal bipyramidal the correct geometry, as it can accommodate six bonds.",
+    "verification": "'five sigma bonds' → 'six sigma bonds' → trigonal bipyramidal fits → selects E"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Compare the ionic bond strength of NaCl to KF; assuming that the radii of Na^+, K^+, F^-, and Cl^- are, respectively, 0.097, 0.133, 0.133, and 0.181 NM.",
+    "original_substring": "NaCl to KF",
+    "replacement_substring": "KF to NaCl",
+    "start_pos": 34,
+    "end_pos": 43,
+    "target_wrong_answer": "B",
+    "reasoning": "Reversing the comparison makes the bond strength of KF stronger than NaCl, leading to a different percentage.",
+    "verification": "'NaCl to KF' → 'KF to NaCl' → bond strength comparison reverses → selects B"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Compare the ionic bond strength of NaCl to KF; assuming that the radii of Na^+, K^+, F^-, and Cl^- are, respectively, 0.097, 0.133, 0.133, and 0.181 NM.",
+    "original_substring": "0.097, 0.133, 0.133, and 0.181",
+    "replacement_substring": "0.100, 0.130, 0.130, and 0.180",
+    "start_pos": 84,
+    "end_pos": 114,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the ionic radii values affects the calculated bond strength, leading to a different percentage.",
+    "verification": "'0.097, 0.133, 0.133, and 0.181' → '0.100, 0.130, 0.130, and 0.180' → bond strength calculation changes → selects C"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Compare the ionic bond strength of NaCl to KF; assuming that the radii of Na^+, K^+, F^-, and Cl^- are, respectively, 0.097, 0.133, 0.133, and 0.181 NM.",
+    "original_substring": "ionic bond strength",
+    "replacement_substring": "covalent bond strength",
+    "start_pos": 12,
+    "end_pos": 30,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing from ionic to covalent bond strength alters the basis of comparison, leading to a different percentage.",
+    "verification": "'ionic bond strength' → 'covalent bond strength' → bond type changes → selects D"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "On the basis of valence, predict the formulas of the compounds formed between the following pairs of elements: (a) Sn and F. (b) P and H. (c) Si and O.",
+    "original_substring": "Sn and F",
+    "replacement_substring": "Sn and Cl",
+    "start_pos": 73,
+    "end_pos": 80,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the elements from Sn and F to Sn and Cl alters the expected compound formulas, making option B correct.",
+    "verification": "'Sn and F' → 'Sn and Cl' → compound formulas change → selects B"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "On the basis of valence, predict the formulas of the compounds formed between the following pairs of elements: (a) Sn and F. (b) P and H. (c) Si and O.",
+    "original_substring": "P and H",
+    "replacement_substring": "P and Cl",
+    "start_pos": 84,
+    "end_pos": 90,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the elements from P and H to P and Cl alters the expected compound formulas, making option C correct.",
+    "verification": "'P and H' → 'P and Cl' → compound formulas change → selects C"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "On the basis of valence, predict the formulas of the compounds formed between the following pairs of elements: (a) Sn and F. (b) P and H. (c) Si and O.",
+    "original_substring": "Si and O",
+    "replacement_substring": "Si and N",
+    "start_pos": 94,
+    "end_pos": 100,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing the elements from Si and O to Si and N alters the expected compound formulas, making option D correct.",
+    "verification": "'Si and O' → 'Si and N' → compound formulas change → selects D"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Find Antilog_10 0.8762 - 2.",
+    "original_substring": "0.8762",
+    "replacement_substring": "0.8760",
+    "start_pos": 15,
+    "end_pos": 21,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing the value slightly affects the antilog calculation, making option A the correct result.",
+    "verification": "'0.8762' → '0.8760' → antilog calculation changes → selects A"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Find Antilog_10 0.8762 - 2.",
+    "original_substring": "- 2",
+    "replacement_substring": "- 1",
+    "start_pos": 22,
+    "end_pos": 25,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the subtraction value affects the antilog calculation, making option B the correct result.",
+    "verification": "'- 2' → '- 1' → antilog calculation changes → selects B"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Find Antilog_10 0.8762 - 2.",
+    "original_substring": "Antilog_10",
+    "replacement_substring": "Log_10",
+    "start_pos": 5,
+    "end_pos": 14,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing from antilog to log alters the calculation method, making option D the correct result.",
+    "verification": "'Antilog_10' → 'Log_10' → calculation method changes → selects D"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "To neutralize 3 liters of 0.01 N nitric acid, 1 liter of 0.3 N base is necessary.",
+    "original_substring": "1 liter",
+    "replacement_substring": "0.1 liter",
+    "start_pos": 46,
+    "end_pos": 53,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the volume of the base to 0.1 liter makes the statement true, as it matches the stoichiometric requirement for neutralization.",
+    "verification": "'1 liter' → '0.1 liter' → stoichiometry matches → statement becomes True"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "To neutralize 3 liters of 0.01 N nitric acid, 1 liter of 0.3 N base is necessary.",
+    "original_substring": "0.01 N nitric acid",
+    "replacement_substring": "0.1 N nitric acid",
+    "start_pos": 21,
+    "end_pos": 36,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the normality of the acid to 0.1 N makes the statement true, as it matches the stoichiometric requirement for neutralization.",
+    "verification": "'0.01 N nitric acid' → '0.1 N nitric acid' → stoichiometry matches → statement becomes True"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "To neutralize 3 liters of 0.01 N nitric acid, 1 liter of 0.3 N base is necessary.",
+    "original_substring": "3 liters",
+    "replacement_substring": "0.3 liters",
+    "start_pos": 14,
+    "end_pos": 22,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the volume of the acid to 0.3 liters makes the statement true, as it matches the stoichiometric requirement for neutralization.",
+    "verification": "'3 liters' → '0.3 liters' → stoichiometry matches → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The normality of a solution that neutralizes 0.56 g of KOH in 40 ml is 0.75 N.",
+    "original_substring": "0.56 g",
+    "replacement_substring": "5.6 g",
+    "start_pos": 50,
+    "end_pos": 55,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the mass of KOH to 5.6 g makes the statement true, as it matches the calculated normality.",
+    "verification": "'0.56 g' → '5.6 g' → normality calculation matches → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The normality of a solution that neutralizes 0.56 g of KOH in 40 ml is 0.75 N.",
+    "original_substring": "40 ml",
+    "replacement_substring": "4 ml",
+    "start_pos": 59,
+    "end_pos": 64,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the volume to 4 ml makes the statement true, as it matches the calculated normality.",
+    "verification": "'40 ml' → '4 ml' → normality calculation matches → statement becomes True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The normality of a solution that neutralizes 0.56 g of KOH in 40 ml is 0.75 N.",
+    "original_substring": "0.75 N",
+    "replacement_substring": "0.075 N",
+    "start_pos": 68,
+    "end_pos": 74,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the normality to 0.075 N makes the statement true, as it matches the calculated value.",
+    "verification": "'0.75 N' → '0.075 N' → normality calculation matches → statement becomes True"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The half-life of an unstable substance that decomposes 75% in one hour is 30 minutes.",
+    "original_substring": "30 minutes",
+    "replacement_substring": "15 minutes",
+    "start_pos": 69,
+    "end_pos": 79,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the half-life to 15 minutes makes the statement false, as it no longer matches the decomposition rate.",
+    "verification": "'30 minutes' → '15 minutes' → half-life calculation changes → statement becomes False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The half-life of an unstable substance that decomposes 75% in one hour is 30 minutes.",
+    "original_substring": "75%",
+    "replacement_substring": "50%",
+    "start_pos": 50,
+    "end_pos": 53,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the decomposition percentage to 50% makes the statement false, as it no longer matches the half-life.",
+    "verification": "'75%' → '50%' → decomposition rate changes → statement becomes False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The half-life of an unstable substance that decomposes 75% in one hour is 30 minutes.",
+    "original_substring": "one hour",
+    "replacement_substring": "two hours",
+    "start_pos": 54,
+    "end_pos": 62,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the time period to two hours makes the statement false, as it no longer matches the half-life.",
+    "verification": "'one hour' → 'two hours' → time period changes → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The half-life of ^33P is approximately 37.95 days, as determined from its decay over 75.9 days from 2.000 pg to 0.250 pg.",
+    "original_substring": "37.95 days",
+    "replacement_substring": "30 days",
+    "start_pos": 28,
+    "end_pos": 38,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the half-life to 30 days makes the statement false, as it no longer matches the decay data.",
+    "verification": "'37.95 days' → '30 days' → half-life calculation changes → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The half-life of ^33P is approximately 37.95 days, as determined from its decay over 75.9 days from 2.000 pg to 0.250 pg.",
+    "original_substring": "75.9 days",
+    "replacement_substring": "60 days",
+    "start_pos": 62,
+    "end_pos": 70,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the decay period to 60 days makes the statement false, as it no longer matches the half-life.",
+    "verification": "'75.9 days' → '60 days' → decay period changes → statement becomes False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The half-life of ^33P is approximately 37.95 days, as determined from its decay over 75.9 days from 2.000 pg to 0.250 pg.",
+    "original_substring": "2.000 pg to 0.250 pg",
+    "replacement_substring": "2.000 pg to 1.000 pg",
+    "start_pos": 75,
+    "end_pos": 93,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the decay amount to 1.000 pg makes the statement false, as it no longer matches the half-life.",
+    "verification": "'2.000 pg to 0.250 pg' → '2.000 pg to 1.000 pg' → decay amount changes → statement becomes False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Localizing an electron to within 20 pm results in an uncertainty in its speed of 1.1 x 10^8 m/s.",
+    "original_substring": "20 pm",
+    "replacement_substring": "10 pm",
+    "start_pos": 29,
+    "end_pos": 34,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the localization to 10 pm makes the statement true, as it matches the calculated uncertainty.",
+    "verification": "'20 pm' → '10 pm' → uncertainty calculation matches → statement becomes True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Localizing an electron to within 20 pm results in an uncertainty in its speed of 1.1 x 10^8 m/s.",
+    "original_substring": "1.1 x 10^8 m/s",
+    "replacement_substring": "1.0 x 10^8 m/s",
+    "start_pos": 60,
+    "end_pos": 72,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the uncertainty to 1.0 x 10^8 m/s makes the statement true, as it matches the calculated value.",
+    "verification": "'1.1 x 10^8 m/s' → '1.0 x 10^8 m/s' → uncertainty calculation matches → statement becomes True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Localizing an electron to within 20 pm results in an uncertainty in its speed of 1.1 x 10^8 m/s.",
+    "original_substring": "uncertainty in its speed",
+    "replacement_substring": "certainty in its speed",
+    "start_pos": 42,
+    "end_pos": 62,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing from uncertainty to certainty makes the statement true, as it matches the calculated condition.",
+    "verification": "'uncertainty in its speed' → 'certainty in its speed' → condition matches → statement becomes True"
+  }
+]
+```

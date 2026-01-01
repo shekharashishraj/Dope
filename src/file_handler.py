@@ -134,9 +134,19 @@ class FileHandler:
         output_filename = f"{original_name}{self.output_suffix}.json"
         output_path = output_dir / output_filename
         
-        # Save JSON using model_dump to ensure proper serialization
+        # Save JSON using model_dump, but exclude logprobs (they're saved separately)
+        # This keeps the main perturbation JSON file small and manageable
+        data_dict = perturbed_data.model_dump(mode='json', exclude_none=False)
+        
+        # Remove logprobs from perturbations to reduce file size
+        # Logprobs are already saved separately in logprobs/ folders
+        for question in data_dict.get('questions', []):
+            for pert in question.get('perturbations', []):
+                if 'logprobs' in pert:
+                    del pert['logprobs']
+        
         with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(perturbed_data.model_dump(mode='json', exclude_none=False), f, indent=2, ensure_ascii=False)
+            json.dump(data_dict, f, indent=2, ensure_ascii=False)
         
         return output_path
     

@@ -25,12 +25,16 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def find_perturbed_pdfs(pdf_dir: Path) -> List[Dict[str, Path]]:
+def find_perturbed_pdfs(pdf_dir: Path, method_filter: str = None) -> List[Dict[str, Path]]:
     """
     Find all perturbed PDFs and their corresponding perturbation JSON files.
     
+    Args:
+        pdf_dir: Directory to search for PDFs
+        method_filter: Optional method name to filter by (e.g., "dual_layer", "font_attack")
+    
     Returns:
-        List of dicts with 'pdf' and 'json' keys
+        List of dicts with 'pdf', 'json', 'domain', 'level', 'doc', and 'method' keys
     """
     pdfs = []
     
@@ -51,13 +55,18 @@ def find_perturbed_pdfs(pdf_dir: Path) -> List[Dict[str, Path]]:
         if "output_attacked_pdfs" not in pdf_parts:
             continue
         
-        # Extract domain, level, doc from PDF path
+        # Extract domain, level, doc, and method from PDF path
         try:
             pdf_idx = pdf_parts.index("output_attacked_pdfs")
             timestamp = pdf_parts[pdf_idx + 1]
             domain = pdf_parts[pdf_idx + 2]
             level = pdf_parts[pdf_idx + 3]
             doc_name = pdf_parts[pdf_idx + 4]
+            method = pdf_parts[pdf_idx + 5] if pdf_idx + 5 < len(pdf_parts) else None
+            
+            # Filter by method if specified
+            if method_filter and method != method_filter:
+                continue
             
             # Try to find JSON path - first try with same timestamp, then search all timestamps
             json_path = None
@@ -84,7 +93,8 @@ def find_perturbed_pdfs(pdf_dir: Path) -> List[Dict[str, Path]]:
                     "json": json_path,
                     "domain": domain,
                     "level": level,
-                    "doc": doc_name
+                    "doc": doc_name,
+                    "method": method
                 })
             else:
                 logger.warning(f"Could not find perturbation JSON for {pdf_file}")
@@ -130,6 +140,13 @@ def main():
         default=None,
         help="Output directory (default: output_detection/<timestamp>)"
     )
+    parser.add_argument(
+        "--method",
+        type=str,
+        default=None,
+        choices=["icw", "dual_layer", "font_attack", "icw_dual_layer", "icw_font_attack"],
+        help="Filter by attack method (default: all methods)"
+    )
     
     args = parser.parse_args()
     
@@ -153,10 +170,15 @@ def main():
         sys.exit(1)
     
     logger.info(f"Searching for PDFs in {pdf_dir}...")
-    pdf_files = find_perturbed_pdfs(pdf_dir)
+    if args.method:
+        logger.info(f"Filtering by attack method: {args.method}")
+    pdf_files = find_perturbed_pdfs(pdf_dir, method_filter=args.method)
     
     if not pdf_files:
-        logger.error("No PDFs found with corresponding perturbation JSONs")
+        if args.method:
+            logger.error(f"No PDFs found with method '{args.method}' and corresponding perturbation JSONs")
+        else:
+            logger.error("No PDFs found with corresponding perturbation JSONs")
         sys.exit(1)
     
     if args.limit:
@@ -205,6 +227,31 @@ def main():
                     # Pass through parsing method from response
                     if "parsing_method" in response:
                         match_result["parsing_method"] = response["parsing_method"]
+                    
+                    # Add perturbation details if available
+                    target_wrong_answer = response.get("target_wrong_answer")
+                    if question.perturbations:
+                        # Find perturbation that matches target_wrong_answer, or use first one
+                        matching_perturbation = None
+                        for pert in question.perturbations:
+                            if pert.target_wrong_answer == target_wrong_answer:
+                                matching_perturbation = pert
+                                break
+                        
+                        # Use first perturbation if no exact match
+                        if not matching_perturbation:
+                            matching_perturbation = question.perturbations[0]
+                        
+                        # Add perturbation details to match result
+                        match_result["perturbation"] = {
+                            "original_substring": matching_perturbation.original_substring,
+                            "replacement_substring": matching_perturbation.replacement_substring,
+                            "start_pos": matching_perturbation.start_pos,
+                            "end_pos": matching_perturbation.end_pos,
+                            "reasoning": getattr(matching_perturbation, 'reasoning', None),
+                            "verification": getattr(matching_perturbation, 'verification', None),
+                        }
+                    
                     detection_results.append(match_result)
                 else:
                     logger.warning(f"Question {q_num} not found in document")
