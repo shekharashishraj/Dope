@@ -60,6 +60,8 @@ class OpenAIClient:
         self.delay_between_requests = config.performance.delay_between_requests
         # System message
         self.system_message = config.prompts.system_message
+        # Grouped prompts folder
+        self.grouped_prompts_folder = config.prompts.grouped_prompts_folder
     
     def generate_perturbations(
         self, 
@@ -429,8 +431,8 @@ class OpenAIClient:
                 from pathlib import Path
                 
                 # Import grouped batch formatters using importlib
-                # To use v2 prompts, change "grouped_batch" to "grouped_batch_v2"
-                prompts_dir = Path(__file__).parent.parent / "prompts" / "grouped_batch_v2"
+                # Use prompts folder from config (default: "grouped_batch_v2")
+                prompts_dir = Path(__file__).parent.parent / "prompts" / self.grouped_prompts_folder
                 mcq_spec = importlib.util.spec_from_file_location("mcq_grouped_prompt", prompts_dir / "mcq_grouped_prompt.py")
                 tf_spec = importlib.util.spec_from_file_location("tf_grouped_prompt", prompts_dir / "tf_grouped_prompt.py")
                 long_spec = importlib.util.spec_from_file_location("long_grouped_prompt", prompts_dir / "long_grouped_prompt.py")
@@ -443,9 +445,19 @@ class OpenAIClient:
                 tf_spec.loader.exec_module(tf_module)
                 long_spec.loader.exec_module(long_module)
                 
-                format_grouped_mcq_batch = mcq_module.format_grouped_mcq_batch
-                format_grouped_tf_batch = tf_module.format_grouped_tf_batch
-                format_grouped_long_batch = long_module.format_grouped_long_batch
+                # Handle function names - v2 folder may have _v2 suffix for some functions
+                # Try _v2 version first, fall back to non-suffixed version
+                format_grouped_mcq_batch = getattr(mcq_module, 'format_grouped_mcq_batch_v2', None)
+                if format_grouped_mcq_batch is None:
+                    format_grouped_mcq_batch = getattr(mcq_module, 'format_grouped_mcq_batch')
+                
+                format_grouped_tf_batch = getattr(tf_module, 'format_grouped_tf_batch_v2', None)
+                if format_grouped_tf_batch is None:
+                    format_grouped_tf_batch = getattr(tf_module, 'format_grouped_tf_batch')
+                
+                format_grouped_long_batch = getattr(long_module, 'format_grouped_long_batch_v2', None)
+                if format_grouped_long_batch is None:
+                    format_grouped_long_batch = getattr(long_module, 'format_grouped_long_batch')
                 
                 # Group questions by type
                 from collections import defaultdict

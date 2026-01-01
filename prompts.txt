@@ -1,6 +1,15 @@
 Dataset Finalization
 ~130 DOCUMENTS -> Homogeneous 
 
+Updated the code to use grouped_batch_v2 by default.
+Location: src/openai_client.py, line 433
+Current setting:
+prompts_dir = Path(__file__).parent.parent / "prompts" / "grouped_batch_v2"
+To switch back to the original prompts, change "grouped_batch_v2" back to "grouped_batch".
+The processor will now use the improved v2 prompts with stronger TF focus when generating perturbations.
+
+
+
 
 
 

@@ -218,6 +218,12 @@ processing:
   output_suffix: "_perturbation"
   resume: true  # Skip already processed files
   mappings_per_question: 3  # Number of perturbation mappings per question
+
+prompts:
+  # Prompt customization settings
+  grouped_prompts_folder: "grouped_batch_v2"  # Folder name in prompts/ directory for grouped batch prompts
+  # Options: "grouped_batch" (original) or "grouped_batch_v2" (enhanced with stronger TF focus)
+  # This setting controls which prompt templates are used when generating perturbations in batch mode
 ```
 
 ## Project Structure
@@ -256,7 +262,15 @@ IGSHIELD/
 │   ├── __init__.py
 │   ├── mcq_prompt.py        # MCQ perturbation prompt template
 │   ├── tf_prompt.py         # True/False perturbation prompt template
-│   └── long_prompt.py       # Long-form perturbation prompt template
+│   ├── long_prompt.py       # Long-form perturbation prompt template
+│   ├── grouped_batch/       # Original grouped batch prompts
+│   │   ├── mcq_grouped_prompt.py
+│   │   ├── tf_grouped_prompt.py
+│   │   └── long_grouped_prompt.py
+│   └── grouped_batch_v2/    # Enhanced grouped batch prompts (default)
+│       ├── mcq_grouped_prompt.py
+│       ├── tf_grouped_prompt.py
+│       └── long_grouped_prompt.py
 ├── config/
 │   └── config.yaml          # Configuration file
 ├── output/                  # Input directory (JSON files)
@@ -581,6 +595,7 @@ All timestamps are in **Mountain Standard Time (MST)** for consistency.
 - **Log probabilities**: Enabled by default, can be disabled in `config.yaml` (does not affect cost)
 - **Research metrics**: Automatically computed and saved for all processed documents
 - **Pydantic validation**: All data is automatically validated for type safety and correctness
+- **Prompt folder selection**: Use `prompts.grouped_prompts_folder` in `config.yaml` to switch between `grouped_batch` (original) and `grouped_batch_v2` (enhanced with stronger TF focus). The code automatically handles function naming differences between versions.
 
 ## Troubleshooting
 
@@ -739,6 +754,8 @@ All metrics are saved in JSON format for easy analysis and visualization.
 ## Recent Updates
 
 ### Version Updates (Latest)
+- **Configurable Prompts Folder**: Added `grouped_prompts_folder` setting in `config.yaml` to switch between prompt versions (e.g., `grouped_batch` vs `grouped_batch_v2`)
+- **Flexible Function Naming**: Code automatically handles both `_v2` suffixed and non-suffixed function names for backward compatibility
 - **Pydantic Implementation**: Full type safety with Pydantic models for all data structures
 - **Log Probabilities**: Token-level log probabilities and top-k alternatives collection
 - **API Metadata**: Comprehensive metadata collection (response IDs, finish reasons, token usage)
