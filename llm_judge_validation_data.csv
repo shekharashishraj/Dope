@@ -1,0 +1,665 @@
+response_id,response_text,human_annotator_1_label,human_annotator_1_confidence,human_annotator_2_label,human_annotator_2_confidence,human_annotator_3_label,human_annotator_3_confidence,human_consensus_label,human_consensus_confidence,gpt4o_mini_label,gpt4o_mini_confidence,llm_judge_invoked,binary_agreement
+LONG_RESP_001,Not provided in the AI response.,likely AI-assisted,0.3,likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.5,N/A,,No,N/A
+LONG_RESP_002,"The Zagmuk festival in ancient Babylonian culture was significant for several reasons. Religiously, it was a time to honor the chief god Marduk, who was believed to battle chaos for the coming year. Socially, it reinforced the power of the king, who performed rituals to ensure Marduk's victory. Culturally, it was a major celebration that marked the New Year, involving public gatherings, feasts, and ceremonies that strengthened community bonds.",likely human-authored,0.8,likely human-authored,0.5,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_003,Thickness t of the oil film is...t = 1 × 10^4 angstroms,likely AI-assisted,0.4,likely human-authored,0.4,likely human-authored,0.2,likely human-authored,0.3,N/A,,No,N/A
+LONG_RESP_004,"The U.S.S.R.'s missions to Mars provided critical data on the planet's atmosphere, surface, and potential for hosting life. These missions marked significant advancements in space exploration and fostered international interest in Mars exploration.",likely AI-assisted,0.6,likely AI-assisted,0.3,likely AI-assisted,0.5,likely AI-assisted,0.5,N/A,,No,N/A
+LONG_RESP_005,"(Analyze the role of spin state interactions, magnetic fields, and molecular symmetry)",likely human-authored,0.4,likely human-authored,0.2,likely human-authored,0.4,likely human-authored,0.3,N/A,,No,N/A
+LONG_RESP_006,Galactic evolution,likely human-authored,0.6,likely human-authored,0.5,likely human-authored,0.6,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_007,Python function for checking prime numbers,likely human-authored,0.5,likely human-authored,0.7,likely AI-assisted,0.5,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_008,Python function for sorting tuple by string element,likely AI-assisted,0.4,likely AI-assisted,0.5,likely AI-assisted,0.4,likely AI-assisted,0.4,N/A,,No,N/A
+LONG_RESP_009,"def is_prime(n):
+ if n <= 1:
+ return False
+ for i in range(2, int(n ** 0.5) + 1):
+ if n % i == 0:
+ return False
+ return True",likely AI-assisted,0.4,likely AI-assisted,0.5,likely human-authored,0.4,likely AI-assisted,0.4,N/A,,No,N/A
+LONG_RESP_010,"Ptolemy did not actually estimate the Earth's size in 240 B.C.—it was Eratosthenes who did. Eratosthenes measured the Earth's circumference by comparing the angle of the Sun at noon in two different locations, Alexandria and Syene. He observed that in Syene, the Sun was directly overhead, while in Alexandria, it cast a shadow. By measuring the angle of the shadow and knowing the distance between the two cities, he calculated the Earth's circumference. This was a significant advancement, as it...",likely human-authored,0.7,likely human-authored,0.4,likely human-authored,0.6,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_011,"def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+    return True",likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.5,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_012,"def is_palindrome(number):
+    num_str = str(number)
+    return num_str == num_str[::-1]",likely human-authored,0.2,likely human-authored,0.4,likely human-authored,0.6,likely human-authored,0.4,N/A,,No,N/A
+LONG_RESP_013,"Pluto's orbital period of approximately 250 years has significant implications for its geological and atmospheric characteristics. The lengthy orbit results in extreme seasonal changes, with each season lasting about 60 Earth years. This affects the temperature and atmospheric composition on Pluto, causing the atmosphere to freeze and collapse partially or entirely during its orbit. These long seasons influence surface features and the potential for atmospheric and geological activity, with s...",likely AI-assisted,0.3,likely AI-assisted,0.5,likely human-authored,0.6,likely AI-assisted,0.4,N/A,,No,N/A
+LONG_RESP_014,"Here's a Python function using a lambda function to achieve this:
+
+```python
+def find_greater_than_n(numbers, n):
+    return list(filter(lambda x: x > n, numbers))
+```
+
+This function takes a list of numbers and returns a new list containing only the numbers greater than `n`.",likely human-authored,0.8,likely human-authored,0.5,likely human-authored,0.6,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_015,Pluto's 250-year orbital period affects its geological and atmospheric characteristics by inducing significant seasonal changes and climate variations due to its elliptical orbit. The long orbit causes extreme temperature variations due to tidal forces affecting geological activity and atmospheric composition.,likely human-authored,0.4,likely human-authored,0.8,likely human-authored,0.6,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_016,Using a for loop,likely human-authored,0.4,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_017,"Mars's atmospheric pressure is low due to its thin atmosphere, which is partially a result of its weak magnetic field. Without a strong magnetic field, Mars is less able to shield itself from solar wind, contributing to atmospheric loss. The weak magnetic field and low atmospheric pressure influence Mars's geophysical characteristics by limiting the presence of liquid water on its surface and affecting erosion and weathering processes. This relationship is crucial for understanding the planet...",likely human-authored,0.5,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_018,No answer provided.,likely AI-assisted,0.7,likely human-authored,0.4,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_019,"A black body in astronomy refers to an idealized object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. It also re-emits radiation in a characteristic spectrum that solely depends on its temperature, known as black body radiation. This concept is significant in astronomy because it provides a model for understanding the thermal radiation emitted by stars. By studying stellar spectra and comparing them to black body spectra, astronomers can d...",likely human-authored,0.5,likely human-authored,0.5,likely human-authored,0.3,likely human-authored,0.4,N/A,,No,N/A
+LONG_RESP_020,"Aristarchus estimated the Earth's size using observations of lunar eclipses and the angle of the Sun at different latitudes. By measuring the angle of the Sun at noon in two different locations, one directly north of the other, he could use the difference in angle and the known distance between the locations to calculate the Earth's circumference. This early form of trigonometry allowed him to derive surprisingly accurate results for his time.",likely human-authored,0.7,likely human-authored,0.5,likely human-authored,0.6,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_021,"For a first-order reaction, the relation is \( t_{1/2} = \frac{0.693}{k} \).
+      - \( k = \frac{0.693}{34 \text{ min}} \approx 0.0204 \text{ min}^{-1} \).
+      - The rate constant \( k \) is inversely proportional to the half-life; as half-life decreases, \( k \) increases.",likely AI-assisted,0.4,likely human-authored,0.6,likely AI-assisted,0.4,likely AI-assisted,0.4,likely AI-assisted,0.4,Yes,Yes
+LONG_RESP_022,"To calculate the final pressure after 20 g of Dry Ice (CO₂) sublimates in a sealed 0.75-liter bottle at 25°C, apply the ideal gas law: \( PV = nRT \). Mass of CO₂: 20 g Molar mass of CO₂: 44.01 g/mol Moles of CO₂ (n): \( \frac{20}{44.01} \approx 0.454 \) mol Volume (V): 0.75 L Temperature (T): 25°C = 298 K R (Ideal gas constant): 0.0821 L·atm/mol·K Calculate Pressure (P): \[ P = \frac{nRT}{V} = \frac{0.454 \times 0.0821 \times 298}{0.75} \approx 14.8 \text{ atm} \]",likely AI-assisted,0.6,likely AI-assisted,0.5,likely AI-assisted,0.4,likely AI-assisted,0.5,N/A,,No,N/A
+LONG_RESP_023,"def find_divisible_numbers(numbers, m, n):
+    return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+m = 2
+n = 3
+print(find_divisible_numbers(numbers, m, n)) # Output: [2, 3, 4, 6, 8, 9, 10]",likely human-authored,0.7,likely AI-assisted,0.5,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_024,"Pluto’s long orbital period means that its seasons are prolonged, with each lasting over 60 Earth years. This extended seasonality affects atmospheric escape and redistribution processes. During its orbit, variations in solar heating can cause extensive sublimation of surface ices, altering its atmosphere over time. Changes in the distance from the Sun also influence temperature and atmospheric pressure, which could significantly affect geological processes. Understanding these dynamics is cr...",likely human-authored,0.6,likely human-authored,0.6,likely AI-assisted,0.3,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_025,Aristarchus,likely human-authored,0.1,likely human-authored,0.0,likely AI-assisted,0.7,likely human-authored,0.0,N/A,,No,N/A
+LONG_RESP_026,"The Holy Mother of Mount Fairy Peach holds a significant place in Silla culture as a representation of fertility, protection, and prosperity. Her influence would often extend into religious practices that focus on agricultural abundance and communal harmony. Devotees may have offered prayers and rituals seeking her blessings for successful harvests and societal prosperity, indicating her pivotal role in both personal and communal life. Her influence likely reinforced societal values of revere...",likely human-authored,0.5,likely AI-assisted,0.3,likely AI-assisted,0.4,likely AI-assisted,0.4,likely AI-assisted,0.4,Yes,Yes
+LONG_RESP_027,"def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True",likely AI-assisted,0.3,likely human-authored,0.8,likely AI-assisted,0.4,likely AI-assisted,0.4,N/A,,No,N/A
+LONG_RESP_028,"def sort_tuple(input_tuple):
+    return tuple(sorted(input_tuple, key=lambda x: x[1]))",likely human-authored,0.2,likely human-authored,0.5,likely human-authored,0.9,likely human-authored,0.5,N/A,,No,N/A
+LONG_RESP_029,"def find_divisible(numbers, m, n):
+    return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+
+# Example usage
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(find_divisible(numbers, 2, 3))
+
+This function uses a lambda function within `filter()` to return numbers divisible by either `m` or `n`.",likely AI-assisted,0.5,likely human-authored,0.5,likely human-authored,0.5,likely human-authored,0.5,N/A,,No,N/A
+LONG_RESP_030,"The U.S.S.R.'s Mars lander missions, particularly the Mars series of probes, were crucial in the early exploration of Mars. The Mars 3 mission in 1971 achieved the first successful soft landing on Mars, although it transmitted data for only a few seconds. These missions contributed to our understanding of Mars' harsh surface conditions and the challenges of landing on the planet. They laid the groundwork for future missions by testing engineering solutions and advancing the technology needed ...",likely AI-assisted,0.5,likely AI-assisted,0.7,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_031,"(Discuss size comparison, genome packaging within bacterial cell, etc.)",likely human-authored,0.4,likely human-authored,0.7,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_032,"def sort_tuple(tuples):
+     return sorted(tuples, key=lambda x: x[1])",likely AI-assisted,0.4,likely AI-assisted,0.5,likely human-authored,0.5,likely AI-assisted,0.4,likely human-authored,0.2,Yes,No
+LONG_RESP_033,Intensity ratios are significant as they indicate hyperfine interactions in EPR spectroscopy. Factors influencing these ratios include electron spin interactions and the environment of the radical species.,likely human-authored,0.6,likely human-authored,0.5,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_034,"Ptolemy did not actually estimate the Earth's size in 240 B.C.; this is commonly attributed to Eratosthenes. Eratosthenes used the difference in the angle of the sun's rays at two locations (Alexandria and Syene) at noon on the summer solstice. By measuring the angle of the shadow in Alexandria and knowing that there was no shadow in Syene, he calculated the Earth's circumference. The significance lay in his understanding that the Earth was spherical and could be measured using geometric prin...",likely human-authored,0.4,likely AI-assisted,0.3,likely human-authored,0.8,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_035,"def is_prime(n):
+       if n <= 1:
+           return False
+       for i in range(2, int(n**0.5) + 1):
+           if n % i == 0:
+               return False
+       return True",likely human-authored,0.6,likely AI-assisted,0.2,likely human-authored,0.6,likely human-authored,0.6,likely AI-assisted,0.4,Yes,No
+LONG_RESP_036,The Laniakea supercluster is a massive structure in the universe containing the Milky Way among other galaxies. Its discovery has reshaped our understanding of superclusters and has implications for cosmic flow fields affecting galaxies. Understanding the position within Laniakea helps astronomers map the gravitational influences that affect galaxy movements and provides insight into how cosmic structures interact on a massive scale.,likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.4,likely human-authored,0.6,likely human-authored,0.6,Yes,Yes
+LONG_RESP_037,"A white dwarf is the final evolutionary state of stars whose mass is not high enough to become neutron stars or black holes. They are the remnants of low and medium mass stars, typically about the size of Earth in volume but with a mass comparable to that of the Sun. White dwarfs are composed mostly of electron-degenerate matter and no longer undergo fusion reactions. They radiate energy that is initially derived from residual thermal energy, gradually cooling and fading over time. White dwar...",likely human-authored,0.2,likely human-authored,0.6,likely human-authored,0.6,likely human-authored,0.5,N/A,,No,N/A
+LONG_RESP_038,climatic variations,likely AI-assisted,0.8,likely AI-assisted,1.0,likely AI-assisted,1.0,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_039,"Pluto’s lengthy orbital period of approximately 250 years leads to extended seasonal cycles and significant climatic variations. Due to its extreme axial tilt and elliptical orbit, regions on Pluto experience prolonged periods of sunlight or darkness, affecting surface temperature and atmospheric pressure. This results in volatile movement and changes, impacting geological and atmospheric dynamics.",likely AI-assisted,0.9,likely AI-assisted,1.0,likely human-authored,0.2,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_040,Pluto’s axial tilt,likely AI-assisted,0.7,likely AI-assisted,0.7,likely AI-assisted,0.9,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_041,"def sort_tuple(tuples):
+ return sorted(tuples, key=lambda x: x[1])",likely human-authored,0.7,likely human-authored,0.7,likely human-authored,1.0,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_042,"Venus has an extremely slow rotational speed, taking about 243 Earth days to complete one rotation. This slow rotation is a significant factor in Venus’s weak magnetic field, which is over 10,000 times weaker than Earth's. A planet's magnetic field is typically generated by the motion of conductive materials in its interior, a process driven by rotation. The lack of a substantial magnetic field allows Venus to have direct interactions with solar wind, which impacts its atmospheric composition...",likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,Yes,Yes
+LONG_RESP_043,"Although NASA’s rover missions have primarily focused on Mars, the exploration of Venus has been significant in terms of missions like Magellan, which mapped the Venusian surface with radar. These missions provided valuable data on Venus's geology, atmosphere, and volcanic activity, enhancing our understanding of its harsh surface conditions, atmospheric composition, and weather patterns. Venus's study helped compare terrestrial planet atmospheres and geological features, contributing vital i...",likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_044,"The methodology employed by Eratosthenes involved observing the angles of shadows in different locations to estimate the Earth's circumference. He noticed that in Syene (modern-day Aswan, Egypt), the sun was directly overhead at noon during the summer solstice, casting no shadow, while in Alexandria, shadows were cast at an angle. By measuring this angle and knowing the distance between the two locations, he used geometry to estimate Earth's size.",likely AI-assisted,0.8,likely AI-assisted,1.0,likely AI-assisted,0.8,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_045,"Pluto’s long orbital period means that it experiences extended seasons, each lasting for over two decades. This significantly impacts its surface and atmospheric conditions. The tilt of Pluto’s axis results in extreme variations in sunlight, affecting the temperature and causing the atmosphere to freeze and thicken as it moves away from the Sun. These changes can lead to sublimation and deposition processes that alter its surface features over time. As a result, Pluto’s climate and geological...",likely human-authored,1.0,likely human-authored,0.5,likely AI-assisted,0.5,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_046,"def count_divisible(numbers, m, n):
+   return len(list(filter(lambda x: x % m == 0 or x % n == 0, numbers)))
+
+# Example usage
+numbers = [10, 15, 20, 25, 30]
+m = 5
+n = 3
+print(count_divisible(numbers, m, n))  # Output: 5",likely AI-assisted,0.4,likely human-authored,0.5,likely AI-assisted,0.6,likely AI-assisted,0.5,N/A,,No,N/A
+LONG_RESP_047,"To calculate the final pressure, use the ideal gas law: 
+
+PV = nRT
+
+First, calculate the number of moles of CO₂:
+
+Molar mass of CO₂ = 44 g/mol
+n = 20 g/44 g/mol = 0.4545 mol
+
+Given R = 0.0821 L atm/mol K and T = 25°C = 298 K:
+
+P = nRT/V
+P = 0.4545 * 0.0821 * 298/0.75
+P ≈ 15.0 atm
+
+Underlying Principle: The behavior of an ideal gas is described by the ideal gas law, where the pressure, volume, and temperature are directly related to the number of moles of the gas.",likely human-authored,0.7,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_048,No answer found in AI response.,likely human-authored,0.8,likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_049,"def find_divisible(numbers, m, n):
+    return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))",likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.7,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_050,"Function to check if a number is even: ```python
+def is_even(number):
+    return number % 2 == 0
+```",likely AI-assisted,0.7,likely AI-assisted,0.9,likely human-authored,0.2,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_051,"Use the formula φ = hc/λ, where h is Planck's constant and c is the speed of light. 
+
+Work function φ = (6.63 × 10^{-34} J·s × 3 × 10^8 m/s) / (564 × 10^{-9} m) ≈ 3.52 × 10^{-19} J.
+
+Implications: Determines the minimum energy needed for photoelectric emission from sodium, critical for understanding electron emissions in the photoelectric effect.",likely AI-assisted,0.7,likely AI-assisted,1.0,likely AI-assisted,1.0,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_052,"def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True",likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_053,"**Palindrome Function:** A function to check whether a number is a palindrome reverses the number and checks if it is the same as the original. If so, it’s a palindrome.",likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_054,"A black body in astronomy is an idealized object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. It emits radiation at a maximum rate for its given temperature. The concept is significant in understanding the radiation of stars and their thermal properties because it helps astronomers determine the temperature of stars by analyzing the spectrum of light they emit. By comparing real stellar spectra to that of an ideal black body, astronomers ...",likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_055,"** Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.
+- **Answer:** Eratosthenes estimated the Earth's size by measuring the angle of the Sun's rays at noon in Alexandria and comparing it to Syene, where the Sun was directly overhead at the same time. By measuring the shadow angle and knowing the distance between the two cities, he calculated the Earth's circumference. This method wa...",likely AI-assisted,1.0,likely AI-assisted,0.7,likely AI-assisted,0.7,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_056,"Mars’s thin atmosphere results from its weak magnetic field, which does not protect against solar winds that strip away atmospheric particles. This low atmospheric pressure affects surface conditions and potential habitability, influencing aspects like temperature fluctuations and erosion processes.",likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,1.0,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_057,"According to Charles's Law, \( V_1/T_1 = V_2/T_2 \) (in Kelvin).
+      - Convert temperatures to Kelvin: 20°C = 293 K, 10°C = 283 K.
+      - \( V_1 = 100 \text{ ml} \), \( V_2 = \frac{V_1 \cdot T_2}{T_1} = \frac{100 \cdot 283}{293} \approx 96.6 \text{ ml} \).
+      - Gas volume decreases with decreasing temperature when pressure and quantity of gas are constant.",likely human-authored,0.4,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_058,"def is_even(number):
+    return number % 2 == 0",likely AI-assisted,0.5,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_059,"Venus has a very slow rotational speed, taking about 243 Earth days to complete one rotation. This slow rotation is thought to contribute to the planet’s weak magnetic field, which is much weaker than Earth's. A strong magnetic field is generally generated by a planet's dynamo effect, which requires a combination of rotation and convection in its liquid core. Due to Venus's slow rotation, the dynamo effect is greatly reduced, resulting in a weak magnetic field. This weak magnetic field has im...",likely human-authored,0.7,likely human-authored,1.0,likely human-authored,0.7,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_060,def is_even(number): return number % 2 == 0,likely human-authored,0.6,likely human-authored,0.5,likely AI-assisted,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_061,No answer provided in the supplied AI response.,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_062,"   def find_divisibles(numbers, m, n):
+       return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+
+   # Example usage
+   numbers = [10, 15, 20, 25, 30, 35]
+   m = 5
+   n = 3
+   print(find_divisibles(numbers, m, n))
+   ```
+",likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.7,Yes,Yes
+LONG_RESP_063,"Mars's rotational speed is one of the factors that influence its magnetic field strength, although the planet's weak magnetic field is primarily due to its core dynamics. Mars rotates relatively quickly, about once every 24.6 hours, but it lacks a significant global magnetic field like Earth's because its core may have solidified. The weak magnetic field affects Mars's atmosphere and surface radiation levels, contributing to its geophysical characteristics.",likely human-authored,0.3,likely AI-assisted,0.9,likely human-authored,0.3,likely human-authored,0.3,N/A,,No,N/A
+LONG_RESP_064,"The U.S.S.R.'s Mars lander missions, including the Mars 3 mission, were historically significant as they represented early efforts to explore Mars directly. Despite technical difficulties, these missions provided valuable data on Martian atmosphere, surface conditions, and potential for life, paving the way for future exploration and increasing our understanding of the planet.",likely AI-assisted,0.3,likely human-authored,1.0,likely human-authored,0.7,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_065,"def find_divisible(numbers, m, n):
+  return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+
+# Example usage:
+numbers = [10, 20, 30, 40, 50]
+m = 5
+n = 10
+divisible_numbers = find_divisible(numbers, m, n)
+print(divisible_numbers)",likely human-authored,0.9,likely human-authored,1.0,likely human-authored,0.6,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_066,"def is_prime(num):
+ if num <= 1:
+ return False
+ for i in range(2, int(num ** 0.5) + 1):
+ if num % i == 0:
+ return False
+ return True",likely AI-assisted,0.6,likely human-authored,0.9,likely human-authored,0.6,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_067,"A white dwarf is a stellar remnant composed mostly of electron-degenerate matter. It is the final evolutionary state for stars not massive enough to become neutron stars or black holes. White dwarfs hold significance in understanding the lifecycle of stars and their radiation, as they provide insights into the thermal properties of degenerate matter. Over time, they cool and fade away, illustrating the final stages of stellar evolution.",likely human-authored,0.6,likely human-authored,0.9,likely human-authored,0.6,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_068,Andromeda’s location,likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_069,Python function provided,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,0.7,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_070,"- Volume of oil = \( 1 \text{ mm}^3 = 1 \times 10^{-6} \text{ m}^3 \). - Area = \( 1 \text{ m}^2 \). - Thickness = \(\frac{\text{Volume}}{\text{Area}} = \frac{1 \times 10^{-6} \text{ m}^3}{1 \text{ m}^2} = 1 \times 10^{-6} \text{ m}\). - Convert to angstroms: \( 1 \text{ m} = 10^{10} \text{ angstroms} \). - Thickness in angstroms: \( 1 \times 10^{-6} \times 10^{10} = 10,000 \text{ angstroms} \).",likely human-authored,0.7,likely human-authored,1.0,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_071,"Eratosthenes estimated the Earth's circumference using observations of the sun's angle at two different locations in Egypt, Syene and Alexandria. By calculating the angle difference and knowing the distance between the two locations, he used geometry to estimate the Earth's size accurately.",likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_072,"The rate constant \( k \) is calculated using the formula for first-order reactions: \[ k = \frac{0.693}{t_{1/2}} \] \[ k = \frac{0.693}{34 \, \text{minutes}} \approx 0.0204 \, \text{min}^{-1} \] Relationship: For first-order reactions, the half-life is constant and independent of the initial concentration. The rate constant is inversely proportional to the half-life.",likely AI-assisted,0.8,likely AI-assisted,1.0,likely AI-assisted,0.6,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_073,"The Laniakea supercluster is a massive cosmic structure that contains the Milky Way galaxy among hundreds of thousands of other galaxies. Its discovery helps astronomers understand the large-scale structure of the universe, showcasing how galaxies are interconnected within a vast network. This knowledge challenges and enhances our understanding of cosmic flow, the expansion of the universe, and the gravitational influences that shape galaxy clusters.",likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_074,Virgo supercluster,likely human-authored,0.9,likely AI-assisted,0.1,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_075,"The Virgo Cluster is one of the nearest galaxy clusters to the Milky Way and plays a crucial role in understanding cosmic structure. It helps astronomers study the distribution of galaxies and the nature of dark matter due to its massive gravitational pull affecting nearby galaxies. This cluster offers insights into galaxy formation, the behavior of galaxy clusters, and the large-scale structure of the universe.",likely human-authored,0.8,likely AI-assisted,0.3,likely human-authored,0.5,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_076,"def sort_by_integer_element(tuples):
+ return sorted(tuples, key=lambda x: x[1])  # Assuming integer is at index 1",likely AI-assisted,0.8,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_077,political implications,likely AI-assisted,0.8,likely human-authored,0.3,likely human-authored,0.2,likely human-authored,0.2,N/A,,No,N/A
+LONG_RESP_078,"Gurbani hymns in Sikh literature serve as the spiritual and theological foundation for Sikh beliefs. They articulate the key principles of the Sikh faith, such as the oneness of God, the importance of living truthfully, selfless service, and devotion. These hymns guide moral conduct and spiritual enlightenment. The narratives conveyed through gurbani offer insights into the life of the Gurus and the historical context of Sikhism’s development. They emphasize values like equality, social justi...",likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.9,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_079,"**  
+Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.  
+- The U.S.S.R.'s Venera program significantly advanced our understanding of Venus. The Venera landers were the first to transmit data from the surface of another planet, providing crucial information on the temperature, pressure, and atmospheric composition of Venus. These missions revealed the extreme conditions on Venu...",likely human-authored,0.6,likely human-authored,0.9,likely human-authored,1.0,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_080,The Laniakea supercluster influences our understanding of galactic evolution and the Milky Way's location as it defines the gravitational boundaries that hold galaxies together. It helps to map out cosmic structures and shows how galaxies are interconnected within the universe.,likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,Yes,Yes
+LONG_RESP_081,No answer provided in the AI response.,likely human-authored,0.7,likely human-authored,0.7,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.7,Yes,Yes
+LONG_RESP_082,"Mars's rotational speed and its magnetic field strength are interconnected in shaping the planet's geophysical characteristics. Mars rotates approximately once every 24.6 hours, which is fairly similar to Earth’s rotational period. However, Mars lacks a significant global magnetic field, unlike Earth. This discrepancy is thought to be due to the cessation of the dynamo action in Mars’s core, which was necessary for generating a magnetic field. A rapid planetary rotation often contributes to a...",likely human-authored,0.9,likely human-authored,0.6,likely human-authored,0.6,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_083,"The Virgo Cluster is the nearest large galaxy cluster to our Milky Way and plays a crucial role in understanding the large-scale structure of the universe. It's part of the Virgo Supercluster, which also includes our Local Group of galaxies. Studying the Virgo Cluster helps astronomers understand galaxy formation and evolution, interactions between galaxies, and the distribution of dark matter. The cluster's influence affects the movement and future trajectory of the Milky Way within the cosm...",likely human-authored,1.0,likely human-authored,0.9,likely human-authored,0.7,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_084,"NASA's rover missions to Venus have been limited, with most exploration conducted via orbiters and probes. However, the data collected by various missions have significantly advanced our understanding of Venus's atmosphere, surface conditions, and potential volcanic activity. The missions have revealed extreme temperatures, high-pressure atmospheres rich in carbon dioxide, and clouds of sulfuric acid, reshaping our view of Venus from a potentially habitable twin of Earth to a hostile environm...",likely human-authored,0.8,likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_085,"def sort_tuple(tuples):
+ return sorted(tuples, key=lambda x: x[1])",likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.7,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_086,"Understanding the length involves knowing the number of base pairs and converting it using the length per base pair. Typically, an E. coli DNA is about 1.58 mm. Its compact packaging within the cell is crucial for functionality.",likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.9,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_087,"Pluto's orbital period of about 250 years leads to extremely long seasons, each lasting over 60 Earth years. This prolonged period results in significant variations in temperature and atmospheric composition as Pluto gets closer to, or farther from, the Sun. During its closest approach to the Sun (perihelion), Pluto's atmosphere becomes thicker due to sublimation of surface ices. As it moves away to aphelion, the atmosphere collapses, and frost forms on the surface. These conditions create a ...",likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.5,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_088,"Pluto’s long orbital period results in extended seasons, with each lasting for several decades. This affects its geological and atmospheric characteristics, as the prolonged exposure to the Sun during certain periods can lead to sublimation of surface ices, altering Pluto's surface and atmospheric composition. The lengthy orbit also means that the climate is subject to substantial changes over time, impacting surface temperature and pressure, and possibly driving geological activity as the at...",likely human-authored,0.8,likely human-authored,0.7,likely AI-assisted,0.6,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_089,"def sort_tuple_by_integers(tup):
+    return tuple(sorted(tup, key=lambda x: x if isinstance(x, int) else float('inf')))",likely human-authored,0.7,likely human-authored,0.7,likely human-authored,0.6,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_090,"The significance of the Laniakea supercluster lies in its role as a large-scale cosmic structure that helps us understand the Milky Way’s position within a broader cosmic context. This supercluster organizes galaxies, including ours, within a gravitational framework that influences our movement through space. Its study provides insight into the distribution of matter in the universe and helps refine models of cosmic evolution.",likely AI-assisted,0.6,likely AI-assisted,0.7,likely human-authored,0.2,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_091,"** The U.S.S.R.'s Venera program conducted several lander missions to Venus, sending back the first images from the surface and data on Venusian atmospheric conditions. These missions provided valuable information about Venus's high surface temperatures and pressures, and its primarily carbon dioxide atmosphere with sulfuric acid clouds, shaping future planetary science studies.
+
+For further customized responses, please upload the document or provide specific excerpts or contexts.",likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.6,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_092,"** Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.
+- **Answer:** The U.S.S.R.'s Venera missions to Venus were groundbreaking. They provided the first images from the surface of another planet and sent back data on Venus's atmosphere and surface conditions. These missions revealed Venus's high surface pressure and temperature, predominantly carbon dioxide atmosphere, and help...",likely human-authored,0.8,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_093,"The question requests to answer ""integer""",likely human-authored,0.7,likely human-authored,0.6,likely human-authored,1.0,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_094,"The Virgo Cluster is a significant collection of galaxies situated approximately 53 million light-years away from Earth. It is the nearest large galaxy cluster to the Milky Way and contains about 1,300 to 2,000 galaxies. Its significance lies in providing a detailed laboratory for studying galaxy interactions, dynamics, and evolution. The cluster's gravitational effects are thought to influence the local group of galaxies, including the Milky Way. Understanding the Virgo Cluster helps astrono...",likely AI-assisted,0.9,likely AI-assisted,1.0,likely AI-assisted,0.7,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_095,"Principle: According to Charles's Law, the volume of a gas is directly proportional to its temperature when pressure is held constant. Calculation: Initial volume (\( V_1 \)) = 100 ml at 20°C (293 K) Final temperature (\( T_2 \)) = 10°C (283 K) \[ \frac{V_2}{100 \, \text{ml}} = \frac{283 \, \text{K}}{293 \, \text{K}} \] \[ V_2 \approx 96.6 \, \text{ml} \] As temperature decreases, the volume of gas decreases, demonstrating the direct relationship between volume and temperature at constant pre...",likely AI-assisted,0.8,likely AI-assisted,1.0,likely human-authored,0.0,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_096,"The USA's lander missions to Venus, such as the Pioneer Venus project, conducted extensive studies of Venus's atmosphere and surface. These missions were significant because they provided unprecedented data about Venus's extreme surface conditions, characterized by high temperatures and pressures, and an atmosphere composed mainly of carbon dioxide with clouds of sulfuric acid. The information gathered helped scientists understand the greenhouse effect in Venus's atmosphere and drew parallels...",likely AI-assisted,0.8,likely AI-assisted,0.3,likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_097,"** Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.
+- **Answer:** Eratosthenes estimated the Earth's circumference by comparing the angles of the Sun's rays at two different locations in Egypt at noon during the summer solstice. In Syene (modern-day Aswan), the Sun was directly overhead, casting no shadow. In Alexandria, however, there was a shadow, indicating a different angle. By...",likely human-authored,0.1,likely AI-assisted,0.7,likely AI-assisted,1.0,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_098,(Write a detailed explanation based on specific parameters if provided elsewhere.),likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.8,Yes,Yes
+LONG_RESP_099,"Write a function to check whether the given number is even or not.
+
+```python
+def is_even(number):
+    return number % 2 == 0
+```",likely AI-assisted,0.9,likely human-authored,0.0,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_100,"A black body in astronomy is an idealized object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. Stars approximate black bodies, enabling astronomers to use black body radiation to determine their temperature and other thermal properties. Understanding black bodies helps in studying the distribution and intensity of radiation emitted by stars and other celestial objects.",likely human-authored,0.6,likely AI-assisted,0.2,likely human-authored,0.9,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_101,"Mars has a thin atmosphere and a weak magnetic field due to its smaller size and loss of internal heat. The weak magnetic field contributes to the atmospheric loss as it fails to provide adequate protection from solar winds, which strip away the atmosphere over time. Consequently, the low atmospheric pressure influences the planet's surface conditions and limits the possibility of liquid water. Understanding these factors helps explain the planet's geophysical and climatic characteristics.",likely AI-assisted,0.7,likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_102,"Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.
+
+**Answer:**
+The U.S.S.R.'s Venera missions to Venus were groundbreaking, as they were the first to land on another planet and transmit data back to Earth. They provided the first images from the surface of Venus and measured its atmospheric conditions, revealing a hot and high-pressure environment with thick clouds of sulfuric...",likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,N/A,,No,N/A
+LONG_RESP_103,"A white dwarf is a small, dense remnant of a star that has reached the end of its nuclear burning life cycle. Typically, white dwarfs arise from stars with an initial mass of up to about 8 times that of the Sun. Once these stars have expended their nuclear fuel, they expel their outer layers and leave behind a dense core composed primarily of electron-degenerate matter. White dwarfs are no longer undergoing fusion reactions; instead, they emit energy solely through the residual thermal energy...",likely human-authored,0.8,likely human-authored,0.6,likely AI-assisted,0.0,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_104,"A black body in astronomy is an idealized object that absorbs all electromagnetic radiation, regardless of frequency or angle of incidence. It emits radiation at a characteristic spectrum that depends only on its temperature, described by Planck's law. In astronomy, stars are often treated as black bodies to model their radiation, as this approximation helps in determining the temperature and energy output of stars by analyzing their spectrum. Understanding the black body radiation of stars a...",likely human-authored,0.9,likely human-authored,0.6,likely human-authored,1.0,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_105,Write a function to check whether the given number is prime or not.,likely AI-assisted,0.7,likely AI-assisted,0.9,likely human-authored,0.4,likely AI-assisted,0.8,likely AI-assisted,0.8,Yes,Yes
+LONG_RESP_106,Function to Check Palindromic Number: def is_palindromic(number): str_num = str(number) return str_num == str_num[::-1],likely AI-assisted,1.0,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_107,"Venus has an extremely slow rotational speed, taking about 243 Earth days to complete one rotation, which is longer than its orbital period around the Sun. This slow rotation has significant implications for its atmospheric dynamics and geophysical characteristics. Venus's atmosphere is incredibly dense and consists mainly of carbon dioxide, leading to a surface pressure about 92 times that of Earth's. The dense atmosphere, combined with the slow rotation, contributes to a phenomenon known as...",likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_108,"A white dwarf is the remnant core of a star that has exhausted its nuclear fuel and shed its outer layers. Typically, white dwarfs are the endpoints of stellar evolution for stars with masses up to about 8 solar masses. They are composed mostly of electron-degenerate matter, which allows them to resist further collapse. Despite their small size, white dwarfs are quite hot, initially glowing brightly due to residual thermal energy. Over time, they cool and fade. Understanding white dwarfs is c...",likely human-authored,0.5,likely AI-assisted,0.4,likely AI-assisted,0.5,likely AI-assisted,0.4,N/A,,No,N/A
+LONG_RESP_109,"** Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C.
+- **Answer:** Eratosthenes estimated the Earth's circumference by measuring the angle of the Sun's rays at two different locations (Syene and Alexandria) at the same time. By knowing the distance between these two cities and the angle of the shadow, he applied geometry to derive the Earth's circumference.
+
+**",likely human-authored,0.0,likely AI-assisted,0.9,likely AI-assisted,0.6,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_110,This function uses a lambda to filter numbers that are divisible by either `m` or `n`.,likely AI-assisted,1.0,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_111,"To calculate the final pressure, apply the ideal gas law: \( PV = nRT \). - Moles of CO₂: \( \frac{20 g}{44 g/mol} \approx 0.455 \) mol - Using \( R = 0.0821 \, \text{L atm/mol K} \), \( T = 25°C = 298 K \). - \( P = \frac{nRT}{V} = \frac{0.455 \times 0.0821 \times 298}{1} \approx 11.1 \, \text{atm} \).",likely human-authored,0.2,likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_112,"Volume at 20°C = 100 ml Use Charles's Law: \(V_1/T_1 = V_2/T_2\) Convert temperatures to Kelvin: 20°C = 293 K 10°C = 283 K \(V_2 = V_1 \times \frac{T_2}{T_1} = 100 \times \frac{283}{293}\) \(V_2 \approx 96.6 \, \text{ml}\) Charles’s Law shows that gas volume is directly proportional to temperature.",likely AI-assisted,0.5,likely AI-assisted,0.8,likely human-authored,0.3,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_113,"Pluto's long orbital period means that its seasons are extremely lengthy, with each lasting over 60 Earth years. This extended time frame leads to severe and prolonged climatic conditions, significantly affecting its surface and atmospheric dynamics. As it moves further from the Sun, temperatures drop, causing its thin atmosphere to freeze onto its surface. Conversely, as it approaches the Sun, sublimation occurs, thickening the atmosphere. Such drastic cyclic changes influence not only the a...",likely human-authored,0.8,likely human-authored,0.6,likely AI-assisted,0.6,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_114,"** Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.
+
+- **Answer:** Eratosthenes used the difference in the angle of the sun's rays at two different locations, Syene and Alexandria, at the same time of day to estimate the Earth's circumference. He knew that in Syene (modern-day Aswan), the sun was directly overhead at noon during the summer solstice, casting no shadow, whereas in Al...",likely human-authored,0.6,likely human-authored,0.6,likely human-authored,0.5,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_115,"Eratosthenes famously estimated the Earth's circumference around 240 B.C. by comparing the angles of the Sun's rays in two different locations in Egypt—Syene and Alexandria. His method involved measuring the shadow cast by a stick at local noon on the summer solstice in Alexandria, while knowing that at the same time in Syene, the Sun was directly overhead. By calculating the angle of the shadow and knowing the distance between the two locations, Eratosthenes used simple geometry to estimate ...",likely human-authored,0.4,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_116,Political implications.,likely human-authored,0.5,likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_117,"Venus has a very slow rotational speed and lacks a significant magnetic field, which influences its climatic conditions. The slow rotation means Venus does not have the kind of dynamo effect that generates Earth's magnetic field. As a result, solar winds directly interact with its atmosphere, contributing to atmospheric loss. These factors, coupled with a thick, CO2-rich atmosphere, create a runaway greenhouse effect, leading to high surface temperatures and extreme climatic conditions.",likely human-authored,1.0,likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_118,Aristarchus,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.3,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_119,"Mars's atmosphere is thin, with a pressure of about 0.6% that of Earth's atmospheric pressure at sea level. This low atmospheric pressure is partly due to Mars's lack of a significant global magnetic field. A strong magnetic field can protect a planet's atmosphere from being eroded by solar wind. Mars's weak and localized magnetic fields, present only in some regions of the crust, fail to provide such protection. This loss of atmospheric pressure affects Mars's ability to retain heat, influen...",likely human-authored,0.7,likely human-authored,0.5,likely human-authored,0.9,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_120,"The Virgo Cluster is a massive cluster of galaxies located about 53 million light-years away in the constellation Virgo. It is a significant feature of our cosmic neighborhood and plays a crucial role in the Local Supercluster's gravitational dynamics. The Milky Way, as part of the Local Group of galaxies, is influenced by the Virgo Cluster through gravitational interactions that affect its motion and evolution. Understanding the Virgo Cluster helps astronomers learn about the large-scale str...",likely human-authored,0.8,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_121,**Sort Tuple by Date Element:** A function to sort a tuple by its date element can leverage a sorting algorithm or the built-in sort functionality to order the tuples based on the date keys.,likely AI-assisted,0.9,likely AI-assisted,0.3,likely AI-assisted,0.5,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_122,"The Virgo Supercluster is a massive group of galaxies, including the Milky Way, that plays a critical role in our understanding of cosmic structure. It highlights the hierarchical nature of the universe, showcasing how galaxies are organized into clusters and superclusters, influencing their dynamics and evolution. The Milky Way's position within the Virgo Supercluster helps astronomers study galaxy formation, interaction, and distribution on large scales, therefore enhancing the comprehensio...",likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,1.0,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_123,"Laniakea Supercluster: The Laniakea Supercluster is significant because it encompasses the Milky Way and helps astronomers understand the structure and scale of the universe. It highlights the interconnectedness of galaxies within large cosmic filaments and nodes, impacting theories about galaxy formation and movement.",likely AI-assisted,1.0,likely AI-assisted,0.7,likely human-authored,0.1,likely AI-assisted,0.8,likely AI-assisted,0.8,Yes,Yes
+LONG_RESP_124,"def find_divisible(numbers, m, n): return list(filter(lambda x: x % m == 0 or x % n == 0, numbers)) numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10] m = 2 n = 3 print(find_divisible(numbers, m, n)) # Output: [2, 3, 4, 6, 8, 9, 10]",likely AI-assisted,1.0,likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_125,"Function to check if a number is even:
+   ```python
+   def is_even(number):
+       return number % 2 == 0
+   ```",likely human-authored,0.9,likely human-authored,0.5,likely human-authored,0.4,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_126,"Write a function to sort a tuple by its string element.
+
+```python
+def sort_tuple(tuples):
+ return sorted(tuples, key=lambda x: x[1])
+
+# Example usage
+example_tuple = [(1, 'banana'), (2, 'apple'), (3, 'cherry')]
+sorted_tuple = sort_tuple(example_tuple)
+```",likely AI-assisted,1.0,likely AI-assisted,0.7,likely human-authored,0.1,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_127,"Mars’s current rotational period is approximately 24.6 hours, similar to Earth's, but its magnetic field is weak compared to Earth's. The relationship between rotational speed and magnetic field strength in terrestrial planets is often related to the dynamo effect, which requires a molten, convecting metallic core and rapid rotation. Mars may have once had a strong magnetic field that diminished as its core cooled and solidified, ceasing convection. This lack of a strong magnetic field increa...",likely AI-assisted,0.6,likely AI-assisted,0.5,likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_128,"""greater than m and n""",likely AI-assisted,0.7,likely human-authored,0.2,likely AI-assisted,0.7,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_129,"The USSR's lander missions to Venus, particularly the Venera program, were significant historically and politically. These missions provided the first detailed information about Venus's atmosphere and surface conditions, revealing a hot and hostile environment. Politically, the missions were part of the space race during the Cold War, showcasing Soviet space capabilities and contributing to our understanding of planetary science.",likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_130,"** Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.
+
+    **Answer:** The U.S.S.R.'s Venera lander missions were significant as they provided the first direct data from Venus's surface, confirming extreme surface temperatures and pressures that were previously theorized. These missions also returned the first photographs from the surface of another planet, contributing greatly...",likely human-authored,0.8,likely AI-assisted,0.2,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_131,"The Virgo Cluster is a significant cluster of galaxies that is relatively close to the Milky Way. Understanding its structure and the gravitational interactions within it helps astronomers study the distribution of galaxies and the larger-scale structure of the universe. As a part of the Virgo Supercluster, the study of the Virgo Cluster provides insights into how galaxies are grouped, their motion, and the role of dark matter in galaxy formation and dynamics.",likely human-authored,0.8,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_132,"For this question, additional specific parameters and calculations would be needed to provide the total length. However, typically, an E. coli chromosome is approximately 1.4 millimeters long when fully extended. This is significant because the DNA must be efficiently packed into the bacterial cell, which is only about 1–2 micrometers in size.",likely AI-assisted,0.6,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_133,"def find_numbers_greater_than_n(numbers, n):
+ return list(filter(lambda x: x > n, numbers))
+
+# Example
+numbers = [1, 5, 8, 12, 20]
+n = 10
+result = find_numbers_greater_than_n(numbers, n)
+print(result) # Output: [12, 20]",likely human-authored,0.5,likely human-authored,0.7,likely AI-assisted,0.2,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_134,"A black body in astronomy refers to an idealized object that absorbs all electromagnetic radiation falling onto it, without reflecting any light. It emits radiation at all wavelengths, and the spectrum of this emitted radiation is only dependent on the black body’s temperature. This concept is critical in understanding stars, as their radiation can be approximated by black body radiation, allowing scientists to determine a star's temperature, luminosity, and size. The Black Body Radiation Law...",likely AI-assisted,0.9,likely AI-assisted,0.6,likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.8,Yes,Yes
+LONG_RESP_135,"Function to sort a tuple by its string element: ```python
+def sort_by_string_element(tuples):
+    return sorted(tuples, key=lambda x: x[1])
+```",likely human-authored,0.8,likely human-authored,0.7,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_136,"Function to sort a tuple by its date element:
+
+from datetime import datetime
+
+def sort_by_date(tuples_list):
+    return sorted(tuples_list, key=lambda x: datetime.strptime(x[1], '%Y-%m-%d'))",likely human-authored,1.0,likely AI-assisted,0.2,likely AI-assisted,0.4,likely AI-assisted,0.3,likely AI-assisted,0.3,Yes,Yes
+LONG_RESP_137,"Pluto's long orbital period results in extended seasons, with each lasting over 60 years. Its elliptical orbit causes significant variations in its distance from the Sun, impacting temperature and atmospheric pressure. During closer approaches, the atmosphere expands due to sublimation of surface ice, while moving away leads to atmospheric collapse as gases freeze. These extreme changes influence surface geology, as active processes like sublimation and deposition reshape Pluto's surface. Und...",likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_138,"Function to Sort Tuple by Date Element: from datetime import datetime def sort_by_date(tuples): return sorted(tuples, key=lambda x: datetime.strptime(x[1], ""%Y-%m-%d""))",likely human-authored,0.3,likely AI-assisted,0.6,likely AI-assisted,0.8,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_139,"Write a function to check whether the given number is even or not.
+
+def is_even(number): return number % 2 == 0",likely human-authored,0.7,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_140,"Intensity ratios provide information about the electronic environment and the interactions between unpaired electrons and surrounding nuclei. Factors: Hyperfine interactions, spin-orbit coupling, and the local molecular environment influence these ratios.",likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_141,3.52 × 10^{-19} J,likely human-authored,1.0,likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_142,"The USSR's Venera missions to Venus were historically significant as they were the first to successfully land on another planet and transmit data back to Earth, expanding our understanding of Venus’s atmosphere, surface conditions, and composition. Politically, these missions demonstrated Soviet prowess in space exploration during the Cold War era, marking significant achievements in the space race and influencing geopolitical dynamics by showcasing technological advancements. Scientific data...",likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_143,"def count_divisible(numbers, m, n):
+    return len(list(filter(lambda x: x % m == 0 or x % n == 0, numbers)))
+
+# Example usage:
+numbers = [10, 20, 33, 46, 55]
+m = 5
+n = 11
+count = count_divisible(numbers, m, n)
+print(count)  # Output will vary based on the list and numbers chosen",likely AI-assisted,0.8,likely human-authored,0.0,likely AI-assisted,0.9,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_144,"Laniakea supercluster's significance lies in its vast structure influencing the dynamics and location of galaxies, including the Milky Way, providing insights into cosmic web connectivity and gravitational binding of galaxy clusters.",likely AI-assisted,1.0,likely AI-assisted,0.6,likely human-authored,0.1,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_145,"The Daoist concept of yin-yang represents the duality and harmony of opposite forces. Yin and yang are complementary, interconnected forces that illustrate the balance in the universe. In Daoist philosophy, this balance is essential to understanding the flow of life and achieving harmony with the Tao. The concept relates to ""wu wei"" or non-action, suggesting that one should align with the natural order and allow things to unfold naturally, without forceful intervention. This approach to life ...",likely AI-assisted,0.8,likely AI-assisted,0.7,likely AI-assisted,0.7,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_146,"The USA’s lander missions, particularly the Magellan mission, provided detailed radar maps of Venus, highlighting its volcanic and tectonic activity. These missions significantly advanced our understanding of Venus's atmosphere, surface conditions, and geology, revealing a planet with a harsh climate and extreme surface temperatures. They helped scientists compare Venus’s geological features with Earth’s, offering insights into planetary evolution and the greenhouse effect.",likely human-authored,0.3,likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_147,"Function to check if a number is palindrome:
+
+def is_palindrome(number):
+    original = str(number)
+    reversed_num = original[::-1]
+    return original == reversed_num",likely human-authored,1.0,likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_148,When 20 g of CO₂... P ≈ 14.81 atm,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_149,"A black body in astronomy is an idealized physical body that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. It emits radiation in a predictable and continuous spectrum, determined solely by its temperature, known as black body radiation. The concept is significant in understanding stars since stars approximate black bodies, allowing astronomers to determine their temperature, composition, and age by analyzing the emitted spectrum.",likely human-authored,0.8,likely human-authored,0.8,likely AI-assisted,0.3,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_150,"Calculation is complex; generally, the E. coli genome has about 4,600,000 base pairs. Significance: This small number of genes allows for the efficient management of genetic material in a small cell space, essential for rapid growth and division.",likely human-authored,0.8,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_151,"A black body is an idealized physical object that absorbs all incident electromagnetic radiation and re-radiates energy in a continuous spectrum. It is significant for understanding the radiation of stars, as stars are often modeled as black bodies to analyze their thermal properties and spectra.",likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_152,"def is_palindromic(number):
+         num_str = str(number)
+         return num_str == num_str[::-1]",likely AI-assisted,0.9,likely AI-assisted,1.0,likely human-authored,0.1,likely AI-assisted,1.0,likely AI-assisted,1.0,Yes,Yes
+LONG_RESP_153,"def sort_tuple_by_date(data):
+    return sorted(data, key=lambda x: datetime.strptime(x[1], '%Y-%m-%d'))",likely human-authored,0.7,likely AI-assisted,0.5,likely AI-assisted,0.2,likely AI-assisted,0.4,N/A,,No,N/A
+LONG_RESP_154,"Eratosthenes estimated the Earth's size by using the difference in the angle of the sun's rays at noon between two locations, Alexandria and Syene (now Aswan), on the same day of the year. By noting that the sun was directly overhead at Syene and calculating the angle of the shadow in Alexandria, he could use simple geometry and the distance between the two cities to estimate the Earth's circumference. This was significant as it provided one of the earliest scientific measurements of the Eart...",likely AI-assisted,0.6,likely AI-assisted,1.0,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_155,various altitudes,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_156,"The Laniakea Supercluster is a massive cosmic structure that encompasses the Milky Way and thousands of other galaxies. It demonstrates how galaxies and galaxy clusters are not randomly distributed but rather form part of larger interconnected networks. This has implications for our understanding of cosmic structure, indicating there are gravitational forces at play on such scales, and suggesting a more cohesive view of the universe's architecture. It provides insights into the distribution o...",likely AI-assisted,0.2,likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_157,"The Laniakea supercluster is a massive cosmic structure that includes the Milky Way and approximately 100,000 other galaxies. It plays a crucial role in understanding the distribution of galaxies in the universe, the gravitational influences between galaxies, and the flow of cosmic material. This structure helps astronomers and cosmologists understand the connectivity and large-scale organization of the universe, providing insights into the gravitational forces that shape cosmic evolution. Th...",likely AI-assisted,0.6,likely AI-assisted,1.0,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_158,Various seasons.,likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_159,"Mars's atmospheric pressure and magnetic field strength are interrelated factors influencing the planet's geophysical characteristics. Mars has a weak magnetic field, which contributes to the lack of significant atmospheric protection from solar winds. This weak magnetic field has facilitated the gradual stripping away of the atmosphere, leading to its current thin state. As a result, Mars’s atmospheric pressure is much lower than Earth's, affecting the planet's climate, surface conditions, a...",likely human-authored,0.4,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_160,"** Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.
+
+- **Answer:** The U.S.S.R.'s Venera missions were pioneering efforts that provided the first direct data from the surface of Venus. These missions contributed significantly to our understanding of Venus's atmosphere, surface conditions, and geology. The Venera landers were the first human-made objects to enter another plane...",likely AI-assisted,0.7,likely human-authored,0.1,likely AI-assisted,0.5,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_161,"Pluto’s lengthy orbital period of about 248 years results in extended seasons, with each lasting over 60 Earth years. This elongated orbit causes drastic changes in distance from the Sun, impacting its geological and atmospheric conditions. During its closest approach, or perihelion, Pluto experiences warming that could lead to sublimation of surface ices, creating a tenuous atmosphere. Conversely, during its aphelion, the atmosphere might freeze and fall back onto the surface due to extreme ...",likely human-authored,0.8,likely human-authored,0.9,likely human-authored,1.0,likely human-authored,0.9,likely human-authored,0.9,Yes,Yes
+LONG_RESP_162,"Eratosthenes used observations of the angle of the sun's rays at noon in two different locations: Alexandria and Syene (now Aswan). At noon on the summer solstice in Syene, the sun was directly overhead, as evidenced by no shadow cast by a stick. Meanwhile, in Alexandria, shadows were cast, indicating an angular difference due to Earth's curvature. By measuring the angle of the shadow in Alexandria and knowing the distance between the two cities, Eratosthenes calculated Earth's circumference....",likely AI-assisted,0.2,likely human-authored,0.5,likely human-authored,0.7,likely human-authored,0.6,likely AI-assisted,0.2,Yes,No
+LONG_RESP_163,"The relationship between half-life ( t 1 / 2 ) and the rate constant ( k ) for a first-order reaction is given by the formula: t 1 / 2 = 0.693 k Given that the half-life is 69 minutes, we can calculate the rate constant as follows: k = 0.693 69 \, \text { minutes } = 0.010 \, \text { min } ^ { -1 } For a first-order reaction, the half-life is constant and does not depend on the initial concentration of the reactant. This means that with each passing half-life, half of the remaining reactant i...",likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.9,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_164,"Venus’s rotation is very slow, taking about 243 Earth days to complete one rotation. This slow rotation affects atmospheric dynamics, leading to a very thick atmosphere with high pressure. The atmospheric pressure influences geophysical characteristics such as surface temperature and weather patterns.",likely human-authored,0.5,likely human-authored,0.8,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_165,"def sort_tuple_by_integer_element(tup):
+    return tuple(sorted(tup, key=lambda x: x if isinstance(x, int) else float('inf')))",likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.5,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_166,"Threshold wavelength, λ = 564 nm = 564 × 10⁻⁹ m Energy, E = (hc/λ) = (6.626 × 10⁻³⁴ J s)(3 × 10⁸ m/s) / 564 × 10⁻⁹ m E ≈ 3.52 × 10⁻¹⁹ J Work function, φ = 3.52 × 10⁻¹⁹ J Implications: The work function indicates the minimum energy required to emit an electron from potassium. This value is crucial in understanding the photoelectric effect, where electrons are ejected from a material upon exposure to light of sufficient energy.",likely human-authored,0.9,likely AI-assisted,0.2,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_167,"Pluto's orbital period of approximately 250 years significantly impacts its geological and atmospheric characteristics. The long orbit results in extreme seasonal changes, affecting surface temperature and atmospheric composition over decades. The variations in sunlight and distance from the Sun lead to changes in Pluto’s ice and gas distribution, influencing its climate and surface features over these extensive seasons.",likely human-authored,1.0,likely human-authored,0.5,likely AI-assisted,0.5,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_168,"def sort_tuple(t):
+    # Assuming the tuple consists of integers
+    return tuple(sorted(t))",likely AI-assisted,0.4,likely AI-assisted,0.9,likely AI-assisted,0.4,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_169,"In Zen Buddhism, ""honji"" refers to the ""original ground"" or ""original nature"" that is the fundamental nature of reality. It emphasizes enlightenment and the realization that everything is interconnected. This concept is crucial as it highlights the importance of recognizing one's true nature beyond illusions and transient phenomena. It encourages practitioners to seek wisdom by understanding their inherent Buddha-nature, promoting detachment from illusions and fostering clarity.",likely human-authored,0.7,likely human-authored,0.6,likely human-authored,0.6,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_170,"def sort_tuple(tuples):
+    return sorted(tuples, key=lambda x: x[1])",likely AI-assisted,0.4,likely AI-assisted,0.1,likely human-authored,1.0,likely AI-assisted,0.2,N/A,,No,N/A
+LONG_RESP_171,"Aristarchus used observations during a lunar eclipse to estimate the Earth’s size. He observed the shadow of the Earth on the Moon and compared the relative sizes of the Earth and Moon by calculating the time it took for the Moon to move through the Earth's shadow. He also used observations of the angle of the Sun at different latitudes and compared it to the angle of elevation at the same time in another location, which helped in estimating the circumference of the Earth.",likely AI-assisted,0.7,likely AI-assisted,0.5,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_172,"def is_even(number):
+    return number % 2 == 0",likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.5,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_173,Eratosthenes estimated the Earth’s size by comparing the shadow of a stick in Syene (now Aswan) and in Alexandria at noon on the summer solstice. This allowed him to calculate the circumference of the Earth using the angle of the shadow and the distance between the two cities.,likely human-authored,0.6,likely AI-assisted,0.4,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_174,"The thickness of the oil film is determined by dividing the volume of the oil by the area over which it spreads. Convert the volume into cubic meters and the area into square meters, and express the final answer in angstrom units.",likely AI-assisted,0.5,likely AI-assisted,0.6,likely human-authored,0.3,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_175,"Write a function to sort a tuple by its string element.
+
+```python
+def sort_tuple_by_string(input_tuple):
+    return tuple(sorted(input_tuple, key=lambda x: str(x)))
+```",likely AI-assisted,0.9,likely human-authored,0.2,likely human-authored,0.4,likely human-authored,0.3,N/A,,No,N/A
+LONG_RESP_176,"Pluto's long orbital period of approximately 250 years results in extreme seasonal variations due to its elliptical orbit. As Pluto moves closer and then farther from the Sun, the solar energy it receives varies significantly. This affects temperature and atmospheric pressure, leading to changes in sublimation and deposition of surface ices, which might include nitrogen, methane, and carbon monoxide. These changes potentially cause variations in Pluto's thin atmosphere and surface features su...",likely AI-assisted,0.5,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_177,"To calculate the weight of H₂SO₄, multiply the volume of the solution by its density and H₂SO₄ percentage: 
+
+Weight of H₂SO₄ = 500 mL × 1.8 g/mL × 0.90 = 810 g.
+
+Molarity: Calculate by dividing mass by molar mass of H₂SO₄ (98.079 g/mol), then divide by volume in liters. Molarity = 810 g / 98.079 g/mol / 0.5 L ≈ 16.5 M.
+
+Normality: For sulfuric acid, normality is double the molarity (as it can donate 2 H⁺ ions), which leads to a normality of approximately 33 N.",likely AI-assisted,0.1,likely human-authored,0.9,likely human-authored,0.4,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_178,"The Laniakea Supercluster is a massive cosmic structure that includes the Milky Way as part of its vast expanse. Its discovery has been pivotal in enhancing our understanding of the universe’s large-scale structure. It suggests that galaxies are not evenly distributed but are part of interconnected structures influenced by gravitational attraction. The Milky Way's location within Laniakea helps astronomers understand our galaxy's position and movement within the cosmic web, providing insights...",likely human-authored,0.6,likely human-authored,0.5,likely human-authored,0.8,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_179,"**
+Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.
+- **Answer:** The U.S.S.R.’s lander missions to Venus, particularly the Venera program, were historically significant because they were the first successful missions to land on another planet and send back data. They provided direct measurements of Venus's surface temperature and pressure, revealing it as an extremely hot an...",likely human-authored,0.4,likely AI-assisted,0.5,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_180,"Function to sort a tuple by its string element:
+   ```python
+   def sort_tuple_by_string(tuples):
+       return sorted(tuples, key=lambda x: x[1])  # Assuming the string is in the second position
+   ```",likely human-authored,0.9,likely human-authored,0.9,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_181,Not provided.,likely human-authored,1.0,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_182,Not provided in the AI response.,likely AI-assisted,0.8,likely AI-assisted,0.7,likely AI-assisted,0.4,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_183,(Provide a detailed explanation based on the frequency shift relevance and influencing factors.),likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_184,"A black body in astronomy refers to an idealized object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence, and re-radiates this energy perfectly. Black bodies are perfect emitters of radiation, characterized by a continuous spectrum. The radiation emitted by a black body is described by Planck's law, and the distribution depends solely on the temperature of the body. In astronomy, understanding black body radiation helps scientists determine th...",likely human-authored,0.7,likely human-authored,0.7,likely human-authored,0.5,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_185,The function to sort a tuple by its integer element is a code snippet in Python provided in the response text.,likely AI-assisted,1.0,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_186,"Venus has a very slow rotational speed, taking about 243 Earth days to complete one rotation on its axis, which is longer than its orbital period around the Sun. Despite this slow rotation, Venus's surface temperature remains uniformly high, averaging around 467°C (872°F) due to its thick atmosphere rich in carbon dioxide, creating a strong greenhouse effect. The slow rotation means that there is minimal temperature variation between day and night across the planet's surface. Instead, the hig...",likely human-authored,0.5,likely AI-assisted,0.6,likely AI-assisted,0.8,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_187,"The concept of a white dwarf in astronomy refers to the remains of a star that has exhausted its nuclear fuel and shed its outer layers. These stellar remnants are incredibly dense and hot, but they no longer undergo fusion reactions. White dwarfs serve as laboratories for understanding the radiation and thermal properties of stars as they transition to their final stages. They gradually cool and fade over time and represent the end state for stars like the Sun.",likely human-authored,0.7,likely human-authored,0.9,likely AI-assisted,0.2,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_188,"Mars's atmospheric pressure is relatively low, averaging around 6 millibars, which is a fraction of Earth's atmospheric pressure. This low pressure is largely due to Mars's weak magnetic field, which is insufficient to protect the planet from solar winds that strip away its atmosphere over time. Consequently, the thin atmosphere influences the planet's temperature, climate, and geophysical characteristics, making it incapable of supporting liquid water on the surface under current conditions....",likely human-authored,0.4,likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_189,"The question requests to answer ""palindromic""",likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.4,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_190,"The rate constant \( k \) for a first-order reaction is calculated using the formula: \[ k = \frac{0.693}{\text{half-life}} \] Substituting the given half-life: \[ k = \frac{0.693}{34 \, \text{minutes}} = 0.0204 \, \text{min}^{-1} \] In first-order reactions, the half-life is constant and does not depend on the concentration. The rate constant is inversely proportional to the half-life, meaning a shorter half-life implies a larger rate constant.",likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.5,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_191,No answer provided in the supplied AI response.,likely human-authored,0.2,likely AI-assisted,0.6,likely AI-assisted,1.0,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_192,"def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True",likely human-authored,0.9,likely AI-assisted,0.0,likely AI-assisted,0.2,likely AI-assisted,0.1,N/A,,No,N/A
+LONG_RESP_193,"This relationship is described by Charles's Law, which states that the volume of a gas is directly proportional to its absolute temperature at constant pressure. The relationship is given by: \[ \frac{V_1}{T_1} = \frac{V_2}{T_2} \] where \( V_1 = 100 \, \text{ml} \), \( T_1 = 293 \, \text{K} \) (20°C = 293K), \( T_2 = 283 \, \text{K} \) (10°C = 283K). Solving for \( V_2 \): \[ V_2 = V_1 \times \frac{T_2}{T_1} = 100 \times \frac{283}{293} = 96.6 \, \text{ml} \] This illustrates Charles’s Law, ...",likely AI-assisted,0.5,likely human-authored,0.4,likely human-authored,0.6,likely human-authored,0.5,N/A,,No,N/A
+LONG_RESP_194,Use the ideal gas law to calculate the pressure. The principles involve considering the sublimation of CO₂ and its behavior as an ideal gas in a closed system at constant temperature.,likely AI-assisted,0.7,likely AI-assisted,1.0,likely human-authored,0.1,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_195,"** Eratosthenes estimated Earth's circumference by measuring the angle of the sun's rays in two locations: Alexandria and Syene (modern Aswan) on the Summer Solstice. Knowing the distance between the cities, he used the angle difference to calculate the Earth's size, assuming parallel sun rays.
+
+**",likely human-authored,0.7,likely human-authored,0.6,likely human-authored,0.9,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_196,"A black body in astronomy is an idealized object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. It emits radiation at a characteristic spectrum that depends only on its temperature, described by Planck's law of black-body radiation. The significance in astronomy is immense, as stars closely resemble black bodies. By analyzing their spectra, astronomers can determine a star's temperature, luminosity, and composition data critical for underst...",likely AI-assisted,0.2,likely AI-assisted,0.4,likely human-authored,0.7,likely AI-assisted,0.3,N/A,,No,N/A
+LONG_RESP_197,The Laniakea Supercluster is significant because it encompasses the Milky Way and shows our galaxy's location in a larger cosmic structure. This helps astronomers understand the gravitational influences affecting our galaxy and enhances our knowledge of cosmic distribution and the interconnectedness of galaxies.,likely human-authored,0.7,likely human-authored,1.0,likely human-authored,0.6,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_198,"The answer given was ""orbital mechanics,"" but generally, a black body is an idealized physical object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. Black bodies are important in understanding the radiation of stars and their thermal properties because they provide a benchmark against which the thermal emission of real objects can be compared.",likely AI-assisted,0.5,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_199,"The Enuma Elish, a Babylonian creation epic, portrays Marduk as both wrathful and merciful. Marduk's wrath is evident in his battle against Tiamat, where he uses his power to defeat the forces of chaos. This demonstrates his role as a fierce protector. On the other hand, his mercy is shown through the creation of the world and humanity, where he establishes order and provides for mankind. Marduk's dual nature highlights his complexity as a deity who upholds justice while ensuring benevolence.",likely human-authored,0.5,likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_200,"The U.S.S.R.'s lander missions to Venus were historically significant as they provided the first direct measurements and photographs of the Venusian surface. These missions advanced scientific understanding and showcased Soviet technological capabilities during the space race, highlighting political competition with the United States.",likely AI-assisted,0.9,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_201,"Eratosthenes estimated the Earth's size by measuring the angle of the Sun's rays in two different locations, Alexandria and Syene. On the summer solstice, when the Sun was directly overhead in Syene, he measured the shadow in Alexandria and found it formed an angle of about 7.2 degrees. Knowing the distance between the two cities, he used geometry to calculate the Earth's circumference. This methodology was significant because it demonstrated the concept of a spherical Earth and the ability t...",likely human-authored,0.5,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_202,"** Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.
+- **Answer:** The U.S.S.R.'s Venera missions to Venus were pioneering endeavors that provided the first direct data about Venus's surface and atmosphere. These missions revealed the extremely high surface temperatures and pressures, the composition of the atmosphere, and provided images and data from the planet's surface. Th...",likely human-authored,0.6,likely human-authored,0.4,likely AI-assisted,0.5,likely human-authored,0.5,N/A,,No,N/A
+LONG_RESP_203,NASA’s rover,likely AI-assisted,1.0,likely AI-assisted,0.9,likely human-authored,0.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_204,"from datetime import datetime
+
+def sort_tuple_by_date(tuples):
+    return sorted(tuples, key=lambda x: datetime.strptime(x[1], '%Y-%m-%d'))
+
+# Example usage:
+example_tuples = [(1, '2023-01-01'), (2, '2022-12-31'), (3, '2023-01-02')]
+sorted_tuples = sort_tuple_by_date(example_tuples)
+print(sorted_tuples)  # [(2, '2022-12-31'), (1, '2023-01-01'), (3, '2023-01-02')]",likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_205,"Pluto’s long orbital period results in extended seasons, each lasting over 60 Earth years. This affects its atmospheric and geological characteristics significantly, causing long-term climate patterns and potentially influencing surface features due to seasonal sublimation and deposition of ice. The extreme variation in sunlight also causes periodic melting and refreezing that contributes to surface erosion and other geological processes over centuries, allowing scientists to study gradual cl...",likely AI-assisted,0.5,likely AI-assisted,0.9,likely AI-assisted,0.6,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_206,Normality = 33.04 N,likely AI-assisted,0.3,likely human-authored,0.9,likely human-authored,0.7,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_207,"def sort_tuple_by_integer_element(tuples):
+    return sorted(tuples, key=lambda x: x[0])",likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.5,likely AI-assisted,0.7,likely AI-assisted,0.7,Yes,Yes
+LONG_RESP_208,"A typical E. coli chromosome consists of approximately 4.6 million base pairs. Assuming each base pair contributes about 0.34 nanometers to the total length of the DNA: Length = 4.6 × 10^6 base pairs × 0.34 nm/base pair = 1.564 mm Significance: This length is approximately 1,000 times longer than the cell itself, demonstrating the intricate and compact folding mechanism necessary to fit the DNA into the bacterial cell.",likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.5,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_209,"**: The U.S.S.R.'s lander missions to Venus provided key data about Venus's atmosphere and surface conditions. They confirmed the planet's extreme temperatures and pressures, adding significantly to our understanding and shaping further exploration strategies.
+
+For the most accurate answers, you should refer directly to the content of your document.",likely human-authored,1.0,likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_210,"Rate constant calculation: t_{1/2} = \frac{1}{k[A]_0} Given t_{1/2} = 34 \, \text{minutes}, solve for k. Discuss the dependence of half-life on concentration in second-order reactions, and contrast with first-order reactions where half-life is constant.",likely AI-assisted,0.9,likely AI-assisted,1.0,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_211,Not provided.,likely AI-assisted,0.2,likely human-authored,0.6,likely AI-assisted,0.2,likely AI-assisted,0.2,N/A,,No,N/A
+LONG_RESP_212,"def sort_by_boolean(tuples): return sorted(tuples, key=lambda x: x[1])",likely AI-assisted,0.5,likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_213,"Here's a sample function in Python:
+
+```python
+def find_greater_than_m_n(numbers, m, n):
+    return list(filter(lambda x: x > m and x > n, numbers))
+
+# Example usage:
+numbers_list = [10, 15, 20, 25, 30]
+result = find_greater_than_m_n(numbers_list, 12, 18)
+print(result)  # Output will be [20, 25, 30]
+```",likely human-authored,0.8,likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_214,"from datetime import datetime
+
+     def sort_by_date(tuples):
+         return sorted(tuples, key=lambda x: datetime.strptime(x[1], ""%Y-%m-%d""))",likely human-authored,1.0,likely human-authored,0.9,likely AI-assisted,0.1,likely human-authored,1.0,N/A,,No,N/A
+LONG_RESP_215,"def find_numbers_greater_than_m(numbers, m):
+    return list(filter(lambda x: x > m, numbers))",likely human-authored,0.9,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,Yes,Yes
+LONG_RESP_216,without lambda,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_217,"Convert the volume from cubic millimeters to cubic meters: 
+
+1 mm³ = 1 x 10⁻⁹ m³
+
+Given the area of 1 m²:
+
+The thickness t is given by the volume divided by the area:
+
+t = Volume/Area = 1 x 10⁻⁹ m³/1 m² = 1 x 10⁻⁹ m
+
+Convert meters to angstroms:
+
+1 m = 10¹⁰ Å
+t = 1 x 10⁻⁹ m x 10¹⁰ Å/m = 10 Å
+
+Underlying Principle: The thickness of a thin film is calculated by dividing the volume of the substance by the area it covers. Converting to angstroms provides a more practical unit for atomic scale dis...",likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_218,"The Virgo Cluster is one of the nearest galaxy clusters to the Milky Way and plays a crucial role in the study of cosmic structure. It helps astronomers understand the distribution and behavior of galaxies within the universe. Studying the Virgo Cluster allows insight into galaxy formation and evolution, interactions among galaxies, and the role of dark matter in clusters. Its gravitational influence offers a key perspective on the dynamics of the Local Group, including the Milky Way.",likely AI-assisted,0.7,likely human-authored,0.0,likely AI-assisted,0.9,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_219,surface temperature,likely human-authored,0.8,likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_220,"Write a function to find numbers divisible by m or n from a list of numbers using lambda function.
+```python
+ def find_divisibles(numbers, m, n):
+ return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+```
+This function takes a list of numbers and returns a list of numbers that are divisible by `m` or `n` using a lambda function in combination with Python's `filter()`.",likely AI-assisted,0.9,likely AI-assisted,0.7,likely AI-assisted,0.7,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_221,Virgo supercluster,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,0.8,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_222,"A white dwarf is the remnant core of a star that has exhausted its nuclear fuel, typically composed of electron-degenerate matter. Formed when a low or medium-mass star ends its life cycle and sheds its outer layers, a white dwarf is very dense and no longer undergoes fusion reactions. Its significance lies in its radiant cooling, providing insights into stellar evolution, energy radiation, and thermal properties as it gradually dims over time.",likely AI-assisted,0.8,likely human-authored,0.1,likely AI-assisted,0.6,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_223,"** Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.
+- **Answer:** Eratosthenes used observations of the Sun's angle at noon in two different locations: Syene and Alexandria. At noon on the summer solstice in Syene, the Sun was directly overhead, casting no shadow. Meanwhile, in Alexandria, there was a measurable angle of shadow. By knowing the distance between the two cities and us...",likely human-authored,0.0,likely AI-assisted,0.9,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_224,"Venus’s rotational speed is extremely slow, taking about 243 Earth days to complete one rotation. This slow rotation influences its magnetic field strength, which is very weak compared to that of Earth. The dynamo effect responsible for generating magnetic fields is less effective on Venus due to the slow rotation. This weak magnetic field results in less protection from solar wind and cosmic radiation, significantly affecting its atmosphere. The absence of a strong magnetic field and the pla...",likely human-authored,0.5,likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_225,"Pluto’s long orbital period results in extended seasons, affecting its atmospheric and geological conditions. The duration influences thermal dynamics and seasonal variations, impacting surface interactions and potential atmospheric changes.",likely human-authored,0.9,likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_226,"def divisible_by_m_or_n(numbers, m, n):
+       return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))",likely human-authored,0.0,likely AI-assisted,0.9,likely human-authored,0.1,likely human-authored,0.0,N/A,,No,N/A
+LONG_RESP_227,"To calculate: Half-life (\(t_{1/2}\)) = 5 minutes Formula: \(k = \frac{0.693}{t_{1/2}}\) \(k = \frac{0.693}{5}\) \(k \approx 0.1386 \, \text{min}^{-1}\)",likely AI-assisted,0.3,likely human-authored,0.9,likely AI-assisted,0.2,likely AI-assisted,0.2,N/A,,No,N/A
+LONG_RESP_228,"For time series with trend and seasonality, use models like SARIMA (Seasonal ARIMA), or exponential smoothing state space models (like Holt-Winters), or use Prophet, or incorporate seasonal dummies in regression. Ensure stationarity via differencing or detrending, and check residuals.",likely AI-assisted,0.2,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,N/A,,No,N/A
+LONG_RESP_229,"Volume of solution = 1000 ml = 1 liter Density = 1.8 g/ml, so mass of solution = 1.8 g/ml × 1000 ml = 1800 g Weight of H₂SO₄ = 90% of 1800 g = 1620 g Molar mass of H₂SO₄ = 98.08 g/mol Moles of H₂SO₄ = 1620 g / 98.08 g/mol = 16.52 mol Molarity = 16.52 mol/L Normality = 2 × Molarity = 33.04 N",likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_230,"Eratosthenes estimated the Earth's circumference by using the differences in the angle of the sun's rays at two locations, Alexandria and Syene, at the same time. Knowing the distance between the two locations and the angle of the sun at each location allowed him to calculate the Earth's orbit with remarkable accuracy for his time.",likely AI-assisted,0.7,likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_231,"The Laniakea supercluster is significant as it provides a comprehensive understanding of our galaxy's position within a vast cosmic network. It helps to map how matter is distributed in the universe at large scales, revealing the gravitational influences affecting the Milky Way. This insight is crucial for understanding the dynamics of galactic movement and interactions within the cluster, illuminating processes related to galactic evolution and the large-scale structure of the cosmos.",likely human-authored,0.9,likely human-authored,0.9,likely AI-assisted,0.2,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_232,The frequency shift in the EPR spectrum of the t-Bu radical is significant as it indicates hyperfine interactions between the unpaired electron and nearby atomic nuclei. Factors influencing this include: - Electron Spin Density: Distribution of the unpaired electron affects the hyperfine coupling. - Hyperfine Coupling Constants: Interaction strength with surrounding hydrogen nuclei. - Environmental Effects: Solvent and temperature can alter EPR signals. The analysis of these factors aids in u...,likely AI-assisted,0.7,likely AI-assisted,0.7,likely AI-assisted,1.0,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_233,"The U.S.S.R.’s Venera program, which sent landers to Venus, was pivotal both scientifically and politically. Scientifically, the missions provided unprecedented data on Venus's atmosphere, surface conditions, and environmental phenomena, such as high temperatures and pressures, and acidic clouds. Politically, the missions demonstrated Soviet space technology advances during the Cold War, significantly contributing to the space race narrative. These missions showed the capability to land and o...",likely human-authored,0.4,likely AI-assisted,0.9,likely human-authored,0.2,likely human-authored,0.3,N/A,,No,N/A
+LONG_RESP_234,"def sort_tuple(tuples):
+    return sorted(tuples, key=lambda x: x[1])",likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_235,"   def find_divisible(numbers, m, n):
+       return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+
+   # Example usage:
+   numbers = [10, 20, 33, 40, 50]
+   m, n = 5, 10
+   result = find_divisible(numbers, m, n)
+   print(result)  # Output: [10, 20, 40, 50]",likely human-authored,0.2,likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_236,"Venus has a very slow rotational speed, taking about 243 Earth days to complete a rotation. This slow rotation has minimal impact on its surface temperature due to the thick atmosphere dominated by CO2, which creates a strong greenhouse effect. This greenhouse effect results in extremely high surface temperatures that remain fairly uniform. The planet's geophysical characteristics, such as lack of significant temperature variation between day and night, are influenced more by the atmospheric ...",likely AI-assisted,0.8,likely human-authored,0.2,likely AI-assisted,0.7,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_237,"The slow rotational speed of Venus (one rotation every 243 Earth days) contributes to its extreme surface temperature, which averages around 465 degrees Celsius. This slow rotation affects atmospheric circulation, contributing to the planet's overall heat distribution. The dense atmosphere, composed mostly of carbon dioxide, creates a strong greenhouse effect, trapping heat and maintaining high surface temperatures. The slow rotation also minimizes temperature differences between day and nigh...",likely human-authored,0.6,likely human-authored,0.7,likely AI-assisted,0.3,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_238,"**  
+Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.  
+- Eratosthenes calculated the Earth's circumference by comparing the angle of the Sun's rays at noon in two different locations: Syene (now Aswan) and Alexandria, Egypt. At noon in Syene, the Sun was directly overhead, casting no shadow, while in Alexandria, the Sun cast a shadow corresponding to an angle of approximately 7.2 ...",likely human-authored,0.5,likely human-authored,0.8,likely human-authored,0.6,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_239,Function using a lambda to filter numbers divisible by m or n.,likely AI-assisted,0.6,likely human-authored,0.1,likely AI-assisted,0.7,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_240,"def find_greater_than(numbers, n):
+    return list(filter(lambda x: x > n, numbers))
+
+# Example usage:
+numbers_list = [1, 5, 8, 10, 12]
+n = 7
+print(find_greater_than(numbers_list, n))
+# Output: [8, 10, 12]",likely human-authored,0.9,likely human-authored,0.7,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_241,"Write a function to find numbers greater than `n` from a list of numbers using a lambda function.
+   ```python
+   def find_greater_than(numbers, n):
+       return list(filter(lambda x: x > n, numbers))
+
+   # Example usage:
+   numbers_list = [1, 5, 10, 15, 20]
+   n = 10
+   print(find_greater_than(numbers_list, n))  # Output: [15, 20]
+   ```",likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.6,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_242,"The USSR’s Mars lander missions were crucial in providing early data about the Martian atmosphere, surface conditions, and paved the way for future exploration efforts by increasing our understanding of the planet’s potential to support life.",likely human-authored,0.0,likely AI-assisted,1.0,likely AI-assisted,0.8,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_243,"Pluto's long orbital period of around 250 years means that its seasons are extremely prolonged compared to Earth’s. This has significant effects on its geological and atmospheric characteristics. The extended seasons can lead to substantial temperature variations, influencing ice and gas distribution on the planet’s surface and atmosphere, and affecting surface features. During its orbit, parts of Pluto may experience many years of continuous sunlight or darkness, impacting its climate and at...",likely human-authored,0.9,likely AI-assisted,0.2,likely AI-assisted,0.2,likely AI-assisted,0.2,N/A,,No,N/A
+LONG_RESP_244,"def filter_divisible(numbers, m, n):
+    return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+
+numbers = [10, 20, 25, 30, 35, 40]
+m = 5
+n = 10
+filtered_numbers = filter_divisible(numbers, m, n)
+print(filtered_numbers)
+
+This function filters numbers from a given list that are divisible by either `m` or `n` using a lambda function.",likely AI-assisted,0.5,likely AI-assisted,0.4,likely AI-assisted,0.8,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_245,"Pluto’s Orbital Period: Pluto’s long orbital period means that each season lasts for decades, significantly affecting its climate and atmospheric conditions. This slow orbit influences temperature variations across its surface, potentially impacting geophysical and atmospheric phenomena over prolonged timescales.",likely AI-assisted,0.2,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.9,Yes,Yes
+LONG_RESP_246,Write a function to sort a tuple by its string element.,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_247,"The U.S.S.R.'s lander missions to Venus, notably the Venera program, were crucial in advancing our understanding of Venus’s atmosphere, surface conditions, and environmental conditions. The missions provided the first images from the surface of another planet and revealed high surface temperatures and pressures, as well as a predominantly carbon dioxide atmosphere. Politically, these missions symbolized Soviet prowess in space exploration during the Cold War, challenging the U.S. and intensif...",likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.7,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_248,"Pluto's long orbital period results in extended seasons, each lasting over 60 Earth years, significantly affecting its climate and atmospheric dynamics. As it orbits the Sun, the variation in distance causes large temperature changes influencing sublimation and deposition cycles of ices on its surface, such as nitrogen, carbon monoxide, and methane. These variations can cause atmospheric pressure changes, affecting weather patterns. Understanding these processes provides insights into the com...",likely human-authored,0.7,likely human-authored,1.0,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_249,"** Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus, analyzing their impact on our understanding of the planet.
+- **Answer:** The U.S.S.R.'s Venera missions, specifically the landers, were pivotal in understanding Venus. They provided the first direct data from the surface, confirming high atmospheric pressures and temperatures, and revealed chemical compositions, including evidence of volcanic activity. The Venera missions debunked p...",likely AI-assisted,0.4,likely AI-assisted,0.4,likely AI-assisted,0.7,likely AI-assisted,0.5,N/A,,No,N/A
+LONG_RESP_250,"In astronomy, a black body is an idealized physical object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. Since it reflects no light, the appearance of a perfect black body is dictated solely by its temperature. The concept is significant because it helps in understanding the radiation emitted by stars, based on their thermal properties through Planck's law, Wien's displacement law, and the Stefan-Boltzmann law, which relate the radiation's...",likely human-authored,0.8,likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.7,likely human-authored,0.7,Yes,Yes
+LONG_RESP_251,"The intensity ratios in the EPR spectrum are influenced by the hyperfine splitting caused by interactions with nearby nuclei. For the t-Bu radical, the intensity ratios reflect the equivalent environment of the methyl protons. Factors affecting these ratios include the g-factor, hyperfine coupling constants, and the electronic environment of the radical.",likely AI-assisted,1.0,likely AI-assisted,0.6,likely human-authored,0.2,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_252,"**: Eratosthenes estimated the Earth's size by measuring the angle of the Sun's rays at two locations, Alexandria and Syene, at the same time of day. Using the differences in angle and the distance between the two, he calculated the Earth's circumference, contributing significantly to understanding Earth’s dimensions.
+
+**Question 12**: The U.S.S.R.'s lander missions to Venus provided key data about Venus's atmosphere and surface conditions. They confirmed the planet's extreme temperatures and...",likely AI-assisted,0.7,likely human-authored,0.2,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_253,"def is_palindrome(number):
+    original = str(number)
+    reversed_number = original[::-1]
+    return original == reversed_number
+
+# Example usage:
+print(is_palindrome(121))  # True
+print(is_palindrome(123))  # False",likely human-authored,1.0,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_254,"Write a function to sort a tuple by its boolean element.
+
+def sort_tuple_by_boolean(input_tuple): return sorted(input_tuple, key=lambda x: x[1])",likely human-authored,0.9,likely human-authored,0.6,likely human-authored,0.3,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_255,"Write a function to check whether the given number is even or not.
+
+```python
+def is_even(number):
+ return number % 2 == 0
+```",likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_256,"**
+Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.
+- **Answer:** Eratosthenes used the difference in the angle of the sun's rays at two different locations: Alexandria and Syene (now Aswan). In Syene, the sun was directly overhead at noon during the summer solstice, while in Alexandria, it cast a shadow, creating an angle. By measuring the angle and knowing the distance between th...",likely human-authored,0.5,likely human-authored,0.9,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_257,No answer provided.,likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.9,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_258,"To calculate the thickness of an oil film using the volume and area given: Volume of oil: 1 mm³ = \( 1 \times 10^{-3} \) cm³ Area covered: 1 m² = \( 10,000 \) cm² Thickness (T): \[ T = \frac{\text{Volume}}{\text{Area}} = \frac{1 \times 10^{-3}}{10,000} = 1 \times 10^{-7} \text{ cm} \] Convert to angstroms: \[ 1 \text{ cm} = 10^{8} \text{ angstroms} \] \[ 1 \times 10^{-7} \text{ cm} = 10 \text{ angstroms} \] The thickness of the oil film is 10 angstroms.",likely AI-assisted,0.7,likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.8,Yes,Yes
+LONG_RESP_259,"def is_prime(n):
+ if n <= 1:
+ return False
+ for i in range(2, int(n**0.5) + 1):
+ if n % i == 0:
+ return False
+ return True",likely AI-assisted,0.2,likely human-authored,0.8,likely human-authored,1.0,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_260,formation of galaxies,likely human-authored,0.3,likely AI-assisted,0.9,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_261,"Calculation: Apply Charles's Law: \frac{V_1}{T_1} = \frac{V_2}{T_2} Initial volume V_1 = 100 \, \text{ml} at T_1 = 293 \, \text{K}. Find V_2 at T_2 = 283 \, \text{K}. Discuss the principles of gas behavior under changes in temperature at constant pressure.",likely AI-assisted,0.1,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.8,likely human-authored,0.8,Yes,Yes
+LONG_RESP_262,"A white dwarf is the remnant core of a star that has exhausted its nuclear fuel and shed its outer layers. It is composed mostly of electron-degenerate matter. White dwarfs are significant because they emit radiation primarily through residual thermal energy, and their study provides insights into stellar evolution and the fate of stars.",likely AI-assisted,0.8,likely AI-assisted,0.9,likely human-authored,0.4,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_263,The function to check palindrome is a code snippet in Python provided in the response text.,likely AI-assisted,0.7,likely AI-assisted,0.9,likely AI-assisted,0.6,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_264,"def sort_tuple(tuple_list):
+       return sorted(tuple_list, key=lambda x: x[1])",likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.6,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_265,"According to Charles's Law, the volume ( V ) of a gas is directly proportional to its temperature ( T ) when pressure is constant. This can be expressed by: \frac { V _ { 1 } } { T _ { 1 } } = \frac { V _ { 2 } } { T _ { 2 } } Given an initial volume ( V 1 ) of 100 ml at 20°C (293 K), and a final temperature ( T 2 ) of 10°C (283 K), we can find the final volume ( V 2 ): V 2 = V 1 \times \frac { T 2 } { T 1 } = 100 \, \text { ml } \times \frac { 283 } { 293 } \approx 96.6 \, \text { ml } This ...",likely human-authored,1.0,likely human-authored,1.0,likely AI-assisted,0.0,likely human-authored,1.0,N/A,,No,N/A
+LONG_RESP_266,Not provided in input,likely AI-assisted,0.6,likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_267,"def is_prime(number):
+     if number <= 1:
+         return False
+     for i in range(2, int(number**0.5) + 1):
+         if number % i == 0:
+             return False
+     return True",likely human-authored,0.7,likely human-authored,1.0,likely AI-assisted,0.0,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_268,"A black body is an idealized physical object that absorbs all incident electromagnetic radiation, regardless of frequency or angle of incidence. In astronomy, black bodies are important because they serve as a model for understanding how stars emit radiation. The spectrum of a black body at a given temperature can be used to infer the temperature and thermal properties of stars. This understanding helps astronomers determine the energy output and life cycle of stars, as black bodies emit a ch...",likely human-authored,0.7,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,0.9,likely human-authored,0.9,Yes,Yes
+LONG_RESP_269,"def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True",likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.8,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_270,"A white dwarf is the remnant core of a star that has exhausted its nuclear fuel and shed its outer layers. It is incredibly dense and consists mostly of electron-degenerate matter. Understanding white dwarfs is crucial for studying stellar evolution, thermal cooling, and the final stages of stellar life cycles.",likely human-authored,0.9,likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_271,"A white dwarf is the remnant core of a star that has exhausted the nuclear fuel in its core. It is significant in understanding the life cycle of stars, particularly those with masses similar to the Sun. White dwarfs are very dense and have a high temperature initially, but do not have an internal heat source, so they gradually cool and fade over time. They provide insights into stellar evolution and the thermal properties of dead stars.",likely AI-assisted,0.3,likely AI-assisted,0.6,likely AI-assisted,0.8,likely AI-assisted,0.6,N/A,,No,N/A
+LONG_RESP_272,"def divisible_by_m_or_n(numbers, m, n):
+    return list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+result = divisible_by_m_or_n(numbers, 2, 3)
+print(result)  # Output will be [2, 3, 4, 6, 8, 9, 10]",likely AI-assisted,0.5,likely human-authored,0.4,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_273,"Venus rotates very slowly, once every 243 Earth days, and in the opposite direction to its orbit. This slow rotation affects its magnetic field, which is much weaker compared to Earth's. The weak magnetic field allows solar winds to interact more directly with Venus's atmosphere, influencing its climatic conditions, such as the stripping of atmospheric gases and the creation of phenomena like the super-rotation of its clouds.",likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.6,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_274,"A white dwarf is a small, dense stellar remnant left after a star has exhausted its nuclear fuel and shed its outer layers, typically composed mostly of electron-degenerate matter. White dwarfs are significant in understanding stellar evolution as they represent the final evolutionary state of stars not massive enough to become neutron stars or black holes. The study of white dwarfs provides insights into the life cycle of stars, their radiation processes, and their thermal properties, as the...",likely human-authored,0.9,likely human-authored,0.7,likely human-authored,0.8,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_275,NASA’s rover,likely human-authored,0.7,likely human-authored,0.9,likely human-authored,0.9,likely human-authored,0.8,N/A,,No,N/A
+LONG_RESP_276,"Pluto's long orbital period of approximately 250 years affects its geological and atmospheric characteristics significantly. The lengthy orbit results in prolonged seasonal changes, meaning each season lasts for several decades. This influences the temperature, surface conditions, and atmospheric composition, contributing to dynamic changes over its orbit.",likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_277,"Mars’s rotational speed is relatively similar to Earth’s, but it has a weak magnetic field because it lacks a geodynamo driven by a liquid metallic core like Earth. This affects atmospheric retention and surface exposure to solar and cosmic radiation, influencing its geophysical and possibly its atmospheric characteristics.",likely human-authored,0.1,likely AI-assisted,0.9,likely human-authored,0.1,likely human-authored,0.1,N/A,,No,N/A
+LONG_RESP_278,"** Discuss the historical significance and scientific contributions of the U.S.S.R.'s lander missions to Venus.
+- **Answer:** The Soviet Union's Venera missions to Venus provided invaluable data on the planet's atmosphere, surface conditions, and heat. These missions revealed the harsh conditions on Venus and contributed significantly to our understanding of its geology and atmosphere, highlighting its extreme greenhouse effect.
+
+If you have specific information from a document that contradic...",likely AI-assisted,0.5,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_279,"Laniakea, meaning ""immense heaven"" in Hawaiian, is the supercluster that includes the Milky Way. Its significance lies in redefining the boundaries of galactic superclusters using a novel approach based on the gravitational influence and the flow of galaxies. This cluster covers 100,000 galaxies stretched over 520 million light-years and has a gravitational center known as the Great Attractor. Understanding our position within Laniakea helps clarify the large-scale structure of the universe, ...",likely human-authored,0.7,likely human-authored,0.6,likely human-authored,0.7,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_280,"Pluto’s long orbital period results in prolonged seasons, each lasting over 60 Earth years. This influences its surface temperatures and atmospheric conditions greatly, leading to complex weather patterns and potential geologic activity driven by seasonal temperature changes. As Pluto moves closer to the Sun, its atmosphere expands and becomes denser due to sublimating nitrogen ice, while moving away causes the atmosphere to freeze and fall back to the surface. This cycle impacts its geology ...",likely AI-assisted,0.8,likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_281,"The answer given was ""atmospheric dynamics,"" but more specifically, Venus has a very slow rotational speed and a weak magnetic field, which likely influences its atmospheric dynamics, including its super-rotating atmosphere and potentially affects the planet's climate and weather patterns.",likely human-authored,0.3,likely human-authored,0.6,likely human-authored,0.8,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_282,"** Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.
+
+    **Answer:** Eratosthenes estimated the Earth's size by using the difference in the angle of the Sun's rays at two locations a known distance apart: Alexandria and Syene (now Aswan). At noon during the summer solstice, the Sun was directly overhead in Syene but not in Alexandria. By measuring the angle of shadow in Alexandria ...",likely AI-assisted,0.6,likely human-authored,0.5,likely human-authored,0.7,likely human-authored,0.6,N/A,,No,N/A
+LONG_RESP_283,Not provided in input,likely AI-assisted,0.8,likely AI-assisted,1.0,likely human-authored,0.0,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_284,No answer provided in the AI response.,likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.8,N/A,,No,N/A
+LONG_RESP_285,"Discuss the methodology employed by Eratosthenes to estimate the Earth's size in 240 B.C., including the significance of his observations in different latitudes.
+
+**Answer:**
+Eratosthenes used a method involving the measurement of shadows. He knew that at noon during the summer solstice in Syene (modern-day Aswan, Egypt), the Sun was directly overhead, casting no shadow. Meanwhile, in Alexandria, a stick did cast a shadow, indicating the Sun was at an angle. By measuring the angle of the shad...",likely human-authored,1.0,likely human-authored,0.9,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,1.0,Yes,Yes
+LONG_RESP_286,"The Laniakea supercluster is a vast cosmic structure that includes the Milky Way galaxy. It represents a significant portion of the observable universe, showcasing the complex web-like structure of galaxies and galaxy clusters. Understanding Laniakea provides insights into the large-scale structure of the universe, the gravitational interactions between galaxies, and the distribution of dark matter. It highlights the interconnectedness of galaxies and aids in understanding the dynamics and ev...",likely human-authored,0.2,likely AI-assisted,1.0,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_287,"Pluto's long orbital period results in extreme seasonal variations, with each season lasting over 60 Earth years. This contributes to substantial changes in its thin atmosphere, which can freeze and fall to the surface as it moves further from the Sun. These long seasons also affect geological processes, potentially impacting surface features like its glaciers and nitrogen ice flows, revealing the complex dynamic processes in its environment.",likely AI-assisted,0.5,likely AI-assisted,0.9,likely AI-assisted,0.6,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_288,"Eratosthenes used geometric principles and observations of shadows at different latitudes to estimate the Earth’s circumference, which indirectly contributed to understanding positioning in astronomy.",likely AI-assisted,0.9,likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_289,"Venus has a very slow rotational speed, taking about 243 Earth days to complete one rotation and rotating in the opposite direction of most planets in the solar system. This slow rotation might contribute to the planet's extreme surface temperature, along with its dense atmosphere rich in carbon dioxide, leading to a runaway greenhouse effect that traps heat. The lack of significant rotational cooling and strong atmospheric winds distribute heat evenly across the planet, resulting in uniform ...",likely AI-assisted,1.0,likely AI-assisted,1.0,likely AI-assisted,1.0,likely AI-assisted,1.0,N/A,,No,N/A
+LONG_RESP_290,"AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion) trade off model fit and complexity: lower values preferred. Both penalize model complexity but BIC has a larger penalty for number of parameters (penalty grows with log(n)), so BIC favors simpler models as sample size increases. Use for model selection; compare models fit to the same data.",likely AI-assisted,0.8,likely AI-assisted,0.9,likely AI-assisted,0.6,likely AI-assisted,0.8,likely AI-assisted,0.8,Yes,Yes
+LONG_RESP_291,Not provided in the AI response.,likely human-authored,1.0,likely human-authored,1.0,likely human-authored,0.8,likely human-authored,0.9,N/A,,No,N/A
+LONG_RESP_292,"The Zagmuk festival in ancient Babylonian culture was significant for several reasons. Religiously, it was a time to honor the chief god Marduk, who was believed to battle chaos for the coming year. Socially, it reinforced the power of the king, who performed rituals to ensure Marduk's victory. Culturally, it was a major celebration that marked the New Year, involving public gatherings, feasts, and ceremonies that strengthened community bonds.",likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.5,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_293,Thickness t of the oil film is...t = 1 × 10^4 angstroms,likely human-authored,0.6,likely human-authored,1.0,likely human-authored,0.5,likely human-authored,0.7,N/A,,No,N/A
+LONG_RESP_294,"The U.S.S.R.'s missions to Mars provided critical data on the planet's atmosphere, surface, and potential for hosting life. These missions marked significant advancements in space exploration and fostered international interest in Mars exploration.",likely AI-assisted,0.7,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_295,"(Analyze the role of spin state interactions, magnetic fields, and molecular symmetry)",likely AI-assisted,0.5,likely AI-assisted,0.7,likely AI-assisted,0.8,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_296,Galactic evolution,likely AI-assisted,0.9,likely AI-assisted,0.6,likely AI-assisted,0.5,likely AI-assisted,0.7,N/A,,No,N/A
+LONG_RESP_297,Python function for checking prime numbers,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,0.9,likely AI-assisted,0.9,likely AI-assisted,0.9,Yes,Yes
+LONG_RESP_298,Python function for sorting tuple by string element,likely AI-assisted,1.0,likely AI-assisted,0.9,likely AI-assisted,0.9,likely AI-assisted,0.9,N/A,,No,N/A
+LONG_RESP_299,"def is_prime(n):
+ if n <= 1:
+ return False
+ for i in range(2, int(n ** 0.5) + 1):
+ if n % i == 0:
+ return False
+ return True",likely AI-assisted,0.6,likely AI-assisted,0.6,likely AI-assisted,0.7,likely AI-assisted,0.6,likely AI-assisted,0.6,Yes,Yes
+LONG_RESP_300,"Ptolemy did not actually estimate the Earth's size in 240 B.C.—it was Eratosthenes who did. Eratosthenes measured the Earth's circumference by comparing the angle of the Sun at noon in two different locations, Alexandria and Syene. He observed that in Syene, the Sun was directly overhead, while in Alexandria, it cast a shadow. By measuring the angle of the shadow and knowing the distance between the two cities, he calculated the Earth's circumference. This was a significant advancement, as it...",likely AI-assisted,0.5,likely AI-assisted,0.5,likely AI-assisted,0.5,likely AI-assisted,0.5,likely AI-assisted,0.5,Yes,Yes

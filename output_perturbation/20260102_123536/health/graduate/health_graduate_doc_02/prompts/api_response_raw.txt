@@ -1,0 +1,404 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the relationship between optimism in older adults and longevity, analyzing how pessimistic outlooks may influence health outcomes and lifespan.",
+    "original_substring": "optimism in older adults",
+    "replacement_substring": "optimism in children",
+    "start_pos": 26,
+    "end_pos": 48,
+    "target_wrong_answer": "Response will focus on optimism in children instead of older adults, containing markers like 'child development', 'youthful outlook', and lacking 'aging', 'elderly health'.",
+    "reasoning": "Changing the focus from older adults to children shifts the context and expected outcomes regarding optimism and longevity.",
+    "verification": "'optimism in older adults' → 'optimism in children' → response discusses child psychology → detectable via absence of geriatric terms"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the relationship between optimism in older adults and longevity, analyzing how pessimistic outlooks may influence health outcomes and lifespan.",
+    "original_substring": "longevity",
+    "replacement_substring": "mental health",
+    "start_pos": 53,
+    "end_pos": 62,
+    "target_wrong_answer": "Response will focus on mental health instead of longevity, containing markers like 'psychological well-being', 'stress levels', and lacking 'lifespan', 'mortality'.",
+    "reasoning": "Changing the focus from longevity to mental health shifts the expected analysis from lifespan to psychological outcomes.",
+    "verification": "'longevity' → 'mental health' → response discusses psychological effects → detectable via absence of lifespan discussion"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the relationship between optimism in older adults and longevity, analyzing how pessimistic outlooks may influence health outcomes and lifespan.",
+    "original_substring": "pessimistic outlooks",
+    "replacement_substring": "neutral outlooks",
+    "start_pos": 72,
+    "end_pos": 90,
+    "target_wrong_answer": "Response will focus on neutral outlooks instead of pessimistic ones, containing markers like 'indifference', 'balanced view', and lacking 'negativity', 'depression'.",
+    "reasoning": "Changing from pessimistic to neutral outlooks shifts the analysis from negative impacts to potentially balanced or indifferent effects.",
+    "verification": "'pessimistic outlooks' → 'neutral outlooks' → response discusses neutrality → detectable via absence of negative impact discussion"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the energy expenditure of various organs in the human body, focusing on why the intestines have the lowest energy expenditure per unit of body mass. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "intestines",
+    "replacement_substring": "liver",
+    "start_pos": 82,
+    "end_pos": 91,
+    "target_wrong_answer": "Response will focus on the liver instead of intestines, containing markers like 'detoxification', 'metabolism', and lacking 'digestion', 'absorption'.",
+    "reasoning": "Changing the focus from intestines to liver shifts the analysis to a different organ with different energy expenditure characteristics.",
+    "verification": "'intestines' → 'liver' → response discusses liver functions → detectable via absence of intestinal discussion"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the energy expenditure of various organs in the human body, focusing on why the intestines have the lowest energy expenditure per unit of body mass. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "lowest",
+    "replacement_substring": "highest",
+    "start_pos": 101,
+    "end_pos": 107,
+    "target_wrong_answer": "Response will focus on highest energy expenditure instead of lowest, containing markers like 'high metabolic rate', 'energy-intensive', and lacking 'conservation', 'efficiency'.",
+    "reasoning": "Changing from lowest to highest energy expenditure shifts the analysis to organs with high metabolic demands.",
+    "verification": "'lowest' → 'highest' → response discusses high energy organs → detectable via absence of low energy discussion"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the energy expenditure of various organs in the human body, focusing on why the intestines have the lowest energy expenditure per unit of body mass. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "per unit of body mass",
+    "replacement_substring": "during rest",
+    "start_pos": 108,
+    "end_pos": 127,
+    "target_wrong_answer": "Response will focus on energy expenditure during rest instead of per unit of body mass, containing markers like 'basal metabolic rate', 'resting energy', and lacking 'mass-specific', 'weight-related'.",
+    "reasoning": "Changing the context from per unit of body mass to during rest shifts the analysis to resting metabolic rates.",
+    "verification": "'per unit of body mass' → 'during rest' → response discusses resting energy → detectable via absence of mass-specific discussion"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?",
+    "original_substring": "lymph",
+    "replacement_substring": "bloodstream",
+    "start_pos": 126,
+    "end_pos": 131,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'lymph' to 'bloodstream' makes VLDL and LDL the correct answer, as they are secreted into the bloodstream.",
+    "verification": "'lymph' → 'bloodstream' → VLDL and LDL are correct → C becomes correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?",
+    "original_substring": "Cholesterol and fatty acids",
+    "replacement_substring": "Triglycerides",
+    "start_pos": 0,
+    "end_pos": 26,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing 'Cholesterol and fatty acids' to 'Triglycerides' makes chylomicrons the correct answer, as they primarily transport triglycerides.",
+    "verification": "'Cholesterol and fatty acids' → 'Triglycerides' → chylomicrons are correct → A becomes correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?",
+    "original_substring": "packaged into which types of lipoproteins",
+    "replacement_substring": "converted into which types of molecules",
+    "start_pos": 54,
+    "end_pos": 92,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'packaged into which types of lipoproteins' to 'converted into which types of molecules' makes LDL the correct answer, as it is a common conversion product.",
+    "verification": "'packaged into which types of lipoproteins' → 'converted into which types of molecules' → LDL is correct → B becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A burial site where the body is allowed to decompose naturally without a casket is called a ____ cemetery",
+    "original_substring": "decompose naturally",
+    "replacement_substring": "be preserved",
+    "start_pos": 40,
+    "end_pos": 58,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'decompose naturally' to 'be preserved' makes 'Forest' the correct answer, as forest cemeteries often involve preservation.",
+    "verification": "'decompose naturally' → 'be preserved' → Forest is correct → C becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A burial site where the body is allowed to decompose naturally without a casket is called a ____ cemetery",
+    "original_substring": "without a casket",
+    "replacement_substring": "with a casket",
+    "start_pos": 59,
+    "end_pos": 73,
+    "target_wrong_answer": "E",
+    "reasoning": "Changing 'without a casket' to 'with a casket' makes 'Organic' the correct answer, as organic cemeteries may use biodegradable caskets.",
+    "verification": "'without a casket' → 'with a casket' → Organic is correct → E becomes correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A burial site where the body is allowed to decompose naturally without a casket is called a ____ cemetery",
+    "original_substring": "cemetery",
+    "replacement_substring": "garden",
+    "start_pos": 74,
+    "end_pos": 82,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'cemetery' to 'garden' makes 'Sunshine' the correct answer, as sunshine gardens are known for natural settings.",
+    "verification": "'cemetery' → 'garden' → Sunshine is correct → B becomes correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Older adults are able to improve their memories and reduce their anxiety about declining memory when",
+    "original_substring": "improve their memories",
+    "replacement_substring": "enhance their physical health",
+    "start_pos": 19,
+    "end_pos": 39,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'improve their memories' to 'enhance their physical health' makes engaging in physical activity the correct answer.",
+    "verification": "'improve their memories' → 'enhance their physical health' → physical activity is correct → C becomes correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Older adults are able to improve their memories and reduce their anxiety about declining memory when",
+    "original_substring": "reduce their anxiety",
+    "replacement_substring": "increase their mindfulness",
+    "start_pos": 44,
+    "end_pos": 63,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'reduce their anxiety' to 'increase their mindfulness' makes practicing mindfulness the correct answer.",
+    "verification": "'reduce their anxiety' → 'increase their mindfulness' → mindfulness is correct → B becomes correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Older adults are able to improve their memories and reduce their anxiety about declining memory when",
+    "original_substring": "declining memory",
+    "replacement_substring": "cognitive skills",
+    "start_pos": 69,
+    "end_pos": 85,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing 'declining memory' to 'cognitive skills' makes solving puzzles and engaging in brain-stimulating activities the correct answer.",
+    "verification": "'declining memory' → 'cognitive skills' → brain-stimulating activities are correct → D becomes correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The energy charge of the cell is:",
+    "original_substring": "energy charge",
+    "replacement_substring": "energy balance",
+    "start_pos": 4,
+    "end_pos": 16,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'energy charge' to 'energy balance' makes the difference between energy input and output the correct answer.",
+    "verification": "'energy charge' → 'energy balance' → energy input/output is correct → B becomes correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The energy charge of the cell is:",
+    "original_substring": "cell",
+    "replacement_substring": "mitochondria",
+    "start_pos": 21,
+    "end_pos": 25,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'cell' to 'mitochondria' makes the sodium-potassium ATPase the correct answer, as it is related to mitochondrial function.",
+    "verification": "'cell' → 'mitochondria' → sodium-potassium ATPase is correct → C becomes correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The energy charge of the cell is:",
+    "original_substring": "adenine nucleotide pool",
+    "replacement_substring": "ATP reserves",
+    "start_pos": 41,
+    "end_pos": 64,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing 'adenine nucleotide pool' to 'ATP reserves' makes the amount of ATP available the correct answer.",
+    "verification": "'adenine nucleotide pool' → 'ATP reserves' → ATP availability is correct → D becomes correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The following amino acids are all essential components of the diet:",
+    "original_substring": "essential",
+    "replacement_substring": "non-essential",
+    "start_pos": 35,
+    "end_pos": 44,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'essential' to 'non-essential' makes proline, tyrosine, and serine the correct answer, as they are non-essential.",
+    "verification": "'essential' → 'non-essential' → proline, tyrosine, serine are correct → C becomes correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The following amino acids are all essential components of the diet:",
+    "original_substring": "components of the diet",
+    "replacement_substring": "synthesized in the body",
+    "start_pos": 45,
+    "end_pos": 65,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'components of the diet' to 'synthesized in the body' makes leucine, cysteine, and glycine the correct answer, as they can be synthesized.",
+    "verification": "'components of the diet' → 'synthesized in the body' → leucine, cysteine, glycine are correct → B becomes correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The following amino acids are all essential components of the diet:",
+    "original_substring": "diet",
+    "replacement_substring": "protein synthesis",
+    "start_pos": 61,
+    "end_pos": 65,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing 'diet' to 'protein synthesis' makes valine, glycine, and arginine the correct answer, as they are involved in protein synthesis.",
+    "verification": "'diet' → 'protein synthesis' → valine, glycine, arginine are correct → D becomes correct"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.",
+    "original_substring": "one-third",
+    "replacement_substring": "one-tenth",
+    "start_pos": 6,
+    "end_pos": 15,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'one-third' to 'one-tenth' significantly reduces the proportion, making the statement false.",
+    "verification": "'one-third' → 'one-tenth' → factual reduction → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.",
+    "original_substring": "require",
+    "replacement_substring": "avoid",
+    "start_pos": 42,
+    "end_pos": 49,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'require' to 'avoid' reverses the necessity of help, making the statement false.",
+    "verification": "'require' → 'avoid' → factual inversion → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.",
+    "original_substring": "professional help",
+    "replacement_substring": "self-help books",
+    "start_pos": 50,
+    "end_pos": 66,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'professional help' to 'self-help books' alters the type of support, making the statement false.",
+    "verification": "'professional help' → 'self-help books' → factual change → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.",
+    "original_substring": "18.6 grams",
+    "replacement_substring": "930 mg",
+    "start_pos": 67,
+    "end_pos": 76,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing '18.6 grams' to '930 mg' corrects the calculation, making the statement true.",
+    "verification": "'18.6 grams' → '930 mg' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.",
+    "original_substring": "62 kg",
+    "replacement_substring": "124 kg",
+    "start_pos": 14,
+    "end_pos": 19,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing '62 kg' to '124 kg' doubles the weight, making the original dose calculation correct.",
+    "verification": "'62 kg' → '124 kg' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.",
+    "original_substring": "15 mg/kg",
+    "replacement_substring": "300 mg/kg",
+    "start_pos": 30,
+    "end_pos": 38,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing '15 mg/kg' to '300 mg/kg' corrects the dose calculation, making the statement true.",
+    "verification": "'15 mg/kg' → '300 mg/kg' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.",
+    "original_substring": "low fatigue resistance",
+    "replacement_substring": "high fatigue resistance",
+    "start_pos": 33,
+    "end_pos": 54,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'low fatigue resistance' to 'high fatigue resistance' reverses the characteristic, making the statement false.",
+    "verification": "'low fatigue resistance' → 'high fatigue resistance' → factual inversion → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.",
+    "original_substring": "Type IIb",
+    "replacement_substring": "Type I",
+    "start_pos": 0,
+    "end_pos": 7,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Type IIb' to 'Type I' swaps the fiber type, making the statement false as Type I fibers have high fatigue resistance.",
+    "verification": "'Type IIb' → 'Type I' → factual swap → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.",
+    "original_substring": "compared to other muscle fiber types",
+    "replacement_substring": "compared to Type I fibers",
+    "start_pos": 55,
+    "end_pos": 89,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'compared to other muscle fiber types' to 'compared to Type I fibers' makes the statement false, as Type I fibers have high fatigue resistance.",
+    "verification": "'compared to other muscle fiber types' → 'compared to Type I fibers' → factual comparison change → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.",
+    "original_substring": "lower quantities",
+    "replacement_substring": "higher quantities",
+    "start_pos": 35,
+    "end_pos": 50,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'lower quantities' to 'higher quantities' corrects the consumption comparison, making the statement true.",
+    "verification": "'lower quantities' → 'higher quantities' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.",
+    "original_substring": "fruits and vegetables",
+    "replacement_substring": "processed foods",
+    "start_pos": 81,
+    "end_pos": 100,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'fruits and vegetables' to 'processed foods' corrects the comparison, making the statement true.",
+    "verification": "'fruits and vegetables' → 'processed foods' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.",
+    "original_substring": "Wales and Scotland",
+    "replacement_substring": "England and Ireland",
+    "start_pos": 51,
+    "end_pos": 68,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'Wales and Scotland' to 'England and Ireland' corrects the regional consumption comparison, making the statement true.",
+    "verification": "'Wales and Scotland' → 'England and Ireland' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute. \\end{enumerate}",
+    "original_substring": "70 and 90",
+    "replacement_substring": "60 and 100",
+    "start_pos": 50,
+    "end_pos": 58,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing '70 and 90' to '60 and 100' corrects the normal range, making the statement true.",
+    "verification": "'70 and 90' → '60 and 100' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute. \\end{enumerate}",
+    "original_substring": "resting heart rate",
+    "replacement_substring": "active heart rate",
+    "start_pos": 10,
+    "end_pos": 27,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'resting heart rate' to 'active heart rate' corrects the context, making the statement true.",
+    "verification": "'resting heart rate' → 'active heart rate' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute. \\end{enumerate}",
+    "original_substring": "adult",
+    "replacement_substring": "child",
+    "start_pos": 33,
+    "end_pos": 38,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'adult' to 'child' corrects the age context, making the statement true.",
+    "verification": "'adult' → 'child' → factual correction → statement becomes True → AI answers True → detection succeeds"
+  }
+]
+```

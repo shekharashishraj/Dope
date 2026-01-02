@@ -135,7 +135,12 @@ The retriever will:
 ### Injection Suite (PDF Generation)
 
 Once perturbations exist, you can generate manipulated LaTeX/PDF outputs using
-the injection methods. There are two ways to do this:
+the injection methods. The injection system supports:
+- **Question-level substitutions**: Substitutions in question stems (not just options)
+- **Automatic extraction**: Corrects incorrect `latex_stem_text` from JSON automatically
+- **Robust parsing**: Handles nested LaTeX structures correctly
+
+There are two ways to generate PDFs:
 
 #### Method 1: Organized PDF Generation (Recommended)
 

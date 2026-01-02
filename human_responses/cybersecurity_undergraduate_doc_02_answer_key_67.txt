@@ -1,0 +1,46 @@
+Cybersecurity Undergraduate Doc 02 Quiz
+Answer Key
+
+True / False Questions
+
+1. False
+
+2. False
+
+3. True
+
+4. False
+
+5. True
+
+6. False
+
+7. True
+
+8. True
+
+9. False
+
+10. False
+
+Long Form Response Questions
+
+11. Sample answer:
+
+Function to check if a number is palindrome:
+
+def is_palindrome(number):
+    original = str(number)
+    reversed_num = original[::-1]
+    return original == reversed_num
+
+
+12. Sample answer:
+
+Function to sort a tuple by its date element:
+
+from datetime import datetime
+
+def sort_by_date(tuples_list):
+    return sorted(tuples_list, key=lambda x: datetime.strptime(x[1], '%Y-%m-%d'))
+

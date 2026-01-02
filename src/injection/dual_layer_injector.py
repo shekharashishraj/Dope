@@ -1,9 +1,10 @@
 """Dual Layer injection method - Visual overlay using \\duallayerbox."""
 import re
 import logging
-from typing import Dict, List, Any, Tuple
+from typing import Dict, List, Any, Tuple, Optional
 from .base_injector import BaseInjector
 from ..models.perturbation import PerturbationMapping, Question
+from ..latex_parser import extract_question_stem_from_latex
 
 logger = logging.getLogger(__name__)
 
@@ -109,9 +110,6 @@ class DualLayerInjector(BaseInjector):
             if not latex_stem_text:
                 latex_stem_text = question.latex_stem_text or question.stem_text or ''
             
-            if not latex_stem_text:
-                continue
-            
             # Find latex_stem_text in LaTeX (this should match exactly)
             logger.debug(f"[DualLayerInjector] Question {question_number}: Searching for stem text in LaTeX")
             stem_pos = self._find_question_stem_in_tex(mutated_tex, latex_stem_text)
@@ -125,8 +123,30 @@ class DualLayerInjector(BaseInjector):
                     stem_pos = (stem_pos[0] + prefix_len, stem_pos[1])
                     logger.debug(f"[DualLayerInjector] Question {question_number}: Found stem with prefix, adjusted position")
             
+            # If still not found, try extracting directly from LaTeX by question number
+            # This handles cases where LLM-generated latex_stem_text is incorrect
             if not stem_pos:
-                logger.warning(f"[DualLayerInjector] Question {question_number}: Could not find stem text in LaTeX: {latex_stem_text[:50]}...")
+                logger.debug(f"[DualLayerInjector] Question {question_number}: JSON latex_stem_text not found, extracting from LaTeX by question number")
+                extracted_stem = extract_question_stem_from_latex(mutated_tex, question_number)
+                if extracted_stem:
+                    logger.info(f"[DualLayerInjector] Question {question_number}: Extracted stem from LaTeX: {extracted_stem[:50]}...")
+                    # Try to find the extracted stem in the LaTeX
+                    stem_pos = self._find_question_stem_in_tex(mutated_tex, extracted_stem)
+                    if stem_pos:
+                        latex_stem_text = extracted_stem  # Update to use the correct stem text
+                        logger.info(f"[DualLayerInjector] Question {question_number}: Successfully matched extracted stem")
+                    else:
+                        # Try with "True or False: " prefix
+                        prefixed_extracted = f"True or False: {extracted_stem}"
+                        stem_pos = self._find_question_stem_in_tex(mutated_tex, prefixed_extracted)
+                        if stem_pos:
+                            prefix_len = len("True or False: ")
+                            stem_pos = (stem_pos[0] + prefix_len, stem_pos[1])
+                            latex_stem_text = extracted_stem
+                            logger.info(f"[DualLayerInjector] Question {question_number}: Successfully matched extracted stem with prefix")
+            
+            if not stem_pos:
+                logger.warning(f"[DualLayerInjector] Question {question_number}: Could not find stem text in LaTeX (tried JSON value and extraction): {latex_stem_text[:50] if latex_stem_text else 'None'}...")
                 continue
             
             logger.debug(f"[DualLayerInjector] Question {question_number}: Found stem at position {stem_pos}")
@@ -174,11 +194,83 @@ class DualLayerInjector(BaseInjector):
                             # Approximate position
                             substring_index = stem_in_tex.find(original_substring[:5]) if len(original_substring) >= 5 else -1
                     
+                    # If not found in stem, try searching in options (for option-level substitutions)
                     if substring_index == -1:
-                        continue
-                    
-                    abs_start = stem_start + substring_index
-                    abs_end = abs_start + len(original_substring)
+                        # Find the options section (nested enumerate after the stem)
+                        # Look for \begin{enumerate} after the stem
+                        nested_begin = mutated_tex.find('\\begin{enumerate}', stem_end)
+                        if nested_begin != -1 and nested_begin < stem_end + 200:  # Options should be close
+                            # Find matching \end{enumerate} for this nested enumerate
+                            # Need to track depth to find the correct closing
+                            depth = 1
+                            search_pos = nested_begin + len('\\begin{enumerate}')
+                            nested_end = -1
+                            
+                            while search_pos < len(mutated_tex) and depth > 0:
+                                next_begin = mutated_tex.find('\\begin{enumerate}', search_pos)
+                                next_end = mutated_tex.find('\\end{enumerate}', search_pos)
+                                
+                                if next_end == -1:
+                                    break
+                                
+                                if next_begin != -1 and next_begin < next_end:
+                                    depth += 1
+                                    search_pos = next_begin + len('\\begin{enumerate}')
+                                else:
+                                    depth -= 1
+                                    if depth == 0:
+                                        nested_end = next_end
+                                        break
+                                    search_pos = next_end + len('\\end{enumerate}')
+                            
+                            if nested_end != -1:
+                                options_text = mutated_tex[nested_begin:nested_end]
+                                # Search in options
+                                options_index = options_text.find(original_substring)
+                                if options_index != -1:
+                                    abs_start = nested_begin + options_index
+                                    abs_end = abs_start + len(original_substring)
+                                    logger.info(f"[DualLayerInjector] Question {question_number}: Found '{original_substring}' in options section")
+                                else:
+                                    # Try normalized search in options
+                                    normalized_options = re.sub(r'\s+', ' ', options_text)
+                                    normalized_orig = re.sub(r'\s+', ' ', original_substring)
+                                    normalized_index = normalized_options.find(normalized_orig)
+                                    if normalized_index != -1:
+                                        # Find approximate position in original text
+                                        # Count characters in normalized text up to normalized_index
+                                        char_count = 0
+                                        orig_pos = 0
+                                        for i, char in enumerate(options_text):
+                                            if char.isspace():
+                                                # Skip multiple spaces
+                                                while orig_pos < len(options_text) and options_text[orig_pos].isspace():
+                                                    orig_pos += 1
+                                            else:
+                                                char_count += 1
+                                                if char_count > normalized_index:
+                                                    break
+                                                orig_pos += 1
+                                        
+                                        # Try to find the substring starting from approximate position
+                                        search_start = max(0, orig_pos - 10)
+                                        options_index = options_text.find(original_substring, search_start)
+                                        if options_index != -1:
+                                            abs_start = nested_begin + options_index
+                                            abs_end = abs_start + len(original_substring)
+                                            logger.info(f"[DualLayerInjector] Question {question_number}: Found '{original_substring}' in options (normalized)")
+                                        else:
+                                            continue
+                                    else:
+                                        continue
+                            else:
+                                continue
+                        else:
+                            continue
+                    else:
+                        # Found in stem
+                        abs_start = stem_start + substring_index
+                        abs_end = abs_start + len(original_substring)
                 
                 # Create dual layer replacement using \duallayerbox macro
                 # Format: \duallayerbox{original}{replacement}

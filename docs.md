@@ -26,7 +26,7 @@ Key CLI flags are documented in `README.md`. Configuration lives in
 - `src/processor.py`: orchestrates batching and prompt dispatch.
 - `src/openai_client.py`: batched GPT calls + retry logic.
 - `src/file_handler.py`: JSON I/O + resume support.
-- `src/latex_parser.py`: stem extraction helpers.
+- `src/latex_parser.py`: stem extraction helpers (handles nested enumerate environments).
 
 ### Output Layout
 ```
@@ -78,6 +78,32 @@ All injectors inherit from `BaseInjector` (shared helpers for locating stems,
 editing the preamble, etc.) and are registered inside
 `InjectionOrchestrator.INJECTION_METHODS`.
 
+### Injection Improvements (2026-01-02)
+
+**Question-Level Substitution Support:**
+- Injectors now handle substitutions in question stems (not just options)
+- Substitutions can target any part of the question text
+- Works with both correct and incorrect `latex_stem_text` from JSON
+
+**Automatic LaTeX Extraction:**
+- If `latex_stem_text` from JSON doesn't match, injectors automatically extract the correct text from LaTeX
+- Uses question number to find the correct stem text
+- Handles both MCQ (with nested enumerate) and TF (without nested enumerate) questions
+- Fixed extraction function to properly parse nested LaTeX structures
+
+**Robust Text Matching:**
+- Searches for `original_substring` in question stem first
+- Falls back to searching in options (for option-level substitutions)
+- Normalizes whitespace for better matching
+- Handles position mismatches gracefully
+
+**Key Features:**
+- ✅ Question-level substitutions (in question stems)
+- ✅ Option-level substitutions (in answer options)
+- ✅ Automatic extraction fallback (when JSON is incorrect)
+- ✅ Robust LaTeX parsing (handles nested structures)
+- ✅ All 20 questions correctly extracted and processed
+
 ## 4. Font Attack Details
 
 Font attack manipulates the render/parse gap using custom TrueType fonts. The
@@ -122,13 +148,18 @@ workflow is:
 ## 6. Troubleshooting & Ops Tips
 
 - **Missing substrings**: The injector will skip mappings it cannot locate in
-  the LaTeX; double-check `latex_stem_text` and `start_pos` in the JSON.
+  the LaTeX. However, the system now automatically extracts correct `latex_stem_text`
+  when JSON is wrong, so this should be rare. Check logs for extraction fallback messages.
+- **Question-level substitutions**: Substitutions can now be in question stems or options.
+  The injector searches in both locations automatically.
 - **XeTeX errors**: Ensure the `fonts/` directory exists next to the `.tex` file
   before compiling font-attack documents.
 - **Large builds**: Font attack can create hundreds of `.ttf` files; delete
   unused `fonts_*` folders to save space.
 - **Resume perturbations**: Use `--force` to regenerate outputs if a JSON changes.
 - **Testing artifacts**: Clean `tmp_font_*` directories after ad-hoc experiments.
+- **Extraction issues**: If questions aren't being extracted, verify LaTeX structure.
+  The extraction function handles nested enumerates, but complex structures may need review.
 
 ## 7. Future Enhancements
 

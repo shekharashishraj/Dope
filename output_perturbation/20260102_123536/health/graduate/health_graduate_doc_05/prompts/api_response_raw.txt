@@ -1,0 +1,404 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the factors influencing daily protein requirements for athletes and analyze the recommended protein intake range based on body weight.",
+    "original_substring": "daily protein requirements for athletes",
+    "replacement_substring": "daily carbohydrate requirements for athletes",
+    "start_pos": 22,
+    "end_pos": 57,
+    "target_wrong_answer": "Response will focus on carbohydrate needs instead of protein needs, containing markers like 'glycogen', 'energy levels', and lacking 'amino acids', 'muscle repair'.",
+    "reasoning": "By changing the focus from protein to carbohydrates, the expected answer shifts from protein intake recommendations to carbohydrate intake guidelines.",
+    "verification": "'protein requirements' → 'carbohydrate requirements' → response discusses carbs → detectable via absence of protein-related terms"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the factors influencing daily protein requirements for athletes and analyze the recommended protein intake range based on body weight.",
+    "original_substring": "athletes",
+    "replacement_substring": "elderly individuals",
+    "start_pos": 48,
+    "end_pos": 56,
+    "target_wrong_answer": "Response will focus on protein needs for the elderly instead of athletes, containing markers like 'sarcopenia', 'aging', and lacking 'performance', 'muscle growth'.",
+    "reasoning": "Changing the population from athletes to elderly individuals shifts the focus to age-related protein needs rather than performance-related needs.",
+    "verification": "'athletes' → 'elderly individuals' → response discusses aging → detectable via absence of athletic performance terms"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the factors influencing daily protein requirements for athletes and analyze the recommended protein intake range based on body weight.",
+    "original_substring": "based on body weight",
+    "replacement_substring": "based on activity level",
+    "start_pos": 98,
+    "end_pos": 116,
+    "target_wrong_answer": "Response will focus on protein intake based on activity level instead of body weight, containing markers like 'exercise intensity', 'caloric expenditure', and lacking 'kg bodyweight', 'mass'.",
+    "reasoning": "By shifting the basis from body weight to activity level, the expected answer changes from weight-based recommendations to activity-based guidelines.",
+    "verification": "'body weight' → 'activity level' → response discusses exercise → detectable via absence of weight-related terms"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the human somatic cell's chromosome number in relation to genetic health and its implications for human development and disease. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "human somatic cell's chromosome number",
+    "replacement_substring": "human germ cell's chromosome number",
+    "start_pos": 32,
+    "end_pos": 68,
+    "target_wrong_answer": "Response will focus on germ cell chromosome number instead of somatic cells, containing markers like 'haploid', 'gametes', and lacking 'diploid', 'somatic'.",
+    "reasoning": "Changing the focus from somatic to germ cells shifts the discussion from diploid to haploid chromosome numbers, altering the expected answer.",
+    "verification": "'somatic cell' → 'germ cell' → response discusses gametes → detectable via absence of somatic-related terms"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the human somatic cell's chromosome number in relation to genetic health and its implications for human development and disease. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "genetic health",
+    "replacement_substring": "genetic diversity",
+    "start_pos": 80,
+    "end_pos": 93,
+    "target_wrong_answer": "Response will focus on genetic diversity instead of genetic health, containing markers like 'variation', 'alleles', and lacking 'disease', 'mutation'.",
+    "reasoning": "By shifting the focus from genetic health to genetic diversity, the expected answer changes to discuss variation and allele differences.",
+    "verification": "'genetic health' → 'genetic diversity' → response discusses variation → detectable via absence of health-related terms"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the human somatic cell's chromosome number in relation to genetic health and its implications for human development and disease. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "human development and disease",
+    "replacement_substring": "human evolution and adaptation",
+    "start_pos": 98,
+    "end_pos": 125,
+    "target_wrong_answer": "Response will focus on evolution and adaptation instead of development and disease, containing markers like 'natural selection', 'survival', and lacking 'pathology', 'growth'.",
+    "reasoning": "Changing the focus to evolution and adaptation shifts the expected answer to discuss evolutionary biology rather than developmental biology.",
+    "verification": "'development and disease' → 'evolution and adaptation' → response discusses evolution → detectable via absence of development-related terms"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "In adolescence:",
+    "original_substring": "Girls physiologically increase their percentage body fat",
+    "replacement_substring": "Brain growth is faster than at any other stage in life",
+    "start_pos": 3,
+    "end_pos": 56,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing the focus to brain growth, the correct answer shifts from body fat changes to neurological development.",
+    "verification": "'Girls physiologically increase' → 'Brain growth is faster' → focus on brain development → selects B"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "In adolescence:",
+    "original_substring": "Girls physiologically increase their percentage body fat",
+    "replacement_substring": "Type 1 obesity related diabetes is most common",
+    "start_pos": 3,
+    "end_pos": 56,
+    "target_wrong_answer": "C",
+    "reasoning": "By focusing on diabetes prevalence, the correct answer shifts from body fat changes to diabetes incidence.",
+    "verification": "'Girls physiologically increase' → 'Type 1 obesity related diabetes is most common' → focus on diabetes → selects C"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "In adolescence:",
+    "original_substring": "Girls physiologically increase their percentage body fat",
+    "replacement_substring": "Peak bone mass occurs before the growth spurt ends",
+    "start_pos": 3,
+    "end_pos": 56,
+    "target_wrong_answer": "D",
+    "reasoning": "By focusing on bone mass, the correct answer shifts from body fat changes to skeletal development.",
+    "verification": "'Girls physiologically increase' → 'Peak bone mass occurs' → focus on bone development → selects D"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Parasympathetic preganglionic nerves leave the central nervous system with the",
+    "original_substring": "eighth cranial nerves.",
+    "replacement_substring": "second cranial nerves.",
+    "start_pos": 57,
+    "end_pos": 77,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing the cranial nerve number, the correct answer shifts from the eighth to the second cranial nerves.",
+    "verification": "'eighth cranial nerves' → 'second cranial nerves' → focus on second nerves → selects B"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Parasympathetic preganglionic nerves leave the central nervous system with the",
+    "original_substring": "eighth cranial nerves.",
+    "replacement_substring": "first cranial nerves.",
+    "start_pos": 57,
+    "end_pos": 77,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing the cranial nerve number, the correct answer shifts from the eighth to the first cranial nerves.",
+    "verification": "'eighth cranial nerves' → 'first cranial nerves' → focus on first nerves → selects C"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Parasympathetic preganglionic nerves leave the central nervous system with the",
+    "original_substring": "eighth cranial nerves.",
+    "replacement_substring": "fifth cranial nerves.",
+    "start_pos": 57,
+    "end_pos": 77,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing the cranial nerve number, the correct answer shifts from the eighth to the fifth cranial nerves.",
+    "verification": "'eighth cranial nerves' → 'fifth cranial nerves' → focus on fifth nerves → selects D"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following could very well be a cohort difference rather than a change that occurs with age?",
+    "original_substring": "Differences in weight",
+    "replacement_substring": "Loss of muscle mass",
+    "start_pos": 65,
+    "end_pos": 86,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing the focus to muscle mass loss, the correct answer shifts from weight differences to muscle changes.",
+    "verification": "'Differences in weight' → 'Loss of muscle mass' → focus on muscle loss → selects A"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following could very well be a cohort difference rather than a change that occurs with age?",
+    "original_substring": "Differences in weight",
+    "replacement_substring": "Shrinkage of the thymus gland",
+    "start_pos": 65,
+    "end_pos": 86,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing the focus to thymus gland shrinkage, the correct answer shifts from weight differences to gland changes.",
+    "verification": "'Differences in weight' → 'Shrinkage of the thymus gland' → focus on thymus shrinkage → selects B"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following could very well be a cohort difference rather than a change that occurs with age?",
+    "original_substring": "Differences in weight",
+    "replacement_substring": "Changes in metabolism rate",
+    "start_pos": 65,
+    "end_pos": 86,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing the focus to metabolism rate changes, the correct answer shifts from weight differences to metabolic changes.",
+    "verification": "'Differences in weight' → 'Changes in metabolism rate' → focus on metabolism → selects D"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Blood clots are responsible for repeatedly blocking a catheter. What should you do?",
+    "original_substring": "Use a syringe to remove the clot.",
+    "replacement_substring": "Remove the catheter and recatheterize.",
+    "start_pos": 58,
+    "end_pos": 89,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing the action to recatheterization, the correct answer shifts from using a syringe to removing and replacing the catheter.",
+    "verification": "'Use a syringe' → 'Remove the catheter' → focus on recatheterization → selects B"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Blood clots are responsible for repeatedly blocking a catheter. What should you do?",
+    "original_substring": "Use a syringe to remove the clot.",
+    "replacement_substring": "Replace the catheter with a new one without informing medical staff.",
+    "start_pos": 58,
+    "end_pos": 89,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing the action to replacing the catheter without informing staff, the correct answer shifts from using a syringe to unauthorized replacement.",
+    "verification": "'Use a syringe' → 'Replace the catheter without informing' → focus on unauthorized replacement → selects C"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Blood clots are responsible for repeatedly blocking a catheter. What should you do?",
+    "original_substring": "Use a syringe to remove the clot.",
+    "replacement_substring": "Inform the patient's family.",
+    "start_pos": 58,
+    "end_pos": 89,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing the action to informing the patient's family, the correct answer shifts from using a syringe to communication with family.",
+    "verification": "'Use a syringe' → 'Inform the patient's family' → focus on family communication → selects D"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is true about rectal bleeding?",
+    "original_substring": "A painful digital examination suggests an anal fissure",
+    "replacement_substring": "Hemorrhoids are never a cause of rectal bleeding",
+    "start_pos": 36,
+    "end_pos": 84,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing the statement to focus on hemorrhoids, the correct answer shifts from anal fissures to hemorrhoid-related bleeding.",
+    "verification": "'A painful digital examination' → 'Hemorrhoids are never a cause' → focus on hemorrhoids → selects A"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is true about rectal bleeding?",
+    "original_substring": "A painful digital examination suggests an anal fissure",
+    "replacement_substring": "A colonoscopy is not necessary if rectal bleeding is present",
+    "start_pos": 36,
+    "end_pos": 84,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing the statement to focus on colonoscopy necessity, the correct answer shifts from anal fissures to colonoscopy decisions.",
+    "verification": "'A painful digital examination' → 'A colonoscopy is not necessary' → focus on colonoscopy → selects C"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is true about rectal bleeding?",
+    "original_substring": "A painful digital examination suggests an anal fissure",
+    "replacement_substring": "Rectal cancer is the commonest cause of rectal bleeding",
+    "start_pos": 36,
+    "end_pos": 84,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing the statement to focus on rectal cancer, the correct answer shifts from anal fissures to cancer-related bleeding.",
+    "verification": "'A painful digital examination' → 'Rectal cancer is the commonest cause' → focus on cancer → selects D"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The lateral pterygoid muscle is the primary functional matrix affecting the angle of the mandible during its development.",
+    "original_substring": "primary",
+    "replacement_substring": "secondary",
+    "start_pos": 34,
+    "end_pos": 41,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'primary' to 'secondary' alters the statement to indicate a lesser role, which flips the truth value to True.",
+    "verification": "'primary' → 'secondary' → indicates lesser role → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The lateral pterygoid muscle is the primary functional matrix affecting the angle of the mandible during its development.",
+    "original_substring": "affecting",
+    "replacement_substring": "supporting",
+    "start_pos": 52,
+    "end_pos": 61,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'affecting' to 'supporting' suggests a different role, flipping the truth value to True.",
+    "verification": "'affecting' → 'supporting' → suggests different role → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The lateral pterygoid muscle is the primary functional matrix affecting the angle of the mandible during its development.",
+    "original_substring": "angle of the mandible",
+    "replacement_substring": "position of the mandible",
+    "start_pos": 62,
+    "end_pos": 81,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'angle' to 'position' alters the anatomical focus, flipping the truth value to True.",
+    "verification": "'angle of the mandible' → 'position of the mandible' → changes anatomical focus → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Consuming a diet rich in fruits and vegetables significantly elevates the risk of oesophageal cancer.",
+    "original_substring": "elevates",
+    "replacement_substring": "reduces",
+    "start_pos": 56,
+    "end_pos": 64,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'elevates' to 'reduces' flips the statement to indicate a protective effect, making it True.",
+    "verification": "'elevates' → 'reduces' → indicates protective effect → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Consuming a diet rich in fruits and vegetables significantly elevates the risk of oesophageal cancer.",
+    "original_substring": "significantly",
+    "replacement_substring": "slightly",
+    "start_pos": 48,
+    "end_pos": 60,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'significantly' to 'slightly' alters the degree of risk, flipping the truth value to True.",
+    "verification": "'significantly' → 'slightly' → alters degree of risk → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Consuming a diet rich in fruits and vegetables significantly elevates the risk of oesophageal cancer.",
+    "original_substring": "risk of oesophageal cancer",
+    "replacement_substring": "risk of heart disease",
+    "start_pos": 65,
+    "end_pos": 89,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the disease focus from cancer to heart disease flips the truth value to True.",
+    "verification": "'risk of oesophageal cancer' → 'risk of heart disease' → changes disease focus → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Vascular dementia typically presents with less cognitive impairment than Parkinson's disease.",
+    "original_substring": "less",
+    "replacement_substring": "more",
+    "start_pos": 43,
+    "end_pos": 47,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'less' to 'more' flips the statement to indicate greater impairment, making it True.",
+    "verification": "'less' → 'more' → indicates greater impairment → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Vascular dementia typically presents with less cognitive impairment than Parkinson's disease.",
+    "original_substring": "Parkinson's disease",
+    "replacement_substring": "Alzheimer's disease",
+    "start_pos": 58,
+    "end_pos": 76,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the comparison to Alzheimer's disease flips the truth value to True.",
+    "verification": "'Parkinson's disease' → 'Alzheimer's disease' → changes comparison → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Vascular dementia typically presents with less cognitive impairment than Parkinson's disease.",
+    "original_substring": "cognitive impairment",
+    "replacement_substring": "motor impairment",
+    "start_pos": 34,
+    "end_pos": 54,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'cognitive' to 'motor' shifts the focus, flipping the truth value to True.",
+    "verification": "'cognitive impairment' → 'motor impairment' → shifts focus → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Niacin and riboflavin are the vitamins that are lost most readily during cooking.",
+    "original_substring": "Niacin and riboflavin",
+    "replacement_substring": "Vitamin C and thiamine",
+    "start_pos": 0,
+    "end_pos": 19,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the vitamins to Vitamin C and thiamine, which are more readily lost, flips the truth value to True.",
+    "verification": "'Niacin and riboflavin' → 'Vitamin C and thiamine' → indicates more readily lost vitamins → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Niacin and riboflavin are the vitamins that are lost most readily during cooking.",
+    "original_substring": "lost most readily",
+    "replacement_substring": "retained most effectively",
+    "start_pos": 33,
+    "end_pos": 48,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'lost most readily' to 'retained most effectively' flips the truth value to True.",
+    "verification": "'lost most readily' → 'retained most effectively' → indicates retention → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Niacin and riboflavin are the vitamins that are lost most readily during cooking.",
+    "original_substring": "during cooking",
+    "replacement_substring": "during storage",
+    "start_pos": 49,
+    "end_pos": 62,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the context from cooking to storage flips the truth value to True.",
+    "verification": "'during cooking' → 'during storage' → changes context → statement becomes True → AI answers True → detection succeeds"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The worldwide prevalence of obesity is approximately 13\\%, indicating a significant public health concern. \\end{enumerate}",
+    "original_substring": "13\\%",
+    "replacement_substring": "3\\%",
+    "start_pos": 38,
+    "end_pos": 42,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the prevalence from 13% to 3% significantly alters the statement, flipping the truth value to False.",
+    "verification": "'13%' → '3%' → indicates lower prevalence → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The worldwide prevalence of obesity is approximately 13\\%, indicating a significant public health concern. \\end{enumerate}",
+    "original_substring": "significant",
+    "replacement_substring": "minor",
+    "start_pos": 54,
+    "end_pos": 64,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'significant' to 'minor' alters the perceived impact, flipping the truth value to False.",
+    "verification": "'significant' → 'minor' → indicates lesser impact → statement becomes False → AI answers False → detection succeeds"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The worldwide prevalence of obesity is approximately 13\\%, indicating a significant public health concern. \\end{enumerate}",
+    "original_substring": "public health concern",
+    "replacement_substring": "economic concern",
+    "start_pos": 65,
+    "end_pos": 84,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the focus from public health to economic concern flips the truth value to False.",
+    "verification": "'public health concern' → 'economic concern' → changes focus → statement becomes False → AI answers False → detection succeeds"
+  }
+]
+```
