@@ -1,5 +1,58 @@
 # Changelog
 
+## [2026-01-02] - Injection System Improvements
+
+### Fixed
+- **LaTeX Extraction Function**: Fixed `extract_question_stem_from_latex()` to correctly handle nested enumerate environments
+  - Now properly extracts all questions (tested: 20/20 for test documents)
+  - Handles both MCQ (with nested enumerate) and TF (without nested enumerate) questions
+  - Uses depth tracking to identify top-level question items vs nested option items
+  - Previously was extracting option text instead of question stems
+
+- **Perturbation Application**: Fixed issue where only 2 out of 20 questions had perturbations applied
+  - Root cause: Incorrect `latex_stem_text` in JSON files
+  - Solution: Automatic extraction fallback when JSON `latex_stem_text` doesn't match
+
+### Added
+- **Question-Level Substitution Support**: Injectors now handle substitutions in question stems
+  - Substitutions can target any part of the question text, not just options
+  - Works with both correct and incorrect `latex_stem_text` from JSON
+  - Tested and verified: ✓ PASS
+
+- **Automatic Extraction Fallback**: Injectors automatically extract correct `latex_stem_text` when JSON is wrong
+  - First tries to use `latex_stem_text` from perturbation JSON
+  - If not found, extracts from LaTeX file by question number
+  - No manual fixes needed for incorrect JSON files
+  - Tested and verified: ✓ PASS
+
+- **Option-Level Substitution Support**: Added logic to search in options when substring not found in stem
+  - Falls back to searching nested enumerate (options) section
+  - Handles substitutions in answer options
+  - Status: Logic implemented, may need refinement for edge cases
+
+- **Enhanced Text Matching**: Improved substring matching with multiple fallback strategies
+  - Exact match first
+  - Normalized whitespace matching
+  - Partial match fallback
+  - Search in options if not found in stem
+
+### Changed
+- **Dual Layer Injector**: Enhanced to support question-level and option-level substitutions
+- **Font Attack Injector**: Added extraction fallback mechanism
+- **LaTeX Parser**: Completely rewritten extraction logic for robustness
+
+### Documentation
+- Created `INJECTION_GUIDE.md` - Comprehensive guide to injection methods and improvements
+- Updated `PERTURBATION_ANALYSIS.md` - Documented fixes and solutions
+- Updated `docs.md` - Added injection improvements section
+- Created `INJECTOR_TESTING_REPORT.md` - Test results and status
+
+### Testing
+- Added `test_injector_question_level.py` - Test suite for question-level substitutions
+- Verified extraction: 20/20 questions correctly extracted
+- Verified question-level substitutions: ✓ PASS
+- Verified extraction fallback: ✓ PASS
+
 ## [Latest] - 2025-12-22
 
 ### Added

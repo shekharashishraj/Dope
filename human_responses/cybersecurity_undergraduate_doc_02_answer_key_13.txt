@@ -1,0 +1,42 @@
+Cybersecurity Undergraduate Doc 02 Quiz
+Answer Key
+
+True / False Questions
+
+1. False
+
+2. True
+
+3. False
+
+4. True
+
+5. True
+
+6. True
+
+7. True
+
+8. True
+
+9. False
+
+10. False
+
+Long Form Response Questions
+
+11. Sample answer:
+
+def is_prime(number):
+     if number <= 1:
+         return False
+     for i in range(2, int(number**0.5) + 1):
+         if number % i == 0:
+             return False
+     return True
+
+
+12. Sample answer:
+
+def sort_tuple(tuples):
+     return sorted(tuples, key=lambda x: x[1])

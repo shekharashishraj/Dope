@@ -1,0 +1,42 @@
+Astronomy Graduate Doc 02 Quiz
+Answer Key
+
+Multiple Choice Questions
+
+1. (D) A beta coefficient of -0.5 suggests that for each one-unit increase in the explanatory variable, the response variable decreases by 0.5 units, holding all else constant. In context, if the explanatory variable increases by 2 units, we'd expect the response to decrease by 1.0 units. This negative coefficient indicates an inverse relationship between predictor and outcome.
+
+2. (D) A 95% confidence interval for a parameter means we are 95% confident that the interval contains the true parameter value; equivalently, if we repeated the experiment many times and constructed intervals the same way, about 95% of them would contain the true value. It does not mean there's a 95% probability the parameter lies in this specific interval (the parameter is fixed); rather, it's the interval that's random.
+
+3. (A) The null hypothesis H0: mu = 100; the alternative H1: mu ≠ 100. Use a two-sided t-test. Suppose sample mean is 98.5, sample SD = 4, n = 25. Then t = (98.5 - 100)/(4/sqrt(25)) = (-1.5)/(0.8) = -1.875. Degrees of freedom = 24. p-value ≈ 0.073 (two-sided). At alpha = 0.05, fail to reject H0.
+
+4. (D) A Type I error is rejecting a true null hypothesis (false positive). A Type II error is failing to reject a false null hypothesis (false negative). The significance level alpha controls the Type I error rate; decreasing alpha reduces Type I errors but increases Type II errors (beta), all else equal.
+
+5. (C) The R-squared of 0.64 means 64% of the variability in the response variable is explained by the model. It is the proportion of variance explained by the predictors; however, it doesn't imply causation and can increase with more predictors regardless of their true relevance.
+
+True / False Questions
+
+6. Use cross-validation (e.g., k-fold CV) to estimate out-of-sample performance; regularization (ridge, lasso) to prevent overfitting; collect more data; simplify the model by removing irrelevant features; use feature selection and/or dimensionality reduction (PCA). Also check for data leakage and ensure proper preprocessing in the CV pipeline.
+
+7. True
+
+8. True
+
+9. Multicollinearity refers to high correlation among predictor variables, which inflates variances of coefficient estimates and makes them unstable (large standard errors), making it hard to assess individual predictor effects. Detect with VIFs (variance inflation factors) or condition indices. Remedies include removing or combining correlated variables, using PCA, or regularization (ridge).
+
+10. If residuals show a funnel shape (increasing variance with fitted values), that's heteroscedasticity. Remedies: use weighted least squares, transform the response (e.g., log), or use robust (heteroscedasticity-consistent) standard errors.
+
+Long Form Response Questions
+
+11. Sample answer:
+
+AIC (Akaike Information Criterion) and BIC (Bayesian Information Criterion) trade off model fit and complexity: lower values preferred. 
+
+Both penalize model complexity but BIC has a larger penalty for number of parameters (penalty grows with log(n)), so BIC favors simpler models as sample size increases. 
+
+Use for model selection; compare models fit to the same data.
+
+12. Sample answer:
+
+For time series with trend and seasonality, use models like SARIMA (Seasonal ARIMA), or exponential smoothing state space models (like Holt-Winters), or use Prophet, or incorporate seasonal dummies in regression. 
+
+Ensure stationarity via differencing or detrending, and check residuals.

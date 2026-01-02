@@ -15,57 +15,88 @@ def extract_question_stem_from_latex(latex_content: str, question_number: int) -
     Returns:
         LaTeX stem text for the question, or None if not found
     """
-    # Pattern to match \item followed by question text
-    # This handles both numbered and unnumbered enumerate environments
-    # We need to match the question number in the enumerate counter
+    questions = parse_latex_questions_from_content(latex_content)
+    return questions.get(question_number)
+
+
+def parse_latex_questions_from_content(latex_content: str) -> Dict[int, str]:
+    """
+    Parse LaTeX content and extract all question stems, indexed by question number.
+    Uses a simple but reliable approach: find all \item at the top level of enumerate blocks.
+    """
+    questions = {}
     
-    # First, try to find questions in enumerate environments
-    # Pattern: \item followed by optional "True or False:" and then the question text
-    # The question number might be set by \setcounter{enumi}{X} or by the enumerate label
+    # Split by sections
+    section_pattern = r'\\section\*\{([^}]+)\}'
+    sections = re.split(section_pattern, latex_content)
     
-    # Look for \setcounter{enumi}{X} to understand the starting number
-    counter_match = re.search(r'\\setcounter\{enumi\}\{(\d+)\}', latex_content)
-    start_number = int(counter_match.group(1)) if counter_match else 1
+    current_question = 1
     
-    # Find all \item entries in enumerate environments
-    # We need to match the section context (Multiple Choice, True/False, Long Form)
+    for i in range(1, len(sections), 2):  # Skip section names, get content
+        section_content = sections[i + 1] if i + 1 < len(sections) else ""
+        
+        # Check for counter reset
+        counter_match = re.search(r'\\setcounter\{enumi\}\{(\d+)\}', section_content)
+        if counter_match:
+            current_question = int(counter_match.group(1)) + 1
+        
+        # Find all \item entries in this section
+        # We'll filter to only top-level items by checking depth
+        all_items = list(re.finditer(r'\\item', section_content))
+        
+        items = []
+        for item_match in all_items:
+            item_pos = item_match.start()
+            
+            # Count depth: \begin{enumerate} - \end{enumerate} before this position
+            before = section_content[:item_pos]
+            depth = before.count('\\begin{enumerate}') - before.count('\\end{enumerate}')
+            
+            if depth == 1:  # Inside exactly one enumerate (the top-level one)
+                # Extract text from this item
+                item_start = item_pos + len('\\item')
+                # Skip whitespace
+                while item_start < len(section_content) and section_content[item_start].isspace():
+                    item_start += 1
+                
+                # Find end: next \item at same depth, or \end{enumerate} at depth 1
+                item_end = len(section_content)
+                
+                # Look for next item at depth 1
+                for next_item in all_items:
+                    if next_item.start() > item_pos:
+                        next_pos = next_item.start()
+                        before_next = section_content[:next_pos]
+                        next_depth = before_next.count('\\begin{enumerate}') - before_next.count('\\end{enumerate}')
+                        if next_depth == 1:
+                            item_end = next_pos
+                            break
+                
+                # Extract text (stop at nested \begin{enumerate} which is options)
+                item_text = section_content[item_start:item_end]
+                
+                # Remove nested enumerate content (options for MCQ)
+                nested_begin = item_text.find('\\begin{enumerate}')
+                if nested_begin != -1:
+                    item_text = item_text[:nested_begin]
+                
+                # Clean up
+                item_text = item_text.strip()
+                # Remove "True or False:" prefix
+                item_text = re.sub(r'^True or False:\s*', '', item_text, flags=re.IGNORECASE)
+                # Normalize whitespace
+                item_text = re.sub(r'\s+', ' ', item_text)
+                item_text = item_text.rstrip('\\ \n')
+                
+                if item_text and len(item_text) > 5:
+                    items.append(item_text)
+        
+        # Assign question numbers
+        for item_text in items:
+            questions[current_question] = item_text
+            current_question += 1
     
-    # Split by sections to find the right context
-    sections = re.split(r'\\section\*\{([^}]+)\}', latex_content)
-    
-    # Find items in the relevant section
-    # For now, we'll search through all items and match by relative position
-    # This is a simplified approach - in practice, we might need more sophisticated parsing
-    
-    # Pattern to match \item followed by question text
-    # Handle both "True or False:" prefix and plain questions
-    item_pattern = r'\\item\s+(?:True or False:\s+)?(.*?)(?=\\item|\\end\{enumerate\}|$)'
-    
-    items = re.findall(item_pattern, latex_content, re.DOTALL)
-    
-    # Calculate which item index corresponds to our question number
-    # Account for the counter offset
-    item_index = question_number - start_number
-    
-    if 0 <= item_index < len(items):
-        stem_text = items[item_index].strip()
-        # Clean up the stem text - remove extra whitespace and newlines
-        stem_text = re.sub(r'\s+', ' ', stem_text)
-        # Remove trailing backslashes and newlines
-        stem_text = stem_text.rstrip('\\ \n')
-        return stem_text
-    
-    # Alternative approach: search by question number in the text
-    # Some questions might have the number embedded
-    number_pattern = rf'\\item.*?{question_number}[\.\)]\s*(.*?)(?=\\item|\\end|$)'
-    match = re.search(number_pattern, latex_content, re.DOTALL)
-    if match:
-        stem_text = match.group(1).strip()
-        stem_text = re.sub(r'\s+', ' ', stem_text)
-        stem_text = stem_text.rstrip('\\ \n')
-        return stem_text
-    
-    return None
+    return questions
 
 
 def parse_latex_questions(latex_file_path: str) -> Dict[int, str]:
@@ -85,44 +116,7 @@ def parse_latex_questions(latex_file_path: str) -> Dict[int, str]:
     with open(latex_path, 'r', encoding='utf-8') as f:
         latex_content = f.read()
     
-    questions = {}
-    
-    # Find all \item entries and extract their content
-    # We'll number them sequentially based on their order in enumerate environments
-    
-    # Split by sections
-    section_pattern = r'\\section\*\{([^}]+)\}'
-    sections = re.split(section_pattern, latex_content)
-    
-    current_question = 1
-    
-    for i in range(1, len(sections), 2):  # Skip section names, get content
-        section_content = sections[i + 1] if i + 1 < len(sections) else ""
-        
-        # Check for counter reset
-        counter_match = re.search(r'\\setcounter\{enumi\}\{(\d+)\}', section_content)
-        if counter_match:
-            current_question = int(counter_match.group(1)) + 1
-        # If no counter, continue from previous question number
-        
-        # Find all top-level \item entries
-        # Pattern: \item followed by text until \begin{enumerate} (nested) or next \item or \end{enumerate}
-        # Use a more careful pattern that stops at nested enumerates
-        item_pattern = r'\\item\s+(?:True or False:\s+)?(.*?)(?=\\begin\{enumerate\}|\\item\s+|\\end\{enumerate\}|$)'
-        items = re.findall(item_pattern, section_content, re.DOTALL)
-        
-        for item_text in items:
-            stem_text = item_text.strip()
-            # Remove "True or False:" prefix if it wasn't caught by the pattern
-            stem_text = re.sub(r'^True or False:\s*', '', stem_text, flags=re.IGNORECASE)
-            # Clean up whitespace
-            stem_text = re.sub(r'\s+', ' ', stem_text)
-            stem_text = stem_text.rstrip('\\ \n')
-            if stem_text:
-                questions[current_question] = stem_text
-                current_question += 1
-    
-    return questions
+    return parse_latex_questions_from_content(latex_content)
 
 
 def get_question_latex_stem(latex_file_path: str, question_number: int) -> Optional[str]:
@@ -138,4 +132,3 @@ def get_question_latex_stem(latex_file_path: str, question_number: int) -> Optio
     """
     questions = parse_latex_questions(latex_file_path)
     return questions.get(question_number)
-

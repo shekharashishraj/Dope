@@ -1,0 +1,338 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "As the number of training examples goes to infinity, your model trained on that data will have:",
+    "original_substring": "infinity",
+    "replacement_substring": "a small amount",
+    "start_pos": 36,
+    "end_pos": 44,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'infinity' to 'a small amount' suggests limited data, which would lead to higher variance.",
+    "verification": "'infinity' → 'a small amount' → limited data → higher variance → answer B"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "As the number of training examples goes to infinity, your model trained on that data will have:",
+    "original_substring": "training examples",
+    "replacement_substring": "test examples",
+    "start_pos": 7,
+    "end_pos": 23,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'training examples' to 'test examples' implies the model is not learning from the data, leading to the same variance.",
+    "verification": "'training examples' → 'test examples' → no learning → same variance → answer C"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "As the number of training examples goes to infinity, your model trained on that data will have:",
+    "original_substring": "your model trained on that data",
+    "replacement_substring": "an untrained model",
+    "start_pos": 45,
+    "end_pos": 73,
+    "target_wrong_answer": "D",
+    "reasoning": "Replacing 'your model trained on that data' with 'an untrained model' suggests no training occurred, making 'None of the above' plausible.",
+    "verification": "'trained model' → 'untrained model' → no training → none of the options fit → answer D"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Lower variance",
+    "original_substring": "Lower",
+    "replacement_substring": "Higher",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing 'Lower' to 'Higher' variance makes both statements true, aligning with option A.",
+    "verification": "'Lower' → 'Higher' → both statements true → answer A"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Lower variance",
+    "original_substring": "Lower",
+    "replacement_substring": "Same",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'Lower' to 'Same' variance makes both statements false, aligning with option B.",
+    "verification": "'Lower' → 'Same' → both statements false → answer B"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Lower variance",
+    "original_substring": "Lower",
+    "replacement_substring": "Higher",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing 'Lower' to 'Higher' variance makes the first statement true and the second false, aligning with option C.",
+    "verification": "'Lower' → 'Higher' → first true, second false → answer C"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.",
+    "original_substring": "2",
+    "replacement_substring": "0",
+    "start_pos": 126,
+    "end_pos": 127,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing '2' to '0' makes the statement factually incorrect, flipping the truth value.",
+    "verification": "'2' → '0' → incorrect dimensionality → statement False → AI answers False"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.",
+    "original_substring": "dimensionality",
+    "replacement_substring": "rank",
+    "start_pos": 26,
+    "end_pos": 39,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'dimensionality' to 'rank' alters the question, making the answer '2' incorrect.",
+    "verification": "'dimensionality' → 'rank' → incorrect answer → statement False → AI answers False"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.",
+    "original_substring": "null space",
+    "replacement_substring": "column space",
+    "start_pos": 55,
+    "end_pos": 64,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'null space' to 'column space' makes the answer '2' incorrect, flipping the truth value.",
+    "verification": "'null space' → 'column space' → incorrect answer → statement False → AI answers False"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The correct answer to 'Another term for out-of-distribution detection is?' is 'one-class detection'.",
+    "original_substring": "one-class detection",
+    "replacement_substring": "anomaly detection",
+    "start_pos": 66,
+    "end_pos": 84,
+    "target_wrong_answer": "True",
+    "reasoning": "Replacing 'one-class detection' with 'anomaly detection' makes the statement true, as both terms are synonymous.",
+    "verification": "'one-class detection' → 'anomaly detection' → synonymous terms → statement True → AI answers True"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The correct answer to 'Another term for out-of-distribution detection is?' is 'one-class detection'.",
+    "original_substring": "out-of-distribution",
+    "replacement_substring": "anomaly",
+    "start_pos": 33,
+    "end_pos": 52,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'out-of-distribution' to 'anomaly' aligns with 'one-class detection', making the statement true.",
+    "verification": "'out-of-distribution' → 'anomaly' → synonymous terms → statement True → AI answers True"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The correct answer to 'Another term for out-of-distribution detection is?' is 'one-class detection'.",
+    "original_substring": "out-of-distribution detection",
+    "replacement_substring": "novelty detection",
+    "start_pos": 33,
+    "end_pos": 58,
+    "target_wrong_answer": "True",
+    "reasoning": "Replacing 'out-of-distribution detection' with 'novelty detection' makes the statement true, as they are equivalent.",
+    "verification": "'out-of-distribution detection' → 'novelty detection' → equivalent terms → statement True → AI answers True"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The correct answer to 'Neural networks:' is 'Can use a mix of different activation functions'.",
+    "original_substring": "different activation functions",
+    "replacement_substring": "the same activation function",
+    "start_pos": 54,
+    "end_pos": 82,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'different activation functions' to 'the same activation function' makes the statement false.",
+    "verification": "'different activation functions' → 'the same activation function' → incorrect → statement False → AI answers False"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The correct answer to 'Neural networks:' is 'Can use a mix of different activation functions'.",
+    "original_substring": "Can use a mix of",
+    "replacement_substring": "Cannot use any",
+    "start_pos": 38,
+    "end_pos": 52,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Can use a mix of' to 'Cannot use any' makes the statement false.",
+    "verification": "'Can use a mix of' → 'Cannot use any' → incorrect → statement False → AI answers False"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The correct answer to 'Neural networks:' is 'Can use a mix of different activation functions'.",
+    "original_substring": "Neural networks",
+    "replacement_substring": "Simple perceptrons",
+    "start_pos": 20,
+    "end_pos": 35,
+    "target_wrong_answer": "False",
+    "reasoning": "Replacing 'Neural networks' with 'Simple perceptrons' makes the statement false, as perceptrons do not use mixed activation functions.",
+    "verification": "'Neural networks' → 'Simple perceptrons' → incorrect → statement False → AI answers False"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| Highway networks were introduced after ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...",
+    "original_substring": "after",
+    "replacement_substring": "before",
+    "start_pos": 42,
+    "end_pos": 47,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'after' to 'before' makes the statement true, as it aligns with historical facts.",
+    "verification": "'after' → 'before' → correct historical order → statement True → AI answers True"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| Highway networks were introduced after ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...",
+    "original_substring": "eschew max pooling",
+    "replacement_substring": "use max pooling",
+    "start_pos": 56,
+    "end_pos": 73,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'eschew max pooling' to 'use max pooling' makes the statement true, aligning with DenseNet characteristics.",
+    "verification": "'eschew max pooling' → 'use max pooling' → correct DenseNet feature → statement True → AI answers True"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| Highway networks were introduced after ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...",
+    "original_substring": "DenseNets usually cost more memory",
+    "replacement_substring": "DenseNets usually cost less memory",
+    "start_pos": 95,
+    "end_pos": 127,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'cost more memory' to 'cost less memory' makes the statement true, aligning with DenseNet efficiency.",
+    "verification": "'cost more memory' → 'cost less memory' → correct DenseNet efficiency → statement True → AI answers True"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The correct answer to 'If N is the number of instances in the training dataset, nearest neighbors has a classification run time of' is 'O( N )'.",
+    "original_substring": "O( N )",
+    "replacement_substring": "O( N^2 )",
+    "start_pos": 104,
+    "end_pos": 110,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'O( N )' to 'O( N^2 )' makes the statement false, as the runtime complexity is incorrect.",
+    "verification": "'O( N )' → 'O( N^2 )' → incorrect complexity → statement False → AI answers False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The correct answer to 'If N is the number of instances in the training dataset, nearest neighbors has a classification run time of' is 'O( N )'.",
+    "original_substring": "nearest neighbors",
+    "replacement_substring": "decision trees",
+    "start_pos": 65,
+    "end_pos": 80,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'nearest neighbors' to 'decision trees' makes the statement false, as the runtime complexity differs.",
+    "verification": "'nearest neighbors' → 'decision trees' → incorrect complexity → statement False → AI answers False"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The correct answer to 'If N is the number of instances in the training dataset, nearest neighbors has a classification run time of' is 'O( N )'.",
+    "original_substring": "classification",
+    "replacement_substring": "regression",
+    "start_pos": 81,
+    "end_pos": 94,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'classification' to 'regression' makes the statement false, as the runtime complexity is not applicable.",
+    "verification": "'classification' → 'regression' → incorrect context → statement False → AI answers False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The correct answer to 'Statement 1| A neural network's convergence depends on the learning rate. Statement 2| Dropout multiplies randomly chosen activation...' is 'True, True'.",
+    "original_substring": "convergence depends on",
+    "replacement_substring": "convergence is independent of",
+    "start_pos": 43,
+    "end_pos": 64,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'depends on' to 'is independent of' makes the statement false, as convergence is affected by learning rate.",
+    "verification": "'depends on' → 'is independent of' → incorrect dependency → statement False → AI answers False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The correct answer to 'Statement 1| A neural network's convergence depends on the learning rate. Statement 2| Dropout multiplies randomly chosen activation...' is 'True, True'.",
+    "original_substring": "Dropout multiplies randomly chosen activation",
+    "replacement_substring": "Dropout divides randomly chosen activation",
+    "start_pos": 82,
+    "end_pos": 122,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'multiplies' to 'divides' makes the statement false, as dropout does not divide activations.",
+    "verification": "'multiplies' → 'divides' → incorrect operation → statement False → AI answers False"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The correct answer to 'Statement 1| A neural network's convergence depends on the learning rate. Statement 2| Dropout multiplies randomly chosen activation...' is 'True, True'.",
+    "original_substring": "learning rate",
+    "replacement_substring": "batch size",
+    "start_pos": 65,
+    "end_pos": 77,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'learning rate' to 'batch size' makes the statement false, as convergence is not primarily dependent on batch size.",
+    "verification": "'learning rate' → 'batch size' → incorrect dependency → statement False → AI answers False"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The correct answer to 'For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and...' is 'Whether we learn the weights by matrix inversion or gradient descent'.",
+    "original_substring": "matrix inversion",
+    "replacement_substring": "random initialization",
+    "start_pos": 112,
+    "end_pos": 127,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'matrix inversion' to 'random initialization' makes the statement true, as initialization affects model performance.",
+    "verification": "'matrix inversion' → 'random initialization' → affects performance → statement True → AI answers True"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The correct answer to 'For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and...' is 'Whether we learn the weights by matrix inversion or gradient descent'.",
+    "original_substring": "gradient descent",
+    "replacement_substring": "stochastic gradient descent",
+    "start_pos": 131,
+    "end_pos": 147,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'gradient descent' to 'stochastic gradient descent' makes the statement true, as stochastic methods affect convergence.",
+    "verification": "'gradient descent' → 'stochastic gradient descent' → affects convergence → statement True → AI answers True"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The correct answer to 'For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and...' is 'Whether we learn the weights by matrix inversion or gradient descent'.",
+    "original_substring": "trade-off between underfitting and",
+    "replacement_substring": "balance of overfitting and",
+    "start_pos": 90,
+    "end_pos": 120,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'trade-off between underfitting and' to 'balance of overfitting and' makes the statement true, as balancing affects model accuracy.",
+    "verification": "'trade-off between underfitting and' → 'balance of overfitting and' → affects accuracy → statement True → AI answers True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'Existential risks posed by AI are most commonly associated with which of the following professors?' is 'Stuart Russell'.",
+    "original_substring": "Stuart Russell",
+    "replacement_substring": "Andrew Ng",
+    "start_pos": 98,
+    "end_pos": 111,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Stuart Russell' to 'Andrew Ng' makes the statement false, as Ng is not commonly associated with existential AI risks.",
+    "verification": "'Stuart Russell' → 'Andrew Ng' → incorrect association → statement False → AI answers False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'Existential risks posed by AI are most commonly associated with which of the following professors?' is 'Stuart Russell'.",
+    "original_substring": "Existential risks",
+    "replacement_substring": "Technical challenges",
+    "start_pos": 20,
+    "end_pos": 37,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'Existential risks' to 'Technical challenges' makes the statement false, as technical challenges are not existential risks.",
+    "verification": "'Existential risks' → 'Technical challenges' → incorrect context → statement False → AI answers False"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'Existential risks posed by AI are most commonly associated with which of the following professors?' is 'Stuart Russell'.",
+    "original_substring": "most commonly associated",
+    "replacement_substring": "rarely associated",
+    "start_pos": 39,
+    "end_pos": 63,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'most commonly associated' to 'rarely associated' makes the statement false, as it contradicts the known association.",
+    "verification": "'most commonly associated' → 'rarely associated' → incorrect association → statement False → AI answers False"
+  }
+]
+```

@@ -1,0 +1,247 @@
+{
+  "document_id": "health_k-12_doc_04",
+  "pdf_path": "output_attacked_pdfs/20260102_135231/health/K-12/health_k-12_doc_04/dual_layer/health_k-12_doc_04_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) Weight and height",
+      "gold_answer": "C",
+      "target_wrong_answer": "B",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "growth",
+        "replacement_substring": "weight",
+        "start_pos": 10,
+        "end_pos": 16,
+        "reasoning": "By changing 'growth' to 'weight', the focus shifts to assessing weight only, making option B correct.",
+        "verification": "'growth' → 'weight' → focus on weight assessment → option B becomes correct"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) Extraction of maximum value from nutrients",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "immediately after a meal",
+        "replacement_substring": "during fasting",
+        "start_pos": 119,
+        "end_pos": 142,
+        "reasoning": "Changing the context to 'during fasting' shifts the focus to elimination of toxins, making option B correct.",
+        "verification": "'immediately after a meal' → 'during fasting' → focus on toxin elimination → option B becomes correct"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(d) 32",
+      "gold_answer": "D",
+      "target_wrong_answer": "C",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "complete oxidation",
+        "replacement_substring": "partial oxidation",
+        "start_pos": 41,
+        "end_pos": 58,
+        "reasoning": "Changing 'complete oxidation' to 'partial oxidation' reduces the ATP yield, making option C correct.",
+        "verification": "'complete oxidation' → 'partial oxidation' → reduced ATP yield → option C becomes correct"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was A, gold was B)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) Cholesterol mainly occurs in plant cell walls.",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "correct",
+        "replacement_substring": "incorrect",
+        "start_pos": 37,
+        "end_pos": 44,
+        "reasoning": "Changing 'correct' to 'incorrect' shifts the focus to identifying false statements, making option A correct.",
+        "verification": "'correct' → 'incorrect' → focus on false statements → option A becomes correct"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) Decarboxylation of amino acids to form amine neurotransmitters",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "folate",
+        "replacement_substring": "vitamin C",
+        "start_pos": 36,
+        "end_pos": 42,
+        "reasoning": "Changing 'folate' to 'vitamin C' shifts the focus to vitamin C functions, making option B correct.",
+        "verification": "'folate' → 'vitamin C' → focus on vitamin C functions → option B becomes correct"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "essential",
+        "replacement_substring": "non-essential",
+        "start_pos": 10,
+        "end_pos": 19,
+        "reasoning": "Replacing 'essential' with 'non-essential' changes the statement to False, as Vitamin C is indeed essential for collagen synthesis.",
+        "verification": "'essential' → 'non-essential' → contradicts known fact → statement becomes False → AI answers False → detection succeeds"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "no toxic effects",
+        "replacement_substring": "some toxic effects",
+        "start_pos": 42,
+        "end_pos": 57,
+        "reasoning": "Replacing 'no toxic effects' with 'some toxic effects' makes the statement True, as some toxic effects are permissible under certain conditions.",
+        "verification": "'no toxic effects' → 'some toxic effects' → aligns with permissible limits → statement becomes True → AI answers True → detection succeeds"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "provides energy",
+        "replacement_substring": "depletes energy",
+        "start_pos": 12,
+        "end_pos": 27,
+        "reasoning": "Replacing 'provides energy' with 'depletes energy' makes the statement False, as dietary fat does not deplete energy.",
+        "verification": "'provides energy' → 'depletes energy' → contradicts known fact → statement becomes False → AI answers False → detection succeeds"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "raised levels of HDL",
+        "replacement_substring": "lowered levels of HDL",
+        "start_pos": 44,
+        "end_pos": 63,
+        "reasoning": "Replacing 'raised levels of HDL' with 'lowered levels of HDL' makes the statement True, as ALP is characterized by low HDL.",
+        "verification": "'raised levels of HDL' → 'lowered levels of HDL' → aligns with ALP characteristics → statement becomes True → AI answers True → detection succeeds"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "increased glucose uptake",
+        "replacement_substring": "decreased glucose uptake",
+        "start_pos": 50,
+        "end_pos": 72,
+        "reasoning": "Replacing 'increased glucose uptake' with 'decreased glucose uptake' makes the statement True, as decreased uptake is a cause of hyperglycemia.",
+        "verification": "'increased glucose uptake' → 'decreased glucose uptake' → aligns with diabetes pathology → statement becomes True → AI answers True → detection succeeds"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Methods to evaluate protein quality include the Protein Digestibility-Corrected Amino Acid Score (PDCAAS), Biological Value (BV), Net Protein Utilization (NPU), and Protein Efficiency Ratio (PER). PDCAAS considers the digestibility of proteins and their amino acid profile. BV and NPU focus on nitrogen balance and protein retention. PER evaluates weight gain in animals per protein consumed. Animal growth assays may not accurately reflect human dietary protein quality because they do not account for differences in human and animal metabolism, absorption rates, and dietary needs.",
+      "gold_answer": "Animal growth assays underestimate the quality of dietary proteins for human nutrition.\nExplain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on in vitro methods instead of animal growth assays, containing markers like 'cell cultures', 'test tubes', and lacking 'animal models', 'growth rates'.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "animal growth assays",
+        "replacement_substring": "in vitro assays",
+        "start_pos": 76,
+        "end_pos": 95,
+        "reasoning": "By changing the focus from animal growth assays to in vitro assays, the response will shift to discussing laboratory-based methods, which have different limitations and considerations.",
+        "verification": "'animal growth assays' → 'in vitro assays' → response discusses lab methods → detectable via absence of animal-based discussion"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Exercise benefits individuals with diabetes by improving glycemic control, enhancing insulin sensitivity, and promoting cardiovascular health. It aids in weight management and reduces the risk of complications. However, exercise can lead to hypoglycemia, especially in those using insulin or certain medications. It's important to monitor blood sugar levels before, during, and after exercise, adjust carbohydrate intake, and tailor exercise intensity to individual fitness levels and medical guidance.",
+      "gold_answer": "Hypoglycaemia. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on joint injuries instead of hypoglycemia, containing markers like 'arthritis', 'joint pain', and lacking 'blood sugar levels', 'insulin'.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "hypoglycemia",
+        "replacement_substring": "joint injuries",
+        "start_pos": 124,
+        "end_pos": 135,
+        "reasoning": "Changing the potential risk from hypoglycemia to joint injuries shifts the analysis to physical risks rather than metabolic ones.",
+        "verification": "'hypoglycemia' → 'joint injuries' → response discusses physical injuries → detectable via absence of metabolic discussion"
+      }
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "document_id": "health_graduate_doc_01",
+  "pdf_path": "output_attacked_pdfs/20260102_135231/health/Graduate/health_graduate_doc_01/dual_layer/health_graduate_doc_01_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option E (target was D, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(e) Right lateral pterygoid muscle",
+      "gold_answer": "A",
+      "target_wrong_answer": "D",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "right lateral excursion",
+        "replacement_substring": "left lateral excursion",
+        "start_pos": 36,
+        "end_pos": 58,
+        "reasoning": "Changing 'right' to 'left' shifts the direction of the mandible movement, making the right masseter muscle the most active instead.",
+        "verification": "'right lateral excursion' → 'left lateral excursion' → right masseter becomes active → selects D"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was A, gold was B)",
+      "match_confidence": 1.0,
+      "ai_answer": "(a) 0.001",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": ".10 (one in ten)",
+        "replacement_substring": ".01 (one in a hundred)",
+        "start_pos": 64,
+        "end_pos": 79,
+        "reasoning": "Changing the frequency of affected males to .01 makes the expected frequency of affected females 0.001, aligning with option A.",
+        "verification": "'.10 (one in ten)' → '.01 (one in a hundred)' → expected frequency becomes 0.001 → selects A"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) 1 in 10",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "1 in 100",
+        "replacement_substring": "1 in 50",
+        "start_pos": 62,
+        "end_pos": 69,
+        "reasoning": "Changing '1 in 100' to '1 in 50' increases the proportion, making option B correct.",
+        "verification": "'1 in 100' → '1 in 50' → proportion increases → selects B"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) Interacting with a T helper cell.",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "stimulated",
+        "replacement_substring": "inhibited",
+        "start_pos": 30,
+        "end_pos": 40,
+        "reasoning": "Changing 'stimulated' to 'inhibited' shifts the focus to inhibition, making interaction with a virus short peptide the correct answer.",
+        "verification": "'stimulated' → 'inhibited' → interaction with virus short peptide inhibits → selects A"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) Genetic factors",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "loss of bone density",
+        "replacement_substring": "bone growth",
+        "start_pos": 51,
+        "end_pos": 69,
+        "reasoning": "Changing 'loss of bone density' to 'bone growth' shifts the focus to growth, making genetic factors the correct answer.",
+        "verification": "'loss of bone density' → 'bone growth' → genetic factors associated → selects B"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "hard palate",
+        "replacement_substring": "soft palate",
+        "start_pos": 82,
+        "end_pos": 92,
+        "reasoning": "Changing 'hard palate' to 'soft palate' alters the anatomical focus, making the statement factually incorrect.",
+        "verification": "'hard palate' → 'soft palate' → incorrect anatomical association → statement becomes False → AI answers False"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "ureter",
+        "replacement_substring": "kidneys",
+        "start_pos": 4,
+        "end_pos": 10,
+        "reasoning": "Changing 'ureter' to 'kidneys' makes the statement true, as kidneys are indeed responsible for urine collection.",
+        "verification": "'ureter' → 'kidneys' → correct urine collection structure → statement becomes True → AI answers True"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "25\\%",
+        "replacement_substring": "50\\%",
+        "start_pos": 89,
+        "end_pos": 93,
+        "reasoning": "Changing '25%' to '50%' exaggerates the risk, making the statement incorrect.",
+        "verification": "'25%' → '50%' → incorrect risk percentage → statement becomes False → AI answers False"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "crucial",
+        "replacement_substring": "minor",
+        "start_pos": 32,
+        "end_pos": 38,
+        "reasoning": "Changing 'crucial' to 'minor' downplays the role of the elderly, making the statement incorrect.",
+        "verification": "'crucial' → 'minor' → downplays role → statement becomes False → AI answers False"
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "significant",
+        "replacement_substring": "insignificant",
+        "start_pos": 49,
+        "end_pos": 60,
+        "reasoning": "Changing 'significant' to 'insignificant' downplays the impact of stress, making the statement incorrect.",
+        "verification": "'significant' → 'insignificant' → downplays impact → statement becomes False → AI answers False"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Ectomesenchyme plays a critical role in the development of melanocytes. It originates from the neural crest cells which migrate during embryonic development. Melanocytes are responsible for pigment production in the skin, hair, and eyes, providing protection against ultraviolet radiation. Disorders in melanocyte development or function can lead to pigmentation issues such as vitiligo or melanoma, impacting health through effects on skin cancer risk and visual function.",
+      "gold_answer": "Melanocytes. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on neural crest cells' role instead of ectomesenchyme, containing markers like 'neural crest migration' and lacking 'ectomesenchyme differentiation'.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "ectomesenchyme",
+        "replacement_substring": "neural crest cells",
+        "start_pos": 18,
+        "end_pos": 31,
+        "reasoning": "Changing 'ectomesenchyme' to 'neural crest cells' shifts the focus from one developmental origin to another, altering the expected answer.",
+        "verification": "'ectomesenchyme' → 'neural crest cells' → response discusses neural crest → detectable via absent ectomesenchyme terminology"
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "The high-density lipoprotein (HDL) receptor is crucial in cholesterol metabolism, influencing the uptake and clearance of cholesterol from the bloodstream. In familial hypercholesterolaemia, mutations in this receptor lead to impaired cholesterol processing, resulting in high blood cholesterol levels. This condition increases the risk of cardiovascular diseases due to cholesterol accumulation in blood vessels. Mutations may affect receptor structure or function, disrupting normal lipid balance and homeostasis.",
+      "gold_answer": "Low density lipoprotein receptor. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on high-density lipoprotein receptor instead of low-density, containing markers like 'HDL' and lacking 'LDL'.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "low-density lipoprotein receptor",
+        "replacement_substring": "high-density lipoprotein receptor",
+        "start_pos": 18,
+        "end_pos": 50,
+        "reasoning": "Changing 'low-density' to 'high-density' shifts the focus from LDL to HDL, altering the expected answer.",
+        "verification": "'low-density lipoprotein receptor' → 'high-density lipoprotein receptor' → response discusses HDL → detectable via absent LDL terminology"
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "document_name": "health_graduate_doc_02",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 15,
+        "logprob_analysis": {
+          "avg_entropy": 0.11063649920604086,
+          "std_entropy": 0.3182438568710323,
+          "min_entropy": 2.686611687856654e-09,
+          "max_entropy": 1.608250130391897,
+          "avg_confidence": -0.07280787385897945,
+          "std_confidence": 1.3877787807814457e-17,
+          "min_confidence": -0.07280787385897944,
+          "max_confidence": -0.07280787385897944,
+          "total_tokens_with_logprobs": 83865
+        },
+        "api_metadata_summary": {
+          "total_responses": 15,
+          "finish_reasons": {
+            "stop": 15
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 7098.0,
+          "total_prompt_tokens": 106470,
+          "avg_completion_tokens": 5591.0,
+          "total_completion_tokens": 83865,
+          "avg_total_tokens": 12689.0,
+          "total_tokens": 190335
+        },
+        "cost_analysis": {
+          "total_cost": 1.104825,
+          "input_cost": 0.266175,
+          "output_cost": 0.8386499999999999,
+          "cost_per_perturbation": 0.073655
+        }
+      },
+      "TF": {
+        "total_perturbations": 15,
+        "logprob_analysis": {
+          "avg_entropy": 0.11063649920604086,
+          "std_entropy": 0.3182438568710323,
+          "min_entropy": 2.686611687856654e-09,
+          "max_entropy": 1.608250130391897,
+          "avg_confidence": -0.07280787385897945,
+          "std_confidence": 1.3877787807814457e-17,
+          "min_confidence": -0.07280787385897944,
+          "max_confidence": -0.07280787385897944,
+          "total_tokens_with_logprobs": 83865
+        },
+        "api_metadata_summary": {
+          "total_responses": 15,
+          "finish_reasons": {
+            "stop": 15
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 7098.0,
+          "total_prompt_tokens": 106470,
+          "avg_completion_tokens": 5591.0,
+          "total_completion_tokens": 83865,
+          "avg_total_tokens": 12689.0,
+          "total_tokens": 190335
+        },
+        "cost_analysis": {
+          "total_cost": 1.104825,
+          "input_cost": 0.266175,
+          "output_cost": 0.8386499999999999,
+          "cost_per_perturbation": 0.073655
+        }
+      },
+      "LONG": {
+        "total_perturbations": 6,
+        "logprob_analysis": {
+          "avg_entropy": 0.11063649920604089,
+          "std_entropy": 0.3182438568710323,
+          "min_entropy": 2.686611687856654e-09,
+          "max_entropy": 1.608250130391897,
+          "avg_confidence": -0.07280787385897945,
+          "std_confidence": 1.3877787807814457e-17,
+          "min_confidence": -0.07280787385897944,
+          "max_confidence": -0.07280787385897944,
+          "total_tokens_with_logprobs": 33546
+        },
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 7098.0,
+          "total_prompt_tokens": 42588,
+          "avg_completion_tokens": 5591.0,
+          "total_completion_tokens": 33546,
+          "avg_total_tokens": 12689.0,
+          "total_tokens": 76134
+        },
+        "cost_analysis": {
+          "total_cost": 0.44193,
+          "input_cost": 0.10647000000000001,
+          "output_cost": 0.33546,
+          "cost_per_perturbation": 0.073655
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 36,
+      "total_questions": 12,
+      "questions_by_type": {
+        "MCQ": 5,
+        "TF": 5,
+        "LONG": 2
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

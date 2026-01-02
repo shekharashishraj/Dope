@@ -6,6 +6,7 @@ from typing import Dict, List, Any, Tuple, Optional
 from .base_injector import BaseInjector
 from .font_builder import FontBuilder, FontBuildError
 from ..models.perturbation import PerturbationMapping, Question
+from ..latex_parser import extract_question_stem_from_latex
 
 
 class FontAttackInjector(BaseInjector):
@@ -112,9 +113,6 @@ class FontAttackInjector(BaseInjector):
             if not latex_stem_text:
                 latex_stem_text = question.latex_stem_text or question.stem_text or ''
             
-            if not latex_stem_text:
-                continue
-            
             # Find latex_stem_text in LaTeX
             stem_pos = self._find_question_stem_in_tex(mutated_tex, latex_stem_text)
             if not stem_pos:
@@ -125,7 +123,30 @@ class FontAttackInjector(BaseInjector):
                     prefix_len = len("True or False: ")
                     stem_pos = (stem_pos[0] + prefix_len, stem_pos[1])
             
+            # If still not found, try extracting directly from LaTeX by question number
+            # This handles cases where LLM-generated latex_stem_text is incorrect
             if not stem_pos:
+                print(f"[FontAttackInjector] Question {question_number}: JSON latex_stem_text not found, extracting from LaTeX by question number")
+                extracted_stem = extract_question_stem_from_latex(mutated_tex, question_number)
+                if extracted_stem:
+                    print(f"[FontAttackInjector] Question {question_number}: Extracted stem from LaTeX: {extracted_stem[:50]}...")
+                    # Try to find the extracted stem in the LaTeX
+                    stem_pos = self._find_question_stem_in_tex(mutated_tex, extracted_stem)
+                    if stem_pos:
+                        latex_stem_text = extracted_stem  # Update to use the correct stem text
+                        print(f"[FontAttackInjector] Question {question_number}: Successfully matched extracted stem")
+                    else:
+                        # Try with "True or False: " prefix
+                        prefixed_extracted = f"True or False: {extracted_stem}"
+                        stem_pos = self._find_question_stem_in_tex(mutated_tex, prefixed_extracted)
+                        if stem_pos:
+                            prefix_len = len("True or False: ")
+                            stem_pos = (stem_pos[0] + prefix_len, stem_pos[1])
+                            latex_stem_text = extracted_stem
+                            print(f"[FontAttackInjector] Question {question_number}: Successfully matched extracted stem with prefix")
+            
+            if not stem_pos:
+                print(f"[FontAttackInjector] Question {question_number}: Could not find stem text in LaTeX (tried JSON value and extraction), skipping")
                 continue
             
             stem_start, stem_end = stem_pos

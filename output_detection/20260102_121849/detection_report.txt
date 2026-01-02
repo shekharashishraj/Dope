@@ -1,0 +1,70 @@
+================================================================================
+IntegrityShield Detection Report
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total Questions: 40
+Detected: 13 (32.50%)
+Refused: 0 (0.00%)
+Not Detected: 27 (67.50%)
+Average Confidence: 0.900
+
+BREAKDOWN BY PARSING METHOD
+--------------------------------------------------------------------------------
+
+LLM_JUDGE:
+  Total Questions: 40
+  Detected: 13 (32.50%)
+  Refused: 0 (0.00%)
+  Not Detected: 27 (67.50%)
+  Average Confidence: 0.900
+
+BREAKDOWN BY QUESTION TYPE
+--------------------------------------------------------------------------------
+
+MCQ:
+  Total: 9
+  Detected: 2 (22.22%)
+  Refused: 0 (0.00%)
+
+TF:
+  Total: 31
+  Detected: 11 (35.48%)
+  Refused: 0 (0.00%)
+
+SAMPLE DETECTION RESULTS
+--------------------------------------------------------------------------------
+1. Question 1 (MCQ): ✓ 
+   Confidence: 0.70
+   Reason: AI selected wrong option D (target was B, gold was A)
+
+2. Question 2 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+3. Question 3 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+4. Question 4 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+5. Question 5 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+6. Question 6 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+7. Question 7 (MCQ): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+8. Question 8 (TF): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+9. Question 9 (TF): ✓ 
+   Confidence: 1.00
+   Reason: AI answered True (target was True, gold was False)
+
+10. Question 10 (TF): ✗ 
+   Reason: AI answer matches gold answer (perturbation not detected)
+
+... and 30 more results
