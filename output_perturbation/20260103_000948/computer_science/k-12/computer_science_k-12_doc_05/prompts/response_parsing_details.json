@@ -1,0 +1,285 @@
+{
+  "total_mappings_received": 36,
+  "expected_questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "parsing_details": [
+    {
+      "mapping_index": 0,
+      "question_index": 11,
+      "latex_stem_text": "Discuss the importance of clear specifications in programming. How would you modify the problem of f...",
+      "original_substring": "larger than a given item",
+      "target_wrong_answer": "Response will focus on indices of values smaller than the reference item instead of handling multiple indices of larger values, using markers like 'less than', 'minimum index', or 'smallest value', and will lack discussion of ties or multiple qualifying larger indices."
+    },
+    {
+      "mapping_index": 1,
+      "question_index": 11,
+      "latex_stem_text": "Discuss the importance of clear specifications in programming. How would you modify the problem of f...",
+      "original_substring": "finding an index of a value larger than a given it...",
+      "target_wrong_answer": "Response will focus on counting how many elements exceed the given item (e.g., 'frequency', 'count of larger elements') instead of specifying disambiguation among multiple valid indices, and will omit mention of which index to return when several elements qualify."
+    },
+    {
+      "mapping_index": 2,
+      "question_index": 11,
+      "latex_stem_text": "Discuss the importance of clear specifications in programming. How would you modify the problem of f...",
+      "original_substring": "multiple valid outcomes",
+      "target_wrong_answer": "Response will emphasize time and space efficiency concerns, with markers such as 'runtime', 'Big-O', or 'optimize performance', instead of specifying how to handle multiple correct indices, and will lack references to tie-breaking or deterministic choice among several solutions."
+    },
+    {
+      "mapping_index": 3,
+      "question_index": 12,
+      "latex_stem_text": "Discuss the operator used for performing exponential calculations in Python 3. Explain its syntax, u...",
+      "original_substring": "exponential calculations",
+      "target_wrong_answer": "Response will focus on the integer-division operator '//' instead of the exponentiation operator '**', using markers like 'floor division', 'quotient', or 'truncate toward minus infinity', and will not mention '**', powers, or exponentiation semantics."
+    },
+    {
+      "mapping_index": 4,
+      "question_index": 12,
+      "latex_stem_text": "Discuss the operator used for performing exponential calculations in Python 3. Explain its syntax, u...",
+      "original_substring": "in Python 3",
+      "target_wrong_answer": "Response will describe how exponentiation is handled in Java (e.g., using Math.pow) rather than Python's '**' operator, containing markers like 'Math.pow', 'double', or 'java.lang.Math', and will lack any discussion of Python-specific syntax or '**'."
+    },
+    {
+      "mapping_index": 5,
+      "question_index": 12,
+      "latex_stem_text": "Discuss the operator used for performing exponential calculations in Python 3. Explain its syntax, u...",
+      "original_substring": "operator used for performing exponential calculati...",
+      "target_wrong_answer": "Response will concentrate on a square-root function (such as math.sqrt) rather than the exponentiation operator, including markers like 'square root', 'sqrt', or 'radical', and will omit description of '**', base/exponent notation, or general power operations."
+    },
+    {
+      "mapping_index": 6,
+      "question_index": 1,
+      "latex_stem_text": "If a, b, and c are integers, which of the following conditions is sufficient to guarantee that the e...",
+      "original_substring": "If a, b, and c are integers, which of the followin...",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 7,
+      "question_index": 1,
+      "latex_stem_text": "If a, b, and c are integers, which of the following conditions is sufficient to guarantee that the e...",
+      "original_substring": "If a, b, and c are integers, which of the followin...",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 8,
+      "question_index": 1,
+      "latex_stem_text": "If a, b, and c are integers, which of the following conditions is sufficient to guarantee that the e...",
+      "original_substring": "If a, b, and c are integers, which of the followin...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 9,
+      "question_index": 2,
+      "latex_stem_text": "Which is a valid expression in Python 3.5?",
+      "original_substring": "Which is a valid expression in Python 3.5?",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 10,
+      "question_index": 2,
+      "latex_stem_text": "Which is a valid expression in Python 3.5?",
+      "original_substring": "Which is a valid expression in Python 3.5?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 11,
+      "question_index": 2,
+      "latex_stem_text": "Which is a valid expression in Python 3.5?",
+      "original_substring": "Which is a valid expression in Python 3.5?",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 12,
+      "question_index": 3,
+      "latex_stem_text": "Which types of functions grow the slowest?",
+      "original_substring": "Which types of functions grow the slowest?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 13,
+      "question_index": 3,
+      "latex_stem_text": "Which types of functions grow the slowest?",
+      "original_substring": "Which types of functions grow the slowest?",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 14,
+      "question_index": 3,
+      "latex_stem_text": "Which types of functions grow the slowest?",
+      "original_substring": "Which types of functions grow the slowest?",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 15,
+      "question_index": 4,
+      "latex_stem_text": "A large Java program was tested extensively, and no errors were found. What can be concluded?",
+      "original_substring": "A large Java program was tested extensively, and n...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 16,
+      "question_index": 4,
+      "latex_stem_text": "A large Java program was tested extensively, and no errors were found. What can be concluded?",
+      "original_substring": "A large Java program was tested extensively, and n...",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 17,
+      "question_index": 4,
+      "latex_stem_text": "A large Java program was tested extensively, and no errors were found. What can be concluded?",
+      "original_substring": "A large Java program was tested extensively, and n...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 18,
+      "question_index": 5,
+      "latex_stem_text": "Which is the largest asymptotically?",
+      "original_substring": "Which is the largest asymptotically?",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 19,
+      "question_index": 5,
+      "latex_stem_text": "Which is the largest asymptotically?",
+      "original_substring": "Which is the largest asymptotically?",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 20,
+      "question_index": 5,
+      "latex_stem_text": "Which is the largest asymptotically?",
+      "original_substring": "Which is the largest asymptotically?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 21,
+      "question_index": 6,
+      "latex_stem_text": "In Python 3, the output of print(list[1:3]) for list = ['abcd', 786, 2.23, 'john', 70.2] is [786, 2....",
+      "original_substring": "In Python 3, the output of print(list[1:3]) for li...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 22,
+      "question_index": 6,
+      "latex_stem_text": "In Python 3, the output of print(list[1:3]) for list = ['abcd', 786, 2.23, 'john', 70.2] is [786, 2....",
+      "original_substring": "In Python 3, the output of print(list[1:3]) for li...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 23,
+      "question_index": 6,
+      "latex_stem_text": "In Python 3, the output of print(list[1:3]) for list = ['abcd', 786, 2.23, 'john', 70.2] is [786, 2....",
+      "original_substring": "In Python 3, the output of print(list[1:3]) for li...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 24,
+      "question_index": 7,
+      "latex_stem_text": "The output of 'abc'[::-1] in Python 3 is 'abc', indicating that the string remains unchanged.",
+      "original_substring": "The output of 'abc'[::-1] in Python 3 is 'abc', in...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 25,
+      "question_index": 7,
+      "latex_stem_text": "The output of 'abc'[::-1] in Python 3 is 'abc', indicating that the string remains unchanged.",
+      "original_substring": "The output of 'abc'[::-1] in Python 3 is 'abc', in...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 26,
+      "question_index": 7,
+      "latex_stem_text": "The output of 'abc'[::-1] in Python 3 is 'abc', indicating that the string remains unchanged.",
+      "original_substring": "The output of 'abc'[::-1] in Python 3 is 'abc', in...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 27,
+      "question_index": 8,
+      "latex_stem_text": "A function that averages numeric values in a column or row is the best way to detect data entry erro...",
+      "original_substring": "A function that averages numeric values in a colum...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 28,
+      "question_index": 8,
+      "latex_stem_text": "A function that averages numeric values in a column or row is the best way to detect data entry erro...",
+      "original_substring": "A function that averages numeric values in a colum...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 29,
+      "question_index": 8,
+      "latex_stem_text": "A function that averages numeric values in a column or row is the best way to detect data entry erro...",
+      "original_substring": "A function that averages numeric values in a colum...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 30,
+      "question_index": 9,
+      "latex_stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "original_substring": "In Python 3, the function float(x) is used to conv...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 31,
+      "question_index": 9,
+      "latex_stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "original_substring": "In Python 3, the function float(x) is used to conv...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 32,
+      "question_index": 9,
+      "latex_stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "original_substring": "In Python 3, the function float(x) is used to conv...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 33,
+      "question_index": 10,
+      "latex_stem_text": "In Python3, the minimum value of the list l = [1,2,3,4] is 2. \\end{enumerate}",
+      "original_substring": "In Python3, the minimum value of the list l = [1,2...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 34,
+      "question_index": 10,
+      "latex_stem_text": "In Python3, the minimum value of the list l = [1,2,3,4] is 2. \\end{enumerate}",
+      "original_substring": "In Python3, the minimum value of the list l = [1,2...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 35,
+      "question_index": 10,
+      "latex_stem_text": "In Python3, the minimum value of the list l = [1,2,3,4] is 2. \\end{enumerate}",
+      "original_substring": "In Python3, the minimum value of the list l = [1,2...",
+      "target_wrong_answer": "True"
+    }
+  ],
+  "results_summary": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3,
+    "9": 3,
+    "10": 3,
+    "11": 3,
+    "12": 3
+  }
+}

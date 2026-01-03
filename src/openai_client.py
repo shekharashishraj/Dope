@@ -10,7 +10,7 @@ import pytz
 from pydantic import ValidationError
 from openai import OpenAI
 from .config import Config
-from .models.perturbation import PerturbationMapping
+from .models.perturbation import PerturbationMapping, PerturbationListResponse
 from .models.api import BatchStatus
 
 logger = logging.getLogger(__name__)
@@ -169,34 +169,79 @@ class OpenAIClient:
                         if self.top_logprobs is not None:
                             api_params["top_logprobs"] = self.top_logprobs
                 
-                response = self.client.chat.completions.create(**api_params)
+                # Try structured output first (ensures valid JSON), fallback to regular call
+                response = None
+                parsed_data = None
+                use_structured_output = True
+                
+                try:
+                    # Attempt structured output with Pydantic model
+                    logger.info("Attempting structured output with Pydantic model...")
+                    parse_response = self.client.beta.chat.completions.parse(
+                        model=self.model,
+                        messages=api_params["messages"],
+                        response_format=PerturbationListResponse,
+                        timeout=self.timeout
+                    )
+                    parsed_data = parse_response.choices[0].message.parsed
+                    if isinstance(parsed_data, PerturbationListResponse):
+                        logger.info("Successfully received structured output from API")
+                        # Get the raw response for metadata extraction
+                        response = parse_response
+                        use_structured_output = True
+                    elif isinstance(parsed_data, list):
+                        # Handle case where API returns list directly
+                        logger.info("Structured output returned list directly, wrapping in response model")
+                        parsed_data = PerturbationListResponse(perturbations=parsed_data)
+                        response = parse_response
+                        use_structured_output = True
+                    else:
+                        logger.warning(f"Structured output returned unexpected type: {type(parsed_data)}, falling back to JSON parsing")
+                        use_structured_output = False
+                except Exception as structured_err:
+                    logger.warning(f"Structured output failed: {structured_err}. Falling back to regular API call with JSON parsing.")
+                    use_structured_output = False
+                
+                # Fallback to regular API call if structured output failed
+                if not use_structured_output:
+                    response = self.client.chat.completions.create(**api_params)
+                    parsed_data = None
                 
                 call_time = (datetime.now(tz) - call_start).total_seconds()
                 logger.info(f"API call attempt {attempt + 1} completed in {call_time:.2f} seconds")
                 
                 # Parse response
                 choice = response.choices[0]
-                content = choice.message.content
-                content_length = len(content)
-                content_preview = content[:500] + "..." if len(content) > 500 else content
-                logger.info(f"API response - Length: {content_length} chars")
-                logger.info(f"API response - Preview (first 500 chars): {content_preview}")
-                # Log complete response at DEBUG level (saved to file)
-                logger.debug(f"API response - Complete response:\n{content}")
                 
-                # Save raw API response to file
-                if output_dir:
-                    prompts_dir = output_dir / "prompts"
-                    prompts_dir.mkdir(parents=True, exist_ok=True)
-                    response_file = prompts_dir / "api_response_raw.txt"
-                    with open(response_file, 'w', encoding='utf-8') as f:
-                        f.write("=" * 80 + "\n")
-                        f.write("RAW API RESPONSE\n")
-                        f.write("=" * 80 + "\n\n")
-                        f.write(content)
-                    logger.info(f"Saved raw API response to {response_file}")
+                # Handle structured output vs regular response
+                if use_structured_output and parsed_data:
+                    # We already have parsed data from structured output
+                    content = None  # No raw content for structured output
+                    logger.info("Using structured output data (no raw JSON parsing needed)")
+                else:
+                    # Regular response - get content for JSON parsing
+                    content = choice.message.content
+                    content_length = len(content)
+                    content_preview = content[:500] + "..." if len(content) > 500 else content
+                    logger.info(f"API response - Length: {content_length} chars")
+                    logger.info(f"API response - Preview (first 500 chars): {content_preview}")
+                    # Log complete response at DEBUG level (saved to file)
+                    logger.debug(f"API response - Complete response:\n{content}")
+                    
+                    # Save raw API response to file
+                    if output_dir:
+                        prompts_dir = output_dir / "prompts"
+                        prompts_dir.mkdir(parents=True, exist_ok=True)
+                        response_file = prompts_dir / "api_response_raw.txt"
+                        with open(response_file, 'w', encoding='utf-8') as f:
+                            f.write("=" * 80 + "\n")
+                            f.write("RAW API RESPONSE\n")
+                            f.write("=" * 80 + "\n\n")
+                            f.write(content)
+                        logger.info(f"Saved raw API response to {response_file}")
                 
                 # Extract logprobs if available
+                # Note: Structured output may not support logprobs, but we'll try anyway
                 logprobs_data = None
                 if hasattr(choice, 'logprobs') and choice.logprobs:
                     try:
@@ -225,7 +270,7 @@ class OpenAIClient:
                         logger.warning(f"Failed to extract logprobs: {e}")
                         logprobs_data = None
                 
-                # Extract API metadata
+                # Extract API metadata (works for both structured output and regular calls)
                 from .models.perturbation import APIMetadata
                 api_metadata_dict = {
                     "response_id": response.id,
@@ -265,7 +310,36 @@ class OpenAIClient:
                 
                 api_metadata = APIMetadata.model_validate(api_metadata_dict) if any(api_metadata_dict.values()) else None
                 
-                # Try to parse as JSON and convert to PerturbationMapping models
+                # If we have structured output, use it directly
+                if use_structured_output and parsed_data:
+                    validated_mappings = []
+                    for mapping in parsed_data.perturbations:
+                        try:
+                            # Convert structured mapping to regular mapping (add logprobs and metadata)
+                            # Structured mapping doesn't have logprobs/metadata, so we add them here
+                            mapping_dict = mapping.model_dump()
+                            if logprobs_data:
+                                mapping_dict["logprobs"] = logprobs_data
+                            if api_metadata:
+                                mapping_dict["api_metadata"] = api_metadata.model_dump()
+                            # Convert to regular PerturbationMapping (allows extra fields)
+                            validated_mappings.append(PerturbationMapping.model_validate(mapping_dict))
+                        except ValidationError as e:
+                            logger.warning(f"Failed to validate perturbation mapping from structured output: {e}. Skipping invalid mapping.")
+                            continue
+                    
+                    logger.info(f"Successfully parsed and validated {len(validated_mappings)} perturbation mappings from structured output")
+                    if logprobs_data:
+                        logger.info(f"Logprobs included for {len(validated_mappings)} perturbations")
+                    if api_metadata:
+                        logger.info(f"API metadata included for {len(validated_mappings)} perturbations")
+                    return validated_mappings
+                
+                # Fallback: Try to parse as JSON and convert to PerturbationMapping models
+                if not content:
+                    logger.error("No content available for JSON parsing fallback")
+                    return []
+                
                 try:
                     # Clean content - remove markdown code blocks if present
                     content_clean = content.strip()

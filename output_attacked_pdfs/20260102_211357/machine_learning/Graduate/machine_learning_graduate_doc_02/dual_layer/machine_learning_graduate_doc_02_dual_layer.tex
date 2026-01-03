@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{calc}
+\usepackage{xcolor}
+% --- latex-dual-layer macros (auto-generated) ---
+\newlength{\dlboxwidth}
+\newlength{\dlboxheight}
+\newlength{\dlboxdepth}
+\newcommand{\duallayerbox}[2]{%
+  \begingroup
+  \settowidth{\dlboxwidth}{\strut #1}%
+  \settoheight{\dlboxheight}{\strut #1}%
+  \settodepth{\dlboxdepth}{\strut #1}%
+  \ifdim\dlboxwidth=0pt
+    \settowidth{\dlboxwidth}{#2}%
+  \fi
+  \raisebox{0pt}[\dlboxheight][\dlboxdepth]{%
+    \makebox[\dlboxwidth][l]{\resizebox{\dlboxwidth}{!}{\strut #2}}%
+  }%
+  \endgroup
+}
+% --- end latex-dual-layer macros ---
+\begin{document}
+\begin{center}
+Machine Learning - Graduate Level Assessment 2 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (14 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item Statement 1| The Stanford Sentiment Treebank contained \duallayerbox{movie reviews, not book reviews}{book reviews, not movie reviews}. Statement 2| The Penn Treebank has been used for language modeling.
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item Suppose your model is overfitting. Which of the following is \duallayerbox{NOT a valid way to try and reduce the overfitting}{a valid method to help reduce the overfitting}?
+\begin{enumerate}[label=(\alph*)]
+    \item Increase the amount of training data.
+    \item Improve the optimisation algorithm being used for error minimisation.
+    \item Decrease the model complexity.
+    \item Reduce the noise in the training data.
+\end{enumerate}
+\item Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network \duallayerbox{H -> U <- P <- W}{H    U    P    W (all independent)}? [note: as the product of the...
+\begin{enumerate}[label=(\alph*)]
+    \item P(H, U, P, W) = P(H) * P(W) * P(P) * P(U)
+    \item P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(W | H, P)
+    \item P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P)
+    \item None of the above
+\end{enumerate}
+\item A and B are two events. If \duallayerbox{P(A, B) decreases while P(A) increases}{P(A, B) decreases while P(B) increases}, which of the following is true?
+\begin{enumerate}[label=(\alph*)]
+    \item P(A|B) decreases
+    \item P(B|A) decreases
+    \item P(B) decreases
+    \item All of above
+\end{enumerate}
+\item What is the rank of the following matrix? \duallayerbox{A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]}{A = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]}
+\begin{enumerate}[label=(\alph*)]
+    \item 0
+    \item 1
+    \item 2
+    \item 3
+\end{enumerate}
+\item Statement 1| \duallayerbox{RELUs are not monotonic, but sigmoids are monotonic}{RELUs are monotonic, but sigmoids are monotonic}. Statement 2| Neural networks trained with gradient descent with high probability converge...
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, \duallayerbox{and no independence or conditional independence assumptions}{and assuming A and B are conditionally independent given C}...
+\begin{enumerate}[label=(\alph*)]
+    \item P(A | B) * P(B | C) * P(C | A)
+    \item P(C | A, B) * P(A) * P(B)
+    \item P(A, B | C) * P(C)
+    \item P(A | B, C) * P(B | A, C) * P(C | A, B)
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (26 marks)}
+\textit{Answer True or False and justify briefly.}
+\begin{enumerate}[label=\arabic*.]
+\item True or False: The correct answer to 'Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent...' \duallayerbox{is 'O(D)'.}{is 'O(D\^{}2)'.}
+\item True or False: \duallayerbox{The correct answer to}{A typical correct answer to} 'Which of the following are the spatial clustering algorithms?' is 'K-means clustering'.
+\item True or False: The correct answer to 'High entropy means that the partitions in classification are' \duallayerbox{is 'not pure'.}{is 'perfectly pure'.}
+\item True or False: The correct answer to 'Statement 1| ImageNet has images of various resolutions. Statement 2| \duallayerbox{Caltech-101 has more images than ImageNet}{Caltech-101 has fewer images than ImageNet}.' is 'True, True'.
+\item True or False: The correct answer to 'If your training loss \duallayerbox{increases with number of epochs}{decreases very slowly with number of epochs}, which of the following could be a possible issue with the learning process?' is 'Step size is too small'.
+\item True or False: The correct answer to 'Which of the following tasks can be best solved using Clustering.' is '\duallayerbox{Detecting fraudulent credit card transactions}{Predicting house prices from historical sales}'.
+\item True or False: The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]' \duallayerbox{is '3'.}{is '2'.}
+\item True or False: The correct answer to 'Consider the Bayesian network given below. How many independent parameters are needed for this Bayesian Network H -> U <- P <- W?' \duallayerbox{is '16'.}{is '10'.}
+\item True or False: The correct answer to 'Consider the Bayesian network given below. How many independent parameters would we need if we made no assumptions about independence or...' \duallayerbox{is '15'.}{is '16'.}
+\item True or False: The correct answer to 'Statement 1| \duallayerbox{Layer Normalization is used in the original ResNet paper, not Batch Normalization}{Batch Normalization is used in the original ResNet paper, not Layer Normalization}. Statement 2| DCGANs use self-attention to...' is 'True, True'.
+\item True or False: The correct answer to 'Suppose we like to calculate P(H|E, F) and we have no conditional independence information. Which of the following sets of numbers are...' \duallayerbox{is 'P(E, F), P(H), P(E, F|H)'.}{is 'P(E), P(F), P(H|E, F)'.}
+\item True or False: The correct answer to 'The disadvantage of Grid search is' is '\duallayerbox{It runs reasonably slow for multiple linear regression.}{It is always faster than random search on any model.}'.
+\item True or False: The correct answer to 'Adding more basis functions in a linear model, pick the most probably option:' is 'Decreases model bias'.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

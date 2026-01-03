@@ -2,8 +2,8 @@
 from typing import Dict, List, Any
 
 
-MCQ_GROUPED_BATCH_TEMPLATE = """We are creating distractors to be used in multiple choice questions 
-to drive LLM away from the correct answer.
+MCQ_GROUPED_BATCH_TEMPLATE = """We are creating distractors to be used in MCQ questions 
+to make the LLM answer the wrong option.
 You are an expert at generating text substitutions for academic multiple-choice questions 
 that cause predictable answer shifts to one of the wrong options. Your accuracy is critical.
 ## INPUT CONTEXT 

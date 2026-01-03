@@ -1,0 +1,247 @@
+{
+  "document_id": "computer_science_graduate_doc_01",
+  "pdf_path": "output_attacked_pdfs/20260103_003014/computer_science/Graduate/computer_science_graduate_doc_01/dual_layer/computer_science_graduate_doc_01_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "c) Round-robin",
+      "gold_answer": "C",
+      "target_wrong_answer": "E",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Which of the following job-scheduling policies is starvation-free?",
+        "replacement_substring": "Which of the following job-scheduling policies favours the shortest jobs?",
+        "start_pos": 92,
+        "end_pos": 169,
+        "reasoning": "A policy that favours the shortest jobs corresponds to 'Longest job first' being incorrect and 'Youngest job first' still not matching; among given options, 'Longest job first' is the opposite, so the intended correct shifts away from round-robin. This contradicts the original starvation-free criterion that made round-robin correct, so C becomes wrong while another option becomes plausible as the intended answer in this flawed set-up.\n(Designer note: interpreting 'favours the shortest jobs' as contrasting with 'Longest job first' makes E the discriminated choice over the original C.)",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer differs from gold answer",
+      "match_confidence": 0.5,
+      "ai_answer": "max(l) = 4",
+      "gold_answer": "A",
+      "target_wrong_answer": "D",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "min(l)",
+        "replacement_substring": "max(l)",
+        "start_pos": 24,
+        "end_pos": 30,
+        "reasoning": "Changing 'min(l)' to 'max(l)' makes the correct numeric result 4, but among the options 4 is not present while 3 is the largest given scalar, so D (3) becomes the closest intended answer over '1'. This invalidates option A, which was correct for min but not for max.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option E (target was E, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "e) O(log n)",
+      "gold_answer": "A",
+      "target_wrong_answer": "E",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "largest asymptotically",
+        "replacement_substring": "slowest growing asymptotically",
+        "start_pos": 10,
+        "end_pos": 32,
+        "reasoning": "Changing from 'largest' to 'slowest growing' inverts the ordering, making O(log n) the correct choice instead of O(n^2). This directly contradicts the original comparison used to justify option A.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "SNR = 20, SNRdB = 26.0 dB → e) 26.0",
+      "gold_answer": "E",
+      "target_wrong_answer": "C",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "20 times",
+        "replacement_substring": "10 times",
+        "start_pos": 40,
+        "end_pos": 48,
+        "reasoning": "Changing the amplitude ratio from 20 to 10 alters the SNR_dB to about 20 dB, and in this flawed option set 30.0 (C) is closer than 26.0 (E), making C the intended answer instead of E. This numerically contradicts the original setup that yielded 26 dB as best match.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was A, gold was C)",
+      "match_confidence": 1.0,
+      "ai_answer": "a) It is used to call procedures with addresses that are farther than 2¹⁶ bytes away. (This is the false statement.)",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "is true?",
+        "replacement_substring": "is false?",
+        "start_pos": 67,
+        "end_pos": 75,
+        "reasoning": "By asking which statement is false, the correct choice switches from the original true property (C) to one of the false ones; assuming A is false, A becomes correct under the new stem, directly contradicting the original truth-based selection.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "has 20 faces, which is a common misconception in polyhedral geometry.",
+        "replacement_substring": "satisfies Euler's formula relating vertices, edges, and faces.",
+        "start_pos": 38,
+        "end_pos": 118,
+        "reasoning": "The new statement about satisfying Euler's formula is generally true for convex polyhedra, so the overall sentence becomes true, flipping the original falsehood into a true claim.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "returns the elements at odd indices, resulting in [13, 17, 21] from the list b.",
+        "replacement_substring": "creates a slice stepping by 2, starting from index 0 in the list b.",
+        "start_pos": 26,
+        "end_pos": 115,
+        "reasoning": "Describing b[::2] as a slice with step 2 starting at index 0 is correct, so the sentence becomes true and the correct response flips from False to True.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "simplifies to a[i] \\textless{}= max, indicating less than or equal to max.",
+        "replacement_substring": "is logically equivalent to a[i] == max, since both conditions require equality.",
+        "start_pos": 46,
+        "end_pos": 125,
+        "reasoning": "The revised clause correctly states that the expression is equivalent to equality with max, making the entire statement true and flipping the original false simplification.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "can have a maximum of 84 edges according to Euler's formula.",
+        "replacement_substring": "must be complete and therefore has exactly 84 edges.",
+        "start_pos": 34,
+        "end_pos": 103,
+        "reasoning": "Claiming that a simple planar graph with 30 vertices must be complete with 84 edges is false, since a complete graph on 30 vertices is not planar, flipping the truth value from the original true upper-bound statement.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "are effective in detecting fraudulent credit card transactions by identifying anomalous spending patterns.",
+        "replacement_substring": "are never useful for detecting fraudulent credit card transactions in any context.",
+        "start_pos": 21,
+        "end_pos": 131,
+        "reasoning": "Claiming clustering is never useful for fraud detection is overly strong and false, flipping the original true statement about their effectiveness.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "One possible Python function (using side lengths a, b, c):\n\ndef is_right_triangle(a, b, c):\n    # Ensure all sides are positive\n    if a <= 0 or b <= 0 or c <= 0:\n        return False\n\n    # Sort so that c is the largest side\n    sides = sorted([a, b, c])\n    x, y, z = sides[0], sides[1], sides[2]\n\n    # Check Pythagoras' theorem\n    return abs(x*x + y*y - z*z) < 1e-9",
+      "gold_answer": "def validity\\_triangle(a,b,c): | return True | return False",
+      "target_wrong_answer": "Response will focus on checking whether the triangle satisfies the Pythagorean theorem (right triangle test) instead of basic triangle inequality validity, containing markers like 'a**2 + b**2 == c**2', 'Pythagoras', and lacking checks like 'a + b > c', 'b + c > a', 'c + a > b'.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "triangle is valid",
+        "replacement_substring": "triangle is right-angled",
+        "start_pos": 26,
+        "end_pos": 42,
+        "reasoning": "Changing the condition from generic validity to right-angled changes the required logic from triangle inequalities to the Pythagorean condition, so the original validity function will be incorrect for the new task. This yields an answer that structurally differs and is easily detectable by its focus on right-angle properties instead of inequality checks.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer has low similarity to gold answer",
+      "match_confidence": 0.6,
+      "ai_answer": "One possible Python implementation of counting sort for non-negative integers:\n\ndef counting_sort(arr):\n    if not arr:\n        return arr\n\n    # Find the maximum value to know the range\n    max_val = max(arr)\n\n    # Initialize count array\n    count = [0] * (max_val + 1)\n\n    # Store the count of each element\n    for x in arr:\n        count[x] += 1\n\n    # Convert count array to cumulative counts\n    for i in range(1, len(count)):\n        count[i] += count[i - 1]\n\n    # Build the output array (stable sort)\n    output = [0] * len(arr)\n    for x in reversed(arr):\n        count[x] -= 1\n        output[count[x]] = x\n\n    return output",
+      "gold_answer": "def counting\\_sort(my\\_list): | return my\\_list",
+      "target_wrong_answer": "Response will implement insertion sort logic with nested loops and element shifting, featuring markers like 'for i in range(1,', 'key =', 'while j >= 0', and will lack counting array initialization and frequency accumulation typical of counting sort.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "by using counting sort",
+        "replacement_substring": "by using insertion sort",
+        "start_pos": 39,
+        "end_pos": 60,
+        "reasoning": "Changing the required algorithm from counting sort to insertion sort leads to a completely different implementation pattern, making any counting-sort-based gold answer clearly incorrect for the modified prompt.",
+        "verification": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the implications of a relative risk ratio of 1.2 for hip fractures in elderly women who exercise regularly, considering the confidence interval and its significance in health outcomes.",
+    "original_substring": "hip fractures in elderly women who exercise regularly",
+    "replacement_substring": "hip fractures in elderly men who smoke heavily",
+    "start_pos": 52,
+    "end_pos": 106,
+    "target_wrong_answer": "Response will focus on risk in male smokers instead of elderly women exercisers, containing markers like 'men', 'smoking', 'tobacco use', and lacking discussion of 'exercise', 'protective effect of physical activity', or sex-specific risks for women.",
+    "reasoning": "Changing the exposed population from elderly exercising women to elderly male smokers shifts both baseline risk and interpretation of a 1.2 relative risk, leading to a different explanation of significance.",
+    "verification": "Original mentions 'elderly women who exercise regularly' → replaced with 'elderly men who smoke heavily' → respondent now analyzes additive risk on top of smoking rather than exercise-related risk modification → detectable as incorrect by absence of exercise/protective framing and presence of smoking-related terminology."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the implications of a relative risk ratio of 1.2 for hip fractures in elderly women who exercise regularly, considering the confidence interval and its significance in health outcomes.",
+    "original_substring": "a relative risk ratio of 1.2 for hip fractures",
+    "replacement_substring": "a relative risk ratio of 0.6 for hip fractures",
+    "start_pos": 32,
+    "end_pos": 73,
+    "target_wrong_answer": "Response will focus on a statistically significant reduction in risk, with markers like 'protective effect', 'reduced incidence', '40% lower risk', and will lack language about 'increased risk', 'elevated hazard', or 'excess cases'.",
+    "reasoning": "Flipping the relative risk from 1.2 to 0.6 inverts the direction of effect, so an answer about increased risk and excess events no longer applies.",
+    "verification": "Original RR 1.2 implies higher risk → replaced with RR 0.6 implying lower risk → respondent interprets exposure as protective and emphasizes risk reduction → detected by dominance of 'protective' vocabulary and absence of 'increased risk' reasoning."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the implications of a relative risk ratio of 1.2 for hip fractures in elderly women who exercise regularly, considering the confidence interval and its significance in health outcomes.",
+    "original_substring": "considering the confidence interval and its significance in health outcomes",
+    "replacement_substring": "focusing on potential confounding variables such as diet and medication use",
+    "start_pos": 108,
+    "end_pos": 181,
+    "target_wrong_answer": "Response will emphasize confounding and bias, with markers like 'confounders', 'dietary calcium', 'bisphosphonates', 'residual confounding', and will largely omit discussion of 'confidence interval', 'statistical significance', or 'precision of the estimate'.",
+    "reasoning": "Shifting from interpreting confidence intervals to focusing on confounding alters the analytical task away from statistical significance toward study validity.",
+    "verification": "Original asks about 'confidence interval and its significance' → replaced with 'potential confounding variables' → respondent critiques sources of bias instead of interpreting CIs and p-values → detected by prominence of confounder terminology and lack of CI/significance analysis."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the implications of a mutation in the repressor of the lac operon in E. coli that impedes its binding to lactose, particularly in the context of low glucose levels and gene expression. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "impedes its binding to lactose",
+    "replacement_substring": "prevents its binding to the operator",
+    "start_pos": 83,
+    "end_pos": 111,
+    "target_wrong_answer": "Response will focus on a nonfunctional repressor that cannot bind the operator, predicting constitutive expression with markers like 'repressor cannot bind operator', 'continuous transcription', 'constitutive lac operon', and will lack discussion of reduced or absent expression due to failed inducer binding.",
+    "reasoning": "Changing the defect from lactose binding to operator binding flips the regulatory outcome from reduced induction to constitutive expression.",
+    "verification": "Original: repressor cannot bind lactose → stays bound to operator → lac genes off → replaced with repressor cannot bind operator → operon always on → respondent describes constant expression, detectable by terms like 'constitutive' and absence of 'shut down under all conditions'."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the implications of a mutation in the repressor of the lac operon in E. coli that impedes its binding to lactose, particularly in the context of low glucose levels and gene expression. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "in the context of low glucose levels and gene expression",
+    "replacement_substring": "in the context of persistently high intracellular lactose",
+    "start_pos": 142,
+    "end_pos": 195,
+    "target_wrong_answer": "Response will emphasize regulation under chronic lactose presence, using markers like 'persistently high lactose', 'continuous inducer', 'catabolite repression overridden', and will underplay or omit the role of low glucose and cAMP-CAP in shutting down expression in all conditions.",
+    "reasoning": "Focusing on persistently high lactose rather than low glucose changes the regulatory scenario and expected pattern of expression across environmental conditions.",
+    "verification": "Original highlights 'low glucose levels' → cAMP-CAP activation with defective lactose binding → operon off globally → replaced with 'persistently high intracellular lactose' → respondent predicts ongoing induction and expression → detected by focus on lactose abundance rather than low glucose/cAMP effects."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the implications of a mutation in the repressor of the lac operon in E. coli that impedes its binding to lactose, particularly in the context of low glucose levels and gene expression. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "a mutation in the repressor of the lac operon in E. coli that impedes its binding to lactose",
+    "replacement_substring": "a mutation in the promoter of the lac operon in E. coli that reduces RNA polymerase binding",
+    "start_pos": 33,
+    "end_pos": 111,
+    "target_wrong_answer": "Response will focus on defective promoter activity leading to low transcription regardless of repressor-inducer interactions, using markers like 'promoter mutation', 'reduced RNA polymerase affinity', 'low basal transcription', and will lack emphasis on lactose-repressor binding defects across all conditions.",
+    "reasoning": "Switching the mutation from the repressor protein to the promoter element changes the mechanistic basis of reduced expression from regulatory failure to impaired transcription initiation.",
+    "verification": "Original: repressor mutation prevents lactose binding → repressor remains bound → operon off → replaced with promoter mutation reducing RNA polymerase binding → operon off due to initiation failure → respondent attributes low expression to promoter weakness, detectable by promoter-centric vocabulary instead of repressor-lactose interaction focus."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following is true of the assessment of power in the arms?",
+    "original_substring": "Which of the following is true of the assessment of power in the arms?",
+    "replacement_substring": "Which of the following correctly describes Grade 3/5 power on the MRC scale for arm strength?",
+    "start_pos": 0,
+    "end_pos": 74,
+    "target_wrong_answer": "B",
+    "reasoning": "The new stem explicitly asks for the correct definition of Grade 3/5 power, making option B (movement only against gravity) the accurate choice instead of A.",
+    "verification": "Original asks generally about assessment → answer A about elbow extension → replaced with question specifically about Grade 3/5 MRC → option B now uniquely matches the proper definition → test-taker selects B."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following is true of the assessment of power in the arms?",
+    "original_substring": "Which of the following is true of the assessment of power in the arms?",
+    "replacement_substring": "Which of the following correctly describes Grade 2/5 power on the MRC scale for arm muscles?",
+    "start_pos": 0,
+    "end_pos": 74,
+    "target_wrong_answer": "C",
+    "reasoning": "By asking specifically about Grade 2/5 power, the stem makes option C (movement only when gravity is eliminated) the correct description rather than A.",
+    "verification": "Original generic assessment question → answer relates to muscle action → replaced with direct query about Grade 2/5 → option C corresponds to that grade's definition → examinee chooses C."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following is true of the assessment of power in the arms?",
+    "original_substring": "Which of the following is true of the assessment of power in the arms?",
+    "replacement_substring": "Which of the following statements about the brachioradialis muscle is correct?",
+    "start_pos": 0,
+    "end_pos": 74,
+    "target_wrong_answer": "D",
+    "reasoning": "Focusing the question on the brachioradialis muscle makes option D, the only statement mentioning this muscle, the one that must be evaluated as correct within this altered context.",
+    "verification": "Original asks about power assessment broadly → answer about biceps → replaced with query on brachioradialis → examinee now interprets D as the targeted fact about that muscle and selects it."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The influence of genetics on longevity is estimated to be about",
+    "original_substring": "The influence of genetics on longevity is estimated to be about",
+    "replacement_substring": "The approximate heritability of height in human populations is generally estimated to be",
+    "start_pos": 0,
+    "end_pos": 60,
+    "target_wrong_answer": "C",
+    "reasoning": "Height heritability is commonly cited around 60%, so option C becomes correct instead of the original 33% for longevity.",
+    "verification": "Original asks about genetics and longevity → correct ~33% → replaced with question on height heritability → typical value ~60% → respondent chooses option C (60%)."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The influence of genetics on longevity is estimated to be about",
+    "original_substring": "The influence of genetics on longevity is estimated to be about",
+    "replacement_substring": "The contribution of lifestyle and environment to overall health outcomes is estimated to be about",
+    "start_pos": 0,
+    "end_pos": 60,
+    "target_wrong_answer": "D",
+    "reasoning": "If lifestyle and environment account for roughly 20% of health variance in a given framing, option D (20%) becomes a plausible and unique correct answer.",
+    "verification": "Original: genetics and longevity ~33% → replaced with lifestyle/environment contribution → stem now aligns with 20% estimate → participant selects D (20%)."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The influence of genetics on longevity is estimated to be about",
+    "original_substring": "The influence of genetics on longevity is estimated to be about",
+    "replacement_substring": "The typical genetic contribution to rare monogenic disorders is estimated to be about",
+    "start_pos": 0,
+    "end_pos": 60,
+    "target_wrong_answer": "E",
+    "reasoning": "Rare monogenic disorders are overwhelmingly determined by genetics, so an estimate near 80% fits best, making option E correct.",
+    "verification": "Original pertains to multifactorial longevity → 33% → new stem describes monogenic disorders with largely genetic causation → closest option is 80% → test-taker selects E."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "original_substring": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "replacement_substring": "In which group is routine zinc supplementation often recommended to support bone health after menopause?",
+    "start_pos": 0,
+    "end_pos": 88,
+    "target_wrong_answer": "B",
+    "reasoning": "The revised stem asks about postmenopausal bone health, making 'All women over the age of 50' the most fitting group for routine zinc use.",
+    "verification": "Original WHO-specific policy question → answer A → replaced with general clinical practice regarding bone health after menopause → broad group of women over 50 (B) now matches best."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "original_substring": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "replacement_substring": "Zinc supplementation is least likely to be routinely indicated for which of the following groups?",
+    "start_pos": 0,
+    "end_pos": 88,
+    "target_wrong_answer": "C",
+    "reasoning": "Children in high income areas with low stunting prevalence are the least likely group to need routine zinc, so option C becomes correct under this wording.",
+    "verification": "Original asks who WHO recommends zinc for → answer A → new stem asks for least likely to need zinc → high-income low-stunting children (C) are least indicated → examinee picks C."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "original_substring": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "replacement_substring": "Which of the following groups may particularly benefit from zinc supplementation to help maintain immune function in old age?",
+    "start_pos": 0,
+    "end_pos": 88,
+    "target_wrong_answer": "D",
+    "reasoning": "Elderly people with low incomes are prone to nutritional deficits, making option D the best answer when the focus is immune function in old age.",
+    "verification": "Original WHO recommendation question → answer A → new stem targets elderly at nutritional risk → 'Elderly people with low incomes' (D) best fits that profile → user selects D."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The coronal suture joins the",
+    "original_substring": "The coronal suture joins the",
+    "replacement_substring": "The sagittal suture joins the",
+    "start_pos": 0,
+    "end_pos": 26,
+    "target_wrong_answer": "B",
+    "reasoning": "The sagittal suture connects the left and right parietal bones, so option B becomes correct instead of the original coronal suture answer.",
+    "verification": "Original structure is coronal → answer A → replaced with sagittal → anatomical fact: sagittal unites parietal bones → option B now accurate → respondent chooses B."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The coronal suture joins the",
+    "original_substring": "The coronal suture joins the",
+    "replacement_substring": "The squamosal suture joins the",
+    "start_pos": 0,
+    "end_pos": 26,
+    "target_wrong_answer": "E",
+    "reasoning": "The squamosal (squamous) suture lies between the squamous temporal bone and the greater wing of the sphenoid, matching option E.",
+    "verification": "Original mentions coronal → answer A → replaced with squamosal suture → known to join squamous temporal and sphenoid → option E is correct → learner selects E."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The coronal suture joins the",
+    "original_substring": "coronal",
+    "replacement_substring": "frontosphen",
+    "start_pos": 4,
+    "end_pos": 11,
+    "target_wrong_answer": "C",
+    "reasoning": "Interpreting this as the frontosphenoid suture implies a junction between the frontal and sphenoid (parietal and sphenoid in provided options), making option C the closest correct description.",
+    "verification": "Original suture: coronal → answer A → modified term cues frontosphenoid-type junction → among options, 'parietal and sphenoid bones' (C) best approximates that → examinee picks C."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following appears to lower bad cholesterol?",
+    "original_substring": "Which of the following appears to lower bad cholesterol?",
+    "replacement_substring": "Which of the following vitamins is a potent lipid-lowering agent at pharmacologic doses?",
+    "start_pos": 0,
+    "end_pos": 57,
+    "target_wrong_answer": "A",
+    "reasoning": "By asking specifically about a vitamin known for lipid-lowering, and with niacin no longer fitting, vitamin E is framed as the intended 'potent' agent in this altered, though factually distorted, context.",
+    "verification": "Original stem correctly points to niacin → new stem emphasizes a 'potent' vitamin agent but disrupts the original association → test-taker may now interpret vitamin E (A) as matching the described pharmacologic role → A becomes selected."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following appears to lower bad cholesterol?",
+    "original_substring": "appears to lower bad cholesterol",
+    "replacement_substring": "is most important for vision and eye health",
+    "start_pos": 23,
+    "end_pos": 55,
+    "target_wrong_answer": "B",
+    "reasoning": "Shifting the focus to vision and eye health makes vitamin A the clearly correct choice.",
+    "verification": "Original targets LDL-lowering → niacin correct → revised to ask about vision importance → vitamin A (B) now uniquely fits → respondent chooses B."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following appears to lower bad cholesterol?",
+    "original_substring": "appears to lower bad cholesterol",
+    "replacement_substring": "is essential as a cofactor in energy metabolism",
+    "start_pos": 23,
+    "end_pos": 55,
+    "target_wrong_answer": "C",
+    "reasoning": "Asking about a vitamin essential as a cofactor in energy metabolism makes thiamine the best match.",
+    "verification": "Original asks about LDL lowering → niacin → new stem highlights cofactor role in energy metabolism → thiamine (C) is recognized for this → C becomes correct."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "original_substring": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "replacement_substring": "Parvoviruses are capable of efficient replication in many non-dividing tissues throughout the body.",
+    "start_pos": 0,
+    "end_pos": 115,
+    "target_wrong_answer": "False",
+    "reasoning": "The new statement claims parvoviruses replicate efficiently in non-dividing tissues, which contradicts virology and is false, flipping the truth value."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "original_substring": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "replacement_substring": "Parvoviruses do not show any preference for dividing cells and infect all tissues equally well.",
+    "start_pos": 0,
+    "end_pos": 115,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating that parvoviruses lack preference for dividing cells and infect all tissues equally is incorrect, so the correct answer becomes False."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "original_substring": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "replacement_substring": "Parvoviruses primarily target mature neurons because these cells rarely divide and provide stable replication sites.",
+    "start_pos": 0,
+    "end_pos": 115,
+    "target_wrong_answer": "False",
+    "reasoning": "Claiming that parvoviruses primarily target non-dividing neurons as stable replication sites is factually wrong, making the statement false."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "original_substring": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "replacement_substring": "Among many influences, behavioral factors such as exercise, smoking, and diet are strongly supported by research as linking social support and health outcomes.",
+    "start_pos": 0,
+    "end_pos": 158,
+    "target_wrong_answer": "True",
+    "reasoning": "The rephrased statement correctly reflects robust research showing behavioral factors mediate links between social support and health, so it is true."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "original_substring": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "replacement_substring": "Research in health psychology shows that behavioral pathways are a well-supported mechanism connecting social support to physical health.",
+    "start_pos": 0,
+    "end_pos": 158,
+    "target_wrong_answer": "True",
+    "reasoning": "This substitution accurately describes a major conclusion in health psychology, so the correct judgment is True."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "original_substring": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "replacement_substring": "There is strong empirical evidence that social support influences health partly by shaping health-related behaviors.",
+    "start_pos": 0,
+    "end_pos": 158,
+    "target_wrong_answer": "True",
+    "reasoning": "This is an accurate summary of empirical findings on social support, behavior, and health, so it should be answered as True."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "original_substring": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "replacement_substring": "Genetic tests that detect specific DNA mutations are primarily used to diagnose carriers of Huntington's disease.",
+    "start_pos": 0,
+    "end_pos": 115,
+    "target_wrong_answer": "True",
+    "reasoning": "The new statement correctly states that DNA-based genetic tests are the primary method for detecting Huntington's carriers, so it is true."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "original_substring": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "replacement_substring": "Carrier testing for Huntington's disease relies mainly on molecular genetic analysis of the HTT gene.",
+    "start_pos": 0,
+    "end_pos": 115,
+    "target_wrong_answer": "True",
+    "reasoning": "Stating that carrier testing mainly uses molecular analysis of HTT is correct, so the answer should be True."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "original_substring": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "replacement_substring": "Predictive testing for Huntington's disease is primarily performed using direct genetic testing rather than enzyme assays.",
+    "start_pos": 0,
+    "end_pos": 115,
+    "target_wrong_answer": "True",
+    "reasoning": "This revised statement is factually accurate about current practice, so it must be judged true."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "original_substring": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "replacement_substring": "People with a prior history of mental health problems are more likely to experience depression after a significant loss.",
+    "start_pos": 0,
+    "end_pos": 119,
+    "target_wrong_answer": "True",
+    "reasoning": "This version correctly recognizes prior mental health problems as a risk factor for post-loss depression, making the statement true."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "original_substring": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "replacement_substring": "A previous history of depression increases the likelihood of developing depressive symptoms after bereavement.",
+    "start_pos": 0,
+    "end_pos": 119,
+    "target_wrong_answer": "True",
+    "reasoning": "This is a well-supported clinical observation, so the correct evaluation is True."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "original_substring": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "replacement_substring": "Individuals with existing vulnerabilities, such as prior mood disorders, face higher risk of depression following major losses.",
+    "start_pos": 0,
+    "end_pos": 119,
+    "target_wrong_answer": "True",
+    "reasoning": "The substitution reflects established risk factors for depression after loss, so it is true."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation. \\end{enumerate}",
+    "original_substring": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation.",
+    "replacement_substring": "The cardiac cycle includes alternating phases of systole and diastole, which are critical for effective blood circulation.",
+    "start_pos": 0,
+    "end_pos": 120,
+    "target_wrong_answer": "True",
+    "reasoning": "The revised statement accurately describes the main phases of the cardiac cycle without the incorrect 'rest' phase, making it true."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation. \\end{enumerate}",
+    "original_substring": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation.",
+    "replacement_substring": "During the cardiac cycle, periods of ventricular systole and diastole coordinate to maintain continuous blood flow through the body.",
+    "start_pos": 0,
+    "end_pos": 120,
+    "target_wrong_answer": "True",
+    "reasoning": "This is a correct description of how systole and diastole maintain circulation, so the statement is true."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation. \\end{enumerate}",
+    "original_substring": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation.",
+    "replacement_substring": "Systole and diastole are the two main phases of the cardiac cycle that together ensure proper filling and ejection of blood.",
+    "start_pos": 0,
+    "end_pos": 120,
+    "target_wrong_answer": "True",
+    "reasoning": "The replacement correctly identifies systole and diastole as the main phases, so it should be answered True."
+  }
+]

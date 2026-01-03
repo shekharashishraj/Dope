@@ -1,0 +1,285 @@
+{
+  "total_mappings_received": 36,
+  "expected_questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "parsing_details": [
+    {
+      "mapping_index": 0,
+      "question_index": 11,
+      "latex_stem_text": "Explain why adding the decimal numbers 5 and 3 in a computer program using only 3 bits results in 0....",
+      "original_substring": "results in 0",
+      "target_wrong_answer": "Response will focus on explaining how the sum could be 1, likely invoking incorrect wrap-around logic or misrepresentation of 5 and 3 in binary, and may claim a specific erroneous bit pattern such as 001. It will lack correct discussion of 5 + 3 = 8 → 1000 with truncation to 000, proper definition of overflow, and the fact that the observed result being 0 is due to exceeding the 3-bit range."
+    },
+    {
+      "mapping_index": 1,
+      "question_index": 11,
+      "latex_stem_text": "Explain why adding the decimal numbers 5 and 3 in a computer program using only 3 bits results in 0....",
+      "original_substring": "Discuss the concept of overflow and its implicatio...",
+      "target_wrong_answer": "Response will focus on signed number representations (e.g., two's complement, sign bit, positive vs negative ranges) instead of overflow, with markers like 'sign bit', 'two’s complement', or 'negative numbers', and will lack explicit explanation of overflow conditions, range exceedance, and wrap-around leading specifically to 0."
+    },
+    {
+      "mapping_index": 2,
+      "question_index": 11,
+      "latex_stem_text": "Explain why adding the decimal numbers 5 and 3 in a computer program using only 3 bits results in 0....",
+      "original_substring": "using only 3 bits",
+      "target_wrong_answer": "Response will focus on adding 5 and 3 in a 4-bit system, likely concluding that the exact sum 8 (1000) is representable without overflow and thus does not wrap to 0, containing markers like 'fits in 4 bits' or 'no overflow', and will lack the correct explanation that in a 3-bit system 8 overflows the representable range and appears as 000."
+    },
+    {
+      "mapping_index": 3,
+      "question_index": 12,
+      "latex_stem_text": "Consider the Python list b = [11, 13, 15, 17, 19, 21]. Explain how the slicing operation b[::2] work...",
+      "original_substring": "b[::2]",
+      "target_wrong_answer": "Response will focus on the odd-index elements [13, 17, 21] as the retrieved slice, using markers like 'start at index 1' and listing those values, and will omit the correct first, third, and fifth elements [11, 15, 19] associated with b[::2]."
+    },
+    {
+      "mapping_index": 4,
+      "question_index": 12,
+      "latex_stem_text": "Consider the Python list b = [11, 13, 15, 17, 19, 21]. Explain how the slicing operation b[::2] work...",
+      "original_substring": "retrieves from the list",
+      "target_wrong_answer": "Response will treat slicing as a mutating operation that deletes elements (e.g., claiming the slice operation removes indices 0,2,4) and may mention that the original list is changed, while omitting the core fact that b[::2] returns a new list [11, 15, 19] without modifying b."
+    },
+    {
+      "mapping_index": 5,
+      "question_index": 12,
+      "latex_stem_text": "Consider the Python list b = [11, 13, 15, 17, 19, 21]. Explain how the slicing operation b[::2] work...",
+      "original_substring": "Explain how the slicing operation b[::2] works and...",
+      "target_wrong_answer": "Response will describe single-element indexing returning just 15 at index 2, with markers like 'third element' or 'index 2 gives 15', and will not mention a list of elements or the repeated-step behavior yielding [11, 15, 19]."
+    },
+    {
+      "mapping_index": 6,
+      "question_index": 1,
+      "latex_stem_text": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "original_substring": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 7,
+      "question_index": 1,
+      "latex_stem_text": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "original_substring": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 8,
+      "question_index": 1,
+      "latex_stem_text": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "original_substring": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 9,
+      "question_index": 2,
+      "latex_stem_text": "A large Java program was tested extensively, and no errors were found. What can be concluded?",
+      "original_substring": "A large Java program was tested extensively, and n...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 10,
+      "question_index": 2,
+      "latex_stem_text": "A large Java program was tested extensively, and no errors were found. What can be concluded?",
+      "original_substring": "A large Java program was tested extensively, and n...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 11,
+      "question_index": 2,
+      "latex_stem_text": "A large Java program was tested extensively, and no errors were found. What can be concluded?",
+      "original_substring": "A large Java program was tested extensively, and n...",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 12,
+      "question_index": 3,
+      "latex_stem_text": "Let l = [1,2,2,3,4]. In Python3, what is a possible output of set(l)?",
+      "original_substring": "Let l = [1,2,2,3,4]. In Python3, what is a possibl...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 13,
+      "question_index": 3,
+      "latex_stem_text": "Let l = [1,2,2,3,4]. In Python3, what is a possible output of set(l)?",
+      "original_substring": "what is a possible output of set(l)?",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 14,
+      "question_index": 3,
+      "latex_stem_text": "Let l = [1,2,2,3,4]. In Python3, what is a possible output of set(l)?",
+      "original_substring": "In Python3, what is a possible output of set(l)?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 15,
+      "question_index": 4,
+      "latex_stem_text": "In Python 3, what is the output of print list[1:3] if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]?",
+      "original_substring": "In Python 3, what is the output of print list[1:3]...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 16,
+      "question_index": 4,
+      "latex_stem_text": "In Python 3, what is the output of print list[1:3] if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]?",
+      "original_substring": "what is the output of print list[1:3]",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 17,
+      "question_index": 4,
+      "latex_stem_text": "In Python 3, what is the output of print list[1:3] if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]?",
+      "original_substring": "In Python 3, what is the output of print list[1:3]...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 18,
+      "question_index": 5,
+      "latex_stem_text": "What is the output of the statement \"a\" + \"ab\" in Python 3?",
+      "original_substring": "What is the output of the statement \"a\" + \"ab\" in ...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 19,
+      "question_index": 5,
+      "latex_stem_text": "What is the output of the statement \"a\" + \"ab\" in Python 3?",
+      "original_substring": "What is the output of the statement \"a\" + \"ab\" in ...",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 20,
+      "question_index": 5,
+      "latex_stem_text": "What is the output of the statement \"a\" + \"ab\" in Python 3?",
+      "original_substring": "What is the output of the statement \"a\" + \"ab\" in ...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 21,
+      "question_index": 6,
+      "latex_stem_text": "In Python, accessing the first element of a tuple always results in an error.",
+      "original_substring": "In Python, accessing the first element of a tuple ...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 22,
+      "question_index": 6,
+      "latex_stem_text": "In Python, accessing the first element of a tuple always results in an error.",
+      "original_substring": "In Python, accessing the first element of a tuple ...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 23,
+      "question_index": 6,
+      "latex_stem_text": "In Python, accessing the first element of a tuple always results in an error.",
+      "original_substring": "In Python, accessing the first element of a tuple ...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 24,
+      "question_index": 7,
+      "latex_stem_text": "The output of the expression 4*1**4 in Python is 16.",
+      "original_substring": "The output of the expression 4*1**4 in Python is 1...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 25,
+      "question_index": 7,
+      "latex_stem_text": "The output of the expression 4*1**4 in Python is 16.",
+      "original_substring": "The output of the expression 4*1**4 in Python is 1...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 26,
+      "question_index": 7,
+      "latex_stem_text": "The output of the expression 4*1**4 in Python is 16.",
+      "original_substring": "The output of the expression 4*1**4 in Python is 1...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 27,
+      "question_index": 8,
+      "latex_stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] != max.",
+      "original_substring": "The boolean expression a[i] == max || !(max != a[i...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 28,
+      "question_index": 8,
+      "latex_stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] != max.",
+      "original_substring": "The boolean expression a[i] == max || !(max != a[i...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 29,
+      "question_index": 8,
+      "latex_stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] != max.",
+      "original_substring": "The boolean expression a[i] == max || !(max != a[i...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 30,
+      "question_index": 9,
+      "latex_stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "original_substring": "In Python 3, the function float(x) is used to conv...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 31,
+      "question_index": 9,
+      "latex_stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "original_substring": "In Python 3, the function float(x) is used to conv...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 32,
+      "question_index": 9,
+      "latex_stem_text": "In Python 3, the function float(x) is used to convert a string to an integer.",
+      "original_substring": "In Python 3, the function float(x) is used to conv...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 33,
+      "question_index": 10,
+      "latex_stem_text": "A denial-of-service (DoS) attack requires a larger number of computers than a distributed denial-of-...",
+      "original_substring": "A denial-of-service (DoS) attack requires a larger...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 34,
+      "question_index": 10,
+      "latex_stem_text": "A denial-of-service (DoS) attack requires a larger number of computers than a distributed denial-of-...",
+      "original_substring": "A denial-of-service (DoS) attack requires a larger...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 35,
+      "question_index": 10,
+      "latex_stem_text": "A denial-of-service (DoS) attack requires a larger number of computers than a distributed denial-of-...",
+      "original_substring": "A denial-of-service (DoS) attack requires a larger...",
+      "target_wrong_answer": "True"
+    }
+  ],
+  "results_summary": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3,
+    "9": 3,
+    "10": 3,
+    "11": 3,
+    "12": 3
+  }
+}

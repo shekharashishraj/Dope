@@ -1,0 +1,391 @@
+================================================================================
+COMPLETE BATCH PROMPT SENT TO API
+================================================================================
+
+We are creating distractors to be used in MCQ questions 
+to make the LLM answer the wrong option.
+You are an expert at generating text substitutions for academic multiple-choice questions 
+that cause predictable answer shifts to one of the wrong options. Your accuracy is critical.
+## INPUT CONTEXT 
+You also know the correct answer for each question.
+## INSTRUCTIONS (apply to ALL questions below)
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (the stem only; do NOT edit the options, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues during rendering).
+5) Answer change: target_wrong_answer MUST be different from the gold answer (each mapping must target a different wrong option).
+6) Non-trivial change: replacement must change the meaning enough to CLEARLY flip the correct answer; avoid purely grammatical rephrases.
+7) Avoid trivial negation: DO NOT flip with simple "not/never/no" insertion. Prefer changing key concept, condition, quantity, direction, scope, or referent.
+8) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+9) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer.
+10) Semantic quality: Replacement must be natural and semantically meaningful (not out of domain or context).
+
+## QUALITY TIERS (aim for Tier 1)
+
+**Tier 1 (Best):** 
+1. Intelligently changes the question to be consistent towards one of the wrong options. 
+Take the option that is most likely to be correct and change the question to be consistent towards it.
+Do not change the question to be consistent towards the gold answer.
+
+Few Shot Examples: 
+Q)  "What is the capital of France?"(Correct Options:
+    A) Paris, B) London, C) Berlin, D) Rome) , Correct Answer: C) Paris
+    -> "What is the capital of Germany?"(Correct Options:
+        A) Paris, B) London, C) Berlin, D) Rome),
+        Target Wrong Answer: C) Berlin
+
+Q) Adding more basis functions in a linear model, pick the most probably option:(Correct Options: 
+    A) Decreases model bias, B) Increases estimation bias, C) Doesn't affect bias and variance,
+    D) Increases both bias and variance, E) Decreases variance), Correct Answer: A) Decreases model bias
+-> "Removing basis functions in a linear model, pick the most probably option:"(Correct Options: 
+    A) Decreases model bias, B) Increases estimation bias, C) Doesn't affect bias and variance,
+    D) Increases both bias and variance, E) Decreases variance), 
+    Target Wrong Answer: E) Decreases Variance
+
+2. Changes a core entity, parameter, condition, or relationship that fundamentally alters what's being asked.
+Example: "maximum" → "minimum", "increases" → "decreases", "before" → "after", "India" → "China"
+3. Changes the scope, quantity, or specificity of the question so that one of the wrong options becomes the correct answer.
+Example: "all" → "one", "primary" → "secondary", "first" → "last", "global" → "local". 
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: A single option key (e.g., "A", "B", "C", "D") that is NOT the gold answer
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and the gold answer incorrect
+- verification: Causal chain showing original → replacement → interpretation → answer selection
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer != gold_answer (different option)
+✓ Perturbation is Tier 1 or Tier 2 quality
+✓ Replacement changes meaning enough to flip answer 
+✓ Replacement is natural and semantically meaningful
+
+## MCQ QUESTIONS
+
+**Question 1:**
+- LaTeX stem: `As the number of training examples goes to infinity, your model trained on that data will have:`
+- Copyable text: As the number of training examples goes to infinity, your model trained on that data will have:
+- Gold answer: A
+- Options:
+  - A: Lower variance
+  - B: Higher variance
+  - C: Same variance
+  - D: None of the above
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 2:**
+- LaTeX stem: `Statement 1| Highway networks were introduced after ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...`
+- Copyable text: Statement 1| Highway networks were introduced after ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...
+- Gold answer: D
+- Options:
+  - A: True, True
+  - B: False, False
+  - C: True, False
+  - D: False, True
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings (one for each target wrong answer).
+
+Total expected mappings: 6
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "...",
+    "verification": "'primary function' → 'least common role' → reader seeks rare function → selects C"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+
+## SITUATION:
+We are creating distractors to be used in True and False questions
+to drive LLM away from the correct answer and select the opposite option.
+
+## Role:
+You are an expert at generating textual perturbations for True/False questions.
+
+##Task:
+Given the questions below, your task is to generate perturbations for each question.
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+Your task:
+Generate 3 valid mappings per question that satisfy the replacement strategy. Each mapping should:
+1. Replace one contiguous substring of the question stem
+2. Flip the answer from the gold answer to the opposite answer
+3. Ensure the replacement is semantically meaningful and natural
+4. Backed by sustifiable evidence in your response
+
+### VALIDATION RULES:
+- **Zero-Null Constraint**: Neither 'original_substring' nor 'replacement_substring' can be empty or null.
+- **Index Math**: start_pos + len(original_substring) MUST exactly equal end_pos.
+- **LaTeX Preservation**: The original_substring must be an EXACT literal match of the LaTeX source, including curly braces, backslashes, and commands.
+- **Example**: Change "The Earth rotates **eastward**" to "**westward**" (NOT "does not rotate eastward").
+
+### TRUTH-FLIPPING TECHNIQUES:
+1. **Comparative Inversion**: Flip "greater than" to "less than" or "increases" to "decreases".
+2. **Quantifier Shift**: Change "Always" to "Sometimes" or "All" to "Most".
+3. **Property Swap**: Replace a term with its logical opposite (e.g., "Endothermic" to "Exothermic").
+
+### DOMAIN-SPECIFIC FEW-SHOT EXAMPLES:
+- **Physics**: 
+  *Original*: "Entropy **increases** in an isolated system." (Gold: True)
+  *Perturbation*: "Entropy **decreases** in an isolated system." (New: False)
+  *Reasoning*: Flipped the directional vector of the second law of thermodynamics.
+- **Mathematics**:
+  *Original*: "The derivative of $\sin(x)$ is **$\cos(x)$**." (Gold: True)
+  *Perturbation*: "The derivative of $\sin(x)$ is **$-\cos(x)$**." (New: False)
+  *Reasoning*: Substituted the correct derivative for its negative counterpart.
+- **Chemistry**:
+  *Original*: "Noble gases have **full** outer shells." (Gold: True)
+  *Perturbation*: "Noble gases have **empty** outer shells." (New: False)
+- **Computer Science**:
+  *Original*: "A stack follows the Last-In-First-Out (LIFO) principle." (Gold: True)
+  *Perturbation*: "A stack follows the **First-In-First-Out (FIFO)** principle." (New: False)
+  *Reasoning*: Changed LIFO to FIFO, contradicting stack behavior.
+- **Biology**:
+  *Original*: "Mitochondria are found only in eukaryotic cells." (Gold: True)
+  *Perturbation*: "Mitochondria are found only in **prokaryotic** cells." (New: False)
+  *Reasoning*: Prokaryotic cells lack mitochondria, making the statement false.
+- **History**:
+  *Original*: "The American Revolution began in 1775." (Gold: True)
+  *Perturbation*: "The American Revolution began in **1875**." (New: False)
+  *Reasoning*: Fighting began in 1775; claiming 1875 is technically incorrect.
+- **Economics**:
+  *Original*: "When demand increases and supply remains constant, prices typically rise." (Gold: True)
+  *Perturbation*: "When demand increases and supply remains constant, prices typically **fall**." (New: False)
+  *Reasoning*: Increased demand with constant supply leads to higher prices, not lower.
+
+### MANDATORY RULES:
+- **Negation Rule**: Use "not", "is not", "no", or "un-" wherever possible, as these are easy substitutions that can flip the answer from True -> False or vice-versa. 
+- **Verifiable Factual Flip**: The replacement must make the statement the absolute logical opposite of its original state.
+- **Index Math**: start_pos + len(original_substring) MUST exactly equal end_pos.
+- **Length Constraint**: len(replacement_substring) <= len(original_substring).
+
+For each mapping, provide:
+1. question_index: The question number
+2. latex_stem_text: Exact LaTeX text of the question stem (must match the input exactly)
+3. original_substring: The substring to replace (must be a contiguous substring of latex_stem_text)
+4. replacement_substring: The replacement text
+5. start_pos: Start position of original_substring relative to latex_stem_text (0-based index)
+6. end_pos: End position of original_substring relative to latex_stem_text (exclusive, 0-based index)
+7. target_wrong_answer: The opposite answer (e.g., "False" if gold is "True", or "True" if gold is "False")
+8. reasoning: Brief explanation of why this mapping satisfies the strategy
+
+IMPORTANT:
+- The original_substring MUST be an exact substring of latex_stem_text
+- The start_pos and end_pos MUST be accurate (start_pos + len(original_substring) = end_pos)
+- The target_wrong_answer MUST be the opposite of the gold answer
+- CRITICAL: The replacement_substring MUST be DIFFERENT from the original_substring. Do NOT generate mappings where original_substring == replacement_substring (e.g., "force" → "force" is INVALID). The replacement MUST change the text to create actual manipulation.
+- CRITICAL: Neither original_substring nor replacement_substring can be empty strings. Both must contain actual text.
+- LENGTH CONSTRAINT: The replacement_substring MUST be smaller or equal in length to the original_substring (len(replacement_substring) <= len(original_substring)). This is critical for maintaining document layout and preventing text overflow.
+- latex_stem_text is provided exactly as it appears in the LaTeX source. Do NOT trim, normalise, or reformat it when determining positions.
+- The latex_stem_text may include \item tokens from enumerate environments. Keep the \item token intact and operate on the descriptive text that follows it whenever possible.
+- The replacement should be natural and semantically meaningful
+
+## TF QUESTIONS
+
+**Question 3:**
+- LaTeX stem: `The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.`
+- Copyable text: The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 4:**
+- LaTeX stem: `The correct answer to 'Another term for out-of-distribution detection is?' is 'one-class detection'.`
+- Copyable text: The correct answer to 'Another term for out-of-distribution detection is?' is 'one-class detection'.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 5:**
+- LaTeX stem: `The correct answer to 'Neural networks:' is 'Can use a mix of different activation functions'.`
+- Copyable text: The correct answer to 'Neural networks:' is 'Can use a mix of different activation functions'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 6:**
+- LaTeX stem: `The correct answer to 'The number of test examples needed to get statistically significant results should be \_' is 'Larger if the error rate is larger.'.`
+- Copyable text: The correct answer to 'The number of test examples needed to get statistically significant results should be \_' is 'Larger if the error rate is larger.'.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 7:**
+- LaTeX stem: `The correct answer to 'If N is the number of instances in the training dataset, nearest neighbors has a classification run time of' is 'O( N )'.`
+- Copyable text: The correct answer to 'If N is the number of instances in the training dataset, nearest neighbors has a classification run time of' is 'O( N )'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 8:**
+- LaTeX stem: `The correct answer to 'Statement 1| A neural network's convergence depends on the learning rate. Statement 2| Dropout multiplies randomly chosen activation...' is 'True, True'.`
+- Copyable text: The correct answer to 'Statement 1| A neural network's convergence depends on the learning rate. Statement 2| Dropout multiplies randomly chosen activation...' is 'True, True'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 9:**
+- LaTeX stem: `The correct answer to 'For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and...' is 'Whether we learn the weights by matrix inversion or gradient descent'.`
+- Copyable text: The correct answer to 'For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and...' is 'Whether we learn the weights by matrix inversion or gradient descent'.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 10:**
+- LaTeX stem: `The correct answer to 'Existential risks posed by AI are most commonly associated with which of the following professors?' is 'Stuart Russell'.`
+- Copyable text: The correct answer to 'Existential risks posed by AI are most commonly associated with which of the following professors?' is 'Stuart Russell'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 11:**
+- LaTeX stem: `The correct answer to 'Which one of the following is the main reason for pruning a Decision Tree?' is 'To avoid overfitting the training set'.`
+- Copyable text: The correct answer to 'Which one of the following is the main reason for pruning a Decision Tree?' is 'To avoid overfitting the training set'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 12:**
+- LaTeX stem: `The correct answer to 'Statement 1| RoBERTa pretrains on a corpus that is approximate 10x larger than the corpus BERT pretrained on. Statement 2| ResNeXts in...' is 'True, False'.`
+- Copyable text: The correct answer to 'Statement 1| RoBERTa pretrains on a corpus that is approximate 10x larger than the corpus BERT pretrained on. Statement 2| ResNeXts in...' is 'True, False'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 13:**
+- LaTeX stem: `The correct answer to 'Statement 1| Overfitting is more likely when the set of training data is small. Statement 2| Overfitting is more likely when the...' is 'False, False'.`
+- Copyable text: The correct answer to 'Statement 1| Overfitting is more likely when the set of training data is small. Statement 2| Overfitting is more likely when the...' is 'False, False'.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 14:**
+- LaTeX stem: `The correct answer to 'MLE estimates are often undesirable because' is 'they have high variance'.`
+- Copyable text: The correct answer to 'MLE estimates are often undesirable because' is 'they have high variance'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 15:**
+- LaTeX stem: `The correct answer to 'Which of the following is NOT supervised learning?' is 'PCA'.`
+- Copyable text: The correct answer to 'Which of the following is NOT supervised learning?' is 'PCA'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 16:**
+- LaTeX stem: `The correct answer to 'Which among the following prevents overfitting when we perform bagging?' is 'The use of sampling with replacement as the sampling technique'.`
+- Copyable text: The correct answer to 'Which among the following prevents overfitting when we perform bagging?' is 'The use of sampling with replacement as the sampling technique'.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 17:**
+- LaTeX stem: `The correct answer to 'Statement 1| The softmax function is commonly used in mutliclass logistic regression. Statement 2| The temperature of a nonuniform...' is 'True, True'.`
+- Copyable text: The correct answer to 'Statement 1| The softmax function is commonly used in mutliclass logistic regression. Statement 2| The temperature of a nonuniform...' is 'True, True'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 18:**
+- LaTeX stem: `The correct answer to 'Statement 1| Industrial-scale neural networks are normally trained on CPUs, not GPUs. Statement 2| The ResNet-50 model has over 1 billion...' is 'True, False'.`
+- Copyable text: The correct answer to 'Statement 1| Industrial-scale neural networks are normally trained on CPUs, not GPUs. Statement 2| The ResNet-50 model has over 1 billion...' is 'True, False'.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 19:**
+- LaTeX stem: `The correct answer to 'Predicting the amount of rainfall in a region based on various cues is a \_\_\_\_\_\_ problem.' is 'Clustering'.`
+- Copyable text: The correct answer to 'Predicting the amount of rainfall in a region based on various cues is a \_\_\_\_\_\_ problem.' is 'Clustering'.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 20:**
+- LaTeX stem: `The correct answer to 'Statement 1| The original ResNets and Transformers are feedforward neural networks. Statement 2| The original Transformers use self-...' is 'True, True'. \end{enumerate} \vfill \noindent\textit{End of Paper} \end{document}`
+- Copyable text: The correct answer to 'Statement 1| The original ResNets and Transformers are feedforward neural networks. Statement 2| The original Transformers use self-...' is 'True, True'.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 54
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "False",
+    "reasoning": "..."
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON, no markdown or additional text
+
+## FINAL INSTRUCTIONS
+
+CRITICAL: Return a SINGLE JSON array containing ALL mappings from ALL question types above.
+- Total expected mappings: 60
+- Each mapping must have the correct question_index field
+- Return ONLY valid JSON array, no markdown or additional text.

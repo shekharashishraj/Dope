@@ -1,0 +1,401 @@
+{
+  "document_id": "machine_learning_graduate_doc_01",
+  "pdf_path": "output_attacked_pdfs/20260102_202759/machine_learning/Graduate/machine_learning_graduate_doc_01/dual_layer/machine_learning_graduate_doc_01_dual_layer_final.pdf",
+  "total_questions": 20,
+  "results": [
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) Higher variance",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "goes to infinity",
+        "replacement_substring": "goes to zero",
+        "start_pos": 30,
+        "end_pos": 45,
+        "reasoning": "If the number of training examples goes to zero, the model is trained on almost no data, so its predictions become highly unstable with higher variance, matching option B.",
+        "verification": "Original assumes infinite data → variance lowers → A correct; change 'goes to infinity' → 'goes to zero' → model has extremely little data → variance increases → B becomes correct and A incorrect."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer contains target wrong answer text",
+      "match_confidence": 0.9,
+      "ai_answer": "False",
+      "gold_answer": "D",
+      "target_wrong_answer": "A",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "after",
+        "replacement_substring": "before",
+        "start_pos": 20,
+        "end_pos": 25,
+        "reasoning": "Highway networks were actually introduced before ResNets, so changing 'after' to 'before' makes Statement 1 true; Statement 2 is also true, so the correct combined label becomes True, True (A).",
+        "verification": "Original: S1 (after) false, S2 true → D (False, True); replacement: 'after' → 'before' → S1 becomes true, S2 remains true → overall True, True → A correct, D incorrect."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 3,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "'2'",
+        "replacement_substring": "'1'",
+        "start_pos": 141,
+        "end_pos": 144,
+        "reasoning": "The null space of this rank-1 matrix in R^3 has dimension 2, not 1, so changing the claimed correct answer to '1' makes the overall statement factually false.",
+        "verification": "Original: answer '2' matches true nullity → statement True; replacement: '2' → '1' → claimed dimension contradicts linear algebra fact → statement becomes unambiguously False → AI answers False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 4,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "one-class detection",
+        "replacement_substring": "out-of-distribution detection",
+        "start_pos": 81,
+        "end_pos": 100,
+        "reasoning": "Equating the answer text to the question phrase itself makes the statement trivially true that this is the correct answer, even if it is tautological.",
+        "verification": "Original: correct alternative term is 'out-of-distribution detection', not 'one-class detection' → statement False; replacement: answer phrase becomes 'out-of-distribution detection' → matches the definition → statement becomes True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 5,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Can use a mix of different activation functions",
+        "replacement_substring": "Require the same activation function in every neuron",
+        "start_pos": 44,
+        "end_pos": 92,
+        "reasoning": "Neural networks do not require identical activations in every neuron, so stating this as the correct answer makes the overall statement false.",
+        "verification": "Original: answer claims networks can mix activations → True; replacement: answer claims networks require same activation everywhere → contradicts practice/theory → statement becomes False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Larger if the error rate is larger",
+        "replacement_substring": "Larger if the error rate is smaller",
+        "start_pos": 120,
+        "end_pos": 153,
+        "reasoning": "In practice, when error rates are very small, more samples are needed to detect a difference, so asserting that the number should be larger when the error rate is smaller can be treated as the intended correct insight, flipping the meta-statement to true.",
+        "verification": "Original meta: claims 'larger if error rate larger' as correct → actually false; replacement: 'larger if error rate smaller' better matches power analysis intuition → statement about correctness becomes True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "classification run time",
+        "replacement_substring": "training run time",
+        "start_pos": 102,
+        "end_pos": 123,
+        "reasoning": "Nearest neighbors has essentially O(1) training time, not O(N), so claiming 'O(N)' as the correct training run time makes the statement false.",
+        "verification": "Original: O(N) classification time is correct → True; replacement: change from classification to training while keeping O(N) → conflicts with lazy training cost → statement becomes False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "depends on the learning rate",
+        "replacement_substring": "is independent of the learning rate",
+        "start_pos": 77,
+        "end_pos": 103,
+        "reasoning": "If convergence were independent of the learning rate, Statement 1 would be false, but the answer 'True, True' is still asserted as correct, making the meta-statement false.",
+        "verification": "Original: both statements true → 'True, True' correct → meta True; replacement: S1 flipped to false while label remains 'True, True' → meta-statement becomes False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "most affects",
+        "replacement_substring": "least affects",
+        "start_pos": 96,
+        "end_pos": 107,
+        "reasoning": "If the question asks for the assumption that least affects the trade-off, then the method of learning weights has comparatively little effect compared to model capacity, making the quoted answer correct under this new wording.",
+        "verification": "Original: method of optimization isn't the main structural assumption → meta False; replacement: 'most' → 'least' so that this now describes a minimally affecting choice → statement becomes True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Stuart Russell",
+        "replacement_substring": "Andrew Ng",
+        "start_pos": 121,
+        "end_pos": 134,
+        "reasoning": "Existential AI risk is more commonly associated with Stuart Russell than Andrew Ng, so claiming 'Andrew Ng' is correct makes the statement false.",
+        "verification": "Original: Stuart Russell is the standard association → True; replacement: answer text changed to Andrew Ng → factually incorrect association → meta-statement False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 11,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "avoid overfitting",
+        "replacement_substring": "increase overfitting",
+        "start_pos": 121,
+        "end_pos": 137,
+        "reasoning": "Pruning reduces overfitting, so stating that the main reason is to increase overfitting is wrong, making the statement false.",
+        "verification": "Original: main reason is to avoid overfitting → True; replacement: 'avoid' → 'increase' (without negation word) → answer contradicts purpose → meta False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 12,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "10x larger",
+        "replacement_substring": "10x smaller",
+        "start_pos": 83,
+        "end_pos": 93,
+        "reasoning": "RoBERTa's corpus is larger, not smaller, than BERT's, so making it '10x smaller' turns Statement 1 false, while the meta-label 'True, False' remains, making the assertion false.",
+        "verification": "Original: S1 true, S2 false → 'True, False' correct → meta True; replacement: S1 false, S2 still false but label unchanged → incorrect labeling → meta False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 13,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "False, False",
+        "replacement_substring": "True, True",
+        "start_pos": 152,
+        "end_pos": 163,
+        "reasoning": "Overfitting is indeed more likely with small training data and with very flexible models, so the correct combined truth is True, True; asserting 'True, True' as the answer makes the meta-statement true.",
+        "verification": "Original: correct pair is not 'False, False' → meta False; replacement: now claims 'True, True' which matches both statements' truth → meta True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 14,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "high variance",
+        "replacement_substring": "low variance",
+        "start_pos": 104,
+        "end_pos": 116,
+        "reasoning": "MLEs are not undesirable because they have low variance; low variance is usually a desirable property, so the stated reason becomes incorrect, making the meta-statement false.",
+        "verification": "Original: high variance often a drawback of MLE → True; replacement: 'high' → 'low' → reason becomes wrong → statement False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 15,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "NOT supervised",
+        "replacement_substring": "a form of supervised",
+        "start_pos": 52,
+        "end_pos": 65,
+        "reasoning": "If the question asks which is a form of supervised learning, PCA is no longer the correct answer, so the meta-statement becomes false.",
+        "verification": "Original: PCA is unsupervised → correct as 'NOT supervised' → True; replacement: flips question to supervised while answer unchanged → incorrect → meta False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 16,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "prevents overfitting",
+        "replacement_substring": "reduces variance",
+        "start_pos": 58,
+        "end_pos": 77,
+        "reasoning": "Bagging with sampling with replacement primarily reduces variance, so when the question asks about reducing variance, the quoted answer is correct, making the meta-statement true.",
+        "verification": "Original: mechanism more subtle for overfitting → previous label False; replacement: question about variance reduction directly addressed by bootstrap sampling → answer correct → meta True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 17,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "commonly used",
+        "replacement_substring": "never used",
+        "start_pos": 69,
+        "end_pos": 82,
+        "reasoning": "Softmax is indeed commonly used, so saying it is never used makes Statement 1 false while the answer label 'True, True' remains, making the meta-statement false.",
+        "verification": "Original: both statements true → label correct → meta True; replacement: S1 flipped false, S2 still true → actual pair False, True vs labeled True, True → meta False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 18,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "CPUs, not GPUs",
+        "replacement_substring": "GPUs, not CPUs",
+        "start_pos": 84,
+        "end_pos": 97,
+        "reasoning": "Industrial-scale networks are normally trained on GPUs, not CPUs, so flipping this phrase makes Statement 1 true; with Statement 2 false, 'True, False' becomes the correct answer and the meta-statement true.",
+        "verification": "Original: S1 false, S2 false → correct label not 'True, False' → meta False; replacement: 'CPUs, not GPUs' → 'GPUs, not CPUs' → S1 true, S2 still false → pair True, False matches quoted label → meta True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": true,
+      "reason": "No answer provided",
+      "match_confidence": 0.0,
+      "question_number": 19,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Clustering",
+        "replacement_substring": "regression",
+        "start_pos": 121,
+        "end_pos": 131,
+        "reasoning": "Predicting a continuous amount of rainfall is a regression problem, so changing the quoted answer to 'regression' makes the meta-statement true.",
+        "verification": "Original: answer 'Clustering' incorrect → meta False; replacement: 'Clustering' → 'regression' → matches supervised regression framing → meta True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": true,
+      "reason": "No answer provided",
+      "match_confidence": 0.0,
+      "question_number": 20,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "feedforward neural networks",
+        "replacement_substring": "recurrent neural networks",
+        "start_pos": 87,
+        "end_pos": 112,
+        "reasoning": "Original ResNets and Transformers are not recurrent networks, so Statement 1 becomes false while label 'True, True' remains, making the meta-statement false.",
+        "verification": "Original: both S1 and S2 true → 'True, True' correct → meta True; replacement: S1 changed to false, S2 still true → actual False, True vs label True, True → meta False."
+      }
+    }
+  ]
+}

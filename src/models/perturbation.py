@@ -40,6 +40,33 @@ class PerturbationMapping(BaseModel):
         extra = "allow"  # Allow extra fields for backward compatibility
 
 
+# Separate models for structured output (require extra="forbid")
+# These are used only for OpenAI structured output API
+class PerturbationMappingStructured(BaseModel):
+    """Perturbation mapping model for structured output (strict schema)."""
+    question_index: int = Field(..., gt=0, description="Question number")
+    latex_stem_text: str = Field(..., min_length=1, description="LaTeX question stem")
+    original_substring: str = Field(..., min_length=1, description="Substring to replace")
+    replacement_substring: str = Field(..., min_length=1, description="Replacement text")
+    start_pos: int = Field(..., ge=0, description="Start position (0-based)")
+    end_pos: int = Field(..., gt=0, description="End position (exclusive)")
+    target_wrong_answer: Optional[str] = Field(None, description="Target wrong answer")
+    reasoning: Optional[str] = Field(None, description="Reasoning for perturbation")
+    
+    class Config:
+        """Pydantic config for structured output - must forbid extra properties."""
+        extra = "forbid"  # Required by OpenAI structured output API
+
+
+class PerturbationListResponse(BaseModel):
+    """Response model for structured output containing a list of perturbations."""
+    perturbations: List[PerturbationMappingStructured] = Field(..., description="List of perturbation mappings")
+    
+    class Config:
+        """Pydantic config for structured output - must forbid extra properties."""
+        extra = "forbid"  # Required by OpenAI structured output API
+
+
 class Question(BaseModel):
     """Question model."""
     question_number: int = Field(..., gt=0)

@@ -1,0 +1,54 @@
+================================================================================
+QUESTION 16 INDIVIDUAL PROMPT
+================================================================================
+
+You are an expert at generating minimal, high-impact text substitutions for long-form questions (short answer / essay).
+
+Context (do not modify):
+- LaTeX question stem: Write a function to find the sum of geometric progression series. \end{enumerate} \vfill \noindent\textit{End of Paper} \end{document}
+- Gold answer (expected response direction): def sum\_gp(a,n,r): | return total
+- Question type: LONG
+- Strategy: replacement (replace exactly ONE contiguous substring in the stem)
+- Reasoning steps:
+
+- Copyable stem text (use this exact text when selecting substrings and computing indices):
+<<<COPY
+Write a function to find the sum of geometric progression series.
+>>>
+
+
+Goal:
+Produce 3 replacement mappings that change what a correct response should contain, so that an answer aligned with def sum\_gp(a,n,r): | return total would be incorrect, incomplete, or misdirected.
+
+Hard constraints (must satisfy all):
+1) Single-span edit: replace exactly one contiguous substring inside latex_stem_text (stem only).
+2) Exact match: original_substring must be an exact substring of latex_stem_text (character-for-character, including LaTeX).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring AND end_pos = start_pos + len(original_substring).
+4) Non-trivial change: replacement must materially shift the required concept, condition, comparison target, or requested explanation—not just rephrasing.
+5) Avoid trivial negation: do not flip by adding/removing a lone "not/never/no"; prefer changing the underlying target (e.g., mechanism↔application, cause↔effect, supervised↔unsupervised, increase↔decrease, advantages↔limitations, precision↔recall, etc.).
+6) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+7) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the intended deviation.
+
+What to output for each mapping:
+- question_index: 16
+- latex_stem_text: must exactly equal the input latex_stem_text
+- original_substring
+- replacement_substring
+- start_pos (0-based)
+- end_pos (exclusive)
+- target_wrong_answer: short description of the new expected answer direction (e.g., "focuses on limitations instead of benefits", "asks for counterexample rather than definition")
+- reasoning: 1–2 sentences explaining how the replacement changes what constitutes a correct answer
+
+Return ONLY valid JSON as an array of 3 objects, with double quotes, no markdown.
+[
+  {
+    "question_index": 16,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "focuses on different aspect",
+    "reasoning": "..."
+  }
+]

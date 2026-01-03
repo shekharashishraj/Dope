@@ -1,0 +1,65 @@
+{
+  "document_name": "machine_learning_graduate_doc_02",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 21,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 21,
+          "finish_reasons": {
+            "stop": 21
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 4649.0,
+          "total_prompt_tokens": 97629,
+          "avg_completion_tokens": 12376.0,
+          "total_completion_tokens": 259896,
+          "avg_total_tokens": 17025.0,
+          "total_tokens": 357525
+        },
+        "cost_analysis": {
+          "total_cost": 2.8430325,
+          "input_cost": 0.24407249999999997,
+          "output_cost": 2.59896,
+          "cost_per_perturbation": 0.13538250000000002
+        }
+      },
+      "TF": {
+        "total_perturbations": 39,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 39,
+          "finish_reasons": {
+            "stop": 39
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 4649.0,
+          "total_prompt_tokens": 181311,
+          "avg_completion_tokens": 12376.0,
+          "total_completion_tokens": 482664,
+          "avg_total_tokens": 17025.0,
+          "total_tokens": 663975
+        },
+        "cost_analysis": {
+          "total_cost": 5.2799175,
+          "input_cost": 0.4532775,
+          "output_cost": 4.826639999999999,
+          "cost_per_perturbation": 0.1353825
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 60,
+      "total_questions": 20,
+      "questions_by_type": {
+        "MCQ": 7,
+        "TF": 13
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

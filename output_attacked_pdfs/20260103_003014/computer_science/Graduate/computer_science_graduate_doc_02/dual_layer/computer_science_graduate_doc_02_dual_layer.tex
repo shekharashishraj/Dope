@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{calc}
+\usepackage{xcolor}
+% --- latex-dual-layer macros (auto-generated) ---
+\newlength{\dlboxwidth}
+\newlength{\dlboxheight}
+\newlength{\dlboxdepth}
+\newcommand{\duallayerbox}[2]{%
+  \begingroup
+  \settowidth{\dlboxwidth}{\strut #1}%
+  \settoheight{\dlboxheight}{\strut #1}%
+  \settodepth{\dlboxdepth}{\strut #1}%
+  \ifdim\dlboxwidth=0pt
+    \settowidth{\dlboxwidth}{#2}%
+  \fi
+  \raisebox{0pt}[\dlboxheight][\dlboxdepth]{%
+    \makebox[\dlboxwidth][l]{\resizebox{\dlboxwidth}{!}{\strut #2}}%
+  }%
+  \endgroup
+}
+% --- end latex-dual-layer macros ---
+\begin{document}
+\begin{center}
+Computer Science - Graduate Level Assessment 2 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item \duallayerbox{What is the total number of colors in RGB color space?}{How many colors are available in a 12-bit color system?}
+\begin{enumerate}[label=(\alph*)]
+    \item 16777216
+    \item 4096
+    \item 5000000
+    \item 32768
+    \item 1000000
+\end{enumerate}
+\item \duallayerbox{The message must be encrypted at the sender site and decrypted at the}{The message must be encrypted and then decrypted again at the same end}
+\begin{enumerate}[label=(\alph*)]
+    \item Data center
+    \item Sender Site
+    \item Server site
+    \item Conferencing
+    \item Site
+\end{enumerate}
+\item Let $X_0, X_1, X_2, \ldots$ be drawn i.i.d. from $p(x)$, and $x\in\{1,2,3,\ldots,\duallayerbox{100}{102}\}.
+Let $N$ be the waiting time to the next occurrence of $X\_0$. Compute $E(N)\$.
+\begin{enumerate}[label=(\alph*)]
+    \item 99.0
+    \item 101.0
+    \item 125.0
+    \item 150.0
+    \item 50.0
+\end{enumerate}
+\item Given 2 colors whose HSI representations are given as follows: (a) $(pi, 0.3,0.5)$, (b)
+$(0.5 pi, 0.8,0.3)$, which color is brighter?
+\begin{enumerate}[label=(\alph*)]
+    \item Brightness cannot be compared without additional information about the viewing conditions
+    \item (b) is brighter due to higher hue value
+    \item Cannot be determined from the given data
+    \item Brightness is subjective and cannot be determined from HSI values alone
+    \item (b) is brighter because it has a higher saturation and lower hue value
+\end{enumerate}
+\item Which of the following is \duallayerbox{NOT a property of bitmap graphics}{a typical advantage of bitmap graphics}?
+\begin{enumerate}[label=(\alph*)]
+    \item They can support millions of colors
+    \item Realistic lighting and shading can be done.
+    \item Bitmaps can be made transparent
+    \item Fast hardware exists to move blocks of pixels efficiently.
+    \item Bitmap graphics can be created in multiple layers
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: \duallayerbox{WPA2-Enterprise provides the strongest wireless security among commonly used protocols.}{WEP provides the strongest wireless security among commonly used protocols.}
+\item True or False: \duallayerbox{The function O(1) represents the smallest asymptotic growth rate among the given options.}{The function O(n!) represents the smallest asymptotic growth rate among the given options.}
+\item True or False: \duallayerbox{A heap area is usually not included in a subroutine's activation record frame in stack-based programming languages.}{A heap area is always stored inside each subroutine's activation record frame in stack-based programming languages.}
+\item True or False: \duallayerbox{The capacity of a cascade of $n$ identical independent binary symmetric channels with error probability $p$ approaches 0.0 as $n$ goes to infinity.}{The capacity of a noiseless binary channel decreases to 0.0 as the number of channel uses goes to infinity.}
+\item True or False: Overfitting refers to a model that performs well on the training data but fails to generalize to new data.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Write a function to find the list of lists with \duallayerbox{maximum length}{minimum length}.
+\item Write a function to separate and print the numbers and their position of a given string.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

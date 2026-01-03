@@ -1,0 +1,101 @@
+{
+  "total_mappings_received": 12,
+  "expected_questions": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "parsing_details": [
+    {
+      "mapping_index": 0,
+      "question_index": 1,
+      "latex_stem_text": "Write a function to separate and print the numbers and their position of a given string.",
+      "original_substring": "numbers and their position",
+      "target_wrong_answer": "Response will focus on identifying vowels in the string and counting how many there are, with markers like 'vowel', 'count', 'frequency', and likely returning totals per vowel, while lacking any logic about digit detection, numeric characters, indices, or printing character positions."
+    },
+    {
+      "mapping_index": 1,
+      "question_index": 1,
+      "latex_stem_text": "Write a function to separate and print the numbers and their position of a given string.",
+      "original_substring": "of a given string",
+      "target_wrong_answer": "Response will focus on iterating over a list data structure to find numbers and their positions within that list, using markers like 'list', 'elements', 'indices of list items', and will lack any handling of string characters, character-by-character traversal, or pattern search within text as expected by the original num_position solution."
+    },
+    {
+      "mapping_index": 2,
+      "question_index": 1,
+      "latex_stem_text": "Write a function to separate and print the numbers and their position of a given string.",
+      "original_substring": "separate and print",
+      "target_wrong_answer": "Response will implement a function that computes and returns a data structure (like a list of tuples) with numbers and positions, with markers like 'return list', 'return result', and no printing statements, while lacking explicit print calls or formatted console output emphasized in the original task."
+    },
+    {
+      "mapping_index": 3,
+      "question_index": 2,
+      "latex_stem_text": "Write a function to find the size of the given tuple.",
+      "original_substring": "size",
+      "target_wrong_answer": "Response will compute the arithmetic sum of the tuple’s elements, including markers like 'total', 'add elements', 'for x in tuple', and will not use memory-introspection functions such as sys.getsizeof or discuss byte size, which are central to the original gold answer."
+    },
+    {
+      "mapping_index": 4,
+      "question_index": 2,
+      "latex_stem_text": "Write a function to find the size of the given tuple.",
+      "original_substring": "of the given tuple",
+      "target_wrong_answer": "Response will define a function that accepts a list and finds its size, with markers like 'list', 'len(list)', 'sys.getsizeof(list)', and will omit tuple-specific handling, tuple type hints, or references to immutability that align with the original tuple_size behavior."
+    },
+    {
+      "mapping_index": 5,
+      "question_index": 2,
+      "latex_stem_text": "Write a function to find the size of the given tuple.",
+      "original_substring": "find the size",
+      "target_wrong_answer": "Response will focus on counting the number of items in the tuple using constructs like 'len(tuple)', 'number of elements', and will not involve sys.getsizeof, bytes, or memory footprint, which characterize the original gold implementation."
+    },
+    {
+      "mapping_index": 6,
+      "question_index": 3,
+      "latex_stem_text": "Write a function to find the minimum value in a given heterogeneous list.",
+      "original_substring": "minimum",
+      "target_wrong_answer": "Response will compute the maximum value in the heterogeneous list, using markers like 'max_val', 'max()', 'largest element', and will not identify or return the smallest/lowest value, which is what the original min_val solution is designed to compute."
+    },
+    {
+      "mapping_index": 7,
+      "question_index": 3,
+      "latex_stem_text": "Write a function to find the minimum value in a given heterogeneous list.",
+      "original_substring": "in a given heterogeneous list",
+      "target_wrong_answer": "Response will assume all elements are of the same type and likely use straightforward comparisons or built-in min without considering mixed types, with markers like 'all elements are integers/floats', and will not discuss type heterogeneity, type checking, or custom comparison strategies that may be needed for a heterogeneous list as in the original question."
+    },
+    {
+      "mapping_index": 8,
+      "question_index": 3,
+      "latex_stem_text": "Write a function to find the minimum value in a given heterogeneous list.",
+      "original_substring": "value in a given",
+      "target_wrong_answer": "Response will focus on finding the index (position) of a minimum element in the list, with markers like 'index of min', 'list.index', 'pos = i', and will not simply return the minimum value itself as in the original gold answer, which expects the value, not its location."
+    },
+    {
+      "mapping_index": 9,
+      "question_index": 4,
+      "latex_stem_text": "Write a python function to check whether the given number is co-prime or not. \\end{enumerate} \\vfill...",
+      "original_substring": "co-prime",
+      "target_wrong_answer": "Response will implement a primality test for a single number, with markers like 'check divisibility from 2 to sqrt(n)', 'is_prime', and will not define or use a gcd function or compare two numbers for gcd == 1 as in the original co-prime (coprimality) solution."
+    },
+    {
+      "mapping_index": 10,
+      "question_index": 4,
+      "latex_stem_text": "Write a python function to check whether the given number is co-prime or not. \\end{enumerate} \\vfill...",
+      "original_substring": "the given number",
+      "target_wrong_answer": "Response will treat the input as a pair of numbers (e.g., two arguments or a tuple) and check if they are coprime, with markers like 'x, y', 'pair of numbers', 'gcd(x, y)', and will avoid phrasing or APIs that only accept a single number, which is how the original stem is worded even though the gold answer handles two arguments."
+    },
+    {
+      "mapping_index": 11,
+      "question_index": 4,
+      "latex_stem_text": "Write a python function to check whether the given number is co-prime or not. \\end{enumerate} \\vfill...",
+      "original_substring": "check whether the given number is co-prime or not",
+      "target_wrong_answer": "Response will focus on implementing a gcd function that returns the greatest common divisor value, with markers like 'gcd', 'Euclidean algorithm', 'while q != 0', and will not include a boolean coprimality check (gcd == 1) or explicitly answer whether numbers are co-prime as expected by the original is_coprime wrapper around gcd."
+    }
+  ],
+  "results_summary": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 3
+  }
+}

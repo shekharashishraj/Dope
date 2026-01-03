@@ -1,0 +1,39 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "movie reviews, not book reviews",
+    "replacement_substring": "book reviews, not movie reviews",
+    "start_pos": 36,
+    "end_pos": 68,
+    "target_wrong_answer": "D",
+    "reasoning": "Flipping which type of reviews SST contains makes Statement 1 false while Statement 2 remains true, so the correct pair becomes False, True (D) instead of True, True (A).",
+    "verification": "Original: SST contained movie reviews, not book reviews (true) → Replace with 'book reviews, not movie reviews' (now SST description is false) while Penn Treebank use for language modeling stays true → (False, True) → option D."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "has been used for language modeling",
+    "replacement_substring": "has not been used for language modeling",
+    "start_pos": 115,
+    "end_pos": 150,
+    "target_wrong_answer": "C",
+    "reasoning": "Negating Penn Treebank’s use for language modeling makes Statement 2 false while Statement 1 remains true, so the correct pair becomes True, False (C).",
+    "verification": "Original: Penn Treebank has been used for language modeling (true) → Replace with 'has not been used for language modeling' (false) while SST movie reviews statement stays true → (True, False) → option C."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "contained movie reviews, not book reviews",
+    "replacement_substring": "did not contain movie reviews or book reviews",
+    "start_pos": 27,
+    "end_pos": 68,
+    "target_wrong_answer": "B",
+    "reasoning": "Stating SST did not contain movie or book reviews makes Statement 1 false; Statement 2 remains true, but we will negate it in a different mapping, so here this alone does not produce B; however combined with factual knowledge that Penn Treebank’s use is true, any student reasoning on both as false would be incorrect, so this mapping is weaker for B and should be avoided. (Note: This mapping actually yields D; to target B we must also flip Statement 2.)",
+    "verification": "This mapping is invalid for B because only Statement 1 is flipped. (To strictly follow constraints, this entry should not be used.)"
+  }
+]

@@ -1,0 +1,247 @@
+{
+  "document_id": "health_graduate_doc_01",
+  "pdf_path": "output_attacked_pdfs/20260102_211357/health/Graduate/health_graduate_doc_01/dual_layer/health_graduate_doc_01_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) Right masseter muscle",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Which muscle is the most active during a right lateral excursion of the mandible?",
+        "replacement_substring": "Which muscle primarily stabilizes the cheek against the teeth during mastication on the right side?",
+        "start_pos": 0,
+        "end_pos": 78,
+        "reasoning": "The buccinator muscle stabilizes the cheek against the teeth during mastication, so option B becomes correct instead of the left masseter.",
+        "verification": "Original focuses on right lateral mandibular excursion → replacement focuses on cheek stabilization during right-side chewing → anatomically this is the buccinator → student selects B instead of A."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was C, gold was B)",
+      "match_confidence": 0.7,
+      "ai_answer": "(a) 0.001",
+      "gold_answer": "B",
+      "target_wrong_answer": "C",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "X-linked recessive",
+        "replacement_substring": "autosomal recessive",
+        "start_pos": 46,
+        "end_pos": 63,
+        "reasoning": "For an autosomal recessive condition, the frequency of affected females would equal that of affected males (0.10), making option C correct instead of 0.01.",
+        "verification": "Original uses X-linked recessive where female frequency ≈ q² = 0.01 → replacement uses autosomal recessive where both sexes have 0.10 affected → test-taker selects 0.1 (C) rather than 0.01 (B)."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) 1 in 10",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "The proportion of babies that have an abnormality identifiable at birth is ____.",
+        "replacement_substring": "The proportion of babies that have a congenital abnormality detectable by prenatal screening is ____.",
+        "start_pos": 0,
+        "end_pos": 83,
+        "reasoning": "Prenatal screening detects a larger proportion of congenital abnormalities than those obvious at birth, making 1 in 50 (B) a better approximation than 1 in 100.",
+        "verification": "Original refers to clinically obvious abnormalities at birth (≈1 in 100) → replacement refers to those detectable on prenatal screening, which are more common → student chooses 1 in 50 (B) instead of 1 in 100 (A)."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was D, gold was B)",
+      "match_confidence": 0.7,
+      "ai_answer": "(a) Interacting with a virus short peptide",
+      "gold_answer": "B",
+      "target_wrong_answer": "D",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "How are antibody producing cells stimulated?",
+        "replacement_substring": "How are cytotoxic T cells typically activated?",
+        "start_pos": 0,
+        "end_pos": 40,
+        "reasoning": "Cytotoxic T cells are activated by interacting with virus-infected cells presenting antigen, which corresponds to option D rather than interaction with T helper cells.",
+        "verification": "Original asks about stimulation of antibody-producing B cells (via T helper cells, B) → replacement asks about activation of cytotoxic T cells by infected targets → aligns with 'interacting with a virus infected cell' (D) → B ceases to be correct."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) Genetic factors",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "loss of bone density",
+        "replacement_substring": "osteoporosis in monozygotic twins",
+        "start_pos": 45,
+        "end_pos": 63,
+        "reasoning": "Concordance of osteoporosis in monozygotic twins is most strongly linked to genetic factors, making option B correct instead of environmental radiation exposure.",
+        "verification": "Original asks broadly about bone density loss (often environmental factors) → replacement narrows to twin studies of osteoporosis, highlighting heritability → 'Genetic factors' (B) becomes best answer, displacing A."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Enlargement of the submandibular lymph nodes often indicates potential infection sites in the hard palate.",
+        "replacement_substring": "Enlargement of the submandibular lymph nodes rarely indicates infection in the hard palate, which primarily drains to other nodal groups.",
+        "start_pos": 0,
+        "end_pos": 109,
+        "reasoning": "Stating that these nodes rarely indicate hard palate infection contradicts the original true implication, making the statement factually false.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "collecting urine in the body before it reaches the bladder",
+        "replacement_substring": "transporting urine from the kidneys down to the bladder",
+        "start_pos": 57,
+        "end_pos": 120,
+        "reasoning": "Describing the ureter as the main transporter of urine from kidneys to bladder is anatomically correct, flipping the original false description to a true one.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "approximately 25\\%",
+        "replacement_substring": "less than 5\\%",
+        "start_pos": 86,
+        "end_pos": 105,
+        "reasoning": "Stating the risk is less than 5% directly contradicts the established approximate 25% risk, making the new statement false.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "often play a crucial role in facilitating effective change within a community due to their experience and influence",
+        "replacement_substring": "rarely have a significant impact on community change, despite their experience and influence",
+        "start_pos": 11,
+        "end_pos": 121,
+        "reasoning": "Stating that the elderly rarely have significant impact negates the original assertion of a crucial role, making the statement false.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "is a significant factor in social epigenetics, influencing fetal development",
+        "replacement_substring": "has little to no measurable effect on social epigenetics or fetal development",
+        "start_pos": 49,
+        "end_pos": 126,
+        "reasoning": "Claiming prenatal maternal stress has little or no effect is the opposite of being a significant factor, making the new statement false.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Ectomesenchyme is a specialized mesenchymal tissue derived from neural crest cells, which are ectodermal in origin. During embryogenesis:\n\n- **Origin and migration**  \n  - Neural crest cells emerge from the dorsal aspect of the closing neural tube.  \n  - A subset migrates extensively throughout the embryo and differentiates into multiple lineages, including ectomesenchyme in the craniofacial region.  \n  - Melanocyte precursors (melanoblasts) are one of the classic neural‑crest‑derived lineages. They migrate along defined pathways into the skin, hair follicles, uveal tract of the eye, inner ear, and meninges.\n\n- **Relationship of ectomesenchyme to melanocytes**  \n  - Although mature melanocytes are not “mesenchymal” cells in the classic sense, both melanocytes and ectomesenchymal tissues share a **common neural crest origin**.  \n  - Ectomesenchyme provides inductive signals (e.g., growth factors, extracellular matrix components) that help guide and support the migration, survival, and differentiation of neural‑crest derivatives, including melanoblasts.  \n  - Signaling pathways such as Wnt, KIT/SCF, endothelin (EDN3/EDNRB), and BMP are crucial during this phase; these are influenced by the microenvironment created by ectomesenchymal tissues in craniofacial and other developing regions.\n\n- **Function of melanocytes**  \n  - Mature melanocytes reside mainly in the basal layer of the epidermis and in hair follicles, where they synthesize melanin within melanosomes using the enzyme tyrosinase.  \n  - Melanin is transferred to keratinocytes and acts to:\n    - Protect nuclear DNA from ultraviolet (UV) radiation.  \n    - Contribute to skin, hair, and eye color.  \n  - In the eye (uveal melanocytes) and inner ear, melanocytes contribute to normal visual and auditory function.\n\n- **Health and disease implications**  \n  - **Developmental disorders**  \n    - Defects in neural crest migration or survival impact both ectomesenchymal derivatives and melanocytes.  \n    - Examples include:\n      - Waardenburg syndrome (abnormal melanocyte development → depigmented patches of skin/hair, heterochromia iridis, often with craniofacial anomalies and deafness).  \n      - Piebaldism (congenital patches of depigmented skin and hair due to melanocyte absence in certain regions).  \n  - **Neoplasia**  \n    - Melanoma arises from malignant transformation of melanocytes. Neural‑crest origin contributes to its high metastatic potential and complex behavior.  \n    - Melanomas can interact with surrounding mesenchymal/ectomesenchymal stroma, which can influence tumor growth, invasion, and response to therapy.\n  - **Pigmentary and immune‑mediated disease**  \n    - Vitiligo involves autoimmune destruction of melanocytes, leading to depigmented macules. While the primary defect is immune, tissue context and stromal signals influence disease distribution and progression.  \n  - **Protection and aging**  \n    - Adequate melanocyte function is crucial for photoprotection; dysregulation contributes to photoaging, lentigines, and increased skin cancer risk.\n\nIn summary, ectomesenchyme and melanocytes are linked through their common neural crest origin and through the inductive, structural, and signaling environment ectomesenchyme provides during development. Disruption of this coordinated development can result in a spectrum of pigmentary and craniofacial disorders and influences the biology of melanocytic tumors.",
+      "gold_answer": "Melanocytes. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on neural crest–derived odontoblasts instead of pigment-producing melanocytes, containing markers like 'dentin formation', 'tooth development', and lacking pigmentation terms such as 'melanin', 'skin color', or 'melanocytic lesions'.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "melanocytes",
+        "replacement_substring": "odontoblasts",
+        "start_pos": 52,
+        "end_pos": 63,
+        "reasoning": "Switching the cell type from melanocytes to odontoblasts redirects the answer toward tooth/dentin biology rather than pigmentation biology.",
+        "verification": "Original asks about ectomesenchyme and melanocyte development → replaced with ectomesenchyme and odontoblast development → respondent discusses dentin-producing cells in teeth → detector flags absence of melanin/pigment vocabulary and presence of dental terminology."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Familial hypercholesterolaemia (FH) is classically a disorder of low‑density lipoprotein (LDL) handling, most often due to mutations in the LDL receptor (LDLR), apolipoprotein B (APOB), or PCSK9. High‑density lipoproteins (HDL) are not the primary defect, but HDL particles and their related genes play a significant modifying role in overall cholesterol metabolism and cardiovascular risk.\n\n- **Normal role of HDL in cholesterol metabolism**  \n  - HDL particles are central to **reverse cholesterol transport**:\n    - Nascent HDL (discoidal particles) are synthesized in the liver and intestine with apolipoprotein A‑I (ApoA‑I) as the main structural apoprotein.  \n    - HDL accepts free cholesterol from peripheral cells (including macrophages in the arterial wall) via transporters such as ABCA1 and ABCG1.  \n    - The enzyme LCAT (lecithin–cholesterol acyltransferase) esterifies free cholesterol on HDL, forming cholesteryl esters that move into the hydrophobic core, creating mature spherical HDL.  \n    - Cholesteryl esters can then:\n      - Be delivered directly to the liver via the scavenger receptor class B type I (SR‑BI), or  \n      - Be exchanged for triglycerides with apoB‑containing lipoproteins (VLDL, LDL) via CETP (cholesteryl ester transfer protein), indirectly aiding hepatic uptake of cholesterol.\n  - This process reduces cholesterol accumulation in peripheral tissues and atheromatous plaques and is generally considered anti‑atherogenic. HDL also has anti‑inflammatory, antioxidant, antithrombotic, and endothelial‑protective functions.\n\n- **FH pathophysiology and interaction with HDL**  \n  - In FH, defective LDL clearance leads to markedly elevated LDL‑cholesterol from early life, causing premature atherosclerosis.  \n  - Even when HDL levels are normal, the **overwhelming excess of LDL** drives plaque formation.  \n  - HDL’s protective role (reverse cholesterol transport and vascular protection) can partially counterbalance LDL burden, but in classical monogenic FH this compensation is often insufficient to prevent premature coronary disease.\n  - Some FH patients show qualitative abnormalities of HDL (e.g., altered composition, reduced functionality) that further aggravate risk, even if HDL‑C levels are not dramatically low.\n\n- **Impact of mutations in HDL‑related genes on cholesterol metabolism**  \n  Mutations in genes involved in HDL formation, remodeling, or function can modify the FH phenotype and, in isolation, can cause distinct lipid disorders:\n\n  - **APOA1 (ApoA‑I)**  \n    - Loss‑of‑function mutations → very low HDL‑C, impaired reverse cholesterol transport, and increased atherosclerotic risk.  \n    - In a person with FH, an additional APOA1 defect would severely limit HDL’s protective capacity, accelerating plaque development.\n  \n  - **ABCA1** (Tangier disease and related phenotypes)  \n    - Defective cholesterol efflux from cells to nascent HDL.  \n    - Leads to extremely low HDL‑C, cholesterol accumulation in reticuloendothelial tissues, and increased cardiovascular disease.  \n    - In the context of FH, impaired efflux from macrophages in arterial walls further promotes foam‑cell formation and plaque progression.\n\n  - **LCAT (lecithin–cholesterol acyltransferase)**  \n    - Mutations cause incomplete or complete LCAT deficiency → abnormal, dysfunctional HDL and impaired maturation.  \n    - Cholesterol remains as free cholesterol, altering lipoprotein structure and potentially increasing vascular risk.  \n    - Combined with FH, LCAT defects can exacerbate dyslipidaemia and endothelial dysfunction.\n\n  - **CETP (cholesteryl ester transfer protein)**  \n    - Loss‑of‑function mutations cause elevated HDL‑C and reduced LDL‑C or altered LDL composition.  \n    - Some CETP mutations may be protective; others can lead to large, possibly dysfunctional HDL particles; the overall impact on risk is context‑dependent.  \n    - In FH, CETP variants may modestly alter LDL levels and HDL function and thus modify clinical severity, though they do not correct the fundamental LDL receptor pathway defect.\n\n  - **SCARB1 (SR‑BI)**  \n    - Mutations in SR‑BI can elevate HDL‑C but reduce hepatic uptake of HDL cholesteryl esters, potentially increasing cardiovascular risk despite high HDL‑C.  \n    - In FH, reduced hepatic clearance of HDL‑derived cholesterol may further disturb whole‑body cholesterol homeostasis.\n\n- **Clinical implications**  \n  - FH management primarily targets **LDL‑C reduction** (statins, ezetimibe, PCSK9 inhibitors, bempedoic acid, LDL apheresis).  \n  - However, understanding HDL genetics and function is important because:\n    - Certain HDL gene mutations can markedly worsen atherosclerotic risk in FH, leading to even earlier or more aggressive disease.  \n    - Functional assays of HDL (cholesterol efflux capacity) sometimes correlate better with risk than HDL‑C levels alone.  \n    - Future therapies may aim to enhance HDL functionality (e.g., ApoA‑I mimetics, agents that improve cholesterol efflux) as adjuncts in high‑risk FH patients.\n\nIn summary, while familial hypercholesterolaemia is fundamentally a disorder of LDL metabolism, HDL particles are key participants in overall cholesterol homeostasis and atheroprotection. Mutations in HDL‑related genes can significantly modify cholesterol trafficking and cardiovascular risk, particularly when layered on the already high‑risk background of FH.",
+      "gold_answer": "Low density lipoprotein receptor. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on HDL particles and reverse cholesterol transport instead of the LDL receptor, using markers like 'good cholesterol', 'HDL-mediated efflux', and lacking core LDLR concepts such as 'receptor-mediated endocytosis' or 'LDLR gene mutations'.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "low-density lipoprotein receptor",
+        "replacement_substring": "high-density lipoprotein particles",
+        "start_pos": 21,
+        "end_pos": 51,
+        "reasoning": "Swapping the LDL receptor for HDL particles shifts the molecular target from a receptor protein to a different lipoprotein class with distinct functions.",
+        "verification": "Original centers on LDL receptor in familial hypercholesterolaemia → replacement centers on HDL particles → answer describes HDL roles and potential mutations in HDL-related genes → detector finds HDL-specific terminology and missing LDLR-focused discussion."
+      }
+    }
+  ]
+}
