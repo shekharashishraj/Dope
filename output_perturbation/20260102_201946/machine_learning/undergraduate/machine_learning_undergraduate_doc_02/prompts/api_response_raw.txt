@@ -1,0 +1,402 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+    "original_substring": "lowercase substrings",
+    "replacement_substring": "uppercase substrings",
+    "start_pos": 25,
+    "end_pos": 44,
+    "target_wrong_answer": "Response will focus on removing uppercase sequences instead of lowercase, using markers like 'isupper()', 'A-Z' and omitting lowercase-specific handling like 'islower()' or regex for [a-z].",
+    "reasoning": "Switching from lowercase to uppercase changes which characters the function must detect and strip, leading to a fundamentally different implementation.",
+    "verification": "Original asks to remove 'lowercase substrings' → replacement asks to remove 'uppercase substrings' → solution now targets capital letters rather than small letters → detection via presence of uppercase-handling logic and absence of lowercase removal logic."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+    "original_substring": "remove lowercase substrings",
+    "replacement_substring": "extract lowercase substrings",
+    "start_pos": 18,
+    "end_pos": 44,
+    "target_wrong_answer": "Response will focus on returning only the lowercase substrings (extraction) instead of deleting them, with markers like 'collect', 'return list of lowercase parts', and will lack code that builds a string without the lowercase portions.",
+    "reasoning": "Changing 'remove' to 'extract' reverses the task from deleting to isolating lowercase parts, altering the expected output structure and logic.",
+    "verification": "'remove lowercase substrings' → 'extract lowercase substrings' → function now gathers and returns those substrings rather than stripping them → detectable via descriptions of returning lowercase segments instead of a cleaned string."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+    "original_substring": "from a given string",
+    "replacement_substring": "from a list of strings",
+    "start_pos": 45,
+    "end_pos": 64,
+    "target_wrong_answer": "Response will focus on processing multiple strings in a list (iteration over list, returning modified list) instead of a single string, using markers like 'for s in strings', 'list comprehension', and will omit single-string-only logic.",
+    "reasoning": "Switching the input type from a single string to a list of strings changes the required interface and algorithm structure.",
+    "verification": "'from a given string' → 'from a list of strings' → solution must iterate over a collection and process each element → detection via presence of list iteration and absence of single-scalar string input handling."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "negative numbers",
+    "replacement_substring": "positive numbers",
+    "start_pos": 36,
+    "end_pos": 51,
+    "target_wrong_answer": "Response will count elements greater than zero instead of less than zero, with markers like 'x > 0', 'positives', and will lack checks like 'x < 0' for negatives.",
+    "reasoning": "Flipping from negative to positive changes the sign condition that defines which elements are counted.",
+    "verification": "'count negative numbers' → 'count positive numbers' → implementation switches inequality direction → detectable via positive-condition predicates and absence of negative-condition checks."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "count negative numbers",
+    "replacement_substring": "sum negative numbers",
+    "start_pos": 25,
+    "end_pos": 51,
+    "target_wrong_answer": "Response will add up the values of negative elements (using an accumulator, 'total += x') instead of incrementing a counter, and will lack logic that only returns the number of such elements.",
+    "reasoning": "Changing 'count' to 'sum' alters the task from computing cardinality to computing a numeric aggregate of the negatives.",
+    "verification": "'count negative numbers' → 'sum negative numbers' → solution uses summation of negative values instead of tallying them → detectable via accumulation pattern and absence of length/count-based result."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "in a list",
+    "replacement_substring": "in a matrix",
+    "start_pos": 52,
+    "end_pos": 61,
+    "target_wrong_answer": "Response will focus on iterating over rows and columns (nested loops or NumPy 2D structures) to handle a matrix, and will lack simple single-loop list traversal.",
+    "reasoning": "Switching from a list to a matrix changes the data structure and requires different iteration and possibly indexing patterns.",
+    "verification": "'in a list' → 'in a matrix' → algorithm now must account for two-dimensional data → detectable via nested iteration or 2D-array-specific operations instead of flat list processing."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "not book reviews",
+    "replacement_substring": "and book reviews",
+    "start_pos": 72,
+    "end_pos": 87,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing 'not book reviews' to 'and book reviews' makes Statement 1 false while Statement 2 remains true, leading to False, True.",
+    "verification": "Original: movie but not book reviews → both movie and book reviews → Statement 1 becomes factually incorrect, Statement 2 still correct → correct option flips from True, True (A) to False, True (D), but since both become mixed, option B (False, False) is avoided and D would be correct; here we intend Statement 2 also to be false, but this edit only affects Statement 1, so A no longer holds and another option becomes more plausible."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "has been used for language modeling",
+    "replacement_substring": "has not been used for language modeling",
+    "start_pos": 120,
+    "end_pos": 155,
+    "target_wrong_answer": "C",
+    "reasoning": "Inserting 'not' makes Statement 2 false while Statement 1 remains true, giving True, False.",
+    "verification": "Original: Penn Treebank has been used for language modeling (true) → change to 'has not been used' (false) → Statement 1 true, Statement 2 false → correct option becomes C (True, False) instead of A."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "contained movie reviews, not book reviews",
+    "replacement_substring": "did not contain any movie or book reviews",
+    "start_pos": 35,
+    "end_pos": 87,
+    "target_wrong_answer": "D",
+    "reasoning": "Replacing with 'did not contain any movie or book reviews' makes Statement 1 false while Statement 2 stays true, resulting in False, True.",
+    "verification": "Original: corpus with movie (not book) reviews (true) → new: no movie or book reviews (false) → Statement 1 false, Statement 2 true → correct option becomes D (False, True) instead of A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?",
+    "original_substring": "NOT a valid",
+    "replacement_substring": "a valid",
+    "start_pos": 52,
+    "end_pos": 62,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing from 'NOT a valid' to 'a valid' inverts the question so that the correct answer is now a method that does help reduce overfitting; increasing data (A) becomes correct.",
+    "verification": "'is NOT a valid way' → 'is a valid way' → question now asks which method is appropriate for reducing overfitting → increasing training data (A) is valid whereas B is more about optimisation, so the intended correct choice shifts away from B."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?",
+    "original_substring": "reduce the overfitting",
+    "replacement_substring": "increase the overfitting",
+    "start_pos": 82,
+    "end_pos": 104,
+    "target_wrong_answer": "C",
+    "reasoning": "Asking how to increase overfitting makes reducing model complexity (C) the opposite of what is desired, so it is no longer correct while methods that add complexity or noise would be.",
+    "verification": "'way to try and reduce the overfitting' → 'way to try and increase the overfitting' → actions that simplify the model (C) reduce overfitting, thus are invalid for increase → another option becomes correct instead of B."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?",
+    "original_substring": "overfitting",
+    "replacement_substring": "underfitting",
+    "start_pos": 21,
+    "end_pos": 32,
+    "target_wrong_answer": "D",
+    "reasoning": "Switching from overfitting to underfitting changes which methods are harmful; reducing noise in the data (D) may actually exacerbate underfitting less directly compared to changing optimisation, altering which choice is 'NOT valid'.",
+    "verification": "'model is overfitting' → 'model is underfitting' → we now seek methods inappropriate for fixing underfitting → optimisation changes (B) can still help, but noise reduction (D) is less relevant, shifting the best answer away from B."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -> U <- P <- W? [note: as the product of the...",
+    "original_substring": "H -> U <- P <- W",
+    "replacement_substring": "H -> U -> P <- W",
+    "start_pos": 90,
+    "end_pos": 103,
+    "target_wrong_answer": "A",
+    "reasoning": "Altering the structure so that U no longer has parents H and P breaks option C's factorisation and moves toward full independence, making the fully factorised option A plausible.",
+    "verification": "Original network implies U has parents H and P → change to chain H→U→P←W → dependencies change; joint no longer matches P(U|H,P) → option C invalid; with weaker dependencies, P(H)P(W)P(P)P(U) (A) becomes more consistent."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -> U <- P <- W? [note: as the product of the...",
+    "original_substring": "P <- W",
+    "replacement_substring": "P -> W",
+    "start_pos": 99,
+    "end_pos": 105,
+    "target_wrong_answer": "B",
+    "reasoning": "Reversing the edge between P and W changes which variable is conditioned on which, making a term like P(W | H, P) more reasonable than P(U | H, P).",
+    "verification": "Original: W→P→U structure → joint uses P(P|W) and P(U|H,P) (C) → change to P→W so W may depend on H,P → factorisation with P(W|H,P) (B) becomes better aligned than C."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -> U <- P <- W? [note: as the product of the...",
+    "original_substring": "described by the given Bayesian Network",
+    "replacement_substring": "independent of any Bayesian Network",
+    "start_pos": 62,
+    "end_pos": 99,
+    "target_wrong_answer": "D",
+    "reasoning": "Stating that the joint is independent of any Bayesian Network means none of the structured factorisations are guaranteed, so 'None of the above' becomes correct.",
+    "verification": "'described by the given Bayesian Network' → 'independent of any Bayesian Network' → we no longer assume any graphical structure, invalidating A–C factorisations → D (None of the above) is correct instead of C."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+    "original_substring": "P(A, B) decreases while P(A) increases",
+    "replacement_substring": "P(A, B) increases while P(A) decreases",
+    "start_pos": 26,
+    "end_pos": 71,
+    "target_wrong_answer": "A",
+    "reasoning": "If the joint increases while P(A) decreases, then P(B|A)=P(A,B)/P(A) must increase, making option A true instead of B.",
+    "verification": "Original: joint down, P(A) up → P(B|A) decreases (B) → replacement: joint up, P(A) down → P(B|A) rises → A (P(A|B) decreases) may no longer hold, but P(A|B) could decrease; however, the intended flip is towards a different conditional relationship."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+    "original_substring": "P(A) increases",
+    "replacement_substring": "P(B) increases",
+    "start_pos": 50,
+    "end_pos": 63,
+    "target_wrong_answer": "C",
+    "reasoning": "With P(A,B) decreasing while P(B) increases, P(A|B)=P(A,B)/P(B) decreases, implying P(A|B) goes down rather than P(B|A), changing which statement is correct.",
+    "verification": "Original condition leads to drop in P(B|A) → replacement makes denominator P(B) increase while joint falls → P(A|B) decreases → option C (P(B) decreases) is no longer accurate; instead, another option regarding P(A|B) would be correct."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+    "original_substring": "decreases",
+    "replacement_substring": "increases",
+    "start_pos": 34,
+    "end_pos": 43,
+    "target_wrong_answer": "D",
+    "reasoning": "If both P(A,B) and P(A) increase, it's possible that all listed conditionals and marginals increase, making 'All of above' more plausible.",
+    "verification": "Original: P(A,B) decreases → specific conditional decreases (B) → change to 'increases' → more uniform increase in related probabilities possible → D (All of above) becomes more fitting than B."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "original_substring": "[[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "replacement_substring": "[[0, 0, 0], [0, 0, 0], [0, 0, 0]]",
+    "start_pos": 50,
+    "end_pos": 89,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing the matrix to all zeros makes its rank 0, matching option A instead of 1.",
+    "verification": "Original: all-ones 3x3 has rank 1 → replacement: all-zero matrix has rank 0 → correct option shifts from B (1) to A (0)."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "original_substring": "A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "replacement_substring": "A = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+    "start_pos": 39,
+    "end_pos": 89,
+    "target_wrong_answer": "D",
+    "reasoning": "Replacing with the identity matrix makes the rank 3, corresponding to option D.",
+    "verification": "Original matrix rank = 1 → replacement identity matrix has three linearly independent rows → rank 3 → D becomes correct."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "original_substring": "[1, 1, 1], [1, 1, 1], [1, 1, 1]",
+    "replacement_substring": "[1, 0, 0], [0, 1, 0], [1, 1, 0]",
+    "start_pos": 53,
+    "end_pos": 89,
+    "target_wrong_answer": "C",
+    "reasoning": "With two independent rows and the third as a linear combination, the new matrix has rank 2, making option C correct.",
+    "verification": "Original: all rows identical → rank 1 → replacement: first two rows standard basis, third is their sum → only two independent rows → rank 2 → C is correct instead of B."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...",
+    "original_substring": "are not monotonic, but sigmoids are monotonic",
+    "replacement_substring": "are monotonic, but sigmoids are not monotonic",
+    "start_pos": 23,
+    "end_pos": 68,
+    "target_wrong_answer": "A",
+    "reasoning": "Flipping the monotonicity claims makes Statement 1 false while Statement 2 remains as originally stated, altering the truth combination.",
+    "verification": "Original: RELUs non-monotonic (false), sigmoids monotonic (true) → both give Statement 1 overall false; but replacement inverts them; if taken literally, RELUs monotonic and sigmoids not, Statement 1 still false; combined with Statement 2 assumed true, option D becomes C or A depending on interpretation."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...",
+    "original_substring": "with high probability converge",
+    "replacement_substring": "do not converge with high probability",
+    "start_pos": 97,
+    "end_pos": 124,
+    "target_wrong_answer": "B",
+    "reasoning": "Inserting 'do not' flips the truth value of Statement 2, so if Statement 1 is also false, both become false and option B is correct.",
+    "verification": "Original: gradient descent 'converge' (generally false in strong probabilistic sense) so Statement 2 may be false; changing to 'do not converge with high probability' makes it more accurate, but in intended exam logic it flips the truth, aiming for both statements false → B."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...",
+    "original_substring": "RELUs are not monotonic, but sigmoids are monotonic",
+    "replacement_substring": "RELUs are monotonic, and sigmoids are not monotonic",
+    "start_pos": 12,
+    "end_pos": 68,
+    "target_wrong_answer": "C",
+    "reasoning": "This rephrasing states two false properties, making Statement 1 false while leaving Statement 2 true, leading to True, False or False, True depending on grading.",
+    "verification": "Original exam likely marks Statement 1 true by intent; replacement contradicts known properties (ReLU monotone, sigmoid monotone) making Statement 1 false, Statement 2 true → option D flips to C or similar mixed pair."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...",
+    "original_substring": "no independence or conditional independence assumptions",
+    "replacement_substring": "full independence among A, B, and C",
+    "start_pos": 84,
+    "end_pos": 135,
+    "target_wrong_answer": "B",
+    "reasoning": "Assuming full independence makes P(A,B,C)=P(A)P(B)P(C), which is closest to the factorisation in option B, changing the correct answer from C.",
+    "verification": "Original: no independence → must use chain rule P(A,B|C)P(C) (C) → replacement: full independence → P(A,B,C)=P(A)P(B)P(C) aligns with B's separated products more than C → B becomes correct."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...",
+    "original_substring": "P(A, B, C)",
+    "replacement_substring": "P(A | B, C)",
+    "start_pos": 37,
+    "end_pos": 47,
+    "target_wrong_answer": "A",
+    "reasoning": "Asking for P(A|B,C) rather than the joint changes the target expression; option A, a product of conditionals, now better reflects a conditional probability structure.",
+    "verification": "Original asks for joint probability → C correct → replacement asks for conditional P(A|B,C) → option A's form with conditionals is more appropriate than C's joint factorisation → A becomes correct."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...",
+    "original_substring": "Boolean random variables",
+    "replacement_substring": "independent random variables",
+    "start_pos": 59,
+    "end_pos": 82,
+    "target_wrong_answer": "D",
+    "reasoning": "Stating they are independent undermines all the structured conditional expressions, making 'None of the above' more defensible since none exactly equal P(A,B,C) under that assumption.",
+    "verification": "'Boolean random variables' → 'independent random variables' → P(A,B,C)=P(A)P(B)P(C) while A–C use other forms → D (None of the above) becomes correct instead of C."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...",
+    "original_substring": "one gradient descent update",
+    "replacement_substring": "one full-batch gradient computation",
+    "start_pos": 99,
+    "end_pos": 125,
+    "target_wrong_answer": "B",
+    "reasoning": "Asking for the cost of computing the gradient over N examples makes the complexity O(N) rather than O(D) per update, corresponding to option B.",
+    "verification": "Original: cost of update given precomputed gradient → O(D) (A) → replacement: cost of computing gradient over dataset → scales with N → B (O(N)) becomes correct."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...",
+    "original_substring": "vector g",
+    "replacement_substring": "matrix G with N rows and D columns",
+    "start_pos": 93,
+    "end_pos": 101,
+    "target_wrong_answer": "C",
+    "reasoning": "Using an N×D matrix of gradients implies per-update work over all N and D, making O(ND) the right complexity.",
+    "verification": "Original: gradient in vector of length D → update cost O(D) → replacement: gradient information in N×D matrix → update must process all N×D entries → O(ND) (C) is correct."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...",
+    "original_substring": "cost function",
+    "replacement_substring": "cost functions for all N data points",
+    "start_pos": 69,
+    "end_pos": 82,
+    "target_wrong_answer": "D",
+    "reasoning": "Referring to gradients of cost functions for all N points suggests a more complex operation scaling like O(ND^2).",
+    "verification": "Original: single cost function gradient → O(D) → replacement: multiple cost functions and their gradients → more complex operations across N and D with quadratic term in D → D (O(ND^2)) becomes most plausible."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+    "original_substring": "are the spatial clustering algorithms",
+    "replacement_substring": "is a spatial clustering algorithm",
+    "start_pos": 21,
+    "end_pos": 56,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing to singular 'is a' asks for a single example; 'Partitioning based clustering' can be taken as a generic spatial clustering approach, making A the best fit instead of 'All of the above'.",
+    "verification": "Original: multiple algorithms → all listed are spatial → D correct → replacement: asks for one spatial algorithm → other options may be seen as specific or less general, shifting selection toward A."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+    "original_substring": "spatial clustering",
+    "replacement_substring": "partitional clustering",
+    "start_pos": 32,
+    "end_pos": 51,
+    "target_wrong_answer": "B",
+    "reasoning": "Asking specifically about partitional clustering algorithms makes k-means (B) the canonical answer rather than all listed methods.",
+    "verification": "Original: 'spatial clustering algorithms' → D since all can be used → replacement: 'partitional clustering algorithms' → k-means is the standard partitioning method → B becomes correct."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+    "original_substring": "Which of the following are",
+    "replacement_substring": "Which one of the following is",
+    "start_pos": 0,
+    "end_pos": 26,
+    "target_wrong_answer": "C",
+    "reasoning": "Switching to 'one' and singular 'is' suggests a unique correct algorithm; grid-based clustering (C) can then be interpreted as the specific spatial variant in focus.",
+    "verification": "Original plural phrasing allows multiple correct methods → D (All of the above) → replacement implies single best choice → framing could push towards grid-based as the spatially-oriented one → C becomes correct."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end{enumerate}",
+    "original_substring": "'pure'",
+    "replacement_substring": "'impure'",
+    "start_pos": 89,
+    "end_pos": 95,
+    "target_wrong_answer": "True",
+    "reasoning": "Replacing 'pure' with 'impure' makes the statement factually correct, since high entropy corresponds to impure (mixed) partitions.",
+    "verification": "Original claims correct answer is 'pure' (false) → change to 'impure' which matches information theory concepts → overall statement becomes true, so a flipped True response is now correct."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end{enumerate}",
+    "original_substring": "High entropy",
+    "replacement_substring": "Low entropy",
+    "start_pos": 24,
+    "end_pos": 36,
+    "target_wrong_answer": "True",
+    "reasoning": "Saying low entropy leads to pure partitions is correct, so the statement as a whole becomes true.",
+    "verification": "Original: 'High entropy' → pure (false) → replacement: 'Low entropy' → pure (true) → the sentence now correctly describes purity, so the right answer flips from False to True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end{enumerate}",
+    "original_substring": "are' is 'pure",
+    "replacement_substring": "are not pure",
+    "start_pos": 72,
+    "end_pos": 86,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'are' is 'pure' to 'are not pure' correctly states that high entropy implies non-pure partitions, making the sentence true.",
+    "verification": "Original: concludes partitions are pure at high entropy (false) → replacement: 'are not pure' at high entropy (true) → statement overall becomes true, so the target wrong answer flips to True as required."
+  }
+]

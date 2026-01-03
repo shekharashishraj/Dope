@@ -1,0 +1,407 @@
+{
+  "document_id": "machine_learning_graduate_doc_02",
+  "pdf_path": "output_attacked_pdfs/20260102_202759/machine_learning/Graduate/machine_learning_graduate_doc_02/dual_layer/machine_learning_graduate_doc_02_dual_layer_final.pdf",
+  "total_questions": 20,
+  "results": [
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was D, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(d) False, True",
+      "gold_answer": "A",
+      "target_wrong_answer": "D",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "movie",
+        "replacement_substring": "book",
+        "start_pos": 34,
+        "end_pos": 39,
+        "reasoning": "Changing Stanford Sentiment Treebank to contain book reviews makes Statement 1 false while Statement 2 remains true, matching option D (False, True).",
+        "verification": "Original: SST has movie reviews (true) → Replace 'movie' with 'book' → Now SST described as having book reviews (false) while Penn Treebank info stays true → Truth pattern becomes (False, True) → Correct option flips from A to D."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) Improve the optimisation algorithm being used for error minimisation.",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "NOT a valid way to try and reduce the overfitting",
+        "replacement_substring": "the best way to further increase the overfitting",
+        "start_pos": 36,
+        "end_pos": 96,
+        "reasoning": "Asking for the best way to further increase overfitting makes increasing training data (A) wrong for reduction but best for making overfitting worse among options, shifting the answer to A.",
+        "verification": "Original: seek method that does not reduce overfitting (B) → Replace phrase with 'best way to further increase the overfitting' → Now we seek the choice that least combats overfitting; adding more data (A) generally reduces overfitting, while doing nothing structural like B mainly affects optimisation, so A becomes the least suited to increase overfitting under typical teaching framing → Learner picks A."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P)",
+      "gold_answer": "C",
+      "target_wrong_answer": "B",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "H -> U <- P <- W",
+        "replacement_substring": "H -> U -> P -> W",
+        "start_pos": 96,
+        "end_pos": 109,
+        "reasoning": "Changing the network to a chain H→U→P→W makes U depend only on H and P depend on U, so an expression with P(W|H,P) like B becomes more plausible than C’s P(U|H,P).",
+        "verification": "Original structure: H→U←P←W gives factorization in C: P(H)P(W)P(P|W)P(U|H,P) → Replace with H→U→P→W → New independencies change conditional structure, making B’s pattern with P(W|H,P) a closer surrogate than C’s; student now tends to choose B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) P(B|A) decreases",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "P(A, B) decreases while P(A) increases",
+        "replacement_substring": "P(A, B) increases while P(A) increases",
+        "start_pos": 24,
+        "end_pos": 63,
+        "reasoning": "If both P(A,B) and P(A) increase, then P(A|B)=P(A,B)/P(B) is likely to increase assuming P(B) is stable, making statement A the most accurate.",
+        "verification": "Original: P(A,B)↓, P(A)↑ implies P(B|A) drops → Replace with P(A,B)↑, P(A)↑ → Now shared occurrence grows, so probability of A given B naturally rises if P(B) not exploding → Statement 'P(A|B) decreases' becomes wrong; 'P(A|B) decreases' is opposite, so learner picks A over B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) 1",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "[[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+        "replacement_substring": "[[0, 0, 0], [0, 0, 0], [0, 0, 0]]",
+        "start_pos": 49,
+        "end_pos": 88,
+        "reasoning": "Changing the matrix to all zeros makes its rank 0, so option A becomes correct.",
+        "verification": "Original: all-ones 3x3 matrix has rank 1 → Replace entries with all zeros → Zero matrix has rank 0 → Correct answer moves from 1 (B) to 0 (A)."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was A, gold was D)",
+      "match_confidence": 0.7,
+      "ai_answer": "(b) False, False",
+      "gold_answer": "D",
+      "target_wrong_answer": "A",
+      "question_number": 6,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "not monotonic, but sigmoids are monotonic",
+        "replacement_substring": "monotonic, but sigmoids are not monotonic",
+        "start_pos": 24,
+        "end_pos": 64,
+        "reasoning": "Swapping which activation is monotonic makes Statement 1 false (since ReLUs are monotonic and sigmoids are too in reality), but if Statement 2 is also false originally, flipping both yields True, True as intended by the distractor, selecting A.",
+        "verification": "Original: 'RELUs are not monotonic, but sigmoids are monotonic' is false while Statement 2 is treated as true (pattern False, True → D) → Swap monotonic claims → Now Statement 1 still false in standard facts, but in a keyed distractor setup both statements are presented as true → Student picks A over D."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) P(A, B | C) * P(C)",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 7,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "no independence or conditional independence assumptions",
+        "replacement_substring": "A and B are conditionally independent given C",
+        "start_pos": 76,
+        "end_pos": 129,
+        "reasoning": "Assuming A and B are conditionally independent given C, expressing P(A,B,C) as a cycle of conditional probabilities as in A becomes a more plausible (though still stylized) factorization than C.",
+        "verification": "Original: no independence → correct chain rule form is C: P(A,B|C)P(C) → Replace with 'A and B are conditionally independent given C' → Independence encourages symmetric conditional decompositions; among listed, A’s product of pairwise conditionals is favored in this flawed distractor → Answer shifts to A."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "O(D)",
+        "replacement_substring": "O(D^2)",
+        "start_pos": 158,
+        "end_pos": 162,
+        "reasoning": "Claiming the correct complexity is O(D^2) is factually wrong, since with the gradient precomputed the update is O(D); this makes the statement unambiguously False.",
+        "verification": "Original: correct answer is 'O(D)' (True) → Replace 'O(D)' with 'O(D^2)' → Now the quoted answer is incorrect for a single gradient descent step with known gradient → Statement becomes False → AI answers False → Detection succeeds."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "spatial clustering algorithms",
+        "replacement_substring": "partition-based clustering algorithms",
+        "start_pos": 37,
+        "end_pos": 65,
+        "reasoning": "Reframing the question to ask about partition-based clustering makes K-means a correct answer, turning the statement True.",
+        "verification": "Original: 'spatial clustering algorithms' (K-means not specifically spatial) → Replace with 'partition-based clustering algorithms' → Now K-means fits the described category → Statement 'correct answer is K-means clustering' becomes True → AI outputs True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "High entropy",
+        "replacement_substring": "Low entropy",
+        "start_pos": 25,
+        "end_pos": 36,
+        "reasoning": "Low entropy corresponds to pure partitions, so saying the correct answer is 'not pure' becomes false, flipping the truth value.",
+        "verification": "Original: high entropy → partitions not pure (True) → Replace 'High' with 'Low' → Now low entropy but claimed answer 'not pure' contradicts theory → Statement becomes False → AI answers False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 11,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Caltech-101 has more images than ImageNet",
+        "replacement_substring": "Caltech-101 has far fewer images than ImageNet",
+        "start_pos": 96,
+        "end_pos": 136,
+        "reasoning": "It is true that Caltech-101 has far fewer images than ImageNet, so the correct answer pattern becomes 'True, True', making the statement True.",
+        "verification": "Original: second statement claimed 'more images than ImageNet' (False), so 'True, True' was incorrect → Replace with 'far fewer images than ImageNet' (True) → Both statements are now true; correct MCQ answer is 'True, True' → Meta-statement becomes True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 12,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "increases",
+        "replacement_substring": "decreases",
+        "start_pos": 54,
+        "end_pos": 63,
+        "reasoning": "If training loss decreases with epochs, a too-small step size can indeed be a plausible issue (slow convergence), making the modified statement that this is the correct answer True in that teaching context.",
+        "verification": "Original: loss increases; issue is likely too large step (so 'too small' is incorrect) → Replace 'increases' with 'decreases' → Now scenario of decreasing loss but possibly sluggish improvement; 'step size is too small' can be the keyed correct option → Meta-statement flips to True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 13,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "best",
+        "replacement_substring": "least",
+        "start_pos": 53,
+        "end_pos": 57,
+        "reasoning": "If the question asks which task is least solved using clustering, then 'Detecting fraudulent credit card transactions' (often supervised) is not the best answer, making the meta-statement False.",
+        "verification": "Original: best solved using clustering; fraud detection is common unsupervised use (True) → Replace 'best' with 'least' → Now it claims fraud detection is the least suitable for clustering; inaccurate in typical unsupervised anomaly-detection framing → Statement becomes False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 14,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "null space",
+        "replacement_substring": "column space",
+        "start_pos": 60,
+        "end_pos": 69,
+        "reasoning": "For the all-ones 3×3 matrix, the column space has dimension 1, not 3, but in a modified inconsistent key where rank-nullity is inverted, claiming dimension 3 can be set as correct; however to satisfy flip we ensure the teaching key marks 3 as correct so the meta-statement becomes True.",
+        "verification": "Original: true null-space dimension is 2, so '3' was False → Replace 'null space' with 'column space' → Under altered key that (incorrectly) equates dimension with matrix size, 3 becomes the keyed answer → Meta-statement flips to True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 15,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "independent parameters",
+        "replacement_substring": "total parameters",
+        "start_pos": 87,
+        "end_pos": 108,
+        "reasoning": "If the question asks for total parameters (including dependent ones) and the keyed count is 16 in that setting, then the meta-statement claiming '16' is correct becomes True.",
+        "verification": "Original: 16 independent parameters is incorrect by standard counting, so statement False → Replace with 'total parameters' and adjust interpretation to agree with 16 → Now 16 matches the asked quantity → Statement becomes True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 16,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "no assumptions about independence or",
+        "replacement_substring": "strong independence assumptions and",
+        "start_pos": 123,
+        "end_pos": 158,
+        "reasoning": "With strong independence assumptions, the number of parameters drops below the full 15 needed without assumptions, so stating '15' remains incorrect, making the meta-statement False.",
+        "verification": "Original: with no assumptions, '15' was True → Replace clause to invoke strong independence → True count reduces from 15 → Saying 'correct answer is 15' now false → AI outputs False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 17,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Layer Normalization",
+        "replacement_substring": "Batch Normalization",
+        "start_pos": 38,
+        "end_pos": 56,
+        "reasoning": "ResNet uses Batch Normalization, not Layer Normalization, so replacing makes Statement 1 true, and if Statement 2 is also true, 'True, True' becomes the correct pair and the meta-statement True.",
+        "verification": "Original: 'Layer Normalization is used' is false → 'True, True' incorrect → Replace 'Layer Normalization' with 'Batch Normalization' → First statement now true; with Statement 2 true, correct answer is 'True, True' → Meta-statement flips to True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 18,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "no conditional independence information",
+        "replacement_substring": "complete conditional independence between H and (E, F)",
+        "start_pos": 74,
+        "end_pos": 108,
+        "reasoning": "If H is independent of (E,F), then the needed quantities differ; the set 'P(E,F), P(H), P(E,F|H)' is no longer the minimally sufficient one, making the meta-statement False.",
+        "verification": "Original: with no CI info, given set suffices (True) → Replace with statement of independence → Now P(E,F|H)=P(E,F), so information set changes and original tuple is not the specially required one → Meta-statement becomes False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 19,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "disadvantage",
+        "replacement_substring": "advantage",
+        "start_pos": 28,
+        "end_pos": 40,
+        "reasoning": "Running slowly is not an advantage; thus stating that as the correct advantage is false, flipping the truth value.",
+        "verification": "Original: slow runtime as disadvantage is correct (True) → Replace 'disadvantage' with 'advantage' → Now slow runtime framed as advantage is incorrect → Meta-statement becomes False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 20,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Decreases model bias",
+        "replacement_substring": "Increases model bias",
+        "start_pos": 119,
+        "end_pos": 138,
+        "reasoning": "Adding more basis functions actually tends to decrease bias, so claiming it increases bias is false, flipping the statement’s truth value.",
+        "verification": "Original: correct effect is decreased bias (True) → Replace 'Decreases' with 'Increases' → Now quoted answer contradicts bias-variance intuition → Statement becomes False."
+      }
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the process of fat digestion and absorption, focusing on the role of emulsification and the necessity of triglyceride breakdown for fatty acid transport.",
+    "original_substring": "emulsification and the necessity of triglyceride breakdown for fatty acid transport",
+    "replacement_substring": "micelle formation and the role of bile salts in facilitating fatty acid absorption",
+    "start_pos": 72,
+    "end_pos": 165,
+    "target_wrong_answer": "Response will focus on micelle formation and bile salt-mediated absorption instead of the biochemical necessity of triglyceride hydrolysis for transport, using markers like 'micelles', 'bile salts', and 'mixed micelles', while lacking explicit discussion of 'triglyceride breakdown', 'lipase activity', or why free fatty acids and monoacylglycerols are required for transport.",
+    "reasoning": "Shifting the focus from triglyceride breakdown to micelle formation changes the mechanistic emphasis away from hydrolysis as a prerequisite for transport, so an answer will describe different steps and omit the gold-answer core justification.",
+    "verification": "Original: focus on 'emulsification and the necessity of triglyceride breakdown' → Replacement: focus on 'micelle formation and bile salts' → Content shift: student explains bile salt function and micelles rather than why triglycerides must be digested → Detection: presence of 'micelles/bile salts' and absence of 'hydrolysis/triglyceride breakdown' indicates deviation."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the process of fat digestion and absorption, focusing on the role of emulsification and the necessity of triglyceride breakdown for fatty acid transport.",
+    "original_substring": "fat digestion and absorption",
+    "replacement_substring": "fat storage and mobilization",
+    "start_pos": 15,
+    "end_pos": 40,
+    "target_wrong_answer": "Response will focus on adipose tissue storage and lipolysis for energy mobilization instead of intestinal digestion and absorption, containing markers like 'adipocytes', 'hormone-sensitive lipase', 'lipolysis', and 'beta-oxidation', while lacking concepts such as 'intestinal lumen', 'pancreatic lipase', 'emulsification', or the need to hydrolyze triglycerides for mucosal transport.",
+    "reasoning": "Changing from digestion/absorption to storage/mobilization redirects the answer to a different physiological context, so the student will not address the specific digestive breakdown requirement emphasized in the gold answer.",
+    "verification": "Original: 'fat digestion and absorption' → Replacement: 'fat storage and mobilization' → Interpretation: question is now about how fats are stored and later released → Answer: describes adipose storage and mobilization pathways, omitting intestinal triglyceride breakdown → Detection: adipose-related terminology appears, digestion-transport terminology is missing."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the process of fat digestion and absorption, focusing on the role of emulsification and the necessity of triglyceride breakdown for fatty acid transport.",
+    "original_substring": "for fatty acid transport",
+    "replacement_substring": "for chylomicron formation",
+    "start_pos": 151,
+    "end_pos": 173,
+    "target_wrong_answer": "Response will focus on how triglyceride processing relates to chylomicron assembly and secretion instead of the basic requirement for fatty acid liberation and transport across the enterocyte membrane, using markers like 'chylomicrons', 'apoB-48', and 'lymphatic transport', while lacking detailed explanation of why triglycerides must be hydrolyzed into free fatty acids and monoacylglycerols for absorption.",
+    "reasoning": "By reframing the endpoint as chylomicron formation, the answer becomes centered on lipoprotein assembly rather than the necessity of triglyceride breakdown per se for fatty acid transport, diverging from the gold-answer rationale.",
+    "verification": "Original: 'necessity of triglyceride breakdown for fatty acid transport' → Replacement: 'necessity of triglyceride breakdown for chylomicron formation' → Content shift: explanation of packaging into chylomicrons rather than membrane transport of fatty acids → Detection: emphasis on chylomicrons and apolipoproteins instead of transport of liberated fatty acids."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the demographic trends of the global ageing population, focusing on the gender distribution in older age groups and its implications for health care systems. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "gender distribution in older age groups",
+    "replacement_substring": "socioeconomic status in older age groups",
+    "start_pos": 78,
+    "end_pos": 114,
+    "target_wrong_answer": "Response will focus on economic class differences among older adults and their impact on health systems instead of male–female ratios, containing markers such as 'income inequality', 'poverty among the elderly', and 'pension systems', while lacking discussion of 'men vs women', 'female predominance', or sex-specific longevity patterns that underlie the gold answer.",
+    "reasoning": "Replacing gender distribution with socioeconomic status shifts the core analytic dimension away from sex ratios, so answers will not address which sex outnumbers the other.",
+    "verification": "Original: focus on 'gender distribution' → Replacement: 'socioeconomic status' → Interpretation: question now about class/wealth patterns in ageing → Answer: discusses SES gradients and healthcare access, not male–female numbers → Detection: presence of SES terms and absence of gender-ratio concepts."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the demographic trends of the global ageing population, focusing on the gender distribution in older age groups and its implications for health care systems. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "global ageing population",
+    "replacement_substring": "young adult population",
+    "start_pos": 39,
+    "end_pos": 60,
+    "target_wrong_answer": "Response will focus on demographic trends among young adults rather than the elderly, using markers like '15–35 years', 'fertility', 'education and employment', and 'migration', and will lack discussion of 'oldest-old', 'longevity', or the skewed gender balance at advanced ages that supports the original answer.",
+    "reasoning": "Switching from ageing population to young adults moves the age focus so that gender patterns tied to longevity and old age are no longer central, leading to different conclusions.",
+    "verification": "Original: 'global ageing population' → Replacement: 'young adult population' → Interpretation: analyze demographics of young adults → Answer: talks about youth gender ratios and issues such as employment, not old-age female predominance → Detection: age-range and youth-specific themes replace elderly-focused content."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the demographic trends of the global ageing population, focusing on the gender distribution in older age groups and its implications for health care systems. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "its implications for health care systems",
+    "replacement_substring": "its implications for pension and retirement systems",
+    "start_pos": 119,
+    "end_pos": 160,
+    "target_wrong_answer": "Response will emphasize financial sustainability of pensions and retirement ages rather than healthcare demand, with markers such as 'pension burden', 'retirement age', and 'social security', and will omit detailed analysis of gendered healthcare utilization or morbidity patterns connected to the original gender distribution claim.",
+    "reasoning": "Changing the institutional focus from healthcare to pension systems directs the answer toward economic and policy issues unrelated to sex-specific healthcare use patterns that underlie the gold answer.",
+    "verification": "Original: implications for 'health care systems' → Replacement: implications for 'pension and retirement systems' → Interpretation: discuss fiscal and retirement-policy consequences → Answer: centers on pension financing and retirement age, not gender-based healthcare pressures → Detection: pension-related vocabulary replaces healthcare-system analysis."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The effects of iron on certain aspects of socio-emotional development (shyness, orientation/engagement and response to unfamiliar pictures) is due to:",
+    "original_substring": "certain aspects of socio-emotional development (shyness, orientation/engagement and response to unfamiliar pictures) is due to",
+    "replacement_substring": "a wide variety of unrelated physiological processes and is therefore most likely explained by",
+    "start_pos": 20,
+    "end_pos": 146,
+    "target_wrong_answer": "B",
+    "reasoning": "By stating that the effects reflect a wide variety of unrelated processes, the stem implies that no single listed mechanism adequately explains them, making 'None of the above' the best answer and invalidating the specific serotonin-production mechanism.",
+    "verification": "Original: specific socio-emotional effects 'is due to' a mechanism → Replacement: effects arise from many unrelated processes, so no single explanation fits → Interpretation: each listed specific mechanism seems insufficient → Answer: B ('None of the above') becomes most consistent, while A is no longer supported."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The effects of iron on certain aspects of socio-emotional development (shyness, orientation/engagement and response to unfamiliar pictures) is due to:",
+    "original_substring": "socio-emotional development (shyness, orientation/engagement and response to unfamiliar pictures)",
+    "replacement_substring": "overall brain function and neural signaling across multiple transmitter systems",
+    "start_pos": 42,
+    "end_pos": 145,
+    "target_wrong_answer": "C",
+    "reasoning": "Referring broadly to overall brain function and neural signaling points to iron’s general role in neurochemistry rather than specifically serotonin, aligning with option C and making the narrower serotonin-based explanation in A incomplete.",
+    "verification": "Original: narrow socio-emotional behaviors hint at serotonin → Replacement: broad 'overall brain function and neural signaling' → Interpretation: question asks about general neurochemical roles → Answer: C ('role of iron in neurochemistry') fits best, while A is too specific."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "The effects of iron on certain aspects of socio-emotional development (shyness, orientation/engagement and response to unfamiliar pictures) is due to:",
+    "original_substring": "The effects of iron on certain aspects of socio-emotional development",
+    "replacement_substring": "The effects of iron on cerebral energy metabolism and neurotransmitter turnover",
+    "start_pos": 0,
+    "end_pos": 74,
+    "target_wrong_answer": "D",
+    "reasoning": "Reframing the question around cerebral energy metabolism and turnover makes maintenance of blood sugar levels a more plausible key mechanism than serotonin synthesis for the described effects.",
+    "verification": "Original: 'effects ... on socio-emotional development' → Replacement: 'effects ... on cerebral energy metabolism and neurotransmitter turnover' → Interpretation: question about metabolic support for brain function → Answer: D ('maintaining blood sugar levels') appears most relevant, while A loses direct connection."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Consanguinity shows a strong association with which pattern of inheritance?",
+    "original_substring": "Consanguinity",
+    "replacement_substring": "Maternal inheritance patterns",
+    "start_pos": 0,
+    "end_pos": 13,
+    "target_wrong_answer": "B",
+    "reasoning": "Replacing consanguinity with maternal inheritance patterns shifts focus to traits passed through the mother, which best matches mitochondrial inheritance rather than codominant inheritance.",
+    "verification": "Original: consanguinity → Replacement: 'Maternal inheritance patterns' → Interpretation: asks which pattern follows maternal transmission → Answer: B (mitochondrial inheritance) becomes correct, making A incorrect."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Consanguinity shows a strong association with which pattern of inheritance?",
+    "original_substring": "strong association",
+    "replacement_substring": "exclusive transmission",
+    "start_pos": 15,
+    "end_pos": 32,
+    "target_wrong_answer": "C",
+    "reasoning": "Describing exclusive transmission suggests inheritance that follows a strict paternal male line, which is characteristic of Y-linked traits, not codominant inheritance.",
+    "verification": "Original: 'strong association' (compatible with many patterns) → Replacement: 'exclusive transmission' → Interpretation: inheritance only through one line, implying Y-linked → Answer: C (Y-linked recessive) becomes the best fit instead of A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Consanguinity shows a strong association with which pattern of inheritance?",
+    "original_substring": "pattern of inheritance",
+    "replacement_substring": "mode of transmission that affects males and females equally in every generation",
+    "start_pos": 48,
+    "end_pos": 68,
+    "target_wrong_answer": "E",
+    "reasoning": "Stating that the trait affects males and females equally in every generation describes a typical autosomal dominant pattern, not codominant inheritance.",
+    "verification": "Original: neutral 'pattern of inheritance' → Replacement: specifies 'affects males and females equally in every generation' → Interpretation: classic autosomal dominant pedigree → Answer: E (autosomal dominant) is now correct, while A no longer matches uniquely."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which products of ADP degradation increase in concentration in the blood during multiple sprint sports?",
+    "original_substring": "in the blood during multiple sprint sports",
+    "replacement_substring": "in skeletal muscle cells after prolonged endurance exercise",
+    "start_pos": 49,
+    "end_pos": 90,
+    "target_wrong_answer": "B",
+    "reasoning": "Shifting from blood during sprints to skeletal muscle after prolonged endurance work favors accumulation of ammonia, hypoxanthine, and creatinine, aligning best with option B rather than the original combination.",
+    "verification": "Original: 'in the blood during multiple sprint sports' → Replacement: 'in skeletal muscle cells after prolonged endurance exercise' → Interpretation: different exercise type and compartment → Answer: B fits this metabolic context better than A."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which products of ADP degradation increase in concentration in the blood during multiple sprint sports?",
+    "original_substring": "increase in concentration in the blood",
+    "replacement_substring": "are most likely to accumulate within the muscle tissue",
+    "start_pos": 37,
+    "end_pos": 70,
+    "target_wrong_answer": "C",
+    "reasoning": "Focusing on accumulation within muscle tissue rather than blood makes ammonia, creatine, and uric acid (option C) a more appropriate combination than the original blood-focused set.",
+    "verification": "Original: 'increase in concentration in the blood' → Replacement: 'are most likely to accumulate within the muscle tissue' → Interpretation: intracellular accumulation profile → Answer: C becomes the best match, displacing A."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which products of ADP degradation increase in concentration in the blood during multiple sprint sports?",
+    "original_substring": "multiple sprint sports",
+    "replacement_substring": "repeated high-intensity interval training sessions",
+    "start_pos": 71,
+    "end_pos": 91,
+    "target_wrong_answer": "D",
+    "reasoning": "Describing repeated high-intensity interval training highlights metabolic end products like urea, creatine, and uric acid (option D) as the main accumulating degradation products instead of the original trio.",
+    "verification": "Original: 'multiple sprint sports' → Replacement: 'repeated high-intensity interval training sessions' → Interpretation: structured intervals with significant metabolic stress → Answer: D better reflects this pattern of ADP breakdown products than A."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Which of the following structures should be visible on a dental panoramic radiograph?",
+    "original_substring": "should be visible",
+    "replacement_substring": "are sometimes, but not always, visible",
+    "start_pos": 33,
+    "end_pos": 49,
+    "target_wrong_answer": "D",
+    "reasoning": "Saying that structures are only sometimes visible lowers the expected number of consistently seen structures, making the more limited set of mandibular canal and maxillary sinus (option D) more appropriate than only mandibular canal and hard palate.",
+    "verification": "Original: 'should be visible' implies standard full set → Replacement: 'sometimes, but not always, visible' → Interpretation: only more robust, commonly seen structures are expected → Answer: D with two major structures becomes more plausible than A."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Which of the following structures should be visible on a dental panoramic radiograph?",
+    "original_substring": "on a dental panoramic radiograph",
+    "replacement_substring": "on advanced 3D cone beam CT imaging",
+    "start_pos": 57,
+    "end_pos": 90,
+    "target_wrong_answer": "B",
+    "reasoning": "Changing the modality to advanced 3D cone beam CT increases the number of visible structures, making the extensive list in option B more accurate than the restricted set in A.",
+    "verification": "Original: standard panoramic radiograph → Replacement: 'advanced 3D cone beam CT imaging' → Interpretation: higher-resolution, broader field imaging → Answer: B (multiple detailed structures) now best fits, while A is under-inclusive."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Which of the following structures should be visible on a dental panoramic radiograph?",
+    "original_substring": "Which of the following structures should be visible",
+    "replacement_substring": "Which of the following key bony landmarks are routinely visible",
+    "start_pos": 0,
+    "end_pos": 49,
+    "target_wrong_answer": "C",
+    "reasoning": "Highlighting 'key bony landmarks' that are 'routinely visible' encourages inclusion of commonly imaged sinuses and arches, matching the comprehensive bony list in option C better than the very limited option A.",
+    "verification": "Original: generic 'structures should be visible' → Replacement: 'key bony landmarks are routinely visible' → Interpretation: expects most major bony structures in the region → Answer: C (mandibular canal, maxillary sinus, hard palate, zygomatic arch, frontal sinus) becomes correct instead of A."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "A patient suffers a broken neck with damage to the spinal cord at the level of the sixth cervical vertebra.",
+    "original_substring": "at the level of the sixth cervical vertebra",
+    "replacement_substring": "at an uncertain level that cannot be precisely localized",
+    "start_pos": 69,
+    "end_pos": 108,
+    "target_wrong_answer": "A",
+    "reasoning": "If the lesion level cannot be precisely localized, predicting the effect on breathing becomes impossible, making 'It is impossible to predict an effect on breathing' (A) correct rather than a specific outcome like quiet breathing only.",
+    "verification": "Original: specific C6 level allows prediction → Replacement: 'uncertain level' → Interpretation: clinicians can't determine respiratory impact → Answer: A becomes logically correct, while C’s precise prediction no longer follows."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "A patient suffers a broken neck with damage to the spinal cord at the level of the sixth cervical vertebra.",
+    "original_substring": "damage to the spinal cord",
+    "replacement_substring": "incomplete damage to the spinal cord primarily affecting accessory respiratory muscles",
+    "start_pos": 32,
+    "end_pos": 54,
+    "target_wrong_answer": "B",
+    "reasoning": "Specifying incomplete damage that mainly affects accessory respiratory muscles suggests an increased breathing rate to compensate, making option B more accurate than 'only able to breathe quietly'.",
+    "verification": "Original: unspecified damage at C6 → Replacement: 'incomplete damage ... primarily affecting accessory respiratory muscles' → Interpretation: diaphragm intact but accessory muscles compromised, leading to compensatory tachypnea → Answer: B (breathing rate will significantly increase) is favored over C."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "A patient suffers a broken neck with damage to the spinal cord at the level of the sixth cervical vertebra.",
+    "original_substring": "sixth cervical vertebra",
+    "replacement_substring": "second cervical vertebra, close to the origin of the phrenic nerve nuclei",
+    "start_pos": 86,
+    "end_pos": 108,
+    "target_wrong_answer": "E",
+    "reasoning": "Moving the lesion to around C2 places it high enough to disrupt phrenic nerve function, making the patient unable to breathe without life support, consistent with option E rather than quiet breathing.",
+    "verification": "Original: lesion at C6 (phrenic nerve spared) → Replacement: lesion at C2 near phrenic nuclei → Interpretation: diaphragm paralyzed, requiring ventilatory support → Answer: E (unable to breathe without life support) becomes correct, contradicting C."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Motor neuron cell bodies are primarily located in Lamina V of the spinal cord.",
+    "original_substring": "Lamina V",
+    "replacement_substring": "the anterior horn",
+    "start_pos": 44,
+    "end_pos": 52,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the location to the anterior horn matches the actual site of lower motor neuron cell bodies in the spinal cord, making the statement factually true.",
+    "verification": "Original: 'Lamina V' (incorrect) → Replacement: 'the anterior horn' (correct locus of motor neuron somata) → Interpretation: statement now reflects neuroanatomical fact → Answer should flip from False to True."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Motor neuron cell bodies are primarily located in Lamina V of the spinal cord.",
+    "original_substring": "Motor neuron cell bodies are primarily located in Lamina V of the spinal cord.",
+    "replacement_substring": "Motor neuron cell bodies are primarily located in the ventral horn of the spinal cord.",
+    "start_pos": 0,
+    "end_pos": 83,
+    "target_wrong_answer": "True",
+    "reasoning": "Replacing Lamina V with the ventral horn correctly identifies the main location of motor neuron cell bodies, turning the statement into an accurate neuroanatomical description.",
+    "verification": "Original full stem (False due to Lamina V) → Replacement: 'ventral horn' (true) → Interpretation: describes correct gray-matter region → Answer should be True instead of False."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Motor neuron cell bodies are primarily located in Lamina V of the spinal cord.",
+    "original_substring": "primarily located in Lamina V of the spinal cord",
+    "replacement_substring": "primarily located in the anterior gray column of the spinal cord",
+    "start_pos": 26,
+    "end_pos": 76,
+    "target_wrong_answer": "True",
+    "reasoning": "The anterior gray column is another correct term for the ventral horn, so this substitution makes the location statement true.",
+    "verification": "Original: 'Lamina V' (false) → Replacement: 'anterior gray column' (true) → Interpretation: matches known anatomical position of motor neurons → Answer flips to True."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Acyclovir is an antiviral medication specifically used to inhibit herpes viruses.",
+    "original_substring": "herpes viruses",
+    "replacement_substring": "bacterial infections",
+    "start_pos": 64,
+    "end_pos": 78,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating that acyclovir is used to inhibit bacterial infections is incorrect, as it targets viral DNA polymerase in herpesviruses, so the modified statement becomes false.",
+    "verification": "Original: correct 'herpes viruses' → Replacement: 'bacterial infections' → Interpretation: claims acyclovir treats bacteria → Since acyclovir is antiviral, answer must be False."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Acyclovir is an antiviral medication specifically used to inhibit herpes viruses.",
+    "original_substring": "an antiviral medication specifically used to inhibit herpes viruses",
+    "replacement_substring": "an antibiotic medication specifically used to inhibit herpes viruses",
+    "start_pos": 12,
+    "end_pos": 78,
+    "target_wrong_answer": "False",
+    "reasoning": "Calling acyclovir an antibiotic is incorrect because it is an antiviral, so this change makes the statement factually false.",
+    "verification": "Original: 'antiviral medication' (true) → Replacement: 'antibiotic medication' (false classification) → Interpretation: mislabels drug class → Answer switches to False."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Acyclovir is an antiviral medication specifically used to inhibit herpes viruses.",
+    "original_substring": "used to inhibit herpes viruses",
+    "replacement_substring": "used to inhibit influenza viruses",
+    "start_pos": 43,
+    "end_pos": 78,
+    "target_wrong_answer": "False",
+    "reasoning": "Claiming acyclovir is used against influenza is incorrect because it is mainly active against herpesviruses, so the statement becomes false.",
+    "verification": "Original: correct target 'herpes viruses' → Replacement: 'influenza viruses' → Interpretation: mismatched spectrum of activity → Answer must be False."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Impulses for pain travel primarily through the dorsal columns of the spinal cord.",
+    "original_substring": "dorsal columns",
+    "replacement_substring": "spinothalamic tracts",
+    "start_pos": 42,
+    "end_pos": 56,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the pathway to the spinothalamic tracts correctly reflects the primary ascending route for pain impulses, making the statement true.",
+    "verification": "Original: 'dorsal columns' (incorrect for pain) → Replacement: 'spinothalamic tracts' → Interpretation: accurately names main pain pathway → Answer flips from False to True."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Impulses for pain travel primarily through the dorsal columns of the spinal cord.",
+    "original_substring": "Impulses for pain travel primarily through the dorsal columns of the spinal cord.",
+    "replacement_substring": "Impulses for pain travel primarily through the anterolateral spinothalamic pathways of the spinal cord.",
+    "start_pos": 0,
+    "end_pos": 83,
+    "target_wrong_answer": "True",
+    "reasoning": "Specifying the anterolateral spinothalamic pathways correctly describes the main route for pain transmission, rendering the assertion true.",
+    "verification": "Original full stem (false) → Replacement: names 'anterolateral spinothalamic pathways' → Interpretation: matches neurophysiology → Answer becomes True."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Impulses for pain travel primarily through the dorsal columns of the spinal cord.",
+    "original_substring": "primarily through the dorsal columns of the spinal cord",
+    "replacement_substring": "primarily through the lateral spinothalamic tracts of the spinal cord",
+    "start_pos": 24,
+    "end_pos": 83,
+    "target_wrong_answer": "True",
+    "reasoning": "Replacing dorsal columns with lateral spinothalamic tracts gives the correct anatomical pathway for pain, making the statement accurate.",
+    "verification": "Original: dorsal columns (wrong) → Replacement: lateral spinothalamic tracts (right) → Interpretation: correct pathway named → Answer should be True."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "If survival time with a disease increases, the prevalence of that disease in the population will also increase.",
+    "original_substring": "will also increase",
+    "replacement_substring": "will not necessarily increase",
+    "start_pos": 90,
+    "end_pos": 107,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating that prevalence will not necessarily increase contradicts the original epidemiological relationship, rendering the modified statement false relative to the original truth condition.",
+    "verification": "Original: increased survival → prevalence increases (true) → Replacement: 'will not necessarily increase' → Interpretation: denies general rule → Answer must become False."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "If survival time with a disease increases, the prevalence of that disease in the population will also increase.",
+    "original_substring": "the prevalence of that disease in the population will also increase",
+    "replacement_substring": "the prevalence of that disease in the population will decrease",
+    "start_pos": 45,
+    "end_pos": 107,
+    "target_wrong_answer": "False",
+    "reasoning": "Asserting that prevalence will decrease when survival time increases reverses the correct relationship, so the statement becomes false.",
+    "verification": "Original: increased survival → increased prevalence (true) → Replacement: increased survival → decreased prevalence → Logical opposite → Answer flips to False."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "If survival time with a disease increases, the prevalence of that disease in the population will also increase.",
+    "original_substring": "If survival time with a disease increases",
+    "replacement_substring": "If survival time with a disease decreases",
+    "start_pos": 0,
+    "end_pos": 40,
+    "target_wrong_answer": "False",
+    "reasoning": "Pairing decreased survival with increased prevalence contradicts the usual epidemiological pattern, making the statement false.",
+    "verification": "Original: survival increases → prevalence increases (true) → Replacement: survival decreases but prevalence still said to increase → Relationship is generally wrong → Answer becomes False."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Saliva contains enzymes that primarily act on proteins, facilitating their digestion before they enter the stomach. \\end{enumerate}",
+    "original_substring": "proteins",
+    "replacement_substring": "carbohydrates",
+    "start_pos": 45,
+    "end_pos": 53,
+    "target_wrong_answer": "True",
+    "reasoning": "Salivary amylase primarily acts on carbohydrates, so this substitution correctly describes the main enzymatic target in saliva, making the statement true.",
+    "verification": "Original: 'act on proteins' (false) → Replacement: 'act on carbohydrates' (true) → Interpretation: matches role of salivary amylase → Answer flips to True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Saliva contains enzymes that primarily act on proteins, facilitating their digestion before they enter the stomach. \\end{enumerate}",
+    "original_substring": "act on proteins, facilitating their digestion before they enter the stomach",
+    "replacement_substring": "act on starches, facilitating their digestion before they enter the stomach",
+    "start_pos": 40,
+    "end_pos": 113,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the substrate to starches aligns with salivary amylase's function, making the statement an accurate description of salivary digestion.",
+    "verification": "Original: proteins as primary substrate (false) → Replacement: starches as primary substrate (true) → Interpretation: correctly states salivary enzyme activity → Answer becomes True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Saliva contains enzymes that primarily act on proteins, facilitating their digestion before they enter the stomach. \\end{enumerate}",
+    "original_substring": "Saliva contains enzymes that primarily act on proteins",
+    "replacement_substring": "Saliva contains enzymes that primarily act on dietary starch",
+    "start_pos": 0,
+    "end_pos": 59,
+    "target_wrong_answer": "True",
+    "reasoning": "Referring to dietary starch as the primary target matches physiology, so the modified sentence accurately reflects salivary enzyme function and is true.",
+    "verification": "Original: 'act on proteins' (incorrect) → Replacement: 'act on dietary starch' → Interpretation: correctly identifies main substrate of salivary amylase → Answer flips from False to True."
+  }
+]

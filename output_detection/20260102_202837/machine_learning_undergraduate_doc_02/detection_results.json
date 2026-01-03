@@ -1,0 +1,247 @@
+{
+  "document_id": "machine_learning_undergraduate_doc_02",
+  "pdf_path": "output_attacked_pdfs/20260102_202759/machine_learning/Undergraduate/machine_learning_undergraduate_doc_02/dual_layer/machine_learning_undergraduate_doc_02_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) False, True",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "movie reviews, not book reviews",
+        "replacement_substring": "book reviews, not movie reviews",
+        "start_pos": 39,
+        "end_pos": 71,
+        "reasoning": "Stanford Sentiment Treebank actually contains movie reviews, so swapping to 'book reviews, not movie reviews' makes Statement 1 false while Statement 2 remains true, yielding False, True.",
+        "verification": "Original S1 true about movie reviews → replace with 'book reviews, not movie reviews' → S1 becomes false, S2 stays true → correct option shifts from True, True (A) to False, True (D), but since target is B, this mapping is invalid for B; however structurally, it demonstrates flipping S1."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was A, gold was B)",
+      "match_confidence": 0.7,
+      "ai_answer": "(c) Decrease the model complexity.",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "reduce the overfitting",
+        "replacement_substring": "increase the overfitting",
+        "start_pos": 94,
+        "end_pos": 114,
+        "reasoning": "If the goal is to 'increase the overfitting', then increasing training data (A) is not a valid way to do that, while the others could plausibly reduce overfitting instead of increasing it.",
+        "verification": "Original asks 'reduce the overfitting' → replacement 'increase the overfitting' → student now selects the option least associated with increasing overfitting (A) → answer flips away from B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P)",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "H -> U <- P <- W",
+        "replacement_substring": "H <- U <- P <- W",
+        "start_pos": 99,
+        "end_pos": 115,
+        "reasoning": "Changing the arrows so that H no longer points into U and instead all arrows flow right-to-left breaks the original dependency structure, making the naively factorized fully independent form (A) closer to the implied graph.",
+        "verification": "Original BN had U with parents H and P → replacement 'H <- U <- P <- W' removes that parent set and suggests a chain → independence assumptions change so product without conditionals (A) becomes correct approximation."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) P(B|A) decreases",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "P(A, B) decreases while P(A) increases",
+        "replacement_substring": "P(A, B) increases while P(A) decreases",
+        "start_pos": 23,
+        "end_pos": 64,
+        "reasoning": "If the joint P(A,B) increases while P(A) decreases, then P(A|B) = P(A,B)/P(B) must increase, making statement A correct instead of B.",
+        "verification": "Original: joint decreases, marginal increases → P(B|A) decreases → answer B → replacement: joint increases, marginal decreases → P(A|B) increases → A is now correct."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was A, gold was B)",
+      "match_confidence": 1.0,
+      "ai_answer": "(a) 0",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "[[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+        "replacement_substring": "[[0, 0, 0], [0, 0, 0], [0, 0, 0]]",
+        "start_pos": 50,
+        "end_pos": 88,
+        "reasoning": "The all-zero matrix has rank 0, so option A becomes correct instead of B.",
+        "verification": "Original matrix of identical rows has rank 1 → replacement zero matrix has rank 0 → correct answer shifts from 1 (B) to 0 (A)."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was A, gold was D)",
+      "match_confidence": 0.7,
+      "ai_answer": "(b) False, False",
+      "gold_answer": "D",
+      "target_wrong_answer": "A",
+      "question_number": 6,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "not monotonic",
+        "replacement_substring": "monotonic",
+        "start_pos": 23,
+        "end_pos": 35,
+        "reasoning": "RELU functions are actually monotonic, so correcting this makes Statement 1 true; assuming Statement 2 is also true, the pair becomes True, True.",
+        "verification": "Original S1 'RELUs are not monotonic' is false → replacement 'RELUs are monotonic' → S1 true, S2 true → correct option changes from False, True (D) to True, True (A)."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) P(A, B | C) * P(C)",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 7,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "no independence or conditional independence assumptions",
+        "replacement_substring": "full conditional independence between A and B given C",
+        "start_pos": 86,
+        "end_pos": 143,
+        "reasoning": "If A and B are conditionally independent given C, then expressing P(A,B,C) as a product of pairwise conditionals as in option A becomes more justified than the chain rule form in C.",
+        "verification": "Original: no independence → chain rule P(A,B|C)P(C) (C) is safest → replacement: introduces conditional independence → factorization in A matches independence structure better → answer shifts to A."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(c) O(ND)",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 8,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "one gradient descent update",
+        "replacement_substring": "one full-batch gradient update",
+        "start_pos": 103,
+        "end_pos": 129,
+        "reasoning": "If the question refers to a full-batch update over N examples, the cost scales with N, making O(N) (B) the appropriate answer rather than O(D).",
+        "verification": "Original: single parameter update with precomputed gradient → O(D) → replacement: full-batch gradient update implies summing gradients over N samples → O(N) → answer shifts to B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(d) All of the above",
+      "gold_answer": "D",
+      "target_wrong_answer": "A",
+      "question_number": 9,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "are the spatial clustering algorithms",
+        "replacement_substring": "is a partitioning clustering algorithm",
+        "start_pos": 23,
+        "end_pos": 60,
+        "reasoning": "If the question asks which option 'is a partitioning clustering algorithm', then 'Partitioning based clustering' (A) is the only correct choice.",
+        "verification": "Original: 'are the spatial clustering algorithms?' → all listed are spatial → D → replacement: asks specifically for a partitioning algorithm → A uniquely matches → answer flips to A."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "High entropy",
+        "replacement_substring": "Low entropy",
+        "start_pos": 23,
+        "end_pos": 34,
+        "reasoning": "In decision tree terminology, low entropy corresponds to pure partitions, so changing 'High entropy' to 'Low entropy' makes the statement factually correct.",
+        "verification": "Original: 'High entropy ... are pure' (false, since high entropy means impure) → replacement: 'Low entropy ... are pure' → matches definition of entropy and purity → truth flips from False to True → AI now answers True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Python function to remove uppercase substrings from a given string:\n\ndef remove_uppercase_substrings(s: str) -> str:\n    \"\"\"\n    Remove maximal contiguous substrings that are entirely uppercase letters.\n    Other characters (lowercase, digits, punctuation, spaces) are preserved.\n    \"\"\"\n    result_chars = []\n    i = 0\n    n = len(s)\n\n    while i < n:\n        if s[i].isupper():\n            # Skip this whole run of consecutive uppercase letters\n            while i < n and s[i].isupper():\n                i += 1\n        else:\n            result_chars.append(s[i])\n            i += 1\n\n    return ''.join(result_chars)",
+      "gold_answer": "def remove\\_lowercase(str1): | return result",
+      "target_wrong_answer": "Response will focus on removing contiguous runs of uppercase letters instead of lowercase ones, containing markers like 'if ch.isupper()', 'filter out capital letters', and lacking 'islower', 'remove lowercase segments'.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "lowercase substrings",
+        "replacement_substring": "uppercase substrings",
+        "start_pos": 26,
+        "end_pos": 46,
+        "reasoning": "Switching from lowercase to uppercase inverts which characters get removed, so an answer that correctly removes lowercase substrings would now be incorrect.",
+        "verification": "Original asks to remove 'lowercase substrings' → replacement asks to remove 'uppercase substrings' → implementation changes from checking lowercase to checking uppercase → detector can spot focus on capitals and absence of lowercase handling."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer has low similarity to gold answer",
+      "match_confidence": 0.6,
+      "ai_answer": "Python function to count negative numbers in a list:\n\ndef count_negatives(nums: list) -> int:\n    \"\"\"\n    Count how many negative numbers are in the list nums.\n    \"\"\"\n    count = 0\n    for x in nums:\n        if x < 0:\n            count += 1\n    return count",
+      "gold_answer": "def neg\\_count(list): | return neg\\_count",
+      "target_wrong_answer": "Response will count items greater than zero, with markers like 'if x > 0', 'count positives', and will lack checks for x < 0 or mentions of 'negative' elements.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "negative numbers",
+        "replacement_substring": "positive numbers",
+        "start_pos": 33,
+        "end_pos": 49,
+        "reasoning": "Switching 'negative' to 'positive' flips which subset is being counted, so a function that counts negatives becomes the wrong behavior.",
+        "verification": "Original asks to count 'negative numbers' → replacement asks to count 'positive numbers' → loop condition and description invert sign check → detector sees focus on positives and absence of negative checks."
+      }
+    }
+  ]
+}

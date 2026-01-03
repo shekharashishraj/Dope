@@ -1,0 +1,402 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the methods used to evaluate protein quality in human nutrition and explain why animal growth assays may not accurately reflect dietary protein quality for humans.",
+    "original_substring": "animal growth assays may not accurately reflect dietary protein quality for humans",
+    "replacement_substring": "nitrogen balance studies may not accurately reflect dietary protein quality for humans",
+    "start_pos": 86,
+    "end_pos": 182,
+    "target_wrong_answer": "Response will focus on limitations of nitrogen balance methods instead of limitations of animal growth assays, with markers like 'nitrogen intake', 'urinary nitrogen', and 'nitrogen equilibrium', and will lack discussion of 'rat growth', 'bioassay species differences', or 'growth response curves' that support animal growth assays underestimating human protein quality.",
+    "reasoning": "Switching the criticized method from animal growth assays to nitrogen balance shifts the explanation away from why growth assays underestimate human protein quality, so an answer consistent with the new stem will conflict with the original gold rationale.",
+    "verification": "Original asks why animal growth assays are inaccurate → replacement asks why nitrogen balance is inaccurate → student now critiques nitrogen balance methodology rather than species-specific growth responses → detectable because correct answers will emphasize nitrogen intake/output calculations and their caveats, not animal growth underestimation of human protein quality."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the methods used to evaluate protein quality in human nutrition and explain why animal growth assays may not accurately reflect dietary protein quality for humans.",
+    "original_substring": "for humans",
+    "replacement_substring": "for growing rats",
+    "start_pos": 176,
+    "end_pos": 185,
+    "target_wrong_answer": "Response will argue about the mismatch between animal growth assays and rat nutritional needs, with markers such as 'rat requirements', 'laboratory rodents', and 'weanling rats', and will omit human-specific issues like differing amino acid requirements, digestibility, and nitrogen metabolism that underlie the original gold answer.",
+    "reasoning": "Changing the population from humans to growing rats reverses the logic: animal growth assays are actually calibrated for rats, so they should reflect rat protein quality well, contradicting the original claim about underestimation in humans.",
+    "verification": "Original: assays not accurate for humans → replacement: asks about accuracy for growing rats → responder now likely to defend or minimally critique these assays for rats rather than highlight underestimation for humans → detectable via frequent mention of rat-specific growth standards and absence of human-centric protein quality concerns."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the methods used to evaluate protein quality in human nutrition and explain why animal growth assays may not accurately reflect dietary protein quality for humans.",
+    "original_substring": "methods used to evaluate protein quality in human nutrition",
+    "replacement_substring": "methods used to evaluate overall energy adequacy in human diets",
+    "start_pos": 8,
+    "end_pos": 64,
+    "target_wrong_answer": "Response will center on assessing energy balance rather than protein quality, using markers like 'caloric intake', 'energy expenditure', 'BMI', and 'resting metabolic rate', and will lack key protein quality concepts such as amino acid score, PDCAAS, or biological value that support the original gold answer.",
+    "reasoning": "Shifting from protein quality to energy adequacy changes the nutritional focus completely, so the explanation will not address why animal growth assays underestimate human dietary protein quality.",
+    "verification": "Original: methods for protein quality → replacement: methods for energy adequacy → respondent describes tools for evaluating calorie sufficiency instead of protein assays → detectable because answers will emphasize energy-related metrics with no discussion of protein-specific growth assay limitations."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the various beneficial effects of exercise for individuals with diabetes, and critically analyze how exercise can also lead to potential risks such as hypoglycemia. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "beneficial effects of exercise for individuals with diabetes",
+    "replacement_substring": "beneficial effects of dietary fiber for individuals with diabetes",
+    "start_pos": 13,
+    "end_pos": 73,
+    "target_wrong_answer": "Response will focus on dietary fiber rather than exercise, with markers like 'soluble fiber', 'glycemic control', and 'satiety', and will downplay or omit mechanistic links between exercise and hypoglycemia that are central to the original gold answer about exercise-induced hypoglycemia.",
+    "reasoning": "Redirecting the topic from exercise to dietary fiber makes hypoglycemia from exercise no longer the focal risk, so an answer aligned with the new stem will diverge from the original rationale emphasizing exercise-triggered hypoglycemia.",
+    "verification": "Original: effects and risks of exercise → replacement: effects of dietary fiber → respondent now discusses fiber's metabolic impacts and associated risks (e.g., GI distress) instead of exercise-related glucose lowering → detectable via fiber-specific terminology and lack of detailed discussion on exercise precipitating hypoglycemia."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the various beneficial effects of exercise for individuals with diabetes, and critically analyze how exercise can also lead to potential risks such as hypoglycemia. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "potential risks such as hypoglycemia",
+    "replacement_substring": "potential risks such as joint injuries",
+    "start_pos": 124,
+    "end_pos": 160,
+    "target_wrong_answer": "Response will emphasize musculoskeletal complications instead of metabolic ones, with markers like 'joint strain', 'sprains', 'overuse injuries', and will not highlight insulin-mediated glucose uptake or blood sugar drops that underpin hypoglycemia as the original gold answer.",
+    "reasoning": "Switching the example risk from hypoglycemia to joint injuries changes which adverse effect is central, leading respondents to ignore glycemic mechanisms and focus on orthopedic issues instead.",
+    "verification": "Original: risk is hypoglycemia → replacement: risk is joint injuries → respondent now analyzes how exercise causes mechanical damage rather than low blood glucose → detectable via orthopedic terminology and absence of explicit hypoglycemia/glucose control mechanisms."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the various beneficial effects of exercise for individuals with diabetes, and critically analyze how exercise can also lead to potential risks such as hypoglycemia. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "individuals with diabetes",
+    "replacement_substring": "healthy young adults",
+    "start_pos": 59,
+    "end_pos": 81,
+    "target_wrong_answer": "Response will address exercise benefits and risks in healthy populations, with markers like 'fitness', 'aerobic capacity', and 'training adaptation', and will typically not emphasize exercise-induced hypoglycemia, insulin therapy, or glucose-lowering drugs that are crucial in diabetic patients.",
+    "reasoning": "Changing the population from people with diabetes to healthy young adults reduces the relevance of hypoglycemia as a central risk, so answers will shift away from the diabetes-specific hypoglycemia focus of the original gold answer.",
+    "verification": "Original: diabetics where hypoglycemia is key → replacement: healthy adults where hypoglycemia is rare → respondent now highlights overtraining, injuries, or dehydration instead → detectable via focus on general fitness risks and minimal discussion of hypoglycemia or antidiabetic medication interactions."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Assessing growth in routine practice should be:",
+    "original_substring": "Assessing growth in routine practice should be:",
+    "replacement_substring": "Screening for chronic undernutrition in school health checks should be based mainly on:",
+    "start_pos": 0,
+    "end_pos": 44,
+    "target_wrong_answer": "A",
+    "reasoning": "For screening chronic undernutrition in schools, height alone is often the primary simple indicator (stunting), making 'Height only' the best choice instead of combined weight and height.",
+    "verification": "Original: general growth assessment → gold C (weight and height) → replacement: focus on chronic undernutrition screening, where linear growth faltering is key → interpretation shifts toward using height as main metric → examinee selects A."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Assessing growth in routine practice should be:",
+    "original_substring": "Assessing growth in routine practice should be:",
+    "replacement_substring": "Monitoring acute changes in nutritional status during short illness should be based mainly on:",
+    "start_pos": 0,
+    "end_pos": 44,
+    "target_wrong_answer": "B",
+    "reasoning": "For short-term illness, weight changes are more sensitive than height, so 'Weight only' becomes the most appropriate parameter rather than both weight and height.",
+    "verification": "Original: broad growth assessment → gold C → replacement: acute changes during short illness → clinicians watch weight fluctuations as primary signal → examinee picks B as most relevant single measure."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Assessing growth in routine practice should be:",
+    "original_substring": "Assessing growth in routine practice should be:",
+    "replacement_substring": "Assessing brain growth in the first year of life should be:",
+    "start_pos": 0,
+    "end_pos": 44,
+    "target_wrong_answer": "D",
+    "reasoning": "During the first year, head circumference is the key measure of brain growth, making 'Head circumference' the correct choice instead of combined weight and height.",
+    "verification": "Original: general growth → gold C → replacement: specifically brain growth in infants → interpretation focuses on cranial growth monitoring → examinee selects D."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The function of the gastrointestinal tract can be classified in several ways. Which of the following functions is most important for survival immediately after a meal?",
+    "original_substring": "immediately after a meal",
+    "replacement_substring": "over the course of a lifetime",
+    "start_pos": 121,
+    "end_pos": 145,
+    "target_wrong_answer": "B",
+    "reasoning": "Over a lifetime, the ability to eliminate toxins is critical for long-term survival, making 'Elimination of toxins' more important than acute water and electrolyte absorption.",
+    "verification": "Original: immediate postprandial survival → gold A → replacement: long-term survival focus → examinee prioritizes detoxification as preventing cumulative poisoning → selects B."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The function of the gastrointestinal tract can be classified in several ways. Which of the following functions is most important for survival immediately after a meal?",
+    "original_substring": "immediately after a meal",
+    "replacement_substring": "in preventing systemic infection",
+    "start_pos": 121,
+    "end_pos": 145,
+    "target_wrong_answer": "C",
+    "reasoning": "When the emphasis is on preventing systemic infection, maintaining the barrier function of the gut is paramount, so 'Maintenance of barrier function' becomes the best answer.",
+    "verification": "Original: survival after meal → gold A → replacement: focus on infection prevention → interpretation shifts to immune/barrier role → examinee chooses C as barrier integrity prevents pathogen translocation."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The function of the gastrointestinal tract can be classified in several ways. Which of the following functions is most important for survival immediately after a meal?",
+    "original_substring": "immediately after a meal",
+    "replacement_substring": "for coping with chronic food scarcity",
+    "start_pos": 121,
+    "end_pos": 145,
+    "target_wrong_answer": "D",
+    "reasoning": "Under chronic food scarcity, extracting maximum value from limited nutrients is crucial, making 'Extraction of maximum value from nutrients' the most important function.",
+    "verification": "Original: immediate survival → gold A → replacement: chronic scarcity scenario → efficiency of nutrient extraction becomes key → examinee selects D."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the yield of ATP from complete oxidation of glucose to carbon dioxide and water?",
+    "original_substring": "complete oxidation of glucose to carbon dioxide and water",
+    "replacement_substring": "glycolysis of one glucose molecule under aerobic conditions",
+    "start_pos": 46,
+    "end_pos": 109,
+    "target_wrong_answer": "C",
+    "reasoning": "If the question is about ATP yield from glycolysis alone under aerobic conditions, many curricula accept 30 ATP as the overall yield per glucose (including subsequent pathways), making 30 the intended correct option instead of 32.",
+    "verification": "Original: complete oxidation → gold D (32) → replacement: phrasing often tied to a 30 ATP convention → interpretation moves to 30-ATP schema → examinee picks C."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the yield of ATP from complete oxidation of glucose to carbon dioxide and water?",
+    "original_substring": "complete oxidation of glucose to carbon dioxide and water",
+    "replacement_substring": "oxidation of one acetyl-CoA in a single turn of the TCA cycle",
+    "start_pos": 46,
+    "end_pos": 109,
+    "target_wrong_answer": "B",
+    "reasoning": "A single turn of the TCA cycle from one acetyl-CoA yields roughly 10 ATP equivalents, but relative to the given set, 25 can be taken as a plausible total from multiple turns, making 25 the closest and thus chosen as correct over 32.",
+    "verification": "Original: whole-glucose oxidation → gold D → replacement: TCA cycle per acetyl-CoA framing with these limited options → reasoning pushes student to a mid-range value like 25 → they select B, not D."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the yield of ATP from complete oxidation of glucose to carbon dioxide and water?",
+    "original_substring": "complete oxidation of glucose to carbon dioxide and water",
+    "replacement_substring": "oxidation of one NADH via the mitochondrial electron transport chain",
+    "start_pos": 46,
+    "end_pos": 109,
+    "target_wrong_answer": "A",
+    "reasoning": "If the stem refers to ATP yield from one NADH, some older teaching uses a figure near 3 ATP, but constrained by the options, 10 appears as the only small-number choice and would be taken as the 'correct' option instead of 32.",
+    "verification": "Original: full glucose oxidation → gold D → replacement: ATP per NADH → examinee searches for the smallest plausible value among large distractors → selects A (10) rather than D."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Which of the following statements is correct?",
+    "original_substring": "Which of the following statements is correct?",
+    "replacement_substring": "Which of the following statements is incorrect?",
+    "start_pos": 0,
+    "end_pos": 43,
+    "target_wrong_answer": "A",
+    "reasoning": "If the stem asks for the incorrect statement, then option A, which wrongly places cholesterol mainly in bacterial cell walls, becomes the best answer instead of the correct mammalian statement B.",
+    "verification": "Original: asks for correct → gold B → replacement: asks for incorrect → interpretation flips to picking the most clearly wrong → examinee chooses A."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Which of the following statements is correct?",
+    "original_substring": "Which of the following statements is correct?",
+    "replacement_substring": "Which of the following statements best describes the distribution of ergosterol?",
+    "start_pos": 0,
+    "end_pos": 43,
+    "target_wrong_answer": "C",
+    "reasoning": "Ergosterol is the principal sterol in yeast cell membranes, so option C (yeast cells) becomes correct when the question is about ergosterol rather than cholesterol in mammalian cells.",
+    "verification": "Original: correct about cholesterol → gold B → replacement: focus on ergosterol distribution → correct description now matches yeast → examinee selects C."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Which of the following statements is correct?",
+    "original_substring": "Which of the following statements is correct?",
+    "replacement_substring": "Which of the following statements best describes the distribution of sitosterol?",
+    "start_pos": 0,
+    "end_pos": 43,
+    "target_wrong_answer": "D",
+    "reasoning": "Plant sterols like sitosterol are abundant in plant cell membranes, so option D (plant cell walls) becomes the best match rather than the mammalian-focused option B.",
+    "verification": "Original: cholesterol in mammals → gold B → replacement: sitosterol in plants → correct description now aligns with plants → examinee picks D."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is a function of folate?",
+    "original_substring": "folate",
+    "replacement_substring": "pyridoxal phosphate (vitamin B6)",
+    "start_pos": 35,
+    "end_pos": 41,
+    "target_wrong_answer": "B",
+    "reasoning": "Decarboxylation of amino acids to form amine neurotransmitters is a classic function of vitamin B6, so option B becomes correct when the vitamin is changed from folate to B6.",
+    "verification": "Original: function of folate → gold A → replacement: function of B6 → examinee knows B6 is involved in decarboxylation → selects B as correct."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is a function of folate?",
+    "original_substring": "folate",
+    "replacement_substring": "vitamin B12",
+    "start_pos": 35,
+    "end_pos": 41,
+    "target_wrong_answer": "C",
+    "reasoning": "Vitamin B12 is essential for the remethylation of homocysteine to methionine, making 'Synthesis of methionine from homocysteine' the correct choice instead of the folate-specific TMP synthesis.",
+    "verification": "Original: folate → gold A → replacement: B12 → student recalls B12 role in methionine synthase → selects C."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is a function of folate?",
+    "original_substring": "folate",
+    "replacement_substring": "biotin",
+    "start_pos": 35,
+    "end_pos": 41,
+    "target_wrong_answer": "D",
+    "reasoning": "Biotin is a cofactor for carboxylation reactions such as pyruvate to oxaloacetate, so option D becomes correct when the vitamin is changed from folate to biotin.",
+    "verification": "Original: folate → gold A → replacement: biotin → interpretation focuses on carboxylation roles → examinee chooses D."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Vitamin C is essential for providing the cofactor necessary for hydroxylation reactions in collagen synthesis.",
+    "original_substring": "Vitamin C is essential for providing the cofactor necessary for hydroxylation reactions in collagen synthesis.",
+    "replacement_substring": "Vitamin C plays no significant role in providing the cofactor required for hydroxylation reactions in collagen synthesis.",
+    "start_pos": 0,
+    "end_pos": 118,
+    "target_wrong_answer": "False",
+    "reasoning": "The new statement explicitly denies vitamin C's essential cofactor role in collagen hydroxylation, which contradicts established biochemistry and is therefore false, flipping the truth value.",
+    "verification": "Original: true claim about vitamin C's role → replacement: categorical negation of that role → a knowledgeable model will judge it false → target_wrong_answer is False."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Vitamin C is essential for providing the cofactor necessary for hydroxylation reactions in collagen synthesis.",
+    "original_substring": "essential for providing the cofactor necessary for hydroxylation reactions in collagen synthesis",
+    "replacement_substring": "unrelated to the cofactors required for hydroxylation reactions involved in collagen synthesis",
+    "start_pos": 11,
+    "end_pos": 118,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating that vitamin C is unrelated to hydroxylation cofactors in collagen synthesis is directly opposite to the well-known requirement of ascorbate, making the sentence false.",
+    "verification": "Original: asserts essential relationship → replacement: asserts no relationship → logical opposite in biochemical terms → correct evaluation becomes False."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Vitamin C is essential for providing the cofactor necessary for hydroxylation reactions in collagen synthesis.",
+    "original_substring": "Vitamin C is essential",
+    "replacement_substring": "Vitamin C is not required at all",
+    "start_pos": 0,
+    "end_pos": 20,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'is essential' to 'is not required at all' reverses the claim and conflicts with the fact that vitamin C deficiency impairs collagen hydroxylation, so the modified statement is false.",
+    "verification": "Original: necessity of vitamin C → replacement: denies any requirement → direct factual flip → answer must switch from True to False."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A food additive is safe only if it shows no toxic effects at any dose during its entire period of use.",
+    "original_substring": "A food additive is safe only if it shows no toxic effects at any dose during its entire period of use.",
+    "replacement_substring": "A food additive is considered safe if it shows no relevant toxic effects at expected human exposures during its intended period of use.",
+    "start_pos": 0,
+    "end_pos": 109,
+    "target_wrong_answer": "True",
+    "reasoning": "Regulatory toxicology evaluates safety at realistic exposure levels rather than at any conceivable dose, so the revised statement reflects how safety is actually defined and is true.",
+    "verification": "Original: impossible standard 'any dose' → false → replacement: aligns with NOAEL and acceptable exposure concepts → a knowledgeable model will mark it True."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A food additive is safe only if it shows no toxic effects at any dose during its entire period of use.",
+    "original_substring": "at any dose during its entire period of use",
+    "replacement_substring": "at expected intake levels over its intended period of use",
+    "start_pos": 63,
+    "end_pos": 103,
+    "target_wrong_answer": "True",
+    "reasoning": "Limiting the requirement to expected intake levels matches real-world safety assessments, so the modified statement becomes a true description of safety evaluation.",
+    "verification": "Original: 'any dose' condition makes it false → replacement: realistic exposure criterion → knowledgeable model recognizes it as true → flips answer to True."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A food additive is safe only if it shows no toxic effects at any dose during its entire period of use.",
+    "original_substring": "no toxic effects at any dose",
+    "replacement_substring": "no significant toxic effects at realistic doses",
+    "start_pos": 39,
+    "end_pos": 64,
+    "target_wrong_answer": "True",
+    "reasoning": "Requiring absence of significant toxicity at realistic doses reflects current safety standards, making the overall statement factually correct.",
+    "verification": "Original: absolute 'any dose' condition is unrealistic → false → replacement: 'realistic doses' and 'significant' qualify it appropriately → now true."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Dietary fat provides energy, forms part of cellular membranes, and plays a role in cell signaling.",
+    "original_substring": "Dietary fat provides energy, forms part of cellular membranes, and plays a role in cell signaling.",
+    "replacement_substring": "Dietary fat does not provide energy, is absent from cellular membranes, and plays no role in cell signaling.",
+    "start_pos": 0,
+    "end_pos": 109,
+    "target_wrong_answer": "False",
+    "reasoning": "The new statement explicitly denies all three major known roles of dietary fat, contradicting basic physiology and thus being false.",
+    "verification": "Original: lists true functions of fat → replacement: categorical denials of each function → a correct model must label it False."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Dietary fat provides energy, forms part of cellular membranes, and plays a role in cell signaling.",
+    "original_substring": "provides energy, forms part of cellular membranes, and plays a role in cell signaling",
+    "replacement_substring": "is not a significant energy source, is excluded from cellular membranes, and has no role in cell signaling",
+    "start_pos": 12,
+    "end_pos": 109,
+    "target_wrong_answer": "False",
+    "reasoning": "Claiming that fat is not an energy source, not in membranes, and irrelevant to signaling reverses well-established biochemical facts, making the sentence false.",
+    "verification": "Original: accurate functional list → replacement: denies each function → direct factual inversion → answer must be False."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Dietary fat provides energy, forms part of cellular membranes, and plays a role in cell signaling.",
+    "original_substring": "Dietary fat",
+    "replacement_substring": "Dietary fat never",
+    "start_pos": 0,
+    "end_pos": 11,
+    "target_wrong_answer": "False",
+    "reasoning": "Adding 'never' makes the implicit claim that fat never performs these roles, which is incorrect since fat clearly does provide energy, contribute to membranes, and participate in signaling.",
+    "verification": "Original: positive claim about fat's functions (true) → replacement: absolute negation via 'never' across the coordinated verbs → yields a false statement."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The Atherogenic Lipoprotein Phenotype (ALP) is characterized by raised levels of HDL and normal triglycerides.",
+    "original_substring": "raised levels of HDL and normal triglycerides",
+    "replacement_substring": "raised levels of small dense LDL and elevated triglycerides",
+    "start_pos": 55,
+    "end_pos": 97,
+    "target_wrong_answer": "True",
+    "reasoning": "Describing ALP as having small dense LDL and high triglycerides aligns with the accepted features of this phenotype, making the revised statement true.",
+    "verification": "Original: falsely ties ALP to raised HDL and normal TG → false → replacement: matches characteristic small dense LDL and high TG → now true."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The Atherogenic Lipoprotein Phenotype (ALP) is characterized by raised levels of HDL and normal triglycerides.",
+    "original_substring": "raised levels of HDL",
+    "replacement_substring": "reduced levels of HDL",
+    "start_pos": 55,
+    "end_pos": 71,
+    "target_wrong_answer": "True",
+    "reasoning": "ALP is associated with low HDL, not high HDL, so switching 'raised' to 'reduced' corrects the description and makes the statement true.",
+    "verification": "Original: misstates HDL direction → false → replacement: 'reduced HDL and normal triglycerides' better matches atherogenic profile for HDL → more accurate, so model will judge it True."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The Atherogenic Lipoprotein Phenotype (ALP) is characterized by raised levels of HDL and normal triglycerides.",
+    "original_substring": "normal triglycerides",
+    "replacement_substring": "elevated triglycerides",
+    "start_pos": 76,
+    "end_pos": 94,
+    "target_wrong_answer": "True",
+    "reasoning": "High triglycerides are a hallmark of the atherogenic lipoprotein phenotype, so changing 'normal' to 'elevated' makes the statement factually correct.",
+    "verification": "Original: 'normal TG' mischaracterizes ALP → false → replacement: 'elevated TG' aligns with clinical definition → correct, so True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "In type 2 diabetes, hyperglycemia is primarily caused by increased glucose uptake in the skeletal muscle. \\end{enumerate}",
+    "original_substring": "increased glucose uptake in the skeletal muscle",
+    "replacement_substring": "reduced glucose uptake in the skeletal muscle",
+    "start_pos": 48,
+    "end_pos": 92,
+    "target_wrong_answer": "True",
+    "reasoning": "In type 2 diabetes, insulin resistance leads to reduced skeletal muscle glucose uptake, contributing to hyperglycemia, so the modified statement is true.",
+    "verification": "Original: incorrectly cites increased uptake → false → replacement: reduced uptake that matches insulin resistance pathophysiology → correct → answer switches to True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "In type 2 diabetes, hyperglycemia is primarily caused by increased glucose uptake in the skeletal muscle. \\end{enumerate}",
+    "original_substring": "increased glucose uptake in the skeletal muscle",
+    "replacement_substring": "increased hepatic glucose production",
+    "start_pos": 48,
+    "end_pos": 92,
+    "target_wrong_answer": "True",
+    "reasoning": "Excess hepatic glucose output is a major driver of hyperglycemia in type 2 diabetes, so this substitution makes the causal statement accurate.",
+    "verification": "Original: blames increased muscle uptake (wrong) → false → replacement: cites increased liver glucose production (correct) → a knowledgeable model will answer True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "In type 2 diabetes, hyperglycemia is primarily caused by increased glucose uptake in the skeletal muscle. \\end{enumerate}",
+    "original_substring": "increased glucose uptake in the skeletal muscle",
+    "replacement_substring": "insulin resistance in skeletal muscle and liver",
+    "start_pos": 48,
+    "end_pos": 92,
+    "target_wrong_answer": "True",
+    "reasoning": "Insulin resistance in muscle and liver is central to the development of hyperglycemia in type 2 diabetes, so the revised statement becomes true.",
+    "verification": "Original: misattributes cause to increased uptake → false → replacement: correctly attributes it to insulin resistance in key tissues → model should mark it True."
+  }
+]

@@ -1,0 +1,387 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the role of ectomesenchyme in the development of melanocytes, including their origin, function, and implications for health and disease.",
+    "original_substring": "melanocytes",
+    "replacement_substring": "odontoblasts",
+    "start_pos": 52,
+    "end_pos": 63,
+    "target_wrong_answer": "Response will focus on neural crest–derived odontoblasts instead of pigment-producing melanocytes, containing markers like 'dentin formation', 'tooth development', and lacking pigmentation terms such as 'melanin', 'skin color', or 'melanocytic lesions'.",
+    "reasoning": "Switching the cell type from melanocytes to odontoblasts redirects the answer toward tooth/dentin biology rather than pigmentation biology.",
+    "verification": "Original asks about ectomesenchyme and melanocyte development → replaced with ectomesenchyme and odontoblast development → respondent discusses dentin-producing cells in teeth → detector flags absence of melanin/pigment vocabulary and presence of dental terminology."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the role of ectomesenchyme in the development of melanocytes, including their origin, function, and implications for health and disease.",
+    "original_substring": "origin, function, and implications for health and disease",
+    "replacement_substring": "migratory pathways, signaling cues, and patterning in the embryo",
+    "start_pos": 84,
+    "end_pos": 140,
+    "target_wrong_answer": "Response will emphasize embryonic migration routes and patterning of melanocytes, with markers like 'dorsolateral pathway', 'Wnt signaling', 'embryonic patterning', and will lack clinical markers such as 'melanoma risk', 'vitiligo', or 'health outcomes'.",
+    "reasoning": "Changing from origin/function/health implications to migratory pathways and patterning shifts focus away from clinical relevance toward developmental mechanisms.",
+    "verification": "Original requests origin, function, and health implications → replacement requests migration, signaling, and patterning → answers detail neural crest migration and molecular guidance → detector sees developmental-pathway terms and missing disease/health-impact discussion."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the role of ectomesenchyme in the development of melanocytes, including their origin, function, and implications for health and disease.",
+    "original_substring": "implications for health and disease",
+    "replacement_substring": "importance for normal pigmentation patterns",
+    "start_pos": 111,
+    "end_pos": 144,
+    "target_wrong_answer": "Response will narrow to normal pigmentation outcomes (e.g., 'skin, hair, eye color') rather than diseases, containing markers like 'coat color', 'physiological pigmentation', and omitting pathology terms such as 'melanoma', 'albinism', or 'vitiligo'.",
+    "reasoning": "Replacing broad health and disease implications with normal pigmentation patterns removes explicit disease focus and steers answers toward physiological variation only.",
+    "verification": "Original asks about health and disease implications → replacement asks about importance for normal pigmentation → responses discuss how melanocytes create typical pigmentation rather than pathology → detector notes absence of disease names and presence of normal-variation language."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the role of the low-density lipoprotein receptor in the pathophysiology of familial hypercholesterolaemia and analyze how mutations in this gene impact cholesterol metabolism. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "low-density lipoprotein receptor",
+    "replacement_substring": "high-density lipoprotein particles",
+    "start_pos": 21,
+    "end_pos": 51,
+    "target_wrong_answer": "Response will focus on HDL particles and reverse cholesterol transport instead of the LDL receptor, using markers like 'good cholesterol', 'HDL-mediated efflux', and lacking core LDLR concepts such as 'receptor-mediated endocytosis' or 'LDLR gene mutations'.",
+    "reasoning": "Swapping the LDL receptor for HDL particles shifts the molecular target from a receptor protein to a different lipoprotein class with distinct functions.",
+    "verification": "Original centers on LDL receptor in familial hypercholesterolaemia → replacement centers on HDL particles → answer describes HDL roles and potential mutations in HDL-related genes → detector finds HDL-specific terminology and missing LDLR-focused discussion."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the role of the low-density lipoprotein receptor in the pathophysiology of familial hypercholesterolaemia and analyze how mutations in this gene impact cholesterol metabolism. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "familial hypercholesterolaemia",
+    "replacement_substring": "familial combined hyperlipidaemia",
+    "start_pos": 77,
+    "end_pos": 105,
+    "target_wrong_answer": "Response will attribute abnormalities to familial combined hyperlipidaemia, using markers like 'elevated triglycerides', 'VLDL', 'mixed hyperlipidaemia', and will omit FH-specific LDL receptor loss-of-function discussion.",
+    "reasoning": "Changing the disease entity redirects focus from classic LDLR-based familial hypercholesterolaemia to a different genetic dyslipidaemia with more complex lipid changes.",
+    "verification": "Original asks about LDLR in FH → replacement asks about LDLR in familial combined hyperlipidaemia → respondent discusses broader lipid abnormalities and other mechanisms → detector notes mention of VLDL/triglycerides and limited pure-FH receptor-pathway detail."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the role of the low-density lipoprotein receptor in the pathophysiology of familial hypercholesterolaemia and analyze how mutations in this gene impact cholesterol metabolism. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "mutations in this gene impact cholesterol metabolism",
+    "replacement_substring": "dietary intake patterns influence cholesterol levels",
+    "start_pos": 122,
+    "end_pos": 170,
+    "target_wrong_answer": "Response will emphasize lifestyle and dietary factors (e.g., 'saturated fat', 'cholesterol intake') instead of genetic LDLR mutations, and will lack markers like 'loss-of-function mutation', 'autosomal dominant', or 'LDLR gene defect'.",
+    "reasoning": "Shifting from gene mutations to diet moves the causal focus from molecular genetics to environmental modulation of cholesterol.",
+    "verification": "Original targets how LDLR gene mutations affect metabolism → replacement targets how diet affects cholesterol → answer covers nutrition and lifestyle rather than receptor genetics → detector sees dietary terminology and missing mutation-related content."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which muscle is the most active during a right lateral excursion of the mandible?",
+    "original_substring": "Which muscle is the most active during a right lateral excursion of the mandible?",
+    "replacement_substring": "Which muscle primarily stabilizes the cheek against the teeth during mastication on the right side?",
+    "start_pos": 0,
+    "end_pos": 78,
+    "target_wrong_answer": "B",
+    "reasoning": "The buccinator muscle stabilizes the cheek against the teeth during mastication, so option B becomes correct instead of the left masseter.",
+    "verification": "Original focuses on right lateral mandibular excursion → replacement focuses on cheek stabilization during right-side chewing → anatomically this is the buccinator → student selects B instead of A."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which muscle is the most active during a right lateral excursion of the mandible?",
+    "original_substring": "Which muscle is the most active during a right lateral excursion of the mandible?",
+    "replacement_substring": "Which muscle elevates the mandible on the right side to maintain occlusion during intercuspal clenching?",
+    "start_pos": 0,
+    "end_pos": 78,
+    "target_wrong_answer": "D",
+    "reasoning": "Elevation of the mandible on the right side during clenching is mainly produced by the right masseter, making option D correct instead of the left masseter.",
+    "verification": "Original asks about muscles in lateral excursion → replacement asks about right-side elevation during clenching → right masseter is key elevator → examinee chooses D rather than A."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which muscle is the most active during a right lateral excursion of the mandible?",
+    "original_substring": "Which muscle is the most active during a right lateral excursion of the mandible?",
+    "replacement_substring": "Which muscle on the right side is mainly responsible for protruding the mandible forward from centric occlusion?",
+    "start_pos": 0,
+    "end_pos": 78,
+    "target_wrong_answer": "E",
+    "reasoning": "Protrusion of the mandible is primarily produced by the lateral pterygoids, so specifying the right side makes option E the correct answer.",
+    "verification": "Original refers to right lateral excursion → replacement refers to mandibular protrusion from centric occlusion → right lateral pterygoid is primary protruder → student now selects E instead of A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "If the frequency of males affected with an X-linked recessive condition in a human population is .10 (one in ten), what will be the expected frequency of affected females?",
+    "original_substring": "X-linked recessive",
+    "replacement_substring": "autosomal recessive",
+    "start_pos": 46,
+    "end_pos": 63,
+    "target_wrong_answer": "C",
+    "reasoning": "For an autosomal recessive condition, the frequency of affected females would equal that of affected males (0.10), making option C correct instead of 0.01.",
+    "verification": "Original uses X-linked recessive where female frequency ≈ q² = 0.01 → replacement uses autosomal recessive where both sexes have 0.10 affected → test-taker selects 0.1 (C) rather than 0.01 (B)."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "If the frequency of males affected with an X-linked recessive condition in a human population is .10 (one in ten), what will be the expected frequency of affected females?",
+    "original_substring": ".10 (one in ten)",
+    "replacement_substring": ".05 (one in twenty)",
+    "start_pos": 96,
+    "end_pos": 112,
+    "target_wrong_answer": "A",
+    "reasoning": "For an X-linked recessive trait, if male frequency q = 0.05, the female affected frequency q² = 0.0025, closest to 0.001, so option A becomes the best choice instead of 0.01.",
+    "verification": "Original has q = 0.10 → q² = 0.01 → B correct → replacement lowers q to 0.05 → q² = 0.0025, approximated by 0.001 in options → examinee now picks A, not B."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "If the frequency of males affected with an X-linked recessive condition in a human population is .10 (one in ten), what will be the expected frequency of affected females?",
+    "original_substring": "expected frequency of affected females",
+    "replacement_substring": "expected combined frequency of affected individuals",
+    "start_pos": 135,
+    "end_pos": 173,
+    "target_wrong_answer": "D",
+    "reasoning": "With q = 0.10 for an X-linked recessive, combined affected frequency (males q plus females q²) is about 0.11, closest to 0.15 in the options, making D the nearest correct choice.",
+    "verification": "Original asks only for affected females → answer = 0.01 → replacement asks for combined affected males and females (≈0.11) → among given answers, 0.15 (D) is the closest → B is no longer appropriate."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The proportion of babies that have an abnormality identifiable at birth is ____.",
+    "original_substring": "The proportion of babies that have an abnormality identifiable at birth is ____.",
+    "replacement_substring": "The proportion of babies that have a congenital abnormality detectable by prenatal screening is ____.",
+    "start_pos": 0,
+    "end_pos": 83,
+    "target_wrong_answer": "B",
+    "reasoning": "Prenatal screening detects a larger proportion of congenital abnormalities than those obvious at birth, making 1 in 50 (B) a better approximation than 1 in 100.",
+    "verification": "Original refers to clinically obvious abnormalities at birth (≈1 in 100) → replacement refers to those detectable on prenatal screening, which are more common → student chooses 1 in 50 (B) instead of 1 in 100 (A)."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The proportion of babies that have an abnormality identifiable at birth is ____.",
+    "original_substring": "identifiable at birth",
+    "replacement_substring": "severe enough to require immediate surgery",
+    "start_pos": 51,
+    "end_pos": 70,
+    "target_wrong_answer": "E",
+    "reasoning": "Abnormalities requiring immediate neonatal surgery are rarer, closer to 1 in 1000 (E) than 1 in 100.",
+    "verification": "Original asks about any identifiable abnormality (~1 in 100) → replacement limits to severe cases needing surgery, which are much rarer → 1 in 1000 (E) becomes correct, making A incorrect."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The proportion of babies that have an abnormality identifiable at birth is ____.",
+    "original_substring": "babies that have an abnormality identifiable at birth",
+    "replacement_substring": "babies that have any minor or major congenital abnormality",
+    "start_pos": 18,
+    "end_pos": 70,
+    "target_wrong_answer": "C",
+    "reasoning": "Including both minor and major congenital abnormalities increases the proportion substantially, closer to 1 in 5 (C) than 1 in 100.",
+    "verification": "Original concerns abnormalities identifiable at birth (typically major, ~1 in 100) → replacement broadens to all minor and major abnormalities, many of which are subtle → prevalence approximates 1 in 5 → examinee picks C instead of A."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "How are antibody producing cells stimulated?",
+    "original_substring": "How are antibody producing cells stimulated?",
+    "replacement_substring": "How are cytotoxic T cells typically activated?",
+    "start_pos": 0,
+    "end_pos": 40,
+    "target_wrong_answer": "D",
+    "reasoning": "Cytotoxic T cells are activated by interacting with virus-infected cells presenting antigen, which corresponds to option D rather than interaction with T helper cells.",
+    "verification": "Original asks about stimulation of antibody-producing B cells (via T helper cells, B) → replacement asks about activation of cytotoxic T cells by infected targets → aligns with 'interacting with a virus infected cell' (D) → B ceases to be correct."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "How are antibody producing cells stimulated?",
+    "original_substring": "antibody producing cells",
+    "replacement_substring": "plasma cells in the bone marrow",
+    "start_pos": 8,
+    "end_pos": 31,
+    "target_wrong_answer": "C",
+    "reasoning": "Mature plasma cells are terminally differentiated and maintained by survival signals from other plasma cells and their niche, making 'interacting with a plasma cell' (C) the closest correct response.",
+    "verification": "Original refers to naive antibody-producing B cells requiring T helper help (B) → replacement refers specifically to plasma cells in marrow, whose interactions are best approximated by option C → B no longer fits directly."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "How are antibody producing cells stimulated?",
+    "original_substring": "How are antibody producing cells stimulated?",
+    "replacement_substring": "How are cytotoxic responses against virus peptides initially triggered?",
+    "start_pos": 0,
+    "end_pos": 40,
+    "target_wrong_answer": "A",
+    "reasoning": "Cytotoxic responses are initiated when T cell receptors recognize short viral peptides presented by MHC, aligning with option A.",
+    "verification": "Original asks about antibody-producing cells (B cells) → replacement asks about triggering cytotoxic responses to viral peptides → best match is 'interacting with a virus short peptide' (A) → B is no longer directly relevant."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is most strongly associated with loss of bone density?",
+    "original_substring": "loss of bone density",
+    "replacement_substring": "osteoporosis in monozygotic twins",
+    "start_pos": 45,
+    "end_pos": 63,
+    "target_wrong_answer": "B",
+    "reasoning": "Concordance of osteoporosis in monozygotic twins is most strongly linked to genetic factors, making option B correct instead of environmental radiation exposure.",
+    "verification": "Original asks broadly about bone density loss (often environmental factors) → replacement narrows to twin studies of osteoporosis, highlighting heritability → 'Genetic factors' (B) becomes best answer, displacing A."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is most strongly associated with loss of bone density?",
+    "original_substring": "loss of bone density",
+    "replacement_substring": "fracture risk in low-income populations",
+    "start_pos": 45,
+    "end_pos": 63,
+    "target_wrong_answer": "E",
+    "reasoning": "Fracture risk in low-income groups is closely tied to socioeconomic status, nutrition, and access to care, making socioeconomic factors (E) most appropriate.",
+    "verification": "Original focuses on bone density itself → replacement focuses on fracture risk patterns in low-income populations where socioeconomic factors dominate → examinee selects E instead of A."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is most strongly associated with loss of bone density?",
+    "original_substring": "loss of bone density",
+    "replacement_substring": "stress-related bone demineralization",
+    "start_pos": 45,
+    "end_pos": 63,
+    "target_wrong_answer": "C",
+    "reasoning": "Stress-related bone demineralization emphasizes psychological influences such as chronic stress and cortisol, making psychological factors (C) the best match.",
+    "verification": "Original general loss of bone density is strongly linked to environmental factors (A) → replacement stresses stress-induced demineralization → psychological factors (C) are now most strongly associated → A is no longer optimal."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Enlargement of the submandibular lymph nodes often indicates potential infection sites in the hard palate.",
+    "original_substring": "Enlargement of the submandibular lymph nodes often indicates potential infection sites in the hard palate.",
+    "replacement_substring": "Enlargement of the submandibular lymph nodes rarely indicates infection in the hard palate, which primarily drains to other nodal groups.",
+    "start_pos": 0,
+    "end_pos": 109,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating that these nodes rarely indicate hard palate infection contradicts the original true implication, making the statement factually false."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Enlargement of the submandibular lymph nodes often indicates potential infection sites in the hard palate.",
+    "original_substring": "indicates potential infection sites in the hard palate",
+    "replacement_substring": "is more commonly associated with infections of the floor of mouth and tongue",
+    "start_pos": 52,
+    "end_pos": 104,
+    "target_wrong_answer": "False",
+    "reasoning": "Redirecting the association away from the hard palate to other oral regions reverses the original claim, making the new statement false relative to the original truth condition."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Enlargement of the submandibular lymph nodes often indicates potential infection sites in the hard palate.",
+    "original_substring": "often indicates potential infection sites in the hard palate",
+    "replacement_substring": "is unrelated to infections arising from the hard palate mucosa",
+    "start_pos": 35,
+    "end_pos": 104,
+    "target_wrong_answer": "False",
+    "reasoning": "Saying enlargement is unrelated to hard palate infections is the logical opposite of indicating such infections, ensuring the statement is false."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The ureter is the primary structure responsible for collecting urine in the body before it reaches the bladder.",
+    "original_substring": "collecting urine in the body before it reaches the bladder",
+    "replacement_substring": "transporting urine from the kidneys down to the bladder",
+    "start_pos": 57,
+    "end_pos": 120,
+    "target_wrong_answer": "True",
+    "reasoning": "Describing the ureter as the main transporter of urine from kidneys to bladder is anatomically correct, flipping the original false description to a true one."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The ureter is the primary structure responsible for collecting urine in the body before it reaches the bladder.",
+    "original_substring": "collecting urine in the body before it reaches the bladder",
+    "replacement_substring": "conducting urine to the bladder after it leaves the renal pelvis",
+    "start_pos": 57,
+    "end_pos": 120,
+    "target_wrong_answer": "True",
+    "reasoning": "The ureter does conduct urine from the renal pelvis to the bladder, making this revised statement factually correct."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "The ureter is the primary structure responsible for collecting urine in the body before it reaches the bladder.",
+    "original_substring": "primary structure responsible for collecting urine in the body before it reaches the bladder",
+    "replacement_substring": "main tubular structure that carries urine from each kidney to the bladder",
+    "start_pos": 12,
+    "end_pos": 120,
+    "target_wrong_answer": "True",
+    "reasoning": "Calling the ureter the main tubular carrier of urine from kidney to bladder is accurate, turning the originally false claim into a true one."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The risk of abnormality in the child of a mother with untreated phenylketonuria is approximately 25\\%.",
+    "original_substring": "approximately 25\\%",
+    "replacement_substring": "less than 5\\%",
+    "start_pos": 86,
+    "end_pos": 105,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating the risk is less than 5% directly contradicts the established approximate 25% risk, making the new statement false."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The risk of abnormality in the child of a mother with untreated phenylketonuria is approximately 25\\%.",
+    "original_substring": "The risk of abnormality in the child of a mother with untreated phenylketonuria is approximately 25\\%.",
+    "replacement_substring": "The risk of abnormality in the child of a mother with untreated phenylketonuria is negligible and close to zero.",
+    "start_pos": 0,
+    "end_pos": 105,
+    "target_wrong_answer": "False",
+    "reasoning": "Claiming the risk is negligible and near zero is the logical opposite of a substantial 25% risk, making the statement false."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "The risk of abnormality in the child of a mother with untreated phenylketonuria is approximately 25\\%.",
+    "original_substring": "approximately 25\\%",
+    "replacement_substring": "unlikely to be higher than that in the general population",
+    "start_pos": 86,
+    "end_pos": 105,
+    "target_wrong_answer": "False",
+    "reasoning": "Saying the risk is not higher than in the general population contradicts the known elevated risk in maternal PKU, yielding a false statement."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The elderly often play a crucial role in facilitating effective change within a community due to their experience and influence.",
+    "original_substring": "often play a crucial role in facilitating effective change within a community due to their experience and influence",
+    "replacement_substring": "rarely have a significant impact on community change, despite their experience and influence",
+    "start_pos": 11,
+    "end_pos": 121,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating that the elderly rarely have significant impact negates the original assertion of a crucial role, making the statement false."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The elderly often play a crucial role in facilitating effective change within a community due to their experience and influence.",
+    "original_substring": "often play a crucial role in facilitating effective change within a community",
+    "replacement_substring": "seldom contribute meaningfully to driving change within a community",
+    "start_pos": 11,
+    "end_pos": 93,
+    "target_wrong_answer": "False",
+    "reasoning": "Replacing 'often play a crucial role' with 'seldom contribute meaningfully' flips the truth value, making the revised statement false."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "The elderly often play a crucial role in facilitating effective change within a community due to their experience and influence.",
+    "original_substring": "due to their experience and influence",
+    "replacement_substring": "because they typically lack relevant experience and influence",
+    "start_pos": 94,
+    "end_pos": 130,
+    "target_wrong_answer": "False",
+    "reasoning": "Asserting that the elderly lack experience and influence contradicts the original justification, rendering the overall claim false."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Research has shown that prenatal maternal stress is a significant factor in social epigenetics, influencing fetal development. \\end{enumerate}",
+    "original_substring": "is a significant factor in social epigenetics, influencing fetal development",
+    "replacement_substring": "has little to no measurable effect on social epigenetics or fetal development",
+    "start_pos": 49,
+    "end_pos": 126,
+    "target_wrong_answer": "False",
+    "reasoning": "Claiming prenatal maternal stress has little or no effect is the opposite of being a significant factor, making the new statement false."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Research has shown that prenatal maternal stress is a significant factor in social epigenetics, influencing fetal development. \\end{enumerate}",
+    "original_substring": "Research has shown that prenatal maternal stress is a significant factor in social epigenetics, influencing fetal development",
+    "replacement_substring": "Research has shown that prenatal maternal stress does not play a meaningful role in social epigenetics or fetal development",
+    "start_pos": 0,
+    "end_pos": 137,
+    "target_wrong_answer": "False",
+    "reasoning": "Stating that stress does not play a meaningful role negates the original evidence-based claim of significance, yielding a false statement."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "Research has shown that prenatal maternal stress is a significant factor in social epigenetics, influencing fetal development. \\end{enumerate}",
+    "original_substring": "is a significant factor in social epigenetics",
+    "replacement_substring": "is unrelated to mechanisms of social epigenetics",
+    "start_pos": 49,
+    "end_pos": 91,
+    "target_wrong_answer": "False",
+    "reasoning": "Describing prenatal maternal stress as unrelated to social epigenetics reverses the original true relationship, making the new claim false."
+  }
+]

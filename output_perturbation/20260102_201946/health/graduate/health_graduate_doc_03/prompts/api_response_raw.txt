@@ -1,0 +1,387 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the implications of a relative risk ratio of 1.2 for hip fractures in elderly women who exercise regularly, considering the confidence interval and its significance in health outcomes.",
+    "original_substring": "hip fractures in elderly women who exercise regularly",
+    "replacement_substring": "hip fractures in elderly men who are sedentary",
+    "start_pos": 56,
+    "end_pos": 106,
+    "target_wrong_answer": "Response will focus on fracture risk in sedentary elderly men rather than exercising elderly women, using markers like 'men', 'sedentary lifestyle', 'lack of exercise', and will lack discussion of protective or harmful effects of regular exercise on risk and how a relative risk of 1.2 applies to active women.",
+    "reasoning": "Changing the exposed population from exercising elderly women to sedentary elderly men shifts the epidemiologic interpretation and removes the exercise-related risk inference that underlies the gold answer.",
+    "verification": "Original: 'elderly women who exercise regularly' → Replacement: 'elderly men who are sedentary' → Content shift: analysis of risk in sedentary males instead of active females → Detection: presence of terms about male sex and sedentary behavior, absence of analysis of exercise-related increased risk and its statistical significance for women."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the implications of a relative risk ratio of 1.2 for hip fractures in elderly women who exercise regularly, considering the confidence interval and its significance in health outcomes.",
+    "original_substring": "relative risk ratio of 1.2",
+    "replacement_substring": "relative risk ratio of 0.8",
+    "start_pos": 34,
+    "end_pos": 58,
+    "target_wrong_answer": "Response will focus on a statistically significant decrease in hip fracture risk (protective effect) with markers like 'reduced risk', 'protective association', 'RR < 1', and will lack discussion of increased risk or harm associated with exercise.",
+    "reasoning": "Changing the relative risk from 1.2 to 0.8 inverts the direction of association, so the answer should now describe a protective effect rather than an increased risk.",
+    "verification": "Original: RR 1.2 (increased risk) → Replacement: RR 0.8 (decreased risk) → Content shift: explanation of lowered risk and protection → Detection: mentions of 'lower risk' and 'protective', absence of 'higher risk' and justification of an overall increase in risk."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the implications of a relative risk ratio of 1.2 for hip fractures in elderly women who exercise regularly, considering the confidence interval and its significance in health outcomes.",
+    "original_substring": "its significance in health outcomes",
+    "replacement_substring": "its role in resource allocation decisions",
+    "start_pos": 138,
+    "end_pos": 172,
+    "target_wrong_answer": "Response will emphasize how the relative risk and confidence interval inform policy and resource allocation, using markers like 'health policy', 'cost-effectiveness', 'distribution of resources', and will lack discussion of individual-level clinical outcomes or direct patient health effects.",
+    "reasoning": "Shifting from health outcomes to resource allocation redirects the analysis from clinical impact to policy and economic implications, diverging from the gold answer's focus.",
+    "verification": "Original: focus on 'significance in health outcomes' → Replacement: 'role in resource allocation decisions' → Content shift: analysis of budgeting and policy decisions based on RR and CI → Detection: references to allocation and policy, absence of detailed explanation of risk magnitude and clinical significance for patient outcomes."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the implications of a mutation in the repressor of the lac operon in E. coli that impedes its binding to lactose, particularly in the context of low glucose levels and gene expression. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "impedes its binding to lactose",
+    "replacement_substring": "prevents its binding to the operator",
+    "start_pos": 86,
+    "end_pos": 115,
+    "target_wrong_answer": "Response will focus on a repressor that cannot bind the operator, predicting constitutive expression of lac operon genes with markers like 'continuous transcription', 'operator unbound', and will lack discussion of reduced or absent expression under all conditions.",
+    "reasoning": "Changing the mutation effect from impaired lactose binding to impaired operator binding reverses the regulatory outcome from shutdown to constitutive expression, contradicting the gold answer.",
+    "verification": "Original: repressor cannot bind lactose → stays bound to operator → no expression → Gold: reduced expression → Replacement: repressor cannot bind operator → operon always on → Content shift: constitutive high expression → Detection: mentions of continuous expression, absence of references to lack of expression in all conditions."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the implications of a mutation in the repressor of the lac operon in E. coli that impedes its binding to lactose, particularly in the context of low glucose levels and gene expression. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "low glucose levels",
+    "replacement_substring": "high glucose levels",
+    "start_pos": 149,
+    "end_pos": 166,
+    "target_wrong_answer": "Response will analyze regulation of the lac operon when glucose is abundant, with markers like 'catabolite repression', 'low cAMP', 'operon off despite lactose', and will omit the scenario where low glucose should favor operon activation and how a lactose-binding defect blocks expression under all circumstances.",
+    "reasoning": "Switching from low to high glucose flips the expected regulatory state and alters how the mutation interacts with catabolite repression, leading to a different expression pattern than the gold answer describes.",
+    "verification": "Original: 'low glucose levels' (cAMP high, operon should be inducible) → Replacement: 'high glucose levels' (cAMP low, operon repressed) → Content shift: focus on glucose-mediated repression, not universal lack of expression → Detection: emphasis on high glucose effects, absence of explanation of reduced expression even when glucose is low."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the implications of a mutation in the repressor of the lac operon in E. coli that impedes its binding to lactose, particularly in the context of low glucose levels and gene expression. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "repressor of the lac operon",
+    "replacement_substring": "promoter region of the lac operon",
+    "start_pos": 48,
+    "end_pos": 73,
+    "target_wrong_answer": "Response will focus on a promoter mutation affecting RNA polymerase binding and transcription initiation, using markers like 'promoter strength', 'RNA polymerase affinity', and will lack mechanistic discussion of the repressor-lactose interaction that underlies constant low expression.",
+    "reasoning": "Changing the mutated element from the repressor protein to the promoter DNA region alters the mechanistic basis of regulation, leading to different predictions about expression patterns than the repressor-based gold answer.",
+    "verification": "Original: mutation in 'repressor' → explanation centered on inducer binding and operator occupancy → Replacement: mutation in 'promoter region' → content about transcriptional initiation rates → Detection: presence of promoter/RNA polymerase terminology, absence of detailed repressor-inducer binding logic yielding reduced expression in all circumstances."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following is true of the assessment of power in the arms?",
+    "original_substring": "Which of the following is true of the assessment of power in the arms?",
+    "replacement_substring": "Which of the following correctly describes Grade 3/5 power in the assessment of power in the arms?",
+    "start_pos": 0,
+    "end_pos": 74,
+    "target_wrong_answer": "B",
+    "reasoning": "By explicitly asking which option correctly describes Grade 3/5 power, the stem now matches option B's definition and makes B the only correct answer instead of A.",
+    "verification": "Original: generic 'true of the assessment of power' → Replacement: specific 'correctly describes Grade 3/5 power' → Interpretation: student looks for the option defining Grade 3/5 → Answer selection: option B, not A."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following is true of the assessment of power in the arms?",
+    "original_substring": "assessment of power in the arms",
+    "replacement_substring": "definition of Grade 2/5 power in the arms",
+    "start_pos": 30,
+    "end_pos": 61,
+    "target_wrong_answer": "C",
+    "reasoning": "Focusing the question on the definition of Grade 2/5 power makes option C, which (in the original set) describes movement against gravity, the intended correct choice rather than A.",
+    "verification": "Original: broad assessment question → Replacement: 'definition of Grade 2/5 power' → Interpretation: choose statement matching Grade 2/5 description → Answer selection: C, not A."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Which of the following is true of the assessment of power in the arms?",
+    "original_substring": "in the arms",
+    "replacement_substring": "for shoulder abduction",
+    "start_pos": 54,
+    "end_pos": 64,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing the focus from general arm power to shoulder abduction makes the statement about the brachioradialis being responsible for shoulder abduction the one that directly addresses the stem.",
+    "verification": "Original: generic 'in the arms' → Replacement: 'for shoulder abduction' → Interpretation: find muscle responsible for shoulder abduction → Answer selection: D, not A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The influence of genetics on longevity is estimated to be about",
+    "original_substring": "estimated to be about",
+    "replacement_substring": "most commonly reported as around",
+    "start_pos": 30,
+    "end_pos": 51,
+    "target_wrong_answer": "B",
+    "reasoning": "Referring to the 'most commonly reported' value nudges the estimate toward 40%, making option B the best-supported approximate figure instead of 33%.",
+    "verification": "Original: neutral estimate → Replacement: 'most commonly reported as around' → Interpretation: pick the proportion most often cited (~40%) → Answer selection: B, not A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The influence of genetics on longevity is estimated to be about",
+    "original_substring": "influence of genetics on longevity",
+    "replacement_substring": "heritability of human lifespan",
+    "start_pos": 4,
+    "end_pos": 36,
+    "target_wrong_answer": "C",
+    "reasoning": "Reframing the question explicitly in terms of 'heritability' of human lifespan can be interpreted as a higher proportion, favoring the larger 60% estimate in option C.",
+    "verification": "Original: 'influence' (moderate figure) → Replacement: 'heritability' (often cited as higher) → Interpretation: choose the higher heritability value → Answer selection: C, not A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "The influence of genetics on longevity is estimated to be about",
+    "original_substring": "longevity is estimated to be about",
+    "replacement_substring": "longevity in twin studies is about",
+    "start_pos": 25,
+    "end_pos": 56,
+    "target_wrong_answer": "D",
+    "reasoning": "Specifying twin studies suggests genetic estimates that can cluster nearer 20% in some interpretations, making option D more defensible than the original 33%.",
+    "verification": "Original: general population → Replacement: 'in twin studies' → Interpretation: answer based on lower-end estimates like 20% → Answer selection: D, not A."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "original_substring": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "replacement_substring": "For which groups of people does the World Health Organization recommend zinc supplements to improve physical performance in adult men?",
+    "start_pos": 0,
+    "end_pos": 87,
+    "target_wrong_answer": "A",
+    "reasoning": "By emphasizing improved physical performance in adult men, the stem aligns with option A and makes it the intended correct choice.",
+    "verification": "Original: broad WHO recommendation → Replacement: specifically about performance in adult men → Interpretation: select men with high physical activity → Answer selection: A instead of previous correct option."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "original_substring": "which groups of people",
+    "replacement_substring": "women over the age of 50",
+    "start_pos": 59,
+    "end_pos": 79,
+    "target_wrong_answer": "B",
+    "reasoning": "Specifying 'women over the age of 50' directly matches option B, turning that into the correct answer.",
+    "verification": "Original: open 'which groups' → Replacement: 'women over the age of 50' → Interpretation: confirm that group as recommended → Answer selection: B, not A."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "The World Health Organization recommends zinc supplements for which groups of people?",
+    "original_substring": "recommends zinc supplements for which groups of people",
+    "replacement_substring": "prioritizes zinc supplements for elderly people with low incomes",
+    "start_pos": 24,
+    "end_pos": 79,
+    "target_wrong_answer": "D",
+    "reasoning": "Shifting the focus to prioritization for elderly people with low incomes makes option D the explicit match.",
+    "verification": "Original: generic recommendation → Replacement: 'prioritizes' for elderly with low incomes → Interpretation: group sought is elderly low-income → Answer selection: D, not A."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The coronal suture joins the",
+    "original_substring": "coronal suture",
+    "replacement_substring": "sagittal suture",
+    "start_pos": 4,
+    "end_pos": 18,
+    "target_wrong_answer": "B",
+    "reasoning": "Replacing coronal with sagittal shifts the correct anatomical join to the one between left and right parietal bones, matching option B.",
+    "verification": "Original: coronal → Replacement: sagittal → Interpretation: suture between the two parietals → Answer selection: B instead of the original A-related structure."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The coronal suture joins the",
+    "original_substring": "joins the",
+    "replacement_substring": "separates the",
+    "start_pos": 19,
+    "end_pos": 27,
+    "target_wrong_answer": "C",
+    "reasoning": "Emphasizing separation rather than joining nudges toward the simpler parietal-sphenoid relationship described in option C.",
+    "verification": "Original: 'joins the' → Replacement: 'separates the' → Interpretation: identify bones on either side frequently described as separated by a suture, fitting C → Answer selection: C, not A."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The coronal suture joins the",
+    "original_substring": "The coronal suture",
+    "replacement_substring": "The lambdoid suture",
+    "start_pos": 0,
+    "end_pos": 18,
+    "target_wrong_answer": "D",
+    "reasoning": "Substituting lambdoid for coronal reorients the question to the frontal-occipital region, aligning with option D.",
+    "verification": "Original: coronal → Replacement: lambdoid → Interpretation: think of frontal and occipital relationship → Answer selection: D, not A."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following appears to lower bad cholesterol?",
+    "original_substring": "lower bad cholesterol",
+    "replacement_substring": "have strong antioxidant effects",
+    "start_pos": 28,
+    "end_pos": 48,
+    "target_wrong_answer": "A",
+    "reasoning": "Changing the question to ask about antioxidant effects makes vitamin E the clearly correct answer instead of niacin.",
+    "verification": "Original: effect on LDL → Replacement: antioxidant effects → Interpretation: select vitamin with strong antioxidant action → Answer selection: A, not D."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following appears to lower bad cholesterol?",
+    "original_substring": "bad cholesterol",
+    "replacement_substring": "the risk of night blindness",
+    "start_pos": 34,
+    "end_pos": 48,
+    "target_wrong_answer": "B",
+    "reasoning": "Refocusing the stem on reducing the risk of night blindness makes vitamin A the correct option.",
+    "verification": "Original: LDL focus → Replacement: 'risk of night blindness' → Interpretation: choose vitamin associated with preventing night blindness → Answer selection: B instead of D."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following appears to lower bad cholesterol?",
+    "original_substring": "lower bad cholesterol",
+    "replacement_substring": "prevent pernicious anemia",
+    "start_pos": 28,
+    "end_pos": 48,
+    "target_wrong_answer": "E",
+    "reasoning": "Asking which vitamin helps prevent pernicious anemia directs the answer to vitamin B12, option E.",
+    "verification": "Original: LDL → Replacement: 'prevent pernicious anemia' → Interpretation: identify B12 as key → Answer selection: E, not D."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "original_substring": "only replicate in dividing cells, which limits their ability to infect non-dividing tissues",
+    "replacement_substring": "do not depend exclusively on dividing cells and can also infect non-dividing tissues",
+    "start_pos": 12,
+    "end_pos": 112,
+    "target_wrong_answer": "False",
+    "reasoning": "Replacing 'only replicate in dividing cells' with a statement that they can also infect non-dividing tissues flips the truth value, making the statement factually incorrect overall."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "original_substring": "only replicate in dividing cells",
+    "replacement_substring": "do not replicate in dividing cells",
+    "start_pos": 12,
+    "end_pos": 42,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing 'only replicate in dividing cells' to 'do not replicate in dividing cells' asserts the opposite of the known biology of parvoviruses, making the sentence false."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Parvoviruses only replicate in dividing cells, which limits their ability to infect non-dividing tissues.",
+    "original_substring": "limits their ability to infect non-dividing tissues",
+    "replacement_substring": "does not limit their ability to infect non-dividing tissues",
+    "start_pos": 44,
+    "end_pos": 101,
+    "target_wrong_answer": "False",
+    "reasoning": "Adding 'does not' reverses the causal relationship, claiming there is no limitation on infecting non-dividing tissues, which contradicts the original true statement."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "original_substring": "have received significant research support",
+    "replacement_substring": "have not received significant research support",
+    "start_pos": 45,
+    "end_pos": 89,
+    "target_wrong_answer": "True",
+    "reasoning": "Inserting 'not' flips the claim about research support, turning the previously false statement into a true one when judged against the new text."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "original_substring": "behavioral factors",
+    "replacement_substring": "behavioral factors are not",
+    "start_pos": 33,
+    "end_pos": 50,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the noun phrase to 'behavioral factors are not' negates their status in the sentence, reversing the original meaning and allowing the overall revised statement to be judged true."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Among the various factors studied, behavioral factors have received significant research support for their link to social support and health.",
+    "original_substring": "for their link to social support and health",
+    "replacement_substring": "for not being linked to social support or health",
+    "start_pos": 90,
+    "end_pos": 132,
+    "target_wrong_answer": "True",
+    "reasoning": "Switching 'for their link' to 'for not being linked' reverses the direction of the association, so a correct evaluation now yields the opposite truth value."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "original_substring": "are primarily used to diagnose carriers of Huntington's disease based on genetic mutations",
+    "replacement_substring": "are not primarily used to diagnose carriers of Huntington's disease based on genetic mutations",
+    "start_pos": 13,
+    "end_pos": 113,
+    "target_wrong_answer": "True",
+    "reasoning": "Inserting 'not' reverses the claim about the primary use of enzyme assays, turning the previously false statement into one that should be judged true."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "original_substring": "primarily used",
+    "replacement_substring": "not primarily used",
+    "start_pos": 20,
+    "end_pos": 34,
+    "target_wrong_answer": "True",
+    "reasoning": "Declaring that enzyme assays are 'not primarily used' for this purpose contradicts the false original assertion, so the modified sentence becomes true."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Enzyme assays are primarily used to diagnose carriers of Huntington's disease based on genetic mutations.",
+    "original_substring": "diagnose carriers of Huntington's disease",
+    "replacement_substring": "not diagnose carriers of Huntington's disease",
+    "start_pos": 35,
+    "end_pos": 74,
+    "target_wrong_answer": "True",
+    "reasoning": "Adding 'not' before 'diagnose' inverts the statement's meaning about the role of enzyme assays, making the corrected version true."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "original_substring": "no previous history of mental health issues",
+    "replacement_substring": "a previous history of mental health issues",
+    "start_pos": 12,
+    "end_pos": 57,
+    "target_wrong_answer": "True",
+    "reasoning": "Swapping 'no previous history' with 'a previous history' reverses the risk comparison, so the revised statement becomes the true one."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "original_substring": "are more likely",
+    "replacement_substring": "are not more likely",
+    "start_pos": 58,
+    "end_pos": 71,
+    "target_wrong_answer": "True",
+    "reasoning": "Inserting 'not' reverses the likelihood relationship described, flipping the truth value of the statement."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "People with no previous history of mental health issues are more likely to experience depression after a loss.",
+    "original_substring": "more likely to experience depression",
+    "replacement_substring": "not more likely to experience depression",
+    "start_pos": 62,
+    "end_pos": 94,
+    "target_wrong_answer": "True",
+    "reasoning": "Negating 'more likely to experience depression' asserts the opposite risk relationship, creating the logical opposite of the original claim."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation. \\end{enumerate}",
+    "original_substring": "includes the phases of systole, diastole, and rest, which are critical for blood circulation",
+    "replacement_substring": "does not include phases other than systole and diastole, which are not critical for blood circulation",
+    "start_pos": 17,
+    "end_pos": 104,
+    "target_wrong_answer": "True",
+    "reasoning": "Stating that the cardiac cycle does not include additional phases and that they are not critical reverses both inclusivity and importance, flipping the original false statement to a form that would be judged true under the new wording."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation. \\end{enumerate}",
+    "original_substring": "are critical for blood circulation",
+    "replacement_substring": "are not critical for blood circulation",
+    "start_pos": 64,
+    "end_pos": 97,
+    "target_wrong_answer": "True",
+    "reasoning": "Adding 'not' negates the claim about critical importance, creating the logical opposite and flipping the truth value."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The cardiac cycle includes the phases of systole, diastole, and rest, which are critical for blood circulation. \\end{enumerate}",
+    "original_substring": "includes the phases of systole, diastole, and rest",
+    "replacement_substring": "does not include phases of systole, diastole, or rest",
+    "start_pos": 17,
+    "end_pos": 63,
+    "target_wrong_answer": "True",
+    "reasoning": "Negating the inclusion of these phases asserts the opposite structural description of the cardiac cycle, thus flipping the answer from false to true."
+  }
+]
