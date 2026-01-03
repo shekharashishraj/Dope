@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{calc}
+\usepackage{xcolor}
+% --- latex-dual-layer macros (auto-generated) ---
+\newlength{\dlboxwidth}
+\newlength{\dlboxheight}
+\newlength{\dlboxdepth}
+\newcommand{\duallayerbox}[2]{%
+  \begingroup
+  \settowidth{\dlboxwidth}{\strut #1}%
+  \settoheight{\dlboxheight}{\strut #1}%
+  \settodepth{\dlboxdepth}{\strut #1}%
+  \ifdim\dlboxwidth=0pt
+    \settowidth{\dlboxwidth}{#2}%
+  \fi
+  \raisebox{0pt}[\dlboxheight][\dlboxdepth]{%
+    \makebox[\dlboxwidth][l]{\resizebox{\dlboxwidth}{!}{\strut #2}}%
+  }%
+  \endgroup
+}
+% --- end latex-dual-layer macros ---
+\begin{document}
+\begin{center}
+Machine Learning - Undergraduate Level Assessment 1 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (38 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item As the number of training examples goes to \duallayerbox{infinity}{a small number}, your model trained on that data will have:
+\begin{enumerate}[label=(\alph*)]
+    \item Lower variance
+    \item Higher variance
+    \item Same variance
+    \item None of the above
+\end{enumerate}
+\item Statement 1| Highway networks were introduced \duallayerbox{after}{before} ResNets and eschew max pooling in favor of convolutions. Statement 2| DenseNets usually cost more memory...
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item What is the dimensionality of the \duallayerbox{null space}{row space} of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]
+\begin{enumerate}[label=(\alph*)]
+    \item 0
+    \item 1
+    \item 2
+    \item 3
+\end{enumerate}
+\item Another term for \duallayerbox{out-of-distribution}{in-distribution} detection is?
+\begin{enumerate}[label=(\alph*)]
+    \item anomaly detection
+    \item one-class detection
+    \item train-test mismatch robustness
+    \item background detection
+\end{enumerate}
+\item \duallayerbox{Neural networks:}{Linear models:}
+\begin{enumerate}[label=(\alph*)]
+    \item Optimize a convex objective function
+    \item Can only be trained with stochastic gradient descent
+    \item Can use a mix of different activation functions
+    \item None of the above
+\end{enumerate}
+\item The number of test examples needed to get \duallayerbox{statistically significant}{preliminary} results should be \_
+\begin{enumerate}[label=(\alph*)]
+    \item Larger if the error rate is larger.
+    \item Larger if the error rate is smaller.
+    \item Smaller if the error rate is smaller.
+    \item It does not matter.
+\end{enumerate}
+\item If N is the number of instances in the training dataset, \duallayerbox{nearest neighbors}{decision trees} has a classification run time of
+\begin{enumerate}[label=(\alph*)]
+    \item O(1)
+    \item O( N )
+    \item O(log N )
+    \item O( N\^{}2 )
+\end{enumerate}
+\item Statement 1| A neural network's convergence \duallayerbox{depends on}{is independent of} the learning rate. Statement 2| Dropout multiplies randomly chosen activation values by zero.
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item For \duallayerbox{polynomial regression}{linear regression}, which one of these structural assumptions is the one that most affects the trade-off between underfitting and overfitting:
+\begin{enumerate}[label=(\alph*)]
+    \item The polynomial degree
+    \item Whether we learn the weights by matrix inversion or gradient descent
+    \item The assumed variance of the Gaussian noise
+    \item The use of a constant-term unit input
+\end{enumerate}
+\item \duallayerbox{Existential risks}{Ethical concerns} posed by AI are most commonly associated with which of the following professors?
+\begin{enumerate}[label=(\alph*)]
+    \item Nando de Frietas
+    \item Yann LeCun
+    \item Stuart Russell
+    \item Jitendra Malik
+\end{enumerate}
+\item Which one of the following is the main reason for pruning a \duallayerbox{Decision Tree}{Neural Network}?
+\begin{enumerate}[label=(\alph*)]
+    \item To save computing time during testing
+    \item To save space for storing the Decision Tree
+    \item To make the training set error smaller
+    \item To avoid overfitting the training set
+\end{enumerate}
+\item Statement 1| RoBERTa pretrains on a corpus that is approximate \duallayerbox{10x larger}{the same size} than the corpus BERT pretrained on. Statement 2| ResNeXts in 2018 usually used tanh...
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item Statement 1| Overfitting is more likely when the set of \duallayerbox{training data is small}{training data is large}. Statement 2| Overfitting is more likely when the hypothesis space is small.
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item \duallayerbox{MLE estimates}{Bayesian estimates} are often undesirable because
+\begin{enumerate}[label=(\alph*)]
+    \item they are biased
+    \item they have high variance
+    \item they are not consistent estimators
+    \item None of the above
+\end{enumerate}
+\item Which of the following is NOT \duallayerbox{supervised}{unsupervised} learning?
+\begin{enumerate}[label=(\alph*)]
+    \item PCA
+    \item Decision Tree
+    \item Linear Regression
+    \item Naive Bayesian
+\end{enumerate}
+\item Which among the following prevents overfitting when we perform \duallayerbox{bagging}{boosting}?
+\begin{enumerate}[label=(\alph*)]
+    \item The use of sampling with replacement as the sampling technique
+    \item The use of weak classifiers
+    \item The use of classification algorithms which are not prone to overfitting
+    \item The practice of validation performed on every classifier trained
+\end{enumerate}
+\item Statement 1| The \duallayerbox{softmax function}{sigmoid function} is commonly used in mutliclass logistic regression. Statement 2| The temperature of a nonuniform softmax distribution...
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item Statement 1| Industrial-scale neural networks are normally trained on \duallayerbox{CPUs, not GPUs}{GPUs, not CPUs}. Statement 2| The ResNet-50 model has over 1 billion parameters.
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item \duallayerbox{Predicting}{Classifying} the amount of rainfall in a region based on various cues is a \_\_\_\_\_\_ problem.
+\begin{enumerate}[label=(\alph*)]
+    \item Supervised learning
+    \item Unsupervised learning
+    \item Clustering
+    \item None of the above
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (2 marks)}
+\textit{Answer True or False and justify briefly.}
+\begin{enumerate}[label=\arabic*.]
+\item True or False: The correct answer to 'Statement 1| The original ResNets and Transformers are feedforward neural networks. Statement 2| The original Transformers use self-...' is 'True, True'.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

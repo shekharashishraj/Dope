@@ -36,9 +36,16 @@ class ResponseCollector:
         self.retry_initial_backoff = config.retry.initial_backoff
         self.retry_max_backoff = config.retry.max_backoff
         self.retry_backoff_multiplier = config.retry.backoff_multiplier
+        # GPT-5.1 parameters
+        self.reasoning_effort = config.openai.reasoning_effort
+        self.verbosity = config.openai.verbosity
         
         # Simple prompt - only PDF, no question text
         self.prompt = "Please read this document and answer ALL questions that appear in it. For each question, provide the question number and your answer."
+    
+    def _is_gpt5_model(self) -> bool:
+        """Check if the model is a GPT-5.x model."""
+        return self.model.startswith("gpt-5")
     
     def collect_responses(
         self,
@@ -183,9 +190,9 @@ class ResponseCollector:
             try:
                 # Use "file" type with "file" parameter as an object
                 # According to OpenAI API: type="file" requires parameter "file" as an object
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=[
+                api_params = {
+                    "model": self.model,
+                    "messages": [
                         {
                             "role": "user",
                             "content": [
@@ -202,9 +209,26 @@ class ResponseCollector:
                             ]
                         }
                     ],
-                    timeout=self.timeout,
-                    max_tokens=2000
-                )
+                    "timeout": self.timeout
+                }
+                
+                # GPT-5.1 models use different parameters
+                # Note: Current OpenAI Python SDK doesn't support reasoning/verbosity parameters yet
+                # The model will work without them (using defaults)
+                # TODO: Add these parameters when SDK is updated to support them
+                if self._is_gpt5_model():
+                    # For now, don't pass reasoning/verbosity as SDK doesn't support them
+                    # When SDK is updated, uncomment these lines:
+                    # if self.reasoning_effort is not None:
+                    #     api_params["reasoning"] = {"effort": self.reasoning_effort}
+                    # if self.verbosity is not None:
+                    #     api_params["verbosity"] = self.verbosity
+                    pass
+                else:
+                    # Use traditional parameters for non-GPT-5 models
+                    api_params["max_tokens"] = 2000
+                
+                response = self.client.chat.completions.create(**api_params)
                 
                 content_result = response.choices[0].message.content
                 if not content_result:

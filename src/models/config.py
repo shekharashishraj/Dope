@@ -19,6 +19,13 @@ class OpenAIConfig(BaseModel):
     api_key: Optional[str] = None  # Loaded from env
     logprobs: bool = Field(default=True, description="Request log probabilities from API")
     top_logprobs: Optional[int] = Field(default=5, ge=0, le=20, description="Number of top logprobs to return")
+    # GPT-5.1 parameters
+    reasoning_effort: Optional[str] = Field(default=None, description="Reasoning effort for GPT-5.1 models: none, low, medium, high")
+    verbosity: Optional[str] = Field(default=None, description="Verbosity for GPT-5.1 models: low, medium, high")
+    
+    def is_gpt5_model(self) -> bool:
+        """Check if the model is a GPT-5.x model."""
+        return self.model.startswith("gpt-5")
 
 
 class ProcessingConfig(BaseModel):

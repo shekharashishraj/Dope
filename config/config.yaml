@@ -1,19 +1,22 @@
 # IntegrityShield Pipeline Configuration
 
 openai:
-  model: "gpt-4o"
+  model: "gpt-5.1-2025-11-13"
   batch_size: 5  # Number of documents per batch
   max_retries: 3
   timeout: 120  # Timeout in seconds
-  temperature: 0.2
-  # Additional OpenAI settings
-  top_p: null  # Null means use default, set 0.0-1.0 to override
-  frequency_penalty: 0.0
-  presence_penalty: 0.0
-  max_tokens: null  # Null means no limit, set integer to limit response length
-  # Log probabilities settings
-  logprobs: true  # Request log probabilities from API
-  top_logprobs: 5  # Number of top logprobs to return (0-20)
+  temperature: 0.2  # Deprecated for GPT-5.1, kept for backward compatibility
+  # Additional OpenAI settings (deprecated for GPT-5.1)
+  top_p: null  # Null means use default, set 0.0-1.0 to override (deprecated for GPT-5.1)
+  frequency_penalty: 0.0  # Deprecated for GPT-5.1
+  presence_penalty: 0.0  # Deprecated for GPT-5.1
+  max_tokens: null  # Null means no limit, set integer to limit response length (deprecated for GPT-5.1)
+  # Log probabilities settings (deprecated for GPT-5.1)
+  logprobs: true  # Request log probabilities from API (deprecated for GPT-5.1)
+  top_logprobs: 5  # Number of top logprobs to return (0-20) (deprecated for GPT-5.1)
+  # GPT-5.1 specific parameters
+  reasoning_effort: "medium"  # none, low, medium, high (for GPT-5.1 models)
+  verbosity: "medium"  # low, medium, high (for GPT-5.1 models)
 
 processing:
   input_dir: "output"
@@ -123,7 +126,7 @@ prompts:
   # Global prompt settings
   system_message: "You are a helpful assistant that generates JSON array responses. Always return valid JSON arrays."
   json_format_strict: true  # Enforce strict JSON format requirements
-  grouped_prompts_folder: "grouped_batch_v2"  # Folder name in prompts/ directory for grouped batch prompts (e.g., "grouped_batch" or "grouped_batch_v2")
+  grouped_prompts_folder: "grouped_batch_v3"  # Folder name in prompts/ directory for grouped batch prompts (e.g., "grouped_batch" or "grouped_batch_v2")
 
 # Performance & Concurrency
 performance:

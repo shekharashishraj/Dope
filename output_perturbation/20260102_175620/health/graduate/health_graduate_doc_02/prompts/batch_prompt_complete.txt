@@ -1,0 +1,568 @@
+================================================================================
+COMPLETE BATCH PROMPT SENT TO API
+================================================================================
+
+You are an expert at generating precise, high-impact text substitutions for long-form questions (essay, short answer, explanation) that cause predictable, detectable deviations in responses. Your accuracy is critical.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (stem only, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Non-trivial change: replacement must change the question focus in a way that CLEARLY affects the expected answer (different aspect, entity, time period, or concept).
+8) Avoid trivial negation: DO NOT flip with simple "not/never/no" insertion. Prefer changing key concept, condition, quantity, direction, scope, or referent.
+9) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+10) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer deviation.
+11) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+
+## DEVIATION STRATEGY TIERS
+
+**Tier 1 - Scope/Focus Shift (Best for Detection):**
+Changes WHAT the question asks about while keeping the domain.
+- "economic impact" → "social impact"
+- "causes of" → "effects of"
+- "advantages" → "disadvantages"
+- "short-term" → "long-term"
+- "domestic" → "international"
+
+*Detection signature*: Response discusses entirely different aspect; keyword overlap with gold answer is minimal.
+
+**Tier 2 - Temporal/Contextual Shift:**
+Changes WHEN or WHERE the question applies.
+- "19th century" → "20th century"
+- "in Europe" → "in Asia"
+- "during peacetime" → "during wartime"
+- "modern" → "historical"
+
+*Detection signature*: Response references different time period, geography, or context.
+
+**Tier 3 - Perspective/Stakeholder Shift:**
+Changes WHO or WHOSE viewpoint is requested.
+- "from a patient's perspective" → "from a doctor's perspective"
+- "for consumers" → "for producers"
+- "individual level" → "societal level"
+- "scientific view" → "ethical view"
+
+*Detection signature*: Response adopts different analytical framework or stakeholder concerns.
+
+**Tier 4 - Methodological Shift:**
+Changes HOW the question should be approached.
+- "explain" → "compare"
+- "describe" → "evaluate"
+- "list" → "analyze"
+- "quantitative" → "qualitative"
+
+*Detection signature*: Response structure and content type differs (list vs. analysis, description vs. critique).
+
+## DETECTION SIGNATURE DESIGN
+
+For long-form questions, your `target_wrong_answer` should describe:
+1. **Expected content shift**: What topic/aspect the perturbed response will focus on
+2. **Detectable markers**: Specific terms, concepts, or structures that will appear
+3. **Absence markers**: Key elements from gold answer that will be missing
+
+Example format: "Response will focus on [X] instead of [Y], containing markers like [terms] and lacking [gold answer concepts]"
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: Description of how the answer should deviate (include content shift, presence markers, absence markers)
+- reasoning: 1–2 sentences explaining why this mapping causes deviation
+- verification: Causal chain showing original → replacement → content shift → detection method
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ Perturbation is Tier 1, 2, or 3 (substantive content shift)
+✓ target_wrong_answer includes: content shift description, presence markers, absence markers
+✓ Replacement changes question focus (not trivial negation)
+✓ Replacement is natural and semantically meaningful
+
+## LONG QUESTIONS
+
+**Question 11:**
+- LaTeX stem: `Discuss the relationship between optimism in older adults and longevity, analyzing how pessimistic outlooks may influence health outcomes and lifespan.`
+- Copyable text: Discuss the relationship between optimism in older adults and longevity, analyzing how
+pessimistic outlooks may influence health outcomes and lifespan.
+- Gold answer: Many pessimists die at a younger age. Explain why this is the correct answer and provide
+supporting evidence. Reference key facts or concepts that support this choice.
+- Goal: Generate 3 mappings that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
+
+
+**Question 12:**
+- LaTeX stem: `Discuss the energy expenditure of various organs in the human body, focusing on why the intestines have the lowest energy expenditure per unit of body mass. \end{enumerate} \vfill \noindent\textit{End of Paper} \end{document}`
+- Copyable text: Discuss the energy expenditure of various organs in the human body, focusing on why the
+intestines have the lowest energy expenditure per unit of body mass.
+- Gold answer: Intestines. Explain why this is the correct answer and provide supporting evidence.
+Reference key facts or concepts that support this choice.
+- Goal: Generate 3 mappings that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 6
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "Response focuses on social changes instead of economic metrics. Will contain markers: 'social class', 'living conditions'. Will lack: 'GDP', 'wages'.",
+    "reasoning": "...",
+    "verification": "'economic impact' → 'social impact' → response discusses sociology → detectable via absent economic terminology"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+We are creating distractors to be used in multiple choice questions 
+to drive LLM away from the correct answer.
+You are an expert at generating text substitutions for academic multiple-choice questions 
+that cause predictable answer shifts to one of the wrong options. Your accuracy is critical.
+## INPUT CONTEXT 
+You also know the correct answer for each question.
+## INSTRUCTIONS (apply to ALL questions below)
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (the stem only; do NOT edit the options, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues during rendering).
+5) Answer change: target_wrong_answer MUST be different from the gold answer (each mapping must target a different wrong option).
+6) Non-trivial change: replacement must change the meaning enough to CLEARLY flip the correct answer; avoid purely grammatical rephrases.
+7) Avoid trivial negation: DO NOT flip with simple "not/never/no" insertion. Prefer changing key concept, condition, quantity, direction, scope, or referent.
+8) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+9) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer.
+10) Semantic quality: Replacement must be natural and semantically meaningful (not out of domain or context).
+
+## QUALITY TIERS (aim for Tier 1)
+
+**Tier 1 (Best):** 
+1. Intelligently changes the question to be consistent towards one of the wrong options. 
+Take the option that is most likely to be correct and change the question to be consistent towards it.
+Do not change the question to be consistent towards the gold answer.
+
+Few Shot Examples: 
+Q)  "What is the capital of France?"(Correct Options:
+    A) Paris, B) London, C) Berlin, D) Rome) , Correct Answer: C) Paris
+    -> "What is the capital of Germany?"(Correct Options:
+        A) Paris, B) London, C) Berlin, D) Rome),
+        Target Wrong Answer: C) Berlin
+
+Q) Adding more basis functions in a linear model, pick the most probably option:(Correct Options: 
+    A) Decreases model bias, B) Increases estimation bias, C) Doesn't affect bias and variance,
+    D) Increases both bias and variance, E) Decreases variance), Correct Answer: A) Decreases model bias
+-> "Removing basis functions in a linear model, pick the most probably option:"(Correct Options: 
+    A) Decreases model bias, B) Increases estimation bias, C) Doesn't affect bias and variance,
+    D) Increases both bias and variance, E) Decreases variance), 
+    Target Wrong Answer: E) Decreases Variance
+
+2. Changes a core entity, parameter, condition, or relationship that fundamentally alters what's being asked.
+Example: "maximum" → "minimum", "increases" → "decreases", "before" → "after", "India" → "China"
+3. Changes the scope, quantity, or specificity of the question so that one of the wrong options becomes the correct answer.
+Example: "all" → "one", "primary" → "secondary", "first" → "last", "global" → "local". 
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: A single option key (e.g., "A", "B", "C", "D") that is NOT the gold answer
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and the gold answer incorrect
+- verification: Causal chain showing original → replacement → interpretation → answer selection
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer != gold_answer (different option)
+✓ Perturbation is Tier 1 or Tier 2 quality
+✓ Replacement changes meaning enough to flip answer 
+✓ Replacement is natural and semantically meaningful
+
+## MCQ QUESTIONS
+
+**Question 1:**
+- LaTeX stem: `Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?`
+- Copyable text: Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which
+types of lipoproteins and secreted from the enterocytes into the lymph?
+- Gold answer: D
+- Options:
+  - A: Chylomicrons only
+  - B: LDL only
+  - C: VLDL and LDL
+  - D: Chylomicrons and HDL
+  - E: VLDL and HDL
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+**Question 2:**
+- LaTeX stem: `A burial site where the body is allowed to decompose naturally without a casket is called a \_\_\_\_\_ cemetery`
+- Copyable text: A burial site where the body is allowed to decompose naturally without a casket is called
+a \_\_\_\_\_ cemetery
+- Gold answer: A
+- Options:
+  - A: Eco-friendly
+  - B: Sunshine
+  - C: Forest
+  - D: Rapid decay
+  - E: Organic
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 3:**
+- LaTeX stem: `Older adults are able to improve their memories and reduce their anxiety about declining memory when`
+- Copyable text: Older adults are able to improve their memories and reduce their anxiety about declining
+memory when
+- Gold answer: A
+- Options:
+  - A: They engage in social activities and interact with peers
+  - B: They practice mindfulness and meditation to reduce stress levels
+  - C: They engage in physical activity regularly
+  - D: They regularly solve puzzles and engage in brain-stimulating activities
+  - E: They learn that many aspects of memory do not decline and some even get better
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 4:**
+- LaTeX stem: `The energy charge of the cell is:`
+- Copyable text: The energy charge of the cell is:
+- Gold answer: A
+- Options:
+  - A: the extent to which the total adenine nucleotide pool is phosphorylated.
+  - B: the difference between the total energy input and output of the cell.
+  - C: generated by the sodium-potassium ATPase.
+  - D: the amount of ATP available in the cell.
+  - E: the energy required for the maintenance of the cell's structure.
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 5:**
+- LaTeX stem: `The following amino acids are all essential components of the diet:`
+- Copyable text: The following amino acids are all essential components of the diet:
+- Gold answer: A
+- Options:
+  - A: leucine, methionine and threonine
+  - B: leucine, cysteine and glycine
+  - C: proline, tyrosine and serine
+  - D: valine, glycine and arginine
+  - E: methionine, serine and tyrosine
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings (one for each target wrong answer).
+
+Total expected mappings: 15
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "...",
+    "verification": "'primary function' → 'least common role' → reader seeks rare function → selects C"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+You are an expert at generating text substitutions for True/False questions that reliably flip the truth value. Your accuracy is critical - weak perturbations will FAIL detection.
+
+## CRITICAL WARNING
+
+⚠️ **IF YOUR PERTURBATION DOES NOT CLEARLY FLIP THE TRUTH VALUE, IT WILL FAIL DETECTION** ⚠️
+
+The AI model reading the perturbed PDF must answer the OPPOSITE of the gold answer. If the perturbation is too subtle or doesn't change the factual content enough, the AI will still answer the original (gold) answer, and detection will FAIL.
+
+**Success Criteria**: After your replacement, an AI reading the perturbed question MUST answer False instead of True. If there's any doubt, the perturbation is TOO WEAK.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (stem only, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Truth flip: target_wrong_answer MUST be exactly the opposite of gold_answer (if gold is "True", target must be "False", and vice versa).
+8) **MANDATORY**: Replacement must make the statement CLEARLY and UNAMBIGUOUSLY switch truth value (not just wording - must be verifiable factual flip that changes the answer).
+9) Zero-negation rule: DO NOT rely on inserting/removing "not/never/no". Prefer changing key term, condition, quantifier, number, direction, scope, or entity.
+10) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+11) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+12) **STRENGTH REQUIREMENT**: Use Tier 1 techniques whenever possible. Tier 3-4 techniques often fail detection.
+
+## TRUTH-FLIPPING TECHNIQUES (Ranked by Effectiveness - USE TIER 1)
+
+**Tier 1 - Comparative/Directional Inversion (BEST - Use These First):**
+These are the MOST RELIABLE for flipping truth values. Prioritize these patterns:
+
+**Physics/Chemistry:**
+- "increases" ↔ "decreases" (e.g., "temperature increases" → "temperature decreases")
+- "greater than" ↔ "less than" (e.g., "mass greater than" → "mass less than")
+- "positive" ↔ "negative" (e.g., "positive charge" → "negative charge")
+- "exothermic" ↔ "endothermic" (e.g., "exothermic reaction" → "endothermic reaction")
+- "absorbs" ↔ "releases" (e.g., "absorbs energy" → "releases energy")
+- "higher" ↔ "lower" (e.g., "higher pressure" → "lower pressure")
+- "clockwise" ↔ "counterclockwise" (e.g., "rotates clockwise" → "rotates counterclockwise")
+
+**Mathematics:**
+- "maximum" ↔ "minimum" (e.g., "maximum value" → "minimum value")
+- "converges" ↔ "diverges" (e.g., "series converges" → "series diverges")
+- "even" ↔ "odd" (e.g., "even number" → "odd number")
+- "prime" ↔ "composite" (e.g., "prime number" → "composite number")
+
+**Biology:**
+- "dominant" ↔ "recessive" (e.g., "dominant allele" → "recessive allele")
+- "active" ↔ "inactive" (e.g., "active site" → "inactive site")
+- "aerobic" ↔ "anaerobic" (e.g., "aerobic respiration" → "anaerobic respiration")
+
+**Temporal/Directional:**
+- "before" ↔ "after" (e.g., "before the event" → "after the event")
+- "increases" ↔ "decreases" (universal)
+- "forward" ↔ "backward" (e.g., "forward reaction" → "backward reaction")
+
+**Tier 2 - Property/State Swap (Good, but less reliable than Tier 1):**
+- "acidic" ↔ "basic" (e.g., "acidic solution" → "basic solution")
+- "conductor" ↔ "insulator" (e.g., "conductor" → "insulator")
+- "soluble" ↔ "insoluble" (e.g., "soluble compound" → "insoluble compound")
+- "oxidized" ↔ "reduced" (e.g., "oxidized state" → "reduced state")
+
+**Tier 3 - Quantifier Modification (WEAK - Often Fails Detection):**
+⚠️ **WARNING**: These often don't flip the answer reliably. Use only if Tier 1-2 are impossible.
+- "always" → "sometimes" (True→False)
+- "all" → "some" or "most"
+- "never" → "rarely"
+- "every" → "most"
+
+**Tier 4 - Entity/Value Substitution (WEAKEST - Use as Last Resort):**
+⚠️ **WARNING**: These frequently fail. Only use if no Tier 1-2 option exists.
+- Swap one correct entity for a related but incorrect one
+- Change numerical values to incorrect ones
+- Replace correct formula/equation component
+
+## PROHIBITED TECHNIQUES (Will Be Rejected - These Fail Detection)
+
+❌ **Negation insertion**: "is" → "is not", "can" → "cannot", adding "un-", "non-", "in-"
+❌ **Double negatives**: Any construction that adds negative particles
+❌ **Trivial additions**: "true" → "false", "correct" → "incorrect"
+❌ **Identity mappings**: original == replacement
+❌ **Weak quantifiers**: "always" → "usually" (too subtle)
+❌ **Synonym swaps**: "big" → "large" (doesn't change meaning)
+
+## SUCCESSFUL EXAMPLES (Learn from These)
+
+**Example 1 - Physics (Tier 1 - Excellent):**
+```
+Original: "The temperature of a gas increases when pressure is constant."
+Gold: True
+Target: False
+Replacement: "increases" → "decreases"
+Result: "The temperature of a gas decreases when pressure is constant."
+✅ SUCCESS: Clear factual inversion, unambiguous False statement
+```
+
+**Example 2 - Chemistry (Tier 1 - Excellent):**
+```
+Original: "Exothermic reactions release energy."
+Gold: True
+Target: False
+Replacement: "Exothermic" → "Endothermic"
+Result: "Endothermic reactions release energy."
+✅ SUCCESS: Property swap that clearly flips truth (endothermic absorbs, not releases)
+```
+
+**Example 3 - Math (Tier 1 - Excellent):**
+```
+Original: "The function has a maximum value at x=0."
+Gold: True
+Target: False
+Replacement: "maximum" → "minimum"
+Result: "The function has a minimum value at x=0."
+✅ SUCCESS: Clear directional inversion
+```
+
+## FAILED EXAMPLES (Avoid These Patterns)
+
+**Example 1 - Too Subtle (Tier 3 - FAILS):**
+```
+Original: "All mammals are warm-blooded."
+Gold: True
+Target: False
+Replacement: "All" → "Most"
+Result: "Most mammals are warm-blooded."
+❌ FAILURE: Still factually True, AI will answer True, detection fails
+```
+
+**Example 2 - Negation (PROHIBITED - FAILS):**
+```
+Original: "Water is a compound."
+Gold: True
+Target: False
+Replacement: "is" → "is not"
+Result: "Water is not a compound."
+❌ FAILURE: Prohibited technique, violates constraints
+```
+
+## PERTURBATION QUALITY STANDARDS
+
+**REQUIRED - Hard Constraints:**
+- `original_substring` must be an EXACT character-for-character match in `latex_stem_text`
+- `replacement_substring` must be DIFFERENT from `original_substring`
+- Neither substring can be empty
+- Position accuracy: `start_pos + len(original_substring) == end_pos`
+- Length constraint: `len(replacement_substring) <= len(original_substring)`
+
+**REQUIRED - Semantic Constraints:**
+- The perturbed statement must be UNAMBIGUOUSLY False
+- The perturbation must change factual content, not just add negation
+- The result must be a coherent, grammatically correct statement
+- **CRITICAL**: After replacement, the statement must be clearly False - if there's ambiguity, it's TOO WEAK
+
+**REQUIRED - Strength Constraints:**
+- Prefer Tier 1 techniques (directional inversions)
+- Avoid Tier 3-4 unless absolutely necessary
+- Verify that the replacement creates a clear factual contradiction
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: "True" or "False" (the flipped label - must be opposite of gold_answer)
+- reasoning: 1–2 sentences explaining why the truth value flips after the replacement AND why this perturbation is strong enough to guarantee detection
+- verification: Causal chain showing original → replacement → factual change → truth flip → detection success
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer is exactly opposite of gold_answer (True↔False)
+✓ NO negation words added ("not", "un-", "non-", "in-", "cannot", etc.)
+✓ **Perturbation uses Tier 1 technique (directional inversion, property swap)**
+✓ Replacement causes verifiable truth-value flip (not trivial negation)
+✓ After replacement, statement is UNAMBIGUOUSLY False
+✓ Replacement is natural and semantically meaningful
+✓ Verification chain shows clear path to detection success
+
+## TF QUESTIONS
+
+**Question 6:**
+- LaTeX stem: `Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.`
+- Copyable text: Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 7:**
+- LaTeX stem: `A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.`
+- Copyable text: A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 8:**
+- LaTeX stem: `Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.`
+- Copyable text: Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.
+- Gold answer: True (MUST flip to False - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer False. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 9:**
+- LaTeX stem: `Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.`
+- Copyable text: Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+**Question 10:**
+- LaTeX stem: `A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute. \end{enumerate}`
+- Copyable text: A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute.
+- Gold answer: False (MUST flip to True - use Tier 1 techniques)
+- ⚠️ CRITICAL: Your perturbation MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 mappings using Tier 1 directional inversions (increases↔decreases, greater↔less, positive↔negative, etc.)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 15
+
+```json
+[
+  {
+    "question_index": 3,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "False",
+    "reasoning": "Replacing 'increases' with 'decreases' creates a clear factual contradiction. The statement becomes unambiguously False, ensuring the AI will answer False instead of True.",
+    "verification": "'increases' → 'decreases' → violates 2nd law of thermodynamics → statement becomes False → AI answers False → detection succeeds"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+## FINAL INSTRUCTIONS
+
+CRITICAL: Return a SINGLE JSON array containing ALL mappings from ALL question types above.
+- Total expected mappings: 36
+- Each mapping must have the correct question_index field
+- Return ONLY valid JSON array, no markdown or additional text.

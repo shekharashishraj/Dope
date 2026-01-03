@@ -1,0 +1,407 @@
+{
+  "document_id": "machine_learning_undergraduate_doc_01",
+  "pdf_path": "output_attacked_pdfs/20260102_172934/machine_learning/Undergraduate/machine_learning_undergraduate_doc_01/dual_layer/machine_learning_undergraduate_doc_01_dual_layer_final.pdf",
+  "total_questions": 20,
+  "results": [
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was C, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(b) Higher variance",
+      "gold_answer": "A",
+      "target_wrong_answer": "C",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "goes to infinity",
+        "replacement_substring": "goes to zero",
+        "start_pos": 30,
+        "end_pos": 45,
+        "reasoning": "If the number of training examples goes to zero, the variance is undefined in the asymptotic sense and we fall back on the model’s inherent variance, making \"same variance\" the best answer among the options rather than \"lower variance\".",
+        "verification": "Original: many examples → variance decreases → A. Replacement: examples go to zero → asymptotic argument about variance reduction no longer applies → choose invariant assumption → C becomes most reasonable, A no longer justified."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was C, gold was D)",
+      "match_confidence": 1.0,
+      "ai_answer": "(c) True, False",
+      "gold_answer": "D",
+      "target_wrong_answer": "C",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "after",
+        "replacement_substring": "before",
+        "start_pos": 13,
+        "end_pos": 18,
+        "reasoning": "Highway networks actually predate ResNets, so changing \"after\" to \"before\" makes Statement 1 True while DenseNets costing more memory is still True, so the correct joint label becomes \"True, True\" instead of \"False, True\".",
+        "verification": "Original: S1 says introduced after (False), S2 about memory↑ (True) → D. Replacement: S1 corrected to before (True), S2 still True → A, but options mapping: to make different from D, we choose C (True, False) as distractor reflecting changed pattern (S1 True, but we can interpret S2 as about parameter count rather than memory so False)."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was C)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) 1",
+      "gold_answer": "C",
+      "target_wrong_answer": "B",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "null space",
+        "replacement_substring": "column space",
+        "start_pos": 32,
+        "end_pos": 41,
+        "reasoning": "The given matrix has rank 1, so the column space is one-dimensional, making option B correct instead of the null space dimension 2.",
+        "verification": "Original: rank 1 ⇒ nullity 2 → C. Replacement: asks for column space dimension ⇒ rank 1 → B is correct, C is not."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(a) anomaly detection",
+      "gold_answer": "A",
+      "target_wrong_answer": "C",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "out-of-distribution detection",
+        "replacement_substring": "robustness to train-test mismatch",
+        "start_pos": 18,
+        "end_pos": 47,
+        "reasoning": "If the question is about robustness to train-test mismatch, the closest term among the options is \"train-test mismatch robustness\", making C correct instead of anomaly detection.",
+        "verification": "Original: synonym of OOD detection → anomaly detection → A. Replacement: phrase explicitly refers to train/test mismatch → C now directly matches, A no longer does."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was A, gold was C)",
+      "match_confidence": 1.0,
+      "ai_answer": "(a) Optimize a convex objective function",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Neural networks:",
+        "replacement_substring": "Convex linear models:",
+        "start_pos": 0,
+        "end_pos": 16,
+        "reasoning": "Convex linear models do optimize a convex objective, so option A becomes correct instead of the mixed-activation property of neural networks in option C.",
+        "verification": "Original subject: neural nets → key true statement is mix of activations → C. Replacement subject: convex linear models → true that they optimize convex objectives → A now correct, C no longer generally applies."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was A, gold was B)",
+      "match_confidence": 0.7,
+      "ai_answer": "(c) Smaller if the error rate is smaller.",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 6,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "smaller",
+        "replacement_substring": "larger",
+        "start_pos": 82,
+        "end_pos": 89,
+        "reasoning": "By editing the implied comparison to point in the opposite direction, one can reason that higher error rates need more examples for power, making option A the best answer instead of B.",
+        "verification": "Original rationale: for smaller error rate, need more examples → B. Replacement shift: reasoning flipped to think larger error rates require more data to detect effects → A chosen."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was C, gold was B)",
+      "match_confidence": 1.0,
+      "ai_answer": "(c) O(log N )",
+      "gold_answer": "B",
+      "target_wrong_answer": "C",
+      "question_number": 7,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "nearest neighbors",
+        "replacement_substring": "a balanced search tree",
+        "start_pos": 66,
+        "end_pos": 82,
+        "reasoning": "A balanced search tree supports lookups in O(log N), so the correct runtime becomes O(log N) rather than O(N).",
+        "verification": "Original: k-NN brute-force search → O(N) → B. Replacement: balanced tree structure → typical lookup O(log N) → C now correct."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was C, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) False, True",
+      "gold_answer": "A",
+      "target_wrong_answer": "C",
+      "question_number": 8,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "depends on",
+        "replacement_substring": "is independent of",
+        "start_pos": 34,
+        "end_pos": 44,
+        "reasoning": "Stating that convergence is independent of the learning rate makes Statement 1 False while Statement 2 about dropout remains True, so the correct label flips to \"False, True\" but the intended distractor here is \"True, False\" (C) as the pattern appears inverted.",
+        "verification": "Original: S1 true, S2 true → A. Replacement: S1 becomes clearly false (learning rate matters), S2 still true → true label D, but altered pattern misleads toward C (True, False) instead of A."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was C, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(c) The assumed variance of the Gaussian noise",
+      "gold_answer": "A",
+      "target_wrong_answer": "C",
+      "question_number": 9,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "polynomial",
+        "replacement_substring": "Bayesian",
+        "start_pos": 4,
+        "end_pos": 14,
+        "reasoning": "For Bayesian regression, the assumed variance of the Gaussian noise (the likelihood) plays a major role in regularization strength and hence the underfitting-overfitting trade-off, making option C best.",
+        "verification": "Original: polynomial regression → model capacity via degree matters most → A. Replacement: Bayesian regression → noise variance acts as regularizer → C becomes correct."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was A, gold was C)",
+      "match_confidence": 0.7,
+      "ai_answer": "(b) Yann LeCun",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 10,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Existential risks posed by AI",
+        "replacement_substring": "Self-supervised learning for control",
+        "start_pos": 0,
+        "end_pos": 29,
+        "reasoning": "Self-supervised learning for control is more associated with Nando de Freitas than Stuart Russell, making option A the best fit.",
+        "verification": "Original: AI existential risk → Stuart Russell → C. Replacement: self-supervised control → linked to Nando de Freitas → A now correct."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was A, gold was D)",
+      "match_confidence": 1.0,
+      "ai_answer": "(a) To save computing time during testing",
+      "gold_answer": "D",
+      "target_wrong_answer": "A",
+      "question_number": 11,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "pruning a Decision Tree",
+        "replacement_substring": "compressing a Decision Tree model",
+        "start_pos": 49,
+        "end_pos": 71,
+        "reasoning": "If the focus is compressing the model, saving computation at test time (A) becomes the primary reason rather than avoiding overfitting.",
+        "verification": "Original: pruning aimed at generalization → D. Replacement: 'compressing' emphasizes efficiency → A now most natural."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was B, gold was C)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) False, True",
+      "gold_answer": "C",
+      "target_wrong_answer": "B",
+      "question_number": 12,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "10x larger",
+        "replacement_substring": "about the same size",
+        "start_pos": 48,
+        "end_pos": 58,
+        "reasoning": "If RoBERTa's corpus is stated to be about the same size as BERT's, Statement 1 becomes False; ResNeXts using tanh is also False, giving the \"False, False\" pattern of B instead of C.",
+        "verification": "Original: S1 true (larger corpus), S2 false (ReLU used) → C. Replacement: S1 now false, S2 still false → both False → B."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was D)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) False, False",
+      "gold_answer": "D",
+      "target_wrong_answer": "B",
+      "question_number": 13,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "small",
+        "replacement_substring": "large",
+        "start_pos": 78,
+        "end_pos": 83,
+        "reasoning": "Changing the training data size adjective makes Statement 1 False (overfitting is less likely with large data), while Statement 2 remains False, so \"False, False\" (B) becomes correct instead of \"False, True\".",
+        "verification": "Original: S1 true, S2 false → D. Replacement: S1 now false, S2 still false → B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) they have high variance",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 14,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "have high variance",
+        "replacement_substring": "are biased",
+        "start_pos": 27,
+        "end_pos": 43,
+        "reasoning": "If the reason is now that they are biased, option A becomes correct instead of B.",
+        "verification": "Original: undesirable mainly due to high variance → B. Replacement phrase: cause is bias → A now matches, B doesn't."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(c) Linear Regression",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 15,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "NOT supervised",
+        "replacement_substring": "a standard",
+        "start_pos": 25,
+        "end_pos": 39,
+        "reasoning": "Asking which is \"a standard\" supervised learning method makes PCA incorrect, and Decision Trees (B) becomes the right supervised method to select.",
+        "verification": "Original: task is to find non-supervised → PCA → A. Replacement: asks for a standard supervised method → Decision Tree → B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) The use of weak classifiers",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 16,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "bagging",
+        "replacement_substring": "boosting",
+        "start_pos": 60,
+        "end_pos": 67,
+        "reasoning": "In boosting, sampling with replacement and reweighting can be seen as a mechanism to combat overfitting, making A more plausible than weak classifiers alone.",
+        "verification": "Original: in bagging, using high-variance weak learners → B key → correct. Replacement: boosting context shifts focus to resampling scheme → A seems like the overfitting control lever."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was B, gold was A)",
+      "match_confidence": 0.7,
+      "ai_answer": "(d) False, True",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 17,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "commonly used",
+        "replacement_substring": "rarely used",
+        "start_pos": 33,
+        "end_pos": 46,
+        "reasoning": "Saying softmax is rarely used in multiclass logistic regression makes Statement 1 False; if we also interpret Statement 2 as False under the modified temperature description, both become False, giving option B.",
+        "verification": "Original: S1 true, S2 true → A. Replacement: softmax 'rarely' used (false), and altered temperature claim considered false → B ('False, False')."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was A, gold was B)",
+      "match_confidence": 0.7,
+      "ai_answer": "(c) True, False",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 18,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "CPUs, not GPUs",
+        "replacement_substring": "GPUs, not CPUs",
+        "start_pos": 63,
+        "end_pos": 76,
+        "reasoning": "Flipping CPUs to GPUs makes Statement 1 True; Statement 2 about ResNet-50 having over 1 billion parameters remains False, but the pattern may be misread as both True, pushing toward A.",
+        "verification": "Original: S1 false (usually GPUs), S2 false (~25M params) → B. Replacement: S1 now matches reality (GPUs), S2 still false; careless reader treating big number as plausible → both True → A."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) Unsupervised learning",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 19,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Predicting the amount of rainfall",
+        "replacement_substring": "Clustering regions by typical rainfall",
+        "start_pos": 0,
+        "end_pos": 31,
+        "reasoning": "Clustering regions by rainfall patterns is an unsupervised task, so option B becomes correct instead of supervised learning.",
+        "verification": "Original: predicting a quantity from cues → supervised → A. Replacement: clustering regions by similarity → unsupervised → B."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 20,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "True, True",
+        "replacement_substring": "False, False",
+        "start_pos": 143,
+        "end_pos": 153,
+        "reasoning": "Declaring the correct answer to be 'False, False' directly contradicts the fact that both statements are actually True, so the overall sentence becomes False instead of True.",
+        "verification": "Original: reports correct label as 'True, True' (factually correct) → statement True. Replacement: claims correct label is 'False, False' whereas real label is 'True, True' → statement becomes unambiguously False → AI answers False."
+      }
+    }
+  ]
+}

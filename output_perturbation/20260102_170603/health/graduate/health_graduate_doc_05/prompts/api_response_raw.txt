@@ -1,0 +1,402 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the factors influencing daily protein requirements for athletes and analyze the recommended protein intake range based on body weight.",
+    "original_substring": "daily protein requirements for athletes",
+    "replacement_substring": "daily carbohydrate requirements for athletes",
+    "start_pos": 20,
+    "end_pos": 55,
+    "target_wrong_answer": "Response will focus on carbohydrate needs instead of protein, containing markers like 'carbohydrate loading', 'glycogen stores', and 'g/kg of carbs', and lacking discussion of 1.2–1.7 g protein/kg, amino acids, or muscle protein synthesis.",
+    "reasoning": "Shifting from protein to carbohydrate changes the macronutrient being analyzed, so the 1.2–1.7 g/kg protein range is no longer relevant and a different numeric range and rationale are expected.",
+    "verification": "Original asks about protein needs → replace 'protein' with 'carbohydrate' → reader now computes carb intake ranges and discusses glycogen and energy supply → gold protein-specific range and concepts disappear, enabling detection via absence of protein terminology."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the factors influencing daily protein requirements for athletes and analyze the recommended protein intake range based on body weight.",
+    "original_substring": "based on body weight",
+    "replacement_substring": "per meal consumed",
+    "start_pos": 113,
+    "end_pos": 132,
+    "target_wrong_answer": "Response will focus on protein amounts per meal (e.g., grams per meal, distribution across the day) instead of grams per kilogram body weight, using markers like 'per meal', '20–40 g per meal', and lacking any g/kg/day calculations or weight-based justification.",
+    "reasoning": "Changing the basis from body weight to per meal alters the quantitative framework, so an answer framed as g/kg/day with supporting evidence becomes inappropriate.",
+    "verification": "Original requires range normalized to body weight → replacement shifts normalization to meals → respondent gives per-meal gram targets and timing → missing g/kg figures and body-weight scaling clearly deviate from gold answer."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the factors influencing daily protein requirements for athletes and analyze the recommended protein intake range based on body weight.",
+    "original_substring": "for athletes",
+    "replacement_substring": "for sedentary adults",
+    "start_pos": 49,
+    "end_pos": 60,
+    "target_wrong_answer": "Response will describe lower protein needs for sedentary adults (around 0.8 g/kg) instead of higher athletic requirements, containing markers like 'sedentary', 'RDA for adults', and lacking references to training load, muscle repair, or 1.2–1.7 g/kg ranges.",
+    "reasoning": "Switching the population from athletes to sedentary adults substantially lowers the appropriate intake range, making the athletic 1.2–1.7 g/kg recommendation incorrect.",
+    "verification": "Original focuses on athletes' elevated needs → replacement targets sedentary adults → correct answer shifts to ~0.8 g/kg and general health rationale → absence of athletic training concepts and higher range marks deviation."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the human somatic cell's chromosome number in relation to genetic health and its implications for human development and disease. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "human somatic cell's chromosome number",
+    "replacement_substring": "human gamete's chromosome number",
+    "start_pos": 34,
+    "end_pos": 72,
+    "target_wrong_answer": "Response will focus on the haploid chromosome number of gametes (23), using markers like 'haploid', 'meiosis', 'gamete', and will not describe the diploid 46 chromosomes or mitotic inheritance patterns associated with the gold answer.",
+    "reasoning": "Changing from somatic cells to gametes halves the relevant chromosome count, so an answer of 30 or 46 becomes inappropriate and the discussion must shift to 23 and meiosis.",
+    "verification": "Original implies diploid somatic chromosome count → replacement points to haploid gametes → respondent explains 23 chromosomes and meiotic segregation → diploid-focused facts are absent, creating a detectable shift."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the human somatic cell's chromosome number in relation to genetic health and its implications for human development and disease. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "human somatic cell's chromosome number",
+    "replacement_substring": "human mitochondrial DNA copy number",
+    "start_pos": 34,
+    "end_pos": 72,
+    "target_wrong_answer": "Response will address variation in mitochondrial DNA copies per cell, with markers like 'mtDNA', 'mitochondria', 'multiple copies', and will omit explicit discussion of the nuclear chromosomal count (like 30 or 46) and karyotype-related disorders.",
+    "reasoning": "Shifting to mitochondrial DNA changes the genetic unit of analysis from nuclear chromosomes to organelle genomes, so a nuclear chromosome number answer is no longer relevant.",
+    "verification": "Original centers on nuclear chromosomes and ploidy → replacement redirects to mtDNA copy number → answer discusses mitochondrial inheritance and copy variation → nuclear chromosome-number facts from gold answer are missing."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the significance of the human somatic cell's chromosome number in relation to genetic health and its implications for human development and disease. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "in relation to genetic health and its implications for human development and disease",
+    "replacement_substring": "in relation to species classification and its role in defining human taxonomy",
+    "start_pos": 74,
+    "end_pos": 160,
+    "target_wrong_answer": "Response will focus on how chromosome number informs species identity and human placement in primate taxonomy, including markers like 'taxonomy', 'species barrier', 'evolutionary classification', while lacking discussion of genetic disorders, aneuploidy, or developmental diseases.",
+    "reasoning": "Changing the relational focus from genetic health and disease to taxonomy shifts the explanatory goal away from pathology toward species classification, so disease-centered content associated with the gold answer disappears.",
+    "verification": "Original asks about health and disease implications → replacement reframes as taxonomic significance → respondent explains species differentiation, not developmental disorders → absence of clinical genetics concepts indicates deviation."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "In adolescence:",
+    "original_substring": "In adolescence:",
+    "replacement_substring": "In early childhood:",
+    "start_pos": 0,
+    "end_pos": 13,
+    "target_wrong_answer": "D",
+    "reasoning": "Peak bone mass does not occur before the adolescent growth spurt ends, but in early childhood bone mass does increase rapidly before any major growth spurt, making option D comparatively more defensible while A becomes clearly incorrect.",
+    "verification": "Original timeframe adolescence → shift to early childhood → typical adolescent fat-percentage changes in girls no longer apply → options about growth spurts and bone mass timing become more plausible → answer selection shifts toward D."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "In adolescence:",
+    "original_substring": "In adolescence:",
+    "replacement_substring": "Throughout adult life:",
+    "start_pos": 0,
+    "end_pos": 13,
+    "target_wrong_answer": "E",
+    "reasoning": "Across adult life, obesity-related type 2 diabetes becomes common rather than rare, so option E becomes clearly false while A about adolescent fat gain is no longer tied to the revised timeframe, making none obviously correct but shifting focus away from A toward statements about diabetes prevalence like E.",
+    "verification": "Original: adolescent-specific physiology → replacement: adult life span → adolescent body-fat change in A loses relevance → respondents re-evaluate in context of adult disease epidemiology, focusing on option E about type 2 diabetes."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "In adolescence:",
+    "original_substring": "In adolescence:",
+    "replacement_substring": "During fetal life:",
+    "start_pos": 0,
+    "end_pos": 13,
+    "target_wrong_answer": "B",
+    "reasoning": "During fetal life, brain growth is indeed faster than at any other stage, aligning with option B, while statements about adolescent fat gain and diabetes no longer fit this developmental period.",
+    "verification": "Timeframe adolescence → changed to fetal life → rapid fetal brain growth matches B → other options clearly mismatched to fetal period → answer gravitates to B instead of A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Parasympathetic preganglionic nerves leave the central nervous system with the",
+    "original_substring": "Parasympathetic preganglionic nerves",
+    "replacement_substring": "Sympathetic preganglionic nerves",
+    "start_pos": 0,
+    "end_pos": 34,
+    "target_wrong_answer": "C",
+    "reasoning": "Sympathetic preganglionic fibers leave the CNS with thoracolumbar spinal nerves, not cranial nerves, so none of the listed cranial options is truly correct, but the change clearly invalidates A while aligning the stem least poorly with an alternative like C.",
+    "verification": "Original asks about parasympathetic (craniosacral, including VIII if keyed) → switch to sympathetic → cranial-nerve-based correct option A is invalidated → reader must pick a different choice; structure now mismatched to all options, pushing selection away from A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Parasympathetic preganglionic nerves leave the central nervous system with the",
+    "original_substring": "leave the central nervous system with the",
+    "replacement_substring": "supply the structures innervated by the",
+    "start_pos": 35,
+    "end_pos": 74,
+    "target_wrong_answer": "D",
+    "reasoning": "Changing from an anatomical exit pathway to innervation targets shifts the question toward which cranial nerve territory is parasympathetically supplied, making the fifth nerve territory a more plausible focus than the eighth.",
+    "verification": "Original: pathway 'leave with' → replacement: function 'supply structures of' → emphasis changes from nerve of origin to nerve-associated region → reader reevaluates and may favor D over A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Parasympathetic preganglionic nerves leave the central nervous system with the",
+    "original_substring": "Parasympathetic",
+    "replacement_substring": "Cranial",
+    "start_pos": 0,
+    "end_pos": 13,
+    "target_wrong_answer": "B",
+    "reasoning": "Referring generally to cranial preganglionic nerves rather than specifically parasympathetic ones weakens the association with option A and can make the second cranial nerve seem more plausible in context than the eighth.",
+    "verification": "Original: specific to parasympathetic fibers → replacement: generic 'cranial' → ambiguity about modality increases, weakening A's special status and making B a competing focus."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following could very well be a cohort difference rather than a change that occurs with age?",
+    "original_substring": "cohort difference rather than a change that occurs with age",
+    "replacement_substring": "biological change that inevitably occurs with age",
+    "start_pos": 36,
+    "end_pos": 106,
+    "target_wrong_answer": "A",
+    "reasoning": "Reframing the question to ask for an inevitable biological age change makes loss of muscle mass (sarcopenia) clearly appropriate, whereas weight differences (original C) can be more environmentally driven.",
+    "verification": "Original contrasts cohort vs age → replacement asks for inevitable age-linked change → muscle loss in A fits → weight differences in C no longer best answer."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following could very well be a cohort difference rather than a change that occurs with age?",
+    "original_substring": "could very well be a cohort difference rather than a change that occurs with age",
+    "replacement_substring": "is most directly caused by intrinsic biological aging processes",
+    "start_pos": 36,
+    "end_pos": 106,
+    "target_wrong_answer": "B",
+    "reasoning": "Focusing on intrinsic aging processes points toward thymic involution in option B rather than environmentally mediated weight differences in C.",
+    "verification": "Original: cohort vs age effects → replacement: direct intrinsic aging → thymus shrinkage B is classic intrinsic change → C less suitable."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following could very well be a cohort difference rather than a change that occurs with age?",
+    "original_substring": "a cohort difference rather than a change that occurs with age",
+    "replacement_substring": "a direct physiological consequence of aging itself",
+    "start_pos": 52,
+    "end_pos": 106,
+    "target_wrong_answer": "E",
+    "reasoning": "Asking for a direct physiological consequence of aging promotes changes in eyesight (option E) as a natural aging change over differences in weight.",
+    "verification": "Original seeks cohort differences → replacement wants direct aging consequence → eyesight decline E is common age-related → C about weight becomes less favored."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Blood clots are responsible for repeatedly blocking a catheter. What should you do?",
+    "original_substring": "Blood clots are responsible for repeatedly blocking a catheter.",
+    "replacement_substring": "The catheter itself is faulty and repeatedly causing trauma and blockage.",
+    "start_pos": 0,
+    "end_pos": 69,
+    "target_wrong_answer": "B",
+    "reasoning": "If the catheter is faulty and causing trauma and blockage, the appropriate action is to remove and recatheterize (B) rather than just remove a clot with a syringe (A).",
+    "verification": "Original: problem is clot inside catheter → best action A (clear clot) → replacement: problem is faulty catheter → solution shifts to B (remove and replace catheter)."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Blood clots are responsible for repeatedly blocking a catheter. What should you do?",
+    "original_substring": "What should you do?",
+    "replacement_substring": "Who should be informed first?",
+    "start_pos": 71,
+    "end_pos": 89,
+    "target_wrong_answer": "E",
+    "reasoning": "Changing the question to ask who should be informed first makes informing the patient (E) the more appropriate ethical response than directly manipulating the catheter.",
+    "verification": "Original: asks for action to resolve blockage → replacement: asks about communication priority → informing patient E becomes correct instead of performing a procedure A."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "Blood clots are responsible for repeatedly blocking a catheter. What should you do?",
+    "original_substring": "repeatedly",
+    "replacement_substring": "once",
+    "start_pos": 32,
+    "end_pos": 42,
+    "target_wrong_answer": "C",
+    "reasoning": "If the catheter is blocked only once, inappropriate self-directed replacement without informing medical staff (C) might appear as a quick fix, while repeatedly blocked catheters would warrant more formal intervention.",
+    "verification": "Original: recurrent issue implies need for proper management (A/B) → replacement: single blockage could seem minor → some might (incorrectly) favor C's unilateral action."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is true about rectal bleeding?",
+    "original_substring": "rectal bleeding",
+    "replacement_substring": "painless rectal bleeding",
+    "start_pos": 32,
+    "end_pos": 46,
+    "target_wrong_answer": "A",
+    "reasoning": "Specifying painless rectal bleeding makes hemorrhoids a common cause, making the claim that they are never a cause (A) clearly false and flipping the true option away from B.",
+    "verification": "Original: general rectal bleeding → replacement: painless rectal bleeding → hemorrhoids become very typical → statement in A becomes focal, altering perceived correctness."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is true about rectal bleeding?",
+    "original_substring": "Which of the following is true",
+    "replacement_substring": "Which of the following is least likely to be true",
+    "start_pos": 0,
+    "end_pos": 27,
+    "target_wrong_answer": "D",
+    "reasoning": "Asking for the least likely true statement makes the claim that rectal cancer is the commonest cause (D) stand out as the correct choice, since it is indeed not the commonest cause.",
+    "verification": "Original: seeks a true statement → replacement: seeks least likely true → D, a false overstatement, becomes the best answer instead of B."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "Which of the following is true about rectal bleeding?",
+    "original_substring": "rectal bleeding",
+    "replacement_substring": "sigmoid colon bleeding",
+    "start_pos": 32,
+    "end_pos": 46,
+    "target_wrong_answer": "E",
+    "reasoning": "Shifting focus to sigmoid colon bleeding makes bright red blood on the finger more plausibly linked to a more proximal lesion, making E appear correct in the altered context, while B loses its primacy.",
+    "verification": "Original: source unspecified 'rectal' → replacement: 'sigmoid colon' → visual presentation shifts, making E about caecal-type lesion seem closer, misdirecting answer."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The lateral pterygoid muscle is the primary functional matrix affecting the angle of the mandible during its development.",
+    "original_substring": "lateral pterygoid muscle",
+    "replacement_substring": "masseter muscle",
+    "start_pos": 4,
+    "end_pos": 27,
+    "target_wrong_answer": "True",
+    "reasoning": "The masseter, a major elevator and masticatory muscle, is much more directly implicated as a functional matrix influencing mandibular angle development than the lateral pterygoid, so the modified statement becomes plausibly true.",
+    "verification": "Original incorrectly singles out lateral pterygoid → replacement names masseter → aligns with known role of elevator muscles in mandibular growth → truth flips from False to True, AI answers True."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The lateral pterygoid muscle is the primary functional matrix affecting the angle of the mandible during its development.",
+    "original_substring": "the angle of the mandible",
+    "replacement_substring": "condylar positioning",
+    "start_pos": 63,
+    "end_pos": 87,
+    "target_wrong_answer": "True",
+    "reasoning": "The lateral pterygoid does play a primary role in condylar positioning during development, so changing the affected structure from the mandibular angle to condylar position makes the statement accurate.",
+    "verification": "Original falsely links lateral pterygoid to mandibular angle → replacement links it to condylar position, its known function → statement now True, ensuring flipped answer."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "The lateral pterygoid muscle is the primary functional matrix affecting the angle of the mandible during its development.",
+    "original_substring": "during its development",
+    "replacement_substring": "during mandibular movements",
+    "start_pos": 103,
+    "end_pos": 124,
+    "target_wrong_answer": "True",
+    "reasoning": "The lateral pterygoid is indeed a primary muscle influencing mandibular movements, so reframing the time frame from developmental to functional movement makes the statement correct.",
+    "verification": "Original claims developmental effect (False) → replacement describes effect during movements (True) → AI now correctly endorses statement as True."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Consuming a diet rich in fruits and vegetables significantly elevates the risk of oesophageal cancer.",
+    "original_substring": "elevates",
+    "replacement_substring": "reduces",
+    "start_pos": 57,
+    "end_pos": 65,
+    "target_wrong_answer": "True",
+    "reasoning": "Fruits and vegetables are protective against many cancers, including oesophageal, so stating that such a diet reduces risk is true, flipping the original false elevation claim.",
+    "verification": "Original: rich fruit/veg 'elevates' risk (False) → 'elevates' → 'reduces' → aligns with epidemiologic evidence → model answers True after perturbation."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Consuming a diet rich in fruits and vegetables significantly elevates the risk of oesophageal cancer.",
+    "original_substring": "risk of oesophageal cancer",
+    "replacement_substring": "risk of vitamin deficiency",
+    "start_pos": 70,
+    "end_pos": 95,
+    "target_wrong_answer": "True",
+    "reasoning": "A diet rich in fruits and vegetables decreases oesophageal cancer risk but also reduces the risk of vitamin deficiency, so stating it elevates the risk of deficiency is false; to flip to True we interpret 'rich' as lacking and instead this swap makes the protective relationship coherent.",
+    "verification": "Original cancer-risk claim False → replacement targets vitamin deficiency, which is indeed less likely with high fruit/veg → statement about elevated risk becomes paradoxical but phrasal swap sets expectation for True; AI sees fruit/veg lower deficiency risk and treats 'elevates' as mismatched, but semantics here are weaker."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Consuming a diet rich in fruits and vegetables significantly elevates the risk of oesophageal cancer.",
+    "original_substring": "rich in fruits and vegetables",
+    "replacement_substring": "poor in fruits and vegetables",
+    "start_pos": 21,
+    "end_pos": 49,
+    "target_wrong_answer": "True",
+    "reasoning": "A diet poor in fruits and vegetables is associated with higher oesophageal cancer risk, so stating that such a diet elevates risk is true, inverting the original protective relationship.",
+    "verification": "Original: 'rich' diet + 'elevates' (False) → change 'rich' → 'poor' → low fruit/veg intake elevates risk (True) → AI answers True post-perturbation."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Vascular dementia typically presents with less cognitive impairment than Parkinson's disease.",
+    "original_substring": "less",
+    "replacement_substring": "more",
+    "start_pos": 43,
+    "end_pos": 47,
+    "target_wrong_answer": "True",
+    "reasoning": "Vascular dementia generally causes more, not less, cognitive impairment than Parkinson’s disease, so changing 'less' to 'more' corrects the comparison and makes the sentence true.",
+    "verification": "'less' → 'more' flips the comparative direction → aligns with clinical severity patterns → truth value switches from False to True, so AI now endorses statement."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Vascular dementia typically presents with less cognitive impairment than Parkinson's disease.",
+    "original_substring": "Parkinson's disease",
+    "replacement_substring": "mild cognitive impairment",
+    "start_pos": 72,
+    "end_pos": 90,
+    "target_wrong_answer": "True",
+    "reasoning": "Vascular dementia causes greater impairment than mild cognitive impairment, so saying it presents with less impairment than MCI is false; however, comparing it appropriately flips truth—this mapping is weaker but still changes comparative baseline.",
+    "verification": "Original faulty comparison to Parkinson’s → replacement comparison to MCI alters reference group → severity ordering changes, intended to make statement true, and AI detects new comparison."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Vascular dementia typically presents with less cognitive impairment than Parkinson's disease.",
+    "original_substring": "Vascular dementia",
+    "replacement_substring": "Parkinson's disease",
+    "start_pos": 0,
+    "end_pos": 17,
+    "target_wrong_answer": "True",
+    "reasoning": "Swapping the subject makes Parkinson’s disease the condition claimed to have less impairment than vascular dementia; since PD generally has milder cognitive impairment than full vascular dementia, this becomes true.",
+    "verification": "Original: VD < PD impairment (False) → replacement: PD < VD → matches actual relative severity → model now answers True."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Niacin and riboflavin are the vitamins that are lost most readily during cooking.",
+    "original_substring": "Niacin and riboflavin",
+    "replacement_substring": "Vitamin C and folate",
+    "start_pos": 0,
+    "end_pos": 19,
+    "target_wrong_answer": "True",
+    "reasoning": "Vitamin C and folate are among the vitamins most readily lost during cooking, so replacing niacin and riboflavin with them makes the statement accurate.",
+    "verification": "Original incorrectly cites niacin/riboflavin → replacement cites heat-labile Vitamin C/folate → aligns with nutritional science → truth flips to True."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Niacin and riboflavin are the vitamins that are lost most readily during cooking.",
+    "original_substring": "lost most readily",
+    "replacement_substring": "least affected",
+    "start_pos": 44,
+    "end_pos": 60,
+    "target_wrong_answer": "True",
+    "reasoning": "Niacin and riboflavin are relatively stable to cooking compared to other vitamins, so saying they are least affected rather than most readily lost is closer to the truth, flipping the statement.",
+    "verification": "'lost most readily' → 'least affected' reverses susceptibility ranking → matches relative heat stability → AI changes answer from False to True."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Niacin and riboflavin are the vitamins that are lost most readily during cooking.",
+    "original_substring": "during cooking",
+    "replacement_substring": "during storage",
+    "start_pos": 61,
+    "end_pos": 75,
+    "target_wrong_answer": "True",
+    "reasoning": "Loss patterns differ between cooking and storage; some B vitamins, including riboflavin, can be sensitive to light and storage conditions, making the modified statement more defensible.",
+    "verification": "Original context cooking (False for niacin/riboflavin) → shift to storage → aligns better with light/oxidation losses → truth intended to flip to True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The worldwide prevalence of obesity is approximately 13\\%, indicating a significant public health concern. \\end{enumerate}",
+    "original_substring": "13\\%",
+    "replacement_substring": "3\\%",
+    "start_pos": 37,
+    "end_pos": 41,
+    "target_wrong_answer": "False",
+    "reasoning": "A 3% worldwide prevalence would severely understate current obesity levels, making the statement factually false even though it still calls it a significant concern.",
+    "verification": "Original: ~13% (roughly correct) → change to 3% (far too low) → statement no longer matches epidemiologic data → AI answers False instead of True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The worldwide prevalence of obesity is approximately 13\\%, indicating a significant public health concern. \\end{enumerate}",
+    "original_substring": "worldwide",
+    "replacement_substring": "local",
+    "start_pos": 4,
+    "end_pos": 13,
+    "target_wrong_answer": "False",
+    "reasoning": "Labeling the prevalence as local rather than worldwide makes the fixed 13% figure far less justifiable, since local rates vary widely and a single approximate value is unlikely to be universally accurate.",
+    "verification": "Original: global stat plausible at 13% → replacement: 'local' prevalence given as 13% generically → unlikely to hold for arbitrary locale → truth flips to False."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The worldwide prevalence of obesity is approximately 13\\%, indicating a significant public health concern. \\end{enumerate}",
+    "original_substring": "significant public health concern",
+    "replacement_substring": "minor nutritional issue",
+    "start_pos": 46,
+    "end_pos": 77,
+    "target_wrong_answer": "False",
+    "reasoning": "Describing global obesity prevalence as a 'minor nutritional issue' contradicts the well-established characterization of obesity as a major health concern, making the statement false.",
+    "verification": "Original correctly frames obesity as significant → replacement trivializes it → clash with public health consensus → AI now rejects statement as False."
+  }
+]

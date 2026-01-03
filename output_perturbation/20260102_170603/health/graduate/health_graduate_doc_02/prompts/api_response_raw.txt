@@ -1,0 +1,402 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the relationship between optimism in older adults and longevity, analyzing how pessimistic outlooks may influence health outcomes and lifespan.",
+    "original_substring": "optimism in older adults and longevity",
+    "replacement_substring": "loneliness in older adults and depression",
+    "start_pos": 28,
+    "end_pos": 67,
+    "target_wrong_answer": "Response will focus on how loneliness contributes to depression in older adults instead of how optimism relates to longevity, containing markers like 'social isolation', 'depressive symptoms', and 'mental health' and lacking 'pessimism and mortality', 'life expectancy', and 'health outcomes influencing lifespan'.",
+    "reasoning": "Shifting from optimism–longevity to loneliness–depression changes the core construct and outcome, so explanations about pessimists dying younger will no longer address the question.",
+    "verification": "Original asks about optimism and longevity → replace with loneliness and depression → content must now address mental health impacts of isolation rather than mortality risk from pessimism → detection via presence of 'loneliness/depression' language and absence of 'longevity/pessimism and death' framing."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the relationship between optimism in older adults and longevity, analyzing how pessimistic outlooks may influence health outcomes and lifespan.",
+    "original_substring": "health outcomes and lifespan",
+    "replacement_substring": "coping strategies and mood",
+    "start_pos": 108,
+    "end_pos": 135,
+    "target_wrong_answer": "Response will analyze how pessimistic outlooks affect coping strategies and emotional states instead of physical health outcomes and lifespan, using markers like 'emotion regulation', 'coping styles', and 'mood states' and omitting 'mortality', 'disease risk', and 'years of life'.",
+    "reasoning": "Replacing the outcome domain from health and lifespan to coping and mood redirects the answer away from mortality explanations toward psychological processes.",
+    "verification": "Original focuses on health outcomes and lifespan → replacement makes the question about coping strategies and mood → responses will emphasize emotional adjustment rather than earlier death in pessimists → detectable by lack of references to longevity or mortality statistics."
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Discuss the relationship between optimism in older adults and longevity, analyzing how pessimistic outlooks may influence health outcomes and lifespan.",
+    "original_substring": "older adults",
+    "replacement_substring": "adolescents",
+    "start_pos": 49,
+    "end_pos": 60,
+    "target_wrong_answer": "Response will discuss optimism and health in adolescents instead of older adults, with markers like 'teenagers', 'school performance', and 'peer relationships' and lacking 'aging', 'late life', 'mortality risk', and 'older age diseases'.",
+    "reasoning": "Changing the population from older adults to adolescents alters the developmental context, so mechanisms about pessimists dying younger in old age become misaligned.",
+    "verification": "Original population is older adults → swapped to adolescents → answer must now reference youth-specific issues rather than geriatric health and longevity → detection via adolescent-related terminology and absence of aging/longevity discussion."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the energy expenditure of various organs in the human body, focusing on why the intestines have the lowest energy expenditure per unit of body mass. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "intestines have the lowest",
+    "replacement_substring": "brain has the highest",
+    "start_pos": 91,
+    "end_pos": 116,
+    "target_wrong_answer": "Response will argue that the brain has the highest energy expenditure per unit mass, containing markers like 'high metabolic rate of the brain', 'neuronal activity', and 'oxygen consumption', and will omit justification for intestines having the lowest expenditure.",
+    "reasoning": "Switching from 'intestines have the lowest' to 'brain has the highest' reverses which organ is being singled out, so an answer centered on 'intestines' is no longer correct.",
+    "verification": "Original asks why intestines have the lowest energy use → replacement asks why brain has the highest → correct reasoning will now support a different organ → detection via mention of brain’s high metabolic demands and no defense of intestines being lowest."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the energy expenditure of various organs in the human body, focusing on why the intestines have the lowest energy expenditure per unit of body mass. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "per unit of body mass",
+    "replacement_substring": "in absolute total terms",
+    "start_pos": 138,
+    "end_pos": 158,
+    "target_wrong_answer": "Response will consider total absolute energy use by the organ instead of energy per unit mass, using markers like 'overall energy consumption', 'total ATP usage', and 'whole-organ demand' while lacking discussion of 'per kilogram' or 'mass-normalized' comparisons that justify intestines being lowest.",
+    "reasoning": "Changing from a mass-normalized metric to absolute energy use changes which organ ranks lowest, invalidating an answer that names intestines based on per-mass expenditure.",
+    "verification": "Original metric is per unit mass → switched to absolute total terms → organs with large size (e.g., skeletal muscle) may dominate → answers will no longer justify intestines as lowest → detection via focus on total energy rather than normalized values."
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Discuss the energy expenditure of various organs in the human body, focusing on why the intestines have the lowest energy expenditure per unit of body mass. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "intestines",
+    "replacement_substring": "kidneys",
+    "start_pos": 103,
+    "end_pos": 113,
+    "target_wrong_answer": "Response will explain why kidneys have the lowest energy expenditure per unit mass, including markers like 'renal blood flow', 'filtration work', and 'kidney metabolism', and will not defend 'intestines' as the organ with lowest expenditure.",
+    "reasoning": "Substituting 'kidneys' for 'intestines' directly changes which organ the question designates as having the lowest energy use, so the original gold answer pointing to intestines becomes incorrect.",
+    "verification": "Original organ: intestines → replaced with kidneys → respondents must now justify kidneys as lowest → detection via kidney-specific physiology with no claim that intestines are the lowest."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?",
+    "original_substring": "into the lymph",
+    "replacement_substring": "directly into blood",
+    "start_pos": 129,
+    "end_pos": 142,
+    "target_wrong_answer": "A",
+    "reasoning": "If lipoproteins are secreted directly into blood rather than lymph, the stem best matches secretion of chylomicrons only, making option A preferable over D.",
+    "verification": "Original: secretion into lymph fits chylomicrons and some HDL → replacement: directly into blood aligns with chylomicron entry via bloodstream in this altered scenario → model favors 'chylomicrons only' (A), not 'chylomicrons and HDL' (D)."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?",
+    "original_substring": "Cholesterol and fatty acids absorbed from the intestinal lumen",
+    "replacement_substring": "Endogenous triglycerides produced in the liver",
+    "start_pos": 0,
+    "end_pos": 64,
+    "target_wrong_answer": "C",
+    "reasoning": "Changing the source to endogenous liver triglycerides shifts the scenario to hepatic secretion, where VLDL (and LDL as its product) are the relevant lipoproteins, matching option C.",
+    "verification": "Original: intestinal absorption → chylomicron-focused → replacement: liver-derived triglycerides → physiology points to VLDL and its LDL remnants → option C becomes correct instead of D."
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?",
+    "original_substring": "enterocytes",
+    "replacement_substring": "hepatocytes",
+    "start_pos": 112,
+    "end_pos": 123,
+    "target_wrong_answer": "E",
+    "reasoning": "If hepatocytes are secreting the lipoproteins, the scenario fits hepatic production of VLDL and HDL rather than chylomicrons, aligning with option E.",
+    "verification": "Original: enterocytes → intestinal lipoprotein export involving chylomicrons and HDL → replacement: hepatocytes → hepatic lipoproteins dominated by VLDL and HDL → model chooses E instead of D."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A burial site where the body is allowed to decompose naturally without a casket is called a _____ cemetery",
+    "original_substring": "decompose naturally",
+    "replacement_substring": "rest in sunshine",
+    "start_pos": 33,
+    "end_pos": 51,
+    "target_wrong_answer": "B",
+    "reasoning": "Emphasizing 'rest in sunshine' shifts focus to sunlight exposure as the defining feature, making 'Sunshine' cemetery (B) fit better than 'Eco-friendly'.",
+    "verification": "Original: natural decomposition without casket → eco-friendly green burial → replacement: resting in sunshine → semantic cue strongly points to 'Sunshine' as the label → B becomes correct over A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A burial site where the body is allowed to decompose naturally without a casket is called a _____ cemetery",
+    "original_substring": "burial site",
+    "replacement_substring": "woodland area",
+    "start_pos": 2,
+    "end_pos": 13,
+    "target_wrong_answer": "C",
+    "reasoning": "Describing it as a 'woodland area' steers the reader toward a forest setting, making 'Forest' cemetery (C) the best label.",
+    "verification": "Original: generic burial site → eco-friendly term most apt → replacement: woodland area evokes trees and forest → model now aligns with option C rather than A."
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "A burial site where the body is allowed to decompose naturally without a casket is called a _____ cemetery",
+    "original_substring": "without a casket",
+    "replacement_substring": "for rapid decay",
+    "start_pos": 68,
+    "end_pos": 84,
+    "target_wrong_answer": "D",
+    "reasoning": "Highlighting that the site is specifically 'for rapid decay' makes 'Rapid decay' cemetery (D) the most consistent choice.",
+    "verification": "Original: emphasizes lack of casket → green/eco-friendly association → replacement: explicitly 'for rapid decay' → semantic match to option D outweighs eco-friendly framing."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Older adults are able to improve their memories and reduce their anxiety about declining memory when",
+    "original_substring": "reduce their anxiety about declining memory",
+    "replacement_substring": "support their overall physical well-being",
+    "start_pos": 40,
+    "end_pos": 87,
+    "target_wrong_answer": "C",
+    "reasoning": "Shifting the goal to supporting overall physical well-being makes regular physical activity (C) the most direct means, displacing social activities as the key factor.",
+    "verification": "Original: improve memory and reduce anxiety → best met by social interaction (A) in context → replacement: focus on physical well-being → exercise option C aligns best → model now prefers C."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Older adults are able to improve their memories and reduce their anxiety about declining memory when",
+    "original_substring": "improve their memories",
+    "replacement_substring": "calm their stress levels",
+    "start_pos": 18,
+    "end_pos": 38,
+    "target_wrong_answer": "B",
+    "reasoning": "Focusing on calming stress levels makes mindfulness and meditation (B) the most appropriate intervention over social activities.",
+    "verification": "Original: dual focus on memory and anxiety → social engagement helps both → replacement: specifically calming stress → mindfulness option B maps directly → model switches from A to B."
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Older adults are able to improve their memories and reduce their anxiety about declining memory when",
+    "original_substring": "about declining memory",
+    "replacement_substring": "as their brains age",
+    "start_pos": 63,
+    "end_pos": 83,
+    "target_wrong_answer": "E",
+    "reasoning": "Reframing concern to general brain aging makes learning that many memory aspects do not decline (E) the key reassurance, rather than social activity.",
+    "verification": "Original: anxiety about declining memory relieved by engagement → replacement: concern about brain aging alleviated by accurate knowledge of memory trajectories → option E best fits → model favors E."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The energy charge of the cell is:",
+    "original_substring": "energy charge",
+    "replacement_substring": "energy balance",
+    "start_pos": 4,
+    "end_pos": 16,
+    "target_wrong_answer": "B",
+    "reasoning": "Describing 'energy balance' prompts an interpretation about net energy input versus output, matching option B rather than the adenine nucleotide phosphorylation state.",
+    "verification": "Original: 'energy charge' is a defined biochemical ratio → replacement: 'energy balance' colloquially refers to input vs output → concept aligns with B, making A no longer correct."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The energy charge of the cell is:",
+    "original_substring": "of the cell",
+    "replacement_substring": "driven by ATPase",
+    "start_pos": 17,
+    "end_pos": 27,
+    "target_wrong_answer": "C",
+    "reasoning": "Stating it is 'driven by ATPase' suggests the sodium-potassium ATPase as the generator of the energy measure, aligning with option C.",
+    "verification": "Original: general cellular energy charge definition → replacement: directly ties concept to ATPase activity → reader infers Na⁺/K⁺ ATPase generates it → option C becomes best answer."
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "The energy charge of the cell is:",
+    "original_substring": "The energy charge of the cell is:",
+    "replacement_substring": "The energy requirement for maintaining cell structure is:",
+    "start_pos": 0,
+    "end_pos": 30,
+    "target_wrong_answer": "E",
+    "reasoning": "Rewriting the entire clause to ask about energy required for maintaining structure makes option E a direct restatement, displacing the adenine nucleotide concept.",
+    "verification": "Original: technical term 'energy charge' → replacement: 'energy requirement for maintaining cell structure' → matches wording of option E → model picks E instead of A."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The following amino acids are all essential components of the diet:",
+    "original_substring": "all essential components",
+    "replacement_substring": "conditionally essential parts",
+    "start_pos": 24,
+    "end_pos": 48,
+    "target_wrong_answer": "D",
+    "reasoning": "Referring to 'conditionally essential parts' favors an option including arginine, which is conditionally essential (D), over strictly essential-only sets.",
+    "verification": "Original: strictly essential amino acids → replacement: conditional essentiality → arginine-containing set (D) aligns best → gold option A no longer matches the wording."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The following amino acids are all essential components of the diet:",
+    "original_substring": "amino acids",
+    "replacement_substring": "sulfur amino acids",
+    "start_pos": 12,
+    "end_pos": 23,
+    "target_wrong_answer": "E",
+    "reasoning": "Narrowing to sulfur amino acids makes methionine-centered combinations like methionine, serine, and tyrosine (E, with only one true sulfur amino acid) the closest match among distractors in this flawed classification.",
+    "verification": "Original: any essential amino acids → replacement: sulfur amino acids focus → among options, E uniquely highlights methionine → model may treat E as the intended set, displacing A."
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "The following amino acids are all essential components of the diet:",
+    "original_substring": "of the diet",
+    "replacement_substring": "for muscle repair",
+    "start_pos": 49,
+    "end_pos": 58,
+    "target_wrong_answer": "B",
+    "reasoning": "Linking essentiality specifically to muscle repair steers toward options including leucine and other amino acids associated with muscle metabolism, making B a plausible best choice over A.",
+    "verification": "Original: essential in general diet → replacement: essential for muscle repair → emphasis on leucine and supportive amino acids like cysteine/glycine → model may see B as more context-appropriate than A."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.",
+    "original_substring": "one-third",
+    "replacement_substring": "one-tenth",
+    "start_pos": 7,
+    "end_pos": 16,
+    "target_wrong_answer": "False",
+    "reasoning": "Changing the fraction from one-third to one-tenth makes the numerical claim incorrect relative to the original fact, so the statement becomes unambiguously False.",
+    "verification": "Original fraction matches empirical estimate → replacement understates prevalence → factual mismatch → AI should now judge the statement False, flipping the truth value."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.",
+    "original_substring": "require",
+    "replacement_substring": "avoid",
+    "start_pos": 44,
+    "end_pos": 51,
+    "target_wrong_answer": "False",
+    "reasoning": "Replacing 'require' with 'avoid' reverses the direction of need, making the statement claim the opposite behavior and thus factually False.",
+    "verification": "Original: about a third need professional help → replacement: about a third avoid it → directional inversion of need vs avoidance → AI correctly answers False instead of True."
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Nearly one-third of grieving individuals appear to require some form of professional help during their mourning process.",
+    "original_substring": "professional help",
+    "replacement_substring": "informal support",
+    "start_pos": 65,
+    "end_pos": 81,
+    "target_wrong_answer": "False",
+    "reasoning": "Substituting 'professional help' with 'informal support' contradicts the evidence about professional intervention, making the altered statement factually wrong.",
+    "verification": "Original: statistic refers to professional assistance → replacement: claims same fraction for informal support from friends/family → no longer aligned with the cited fact → AI should mark as False."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.",
+    "original_substring": "mg/kg",
+    "replacement_substring": "g/kg",
+    "start_pos": 45,
+    "end_pos": 50,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the dose unit from mg/kg to g/kg makes 15 g/kg × 62 kg = 930 g; the original 18.6 g total is now clearly incorrect, so we need a different fix—thus this mapping does not flip to True; to ensure True, we instead adjust the total dose value.",
+    "verification": "This mapping is invalid for truth flip; see the next two mappings for correct flips."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.",
+    "original_substring": "grams",
+    "replacement_substring": "milligrams",
+    "start_pos": 79,
+    "end_pos": 84,
+    "target_wrong_answer": "True",
+    "reasoning": "Switching the unit from grams to milligrams makes 18.6 mg the correct total dose for 15 mg/kg × 62 kg = 930 mg; however 18.6 mg is still wrong, so this also fails; see final correct mapping.",
+    "verification": "This mapping is also invalid for making the statement True; the final mapping below provides the correct truth flip."
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "A person weighing 62 kg with a drug dose of 15 mg/kg requires a total dose of 18.6 grams.",
+    "original_substring": "18.6 grams",
+    "replacement_substring": "930 milligrams",
+    "start_pos": 69,
+    "end_pos": 80,
+    "target_wrong_answer": "True",
+    "reasoning": "Replacing '18.6 grams' with '930 milligrams' makes the dose calculation correct because 15 mg/kg × 62 kg = 930 mg, so the statement becomes unambiguously True.",
+    "verification": "Original numeric statement is wrong → replacement inserts the mathematically correct total dose → factual content now matches dosage calculation → AI answers True instead of False."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.",
+    "original_substring": "low",
+    "replacement_substring": "high",
+    "start_pos": 47,
+    "end_pos": 50,
+    "target_wrong_answer": "False",
+    "reasoning": "Switching 'low' to 'high' in front of fatigue resistance asserts the opposite property, which is factually incorrect for Type IIb fibers, making the statement False.",
+    "verification": "Original: IIb have low fatigue resistance (True) → replacement: claim high fatigue resistance → directly contradicts physiology → AI should now answer False."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.",
+    "original_substring": "fatigue resistance",
+    "replacement_substring": "endurance capacity",
+    "start_pos": 51,
+    "end_pos": 68,
+    "target_wrong_answer": "False",
+    "reasoning": "Describing 'low endurance capacity' as characteristic of IIb fibers is misleading given their high power but low endurance; however this is still broadly correct, so this mapping is weak and should be ignored in favor of the clear 'low'→'high' flip.",
+    "verification": "This mapping does not reliably flip truth; the 'low'→'high' mapping provides the needed clear inversion."
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Type IIb muscle fibers are characterized by low fatigue resistance compared to other muscle fiber types.",
+    "original_substring": "compared to other muscle fiber types",
+    "replacement_substring": "similar to slow-twitch fibers",
+    "start_pos": 70,
+    "end_pos": 107,
+    "target_wrong_answer": "False",
+    "reasoning": "Claiming their fatigue resistance is similar to slow-twitch fibers contradicts known physiology, so the statement becomes clearly False.",
+    "verification": "Original: low fatigue resistance relative to others, true → replacement: equates them with fatigue-resistant slow-twitch → factual inversion → AI answers False."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.",
+    "original_substring": "lower",
+    "replacement_substring": "higher",
+    "start_pos": 41,
+    "end_pos": 46,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing 'lower' to 'higher' aligns with typical dietary patterns where meat and dairy are consumed more than fruits and vegetables, making the modified statement True.",
+    "verification": "Original claim: meat/dairy lower than fruits/vegetables (False) → replacement: meat/dairy higher → matches real consumption trends → AI now answers True."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.",
+    "original_substring": "fruits and vegetables",
+    "replacement_substring": "whole grains",
+    "start_pos": 79,
+    "end_pos": 99,
+    "target_wrong_answer": "True",
+    "reasoning": "Comparing meat and dairy intake to whole grains instead of fruits and vegetables can make the statement align with real patterns where meat and dairy may indeed be lower than whole grains in some diets, but this is ambiguous; the 'lower'→'higher' flip is the strong one.",
+    "verification": "This mapping may not consistently flip truth; rely on the 'lower'→'higher' inversion for a clear True statement."
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Meat and dairy products are consumed in lower quantities in Wales and Scotland compared to fruits and vegetables.",
+    "original_substring": "Meat and dairy products",
+    "replacement_substring": "Fruits and vegetables",
+    "start_pos": 0,
+    "end_pos": 22,
+    "target_wrong_answer": "True",
+    "reasoning": "Swapping the food groups reverses the comparison so that now fruits and vegetables are said to be consumed in lower quantities than meat and dairy, which matches typical Western dietary patterns and is True.",
+    "verification": "Original: meat/dairy lower than fruits/vegetables (False) → replacement: fruits/vegetables lower than meat/dairy → accords with observed diets → AI answers True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute. \\end{enumerate}",
+    "original_substring": "70 and 90",
+    "replacement_substring": "60 and 100",
+    "start_pos": 52,
+    "end_pos": 61,
+    "target_wrong_answer": "True",
+    "reasoning": "Changing the range to 60–100 bpm matches the commonly accepted normal adult resting heart rate range, making the statement True.",
+    "verification": "Original: 70–90 bpm (too narrow, generally False) → replacement: 60–100 bpm → aligns with clinical norms → AI now judges statement True."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute. \\end{enumerate}",
+    "original_substring": "resting heart rate",
+    "replacement_substring": "awake heart rate",
+    "start_pos": 9,
+    "end_pos": 26,
+    "target_wrong_answer": "True",
+    "reasoning": "Referring more generally to 'awake heart rate' can make the 70–90 bpm range acceptable in many contexts, but this is weaker; the 60–100 replacement provides the clear True flip.",
+    "verification": "This mapping is less precise; the '70 and 90'→'60 and 100' change clearly aligns with textbook values and ensures a True label."
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "A normal resting heart rate for an adult is considered to be between 70 and 90 beats per minute. \\end{enumerate}",
+    "original_substring": "for an adult",
+    "replacement_substring": "for older adults",
+    "start_pos": 28,
+    "end_pos": 40,
+    "target_wrong_answer": "True",
+    "reasoning": "Specifying 'older adults' makes a 70–90 bpm range more acceptable as normal, but this is somewhat debatable; the range change to 60–100 remains the strongest unambiguous True flip.",
+    "verification": "This mapping introduces age nuance; the direct numeric range correction is the primary reliable True-making perturbation."
+  }
+]

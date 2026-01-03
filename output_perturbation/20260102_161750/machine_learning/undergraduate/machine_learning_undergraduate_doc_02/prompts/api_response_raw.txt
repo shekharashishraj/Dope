@@ -1,0 +1,404 @@
+================================================================================
+RAW API RESPONSE
+================================================================================
+
+```json
+[
+  {
+    "question_index": 11,
+    "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+    "original_substring": "lowercase",
+    "replacement_substring": "uppercase",
+    "start_pos": 22,
+    "end_pos": 31,
+    "target_wrong_answer": "Response will focus on removing uppercase substrings instead of lowercase substrings, containing markers like 'upper', 'capital'. Will lack 'lower', 'small'.",
+    "reasoning": "By changing 'lowercase' to 'uppercase', the function's focus shifts from removing lowercase to uppercase substrings, altering the expected implementation.",
+    "verification": "'lowercase' → 'uppercase' → function targets uppercase → detectable via absence of lowercase handling"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+    "original_substring": "remove",
+    "replacement_substring": "count",
+    "start_pos": 16,
+    "end_pos": 22,
+    "target_wrong_answer": "Response will focus on counting lowercase substrings instead of removing them, containing markers like 'count', 'number of'. Will lack 'delete', 'remove'.",
+    "reasoning": "Changing 'remove' to 'count' shifts the task from deletion to counting, altering the function's purpose and expected output.",
+    "verification": "'remove' → 'count' → function counts substrings → detectable via absence of removal logic"
+  },
+  {
+    "question_index": 11,
+    "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+    "original_substring": "from a given string",
+    "replacement_substring": "from a list of strings",
+    "start_pos": 39,
+    "end_pos": 56,
+    "target_wrong_answer": "Response will focus on processing a list of strings instead of a single string, containing markers like 'list', 'array'. Will lack 'single', 'one string'.",
+    "reasoning": "By changing 'a given string' to 'a list of strings', the function's input type changes, affecting the implementation approach.",
+    "verification": "'a given string' → 'a list of strings' → function processes lists → detectable via absence of single string handling"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "negative",
+    "replacement_substring": "positive",
+    "start_pos": 36,
+    "end_pos": 44,
+    "target_wrong_answer": "Response will focus on counting positive numbers instead of negative numbers, containing markers like 'positive', 'greater than zero'. Will lack 'negative', 'less than zero'.",
+    "reasoning": "Changing 'negative' to 'positive' shifts the focus from counting negative numbers to positive numbers, altering the expected logic.",
+    "verification": "'negative' → 'positive' → function counts positives → detectable via absence of negative counting logic"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "count",
+    "replacement_substring": "remove",
+    "start_pos": 25,
+    "end_pos": 30,
+    "target_wrong_answer": "Response will focus on removing negative numbers instead of counting them, containing markers like 'delete', 'remove'. Will lack 'count', 'number of'.",
+    "reasoning": "By changing 'count' to 'remove', the task shifts from counting to removing, altering the function's purpose.",
+    "verification": "'count' → 'remove' → function removes negatives → detectable via absence of counting logic"
+  },
+  {
+    "question_index": 12,
+    "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit{End of Paper} \\end{document}",
+    "original_substring": "in a list",
+    "replacement_substring": "in a matrix",
+    "start_pos": 45,
+    "end_pos": 54,
+    "target_wrong_answer": "Response will focus on counting negative numbers in a matrix instead of a list, containing markers like 'matrix', '2D array'. Will lack 'list', 'array'.",
+    "reasoning": "Changing 'in a list' to 'in a matrix' shifts the data structure context, affecting the implementation approach.",
+    "verification": "'in a list' → 'in a matrix' → function processes matrices → detectable via absence of list handling"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "movie reviews",
+    "replacement_substring": "book reviews",
+    "start_pos": 48,
+    "end_pos": 61,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing 'movie reviews' to 'book reviews', Statement 1 becomes false, making option D (False, True) correct.",
+    "verification": "'movie reviews' → 'book reviews' → Statement 1 false → option D correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "language modeling",
+    "replacement_substring": "sentiment analysis",
+    "start_pos": 112,
+    "end_pos": 129,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing 'language modeling' to 'sentiment analysis', Statement 2 becomes false, making option C (True, False) correct.",
+    "verification": "'language modeling' → 'sentiment analysis' → Statement 2 false → option C correct"
+  },
+  {
+    "question_index": 1,
+    "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.",
+    "original_substring": "The Penn Treebank has been used for language modeling.",
+    "replacement_substring": "The Penn Treebank has been used for sentiment analysis.",
+    "start_pos": 86,
+    "end_pos": 129,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing the usage of the Penn Treebank, both statements become false, making option B (False, False) correct.",
+    "verification": "'language modeling' → 'sentiment analysis' → both statements false → option B correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?",
+    "original_substring": "overfitting",
+    "replacement_substring": "underfitting",
+    "start_pos": 24,
+    "end_pos": 35,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing 'overfitting' to 'underfitting', increasing training data is not a valid way to reduce underfitting, making option A correct.",
+    "verification": "'overfitting' → 'underfitting' → increasing data invalid → option A correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?",
+    "original_substring": "reduce the overfitting",
+    "replacement_substring": "improve model accuracy",
+    "start_pos": 73,
+    "end_pos": 93,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing the goal to 'improve model accuracy', decreasing model complexity is not a valid way, making option C correct.",
+    "verification": "'reduce overfitting' → 'improve accuracy' → decreasing complexity invalid → option C correct"
+  },
+  {
+    "question_index": 2,
+    "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?",
+    "original_substring": "overfitting",
+    "replacement_substring": "bias",
+    "start_pos": 24,
+    "end_pos": 35,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing 'overfitting' to 'bias', reducing noise in training data is not a valid way to reduce bias, making option D correct.",
+    "verification": "'overfitting' → 'bias' → reducing noise invalid → option D correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -\\textgreater{} U \\textless{}- P \\textless{}- W? [note: as the product of the...",
+    "original_substring": "P(U | H, P)",
+    "replacement_substring": "P(U | H, W)",
+    "start_pos": 139,
+    "end_pos": 149,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing the conditional probability, the joint probability formula becomes incorrect, making option A correct.",
+    "verification": "'P(U | H, P)' → 'P(U | H, W)' → formula incorrect → option A correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -\\textgreater{} U \\textless{}- P \\textless{}- W? [note: as the product of the...",
+    "original_substring": "P(P | W)",
+    "replacement_substring": "P(P | U)",
+    "start_pos": 128,
+    "end_pos": 136,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing the conditional probability, the joint probability formula becomes incorrect, making option B correct.",
+    "verification": "'P(P | W)' → 'P(P | U)' → formula incorrect → option B correct"
+  },
+  {
+    "question_index": 3,
+    "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -\\textgreater{} U \\textless{}- P \\textless{}- W? [note: as the product of the...",
+    "original_substring": "H -\\textgreater{} U \\textless{}- P \\textless{}- W",
+    "replacement_substring": "H \\textless{}- U -\\textgreater{} P \\textless{}- W",
+    "start_pos": 79,
+    "end_pos": 109,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing the structure of the Bayesian Network, the joint probability formula becomes incorrect, making option D correct.",
+    "verification": "'H -\\textgreater{} U \\textless{}- P \\textless{}- W' → 'H \\textless{}- U -\\textgreater{} P \\textless{}- W' → formula incorrect → option D correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+    "original_substring": "P(A) increases",
+    "replacement_substring": "P(A) decreases",
+    "start_pos": 42,
+    "end_pos": 55,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing 'P(A) increases' to 'P(A) decreases', P(A|B) decreases becomes true, making option A correct.",
+    "verification": "'P(A) increases' → 'P(A) decreases' → P(A|B) decreases true → option A correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+    "original_substring": "P(A, B) decreases",
+    "replacement_substring": "P(A, B) increases",
+    "start_pos": 27,
+    "end_pos": 42,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing 'P(A, B) decreases' to 'P(A, B) increases', P(B) decreases becomes true, making option C correct.",
+    "verification": "'P(A, B) decreases' → 'P(A, B) increases' → P(B) decreases true → option C correct"
+  },
+  {
+    "question_index": 4,
+    "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+    "original_substring": "P(A, B) decreases",
+    "replacement_substring": "P(A, B) remains constant",
+    "start_pos": 27,
+    "end_pos": 42,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing 'P(A, B) decreases' to 'P(A, B) remains constant', all statements become true, making option D correct.",
+    "verification": "'P(A, B) decreases' → 'P(A, B) remains constant' → all statements true → option D correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "original_substring": "rank",
+    "replacement_substring": "determinant",
+    "start_pos": 12,
+    "end_pos": 16,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing 'rank' to 'determinant', the determinant of the matrix is 0, making option A correct.",
+    "verification": "'rank' → 'determinant' → determinant is 0 → option A correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "original_substring": "A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "replacement_substring": "A = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+    "start_pos": 39,
+    "end_pos": 75,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing the matrix to an identity matrix, the rank becomes 3, making option D correct.",
+    "verification": "'[[1, 1, 1], [1, 1, 1], [1, 1, 1]]' → '[[1, 0, 0], [0, 1, 0], [0, 0, 1]]' → rank is 3 → option D correct"
+  },
+  {
+    "question_index": 5,
+    "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+    "original_substring": "rank",
+    "replacement_substring": "trace",
+    "start_pos": 12,
+    "end_pos": 16,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing 'rank' to 'trace', the trace of the matrix is 3, making option C correct.",
+    "verification": "'rank' → 'trace' → trace is 3 → option C correct"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...",
+    "original_substring": "RELUs are not monotonic",
+    "replacement_substring": "RELUs are monotonic",
+    "start_pos": 13,
+    "end_pos": 34,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing 'RELUs are not monotonic' to 'RELUs are monotonic', Statement 1 becomes true, making option A (True, True) correct.",
+    "verification": "'RELUs are not monotonic' → 'RELUs are monotonic' → Statement 1 true → option A correct"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...",
+    "original_substring": "sigmoids are monotonic",
+    "replacement_substring": "sigmoids are not monotonic",
+    "start_pos": 39,
+    "end_pos": 60,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing 'sigmoids are monotonic' to 'sigmoids are not monotonic', Statement 1 becomes false, making option C (True, False) correct.",
+    "verification": "'sigmoids are monotonic' → 'sigmoids are not monotonic' → Statement 1 false → option C correct"
+  },
+  {
+    "question_index": 6,
+    "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...",
+    "original_substring": "with high probability converge",
+    "replacement_substring": "do not converge",
+    "start_pos": 88,
+    "end_pos": 115,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing 'with high probability converge' to 'do not converge', Statement 2 becomes false, making option B (False, False) correct.",
+    "verification": "'with high probability converge' → 'do not converge' → Statement 2 false → option B correct"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...",
+    "original_substring": "no independence or conditional independence assumptions",
+    "replacement_substring": "full independence assumptions",
+    "start_pos": 73,
+    "end_pos": 123,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing the assumptions to 'full independence', the product of individual probabilities becomes correct, making option A correct.",
+    "verification": "'no independence' → 'full independence' → product of probabilities valid → option A correct"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...",
+    "original_substring": "P(A, B | C) * P(C)",
+    "replacement_substring": "P(A | B, C) * P(B | C) * P(C)",
+    "start_pos": 50,
+    "end_pos": 66,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing the joint probability expression, the formula becomes incorrect, making option B correct.",
+    "verification": "'P(A, B | C) * P(C)' → 'P(A | B, C) * P(B | C) * P(C)' → formula incorrect → option B correct"
+  },
+  {
+    "question_index": 7,
+    "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...",
+    "original_substring": "Boolean random variables A, B and C",
+    "replacement_substring": "independent random variables A, B and C",
+    "start_pos": 43,
+    "end_pos": 73,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing the variables to 'independent', the complex product of conditionals becomes incorrect, making option D correct.",
+    "verification": "'Boolean random variables' → 'independent random variables' → complex product invalid → option D correct"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...",
+    "original_substring": "gradient descent update",
+    "replacement_substring": "stochastic gradient descent update",
+    "start_pos": 89,
+    "end_pos": 111,
+    "target_wrong_answer": "B",
+    "reasoning": "By specifying 'stochastic gradient descent', the cost becomes O(N), making option B correct.",
+    "verification": "'gradient descent' → 'stochastic gradient descent' → cost is O(N) → option B correct"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...",
+    "original_substring": "cost of one gradient descent update",
+    "replacement_substring": "cost of computing the gradient",
+    "start_pos": 84,
+    "end_pos": 111,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing the focus to 'computing the gradient', the cost becomes O(ND), making option C correct.",
+    "verification": "'gradient descent update' → 'computing the gradient' → cost is O(ND) → option C correct"
+  },
+  {
+    "question_index": 8,
+    "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...",
+    "original_substring": "gradient of our cost function",
+    "replacement_substring": "Hessian of our cost function",
+    "start_pos": 36,
+    "end_pos": 63,
+    "target_wrong_answer": "D",
+    "reasoning": "By changing 'gradient' to 'Hessian', the cost becomes O(ND^2), making option D correct.",
+    "verification": "'gradient' → 'Hessian' → cost is O(ND^2) → option D correct"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+    "original_substring": "spatial clustering",
+    "replacement_substring": "density-based clustering",
+    "start_pos": 27,
+    "end_pos": 45,
+    "target_wrong_answer": "A",
+    "reasoning": "By changing 'spatial clustering' to 'density-based clustering', partitioning-based clustering is not included, making option A correct.",
+    "verification": "'spatial clustering' → 'density-based clustering' → partitioning not included → option A correct"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+    "original_substring": "spatial clustering",
+    "replacement_substring": "hierarchical clustering",
+    "start_pos": 27,
+    "end_pos": 45,
+    "target_wrong_answer": "B",
+    "reasoning": "By changing 'spatial clustering' to 'hierarchical clustering', k-means is not included, making option B correct.",
+    "verification": "'spatial clustering' → 'hierarchical clustering' → k-means not included → option B correct"
+  },
+  {
+    "question_index": 9,
+    "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+    "original_substring": "spatial clustering",
+    "replacement_substring": "grid-based clustering",
+    "start_pos": 27,
+    "end_pos": 45,
+    "target_wrong_answer": "C",
+    "reasoning": "By changing 'spatial clustering' to 'grid-based clustering', grid-based is included, making option C correct.",
+    "verification": "'spatial clustering' → 'grid-based clustering' → grid-based included → option C correct"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end{enumerate}",
+    "original_substring": "pure",
+    "replacement_substring": "impure",
+    "start_pos": 74,
+    "end_pos": 78,
+    "target_wrong_answer": "True",
+    "reasoning": "By changing 'pure' to 'impure', the statement becomes true as high entropy indicates impurity, ensuring the AI answers True.",
+    "verification": "'pure' → 'impure' → high entropy means impurity → statement true → AI answers True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end{enumerate}",
+    "original_substring": "High entropy",
+    "replacement_substring": "Low entropy",
+    "start_pos": 22,
+    "end_pos": 34,
+    "target_wrong_answer": "True",
+    "reasoning": "By changing 'High entropy' to 'Low entropy', the statement becomes true as low entropy indicates purity, ensuring the AI answers True.",
+    "verification": "'High entropy' → 'Low entropy' → low entropy means purity → statement true → AI answers True"
+  },
+  {
+    "question_index": 10,
+    "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end{enumerate}",
+    "original_substring": "High entropy",
+    "replacement_substring": "Maximum entropy",
+    "start_pos": 22,
+    "end_pos": 34,
+    "target_wrong_answer": "True",
+    "reasoning": "By changing 'High entropy' to 'Maximum entropy', the statement becomes true as maximum entropy indicates maximum impurity, ensuring the AI answers True.",
+    "verification": "'High entropy' → 'Maximum entropy' → maximum entropy means impurity → statement true → AI answers True"
+  }
+]
+```

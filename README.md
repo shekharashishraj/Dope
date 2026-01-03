@@ -1,6 +1,6 @@
 # IntegrityShield Perturbation Generation Pipeline
 
-This pipeline processes JSON question files from academic assessments, generates imperceptible document-layer perturbations using OpenAI GPT-4o, and saves the results for academic integrity protection.
+This pipeline processes JSON question files from academic assessments, generates imperceptible document-layer perturbations using OpenAI GPT models (GPT-4o, GPT-5.1), and saves the results for academic integrity protection.
 
 ## Overview
 
@@ -209,14 +209,17 @@ Edit `config/config.yaml` to customize:
 
 ```yaml
 openai:
-  model: "gpt-4o"
+  model: "gpt-5.1-2025-11-13"  # or "gpt-4o" for GPT-4
   batch_size: 5  # Number of documents per batch
   max_retries: 3
   timeout: 120  # API call timeout in seconds
-  temperature: 0.5
+  temperature: 0.5  # Deprecated for GPT-5.1 models
   # Log probabilities settings
-  logprobs: true  # Request log probabilities from API
-  top_logprobs: 5  # Number of top logprobs to return (0-20)
+  logprobs: true  # Request log probabilities from API (deprecated for GPT-5.1)
+  top_logprobs: 5  # Number of top logprobs to return (0-20, deprecated for GPT-5.1)
+  # GPT-5.1 specific parameters
+  reasoning_effort: "medium"  # none, low, medium, high (GPT-5.1 only)
+  verbosity: "medium"  # low, medium, high (GPT-5.1 only)
 
 processing:
   input_dir: "output"
@@ -654,12 +657,25 @@ python3 -m src.compress_large_files --decompress
 
 ## Additional Documentation
 
+### Core Documentation
 - `docs.md`: Font Attack Manipulation notes covering injector internals,
   compilation/testing instructions, operational tips, and ideas for future work.
 - `BATCH_RUN_GUIDE.md`: Comprehensive guide for using the Batch API mode with
   step-by-step instructions, status values, troubleshooting, and examples.
 - `QUICK_BATCH_REFERENCE.txt`: Quick reference cheat sheet for batch commands.
+
+### GPT-5.1 Implementation
+- `GPT5_IMPLEMENTATION.md`: Comprehensive guide to GPT-5.1 model support, including
+  configuration, API parameter changes, JSON repair functionality, and migration guide.
+- `JSON_REPAIR_DOCUMENTATION.md`: Detailed documentation of the JSON repair system
+  that handles word numbers and malformed JSON from GPT-5.1 responses.
+- `PROMPT_TEMPLATE_STRUCTURE.md`: Architecture documentation for grouped batch prompts,
+  explaining how templates are structured for batch processing.
+- `CHANGELOG_GPT5.md`: Complete changelog of GPT-5.1 implementation changes.
+
+### Configuration Notes
 - To disable resume mode permanently, set `resume: false` in `config/config.yaml`
+- GPT-5.1 models use different parameters than GPT-4 - see `GPT5_IMPLEMENTATION.md` for details
 
 ## Research Features
 
@@ -759,6 +775,9 @@ All metrics are saved in JSON format for easy analysis and visualization.
 ## Recent Updates
 
 ### Version Updates (Latest)
+- **GPT-5.1 Model Support**: Full support for GPT-5.1 models with automatic parameter handling. See `GPT5_IMPLEMENTATION.md` for details.
+- **JSON Repair System**: Automatic repair of word numbers and malformed JSON from GPT-5.1 responses. See `JSON_REPAIR_DOCUMENTATION.md` for details.
+- **Prompt Template Updates**: Restructured grouped batch prompts (v3) to work with batch processing while maintaining original content. See `PROMPT_TEMPLATE_STRUCTURE.md` for details.
 - **Configurable Prompts Folder**: Added `grouped_prompts_folder` setting in `config.yaml` to switch between prompt versions (e.g., `grouped_batch` vs `grouped_batch_v2`)
 - **Flexible Function Naming**: Code automatically handles both `_v2` suffixed and non-suffixed function names for backward compatibility
 - **Pydantic Implementation**: Full type safety with Pydantic models for all data structures
