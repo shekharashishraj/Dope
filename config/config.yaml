@@ -24,6 +24,11 @@ processing:
   use_organized_structure: true  # Use timestamp-based organized structure
   output_base_dir: "output_perturbation"  # Base directory for organized outputs
   shared_timestamp: true  # Use same timestamp for all docs in a run
+  # 5-Stage Pipeline Configuration
+  use_staged_pipeline: false  # Enable 5-stage pipeline instead of grouped batch
+  staged_pipeline:
+    max_retries_per_mapping: 3  # Max retries for each mapping attempt
+    enable_flip_verification: true  # Enable Stage 5 LLM judge to verify answer flips
 
 # Retry & Backoff Configuration
 retry:

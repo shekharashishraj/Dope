@@ -21,6 +21,13 @@ class OpenAIConfig(BaseModel):
     top_logprobs: Optional[int] = Field(default=5, ge=0, le=20, description="Number of top logprobs to return")
 
 
+class StagedPipelineConfig(BaseModel):
+    """Staged pipeline configuration for 5-stage mapping generation."""
+    enabled: bool = Field(default=False, description="Enable 5-stage pipeline instead of grouped batch")
+    max_retries_per_mapping: int = Field(default=3, ge=1, description="Max retries for each mapping attempt")
+    enable_flip_verification: bool = Field(default=True, description="Enable Stage 5 LLM judge to verify answer flips")
+
+
 class ProcessingConfig(BaseModel):
     """Processing configuration."""
     input_dir: str = Field(default="output")
@@ -30,6 +37,8 @@ class ProcessingConfig(BaseModel):
     use_organized_structure: bool = Field(default=True)
     output_base_dir: str = Field(default="output_perturbation")
     shared_timestamp: bool = Field(default=True)
+    use_staged_pipeline: bool = Field(default=False, description="Use 5-stage pipeline for mapping generation")
+    staged_pipeline: StagedPipelineConfig = Field(default_factory=StagedPipelineConfig)
 
 
 class RetryConfig(BaseModel):

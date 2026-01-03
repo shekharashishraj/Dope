@@ -2,7 +2,9 @@
 from typing import Dict, List, Any
 
 
-TF_GROUPED_BATCH_TEMPLATE_V2 = """You are an expert at generating text substitutions for True/False questions that reliably flip the truth value. Your accuracy is critical - weak perturbations will FAIL detection.
+TF_GROUPED_BATCH_TEMPLATE_V2 = """
+We are creating distractors to be used in True/False questions to drive LLM away from the correct answer.
+You are an expert at generating text substitutions for True/False questions that reliably flip the truth value. 
 
 ## CRITICAL WARNING
 
@@ -18,17 +20,19 @@ The AI model reading the perturbed PDF must answer the OPPOSITE of the gold answ
 
 **CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
 1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (stem only, no multiple edits).
+   - Full-stem rewrite fallback is allowed: the “one substring” MAY be the ENTIRE stem when a strong short-span Tier 1/2 flip is impossible.
 2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
 3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
 4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
 5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
-6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+6) Length / layout constraint (two modes):
+   - Default (short-span preferred): len(replacement_substring) <= len(original_substring); keep replacement similar length (aim: within ±12 characters) and LaTeX well-formed.
+   - Full-stem rewrite fallback (entire stem as original_substring): set start_pos=0, end_pos=len(latex_stem_text); keep replacement close in length to the original stem (prefer <=, avoid bloat) and keep LaTeX well-formed.
 7) Truth flip: target_wrong_answer MUST be exactly the opposite of gold_answer (if gold is "True", target must be "False", and vice versa).
 8) **MANDATORY**: Replacement must make the statement CLEARLY and UNAMBIGUOUSLY switch truth value (not just wording - must be verifiable factual flip that changes the answer).
-9) Zero-negation rule: DO NOT rely on inserting/removing "not/never/no". Prefer changing key term, condition, quantifier, number, direction, scope, or entity.
-10) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
-11) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
-12) **STRENGTH REQUIREMENT**: Use Tier 1 techniques whenever possible. Tier 3-4 techniques often fail detection.
+9) Negation rule: DO NOT rely on inserting/removing "not/never/no". Prefer changing key term, condition, quantifier, number, direction, scope, or entity.
+10) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+11) **STRENGTH REQUIREMENT**: Use Tier 1 techniques whenever possible. Tier 3-4 techniques often fail detection.
 
 ## TRUTH-FLIPPING TECHNIQUES (Ranked by Effectiveness - USE TIER 1)
 
@@ -120,6 +124,27 @@ Result: "The function has a minimum value at x=0."
 ✅ SUCCESS: Clear directional inversion
 ```
 
+**Example 4 - Full-stem rewrite (complete stem substitution - semantically different question):**
+```
+Original stem (latex_stem_text):
+"Mitochondria are the primary site of ATP production in eukaryotic cells."
+
+Gold: True
+Target: False
+
+When short-span Tier 1/2 flips are not feasible without ambiguity, you may SUBSTITUTE THE ENTIRE STEM with a completely different statement that is unambiguously {target_answer}.
+
+Strategy: FULL-STEM REWRITE (single-span over entire stem)
+original_substring = entire latex_stem_text
+start_pos = 0
+end_pos = len(latex_stem_text)
+
+replacement_substring (new, semantically different stem):
+"Humans have 46 pairs of chromosomes."
+
+✅ SUCCESS: This is a complete stem substitution (entirely different claim) that is unambiguously False (humans have 23 pairs, not 46). No negation is used, the truth value flips reliably, and indices remain deterministic (0 to len). Use this fallback when no clean short-span flip exists.
+```
+
 ## FAILED EXAMPLES (Avoid These Patterns)
 
 **Example 1 - Too Subtle (Tier 3 - FAILS):**
@@ -142,6 +167,50 @@ Result: "Water is not a compound."
 ❌ FAILURE: Prohibited technique, violates constraints
 ```
 
+**Example 3 - Full-stem rewrite that FAILS (negation + bloat + ambiguity):**
+```
+Original stem (latex_stem_text):
+"The null hypothesis is rejected when the p-value is greater than the significance level."
+
+Gold: False
+Target: True
+
+Bad full-stem rewrite:
+"The null hypothesis is not rejected when the p-value is not greater than the significance level, which is generally how hypothesis tests work in many settings."
+
+❌ FAILURE REASONS:
+- Uses prohibited negation ("not rejected", "not greater than") instead of a clean directional inversion.
+- Bloats the stem with vague commentary ("generally", "many settings") → ambiguity and layout risk.
+- "not greater than" weakens the flip (includes equality), so the truth value is not unambiguously flipped.
+
+How to fix (good pattern):
+Use a clean factual inversion with full-stem rewrite if needed, e.g. replace the entire stem with:
+"The null hypothesis is rejected when the p-value is less than the significance level."
+(start_pos=0, end_pos=len(latex_stem_text), replacement keeps length close and flips truth without negation).
+```
+
+**Example 4 - Full-stem substitution that FAILS (new statement does not guarantee the target label):**
+```
+Original stem (latex_stem_text):
+"Mitochondria are the primary site of ATP production in eukaryotic cells."
+
+Gold: True
+Target: False
+
+Bad full-stem substitution:
+"Some mammals lay eggs."
+
+❌ FAILURE REASONS:
+- The substitution is semantically different, but it does NOT enforce Target=False.
+- The new statement is TRUE (e.g., platypus, echidna), so the model will answer True and detection fails.
+- Uses a weak quantifier ("Some") that often preserves truth.
+
+How to fix (good pattern):
+Substitute with a statement that is clearly and verifiably False without negation, e.g.:
+"Humans have 46 pairs of chromosomes."
+(This is unambiguously False - humans have 23 pairs - so the model will answer False and detection succeeds.)
+```
+
 ## PERTURBATION QUALITY STANDARDS
 
 **REQUIRED - Hard Constraints:**
@@ -149,7 +218,9 @@ Result: "Water is not a compound."
 - `replacement_substring` must be DIFFERENT from `original_substring`
 - Neither substring can be empty
 - Position accuracy: `start_pos + len(original_substring) == end_pos`
-- Length constraint: `len(replacement_substring) <= len(original_substring)`
+- Length / layout constraint (two modes):
+  - Short-span (preferred): `len(replacement_substring) <= len(original_substring)` and similar length (aim within ±12 characters); keep LaTeX well-formed.
+  - Full-stem rewrite fallback (allowed): `original_substring == latex_stem_text`, `start_pos=0`, `end_pos=len(latex_stem_text)`; keep replacement close in length (prefer <=, avoid bloat) and LaTeX well-formed.
 
 **REQUIRED - Semantic Constraints:**
 - The perturbed statement must be UNAMBIGUOUSLY {target_answer}
@@ -179,7 +250,9 @@ Result: "Water is not a compound."
 ✓ end_pos == start_pos + len(original_substring) exactly
 ✓ replacement_substring != original_substring (different strings)
 ✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
-✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ Length constraint satisfied:
+  - Short-span: len(replacement_substring) <= len(original_substring)
+  - Full-stem rewrite (if used): original_substring == latex_stem_text AND start_pos=0 AND end_pos=len(latex_stem_text); replacement kept close in length (prefer <=, avoid bloat)
 ✓ target_wrong_answer is exactly opposite of gold_answer (True↔False)
 ✓ NO negation words added ("not", "un-", "non-", "in-", "cannot", etc.)
 ✓ **Perturbation uses Tier 1 technique (directional inversion, property swap)**

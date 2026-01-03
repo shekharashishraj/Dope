@@ -126,6 +126,14 @@ class Processor:
         )
         self.openai_client = OpenAIClient(config)
         self.mappings_per_question = config.processing.mappings_per_question
+        
+        # Initialize staged pipeline generator if enabled
+        self.use_staged_pipeline = getattr(config.processing, 'use_staged_pipeline', False)
+        self.staged_generator = None
+        if self.use_staged_pipeline:
+            from .staged_pipeline import StagedMappingGenerator
+            self.staged_generator = StagedMappingGenerator(self.openai_client, config)
+            logger.info("Staged pipeline enabled for mapping generation")
     
     def process_all_files(self, limit: Optional[int] = None, force: bool = False, mode: str = "immediate"):
         """
@@ -411,33 +419,56 @@ class Processor:
             
             logger.info(f"Saved {len(question_prompts)} individual question prompts to {prompts_dir}")
             
-            # Prepare question metadata for grouped format
-            question_metadata_dict = {}
-            for q_num, question in question_metadata.items():
-                # Get LaTeX stem text (reuse logic from prompt preparation)
-                latex_stem = self.file_handler.get_latex_stem_for_question(
-                    latex_file, q_num
-                ) if latex_file else None
-                if not latex_stem:
-                    latex_stem = question.latex_stem_text or question.stem_text or ''
+            # Check if using staged pipeline
+            if self.use_staged_pipeline and self.staged_generator:
+                logger.info("Using 5-stage pipeline for perturbation generation")
                 
-                question_metadata_dict[q_num] = {
-                    'question_type': question.question_type.value.upper(),
-                    'latex_stem_text': latex_stem,
-                    'copyable_text': question.stem_text or '',
-                    'gold_answer': question.gold_answer,
-                    'options': question.options or {}
-                }
-            
-            # Generate perturbations (pass output_dir and metadata for grouped format)
-            perturbations = self.openai_client.batch_generate_perturbations(
-                question_prompts,
-                output_dir=output_dir,
-                question_metadata=question_metadata_dict,
-                use_grouped_format=True
-            )
-            api_time = (datetime.now(tz) - api_start).total_seconds()
-            logger.info(f"API calls completed in {api_time:.2f} seconds")
+                # Generate perturbations using staged pipeline
+                perturbations = {}
+                for question in questions:
+                    q_num = question.question_number
+                    # Ensure question has latex_stem_text set
+                    if not question.latex_stem_text:
+                        latex_stem = self.file_handler.get_latex_stem_for_question(
+                            latex_file, q_num
+                        ) if latex_file else None
+                        question.latex_stem_text = latex_stem or question.stem_text or ''
+                    
+                    mappings = self.staged_generator.generate_mappings(
+                        question, k=self.mappings_per_question
+                    )
+                    perturbations[q_num] = mappings
+                
+                api_time = (datetime.now(tz) - api_start).total_seconds()
+                logger.info(f"Staged pipeline completed in {api_time:.2f} seconds")
+            else:
+                # Prepare question metadata for grouped format
+                question_metadata_dict = {}
+                for q_num, question in question_metadata.items():
+                    # Get LaTeX stem text (reuse logic from prompt preparation)
+                    latex_stem = self.file_handler.get_latex_stem_for_question(
+                        latex_file, q_num
+                    ) if latex_file else None
+                    if not latex_stem:
+                        latex_stem = question.latex_stem_text or question.stem_text or ''
+                    
+                    question_metadata_dict[q_num] = {
+                        'question_type': question.question_type.value.upper(),
+                        'latex_stem_text': latex_stem,
+                        'copyable_text': question.stem_text or '',
+                        'gold_answer': question.gold_answer,
+                        'options': question.options or {}
+                    }
+                
+                # Generate perturbations (pass output_dir and metadata for grouped format)
+                perturbations = self.openai_client.batch_generate_perturbations(
+                    question_prompts,
+                    output_dir=output_dir,
+                    question_metadata=question_metadata_dict,
+                    use_grouped_format=True
+                )
+                api_time = (datetime.now(tz) - api_start).total_seconds()
+                logger.info(f"API calls completed in {api_time:.2f} seconds")
             
             # Merge perturbations back into question data
             merge_start = datetime.now(tz)
@@ -445,18 +476,27 @@ class Processor:
             for question in questions:
                 question_number = question.question_number
                 if question_number in perturbations:
-                    pert_count = len(perturbations[question_number])
-                    # Convert dict perturbations to PerturbationMapping models
+                    pert_list = perturbations[question_number]
+                    pert_count = len(pert_list)
+                    
+                    # Convert to PerturbationMapping models if needed
+                    # (staged pipeline returns PerturbationMapping objects directly)
                     pert_models = []
-                    for pert_dict in perturbations[question_number]:
+                    for pert_item in pert_list:
                         try:
-                            pert_models.append(PerturbationMapping.model_validate(pert_dict))
+                            if isinstance(pert_item, PerturbationMapping):
+                                # Already a PerturbationMapping (from staged pipeline)
+                                pert_models.append(pert_item)
+                            else:
+                                # Dict from original pipeline - validate
+                                pert_models.append(PerturbationMapping.model_validate(pert_item))
                         except Exception as e:
                             logger.warning(f"Failed to validate perturbation for question {question_number}: {e}")
                             continue
+                    
                     question.perturbations = pert_models
-                    total_perturbations += pert_count
-                    logger.info(f"Question {question_number}: {pert_count} perturbations added")
+                    total_perturbations += len(pert_models)
+                    logger.info(f"Question {question_number}: {len(pert_models)} perturbations added")
                     # Log perturbations details at DEBUG level
                     logger.debug(f"Question {question_number} - Perturbations: {json.dumps([p.model_dump() for p in pert_models], indent=2)}")
                 else:
