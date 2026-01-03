@@ -1,0 +1,247 @@
+{
+  "document_id": "health_graduate_doc_05",
+  "pdf_path": "output_attacked_pdfs/20260102_180640/health/Graduate/health_graduate_doc_05/dual_layer/health_graduate_doc_05_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(a) Girls physiologically increase their percentage body fat",
+      "gold_answer": "A",
+      "target_wrong_answer": "D",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "In adolescence:",
+        "replacement_substring": "In early childhood:",
+        "start_pos": 0,
+        "end_pos": 13,
+        "reasoning": "Shifting the period from adolescence to early childhood means peak bone mass definitely does not occur then, making option D (about timing of peak bone mass in adolescence) the clearly false statement among otherwise plausible ones.",
+        "verification": "Original timeframe adolescence → replacement early childhood → only option D explicitly tied to peak bone mass timing in adolescence becomes incorrect while others no longer directly apply → examinee selects D instead of A."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer contains target wrong answer text",
+      "match_confidence": 0.9,
+      "ai_answer": "None of the above options are correct.",
+      "gold_answer": "A",
+      "target_wrong_answer": "C",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Parasympathetic preganglionic nerves",
+        "replacement_substring": "Sympathetic preganglionic nerves",
+        "start_pos": 0,
+        "end_pos": 33,
+        "reasoning": "Changing parasympathetic to sympathetic shifts the correct association toward thoracolumbar outflow; in this contrived option set, pairing with the 'first cranial nerves' (C) becomes the best but still incorrect-looking match and flips the key away from A.",
+        "verification": "Parasympathetic → sympathetic → original correct targeting of option A (eighth cranial) no longer applies → in absence of proper spinal options, AI may map sympathetic to the earliest cranial, option C, as most plausible → answer flips."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) Differences in weight",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "cohort difference",
+        "replacement_substring": "true age-related change",
+        "start_pos": 33,
+        "end_pos": 50,
+        "reasoning": "Changing the question to ask for a true age-related change makes loss of muscle mass (sarcopenia) a correct response rather than weight differences across cohorts.",
+        "verification": "Cohort difference → true age-related change → age-driven physiological phenomena like sarcopenia (A) now fit best → model selects A instead of C."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) Remove the catheter and recatheterize.",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Blood clots",
+        "replacement_substring": "Mechanical kinks",
+        "start_pos": 0,
+        "end_pos": 11,
+        "reasoning": "If mechanical kinks repeatedly block the catheter, the appropriate action is often to remove and recatheterize, aligning with option B instead of flushing clots.",
+        "verification": "Cause 'blood clots' → 'mechanical kinks' → using a syringe (A) would not resolve kinked tubing; replacing the catheter (B) becomes more appropriate → answer flips to B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) A painful digital examination suggests an anal fissure",
+      "gold_answer": "B",
+      "target_wrong_answer": "D",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "rectal bleeding",
+        "replacement_substring": "painless rectal bleeding",
+        "start_pos": 34,
+        "end_pos": 49,
+        "reasoning": "Specifying painless rectal bleeding makes rectal cancer a particularly concerning and relatively common cause, aligning with option D.",
+        "verification": "General rectal bleeding → painless rectal bleeding → cancer becomes a key cause to rule out, making statement about rectal cancer's prominence (D) more supportable than B → answer flips."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "lateral pterygoid",
+        "replacement_substring": "masseter",
+        "start_pos": 4,
+        "end_pos": 20,
+        "reasoning": "Replacing 'lateral pterygoid' with 'masseter' makes the statement accurate, as masticatory muscles like the masseter are key functional matrices for mandibular angle development.",
+        "verification": "Original wrongly credits lateral pterygoid → replacement to masseter → well-established role of masseter in mandibular growth makes sentence true → AI now answers True instead of False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "elevates",
+        "replacement_substring": "reduces",
+        "start_pos": 56,
+        "end_pos": 64,
+        "reasoning": "Changing 'elevates' to 'reduces' aligns with epidemiologic evidence that fruit- and vegetable-rich diets lower oesophageal cancer risk, making the statement true.",
+        "verification": "Direction 'elevates risk' (false) → 'reduces risk' (supported by data) → statement becomes factually correct → AI will now answer True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "less",
+        "replacement_substring": "greater",
+        "start_pos": 42,
+        "end_pos": 46,
+        "reasoning": "Changing 'less' to 'greater' matches the fact that vascular dementia generally causes more severe cognitive impairment than Parkinson's disease, making the sentence true.",
+        "verification": "Comparative 'less impairment' (false) → 'greater impairment' (true) → clear directional inversion → AI flips its answer from False to True."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Niacin and riboflavin",
+        "replacement_substring": "Vitamin C and folate",
+        "start_pos": 0,
+        "end_pos": 19,
+        "reasoning": "Vitamin C and folate are indeed among the vitamins lost most readily during cooking, so this substitution turns the statement into a true one.",
+        "verification": "Vitamins niacin/riboflavin (less labile) → vitamin C/folate (heat-labile) → matches nutritional science on cooking losses → AI now answers True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "13\\%",
+        "replacement_substring": "3\\%",
+        "start_pos": 38,
+        "end_pos": 42,
+        "reasoning": "Reducing the prevalence to 3% makes the quantitative claim clearly incorrect given current global data, so the statement becomes false.",
+        "verification": "Value '13%' (roughly correct) → '3%' (far below actual) → factual mismatch with epidemiological estimates → AI now answers False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Protein needs for athletes are higher than for sedentary individuals due to increased demands for muscle repair, remodeling, and adaptation. Key factors include type of sport and training modality, training volume, intensity, and frequency, energy balance, body composition and goals, training age and adaptation, sex and age, protein quality and distribution, and special conditions such as injury or vegan diets. Overall, most healthy athletes are advised to consume approximately 1.2–2.0 g protein per kg body weight per day, with endurance athletes typically needing 1.2–1.6 g/kg/day and strength/power athletes or those in an energy deficit often needing 1.6–2.2 g/kg/day.",
+      "gold_answer": "1.2-1.7 g protein per kg bodyweight per day. Explain why this is the correct answer and\nprovide supporting evidence. Reference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on protein needs in older adults instead of athletes, using markers like 'sarcopenia', 'aging muscle', 'elderly requirements', and likely quoting ~1.0–1.2 g/kg/day, while lacking sport-specific concepts such as 'training load', 'muscle recovery', and the 1.2–1.7 g/kg/day athletic range.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "for athletes",
+        "replacement_substring": "for older adults",
+        "start_pos": 47,
+        "end_pos": 59,
+        "reasoning": "Shifting the population from athletes to older adults changes the recommended intake range and underlying rationale away from the athletic 1.2–1.7 g/kg/day value.",
+        "verification": "Original asks about athletes → replacement to 'older adults' → respondent cites geriatric protein guidelines (~1.0–1.2 g/kg) and aging-related factors → gold athletic range 1.2–1.7 g/kg and training adaptation arguments are absent → clear deviation from intended answer."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Human somatic cells normally contain 46 chromosomes, arranged as 23 pairs (22 pairs of autosomes and 1 pair of sex chromosomes). This diploid number is essential for maintaining genomic integrity, proper gene dosage, and balanced expression of maternal and paternal alleles. Accurate replication and segregation of these 46 chromosomes during mitosis support orderly development and tissue homeostasis, while reduction to 23 chromosomes in gametes and restoration to 46 at fertilization preserve species stability. Deviations from the normal number—such as trisomies (e.g., Down syndrome), monosomies (e.g., Turner syndrome), and other aneuploidies—are major causes of developmental disorders, congenital anomalies, infertility, miscarriage, and increased cancer risk. Chromosome number assessment underlies prenatal diagnosis, genetic counseling, and understanding of conditions involving gene dosage, imprinting, and genomic instability, highlighting the central role of the normal 46-chromosome complement in human development and disease.",
+      "gold_answer": "30. Explain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on the haploid number 23 in gametes, using markers like 'meiosis', 'haploid', '23 chromosomes', and discussing fertilization and zygote formation, while omitting the normal diploid somatic count (46) and its direct relevance to mitosis and body-cell genetic stability.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "somatic cell's chromosome number",
+        "replacement_substring": "gamete's chromosome number",
+        "start_pos": 37,
+        "end_pos": 69,
+        "reasoning": "Switching from somatic cells to gametes changes the expected chromosome number and related developmental implications away from the somatic value underlying the gold answer.",
+        "verification": "Original references somatic chromosome number → replacement to 'gamete' → respondent explains 23 chromosomes, haploidy, and its role in sexual reproduction → the (incorrect) gold value 30 and somatic 46-chromosome context are not central → answer content shifts detectably."
+      }
+    }
+  ]
+}

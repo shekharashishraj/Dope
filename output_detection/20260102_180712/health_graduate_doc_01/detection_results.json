@@ -1,0 +1,247 @@
+{
+  "document_id": "health_graduate_doc_01",
+  "pdf_path": "output_attacked_pdfs/20260102_180640/health/Graduate/health_graduate_doc_01/dual_layer/health_graduate_doc_01_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(a) Left masseter muscle",
+      "gold_answer": "A",
+      "target_wrong_answer": "E",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "most active",
+        "replacement_substring": "least active",
+        "start_pos": 17,
+        "end_pos": 28,
+        "reasoning": "Changing from 'most active' to 'least active' inverts which muscle is being asked about; muscles highly engaged in lateral excursion become poor answers, and those minimally involved become correct.",
+        "verification": "Original asks for the muscle most active in right lateral excursion (left masseter) → replacement asks for the least active → right lateral pterygoid, which is less directly involved compared to contralateral elevator muscles, becomes the best fit → answer shifts away from A toward E."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option E (target was A, gold was B)",
+      "match_confidence": 0.7,
+      "ai_answer": "(e) 0.0011",
+      "gold_answer": "B",
+      "target_wrong_answer": "A",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": ".10 (one in ten)",
+        "replacement_substring": ".0316 (about one in 32)",
+        "start_pos": 86,
+        "end_pos": 104,
+        "reasoning": "Setting q ≈ 0.0316 makes q² ≈ 0.001, so the expected frequency of affected females matches option A instead of 0.01.",
+        "verification": "Original: q = 0.10 → q² = 0.01 → option B is correct → replacement: q ≈ 0.0316 → q² ≈ 0.001 → expected female frequency 0.001 (A) becomes correct → answer shifts from B to A."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option B (target was B, gold was A)",
+      "match_confidence": 1.0,
+      "ai_answer": "(b) 1 in 50",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "proportion",
+        "replacement_substring": "minimum proportion",
+        "start_pos": 4,
+        "end_pos": 14,
+        "reasoning": "Specifying 'minimum proportion' biases toward a higher estimate if the original value is a typical or average, making 1 in 50 a more plausible minimum than 1 in 100.",
+        "verification": "Original: generic proportion → standard teaching 1 in 100 (A) → replacement: asks for minimum proportion, suggesting a threshold at which clinicians become concerned → 1 in 50 (B) represents a higher baseline rate → model shifts from A to B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) Interacting with a T helper cell.",
+      "gold_answer": "B",
+      "target_wrong_answer": "C",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "How",
+        "replacement_substring": "When",
+        "start_pos": 0,
+        "end_pos": 3,
+        "reasoning": "Changing from 'How' to 'When' shifts the focus from the activating interaction to the timing in differentiation, where plasma cells are a later stage in B-cell activation.",
+        "verification": "Original: mechanism of stimulation → interacting with a T helper cell (B) → replacement: timing of when antibody-producing cells are present, which is after differentiation into plasma cells → interacting with a plasma cell (C) is seen as the relevant context → answer flips from B to C."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(a) Genetic and hormonal factors across the lifespan",
+      "gold_answer": "A",
+      "target_wrong_answer": "B",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Environmental factors such as exposure to radiation",
+        "replacement_substring": "Genetic and hormonal factors across the lifespan",
+        "start_pos": 48,
+        "end_pos": 103,
+        "reasoning": "Strengthening the emphasis on genetic contributions makes genetic factors the best-supported main driver compared to environment alone.",
+        "verification": "Original stem leads toward environmental exposures like radiation (A) → replacement phrase in the stem highlights inherent determinants, making genetic factors (B) the most consistent choice → correct answer shifts from A to B."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "hard palate",
+        "replacement_substring": "lower incisors",
+        "start_pos": 92,
+        "end_pos": 103,
+        "reasoning": "Submandibular lymph nodes drain areas like the floor of the mouth and lower teeth, not primarily the hard palate, making the statement incorrect after replacement.",
+        "verification": "Original: links submandibular nodes to hard palate infections (largely False in standard lymph drainage, but posed as True) → replacement: 'lower incisors' is more accurate drainage, contradicting the original True key → for the assessment setup, this flip ensures the AI will now mark the statement as False compared to the original labeling."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "ureter",
+        "replacement_substring": "urinary tract",
+        "start_pos": 4,
+        "end_pos": 10,
+        "reasoning": "Broadening to 'urinary tract' makes it collectively the primary system for collecting urine before it reaches the bladder, which is a generally true statement.",
+        "verification": "Original: ureter alone as primary collector (False, collecting ducts/pelvis do that) → replacement: urinary tract as the primary structure/system responsible → this is broadly correct physiologically → truth value flips to True."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "25\\%",
+        "replacement_substring": "5\\%",
+        "start_pos": 100,
+        "end_pos": 104,
+        "reasoning": "Reducing the risk to 5% is inconsistent with known high teratogenic risk in untreated maternal PKU, making the statement false.",
+        "verification": "Original: ~25% risk (True per key) → replacement: 5%, which substantially underestimates the empirically observed risk → the modified claim is factually incorrect → truth flips to False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "crucial",
+        "replacement_substring": "minimal",
+        "start_pos": 30,
+        "end_pos": 37,
+        "reasoning": "Describing the elderly role as minimal directly contradicts research and common understanding that they often have significant influence, making the sentence false.",
+        "verification": "Original: crucial role (True per key) → replacement: minimal role, reversing the degree of importance → resulting statement is factually incorrect → truth flips to False."
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "significant",
+        "replacement_substring": "negligible",
+        "start_pos": 51,
+        "end_pos": 62,
+        "reasoning": "Describing the role of prenatal maternal stress as negligible contradicts a large body of evidence showing its importance, making the statement false.",
+        "verification": "Original: stress is a significant factor (True) → replacement: calls it negligible, directly reversing its importance → yields an unambiguously false claim → AI answers False."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Ectomesenchyme plays a crucial role in the development of melanocytes, which originate from neural crest cells. These cells migrate to the skin, where they differentiate into melanocytes responsible for pigment production. Implications for health include conditions like vitiligo and melanoma, with ectomesenchyme influencing melanocyte distribution and behavior.",
+      "gold_answer": "Melanocytes. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on the development of odontoblasts instead of melanocytes, containing markers like 'dentin formation', 'dental papilla', and 'tooth development', and lacking pigmentation-related concepts such as 'melanin', 'skin color', or 'melanocytic lineage'.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "melanocytes",
+        "replacement_substring": "odontoblasts",
+        "start_pos": 49,
+        "end_pos": 60,
+        "reasoning": "Switching the cell type from melanocytes to odontoblasts redirects the answer from pigment cells to dentin-forming dental cells, clearly changing the biological focus.",
+        "verification": "Original asks about ectomesenchyme and melanocytes → replace 'melanocytes' with 'odontoblasts' → ectomesenchymal role is now in tooth/dentin cell development → model will discuss odontoblast origin and function, not pigment cells → melanocyte-specific facts in the gold answer will be absent, making deviation easily detectable."
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "High-density lipoprotein (HDL) particles are essential for reverse cholesterol transport, helping to remove excess cholesterol from cells to the liver for excretion. In familial hypercholesterolemia, mutations can impair HDL function, leading to increased LDL cholesterol levels and cardiovascular risk due to reduced cholesterol clearance.",
+      "gold_answer": "Low density lipoprotein receptor. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on HDL particles and reverse cholesterol transport (terms like 'high-density lipoprotein', 'reverse transport to liver', 'cardioprotective effect') instead of LDL receptor-related clearance defects, and will lack markers such as 'LDLR gene', 'receptor-mediated endocytosis of LDL', or 'familial hypercholesterolaemia type IIa'.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "low-density lipoprotein receptor",
+        "replacement_substring": "high-density lipoprotein particles",
+        "start_pos": 21,
+        "end_pos": 51,
+        "reasoning": "Substituting the LDL receptor with HDL particles changes the central molecule, moving the discussion from LDL clearance defects to reverse cholesterol transport, which is inconsistent with the original gold answer.",
+        "verification": "Original centers on LDL receptor in FH → replacement shifts to HDL particles → model discusses HDL metabolism and its mutations, not LDLR-mediated endocytosis → LDLR-specific genetic and mechanistic details from the gold answer will be absent, making the deviation clear."
+      }
+    }
+  ]
+}

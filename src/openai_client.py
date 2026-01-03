@@ -49,6 +49,9 @@ class OpenAIClient:
         # Log probabilities configuration
         self.logprobs = config.openai.logprobs
         self.top_logprobs = config.openai.top_logprobs
+        # GPT-5.1 parameters
+        self.reasoning_effort = config.openai.reasoning_effort
+        self.verbosity = config.openai.verbosity
         # Retry configuration
         self.retry_initial_backoff = config.retry.initial_backoff
         self.retry_max_backoff = config.retry.max_backoff
@@ -62,6 +65,10 @@ class OpenAIClient:
         self.system_message = config.prompts.system_message
         # Grouped prompts folder
         self.grouped_prompts_folder = config.prompts.grouped_prompts_folder
+    
+    def _is_gpt5_model(self) -> bool:
+        """Check if the model is a GPT-5.x model."""
+        return self.config.openai.is_gpt5_model()
     
     def generate_perturbations(
         self, 
@@ -106,7 +113,10 @@ class OpenAIClient:
         prompt_length = len(prompt)
         prompt_preview = prompt[:500] + "..." if len(prompt) > 500 else prompt
         logger.info(f"API call - Prompt length: {prompt_length} chars")
-        logger.info(f"API call - Model: {self.model}, Temperature: {self.temperature}, Timeout: {self.timeout}s")
+        if self._is_gpt5_model():
+            logger.info(f"API call - Model: {self.model}, Reasoning: {self.reasoning_effort}, Verbosity: {self.verbosity}, Timeout: {self.timeout}s")
+        else:
+            logger.info(f"API call - Model: {self.model}, Temperature: {self.temperature}, Timeout: {self.timeout}s")
         logger.info(f"API call - Prompt preview (first 500 chars): {prompt_preview}")
         # Log complete prompt at DEBUG level (saved to file)
         logger.debug(f"API call - Complete prompt:\n{prompt}")
@@ -125,24 +135,39 @@ class OpenAIClient:
                         {"role": "system", "content": self.system_message},
                         {"role": "user", "content": prompt}
                     ],
-                    "temperature": self.temperature,
                     "timeout": self.timeout
                 }
                 
-                # Add optional parameters if set
-                if self.top_p is not None:
-                    api_params["top_p"] = self.top_p
-                if self.frequency_penalty is not None:
-                    api_params["frequency_penalty"] = self.frequency_penalty
-                if self.presence_penalty is not None:
-                    api_params["presence_penalty"] = self.presence_penalty
-                if self.max_tokens is not None:
-                    api_params["max_tokens"] = self.max_tokens
-                # Add logprobs if enabled
-                if self.logprobs:
-                    api_params["logprobs"] = True
-                    if self.top_logprobs is not None:
-                        api_params["top_logprobs"] = self.top_logprobs
+                # GPT-5.1 models use different parameters
+                # Note: Current OpenAI Python SDK doesn't support reasoning/verbosity parameters yet
+                # The model will work without them (using defaults)
+                # TODO: Add these parameters when SDK is updated to support them
+                if self._is_gpt5_model():
+                    # For now, don't pass reasoning/verbosity as SDK doesn't support them
+                    # The model will use default values
+                    # When SDK is updated, uncomment these lines:
+                    # if self.reasoning_effort is not None:
+                    #     api_params["reasoning"] = {"effort": self.reasoning_effort}
+                    # if self.verbosity is not None:
+                    #     api_params["verbosity"] = self.verbosity
+                    pass
+                else:
+                    # Use traditional parameters for non-GPT-5 models
+                    api_params["temperature"] = self.temperature
+                    # Add optional parameters if set
+                    if self.top_p is not None:
+                        api_params["top_p"] = self.top_p
+                    if self.frequency_penalty is not None:
+                        api_params["frequency_penalty"] = self.frequency_penalty
+                    if self.presence_penalty is not None:
+                        api_params["presence_penalty"] = self.presence_penalty
+                    if self.max_tokens is not None:
+                        api_params["max_tokens"] = self.max_tokens
+                    # Add logprobs if enabled
+                    if self.logprobs:
+                        api_params["logprobs"] = True
+                        if self.top_logprobs is not None:
+                            api_params["top_logprobs"] = self.top_logprobs
                 
                 response = self.client.chat.completions.create(**api_params)
                 
@@ -259,10 +284,12 @@ class OpenAIClient:
                         # If parsing fails, try to repair JSON using a structured approach
                         logger.warning(f"Initial JSON parse failed: {json_err}. Attempting to repair JSON...")
                         
-                        # Use a character-by-character state machine to properly handle
-                        # JSON string boundaries and fix escape sequences
+                        # First, fix word numbers (e.g., "fifty" -> 50)
                         try:
-                            repaired_content = self._repair_json_escapes(content_clean)
+                            repaired_content = self._repair_json_word_numbers(content_clean)
+                            # Then use a character-by-character state machine to properly handle
+                            # JSON string boundaries and fix escape sequences
+                            repaired_content = self._repair_json_escapes(repaired_content)
                             parsed = json.loads(repaired_content)
                             logger.info("Successfully parsed JSON after repair")
                         except Exception as repair_err:
@@ -310,12 +337,42 @@ class OpenAIClient:
                 except json.JSONDecodeError as e:
                     logger.error(f"Failed to parse JSON response: {e}")
                     logger.error(f"Response content (first 500 chars): {content[:500]}")
-                    # Try to extract JSON array from text
+                    # Try to extract valid JSON objects from the array even if some are malformed
+                    # This is a last resort - try to parse individual objects
+                    try:
+                        # Try to extract and parse individual objects from the array
+                        # Look for object patterns: { ... }
+                        object_pattern = r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}'
+                        matches = re.findall(object_pattern, content_clean, re.DOTALL)
+                        if matches:
+                            validated_mappings = []
+                            for match in matches:
+                                try:
+                                    # Try to repair this individual object
+                                    repaired_obj = self._repair_json_word_numbers(match)
+                                    repaired_obj = self._repair_json_escapes(repaired_obj)
+                                    obj_dict = json.loads(repaired_obj)
+                                    validated_mappings.append(PerturbationMapping.model_validate(obj_dict))
+                                except (json.JSONDecodeError, ValidationError) as obj_err:
+                                    logger.debug(f"Skipping invalid object: {obj_err}")
+                                    continue
+                            
+                            if validated_mappings:
+                                logger.info(f"Extracted {len(validated_mappings)} valid objects from malformed JSON array")
+                                return validated_mappings
+                    except Exception as extract_err:
+                        logger.debug(f"Failed to extract individual objects: {extract_err}")
+                    
+                    # Fallback: Try to extract JSON array from text
                     # Look for array pattern
                     array_match = re.search(r'\[.*\]', content, re.DOTALL)
                     if array_match:
                         try:
-                            parsed = json.loads(array_match.group(0))
+                            # Try repairing the array
+                            array_str = array_match.group(0)
+                            repaired_array = self._repair_json_word_numbers(array_str)
+                            repaired_array = self._repair_json_escapes(repaired_array)
+                            parsed = json.loads(repaired_array)
                             if isinstance(parsed, list):
                                 validated_mappings = []
                                 for mapping_dict in parsed:
@@ -324,8 +381,8 @@ class OpenAIClient:
                                     except ValidationError:
                                         continue
                                 return validated_mappings
-                        except:
-                            pass
+                        except Exception as array_err:
+                            logger.debug(f"Failed to parse array pattern: {array_err}")
                     return []
                 
             except Exception as e:
@@ -686,24 +743,38 @@ Return ONLY valid JSON array, no markdown or additional text."""
                             "role": "user",
                             "content": prompt
                         }
-                    ],
-                    "temperature": self.temperature
+                    ]
                 }
                 
-                # Add optional parameters if set
-                if self.top_p is not None:
-                    body["top_p"] = self.top_p
-                if self.frequency_penalty is not None:
-                    body["frequency_penalty"] = self.frequency_penalty
-                if self.presence_penalty is not None:
-                    body["presence_penalty"] = self.presence_penalty
-                if self.max_tokens is not None:
-                    body["max_tokens"] = self.max_tokens
-                # Add logprobs if enabled
-                if self.logprobs:
-                    body["logprobs"] = True
-                    if self.top_logprobs is not None:
-                        body["top_logprobs"] = self.top_logprobs
+                # GPT-5.1 models use different parameters
+                # Note: Current OpenAI Python SDK doesn't support reasoning/verbosity parameters yet
+                # The model will work without them (using defaults)
+                # TODO: Add these parameters when SDK is updated to support them
+                if self._is_gpt5_model():
+                    # For now, don't pass reasoning/verbosity as SDK doesn't support them
+                    # When SDK is updated, uncomment these lines:
+                    # if self.reasoning_effort is not None:
+                    #     body["reasoning"] = {"effort": self.reasoning_effort}
+                    # if self.verbosity is not None:
+                    #     body["verbosity"] = self.verbosity
+                    pass
+                else:
+                    # Use traditional parameters for non-GPT-5 models
+                    body["temperature"] = self.temperature
+                    # Add optional parameters if set
+                    if self.top_p is not None:
+                        body["top_p"] = self.top_p
+                    if self.frequency_penalty is not None:
+                        body["frequency_penalty"] = self.frequency_penalty
+                    if self.presence_penalty is not None:
+                        body["presence_penalty"] = self.presence_penalty
+                    if self.max_tokens is not None:
+                        body["max_tokens"] = self.max_tokens
+                    # Add logprobs if enabled
+                    if self.logprobs:
+                        body["logprobs"] = True
+                        if self.top_logprobs is not None:
+                            body["top_logprobs"] = self.top_logprobs
                 
                 request = {
                     "custom_id": f"question_{question_idx}",
@@ -990,6 +1061,90 @@ Return ONLY valid JSON array, no markdown or additional text."""
         except Exception as e:
             logger.error(f"Failed to parse batch results file: {e}")
             raise
+    
+    def _repair_json_word_numbers(self, json_str: str) -> str:
+        """
+        Repair JSON by converting word numbers to numeric values.
+        
+        This handles cases where the model outputs words like "fifty" instead of 50.
+        Only converts words that appear in numeric contexts (after colons, before commas).
+        
+        Args:
+            json_str: The JSON string to repair
+            
+        Returns:
+            Repaired JSON string with word numbers converted
+        """
+        # Dictionary mapping word numbers to their numeric values
+        word_to_number = {
+            'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4',
+            'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9',
+            'ten': '10', 'eleven': '11', 'twelve': '12', 'thirteen': '13',
+            'fourteen': '14', 'fifteen': '15', 'sixteen': '16', 'seventeen': '17',
+            'eighteen': '18', 'nineteen': '19', 'twenty': '20', 'thirty': '30',
+            'forty': '40', 'fifty': '50', 'sixty': '60', 'seventy': '70',
+            'eighty': '80', 'ninety': '90', 'hundred': '100', 'thousand': '1000'
+        }
+        
+        # Pattern to match word numbers in numeric contexts
+        # Look for: ": word," or ": word\n" or ": word}" where word is a number word
+        import re
+        
+        # Create a pattern that matches word numbers after colons (in value positions)
+        # but not inside string values
+        result = []
+        i = 0
+        in_string = False
+        
+        while i < len(json_str):
+            char = json_str[i]
+            
+            # Track string boundaries
+            if char == '"':
+                # Check if quote is escaped
+                backslash_count = 0
+                j = i - 1
+                while j >= 0 and json_str[j] == '\\':
+                    backslash_count += 1
+                    j -= 1
+                
+                if backslash_count % 2 == 0:
+                    in_string = not in_string
+                
+                result.append(char)
+                i += 1
+                continue
+            
+            # Only process outside of strings
+            if not in_string:
+                # Look for pattern: ": word" where word might be a number word
+                # Check if we're at ":" followed by whitespace and a potential word number
+                if char == ':' and i + 1 < len(json_str):
+                    # Look ahead to find the next word
+                    # Skip whitespace after colon
+                    j = i + 1
+                    while j < len(json_str) and json_str[j] in ' \t\n':
+                        j += 1
+                    
+                    # Extract potential word (until comma, newline, closing brace, bracket, or space)
+                    word_start = j
+                    while j < len(json_str) and json_str[j] not in ',}\n\r\t] ':
+                        j += 1
+                    
+                    word = json_str[word_start:j].strip().lower()
+                    
+                    # Check if it's a number word
+                    if word in word_to_number:
+                        # Replace the word with its numeric value
+                        result.append(json_str[i:word_start])  # Include ": " and any extra spaces
+                        result.append(word_to_number[word])
+                        i = j  # Skip past the word
+                        continue
+            
+            result.append(char)
+            i += 1
+        
+        return ''.join(result)
     
     def _repair_json_escapes(self, json_str: str) -> str:
         """
