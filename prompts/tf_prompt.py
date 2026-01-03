@@ -47,6 +47,22 @@ Generate {k} valid mappings that satisfy the replacement strategy. Each mapping 
 - **Chemistry**:
   *Original*: "Noble gases have **full** outer shells." (Gold: True)
   *Perturbation*: "Noble gases have **empty** outer shells." (New: False)
+- **Computer Science**:
+  *Original*: "A stack follows the Last-In-First-Out (LIFO) principle." (Gold: True)
+  *Perturbation*: "A stack follows the **First-In-First-Out (FIFO)** principle." (New: False)
+  *Reasoning*: Changed LIFO to FIFO, contradicting stack behavior.
+- **Biology**:
+  *Original*: "Mitochondria are found only in eukaryotic cells." (Gold: True)
+  *Perturbation*: "Mitochondria are found only in **prokaryotic** cells." (New: False)
+  *Reasoning*: Prokaryotic cells lack mitochondria, making the statement false.
+- **History**:
+  *Original*: "The American Revolution began in 1775." (Gold: True)
+  *Perturbation*: "The American Revolution began in **1776**." (New: False)
+  *Reasoning*: Fighting began in 1775; claiming 1776 is technically incorrect.
+- **Economics**:
+  *Original*: "When demand increases and supply remains constant, prices typically rise." (Gold: True)
+  *Perturbation*: "When demand increases and supply remains constant, prices typically **fall**." (New: False)
+  *Reasoning*: Increased demand with constant supply leads to higher prices, not lower.
 
 ### MANDATORY RULES:
 - **Zero-Negation Rule**: DO NOT use "not", "is not", "no", or "un-". 

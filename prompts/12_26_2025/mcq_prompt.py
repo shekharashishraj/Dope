@@ -25,7 +25,7 @@ Generate {k} valid mappings that satisfy the replacement strategy. Each mapping 
 3. Ensure the replacement is semantically meaningful and natural
 4. Cause a verifiable deviation in the answer
 
-### EXECUTION STANDARDS:
+### PERTURBATION STANDARDS:
 - **Accuracy**: original_substring must be an EXACT match of the LaTeX source (including commands).
 - **Non-Triviality**: Do not just add "not". Change the underlying parameter/condition.
 - **Constraints**: Neither substring can be empty. Indices must be 0-based and precise.
@@ -117,4 +117,3 @@ def format_mcq_prompt(
         answer_guidance=answer_guidance,
         retry_instructions=retry_instructions
     )
-

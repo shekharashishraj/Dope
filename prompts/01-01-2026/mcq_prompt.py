@@ -20,39 +20,26 @@ Context (do not modify):
 Goal:
 Produce {k} replacement mappings that each make a DIFFERENT option become correct (i.e., change the correct answer away from {gold_answer} to some target_wrong_answer in the provided options).
 
-Hard constraints (must satisfy ALL):
+Hard constraints (must satisfy all):
 1) Single-span edit: replace exactly one contiguous substring inside latex_stem_text (the stem only; do NOT edit the options).
-2) Exact substring match: original_substring must be an exact, byte-for-byte match from latex_stem_text. Verify: latex_stem_text[start_pos:end_pos] == original_substring.
-3) Correct indices: start_pos must be >= 0, end_pos must be > start_pos, and end_pos <= len(latex_stem_text). Length check: end_pos - start_pos == len(original_substring).
-4) Semantic flip: the replacement MUST change the semantic meaning of the question stem such that target_wrong_answer becomes the objectively correct answer under the new stem, and {gold_answer} becomes incorrect. Do NOT make purely cosmetic or grammatical changes.
-5) Answer plausibility: You MUST explain in reasoning how the new stem makes target_wrong_answer correct. If you cannot write a clear, logical explanation, the mapping is invalid.
-6) No trivial negation: avoid inserting "not", "never", or "no" as standalone fixes unless it is the only natural semantic change. Prefer altering: quantities, conditions, scope, direction, relationships, or key concepts.
-7) Layout preservation: replacement_substring must be similar in length to original_substring (aim: within ±15 characters) to avoid jarring layout changes. Keep LaTeX syntax well-formed (matching braces, consistent escaping).
-8) Distinctness: each of the {k} mappings must edit different spans OR target different answers. Do not output near-duplicate edits.
-
-VALIDATION CHECKLIST (ALL 10 must pass)
-- ✓ latex_stem_text[start_pos:end_pos] == original_substring (exact match verified)
-- ✓ start_pos >= 0 and end_pos <= len(latex_stem_text) and start_pos < end_pos (valid range)
-- ✓ Replacement is NOT trivial negation (constraint 5 passed)
-- ✓ Replacement is semantic KEY CONCEPT change (constraint 4 passed)
-- ✓ Can write clear 3-part reasoning: original interpretation → change → new interpretation
-- ✓ target_wrong_answer is one of {{"A", "B", "C", "D"}} and NOT {gold_answer}
-- ✓ target_wrong_answer is substantively different from {gold_answer} option text
-- ✓ LaTeX syntax is well-formed after replacement
-- ✓ Length check: ±10 characters from original_substring
-- ✓ No near-duplicate with other mappings in output
+2) Exact match: original_substring must be an exact substring of latex_stem_text (character-for-character, including LaTeX).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring AND end_pos = start_pos + len(original_substring).
+4) Non-trivial change: replacement must change the meaning enough to flip the correct answer; avoid purely grammatical rephrases.
+5) Avoid trivial negation: do not flip with a simple "not/never/no" insertion unless it is the only natural way; prefer changing a key concept, condition, quantity, direction, scope, or referent.
+6) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+7) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer.
 
 What to output for each mapping:
 - question_index: {question_index}
-- latex_stem_text: must exactly equal the input latex_stem_text (verbatim copy)
-- original_substring: exact substring from latex_stem_text
-- replacement_substring: new text (validate length and LaTeX syntax)
-- start_pos: 0-based integer, first character index
-- end_pos: exclusive integer, one past the last character
-- target_wrong_answer: single character from {{"A", "B", "C", "D"}}, NOT {gold_answer}
-- reasoning: 2–3 sentences explaining (1) what semantic change the replacement makes, (2) why this makes target_wrong_answer correct, and (3) why {gold_answer} is now incorrect.
+- latex_stem_text: must exactly equal the input latex_stem_text
+- original_substring
+- replacement_substring
+- start_pos (0-based)
+- end_pos (exclusive)
+- target_wrong_answer: a single option key (e.g., "A", "B", "C", "D") that is NOT {gold_answer}
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and {gold_answer} incorrect
 
-Return ONLY valid JSON as an array of {k} objects, with double quotes, no markdown, no extra text:
+Return ONLY valid JSON as an array of {k} objects, with double quotes, no markdown.
 [
   {{
     "question_index": {question_index},
