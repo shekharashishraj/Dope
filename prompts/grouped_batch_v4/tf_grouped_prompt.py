@@ -4,41 +4,49 @@ from typing import Dict, List, Any
 
 TF_GROUPED_BATCH_TEMPLATE_V2 = """
 ## SITUATION:
-We are substituting questions in True and False questions
-to make the LLM answer the opposite option.
+We are question/statement in True and False questions
+to make the LLM answer the opposite option(False if True, True if False).
 
 ## Role:
 You are an expert at generating question substitutions for True/False questions.
+You have to come up with clever and natural question substitutions that 
+are semantically meaningful and of opposite truth value.
+Your accuracy is critical.
 
 ##Task:
 Given the questions below, your task is to generate question substitutions for each question.
-
-It's not necessary to change parts of the question/statement only, replacing it entirely
-is acceptable given it's truth value is being changed.
+Replacing the question stem entirely is acceptable given it's truth value is being changed.
+They don't need to be related to the original question/statement in any way.
+They just need to be semantically meaningful and of opposite truth value. That's it.
 
 **Strategy:** 
-1) Replacement (replace only the question stem)
-2) Semantic Substitution (substitute the question stem with a semantically meaningful and natural substitution)
+1) Semantic Substitution : substitute the question stem with a semantically meaningful
+and natural substitution.
+2) Replacement (replace only the question stem)
 
 ### EXAMPLES:
 
 Original: The color of leaves is green
-Substitution: The absence of color is black.
+Substitution: The capital of Spain is Milan.
 Here the truth value is being changed from True to False.
 
 Original: C++ is a programming language.
-Substitution: Python is a framework.
+Substitution: Newton won Nobel Prize.
 Here the truth value is being changed from True to False.
 
 Original: The Earth is a planet.
 Substitution: Moon is a star.
 Here the truth value is being changed from True to False.
 
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and of opposite truth value. That's it.
+This is very important.
+
 Your task:
 Generate {k} valid question substitutions per question that satisfy the replacement strategy. Each question substitution should:
 1. Replace the question stem with a semantically meaningful and natural substitution.
 2. Ensure the question substitution is semantically meaningful and natural.
-3. The number of characters should be less than or equal to the original question stem.
+3. The number of characters should be less than or equal to the original question stem. Very Important.
 4. It can be ANY semantically meaningful and of opposite truth value statement.
 
 ### MANDATORY RULES: 

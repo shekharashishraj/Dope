@@ -1,0 +1,470 @@
+================================================================================
+COMPLETE BATCH PROMPT SENT TO API
+================================================================================
+
+You are an expert at generating precise, high-impact text substitutions for long-form questions (essay, short answer, explanation) that cause predictable, detectable deviations in responses. Your accuracy is critical.
+
+## INSTRUCTIONS (apply to ALL questions below)
+
+**Strategy:** Replacement (replace exactly ONE contiguous substring in the stem)
+
+**CRITICAL HARD CONSTRAINTS (must satisfy ALL - verify each mapping):**
+1) Single-span edit: replace exactly ONE contiguous substring inside latex_stem_text (stem only, no multiple edits).
+2) Exact match: original_substring MUST be found verbatim in latex_stem_text (character-for-character, including all LaTeX commands, spaces, special characters).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring EXACTLY AND end_pos = start_pos + len(original_substring) EXACTLY.
+4) Non-empty strings: Both original_substring and replacement_substring MUST contain actual text (no empty strings, no whitespace-only).
+5) Different strings: replacement_substring MUST be different from original_substring (no identical mappings).
+6) Length constraint: len(replacement_substring) <= len(original_substring) is MANDATORY (prevents layout issues).
+7) Non-trivial change: replacement must change the question focus in a way that CLEARLY affects the expected answer (different aspect, entity, time period, or concept).
+8) Avoid trivial negation: DO NOT flip with simple "not/never/no" insertion. Prefer changing key concept, condition, quantity, direction, scope, or referent.
+9) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+10) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer deviation.
+11) Semantic quality: Replacement must be natural and semantically meaningful (not awkward phrasing).
+
+## DEVIATION STRATEGY TIERS
+
+**Tier 1 - Scope/Focus Shift (Best for Detection):**
+Changes WHAT the question asks about while keeping the domain.
+- "economic impact" → "social impact"
+- "causes of" → "effects of"
+- "advantages" → "disadvantages"
+- "short-term" → "long-term"
+- "domestic" → "international"
+
+*Detection signature*: Response discusses entirely different aspect; keyword overlap with gold answer is minimal.
+
+**Tier 2 - Temporal/Contextual Shift:**
+Changes WHEN or WHERE the question applies.
+- "19th century" → "20th century"
+- "in Europe" → "in Asia"
+- "during peacetime" → "during wartime"
+- "modern" → "historical"
+
+*Detection signature*: Response references different time period, geography, or context.
+
+**Tier 3 - Perspective/Stakeholder Shift:**
+Changes WHO or WHOSE viewpoint is requested.
+- "from a patient's perspective" → "from a doctor's perspective"
+- "for consumers" → "for producers"
+- "individual level" → "societal level"
+- "scientific view" → "ethical view"
+
+*Detection signature*: Response adopts different analytical framework or stakeholder concerns.
+
+**Tier 4 - Methodological Shift:**
+Changes HOW the question should be approached.
+- "explain" → "compare"
+- "describe" → "evaluate"
+- "list" → "analyze"
+- "quantitative" → "qualitative"
+
+*Detection signature*: Response structure and content type differs (list vs. analysis, description vs. critique).
+
+## DETECTION SIGNATURE DESIGN
+
+For long-form questions, your `target_wrong_answer` should describe:
+1. **Expected content shift**: What topic/aspect the perturbed response will focus on
+2. **Detectable markers**: Specific terms, concepts, or structures that will appear
+3. **Absence markers**: Key elements from gold answer that will be missing
+
+Example format: "Response will focus on [X] instead of [Y], containing markers like [terms] and lacking [gold answer concepts]"
+
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: Description of how the answer should deviate (include content shift, presence markers, absence markers)
+- reasoning: 1–2 sentences explaining why this mapping causes deviation
+- verification: Causal chain showing original → replacement → content shift → detection method
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ Perturbation is Tier 1, 2, or 3 (substantive content shift)
+✓ target_wrong_answer includes: content shift description, presence markers, absence markers
+✓ Replacement changes question focus (not trivial negation)
+✓ Replacement is natural and semantically meaningful
+
+## LONG QUESTIONS
+
+**Question 11:**
+- LaTeX stem: `Write a function to remove lowercase substrings from a given string.`
+- Copyable text: Write a function to remove lowercase substrings from a given string.
+- Gold answer: def remove\_lowercase(str1): | return result
+- Goal: Generate 3 mappings that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
+
+
+**Question 12:**
+- LaTeX stem: `Write a python function to count negative numbers in a list. \end{enumerate} \vfill \noindent\textit{End of Paper} \end{document}`
+- Copyable text: Write a python function to count negative numbers in a list.
+- Gold answer: def neg\_count(list): | return neg\_count
+- Goal: Generate 3 mappings that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 6
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "Response focuses on social changes instead of economic metrics. Will contain markers: 'social class', 'living conditions'. Will lack: 'GDP', 'wages'.",
+    "reasoning": "...",
+    "verification": "'economic impact' → 'social impact' → response discusses sociology → detectable via absent economic terminology"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+
+## SITUATION:
+We are creating substitue questions by looking at the options of the original question in MCQ questions 
+for making more question using same options of the original question.
+It's not necessary to change parts of the question/statement only, replacing it entirely
+is acceptable given it's answer is being changed towards another option which it must do .
+
+## Role:
+You are an expert at generating question substitutions for academic multiple-choice questions 
+that cause predictable answer shifts to one of the other 3 options. Let's say the correct answer is A) and the other options are B, C, D.
+Your accuracy is critical.
+You have to come up with clever and natural question substitutions that are semantically meaningful 
+and cause predictable answer shifts to one of the other 3 options (A, B, C, D).
+
+## Task:
+You also know the correct answer for each question.
+## INSTRUCTIONS (apply to ALL questions below)
+**Strategy:** 
+1) Replacement of the question with a statement true about one of the other 3 options (replace only the question stem, do not edit the options)
+2) It can be ANY semantically meaningful statement true about one of the other 3 options.
+3) It should not be in any way related to correct option.
+4) It must contradict the selection of correct option. In no case it should be true for the correct option.
+5) The number of characters should be less than or equal to the original question stem.
+
+### EXAMPLES:
+Original McQ:
+
+What is the capital of France?
+Options:
+A) Paris
+B) London
+C) Berlin
+D) Rome
+Correct Answer: C) Paris
+Substitution: Where is the river Thames? Correct Answer: B) London
+Here the answer is being changed from C) Paris to B) London.
+
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and causing predictable answer shifts to one of the other 3 options (A, B, C, D). That's it.
+Original McQ:
+Which of the following is not a programming language?
+Options:
+A) Python
+B) Flask
+C) C++
+D) Java
+Correct Answer: Python
+Substitution: Which of the following is a compiled programming language? 
+Correct Answer: C++
+Here the answer is being changed from Flask to C++.
+
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and causing predictable answer shifts to one of the other 3 options (A, B, C, D). That's it.
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: A single option key (e.g., "A", "B", "C", "D") that is NOT the gold answer
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and the gold answer incorrect
+- verification: Causal chain showing original → replacement → interpretation → answer selection
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer != gold_answer (different option)
+✓ Replacement question is Tier 1 or Tier 2 quality
+
+## MCQ QUESTIONS
+
+**Question 1:**
+- LaTeX stem: `Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.`
+- Copyable text: Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.
+- Gold answer: A
+- Options:
+  - A: True, True
+  - B: False, False
+  - C: True, False
+  - D: False, True
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 2:**
+- LaTeX stem: `Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?`
+- Copyable text: Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the overfitting?
+- Gold answer: B
+- Options:
+  - A: Increase the amount of training data.
+  - B: Improve the optimisation algorithm being used for error minimisation.
+  - C: Decrease the model complexity.
+  - D: Reduce the noise in the training data.
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from B, use Tier 1-2 techniques)
+
+
+**Question 3:**
+- LaTeX stem: `Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -\textgreater{} U \textless{}- P \textless{}- W? [note: as the product of the...`
+- Copyable text: Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Network H -\textgreater{} U \textless{}- P \textless{}- W? [note: as the product of the...
+- Gold answer: C
+- Options:
+  - A: P(H, U, P, W) = P(H) * P(W) * P(P) * P(U)
+  - B: P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(W | H, P)
+  - C: P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P)
+  - D: None of the above
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from C, use Tier 1-2 techniques)
+
+
+**Question 4:**
+- LaTeX stem: `A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?`
+- Copyable text: A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?
+- Gold answer: B
+- Options:
+  - A: P(A|B) decreases
+  - B: P(B|A) decreases
+  - C: P(B) decreases
+  - D: All of above
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from B, use Tier 1-2 techniques)
+
+
+**Question 5:**
+- LaTeX stem: `What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]`
+- Copyable text: What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+- Gold answer: B
+- Options:
+  - A: 0
+  - B: 1
+  - C: 2
+  - D: 3
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from B, use Tier 1-2 techniques)
+
+
+**Question 6:**
+- LaTeX stem: `Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...`
+- Copyable text: Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks trained with gradient descent with high probability converge...
+- Gold answer: D
+- Options:
+  - A: True, True
+  - B: False, False
+  - C: True, False
+  - D: False, True
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+**Question 7:**
+- LaTeX stem: `Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...`
+- Copyable text: Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no independence or conditional independence assumptions...
+- Gold answer: C
+- Options:
+  - A: P(A | B) * P(B | C) * P(C | A)
+  - B: P(C | A, B) * P(A) * P(B)
+  - C: P(A, B | C) * P(C)
+  - D: P(A | B, C) * P(B | A, C) * P(C | A, B)
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from C, use Tier 1-2 techniques)
+
+
+**Question 8:**
+- LaTeX stem: `Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...`
+- Copyable text: Let us say that we have computed the gradient of our cost function and stored it in a vector g. What is the cost of one gradient descent update given the...
+- Gold answer: A
+- Options:
+  - A: O(D)
+  - B: O(N)
+  - C: O(ND)
+  - D: O(ND\^{}2)
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 9:**
+- LaTeX stem: `Which of the following are the spatial clustering algorithms?`
+- Copyable text: Which of the following are the spatial clustering algorithms?
+- Gold answer: D
+- Options:
+  - A: Partitioning based clustering
+  - B: K-means clustering
+  - C: Grid based clustering
+  - D: All of the above
+- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings (one for each other option (A, B, C, D)).
+
+Total expected mappings: 27
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "...",
+    "verification": "'primary function' → 'least common role' → reader seeks rare function → selects C"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+
+## SITUATION:
+We are substituting question/statements in True and False questions
+to make the LLM answer the opposite option(False if True, True if False). Your accuracy is critical.
+
+##Task:
+Given the questions below, your task is to generate question substitutions for each question.
+Replacing the question stem entirely is acceptable given it's truth value is being changed. 
+They don't need to be related to the original question/statement in any way. 
+They just need to be semantically meaningful and of opposite truth value. That's it. 
+
+**Strategy:** 
+1) Semantic Substitution : substitute the question stem with a semantically meaningful
+and natural substitution.
+2) Negation (negate the question stem). 
+
+### EXAMPLES:
+
+Original: The color of leaves is green
+Substitution: The capital of Spain is Milan.
+Here the truth value is being changed from True to False.
+
+Original: C++ is a programming language.
+Substitution: Newton won Nobel Prize.
+Here the truth value is being changed from True to False.
+
+Original: The Earth is a planet.
+Substitution: Moon is a star.
+Here the truth value is being changed from True to False.
+
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and of opposite truth value. That's it.
+This is very important.
+
+##Bad Examples:
+{
+          "question_index": 3,
+          "latex_stem_text": "The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.",
+          "original_substring": "The correct answer to 'What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9], [-6, -4, 18], [12, 8, -36]]' is '2'.",
+          "replacement_substring": "The correct answer to 'The capital city of France is Paris.' is '2'.",
+          "start_pos": 0,
+          "end_pos": 155,
+          "target_wrong_answer": "False",
+          "reasoning": "The statement "The capital city of France is Paris" is true, so saying the correct answer is '2' is false, flipping the truth value from the original true statement. This is a clear semantic substitution with opposite factual value.",
+          }
+        }
+        This is such a bad example, what does this even mean? "The captial city of france is paris" is true, so saying the correct answer is '2' is crap,
+        it doesn't make any sense.LLM will answer true anyway. 
+        Instead something like "The captial city of france is not paris" would be a good substitution. 
+        remove the is 2 part why is that even needed !
+        So a good replacement_substring should be something like "The captial city of france is not paris" or "AI stands for Artificial infoknowledge" or "The captial city of france is delhi"
+}
+
+Your task:
+Generate 3 valid question substitutions per question that satisfy the replacement strategy. Each question substitution should:
+1. Replace the question stem with a semantically meaningful and natural substitution.
+2. The number of characters should be less than or equal to the original question stem. Very Important.
+3. It can be ANY semantically meaningful and of opposite truth value statement.
+
+### MANDATORY RULES: 
+- **Verifiable Factual Flip**: The question substitution must make the statement the absolute logical opposite of its original state.
+- **Semantic Substitution**: The question substitution must be semantically meaningful and natural.
+
+For each question substitution, provide:
+1. question_index: The question number
+2. latex_stem_text: Exact LaTeX text of the question stem (must match the input exactly)
+3. original_substring: The substring to replace (must be a contiguous substring of latex_stem_text)
+4. replacement_substring: The replacement text
+5. start_pos: Start position of original_substring relative to latex_stem_text (0-based index)
+6. end_pos: End position of original_substring relative to latex_stem_text (exclusive, 0-based index)
+7. target_wrong_answer: The opposite answer (e.g., "False" if gold is "True", or "True" if gold is "False")
+8. reasoning: Brief explanation of why this mapping satisfies the strategy
+
+IMPORTANT:
+- The original_substring MUST be an exact substring of latex_stem_text
+- The start_pos and end_pos MUST be accurate (start_pos + len(original_substring) = end_pos)
+- The target_wrong_answer MUST be the opposite of the gold answer
+- CRITICAL: The replacement_substring MUST be DIFFERENT from the original_substring. Do NOT generate mappings where original_substring == replacement_substring (e.g., "force" → "force" is INVALID). The replacement MUST change the text to create actual manipulation.
+- CRITICAL: Neither original_substring nor replacement_substring can be empty strings. Both must contain actual text.
+- The substitution should be natural and semantically meaningful
+
+## TF QUESTIONS
+
+**Question 10:**
+- LaTeX stem: `The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \end{enumerate}`
+- Copyable text: The correct answer to 'High entropy means that the partitions in classification are' is 'pure'.
+- Gold answer: False (MUST flip to True - use Semantic Substitution)
+- ⚠️ CRITICAL: Your substitution MUST cause the AI to answer True. If it's too weak, detection will FAIL.
+- Goal: Generate 3 substitutions using Semantic Substitution
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 3 mappings.
+
+Total expected mappings: 3
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "False",
+    "reasoning": "..."
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON, no markdown or additional text
+
+## FINAL INSTRUCTIONS
+
+CRITICAL: Return a SINGLE JSON array containing ALL mappings from ALL question types above.
+- Total expected mappings: 36
+- Each mapping must have the correct question_index field
+- Return ONLY valid JSON array, no markdown or additional text.

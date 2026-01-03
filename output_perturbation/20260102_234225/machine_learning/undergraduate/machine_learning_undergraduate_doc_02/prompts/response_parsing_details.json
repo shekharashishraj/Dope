@@ -1,0 +1,285 @@
+{
+  "total_mappings_received": 36,
+  "expected_questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "parsing_details": [
+    {
+      "mapping_index": 0,
+      "question_index": 11,
+      "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+      "original_substring": "remove lowercase substrings",
+      "target_wrong_answer": "Response will focus on counting how many lowercase substrings occur instead of deleting them, containing markers like 'counter', 'increment', 'return count' and lacking 'remove', 'filter out', or construction of a new string without those substrings."
+    },
+    {
+      "mapping_index": 1,
+      "question_index": 11,
+      "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+      "original_substring": "lowercase substrings",
+      "target_wrong_answer": "Response will focus on identifying and deleting runs of uppercase letters, using markers like 'isupper()', 'A-Z', or 'upper()' and will omit checks like 'islower()' or explicit mention of lowercase characters that the gold answer targets."
+    },
+    {
+      "mapping_index": 2,
+      "question_index": 11,
+      "latex_stem_text": "Write a function to remove lowercase substrings from a given string.",
+      "original_substring": "from a given string",
+      "target_wrong_answer": "Response will focus on processing and returning a collection (e.g., iterating over a list, list comprehension) instead of handling a single string, with markers like 'for s in list', 'return new_list', and it will lack any handling of multiple inputs implied by 'list of strings'."
+    },
+    {
+      "mapping_index": 3,
+      "question_index": 12,
+      "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit...",
+      "original_substring": "count negative numbers",
+      "target_wrong_answer": "Response will focus on adding up the values of negative elements (using an accumulator or sum()) rather than incrementing a counter, with markers like 'total += x' and 'return total', and will omit returning the number of negatives that the gold answer expects."
+    },
+    {
+      "mapping_index": 4,
+      "question_index": 12,
+      "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit...",
+      "original_substring": "negative numbers in a list",
+      "target_wrong_answer": "Response will focus on testing for x > 0 or using 'if num > 0' to count positives, and will not include conditions like 'num < 0' or checks for negativity that are central to the gold answer."
+    },
+    {
+      "mapping_index": 5,
+      "question_index": 12,
+      "latex_stem_text": "Write a python function to count negative numbers in a list. \\end{enumerate} \\vfill \\noindent\\textit...",
+      "original_substring": "in a list",
+      "target_wrong_answer": "Response will focus on traversing two-dimensional structures (nested loops over rows and columns, indexing with [i][j]) instead of a single loop over a 1D list, and will lack any 2D iteration that the new 'matrix' context implies."
+    },
+    {
+      "mapping_index": 6,
+      "question_index": 1,
+      "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2|...",
+      "original_substring": "Statement 1| The Stanford Sentiment Treebank conta...",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 7,
+      "question_index": 1,
+      "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2|...",
+      "original_substring": "Statement 1| The Stanford Sentiment Treebank conta...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 8,
+      "question_index": 1,
+      "latex_stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2|...",
+      "original_substring": "Statement 2| The Penn Treebank has been used for l...",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 9,
+      "question_index": 2,
+      "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the o...",
+      "original_substring": "NOT a valid way to try and reduce the overfitting",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 10,
+      "question_index": 2,
+      "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the o...",
+      "original_substring": "overfitting",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 11,
+      "question_index": 2,
+      "latex_stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and reduce the o...",
+      "original_substring": "Suppose your model is overfitting.",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 12,
+      "question_index": 3,
+      "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Ne...",
+      "original_substring": "None of the above",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 13,
+      "question_index": 3,
+      "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Ne...",
+      "original_substring": "H -\\textgreater{} U \\textless{}- P \\textless{}- W",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 14,
+      "question_index": 3,
+      "latex_stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given Bayesian Ne...",
+      "original_substring": "Which of the following is the joint probability of...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 15,
+      "question_index": 4,
+      "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+      "original_substring": "P(A, B) decreases while P(A) increases",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 16,
+      "question_index": 4,
+      "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+      "original_substring": "P(A) increases",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 17,
+      "question_index": 4,
+      "latex_stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following is true?",
+      "original_substring": "which of the following is true?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 18,
+      "question_index": 5,
+      "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+      "original_substring": "[[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 19,
+      "question_index": 5,
+      "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+      "original_substring": "[1, 1, 1], [1, 1, 1], [1, 1, 1]",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 20,
+      "question_index": 5,
+      "latex_stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+      "original_substring": "A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 21,
+      "question_index": 6,
+      "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks train...",
+      "original_substring": "RELUs are not monotonic, but sigmoids are monotoni...",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 22,
+      "question_index": 6,
+      "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks train...",
+      "original_substring": "Statement 2| Neural networks trained with gradient...",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 23,
+      "question_index": 6,
+      "latex_stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural networks train...",
+      "original_substring": "RELUs are not monotonic, but sigmoids are monotoni...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 24,
+      "question_index": 7,
+      "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no ...",
+      "original_substring": "no independence or conditional independence assump...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 25,
+      "question_index": 7,
+      "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no ...",
+      "original_substring": "P(A, B, C)",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 26,
+      "question_index": 7,
+      "latex_stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and C, and no ...",
+      "original_substring": "Which one of the following is equal to P(A, B, C)",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 27,
+      "question_index": 8,
+      "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What...",
+      "original_substring": "one gradient descent update",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 28,
+      "question_index": 8,
+      "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What...",
+      "original_substring": "stored it in a vector g",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 29,
+      "question_index": 8,
+      "latex_stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a vector g. What...",
+      "original_substring": "What is the cost of one gradient descent update",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 30,
+      "question_index": 9,
+      "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+      "original_substring": "are the spatial clustering algorithms",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 31,
+      "question_index": 9,
+      "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+      "original_substring": "spatial clustering algorithms",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 32,
+      "question_index": 9,
+      "latex_stem_text": "Which of the following are the spatial clustering algorithms?",
+      "original_substring": "Which of the following are the spatial clustering ...",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 33,
+      "question_index": 10,
+      "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end...",
+      "original_substring": "The correct answer to 'High entropy means that the...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 34,
+      "question_index": 10,
+      "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end...",
+      "original_substring": "'High entropy means that the partitions in classif...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 35,
+      "question_index": 10,
+      "latex_stem_text": "The correct answer to 'High entropy means that the partitions in classification are' is 'pure'. \\end...",
+      "original_substring": "High entropy means that the partitions in classifi...",
+      "target_wrong_answer": "True"
+    }
+  ],
+  "results_summary": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3,
+    "9": 3,
+    "10": 3,
+    "11": 3,
+    "12": 3
+  }
+}

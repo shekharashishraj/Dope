@@ -1,0 +1,59 @@
+================================================================================
+QUESTION 2 INDIVIDUAL PROMPT
+================================================================================
+
+You are an expert at generating minimal, high-impact text substitutions for academic multiple-choice questions (MCQ).
+
+Context (do not modify):
+- LaTeX question stem: If your training loss increases with number of epochs, which of the following could be a possible issue with the learning process?
+- Options (unchanged): A: Regularization is too high and model is underfitting
+B: The number of epochs is too high
+C: Step size is too small
+D: Step size is too large
+E: The number of epochs is too low
+- Gold answer (currently correct): D
+- Question type: MCQ
+- Strategy: replacement (replace exactly ONE contiguous substring in the stem)
+- Reasoning steps:
+
+- Copyable stem text (use this exact text when selecting substrings and computing indices):
+<<<COPY
+If your training loss increases with number of epochs, which of the following could be a possible issue with the learning process?
+>>>
+
+
+Goal:
+Produce 3 replacement mappings that each make a DIFFERENT option become correct (i.e., change the correct answer away from D to some target_wrong_answer in the provided options).
+
+Hard constraints (must satisfy all):
+1) Single-span edit: replace exactly one contiguous substring inside latex_stem_text (the stem only; do NOT edit the options).
+2) Exact match: original_substring must be an exact substring of latex_stem_text (character-for-character, including LaTeX).
+3) Valid indices: latex_stem_text[start_pos:end_pos] == original_substring AND end_pos = start_pos + len(original_substring).
+4) Non-trivial change: replacement must change the meaning enough to flip the correct answer; avoid purely grammatical rephrases.
+5) Avoid trivial negation: do not flip with a simple "not/never/no" insertion unless it is the only natural way; prefer changing a key concept, condition, quantity, direction, scope, or referent.
+6) Layout-safe: replacement_substring should be similar length to original_substring (aim: within ±12 characters) and keep LaTeX well-formed.
+7) Distinctness: mappings should not be near-duplicates; vary the edited span and/or the targeted answer.
+
+What to output for each mapping:
+- question_index: 2
+- latex_stem_text: must exactly equal the input latex_stem_text
+- original_substring
+- replacement_substring
+- start_pos (0-based)
+- end_pos (exclusive)
+- target_wrong_answer: a single option key (e.g., "A", "B", "C", "D") that is NOT D
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and D incorrect
+
+Return ONLY valid JSON as an array of 3 objects, with double quotes, no markdown.
+[
+  {
+    "question_index": 2,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "..."
+  }
+]

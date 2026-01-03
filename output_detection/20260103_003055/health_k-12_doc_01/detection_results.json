@@ -1,0 +1,199 @@
+{
+  "document_id": "health_k-12_doc_01",
+  "pdf_path": "output_attacked_pdfs/20260103_003014/health/K-12/health_k-12_doc_01/dual_layer/health_k-12_doc_01_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option D (target was D, gold was B)",
+      "match_confidence": 1.0,
+      "ai_answer": "d) Vitamin C",
+      "gold_answer": "B",
+      "target_wrong_answer": "D",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Which of the following vitamins is required for fatty acid b-oxidation?",
+        "replacement_substring": "Which of the following vitamins is required for collagen synthesis?",
+        "start_pos": 0,
+        "end_pos": 75,
+        "reasoning": "Vitamin C (option D) is essential for collagen synthesis, whereas riboflavin (option B) is not specifically required for this process. By changing the stem to ask about collagen synthesis, D becomes correct and B becomes incorrect.\nverification: original stem about 'fatty acid b-oxidation' → replacement about 'collagen synthesis' → interpretation shifts to scurvy/collagen knowledge → test-taker selects Vitamin C (D) instead of Riboflavin (B).",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "c) The plasma activity of alkaline phosphatase",
+      "gold_answer": "C",
+      "target_wrong_answer": "D",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Which of the following will increase in vitamin D deficiency?",
+        "replacement_substring": "Which of the following will increase in obstructive bone disease?",
+        "start_pos": 0,
+        "end_pos": 64,
+        "reasoning": "Plasma acid phosphatase (option D) is classically associated with certain bone and prostatic pathologies rather than vitamin D deficiency, while alkaline phosphatase (C) is linked to vitamin D issues. By changing the condition to obstructive bone disease, D becomes the correct choice and C no longer fits best.\nverification: original 'vitamin D deficiency' → replacement 'obstructive bone disease' → candidates recall association of acid phosphatase with such conditions → they choose D instead of C.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option C (target was C, gold was D)",
+      "match_confidence": 1.0,
+      "ai_answer": "c) Fish",
+      "gold_answer": "D",
+      "target_wrong_answer": "C",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Which of these factors increases the risk for postmenopausal breast cancer?",
+        "replacement_substring": "Which of these factors is the richest dietary source of long-chain omega-3 fats?",
+        "start_pos": 0,
+        "end_pos": 74,
+        "reasoning": "Fish (option C) is the main dietary source of long-chain omega-3 fatty acids, whereas obesity (D) is not a food at all. Asking about omega-3 sources makes C correct and removes the relevance of D.\nverification: original about 'risk for postmenopausal breast cancer' → replacement about 'richest dietary source of long-chain omega-3 fats' → question becomes nutritional-source focused → respondent selects Fish (C) instead of Obesity (D).",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was A, gold was C)",
+      "match_confidence": 1.0,
+      "ai_answer": "a) Deficiency of leptin caused by a mutation in the leptin gene",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "What is leptin resistance?",
+        "replacement_substring": "What is congenital leptin deficiency?",
+        "start_pos": 0,
+        "end_pos": 22,
+        "reasoning": "Congenital leptin deficiency is caused by mutations in the leptin gene (option A), not by high leptin levels with no intake reduction (C). Changing the stem to ask about congenital leptin deficiency makes A correct and contradicts C.\nverification: original 'What is leptin resistance?' → replacement 'What is congenital leptin deficiency?' → interpretation shifts to a genetic absence of leptin → respondent chooses A, not C.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "a) DNMT1",
+      "gold_answer": "A",
+      "target_wrong_answer": null,
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge"
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True\nAdipose tissue is the largest endogenous energy store and supplies fuel during prolonged fasting.",
+      "gold_answer": "True",
+      "target_wrong_answer": null,
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge"
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False\nFood balance sheets estimate national food availability but do not give detailed data on waste and within-country consumption distribution.",
+      "gold_answer": "False",
+      "target_wrong_answer": null,
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge"
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (gold was False)",
+      "match_confidence": 0.8,
+      "ai_answer": "True\nIodine deficiency (via hypothyroidism) and vitamin C deficiency (via impaired iron metabolism and bleeding) can contribute to anaemia.",
+      "gold_answer": "False",
+      "target_wrong_answer": null,
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge"
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "False\nStreptococcus mutans is primarily responsible for initiation of dental caries; lactobacilli are more associated with progression/deep lesions.",
+      "gold_answer": "False",
+      "target_wrong_answer": null,
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge"
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True\nATP is the immediate chemical energy source for skeletal muscle contraction.",
+      "gold_answer": "True",
+      "target_wrong_answer": null,
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge"
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Monitoring maternal weight gain during pregnancy is important because it reflects both maternal nutritional status and fetal growth, and it is closely linked to pregnancy outcomes.\n\nKey points:\n- **Guidelines and ranges**\n  - Recommended weight gain depends on pre‑pregnancy BMI (underweight women are advised to gain more; women with overweight/obesity less).\n  - Regular tracking allows clinicians to compare with these standards over time.\n\n- **Impacts on maternal health**\n  - **Inadequate weight gain**\n    - Increased risk of maternal undernutrition and fatigue.\n    - Higher likelihood of micronutrient deficiencies (e.g., iron, folate), raising the risk of anaemia.\n    - Greater risk of complications such as poor wound healing and susceptibility to infections.\n  - **Excessive weight gain**\n    - Increased risk of gestational diabetes mellitus.\n    - Higher risk of gestational hypertension and pre‑eclampsia.\n    - Greater chance of delivery complications (cephalopelvic disproportion, need for caesarean section, postpartum haemorrhage).\n    - More postpartum weight retention, raising long‑term risk of obesity, type 2 diabetes, and cardiovascular disease.\n\n- **Impacts on fetal and neonatal health**\n  - **Too little weight gain**\n    - Higher risk of intrauterine growth restriction (IUGR) and low birth weight.\n    - Increased perinatal morbidity and mortality.\n    - Possible long‑term effects on growth, neurodevelopment, and increased risk of chronic diseases later in life (developmental origins of health and disease).\n  - **Excessive weight gain**\n    - Higher risk of fetal macrosomia (large‑for‑gestational‑age infants).\n    - Increased risk of shoulder dystocia and birth trauma.\n    - Higher likelihood of childhood obesity and metabolic disorders in the offspring.\n\n- **Clinical and public health significance**\n  - Routine weight checks at antenatal visits enable early identification of abnormal patterns (sudden gain may signal fluid retention, pre‑eclampsia, or gestational diabetes).\n  - They provide an opportunity for counselling on diet, physical activity, and lifestyle.\n  - On a population level, monitoring informs policies on maternal nutrition programs and resource allocation.\n\nIn summary, appropriate maternal weight gain supports healthy fetal growth and reduces risks of complications for both mother and baby, while systematic monitoring allows timely interventions when patterns are outside recommended ranges.",
+      "gold_answer": "all of the options given are correct. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on hypertension and preeclampsia risk rather than gestational weight gain, containing markers like 'blood pressure', 'preeclampsia', 'hypertension', and lacking weight-related concepts such as 'BMI', 'gestational weight gain', 'macrosomia', or 'intrauterine growth restriction'.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "maternal weight gain during pregnancy",
+        "replacement_substring": "maternal blood pressure during pregnancy",
+        "start_pos": 35,
+        "end_pos": 69,
+        "reasoning": "Switching the monitored parameter from weight gain to blood pressure shifts the topic from nutritional/weight management issues to cardiovascular monitoring and hypertensive disorders, leading to a different explanation than the gold answer about weight gain impacts on mother and fetus. This will systematically draw answers toward blood pressure physiology and complications rather than weight-related outcomes and rationale for weight monitoring during pregnancy.\nverification: 'maternal weight gain during pregnancy' → 'maternal blood pressure during pregnancy' → respondent interprets question as about blood pressure monitoring and its significance → answer emphasizes hypertensive disorders and BP control instead of weight-gain patterns and their maternal–fetal health consequences, which is detectable by the presence of BP terminology and absence of weight-gain concepts.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Plasma lipoproteins are specialized particles that transport lipids (which are hydrophobic) through the aqueous environment of blood.\n\n- **Basic structure**\n  - **Hydrophobic core**\n    - Contains non‑polar lipids: mainly triacylglycerols (triglycerides) and cholesteryl esters.\n    - This core is shielded from water and is crucial for carrying large amounts of insoluble lipids between tissues.\n  - **Surface (shell)**\n    - Composed of amphipathic molecules:\n      - Phospholipids (polar heads facing out to plasma, hydrophobic tails facing in).\n      - Free (unesterified) cholesterol.\n      - Apolipoproteins (protein components that are partly hydrophobic and partly hydrophilic).\n    - The hydrophilic portions of these molecules interact with plasma water, making the whole particle soluble.\n\n- **Classes of lipoproteins** (differ in size, density, and composition)\n  - **Chylomicrons**\n    - Largest, least dense; very triglyceride‑rich core.\n    - Transport dietary (exogenous) triglycerides and cholesterol from the intestine to tissues.\n  - **VLDL (very low‑density lipoproteins)**\n    - Produced by the liver; also rich in triglycerides.\n    - Deliver endogenously synthesized triglycerides to peripheral tissues.\n  - **IDL and LDL (intermediate and low‑density lipoproteins)**\n    - Formed as VLDL are progressively depleted of triglycerides.\n    - LDL has a core rich in cholesteryl esters and is the chief carrier of cholesterol to peripheral tissues.\n  - **HDL (high‑density lipoproteins)**\n    - Smallest, most dense, relatively protein‑rich.\n    - Central to reverse cholesterol transport: collect excess cholesterol from tissues and deliver it to the liver.\n\n- **Functional roles of the hydrophobic core**\n  - **Efficient lipid transport**\n    - The core allows packaging of large quantities of non‑polar lipids into a form that can circulate in blood without forming insoluble droplets.\n  - **Dynamic lipid exchange**\n    - Core lipids can be transferred between lipoproteins (e.g., via cholesteryl ester transfer protein) and tissues (via lipoprotein lipase action on triglycerides).\n  - **Metabolic interconversion**\n    - As triglycerides are removed from the core (e.g., from chylomicrons or VLDL), particle size and density change, giving rise to different lipoprotein classes with distinct metabolic roles.\n\n- **Role of apolipoproteins on the surface**\n  - Act as **structural components** stabilizing the particle.\n  - Serve as **ligands for receptors** (e.g., ApoB‑100 for LDL receptor, ApoE for remnant receptors), directing lipoproteins to specific tissues.\n  - Function as **enzyme cofactors** (e.g., ApoC‑II for lipoprotein lipase).\n\nThus, the hydrophobic core and amphipathic surface together enable lipoproteins to solubilize and transport triglycerides and cholesterol throughout the body, supporting energy supply, membrane synthesis, and steroid hormone and bile acid production, while maintaining lipid homeostasis.",
+      "gold_answer": "They have a hydrophobic core of triacylglycerol and cholesterol esters. Explain why this\nis the correct answer and provide supporting evidence. Reference key facts or concepts\nthat support this choice.",
+      "target_wrong_answer": "Response will focus on apoprotein structure and receptor interactions instead of the neutral-lipid hydrophobic core, containing markers like 'apolipoproteins', 'apoB', 'receptor binding', and lacking detailed discussion of triacylglycerol and cholesterol esters in the core.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "hydrophobic core",
+        "replacement_substring": "protein components",
+        "start_pos": 76,
+        "end_pos": 91,
+        "reasoning": "Replacing 'hydrophobic core' with 'protein components' redirects attention from the core lipids to the surface apoproteins, changing what structural feature must be explained. This moves the answer away from the gold's emphasis on a core of triacylglycerol and cholesterol esters.\nverification: 'hydrophobic core' → 'protein components' → respondent interprets the focus as apolipoprotein roles and structures → answer emphasizes protein-mediated recognition and enzyme activation, omitting description of TAG and cholesterol ester core, which is easily detectable via terminology used.",
+        "verification": null
+      }
+    }
+  ]
+}

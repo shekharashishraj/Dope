@@ -1,0 +1,285 @@
+{
+  "total_mappings_received": 36,
+  "expected_questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "parsing_details": [
+    {
+      "mapping_index": 0,
+      "question_index": 11,
+      "latex_stem_text": "Write a function to check if the triangle is valid or not.",
+      "original_substring": "triangle is valid",
+      "target_wrong_answer": "Response will focus on checking whether the triangle satisfies the Pythagorean theorem (right triangle test) instead of basic triangle inequality validity, containing markers like 'a**2 + b**2 == c**2', 'Pythagoras', and lacking checks like 'a + b > c', 'b + c > a', 'c + a > b'."
+    },
+    {
+      "mapping_index": 1,
+      "question_index": 11,
+      "latex_stem_text": "Write a function to check if the triangle is valid or not.",
+      "original_substring": "if the triangle is valid or not",
+      "target_wrong_answer": "Response will focus on determining whether all three sides are equal (equilateral triangle), using markers like 'a == b == c', and will omit triangle inequality logic such as 'a + b > c'."
+    },
+    {
+      "mapping_index": 2,
+      "question_index": 11,
+      "latex_stem_text": "Write a function to check if the triangle is valid or not.",
+      "original_substring": "check if the triangle is valid",
+      "target_wrong_answer": "Response will focus on detecting an obtuse triangle using squared side comparisons (e.g., 'c**2 > a**2 + b**2') and will not implement general triangle inequality validity checks."
+    },
+    {
+      "mapping_index": 3,
+      "question_index": 12,
+      "latex_stem_text": "Write a function to sort the given array by using counting sort. \\end{enumerate} \\vfill \\noindent\\te...",
+      "original_substring": "by using counting sort",
+      "target_wrong_answer": "Response will implement insertion sort logic with nested loops and element shifting, featuring markers like 'for i in range(1,', 'key =', 'while j >= 0', and will lack counting array initialization and frequency accumulation typical of counting sort."
+    },
+    {
+      "mapping_index": 4,
+      "question_index": 12,
+      "latex_stem_text": "Write a function to sort the given array by using counting sort. \\end{enumerate} \\vfill \\noindent\\te...",
+      "original_substring": "sort the given array by using counting sort",
+      "target_wrong_answer": "Response will sort the array in descending order using any method, containing markers like 'reverse=True' or reversing the list after sorting, and will not necessarily use counting sort or focus on a specific algorithmic technique."
+    },
+    {
+      "mapping_index": 5,
+      "question_index": 12,
+      "latex_stem_text": "Write a function to sort the given array by using counting sort. \\end{enumerate} \\vfill \\noindent\\te...",
+      "original_substring": "sort the given array by using counting sort",
+      "target_wrong_answer": "Response will compute and return the single maximum element (e.g., using a loop or 'max()') with markers like 'max_val' and 'if x > max_val', and will not perform a full sort or produce a reordered array."
+    },
+    {
+      "mapping_index": 6,
+      "question_index": 1,
+      "latex_stem_text": "A starvation-free job-scheduling policy guarantees that no job waits indefinitely for service. Which...",
+      "original_substring": "Which of the following job-scheduling policies is ...",
+      "target_wrong_answer": "E"
+    },
+    {
+      "mapping_index": 7,
+      "question_index": 1,
+      "latex_stem_text": "A starvation-free job-scheduling policy guarantees that no job waits indefinitely for service. Which...",
+      "original_substring": "job-scheduling policy guarantees that no job waits...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 8,
+      "question_index": 1,
+      "latex_stem_text": "A starvation-free job-scheduling policy guarantees that no job waits indefinitely for service. Which...",
+      "original_substring": "starvation-free job-scheduling policy guarantees t...",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 9,
+      "question_index": 2,
+      "latex_stem_text": "Let l = [1,2,3,4]. What is min(l) in Python3?",
+      "original_substring": "min(l)",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 10,
+      "question_index": 2,
+      "latex_stem_text": "Let l = [1,2,3,4]. What is min(l) in Python3?",
+      "original_substring": "min(l)",
+      "target_wrong_answer": "E"
+    },
+    {
+      "mapping_index": 11,
+      "question_index": 2,
+      "latex_stem_text": "Let l = [1,2,3,4]. What is min(l) in Python3?",
+      "original_substring": "What is min(l) in Python3?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 12,
+      "question_index": 3,
+      "latex_stem_text": "Which is the largest asymptotically?",
+      "original_substring": "largest asymptotically",
+      "target_wrong_answer": "E"
+    },
+    {
+      "mapping_index": 13,
+      "question_index": 3,
+      "latex_stem_text": "Which is the largest asymptotically?",
+      "original_substring": "largest",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 14,
+      "question_index": 3,
+      "latex_stem_text": "Which is the largest asymptotically?",
+      "original_substring": "Which is the largest asymptotically?",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 15,
+      "question_index": 4,
+      "latex_stem_text": "If the peak voltage value of a signal is 20 times the peak voltage value of the noise, what is the S...",
+      "original_substring": "20 times",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 16,
+      "question_index": 4,
+      "latex_stem_text": "If the peak voltage value of a signal is 20 times the peak voltage value of the noise, what is the S...",
+      "original_substring": "peak voltage value of a signal is 20 times the pea...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 17,
+      "question_index": 4,
+      "latex_stem_text": "If the peak voltage value of a signal is 20 times the peak voltage value of the noise, what is the S...",
+      "original_substring": "What is the SNR? What is the \\mathrm{SNR}_{\\mathrm...",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 18,
+      "question_index": 5,
+      "latex_stem_text": "Which of the following statements about a remote procedure call is true?",
+      "original_substring": "is true?",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 19,
+      "question_index": 5,
+      "latex_stem_text": "Which of the following statements about a remote procedure call is true?",
+      "original_substring": "about a remote procedure call",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 20,
+      "question_index": 5,
+      "latex_stem_text": "Which of the following statements about a remote procedure call is true?",
+      "original_substring": "Which of the following statements about a remote p...",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 21,
+      "question_index": 6,
+      "latex_stem_text": "A convex 3D object with 15 vertices and 39 edges has 20 faces, which is a common misconception in po...",
+      "original_substring": "has 20 faces, which is a common misconception in p...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 22,
+      "question_index": 6,
+      "latex_stem_text": "A convex 3D object with 15 vertices and 39 edges has 20 faces, which is a common misconception in po...",
+      "original_substring": "A convex 3D object with 15 vertices and 39 edges h...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 23,
+      "question_index": 6,
+      "latex_stem_text": "A convex 3D object with 15 vertices and 39 edges has 20 faces, which is a common misconception in po...",
+      "original_substring": "has 20 faces, which is a common misconception in p...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 24,
+      "question_index": 7,
+      "latex_stem_text": "In Python 3, the expression b[::2] returns the elements at odd indices, resulting in [13, 17, 21] fr...",
+      "original_substring": "returns the elements at odd indices, resulting in ...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 25,
+      "question_index": 7,
+      "latex_stem_text": "In Python 3, the expression b[::2] returns the elements at odd indices, resulting in [13, 17, 21] fr...",
+      "original_substring": "In Python 3, the expression b[::2] returns the ele...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 26,
+      "question_index": 7,
+      "latex_stem_text": "In Python 3, the expression b[::2] returns the elements at odd indices, resulting in [13, 17, 21] fr...",
+      "original_substring": "returns the elements at odd indices, resulting in ...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 27,
+      "question_index": 8,
+      "latex_stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] \\textless{}= max, indicating...",
+      "original_substring": "simplifies to a[i] \\textless{}= max, indicating le...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 28,
+      "question_index": 8,
+      "latex_stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] \\textless{}= max, indicating...",
+      "original_substring": "The boolean expression a[i] == max || !(max != a[i...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 29,
+      "question_index": 8,
+      "latex_stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] \\textless{}= max, indicating...",
+      "original_substring": "indicating less than or equal to max.",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 30,
+      "question_index": 9,
+      "latex_stem_text": "A simple planar graph with 30 vertices can have a maximum of 84 edges according to Euler's formula.",
+      "original_substring": "can have a maximum of 84 edges according to Euler'...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 31,
+      "question_index": 9,
+      "latex_stem_text": "A simple planar graph with 30 vertices can have a maximum of 84 edges according to Euler's formula.",
+      "original_substring": "A simple planar graph with 30 vertices can have a ...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 32,
+      "question_index": 9,
+      "latex_stem_text": "A simple planar graph with 30 vertices can have a maximum of 84 edges according to Euler's formula.",
+      "original_substring": "according to Euler's formula.",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 33,
+      "question_index": 10,
+      "latex_stem_text": "Clustering techniques are effective in detecting fraudulent credit card transactions by identifying ...",
+      "original_substring": "are effective in detecting fraudulent credit card ...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 34,
+      "question_index": 10,
+      "latex_stem_text": "Clustering techniques are effective in detecting fraudulent credit card transactions by identifying ...",
+      "original_substring": "Clustering techniques are effective in detecting f...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 35,
+      "question_index": 10,
+      "latex_stem_text": "Clustering techniques are effective in detecting fraudulent credit card transactions by identifying ...",
+      "original_substring": "effective in detecting fraudulent credit card tran...",
+      "target_wrong_answer": "False"
+    }
+  ],
+  "results_summary": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3,
+    "9": 3,
+    "10": 3,
+    "11": 3,
+    "12": 3
+  }
+}

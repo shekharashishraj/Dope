@@ -1,0 +1,292 @@
+{
+  "total_mappings_received": 37,
+  "expected_questions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "parsing_details": [
+    {
+      "mapping_index": 0,
+      "question_index": 11,
+      "latex_stem_text": "Discuss the selection sort algorithm, focusing on how the number of comparisons remains constant reg...",
+      "original_substring": "number of comparisons remains constant",
+      "target_wrong_answer": "Response will focus on how the count of data swaps changes with input order (e.g., nearly sorted vs. random lists), containing markers like \"swap operations\", \"data movements\", and \"best case vs worst case swaps\", while lacking discussion of fixed comparison counts and input-independent time complexity."
+    },
+    {
+      "mapping_index": 1,
+      "question_index": 11,
+      "latex_stem_text": "Discuss the selection sort algorithm, focusing on how the number of comparisons remains constant reg...",
+      "original_substring": "regardless of the initial arrangement of elements",
+      "target_wrong_answer": "Response will claim that the comparison count is tied specifically to worst‑case inputs, using markers like \"worst-case input\", \"adversarial arrangement\", and \"only when the list is in reverse order\", and will omit the idea that selection sort's comparison count is identical across best, average, and worst cases."
+    },
+    {
+      "mapping_index": 2,
+      "question_index": 11,
+      "latex_stem_text": "Discuss the selection sort algorithm, focusing on how the number of comparisons remains constant reg...",
+      "original_substring": "Why is this significant in sorting?",
+      "target_wrong_answer": "Response will shift to a comparison of selection sort versus bubble sort, with markers like \"bubble sort\", \"pairwise swaps\", and \"adjacent elements\", and will fail to explain why input‑independent comparison counts are significant in sorting complexity analysis."
+    },
+    {
+      "mapping_index": 3,
+      "question_index": 12,
+      "latex_stem_text": "Discuss how creating the negative of a digital image through RGB value transformation can be conside...",
+      "original_substring": "considered a lossless process",
+      "target_wrong_answer": "Response will argue that the negative operation discards information and is irreversible, using markers like \"information loss\", \"cannot perfectly recover the original\", and \"approximation\", and will not mention the exact invertible mapping via 255 - value for each RGB channel that preserves all pixel information."
+    },
+    {
+      "mapping_index": 4,
+      "question_index": 12,
+      "latex_stem_text": "Discuss how creating the negative of a digital image through RGB value transformation can be conside...",
+      "original_substring": "Explain the significance of this transformation in...",
+      "target_wrong_answer": "Response will contrast negative transformation with JPEG compression, containing markers like \"compression\", \"file size\", and \"artifacts\", and will omit discussion of visual inversion, reversed light/dark regions, and color reversal as tools for manipulation and analysis."
+    },
+    {
+      "mapping_index": 5,
+      "question_index": 12,
+      "latex_stem_text": "Discuss how creating the negative of a digital image through RGB value transformation can be conside...",
+      "original_substring": "through RGB value transformation",
+      "target_wrong_answer": "Response will describe operations on single-channel grayscale intensities, with markers like \"grayscale\", \"luminance\", and \"intensity scaling\", and will not discuss per-channel RGB triplets or subtracting each color component from 255 as in the gold answer."
+    },
+    {
+      "mapping_index": 6,
+      "question_index": 1,
+      "latex_stem_text": "Let x = 8. What is x\\textgreater{}\\textgreater{}1 in Python 3?",
+      "original_substring": "Let x = 8. What is x\\textgreater{}\\textgreater{}1 ...",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 7,
+      "question_index": 1,
+      "latex_stem_text": "Let x = 8. What is x\\textgreater{}\\textgreater{}1 in Python 3?",
+      "original_substring": "What is x\\textgreater{}\\textgreater{}1 in Python 3...",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 8,
+      "question_index": 1,
+      "latex_stem_text": "Let x = 8. What is x\\textgreater{}\\textgreater{}1 in Python 3?",
+      "original_substring": "Let x = 8.",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 9,
+      "question_index": 2,
+      "latex_stem_text": "Let x = 1. What is x \\textless{}\\textless{} 3 in Python 3?",
+      "original_substring": "x = 1",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 10,
+      "question_index": 2,
+      "latex_stem_text": "Let x = 1. What is x \\textless{}\\textless{} 3 in Python 3?",
+      "original_substring": "\\textless{}\\textless{} 3",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 11,
+      "question_index": 2,
+      "latex_stem_text": "Let x = 1. What is x \\textless{}\\textless{} 3 in Python 3?",
+      "original_substring": "Let x = 1.",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 12,
+      "question_index": 2,
+      "latex_stem_text": "Let x = 1. What is x \\textless{}\\textless{} 3 in Python 3?",
+      "original_substring": "What is x \\textless{}\\textless{} 3 in Python 3?",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 13,
+      "question_index": 3,
+      "latex_stem_text": "Which is a valid expression in Python 3.5?",
+      "original_substring": "valid",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 14,
+      "question_index": 3,
+      "latex_stem_text": "Which is a valid expression in Python 3.5?",
+      "original_substring": "Python 3.5",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 15,
+      "question_index": 3,
+      "latex_stem_text": "Which is a valid expression in Python 3.5?",
+      "original_substring": "Which is a valid expression in Python 3.5?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 16,
+      "question_index": 4,
+      "latex_stem_text": "In Python 3, what is ['a', 'Chemistry', 0, 1][1]?",
+      "original_substring": "[1]",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 17,
+      "question_index": 4,
+      "latex_stem_text": "In Python 3, what is ['a', 'Chemistry', 0, 1][1]?",
+      "original_substring": "[1]?",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 18,
+      "question_index": 4,
+      "latex_stem_text": "In Python 3, what is ['a', 'Chemistry', 0, 1][1]?",
+      "original_substring": "[1]?",
+      "target_wrong_answer": "D"
+    },
+    {
+      "mapping_index": 19,
+      "question_index": 5,
+      "latex_stem_text": "Are Python variable names case-sensitive?",
+      "original_substring": "Are Python variable names case-sensitive?",
+      "target_wrong_answer": "B"
+    },
+    {
+      "mapping_index": 20,
+      "question_index": 5,
+      "latex_stem_text": "Are Python variable names case-sensitive?",
+      "original_substring": "case-sensitive",
+      "target_wrong_answer": "C"
+    },
+    {
+      "mapping_index": 21,
+      "question_index": 5,
+      "latex_stem_text": "Are Python variable names case-sensitive?",
+      "original_substring": "Are Python variable names case-sensitive?",
+      "target_wrong_answer": "A"
+    },
+    {
+      "mapping_index": 22,
+      "question_index": 6,
+      "latex_stem_text": "In Python 3, the strip() function removes all leading and trailing whitespace from a string.",
+      "original_substring": "In Python 3, the strip() function removes all lead...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 23,
+      "question_index": 6,
+      "latex_stem_text": "In Python 3, the strip() function removes all leading and trailing whitespace from a string.",
+      "original_substring": "removes all leading and trailing whitespace from a...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 24,
+      "question_index": 6,
+      "latex_stem_text": "In Python 3, the strip() function removes all leading and trailing whitespace from a string.",
+      "original_substring": "the strip() function removes all leading and trail...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 25,
+      "question_index": 7,
+      "latex_stem_text": "The output of 'abc'[::-1] in Python 3 is 'abc', indicating that the string remains unchanged.",
+      "original_substring": "The output of 'abc'[::-1] in Python 3 is 'abc', in...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 26,
+      "question_index": 7,
+      "latex_stem_text": "The output of 'abc'[::-1] in Python 3 is 'abc', indicating that the string remains unchanged.",
+      "original_substring": "is 'abc', indicating that the string remains uncha...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 27,
+      "question_index": 7,
+      "latex_stem_text": "The output of 'abc'[::-1] in Python 3 is 'abc', indicating that the string remains unchanged.",
+      "original_substring": "'abc'[::-1] in Python 3 is 'abc', indicating that ...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 28,
+      "question_index": 8,
+      "latex_stem_text": "An Internet Protocol (IP) address is assigned to a device when it connects to the Internet.",
+      "original_substring": "An Internet Protocol (IP) address is assigned to a...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 29,
+      "question_index": 8,
+      "latex_stem_text": "An Internet Protocol (IP) address is assigned to a device when it connects to the Internet.",
+      "original_substring": "is assigned to a device when it connects to the In...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 30,
+      "question_index": 8,
+      "latex_stem_text": "An Internet Protocol (IP) address is assigned to a device when it connects to the Internet.",
+      "original_substring": "assigned to a device when it connects to the Inter...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 31,
+      "question_index": 9,
+      "latex_stem_text": "O(n\\^{}2) represents the largest growth rate among the functions O(1), O(n), O(n\\^{}2), and O(log n)...",
+      "original_substring": "O(n\\^{}2) represents the largest growth rate among...",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 32,
+      "question_index": 9,
+      "latex_stem_text": "O(n\\^{}2) represents the largest growth rate among the functions O(1), O(n), O(n\\^{}2), and O(log n)...",
+      "original_substring": "largest",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 33,
+      "question_index": 9,
+      "latex_stem_text": "O(n\\^{}2) represents the largest growth rate among the functions O(1), O(n), O(n\\^{}2), and O(log n)...",
+      "original_substring": "O(n\\^{}2) represents the largest growth rate",
+      "target_wrong_answer": "False"
+    },
+    {
+      "mapping_index": 34,
+      "question_index": 10,
+      "latex_stem_text": "The value of the Python expression 1 + 3 \\% 3 is 0. \\end{enumerate}",
+      "original_substring": "The value of the Python expression 1 + 3 \\% 3 is 0...",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 35,
+      "question_index": 10,
+      "latex_stem_text": "The value of the Python expression 1 + 3 \\% 3 is 0. \\end{enumerate}",
+      "original_substring": "is 0",
+      "target_wrong_answer": "True"
+    },
+    {
+      "mapping_index": 36,
+      "question_index": 10,
+      "latex_stem_text": "The value of the Python expression 1 + 3 \\% 3 is 0. \\end{enumerate}",
+      "original_substring": "The value of the Python expression 1 + 3 \\% 3 is 0",
+      "target_wrong_answer": "True"
+    }
+  ],
+  "results_summary": {
+    "1": 3,
+    "2": 4,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3,
+    "9": 3,
+    "10": 3,
+    "11": 3,
+    "12": 3
+  }
+}

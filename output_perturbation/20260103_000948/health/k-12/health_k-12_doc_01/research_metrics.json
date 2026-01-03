@@ -1,0 +1,66 @@
+{
+  "document_name": "health_k-12_doc_01",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 11,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 11,
+          "finish_reasons": {
+            "stop": 11
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 5481.0,
+          "total_prompt_tokens": 60291,
+          "avg_completion_tokens": 3701.0,
+          "total_completion_tokens": 40711,
+          "avg_total_tokens": 9182.0,
+          "total_tokens": 101002
+        },
+        "cost_analysis": {
+          "total_cost": 0.5578375,
+          "input_cost": 0.1507275,
+          "output_cost": 0.40710999999999997,
+          "cost_per_perturbation": 0.0507125
+        }
+      },
+      "LONG": {
+        "total_perturbations": 6,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 5481.0,
+          "total_prompt_tokens": 32886,
+          "avg_completion_tokens": 3701.0,
+          "total_completion_tokens": 22206,
+          "avg_total_tokens": 9182.0,
+          "total_tokens": 55092
+        },
+        "cost_analysis": {
+          "total_cost": 0.304275,
+          "input_cost": 0.082215,
+          "output_cost": 0.22206,
+          "cost_per_perturbation": 0.0507125
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 17,
+      "total_questions": 12,
+      "questions_by_type": {
+        "MCQ": 5,
+        "TF": 5,
+        "LONG": 2
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

@@ -11,15 +11,50 @@ is acceptable given it's answer is being changed towards another option which it
 
 ## Role:
 You are an expert at generating question substitutions for academic multiple-choice questions 
-that cause predictable answer shifts to one of the other 3 options (A, B, C, D). Your accuracy is critical.
+that cause predictable answer shifts to one of the other 3 options. Let's say the correct answer is A) and the other options are B, C, D.
+Your accuracy is critical.
+You have to come up with clever and natural question substitutions that are semantically meaningful 
+and cause predictable answer shifts to one of the other 3 options (A, B, C, D).
+
 ## Task:
 You also know the correct answer for each question.
 ## INSTRUCTIONS (apply to ALL questions below)
 **Strategy:** 
-1) Replacement (replace only the question stem, do not edit the options)
-2)  It can be ANY semantically meaningful and that is true for the option towards which the answer is being changed.
-3) The number of characters should be less than or equal to the original question stem.
+1) Replacement of the question with a statement true about one of the other 3 options (replace only the question stem, do not edit the options)
+2) It can be ANY semantically meaningful statement true about one of the other 3 options.
+3) It should not be in any way related to correct option.
+4) It must contradict the selection of correct option. In no case it should be true for the correct option.
+5) The number of characters should be less than or equal to the original question stem.
 
+### EXAMPLES:
+Original McQ:
+
+What is the capital of France?
+Options:
+A) Paris
+B) London
+C) Berlin
+D) Rome
+Correct Answer: C) Paris
+Substitution: Where is the river Thames? Correct Answer: B) London
+Here the answer is being changed from C) Paris to B) London.
+
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and causing predictable answer shifts to one of the other 3 options (A, B, C, D). That's it.
+Original McQ:
+Which of the following is not a programming language?
+Options:
+A) Python
+B) Flask
+C) C++
+D) Java
+Correct Answer: Python
+Substitution: Which of the following is a compiled programming language? 
+Correct Answer: C++
+Here the answer is being changed from Flask to C++.
+
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and causing predictable answer shifts to one of the other 3 options (A, B, C, D). That's it.
 **What to output for each mapping:**
 - question_index: The question number
 - latex_stem_text: Must exactly equal the input latex_stem_text

@@ -1,0 +1,247 @@
+{
+  "document_id": "health_k-12_doc_02",
+  "pdf_path": "output_attacked_pdfs/20260103_003014/health/K-12/health_k-12_doc_02/dual_layer/health_k-12_doc_02_dual_layer_final.pdf",
+  "total_questions": 12,
+  "results": [
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(d) Negative calcium balance and bone mineral loss",
+      "gold_answer": "D",
+      "target_wrong_answer": "B",
+      "question_number": 1,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Higher dietary sodium (salt) intake is generally associated with:",
+        "replacement_substring": "Dehydration with low blood volume is generally associated with:",
+        "start_pos": 0,
+        "end_pos": 67,
+        "reasoning": "Low blood volume and dehydration increase fracture risk (e.g., via falls and bone fragility), making 'Increased risk of fracture' the best fit, while negative calcium balance and bone mineral loss are not the defining immediate association of dehydration compared with option B in this framing.\n\nverification\":\"Original asks about excess sodium → replacement asks about dehydration with low blood volume → interpretation shifts to consequences like falls and fractures → student selects B instead of D.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) The tissue levels, or body status, of that nutrient.",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 2,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "The measurement of a specific biochemical status index for a micronutrient such as vitamin C is most likely to be useful in practice to estimate:",
+        "replacement_substring": "A patient's symptoms of bleeding gums and bruising are most likely to be useful in practice to estimate:",
+        "start_pos": 0,
+        "end_pos": 154,
+        "reasoning": "Clinical signs like bleeding gums and bruising directly indicate the presence or risk of clinical deficiency (e.g., scurvy), making option A correct, whereas such symptoms are not a measure of tissue levels per se as in option C.\n\nverification\":\"Original: specific biochemical index → replacement: overt clinical symptoms → interpretation: focus on diagnosing clinical deficiency → answer shifts from C to A.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(b) Leptin and ghrelin",
+      "gold_answer": "B",
+      "target_wrong_answer": "C",
+      "question_number": 3,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "increase satiety and hunger, respectively",
+        "replacement_substring": "increase hunger and satiety, respectively",
+        "start_pos": 48,
+        "end_pos": 85,
+        "reasoning": "Swapping the order to 'increase hunger and satiety' means the first hormone listed must stimulate hunger and the second must promote satiety, matching ghrelin then leptin in option C, not leptin then ghrelin in option B.\n\nverification\":\"Original: satiety then hunger → replacement: hunger then satiety → interpretation: first hormone is orexigenic, second anorexigenic → correct pair becomes C (ghrelin and leptin) instead of B.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "(c) In glycolysis, glucose is cleaved into two three-carbon products",
+      "gold_answer": "C",
+      "target_wrong_answer": "A",
+      "question_number": 4,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "glucose metabolism",
+        "replacement_substring": "hormonal regulation of blood glucose",
+        "start_pos": 33,
+        "end_pos": 50,
+        "reasoning": "Focusing on hormonal regulation makes 'Glucagon increases the rate of glycolysis' stand out to be evaluated; under this (admittedly incorrect physiologic) stem framing, option A is posited as the intended correct regulatory statement while C about glycolytic cleavage is no longer directly about regulation.\n\nverification\":\"Original: general glucose metabolism → replacement: hormonal control of blood glucose → interpretation: choose statement framed as hormonal action (A) → answer moves from C to A.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI selected wrong option A (target was A, gold was D)",
+      "match_confidence": 1.0,
+      "ai_answer": "(a) Vitamin A",
+      "gold_answer": "D",
+      "target_wrong_answer": "A",
+      "question_number": 5,
+      "question_type": "MCQ",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "synthesis of the blood clotting proteins",
+        "replacement_substring": "maintenance of normal vision in dim light",
+        "start_pos": 27,
+        "end_pos": 65,
+        "reasoning": "The function 'maintenance of normal vision in dim light' correctly describes vitamin A, making option A the best answer, while vitamin K (D) is no longer relevant under the new stem.\n\nverification\":\"Original: clotting protein synthesis → replacement: night vision function → interpretation: identify vitamin for dim light vision → answer moves from D to A.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 6,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Acute binge drinking is associated with a condition known as Holiday heart syndrome, which affects heart rhythm.",
+        "replacement_substring": "The moons of Mars are larger than the planet itself.",
+        "start_pos": 0,
+        "end_pos": 120,
+        "reasoning": "The replacement statement is factually false because Mars is much larger than its moons, so the truth value is flipped from the original true cardiology statement to a clearly false astronomy claim.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 7,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "The Western diet is known to support brain health and prevent cognitive decline as people age.",
+        "replacement_substring": "Regular physical exercise is known to support brain health and help prevent cognitive decline as people age.",
+        "start_pos": 0,
+        "end_pos": 115,
+        "reasoning": "The new statement about regular physical exercise and brain health is well supported by evidence and therefore true, flipping the original false claim about the Western diet to a true one.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered False (target was False, gold was True)",
+      "match_confidence": 1.0,
+      "ai_answer": "False",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 8,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Food allergies usually occur only after an individual has been sensitized by prior exposure to the allergenic food.",
+        "replacement_substring": "Humans can breathe underwater without any equipment for several hours.",
+        "start_pos": 0,
+        "end_pos": 130,
+        "reasoning": "Humans cannot breathe underwater unaided, making this replacement clearly false and thereby flipping the original true immunology statement to a false one.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answered True (target was True, gold was False)",
+      "match_confidence": 1.0,
+      "ai_answer": "True",
+      "gold_answer": "False",
+      "target_wrong_answer": "True",
+      "question_number": 9,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Additional dietary protein may reduce the risk of hip fractures by decreasing bone density.",
+        "replacement_substring": "Regular weight-bearing exercise may reduce the risk of hip fractures by increasing bone density.",
+        "start_pos": 0,
+        "end_pos": 104,
+        "reasoning": "Weight-bearing exercise is known to improve bone density and reduce fracture risk, so the new statement is true, flipping the original false nutrition statement to a true one.",
+        "verification": null
+      }
+    },
+    {
+      "detected": false,
+      "refused": false,
+      "reason": "AI answer matches gold answer (perturbation not detected)",
+      "match_confidence": 0.0,
+      "ai_answer": "True",
+      "gold_answer": "True",
+      "target_wrong_answer": "False",
+      "question_number": 10,
+      "question_type": "TF",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "Macrobiotic and vegan diets are typically low in sugar, focusing on whole, natural foods.",
+        "replacement_substring": "Most fast-food meals are typically low in sugar and focus on whole, unprocessed foods.",
+        "start_pos": 0,
+        "end_pos": 102,
+        "reasoning": "Fast-food meals are generally high in processed ingredients and often added sugars, making the new statement false and flipping the original true claim about macrobiotic and vegan diets.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer shows significant deviation from gold answer",
+      "match_confidence": 0.7,
+      "ai_answer": "Acetaldehyde is a highly reactive and toxic metabolite formed primarily from ethanol. When alcohol is consumed, it is mainly metabolized in the liver by the enzyme alcohol dehydrogenase (ADH), which converts ethanol to acetaldehyde. A smaller contribution comes from the microsomal ethanol-oxidizing system (MEOS, mainly CYP2E1), especially at higher alcohol intakes, and from catalase in some tissues.\n\nAcetaldehyde contributes to cancer development in several ways:\n- DNA damage and adduct formation: Acetaldehyde can bind directly to DNA, forming DNA adducts (e.g., N2-ethylidene-dG). These adducts can cause mutations if not properly repaired, increasing the risk of malignant transformation.\n- Interference with DNA repair: Acetaldehyde can impair DNA repair systems, allowing DNA damage to persist and accumulate, which promotes carcinogenesis.\n- Protein adducts and cellular dysfunction: It also binds to proteins (forming protein adducts), altering enzyme function, cell signaling, and structural integrity, which can disrupt normal cell growth control.\n- Oxidative stress: Alcohol metabolism, especially via CYP2E1, generates reactive oxygen species (ROS). Together with acetaldehyde, ROS promote lipid peroxidation, additional DNA damage, and chronic inflammation, all of which support cancer development.\n- Tissue-specific exposure: After drinking, cells in the mouth, pharynx, larynx, esophagus, stomach, and liver are directly or indirectly exposed to ethanol and acetaldehyde. Oral and gut microbes can also convert ethanol to acetaldehyde locally, increasing exposure of these tissues.\n\nAlcohol consumption influences acetaldehyde formation in several key ways:\n- Dose and pattern of intake: Higher amounts and binge drinking cause more ethanol to be metabolized per unit time, increasing acetaldehyde production and peak levels. Chronic heavy drinking particularly upregulates CYP2E1, enhancing both acetaldehyde formation and oxidative stress.\n- Enzyme genetics (ADH and ALDH): After acetaldehyde is formed, it is normally quickly converted to acetate by aldehyde dehydrogenase (ALDH), mostly ALDH2 in mitochondria.\n  - Individuals with reduced ALDH2 activity (e.g., common in some East Asian populations) accumulate higher levels of acetaldehyde after even small amounts of alcohol. This leads to flushing, palpitations, and discomfort, but also markedly increases the risk of certain cancers, especially esophageal and upper aerodigestive tract cancers.\n  - Variants leading to higher ADH activity can also increase the rate at which ethanol is converted to acetaldehyde, raising transient acetaldehyde levels.\n- Chronic drinking and enzyme induction: Long-term alcohol use can induce CYP2E1, increasing the formation of acetaldehyde and ROS in the liver and possibly extrahepatic tissues.\n- Local production by microbiota: In the mouth and gut, certain bacteria and yeast metabolize ethanol to acetaldehyde. High, frequent alcohol intake maintains elevated ethanol levels in these areas, thus increasing local acetaldehyde production and exposure of mucosal cells. Poor oral hygiene and smoking can exacerbate this effect.\n\nOverall, alcohol consumption increases acetaldehyde exposure systemically and locally, and the combination of DNA damage, impaired repair, oxidative stress, and chronic inflammation explains why alcohol is a well‑established risk factor for multiple cancers, especially of the oral cavity, pharynx, larynx, esophagus, liver, colorectum, and female breast.",
+      "gold_answer": "acetaldehyde. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will focus on liver injury and fibrosis rather than carcinogenesis, with markers like 'steatosis', 'cirrhosis', and 'hepatitis', and lacking discussion of DNA adducts, mutagenesis, and carcinogenic pathways involving acetaldehyde.",
+      "question_number": 11,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "cancer development",
+        "replacement_substring": "liver disease progression",
+        "start_pos": 24,
+        "end_pos": 42,
+        "reasoning": "Switching from cancer development to liver disease progression shifts the required explanation from carcinogenesis to hepatotoxicity, so an answer centered on cancer mechanisms becomes inappropriate for the new stem.",
+        "verification": null
+      }
+    },
+    {
+      "detected": true,
+      "refused": false,
+      "reason": "AI answer has low similarity to gold answer",
+      "match_confidence": 0.6,
+      "ai_answer": "Acrodermatitis enteropathica is an inherited disorder of zinc absorption that leads to systemic zinc deficiency with significant effects on health and development. It is usually an autosomal recessive condition caused by mutations in the SLC39A4 gene, which encodes the intestinal zinc transporter ZIP4.\n\nHow it leads to zinc deficiency:\n- Defective intestinal zinc uptake: ZIP4 is normally expressed on the apical membrane of enterocytes in the small intestine and is critical for transporting dietary zinc from the intestinal lumen into intestinal cells.\n- In acrodermatitis enteropathica, mutations in SLC39A4 impair ZIP4 function or expression, so even with a normal dietary zinc intake, the intestine cannot efficiently absorb zinc.\n- As a result, plasma and tissue zinc levels fall, leading to systemic zinc deficiency despite adequate or even increased dietary zinc.\n- Because zinc cannot be stored in large quantities and is needed continuously, this malabsorption rapidly leads to clinical deficiency, often presenting in infancy once breast milk intake changes (e.g., after weaning) or in early childhood.\n\nEffects on health and development:\nZinc is a cofactor for hundreds of enzymes and is essential for DNA synthesis, cell division, immune function, and normal skin and mucosal integrity. Its deficiency leads to characteristic problems:\n\n- Skin and mucosal lesions:\n  - Classically, children develop a triad of:\n    - Periorificial dermatitis (around mouth, eyes, anus, genital area)\n    - Acral dermatitis (on hands, feet, and other extremities)\n    - Alopecia (hair loss of scalp, eyebrows, eyelashes)\n  - The skin lesions are often erythematous, scaly, crusted, and may become eroded or secondarily infected. Mucosal changes such as glossitis (inflamed tongue), stomatitis, and angular cheilitis can occur.\n\n- Growth and development:\n  - Zinc is essential for normal growth; deficiency leads to growth retardation, poor weight gain, and in chronic cases, short stature.\n  - It is involved in many hormonal systems (including growth hormone/IGF-1 and sex hormones), so prolonged deficiency can delay sexual maturation and puberty.\n  - In early life, severe deficiency can impair neurodevelopment, potentially affecting cognitive function, attention, and behavior.\n\n- Immune dysfunction and infection risk:\n  - Zinc is crucial for both innate and adaptive immunity, including normal function of neutrophils, natural killer cells, T and B lymphocytes, and for appropriate cytokine responses.\n  - Children with acrodermatitis enteropathica are prone to recurrent infections, especially of the skin, gastrointestinal tract, and respiratory system. They may have poor wound healing and increased susceptibility to opportunistic infections.\n\n- Gastrointestinal and systemic symptoms:\n  - Chronic diarrhea is common, further worsening nutritional status and zinc loss.\n  - Irritability, apathy, and behavioral changes can occur in infants and children.\n  - In severe, untreated cases, malnutrition, dehydration, and secondary complications can become life‑threatening.\n\nManagement and prognosis:\n- The condition is treated with lifelong oral zinc supplementation (often zinc sulfate, gluconate, or acetate), given at doses high enough to bypass the defective transporter and allow sufficient absorption by alternative mechanisms.\n- With appropriate and consistent zinc therapy, skin lesions typically resolve, growth can normalize or improve, infections decrease, and most children can achieve good long‑term health.\n- Without treatment, persistent zinc deficiency can lead to severe growth failure, recurrent and serious infections, and significant morbidity.",
+      "gold_answer": "Acrodermatitis enteropathica. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "target_wrong_answer": "Response will attribute features to copper deficiency, with markers like 'anemia', 'neutropenia', and 'myelopathy', and will not emphasize classic zinc-related findings such as alopecia, periorificial dermatitis, and impaired growth typical of acrodermatitis enteropathica.",
+      "question_number": 12,
+      "question_type": "LONG",
+      "parsing_method": "llm_judge",
+      "perturbation": {
+        "original_substring": "zinc deficiency",
+        "replacement_substring": "copper deficiency",
+        "start_pos": 83,
+        "end_pos": 98,
+        "reasoning": "Switching from zinc to copper deficiency redirects the metabolic and clinical discussion to a different trace element disorder, so an answer grounded in zinc biology and acrodermatitis enteropathica becomes mismatched.",
+        "verification": null
+      }
+    }
+  ]
+}
