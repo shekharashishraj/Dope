@@ -469,6 +469,143 @@ captures helper methods, troubleshooting tips, and future enhancements.
 - Use `pdftotext` or copy/paste checks to ensure the rendered text differs from
   the parsed layer as expected.
 
+## Prevention Mode
+
+Prevention mode is a non-LLM pipeline that generates refusal-focused perturbations designed to make AI models refuse to answer questions rather than answer incorrectly. This mode uses programmatic perturbation generation (no LLM calls) and supports two variants: **gibberish** (random lowercase text) and **refusal_string** (repetition of a fixed refusal message).
+
+### Prevention Mode Overview
+
+The prevention pipeline consists of three stages:
+
+1. **Stage 1**: Generate prevention perturbation JSONs from existing input documents
+2. **Stage 2**: Generate attacked PDFs using prevention perturbations
+3. **Stage 3**: Run evaluation to measure refusal rates
+
+### Stage 1: Generate Prevention Perturbations
+
+Generate prevention perturbation JSONs for all input documents:
+
+```bash
+# Generate both variants (gibberish + refusal_string) for all docs
+python3 -m src.prevention.stage1_generate_prevention_json --variant both --input-root output --output-root output_prevention_perturbation
+
+# Generate only gibberish variant
+python3 -m src.prevention.stage1_generate_prevention_json --variant gibberish --input-root output --output-root output_prevention_perturbation
+
+# Generate only refusal_string variant
+python3 -m src.prevention.stage1_generate_prevention_json --variant refusal_string --input-root output --output-root output_prevention_perturbation
+
+# Test with a single document
+python3 -m src.prevention.stage1_generate_prevention_json --input-json output/biology/Graduate/JSON_output/biology_graduate_doc_03.json --variant both
+```
+
+**Output Structure:**
+```
+output_prevention_perturbation/
+└── <timestamp>/
+    └── <domain>/
+        └── <Level>/
+            └── <doc>/
+                ├── <doc>_prevention_perturbation_gibberish.json
+                └── <doc>_prevention_perturbation_refusal_string.json
+```
+
+**Key Features:**
+- **No LLM calls**: Uses programmatic text replacement
+- **Two variants**: Gibberish (random lowercase) and refusal_string (fixed message repetition)
+- **Stem-only targeting**: Only modifies question stems, not options
+- **Whitespace handling**: Includes whitespace in perturbations for font attack
+
+### Stage 2: Generate Prevention PDFs
+
+Generate attacked PDFs from prevention perturbations. First, build the font cache (required for font attack methods):
+
+```bash
+# Build font cache (one-time, takes ~6 minutes)
+python3 -m src.prevention.build_font_cache --output-dir output_prevention_font_cache --input-root output
+```
+
+Then generate PDFs for each method:
+
+```bash
+# Generate ICW PDFs (138 docs, no variants)
+python3 -m src.prevention.stage2_generate_prevention_pdfs \
+    --prevention-folder output_prevention_perturbation/<timestamp> \
+    --method icw \
+    --output-root output_prevention_attacked_pdfs
+
+# Generate dual_layer PDFs (276 outputs: 138 docs × 2 variants)
+python3 -m src.prevention.stage2_generate_prevention_pdfs \
+    --prevention-folder output_prevention_perturbation/<timestamp> \
+    --method dual_layer \
+    --output-root output_prevention_attacked_pdfs
+
+# Generate font_attack PDFs (requires font cache)
+python3 -m src.prevention.stage2_generate_prevention_pdfs \
+    --prevention-folder output_prevention_perturbation/<timestamp> \
+    --method font_attack \
+    --font-cache-dir output_prevention_font_cache \
+    --output-root output_prevention_attacked_pdfs
+
+# Generate hybrid methods (ICW + dual_layer, ICW + font_attack)
+python3 -m src.prevention.stage2_generate_prevention_pdfs \
+    --prevention-folder output_prevention_perturbation/<timestamp> \
+    --method icw_dual_layer \
+    --output-root output_prevention_attacked_pdfs
+
+python3 -m src.prevention.stage2_generate_prevention_pdfs \
+    --prevention-folder output_prevention_perturbation/<timestamp> \
+    --method icw_font_attack \
+    --font-cache-dir output_prevention_font_cache \
+    --output-root output_prevention_attacked_pdfs
+```
+
+**Output Structure:**
+```
+output_prevention_attacked_pdfs/
+└── <timestamp>/
+    └── <domain>/
+        └── <Level>/
+            └── <doc>/
+                ├── icw/                                    # ICW (no variant)
+                │   └── <doc>_icw.pdf
+                ├── gibberish/                              # Gibberish variant
+                │   ├── dual_layer/
+                │   ├── font_attack/
+                │   ├── icw_dual_layer/
+                │   └── icw_font_attack/
+                └── refusal_string/                         # Refusal string variant
+                    ├── dual_layer/
+                    ├── font_attack/
+                    ├── icw_dual_layer/
+                    └── icw_font_attack/
+```
+
+**Supported Methods:**
+- `icw`: Inline Code Watermark (constant prevention string per question)
+- `dual_layer`: Dual-layer visual overlay
+- `font_attack`: Font-based attack (requires font cache)
+- `icw_dual_layer`: Hybrid ICW + dual layer
+- `icw_font_attack`: Hybrid ICW + font attack
+
+**Total Outputs:** 1,242 PDFs (138 ICW + 276 dual_layer + 276 icw_dual_layer + 276 font_attack + 276 icw_font_attack)
+
+### Stage 3: Run Prevention Evaluation
+
+Run evaluation to measure refusal rates (reuses existing detection infrastructure):
+
+```bash
+python3 -m src.prevention.stage3_run_prevention_eval \
+    --prevention-pdf-dir output_prevention_attacked_pdfs/<timestamp> \
+    --prevention-json-dir output_prevention_perturbation/<timestamp> \
+    --model gpt-4o \
+    --output-dir output_prevention_eval
+```
+
+**Note:** Prevention outputs are large (~3.3GB) and are not tracked in git. To continue with Stage 3, either:
+1. Generate outputs locally using the commands above, or
+2. Obtain outputs from the original run (they are stored locally at `output_prevention_attacked_pdfs/`, `output_prevention_font_cache/`, and `output_prevention_perturbation/`)
+
 ## Detection & Evaluation
 
 The detection system evaluates how well perturbations work by testing perturbed PDFs against AI models and measuring detection rates.
