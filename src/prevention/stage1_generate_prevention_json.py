@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 import pytz
+from tqdm import tqdm
 
 from .constants import (
     PREVENTION_VARIANT_GIBBERISH,
@@ -189,18 +190,22 @@ def main() -> int:
         variants = [args.variant]
 
     created: List[Path] = []
-    for json_path in inputs:
-        for variant in variants:
-            created.append(
-                generate_prevention_for_doc(
-                    json_path=json_path,
-                    variant=variant,
-                    run_timestamp=run_timestamp,
-                    base_output=output_root,
-                    refusal_string=args.refusal_string,
-                    tz_name=args.timezone,
+    total = len(inputs) * len(variants)
+    with tqdm(total=total, desc="Stage1 prevention JSONs", unit="json") as pbar:
+        for json_path in inputs:
+            for variant in variants:
+                created.append(
+                    generate_prevention_for_doc(
+                        json_path=json_path,
+                        variant=variant,
+                        run_timestamp=run_timestamp,
+                        base_output=output_root,
+                        refusal_string=args.refusal_string,
+                        tz_name=args.timezone,
+                    )
                 )
-            )
+                pbar.set_postfix(doc=json_path.stem, variant=variant)
+                pbar.update(1)
 
     print(f"Generated {len(created)} prevention JSON(s) in {output_root}/{run_timestamp}/")
     return 0

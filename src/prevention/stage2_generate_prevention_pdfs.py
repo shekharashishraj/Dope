@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime
+import json
 from pathlib import Path
 from typing import List
 
 import pytz
+from tqdm import tqdm
 
 from .injection.prevention_orchestrator import generate_prevention_dual_layer_pdf
 from .injection.prevention_orchestrator import generate_prevention_font_attack_pdf
@@ -27,6 +29,29 @@ def _resolve_repo_root() -> Path:
 
 def find_prevention_jsons(prevention_root: Path) -> List[Path]:
     return sorted(prevention_root.rglob("*_prevention_perturbation_*.json"))
+
+def _output_base_for_pdf(
+    *,
+    output_root: Path,
+    run_ts: str,
+    doc: dict,
+    method: str,
+    variant: str | None,
+) -> Path:
+    """Match detection run layout: <ts>/<domain>/<Level>/<doc>/<method>/..."""
+
+    domain = str(doc.get("domain") or "unknown")
+    level = str(doc.get("academic_level") or "Unknown")
+    docid = str(doc.get("docid") or "unknown_doc")
+
+    method_dir = output_root / run_ts / domain / level / docid / method
+    method_dir.mkdir(parents=True, exist_ok=True)
+
+    if method == "icw":
+        return method_dir / f"{docid}_icw"
+    if variant:
+        return method_dir / f"{docid}_{variant}_{method}"
+    return method_dir / f"{docid}_{method}"
 
 
 def main() -> int:
@@ -74,55 +99,79 @@ def main() -> int:
     if args.limit:
         jsons = jsons[: args.limit]
 
-    processed_icw_docids = set()
-    for pjson in jsons:
-        # Keep a mirrored layout under output root
-        rel = pjson.relative_to(prevention_folder)
-        # .../<doc>/<file>.json -> output base: .../<doc>/<method>/<stem>_<method>
-        doc_dir = output_root / run_ts / rel.parent
-        method_dir = doc_dir / args.method
-        method_dir.mkdir(parents=True, exist_ok=True)
-        base_name = pjson.stem.replace("_prevention_perturbation_", "_")
-        output_base = method_dir / f"{base_name}_{args.method}"
-
-        if args.method == "icw":
-            # Avoid generating duplicates across variants (ICW does not depend on mappings).
-            docid = pjson.name.split("_prevention_perturbation_")[0]
-            if docid in processed_icw_docids:
+    # For ICW: run once per docid (avoid duplicates across variants)
+    if args.method == "icw":
+        representative: dict[str, Path] = {}
+        for pjson in jsons:
+            name = pjson.name
+            if "_prevention_perturbation_" not in name:
                 continue
-            processed_icw_docids.add(docid)
-            output_base = method_dir / f"{docid}_icw"
-            generate_prevention_icw_pdf(
-                prevention_json_path=pjson,
-                output_base=output_base,
-                compile_pdf=not args.no_pdf,
+            docid = name.split("_prevention_perturbation_")[0]
+            representative.setdefault(docid, pjson)
+        items = list(representative.items())
+        with tqdm(total=len(items), desc=f"Stage2 {args.method}", unit="pdf") as pbar:
+            for docid, pjson in items:
+                doc = json.loads(pjson.read_text(encoding="utf-8"))
+                output_base = _output_base_for_pdf(
+                    output_root=output_root,
+                    run_ts=run_ts,
+                    doc=doc,
+                    method="icw",
+                    variant=None,
+                )
+                generate_prevention_icw_pdf(
+                    prevention_json_path=pjson,
+                    output_base=output_base,
+                    compile_pdf=not args.no_pdf,
+                )
+                pbar.set_postfix(doc=docid)
+                pbar.update(1)
+        print(f"Done. Outputs under: {output_root}/{run_ts}/")
+        return 0
+
+    with tqdm(total=len(jsons), desc=f"Stage2 {args.method}", unit="pdf") as pbar:
+        for pjson in jsons:
+            doc = json.loads(pjson.read_text(encoding="utf-8"))
+            variant = (doc.get("prevention") or {}).get("variant")
+            output_base = _output_base_for_pdf(
+                output_root=output_root,
+                run_ts=run_ts,
+                doc=doc,
+                method=args.method,
+                variant=variant,
             )
-        elif args.method == "dual_layer":
-            generate_prevention_dual_layer_pdf(
-                prevention_json_path=pjson,
-                output_base=output_base,
-                compile_pdf=not args.no_pdf,
-            )
-        elif args.method == "font_attack":
-            generate_prevention_font_attack_pdf(
-                prevention_json_path=pjson,
-                output_base=output_base,
-                font_cache_dir=font_cache_dir,
-                compile_pdf=not args.no_pdf,
-            )
-        elif args.method == "icw_dual_layer":
-            generate_prevention_icw_dual_layer_pdf(
-                prevention_json_path=pjson,
-                output_base=output_base,
-                compile_pdf=not args.no_pdf,
-            )
-        elif args.method == "icw_font_attack":
-            generate_prevention_icw_font_attack_pdf(
-                prevention_json_path=pjson,
-                output_base=output_base,
-                font_cache_dir=font_cache_dir,
-                compile_pdf=not args.no_pdf,
-            )
+
+            if args.method == "dual_layer":
+                generate_prevention_dual_layer_pdf(
+                    prevention_json_path=pjson,
+                    output_base=output_base,
+                    compile_pdf=not args.no_pdf,
+                )
+            elif args.method == "font_attack":
+                generate_prevention_font_attack_pdf(
+                    prevention_json_path=pjson,
+                    output_base=output_base,
+                    font_cache_dir=font_cache_dir,
+                    compile_pdf=not args.no_pdf,
+                )
+            elif args.method == "icw_dual_layer":
+                generate_prevention_icw_dual_layer_pdf(
+                    prevention_json_path=pjson,
+                    output_base=output_base,
+                    compile_pdf=not args.no_pdf,
+                )
+            elif args.method == "icw_font_attack":
+                generate_prevention_icw_font_attack_pdf(
+                    prevention_json_path=pjson,
+                    output_base=output_base,
+                    font_cache_dir=font_cache_dir,
+                    compile_pdf=not args.no_pdf,
+                )
+            else:
+                raise ValueError(f"Unknown method: {args.method}")
+
+            pbar.set_postfix(doc=str(doc.get("docid")), variant=str(variant))
+            pbar.update(1)
 
     print(f"Done. Outputs under: {output_root}/{run_ts}/")
     return 0

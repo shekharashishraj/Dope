@@ -19,6 +19,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 
+import contextlib
+import io
+from tqdm import tqdm
+
 from ..injection.font_builder import FontBuilder, FontBuildError
 from .constants import DEFAULT_REFUSAL_STRING, GIBBERISH_ALPHABET
 
@@ -137,25 +141,32 @@ def build_cache(
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    for hidden in sorted(hidden_chars):
-        for visual in sorted(visual_chars):
-            attempted += 1
-            # Cache key filename-safe
-            key = f"h{ord(hidden):04x}_v{ord(visual):04x}.ttf"
-            out_path = output_dir / key
-            if out_path.exists():
-                skipped += 1
-                continue
-            if dry_run:
-                skipped += 1
-                continue
-            try:
-                assert builder is not None
-                builder.build_font(hidden_char=hidden, visual_text=visual, output_path=out_path)
-                built += 1
-            except FontBuildError:
-                skipped += 1
-                continue
+    total = len(hidden_chars) * len(visual_chars)
+    with tqdm(total=total, desc="Font cache build", unit="font") as pbar:
+        for hidden in sorted(hidden_chars):
+            for visual in sorted(visual_chars):
+                attempted += 1
+                # Cache key filename-safe
+                key = f"h{ord(hidden):04x}_v{ord(visual):04x}.ttf"
+                out_path = output_dir / key
+                if out_path.exists():
+                    skipped += 1
+                    pbar.update(1)
+                    continue
+                if dry_run:
+                    skipped += 1
+                    pbar.update(1)
+                    continue
+                try:
+                    assert builder is not None
+                    # FontBuilder is very chatty; suppress stdout for progress readability.
+                    with contextlib.redirect_stdout(io.StringIO()):
+                        builder.build_font(hidden_char=hidden, visual_text=visual, output_path=out_path)
+                    built += 1
+                except FontBuildError:
+                    skipped += 1
+                pbar.set_postfix(built=built, skipped=skipped)
+                pbar.update(1)
 
     meta = {
         "base_font": str(base_font_path),
