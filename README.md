@@ -2,6 +2,14 @@
 
 This pipeline processes JSON question files from academic assessments, generates imperceptible document-layer perturbations using OpenAI GPT models (GPT-4o, GPT-5.1), and saves the results for academic integrity protection.
 
+## Documentation
+
+- Main index: `docs/guides/DOCUMENTATION_INDEX.md`
+- Quick start (testing): `docs/guides/QUICK_START_TESTING.md`
+- Injection guide: `docs/guides/INJECTION_GUIDE.md`
+- Batch API guide: `docs/guides/BATCH_RUN_GUIDE.md`
+- Font attack deep dive: `docs/implementation/FontAttack_Notes.md`
+
 ## Overview
 
 The IntegrityShield framework fortifies PDF-based assessments through imperceptible document-layer perturbations that exploit the render–parse gap: what humans see differs from what MLLMs process. This pipeline generates perturbation mappings for Multiple Choice (MCQ), True/False (TF), and Long-form (LONG) questions.
@@ -130,7 +138,7 @@ The retriever will:
 
 **Note:** 
 - If batch API fails, the system automatically falls back to immediate mode
-- See `BATCH_RUN_GUIDE.md` for detailed instructions and workflow examples
+- See `docs/guides/BATCH_RUN_GUIDE.md` for detailed instructions and workflow examples
 
 ### Injection Suite (PDF Generation)
 
@@ -448,7 +456,7 @@ copy/paste output. Highlights:
 4. **Validation** – Inspect the rendered PDF and confirm via `pdftotext` (or
    copy/paste) that the text layer now contains the replacement phrases.
 
-See the top-level `docs.md` file for a deeper knowledge-transfer guide that
+See `docs/implementation/FontAttack_Notes.md` for a deeper knowledge-transfer guide that
 captures helper methods, troubleshooting tips, and future enhancements.
 
 ### Injection Outputs & Verification
@@ -658,20 +666,20 @@ python3 -m src.compress_large_files --decompress
 ## Additional Documentation
 
 ### Core Documentation
-- `docs.md`: Font Attack Manipulation notes covering injector internals,
+- `docs/implementation/FontAttack_Notes.md`: Font Attack Manipulation notes covering injector internals,
   compilation/testing instructions, operational tips, and ideas for future work.
-- `BATCH_RUN_GUIDE.md`: Comprehensive guide for using the Batch API mode with
+- `docs/guides/BATCH_RUN_GUIDE.md`: Comprehensive guide for using the Batch API mode with
   step-by-step instructions, status values, troubleshooting, and examples.
 - `QUICK_BATCH_REFERENCE.txt`: Quick reference cheat sheet for batch commands.
 
 ### GPT-5.1 Implementation
-- `GPT5_IMPLEMENTATION.md`: Comprehensive guide to GPT-5.1 model support, including
+- `docs/guides/GPT5_IMPLEMENTATION.md`: Comprehensive guide to GPT-5.1 model support, including
   configuration, API parameter changes, JSON repair functionality, and migration guide.
-- `JSON_REPAIR_DOCUMENTATION.md`: Detailed documentation of the JSON repair system
+- `docs/guides/JSON_REPAIR_DOCUMENTATION.md`: Detailed documentation of the JSON repair system
   that handles word numbers and malformed JSON from GPT-5.1 responses.
-- `PROMPT_TEMPLATE_STRUCTURE.md`: Architecture documentation for grouped batch prompts,
+- `docs/guides/PROMPT_TEMPLATE_STRUCTURE.md`: Architecture documentation for grouped batch prompts,
   explaining how templates are structured for batch processing.
-- `CHANGELOG_GPT5.md`: Complete changelog of GPT-5.1 implementation changes.
+- `docs/changelogs/CHANGELOG_GPT5.md`: Complete changelog of GPT-5.1 implementation changes.
 
 ### Configuration Notes
 - To disable resume mode permanently, set `resume: false` in `config/config.yaml`
