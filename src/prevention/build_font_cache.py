@@ -77,14 +77,15 @@ def _default_hidden_charset(refusal_string: str) -> Set[str]:
         if ch in ["\n", "\r", "\t"]:
             continue
         chars.add(ch)
-    # Don't include whitespace in hidden charset; we avoid attacking whitespace.
-    return {c for c in chars if not c.isspace()}
+    # Include spaces as well: we explicitly want to change whitespace signature.
+    # (We still exclude hard newlines/tabs.)
+    return {c for c in chars if c not in ["\n", "\r", "\t"]}
 
 
 def _default_visual_charset() -> Set[str]:
-    # Start with printable ASCII excluding whitespace and LaTeX-sensitive chars.
+    # Start with printable ASCII including space.
     base = set(string.printable)
-    base = {c for c in base if len(c) == 1 and 32 < ord(c) < 127}  # excludes space
+    base = {c for c in base if len(c) == 1 and 32 <= ord(c) < 127}  # includes space
     # Exclude backslash and braces (not visually rendered directly)
     base.discard("\\")
     base.discard("{")
@@ -104,7 +105,8 @@ def scan_visual_charset(
         except UnicodeDecodeError:
             latex = p.read_text(encoding="latin-1")
         for ch in _iter_visible_chars_from_latex(latex):
-            if ch.isspace():
+            # Include spaces (but not newlines/tabs)
+            if ch in ["\n", "\r", "\t"]:
                 continue
             if restrict_to_ascii and ord(ch) >= 127:
                 continue

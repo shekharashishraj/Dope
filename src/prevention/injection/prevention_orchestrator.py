@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import re
 
 from .prevention_dual_layer_injector import apply_prevention_dual_layer
+from .prevention_font_attack_injector import apply_prevention_font_attack
 from ..constants import PREVENTION_VARIANT_GIBBERISH, PREVENTION_VARIANT_REFUSAL
 
 
@@ -67,6 +68,7 @@ def _compile_latex(
     assets_dir: Path,
     output_pdf: Path,
     require_xetex: bool = False,
+    extra_font_files: Optional[List[Path]] = None,
     timeout: int = 300,
 ) -> Dict[str, Any]:
     temp_dir = Path(tempfile.mkdtemp(prefix="prevention_latex_compile_"))
@@ -80,6 +82,14 @@ def _compile_latex(
             for item in assets_dir.iterdir():
                 if item.is_file() and item.suffix.lower() in [".png", ".jpg", ".jpeg", ".pdf"]:
                     shutil.copy2(item, temp_dir / item.name)
+
+        # Copy fonts into fonts/ if provided (fontspec Path=fonts/)
+        if extra_font_files:
+            fonts_dir = temp_dir / "fonts"
+            fonts_dir.mkdir(parents=True, exist_ok=True)
+            for fp in extra_font_files:
+                if fp.exists():
+                    shutil.copy2(fp, fonts_dir / fp.name)
 
         compilers = ["xelatex"] if require_xetex else ["pdflatex", "xelatex"]
         success = False
@@ -162,6 +172,65 @@ def generate_prevention_dual_layer_pdf(
             assets_dir=latex_path.parent,
             output_pdf=pdf_out,
             require_xetex=False,
+        )
+        result["pdf_compilation"] = pdf_compile
+        if pdf_compile.get("success"):
+            result["pdf_path"] = str(pdf_out)
+
+    return result
+
+
+def generate_prevention_font_attack_pdf(
+    *,
+    prevention_json_path: Path,
+    output_base: Path,
+    font_cache_dir: Path,
+    compile_pdf: bool = True,
+) -> Dict[str, Any]:
+    """Generate font-attack LaTeX/PDF for a prevention JSON (single variant)."""
+
+    repo_root = _resolve_repo_root()
+    doc = json.loads(prevention_json_path.read_text(encoding="utf-8"))
+    file_paths = doc.get("file_paths") or {}
+    latex_file = file_paths.get("latex_file")
+    if not latex_file:
+        raise ValueError("Missing file_paths.latex_file in prevention JSON")
+
+    latex_path = _resolve_latex_path(repo_root, latex_file)
+    tex_content = _read_text(latex_path)
+
+    perturbations: List[Dict[str, Any]] = []
+    for q in doc.get("questions", []):
+        perturbations.extend(q.get("perturbations") or [])
+
+    attack = apply_prevention_font_attack(tex_content, perturbations, font_cache_dir=font_cache_dir)
+    mutated_tex = _normalize_latex_for_missing_packages(attack.modified_tex)
+
+    output_base.parent.mkdir(parents=True, exist_ok=True)
+    tex_out = output_base.with_suffix(".tex")
+    tex_out.write_text(mutated_tex, encoding="utf-8")
+
+    # Resolve font files from cache
+    font_files = [(font_cache_dir / name).resolve() for name in attack.font_files_needed]
+
+    result: Dict[str, Any] = {
+        "success": True,
+        "method": "font_attack",
+        "variant": (doc.get("prevention") or {}).get("variant"),
+        "modified_tex_path": str(tex_out),
+        "metadata": attack.metadata,
+        "font_cache_dir": str(font_cache_dir),
+        "fonts_copied": len(font_files),
+    }
+
+    if compile_pdf:
+        pdf_out = output_base.with_suffix(".pdf")
+        pdf_compile = _compile_latex(
+            tex_source=mutated_tex,
+            assets_dir=latex_path.parent,
+            output_pdf=pdf_out,
+            require_xetex=True,
+            extra_font_files=font_files,
         )
         result["pdf_compilation"] = pdf_compile
         if pdf_compile.get("success"):
