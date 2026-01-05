@@ -1,0 +1,290 @@
+{
+  "docid": "mathematics_undergraduate_doc_20",
+  "document_name": "Mathematics - Undergraduate Level Assessment 20",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_pro_math_mcq",
+    "mmlu_pro_math_tf",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_20.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_20.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_20_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_20_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_20_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_20_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | For any two groups G and G', there exists a homomorphism of G into G'.\nStatement 2 | Every homomorphism is a one-to-one map.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - True, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "45"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "If A is a subset of the real line R and A contains each rational number, which of the\nfollowing must be true?",
+      "options": {
+        "A": "If A is open, then A = R.",
+        "B": "If A is closed, then A = R.",
+        "C": "If A is uncountable, then A = R.",
+        "D": "If A is uncountable, then A is open."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - If A is closed, then A = R.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1181"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "The element (4, 2) of Z_12 x Z_8 has order",
+      "options": {
+        "A": "4",
+        "B": "8",
+        "C": "12",
+        "D": "6"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 12",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "98"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Suppose that f(1 + x) = f(x) for all real x. If f is a polynomial and f(5) = 11, then\nf(15/2)",
+      "options": {
+        "A": "-11",
+        "B": "0",
+        "C": "11",
+        "D": "33/2"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 11",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "15616"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "For which of the following rings is it possible for the product of two nonzero elements to\nbe zero?",
+      "options": {
+        "A": "The ring of complex numbers",
+        "B": "The ring of integers modulo 11",
+        "C": "The ring of continuous real-valued functions on [0, 1]",
+        "D": "The ring {a + b * sqrt(2) : a and b are rational numbers}"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - The ring of continuous real-valued functions on [0, 1]",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1184"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The order of the factor group (Z_11 x Z_15)/(<1, 1>) is 5.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '1'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "12"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The element 3 is a generator for the finite field Z_11.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '2'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "57"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "The characteristic of the ring Z_3 x Z_3 is 3, which is the smallest integer n such that n * (1, 1) = (0, 0).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "73"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The intersection of two 2-dimensional subspaces of R^4 must have a dimension of either 1 or 2.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '0, 1, and 2 only'.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1153"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The minimum value of the expression x + 4 z, subject to the constraint x^2 + y^2 + z^2 <= 2, is 0.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '-sqrt(34)'.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1162"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Divide the product of the first five positive composite integers by the product of the\nnext five composite integers. Express your answer as a common fraction.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The first ten positive composite integers are 4, 6, 8, 9, 10, 12, 14, 15, 16, 18. The\ndesired quotient is $\\frac{4\\cdot 6\\cdot 8\\cdot 9\\cdot 10}{12\\cdot 14\\cdot 15\\cdot 16\\cdot\n18}$. After cancellation, we get $\\frac{1}{14\\cdot 3}=\\boxed{\\frac{1}{42}}$.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should show all steps in their mathematical solution.",
+      "source": {
+        "dataset": "gsm8k_math",
+        "source_id": "18388"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_20_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications of the composition of functions being injective. Given sets S, T,\nand U, and functions f: S -> T and g: T -> U, analyze why g \u2218 f being one-to-one\nnecessitates that f is also one-to-one.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "f is one-to-one.. Explain why this is the correct answer and provide supporting evidence.\nShow the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "14164"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "docid": "health_sciences_k-12_doc_01",
+  "document_name": "Health Sciences - K-12 Level Assessment 1",
+  "domain": "health_sciences",
+  "academic_level": "K-12",
+  "subjects": [
+    "nutrition"
+  ],
+  "combination_used": [
+    "mmlu_health_mcq",
+    "mmlu_health_tf",
+    "health_basic_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health_sciences\\k-12\\latex_documents\\health_sciences_k-12_doc_01.tex",
+    "pdf_file": "output\\health_sciences\\k-12\\pdf_documents\\health_sciences_k-12_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_sciences_k-12_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_sciences_k-12_doc_01_gold.json",
+    "answer_key_latex_file": "output\\health_sciences\\k-12\\answer_keys\\latex\\health_sciences_k-12_doc_01_answer_key.tex",
+    "answer_key_pdf_file": "output\\health_sciences\\k-12\\answer_keys\\pdf\\health_sciences_k-12_doc_01_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Acute binge drinking is associated with?",
+      "options": {
+        "A": "Happy heart syndrome",
+        "B": "Home heart syndrome",
+        "C": "Beach heart syndrome",
+        "D": "Holiday heart syndrome"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Holiday heart syndrome",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9427"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which life-style factors do not confound the interpretation of the health of vegetarians\ncompared with meat-eaters?",
+      "options": {
+        "A": "Smoking habit",
+        "B": "Social class/position",
+        "C": "Physical activity",
+        "D": "Age"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Age",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9595"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "The two most common causes of foodborne illness in the United States and Europe are:",
+      "options": {
+        "A": "Salmonella and Campylobacter",
+        "B": "Listeria and Salmonella",
+        "C": "Shigella and Staphlococcus",
+        "D": "E. coli STECs and non-STEC subtypes"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Salmonella and Campylobacter",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9475"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which drug(s) is/are approved for the treatment of obesity in Europe?",
+      "options": {
+        "A": "Orlistat",
+        "B": "Phentermine/Topiramate",
+        "C": "Lorcaserin",
+        "D": "Naltrexone/Bupropion"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Orlistat",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9496"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "What are the main causes of the obesity epidemic?",
+      "options": {
+        "A": "Increased energy quantity/density and a more sedentary life-style",
+        "B": "Decreased leisure time activity",
+        "C": "Changes in genetic profiles",
+        "D": "None of the options given is correct"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Increased energy quantity/density and a more sedentary life-style",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9411"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_tf_1",
+      "question_type": "TF",
+      "stem_text": "Severe acute malnutrition in young children is defined as a weight-for-age Z score less than -3 and height-for-age Z score less than -3.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Height-for-age Z score <-3 or weight-for-height Z score <-3 or oedema'.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9706"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_tf_2",
+      "question_type": "TF",
+      "stem_text": "High consumption of fish is a factor that increases the risk for postmenopausal breast cancer.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Obesity'.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9674"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_tf_3",
+      "question_type": "TF",
+      "stem_text": "The plasma activity of alkaline phosphatase increases in response to vitamin D deficiency.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9539"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_tf_4",
+      "question_type": "TF",
+      "stem_text": "Leucine cannot provide a substrate for gluconeogenesis in the human body.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9520"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_tf_5",
+      "question_type": "TF",
+      "stem_text": "The World Health Organization recommends zinc supplements for all children in low income areas with high prevalence of stunting.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Children with severe malnutrition or diarrhoea'.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9637"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of Vitamin D in calcium absorption from the small intestine and explain\nhow this process is vital for overall health and bone development.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Vitamin D. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "9415"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_sciences_k-12_doc_01_health_sciences_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the effects of exercise on individuals with diabetes, specifically analyzing how\nit can lead to both beneficial outcomes and potential risks, such as hypoglycemia.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Hypoglycaemia. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "9570"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

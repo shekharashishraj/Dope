@@ -1,0 +1,288 @@
+{
+  "docid": "computer_science_k-12_doc_01",
+  "document_name": "Computer Science - K-12 Level Assessment 1",
+  "domain": "computer_science",
+  "academic_level": "K-12",
+  "subjects": [
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\k-12\\latex_documents\\computer_science_k-12_doc_01.tex",
+    "pdf_file": "output\\computer_science\\k-12\\pdf_documents\\computer_science_k-12_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_k-12_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_k-12_doc_01_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\k-12\\answer_keys\\latex\\computer_science_k-12_doc_01_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\k-12\\answer_keys\\pdf\\computer_science_k-12_doc_01_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the output of print tuple[0] if tuple = ( 'abcd', 786 , 2.23, 'john',\n70.2 )?",
+      "options": {
+        "A": "( 'abcd', 786 , 2.23, 'john', 70.2 )",
+        "B": "abcd",
+        "C": "Error",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - abcd",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3191"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which types of functions grow the slowest?",
+      "options": {
+        "A": "O(log e^N)",
+        "B": "O(log N)",
+        "C": "O(log log N)",
+        "D": "O(N)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - O(log log N)",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3231"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "What is the value of this python expression: 4 + 3 % 2?",
+      "options": {
+        "A": "1",
+        "B": "6",
+        "C": "4",
+        "D": "5"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 5",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3250"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Let l = [1,2,3,4]. What is max(l) in Python 3?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 4",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3242"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_k-12_doc_01_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "The boolean expression a[i] == max || !(max != a[i]) can be simplified to",
+      "options": {
+        "A": "a[i] == max",
+        "B": "a[i] != max",
+        "C": "a[i] < max || a[i] > max",
+        "D": "FALSE"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - a[i] == max",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3229"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "\"abc\" reversed in Python 3 results in \"cba\".",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "15675"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "In Python 3, using the set() function on a list removes duplicates, resulting in {1, 2, 3, 4} from the list [1, 2, 2, 3, 4].",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3270"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "In Python, the expression 4 * 1 ** 4 evaluates to 4.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3272"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the '%' operator is used for floor division.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '//'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3204"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_k-12_doc_01_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the expression 'abc'[-1] results in an error due to invalid indexing.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'c'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3247"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_k-12_doc_01_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss how the RGB color model represents colors using values for red, green, and blue.\nHow many bits are required for this representation, and why is this significant in digital\nimaging?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "24. Explain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3228"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_k-12_doc_01_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss how providing laptops or tablets to all students can help bridge the digital\ndivide in education. Analyze the potential benefits and challenges of such a policy.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "A school provides a laptop or tablet computer to all students enrolled at the school..\nExplain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3205"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_14",
+  "document_name": "Machine Learning - Graduate Level Assessment 14",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_14.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_14.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_14_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_14_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_14_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_14_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Adding more basis functions in a linear model, pick the most probably option:",
+      "options": {
+        "A": "Decreases model bias",
+        "B": "Decreases estimation bias",
+        "C": "Decreases variance",
+        "D": "Doesn't affect bias and variance"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Decreases model bias",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6880"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| Layer Normalization is used in the original ResNet paper, not Batch\nNormalization. Statement 2| DCGANs use self-attention to stabilize training.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6850"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "If your training loss increases with number of epochs, which of the following could be a\npossible issue with the learning process?",
+      "options": {
+        "A": "Regularization is too low and model is overfitting",
+        "B": "Regularization is too high and model is underfitting",
+        "C": "Step size is too large",
+        "D": "Step size is too small"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Step size is too large",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6900"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "If N is the number of instances in the training dataset, nearest neighbors has a\nclassification run time of",
+      "options": {
+        "A": "O(1)",
+        "B": "O( N )",
+        "C": "O(log N )",
+        "D": "O( N^2 )"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - O( N )",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6885"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "What is the dimensionality of the null space of the following matrix? A = [[1, 1, 1], [1,\n1, 1], [1, 1, 1]]",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 2",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14784"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Neural networks trained with gradient descent do not always converge to the global optimum, particularly in non-convex landscapes.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6887"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "The computational complexity of gradient descent is polynomial in the number of features, denoted as D.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6862"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "In Naive Bayes, attributes are statistically independent of one another given the class value.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14780"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "Increasing the amount of training data will always eliminate overfitting in machine learning models.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Improve the optimisation algorithm being used for error minimisation.'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6873"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "ResNeXt models in 2018 predominantly utilized ReLU activation functions instead of tanh.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, False'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6836"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the potential reasons for the poor performance of a decision tree in spam\nclassification, particularly focusing on the implications of using shallow trees.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Your decision trees are too shallow.. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6905"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_14_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss how to generate a $10 \\times 5$ Gaussian matrix with entries sampled from\n$\\mathcal{N}(\\mu=5,\\sigma^2=16)$ and a $10 \\times 10$ uniform matrix from $U[-1,1)$.\nProvide the commands used in PyTorch and explain the rationale behind each step.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "\\texttt{5 + torch.randn(10,5) * 4} ; \\texttt{2 * torch.rand(10,10) - 1}. Explain why this\nis the correct answer and provide supporting evidence. Reference key facts or concepts\nthat support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6938"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

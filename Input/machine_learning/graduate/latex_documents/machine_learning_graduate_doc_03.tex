@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+Machine Learning - Graduate Level Assessment 3 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item \_ refers to a model that can neither model the training data nor generalize to new data.
+\begin{enumerate}[label=(\alph*)]
+    \item good fitting
+    \item overfitting
+    \item underfitting
+    \item all of the above
+\end{enumerate}
+\item Which of the following is NOT supervised learning?
+\begin{enumerate}[label=(\alph*)]
+    \item PCA
+    \item Decision Tree
+    \item Linear Regression
+    \item Naive Bayesian
+\end{enumerate}
+\item Which image data augmentation is most common for natural images?
+\begin{enumerate}[label=(\alph*)]
+    \item random crop and horizontal flip
+    \item random crop and vertical flip
+    \item posterization
+    \item dithering
+\end{enumerate}
+\item Predicting the amount of rainfall in a region based on various cues is a \_\_\_\_\_\_ problem.
+\begin{enumerate}[label=(\alph*)]
+    \item Supervised learning
+    \item Unsupervised learning
+    \item Clustering
+    \item None of the above
+\end{enumerate}
+\item Which of the following tasks can be best solved using Clustering.
+\begin{enumerate}[label=(\alph*)]
+    \item Predicting the amount of rainfall based on various cues
+    \item Detecting fraudulent credit card transactions
+    \item Training a robot to solve a maze
+    \item All of the above
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: DCGANs employ self-attention mechanisms to enhance the quality of generated images during training.
+\item True or False: The original ResNet employs self-attention mechanisms similar to those found in Transformers.
+\item True or False: Using an L 2 norm regularization penalty in linear regression can result in some coefficients being zeroed out.
+\item True or False: The joint probability P(H, U, P, W) can be expressed as P(H) * P(W) * P(P | W) * P(U | H, P).
+\item True or False: The classification run time of the nearest neighbors algorithm is O(N), where N is the number of instances in the training dataset.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Discuss how the choice of polynomial degree in polynomial regression influences the balance between underfitting and overfitting, providing examples to support your analysis.
+\item Discuss the importance of centering the data to zero mean in Principal Component Analysis (PCA) and explain how this step enables PCA to yield projections equivalent to those obtained via Singular Value Decomposition (SVD).
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

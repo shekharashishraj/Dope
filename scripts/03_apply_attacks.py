@@ -37,31 +37,27 @@ def setup_logging(log_dir="logs"):
 
 
 def extract_subject_from_baseline_path(baseline_file):
-    """Extract subject name from baseline HTML file path.
+    """Extract domain/education_level from baseline HTML file path.
     
-    Expected path pattern: out/baseline/<subject>/exam.html
-    Returns the subject name (e.g., 'Maths', 'Science')
+    Expected path pattern: out/baseline/<domain>/<education_level>/exam.html
+    Returns combined subject path: '<domain>/<education_level>'
     """
     baseline_path = Path(baseline_file)
-    # Get the parent directory name (should be the subject)
-    # out/baseline/Maths/exam.html -> Maths
-    parent_dir = baseline_path.parent.name
+    parts = baseline_path.parts
     
-    # If parent is 'baseline', try to get from the path components
-    if parent_dir.lower() == 'baseline' or parent_dir == '':
-        # Try to find baseline/<Subject> pattern
-        parts = baseline_path.parts
-        try:
-            baseline_idx = [p.lower() for p in parts].index('baseline')
-            if baseline_idx + 1 < len(parts):
-                return parts[baseline_idx + 1]
-        except ValueError:
-            pass
-        # Fallback: use 'default' if we can't determine
-        logging.warning(f"Could not extract subject from path {baseline_file}, using 'default'")
-        return 'default'
+    try:
+        baseline_idx = [p.lower() for p in parts].index('baseline')
+        domain = parts[baseline_idx + 1] if baseline_idx + 1 < len(parts) else None
+        edu_level = parts[baseline_idx + 2] if baseline_idx + 2 < len(parts) else None
+        if domain and edu_level:
+            return f"{domain}/{edu_level}"
+        if domain:
+            return domain
+    except ValueError:
+        pass
     
-    return parent_dir
+    logging.warning(f"Could not extract subject from path {baseline_file}, using 'default'")
+    return 'default'
 
 
 def load_baseline_html(baseline_file):
@@ -195,13 +191,15 @@ def apply_attacks(baseline_file, registry_file, output_dir):
     # Create subject-specific output directory
     subject_output_dir = os.path.join(output_dir, subject_name)
     os.makedirs(subject_output_dir, exist_ok=True)
-    logging.info(f"Output directory: {subject_output_dir}")
+    hidden_instructions_dir = os.path.join(subject_output_dir, "hidden_instructions")
+    os.makedirs(hidden_instructions_dir, exist_ok=True)
+    logging.info(f"Output directory: {hidden_instructions_dir}")
 
     # Ensure styles.css is available alongside attacked HTML so pages look
     # identical to the baseline when opened directly from out/attacked.
     baseline_dir = os.path.dirname(baseline_file)
     baseline_css = os.path.join(baseline_dir, "styles.css")
-    attacked_css = os.path.join(subject_output_dir, "styles.css")
+    attacked_css = os.path.join(hidden_instructions_dir, "styles.css")
     if os.path.exists(baseline_css):
         try:
             # Only copy if missing or different size/modification time
@@ -256,7 +254,7 @@ def apply_attacks(baseline_file, registry_file, output_dir):
         
         # Write attacked HTML
         output_filename = f"exam__{attack_id}.html"
-        output_path = os.path.join(subject_output_dir, output_filename)
+        output_path = os.path.join(hidden_instructions_dir, output_filename)
         
         logging.info(f"Writing attacked HTML to: {output_path}")
         try:
@@ -288,7 +286,7 @@ def apply_attacks(baseline_file, registry_file, output_dir):
     logging.info(f"Total attacks processed: {len(registry)}")
     logging.info(f"Successful: {successful_attacks}")
     logging.info(f"Failed: {failed_attacks}")
-    logging.info(f"Output directory: {subject_output_dir}")
+    logging.info(f"Output directory: {hidden_instructions_dir}")
     logging.info("=" * 80)
 
 

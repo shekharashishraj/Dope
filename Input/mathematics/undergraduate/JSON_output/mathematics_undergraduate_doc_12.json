@@ -1,0 +1,291 @@
+{
+  "docid": "mathematics_undergraduate_doc_12",
+  "document_name": "Mathematics - Undergraduate Level Assessment 12",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf",
+    "mmlu_pro_math_mcq",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_12.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_12.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_12_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_12_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_12_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_12_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is NOT a group?",
+      "options": {
+        "A": "The integers under addition",
+        "B": "The nonzero integers under multiplication",
+        "C": "The nonzero real numbers under multiplication",
+        "D": "The complex numbers under addition"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - The nonzero integers under multiplication",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1160"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Using Fermat's theorem, find the remainder of 3^47 when it is divided by 23.",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 4",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "72"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "If a real number x is chosen at random in the interval [0, 3] and a real number y is\nchosen at random in the interval [0, 4], what is the probability that x < y?",
+      "options": {
+        "A": "1/2",
+        "B": "7/12",
+        "C": "5/8",
+        "D": "2/3"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 5/8",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1188"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | The external direct product of cyclic groups is cyclic. Statement 2 | The\nexternal direct product of D_3 and D_4 is isomorphic to D_12.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "80"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "There are 25 suitcases, 5 of which are damaged. Three suitcases are selected at random.\nWhat is the probability that exactly 2 are damaged?",
+      "options": {
+        "A": "2/69",
+        "B": "1/30",
+        "C": "2/23",
+        "D": "12/125"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 2/23",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1100"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "There exists a non-abelian group whose subgroup is non-abelian but still considered abelian.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15576"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The element c = 2 in Z_3 makes the polynomial x^3 + x^2 + c irreducible, thus Z_3[x]/(x^3 + x^2 + c) is a field.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "47"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "The relation S = {(1, 1), (2, 2)} is an equivalence relation.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'both symmetric and anti-symmetric'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "11"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "Every element of a group indeed generates a cyclic subgroup of the group.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15575"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "There is only one additive abelian group of order 16 where x + x + x + x = 0 for every element x in the group.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '3'.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1097"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Each letter represents a non-zero digit. What is the value of $t?$ \\begin{align*} c + o &=\nu \\\\ u + n &= t \\\\ t + c &= s \\\\ o + n + s &= 12 \\end{align*}",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "S(n) is not true for any n <= n 0. Explain why this is the correct answer and provide\nsupporting evidence. Show the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1126"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_12_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Given a statement S(n) about positive integers n, where S(k) implies S(k + 1) and S(n 0)\nis false for some positive integer n 0, discuss the implications for S(n) for n \\leq n 0.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "S(n) is not true for any n <= n 0. Explain why this is the correct answer and provide\nsupporting evidence. Show the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1126"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+Machine Learning - Graduate Level Assessment 23 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews. Statement 2| The Penn Treebank has been used for language modeling.
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item Adding more basis functions in a linear model, pick the most probably option:
+\begin{enumerate}[label=(\alph*)]
+    \item Decreases model bias
+    \item Decreases estimation bias
+    \item Decreases variance
+    \item Doesn't affect bias and variance
+\end{enumerate}
+\item Statement 1| Word 2 Vec parameters were not initialized using a Restricted Boltzman Machine. Statement 2| The tanh function is a nonlinear activation function.
+\begin{enumerate}[label=(\alph*)]
+    \item True, True
+    \item False, False
+    \item True, False
+    \item False, True
+\end{enumerate}
+\item Neural networks:
+\begin{enumerate}[label=(\alph*)]
+    \item Optimize a convex objective function
+    \item Can only be trained with stochastic gradient descent
+    \item Can use a mix of different activation functions
+    \item None of the above
+\end{enumerate}
+\item The model obtained by applying linear regression on the identified subset of features may differ from the model obtained at the end of the process of identifying the subset during
+\begin{enumerate}[label=(\alph*)]
+    \item Best-subset selection
+    \item Forward stepwise selection
+    \item Forward stage wise selection
+    \item All of the above
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: Linear Logistic Regression requires training data to be linearly separable to produce accurate results.
+\item True or False: Pruning a Decision Tree primarily aims to avoid overfitting the training set by simplifying the model.
+\item True or False: In PCA, transforming the data to have a zero mean is essential to achieve the same projection as using SVD.
+\item True or False: L 2 regularization of linear models tends to create sparser solutions compared to L 1 regularization.
+\item True or False: K-fold cross-validation is quadratic in K, indicating that the computation time increases with the square of the number of folds.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Discuss the fundamental differences between Bayesian and frequentist approaches in machine learning, particularly focusing on the role and implications of prior distributions in probabilistic models.
+\item Discuss the necessary probability distributions required to calculate P(H|E, F) without any conditional independence assumptions. Explain the significance of each distribution in your analysis.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

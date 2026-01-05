@@ -1,0 +1,294 @@
+{
+  "docid": "mathematics_graduate_doc_13",
+  "document_name": "Mathematics - Graduate Level Assessment 13",
+  "domain": "mathematics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "math"
+  ],
+  "combination_used": [
+    "mmlu_pro_math_mcq",
+    "mmlu_pro_math_tf",
+    "mmlu_pro_math_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\graduate\\latex_documents\\mathematics_graduate_doc_13.tex",
+    "pdf_file": "output\\mathematics\\graduate\\pdf_documents\\mathematics_graduate_doc_13.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_graduate_doc_13_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_graduate_doc_13_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\graduate\\answer_keys\\latex\\mathematics_graduate_doc_13_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\graduate\\answer_keys\\pdf\\mathematics_graduate_doc_13_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | For n > 1, the set {1,2, ..., n-1} is a group under multiplication modulo n.\nStatement 2 | There is an integer x such that 63 x mod 100 = 1.",
+      "options": {
+        "A": "False, True",
+        "B": "False, False and x is less than 100",
+        "C": "False, True and x is an odd number",
+        "D": "True, True and x is greater than 100",
+        "E": "False, True and x is a prime number"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - False, True",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8228"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Both A, B are n-by-n matrices with rank(A)=n, rank(A*B)=0. What is rank(B)?",
+      "options": {
+        "A": "0.0",
+        "B": "Undefined",
+        "C": "2",
+        "D": "n-1",
+        "E": "n+1"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 0.0",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8079"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "A relative maximum value of the function y = (ln x)/x is",
+      "options": {
+        "A": "e/2",
+        "B": "1",
+        "C": "e^2",
+        "D": "2/e",
+        "E": "1/2"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - e/2",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7836"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Is there exist a holomorphic function $f$ on the unit disk $B(0,1)$ (boundary excluded)\nsuch that $f(B(0,1))=C$? Here C is the complex space. Return 1 for yes and 0 for no.",
+      "options": {
+        "A": "2.5",
+        "B": "-2.0",
+        "C": "3.0",
+        "D": "2.0",
+        "E": "1.5"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 2.5",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7852"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "What is (6^83 + 8^83) mod 49?",
+      "options": {
+        "A": "42",
+        "B": "14",
+        "C": "35",
+        "D": "21",
+        "E": "49"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 35",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8308"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "The sequence 167,213, 161,455, 17,400, 116,633 is ordered from least to greatest.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7722"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "The number of positive integers that are factors of both 120 and 40 is 4.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '8'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7848"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The improper fraction representation of 4 and 4 over 5 is 26 over 5.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7812"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The cost of a 6-lb bag of cat food at $0.47 per pound is $2.82.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8242"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_graduate_doc_13_mathematics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "The numbers 1,444 and 1,555 both round to 1,500 when rounded to the nearest hundred.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8258"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_graduate_doc_13_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Analyze the function \\( f(x) = \\frac{x+6}{\\sqrt{x^2-3 x-4} } \\) to determine its domain.\nDiscuss the implications of your findings on the behavior of the function.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "(-inf, -4) U (4, inf). Explain why this is the correct answer and provide supporting\nevidence. Show the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "8712"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_graduate_doc_13_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Given that $2 \\mathrm{~J}$ of work is required to stretch a spring from its natural length\nof $30 \\mathrm{~cm}$ to $42 \\mathrm{~cm}$, analyze how far a force of $30 \\mathrm{~N}$\nwill stretch the spring beyond its natural length.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "13.5 $\\mathrm{cm}$. Explain why this is the correct answer and provide supporting\nevidence. Show the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "7877"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

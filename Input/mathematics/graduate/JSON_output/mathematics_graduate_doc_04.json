@@ -1,0 +1,294 @@
+{
+  "docid": "mathematics_graduate_doc_04",
+  "document_name": "Mathematics - Graduate Level Assessment 4",
+  "domain": "mathematics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "math"
+  ],
+  "combination_used": [
+    "mmlu_pro_math_mcq",
+    "mmlu_pro_math_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\graduate\\latex_documents\\mathematics_graduate_doc_04.tex",
+    "pdf_file": "output\\mathematics\\graduate\\pdf_documents\\mathematics_graduate_doc_04.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_graduate_doc_04_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_graduate_doc_04_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\graduate\\answer_keys\\latex\\mathematics_graduate_doc_04_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\graduate\\answer_keys\\pdf\\mathematics_graduate_doc_04_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "5.8-5. If the distribution of $Y$ is $b(n, 0.25)$, give a lower bound for $P(|Y /\nn-0.25|<0.05)$ when (a) $n=100$.",
+      "options": {
+        "A": "$0.75$",
+        "B": "$0.85$",
+        "C": "$0.45$",
+        "D": "$0.35$",
+        "E": "$0.55$"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - $0.75$",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8967"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In how many ways can 3 students be selected from a class of 20 to form a study group?",
+      "options": {
+        "A": "560",
+        "B": "1140",
+        "C": "1000",
+        "D": "680",
+        "E": "760"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 1140",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8840"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Use rounding to estimate the sum of 27.94 + 15.35 to the nearest tenth.",
+      "options": {
+        "A": "44",
+        "B": "42.9",
+        "C": "44.1",
+        "D": "42.8",
+        "E": "43.29"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 44",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8699"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is an equation of the line tangent to the graph of y = x + e^x at x\n= 0 ?",
+      "options": {
+        "A": "y = x + 3",
+        "B": "y = x + 2",
+        "C": "y = 2 x",
+        "D": "y = x - 1",
+        "E": "y = x - 2"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - y = x + 3",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "9010"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "What is the smallest positive integer $n$ such that $\\frac{1}{n}$ is a terminating decimal\nand $n$ contains the digit 9?",
+      "options": {
+        "A": "512",
+        "B": "1024",
+        "C": "128",
+        "D": "72",
+        "E": "32"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 512",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7957"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "A regular octagon has 12 diagonals, which is derived from a common misunderstanding of diagonal counting.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '20'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8387"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "Tayshawn can sort 56 marbles into 9 groups with 6 marbles in each group, as 9 multiplied by 6 equals 54.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'There are 8 groups of marbles with 7 marbles in each group.'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8462"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "If Hardy picked the complex number 5+3 i, then Ramanujan could have picked 4-i to achieve the product 32-8 i.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '8-2 i'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8392"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The value of c in Z_3 that makes Z_3[x]/(x^3 + cx^2 + 1) a field is 1.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '4'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8658"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_graduate_doc_04_mathematics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "The mixed number representation of 1 and 1 over 11 is equivalent to 2 over 11.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '1.1 over 11'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8451"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_graduate_doc_04_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Let $z$ be a complex number such that \\[z^2 + |z|^2 = 3 - 5 i.\\]Find $|z|^2.$",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Let $z = a + bi,$ where $a$ and $b$ are real numbers. Then $z^2 = (a + bi)^2 = a^2 + 2 abi\n- b^2$ and $|z|^2 = a^2 + b^2,$ so \\[a^2 + 2 abi - b^2 + a^2 + b^2 = 3 - 5 i.\\]Equating\nreal and imaginary parts, we get \\begin{align*} 2 a^2 &= 3, \\\\ 2 ab &= -5.\n\\end{align*}From the first equation, $a^2 = \\frac{3}{2}.$ From the second equation, \\[b =\n-\\frac{5}{2 a},\\]so \\[b^2 = \\frac{25}{4 a^2} = \\frac{25}{4 \\cdot 3/2} =\n\\frac{25}{6}.\\]Therefore, \\[|z|^2 = a^2 + b^2 = \\frac{3}{2} + \\frac{25}{6} =\n\\boxed{\\frac{17}{3}}.\\]",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should show all steps in their mathematical solution.",
+      "source": {
+        "dataset": "gsm8k_math",
+        "source_id": "18060"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_graduate_doc_04_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Calculate and discuss the elevation difference between Salt Flats, at -55 feet, and Talon\nBluff, at 620 feet. Explain the mathematical reasoning behind your solution.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "675 feet. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "8466"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

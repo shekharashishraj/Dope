@@ -1,0 +1,289 @@
+{
+  "docid": "machine_learning_undergraduate_doc_22",
+  "document_name": "Machine Learning - Undergraduate Level Assessment 22",
+  "domain": "machine_learning",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\undergraduate\\latex_documents\\machine_learning_undergraduate_doc_22.tex",
+    "pdf_file": "output\\machine_learning\\undergraduate\\pdf_documents\\machine_learning_undergraduate_doc_22.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_undergraduate_doc_22_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_undergraduate_doc_22_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\undergraduate\\answer_keys\\latex\\machine_learning_undergraduate_doc_22_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\undergraduate\\answer_keys\\pdf\\machine_learning_undergraduate_doc_22_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes what discriminative approaches try to model? (w are\nthe parameters in the model)",
+      "options": {
+        "A": "p(y|x, w)",
+        "B": "p(y, x)",
+        "C": "p(w|x, w)",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - p(y|x, w)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6921"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which one of the following is equal to P(A, B, C) given Boolean random variables A, B and\nC, and no independence or conditional independence assumptions between any of them?",
+      "options": {
+        "A": "P(A | B) * P(B | C) * P(C | A)",
+        "B": "P(C | A, B) * P(A) * P(B)",
+        "C": "P(A, B | C) * P(C)",
+        "D": "P(A | B, C) * P(B | A, C) * P(C | A, B)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - P(A, B | C) * P(C)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6932"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Averaging the output of multiple decision trees helps _.",
+      "options": {
+        "A": "Increase bias",
+        "B": "Decrease bias",
+        "C": "Increase variance",
+        "D": "Decrease variance"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Decrease variance",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6863"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "After applying a regularization penalty in linear regression, you find that some of the\ncoefficients of w are zeroed out. Which of the following penalties might have been used?",
+      "options": {
+        "A": "L 0 norm",
+        "B": "L 1 norm",
+        "C": "L 2 norm",
+        "D": "either (a) or (b)"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - either (a) or (b)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6934"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "If N is the number of instances in the training dataset, nearest neighbors has a\nclassification run time of",
+      "options": {
+        "A": "O(1)",
+        "B": "O( N )",
+        "C": "O(log N )",
+        "D": "O( N^2 )"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - O( N )",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6885"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "The model obtained from best-subset selection will always match the final model from forward stagewise selection.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Forward stage wise selection'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6864"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "Both Ridge and Lasso regression are equally suitable for feature selection in machine learning models.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Lasso'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6926"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "A neural network's convergence is indeed influenced by the learning rate used during training.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6931"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "Clustering is the best method for predicting continuous outcomes like the amount of rainfall based on various cues.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Detecting fraudulent credit card transactions'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6933"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The BLEU metric primarily utilizes precision, whereas the ROGUE metric focuses on recall in evaluating text generation quality.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6924"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the demlo number for the given number.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def find_demlo(s): | return res",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "321"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_undergraduate_doc_22_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find the sum of even factors of a number.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def sumofFactors(n) : | return 0 | return res",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "453"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

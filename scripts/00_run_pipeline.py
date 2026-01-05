@@ -37,31 +37,57 @@ def setup_logging(log_dir="logs"):
 
 
 def extract_subject_from_path(input_file):
-    """Extract subject name from input file path.
+    """Extract domain name from input file path.
     
-    Expected path pattern: Input/<Subject>/<file>.json
-    Returns the subject name (e.g., 'Maths', 'Science')
+    Expected path pattern: Input/<domain>/<education_level>/JSON_output/<file>.json
+    Returns the domain name (e.g., 'chemistry', 'mathematics').
     """
     input_path = Path(input_file)
-    # Get the parent directory name (should be the subject)
-    # Input/Maths/file.json -> Maths
-    parent_dir = input_path.parent.name
+    parts = input_path.parts
     
-    # If parent is 'Input', try to get from the path components
-    if parent_dir.lower() == 'input' or parent_dir == '':
-        # Try to find Input/<Subject> pattern
-        parts = input_path.parts
-        try:
-            input_idx = [p.lower() for p in parts].index('input')
-            if input_idx + 1 < len(parts):
-                return parts[input_idx + 1]
-        except ValueError:
-            pass
-        # Fallback: use 'default' if we can't determine
-        logging.warning(f"Could not extract subject from path {input_file}, using 'default'")
-        return 'default'
+    try:
+        input_idx = [p.lower() for p in parts].index('input')
+        if input_idx + 1 < len(parts):
+            return parts[input_idx + 1]
+    except ValueError:
+        pass
     
-    return parent_dir
+    # Fallback: attempt from the tail of the path (…/<domain>/<level>/JSON_output/file.json)
+    try:
+        if len(parts) >= 4:
+            return parts[-4]
+    except Exception:
+        pass
+    
+    logging.warning(f"Could not extract domain from path {input_file}, using 'default'")
+    return 'default'
+
+
+def extract_education_level_from_path(input_file):
+    """Extract education level from input file path.
+    
+    Expected path pattern: Input/<domain>/<education_level>/JSON_output/<file>.json
+    Returns the education level (e.g., 'graduate', 'undergraduate', 'k-12').
+    """
+    input_path = Path(input_file)
+    parts = input_path.parts
+    
+    try:
+        input_idx = [p.lower() for p in parts].index('input')
+        if input_idx + 2 < len(parts):
+            return parts[input_idx + 2]
+    except ValueError:
+        pass
+    
+    # Fallback from the tail
+    try:
+        if len(parts) >= 3:
+            return parts[-3]
+    except Exception:
+        pass
+    
+    logging.warning(f"Could not extract education level from path {input_file}, using 'default'")
+    return 'default'
 
 
 def run_command(cmd, description, step_num, total_steps):
@@ -90,7 +116,8 @@ def run_command(cmd, description, step_num, total_steps):
 
 def run_pipeline(input_json, registry_file="attacks/registry.json", data_dir="data", 
                  baseline_dir="out/baseline", attacked_dir="out/attacked",
-                 generate_perturbations=False, api_key=None, model="gpt-4o", k=3):
+                 generate_perturbations=False, api_key=None, model="gpt-4o", k=3,
+                 domain=None, education_level=None):
     """Run the complete pipeline: Normalize -> [Generate Perturbations] -> Render -> Apply Attacks."""
     
     log_file = setup_logging()
@@ -113,9 +140,16 @@ def run_pipeline(input_json, registry_file="attacks/registry.json", data_dir="da
         logging.error(f"Registry file not found: {registry_file}")
         sys.exit(1)
     
-    # Extract subject name
-    subject_name = extract_subject_from_path(input_json)
-    logging.info(f"Detected subject: {subject_name}")
+    # Extract domain and education level
+    if not domain:
+        domain = extract_subject_from_path(input_json)
+    if not education_level:
+        education_level = extract_education_level_from_path(input_json)
+    
+    subject_name = f"{domain}/{education_level}" if education_level else domain
+    logging.info(f"Detected domain: {domain}")
+    logging.info(f"Detected education level: {education_level}")
+    logging.info(f"Subject folder: {subject_name}")
     logging.info("")
     
     # Create data directory if it doesn't exist
@@ -273,6 +307,7 @@ def run_pipeline(input_json, registry_file="attacks/registry.json", data_dir="da
     logging.info(f"Subject: {subject_name}")
     logging.info(f"Baseline HTML: {baseline_html}")
     logging.info(f"Attacked HTML files: {os.path.join(attacked_dir, subject_name)}")
+    logging.info(f"Hidden instruction attacks: {os.path.join(attacked_dir, subject_name, 'hidden_instructions')}")
     if generate_perturbations:
         logging.info(f"Perturbed JSON: {perturbed_json}")
         logging.info(f"Image/Canvas attack output: {os.path.join(attacked_dir, subject_name, 'image_canvas', 'exam.html')}")
@@ -295,6 +330,8 @@ if __name__ == "__main__":
     parser.add_argument("--model", default="gpt-4o", help="OpenAI model to use (default: gpt-4o)")
     parser.add_argument("--k", type=int, default=3, 
                        help="Number of perturbations per question (default: 3)")
+    parser.add_argument("--domain", help="Domain name (e.g., 'chemistry')")
+    parser.add_argument("--education-level", help="Education level (e.g., 'graduate', 'undergraduate', 'k-12')")
     
     args = parser.parse_args()
     
@@ -307,6 +344,8 @@ if __name__ == "__main__":
         generate_perturbations=args.generate_perturbations,
         api_key=api_key,
         model=args.model,
-        k=args.k
+        k=args.k,
+        domain=args.domain,
+        education_level=args.education_level
     )
 

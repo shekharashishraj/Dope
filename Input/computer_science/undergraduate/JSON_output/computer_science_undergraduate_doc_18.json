@@ -1,0 +1,290 @@
+{
+  "docid": "computer_science_undergraduate_doc_18",
+  "document_name": "Computer Science - Undergraduate Level Assessment 18",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_18.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_18.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_18_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_18_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_18_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_18_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Of the following problems concerning a given undirected graph G, which is currently known\nto be solvable in polynomial time?",
+      "options": {
+        "A": "Finding a longest simple cycle in G",
+        "B": "Finding a shortest cycle in G",
+        "C": "Finding ALL spanning trees of G",
+        "D": "Finding a largest clique in G"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Finding a shortest cycle in G",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1017"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, which of the following function convert a string to an int in python?",
+      "options": {
+        "A": "int(x [,base])",
+        "B": "long(x [,base] )",
+        "C": "float(x)",
+        "D": "str(x)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - int(x [,base])",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3183"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of the statement \"a\" + \"ab\" in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "aab",
+        "C": "ab",
+        "D": "a ab"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - aab",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3203"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of \"abc\"[::-1] in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "abc",
+        "C": "cba",
+        "D": "c"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - cba",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "15675"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, b = [11,13,15,17,19,21]; print(b[::2]) outputs what?",
+      "options": {
+        "A": "[19,21]",
+        "B": "[11,15]",
+        "C": "[11,15,19]",
+        "D": "[13,17,21]"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - [11,15,19]",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3274"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "Extensive testing of a large Java program does not guarantee that it is free of bugs.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3216"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The value of the Python expression 4 + 3 % 2 is 5.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3250"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "O(n^2) is the largest asymptotic notation among O(1), O(n), O(log n), and O(n^2).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3213"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The access matrix approach can be large and cumbersome to manage when stored directly.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "996"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "Python supports automatic garbage collection and can be easily integrated with languages like C, C++, and Java.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3226"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to extract all the pairs which are symmetric in the given tuple list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def extract_symmetric(test_list): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "490"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_18_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to zip the two given tuples.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def zip_tuples(test_tup1, test_tup2): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "81"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

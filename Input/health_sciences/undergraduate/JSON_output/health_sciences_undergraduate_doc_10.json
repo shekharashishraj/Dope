@@ -1,0 +1,293 @@
+{
+  "docid": "health_sciences_undergraduate_doc_10",
+  "document_name": "Health Sciences - Undergraduate Level Assessment 10",
+  "domain": "health_sciences",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "anatomy",
+    "human_aging",
+    "human_sexuality",
+    "medical_genetics",
+    "virology"
+  ],
+  "combination_used": [
+    "mmlu_pro_health_mcq",
+    "mmlu_pro_health_tf",
+    "health_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health_sciences\\undergraduate\\latex_documents\\health_sciences_undergraduate_doc_10.tex",
+    "pdf_file": "output\\health_sciences\\undergraduate\\pdf_documents\\health_sciences_undergraduate_doc_10.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_sciences_undergraduate_doc_10_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_sciences_undergraduate_doc_10_gold.json",
+    "answer_key_latex_file": "output\\health_sciences\\undergraduate\\answer_keys\\latex\\health_sciences_undergraduate_doc_10_answer_key.tex",
+    "answer_key_pdf_file": "output\\health_sciences\\undergraduate\\answer_keys\\pdf\\health_sciences_undergraduate_doc_10_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Primary motor cortex activity results in",
+      "options": {
+        "A": "bilateral contraction of antigravity limb muscles.",
+        "B": "bilateral contraction of limb musculature.",
+        "C": "contraction of ipsilateral limb musculature.",
+        "D": "contraction of contralateral limb musculature."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - contraction of contralateral limb musculature.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "109"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "When asked where they would like to live for the rest of their lives most older adults say\nthat they would prefer",
+      "options": {
+        "A": "Moving to be close to their children",
+        "B": "Moving to Arizona or Florida if they could",
+        "C": "Residing in a very nice nursing home",
+        "D": "Staying in their own home"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Staying in their own home",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "14708"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which is a major characteristic of the bunyavirus family?",
+      "options": {
+        "A": "Amplify by persistent infection of midgets, mosquitoes, sand flies, ticks",
+        "B": "Predominantly mosquito borne",
+        "C": "Genetic recombination or reassortment",
+        "D": "Spread to humans via bites of mice and rats"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Amplify by persistent infection of midgets, mosquitoes, sand flies, ticks",
+      "source": {
+        "dataset": "health_sciences_virology",
+        "source_id": "13804"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Repeat core sequences consisting of 2, 3, or 4 base pairs are known as what?",
+      "options": {
+        "A": "Single nucleotide polymorphisms (SNPs)",
+        "B": "Microsatellites",
+        "C": "Minisatellites",
+        "D": "Satellites"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Microsatellites",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "14828"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "The stage of meiosis in which chromosomes pair and cross over is:",
+      "options": {
+        "A": "prophase I",
+        "B": "metaphase I",
+        "C": "prophase II",
+        "D": "metaphase II"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - prophase I",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "15777"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_tf_1",
+      "question_type": "TF",
+      "stem_text": "Monosomy is the leading chromosome abnormality found in first trimester spontaneous miscarriages.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'trisomy.'.",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7352"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_tf_2",
+      "question_type": "TF",
+      "stem_text": "Many girls primarily learn about masturbation from reading literature on the subject.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'self-discovery'.",
+      "source": {
+        "dataset": "health_sciences_human_sexuality",
+        "source_id": "6416"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_tf_3",
+      "question_type": "TF",
+      "stem_text": "Cytotoxic T cells can be activated by identifying virus peptides presented by MHC-I molecules on infected cells.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_virology",
+        "source_id": "15540"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_tf_4",
+      "question_type": "TF",
+      "stem_text": "Herpes viruses can cause various types of cancer, including cervical and oral cancers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Infantile paralysis'.",
+      "source": {
+        "dataset": "health_sciences_virology",
+        "source_id": "13839"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_tf_5",
+      "question_type": "TF",
+      "stem_text": "Sterilization is the most common method of birth control used by married couples in the United States.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_human_sexuality",
+        "source_id": "6361"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of proprioceptive information in the function of the temporomandibular\njoint, highlighting the contributions of the masseteric and auriculotemporal nerves.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Proprioceptive information is carried by the masseteric and auriculotemporal nerves..\nExplain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "112"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_sciences_undergraduate_doc_10_health_sciences_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the hormonal changes and physiological processes involved in ovulation,\nspecifically identifying and analyzing the typical timing of ovulation within a 28-day\nmenstrual cycle.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "14. Explain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6353"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

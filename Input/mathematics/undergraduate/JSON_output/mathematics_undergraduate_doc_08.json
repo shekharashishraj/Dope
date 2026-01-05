@@ -1,0 +1,290 @@
+{
+  "docid": "mathematics_undergraduate_doc_08",
+  "document_name": "Mathematics - Undergraduate Level Assessment 8",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_pro_math_mcq",
+    "mmlu_pro_math_tf",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_08.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_08.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_08_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_08_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_08_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_08_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A subset H of a group (G,*) is a group if",
+      "options": {
+        "A": "a,b in H=> a * b in H",
+        "B": "a in H => a^-1 in H",
+        "C": "a,b in H=> a * b^-1 in H",
+        "D": "H contains the identity element"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - a,b in H=> a * b^-1 in H",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "67"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In the xy-plane, the curve with parametric equations x = cos t and y = sin t, 0 <= t <=\npi, has length",
+      "options": {
+        "A": "3",
+        "B": "pi",
+        "C": "3 pi",
+        "D": "3/2"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - pi",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1143"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "If the finite group G contains a subgroup of order seven but no element (other than the\nidentity) is its own inverse, then the order of G could be",
+      "options": {
+        "A": "27",
+        "B": "28",
+        "C": "35",
+        "D": "37"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 35",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1179"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | R is a splitting field of some polynomial over Q. Statement 2 | There is a\nfield with 60 elements.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Find the sum of the given polynomials in the given polynomial ring. f(x) = 4 x - 5, g(x) =\n2 x^2 - 4 x + 2 in Z_8[x].",
+      "options": {
+        "A": "2 x^2 + 5",
+        "B": "6 x^2 + 4 x + 6",
+        "C": "0",
+        "D": "x^2 + 1"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 2 x^2 + 5",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "21"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The maximum possible order for an element of S_10 is 30, which can be achieved by the product of disjoint cycles.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The degree of the field extension Q(\\sqrt 2, \\sqrt 3) over Q is 2.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '4'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "35"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "The linear transformation T maps the point (2, 1) to (-1, 4).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '(1, 6)'.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1195"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The index of the subgroup generated by p in S_5 is 24.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "1"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "In the group of integers Z with the operation defined by a*b = a + b + 1, the identity element is 0.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '-1'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "40"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Consider a finite-dimensional real vector space V and a linear transformation P of V such\nthat P^2 = P. Discuss the implications of this property on the characteristics of P,\nincluding its diagonalizability and invertibility.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "II only. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1104"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_08_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Consider the circle C defined by the equation (y - 3)^2 + z^2 = 1 in the yz-plane. Discuss\nthe process of revolving this circle around the z-axis to generate a torus, and derive its\nequation.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "(x^2 + y^2 + z^2 + 8)^2 = 36(x^2 + y^2). Explain why this is the correct answer and\nprovide supporting evidence. Show the calculation or reasoning that leads to this\nconclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1131"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

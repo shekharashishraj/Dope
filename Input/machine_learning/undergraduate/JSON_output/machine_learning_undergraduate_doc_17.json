@@ -1,0 +1,290 @@
+{
+  "docid": "machine_learning_undergraduate_doc_17",
+  "document_name": "Machine Learning - Undergraduate Level Assessment 17",
+  "domain": "machine_learning",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_machine_learning_mcq",
+    "mmlu_machine_learning_tf",
+    "mmlu_pro_machine_learning_mcq",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\undergraduate\\latex_documents\\machine_learning_undergraduate_doc_17.tex",
+    "pdf_file": "output\\machine_learning\\undergraduate\\pdf_documents\\machine_learning_undergraduate_doc_17.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_undergraduate_doc_17_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_undergraduate_doc_17_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\undergraduate\\answer_keys\\latex\\machine_learning_undergraduate_doc_17_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\undergraduate\\answer_keys\\pdf\\machine_learning_undergraduate_doc_17_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "In Yann LeCun's cake, the cherry on top is",
+      "options": {
+        "A": "reinforcement learning",
+        "B": "self-supervised learning",
+        "C": "unsupervised learning",
+        "D": "supervised learning"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - reinforcement learning",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14783"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| Highway networks were introduced after ResNets and eschew max pooling in\nfavor of convolutions. Statement 2| DenseNets usually cost more memory than ResNets.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - False, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6884"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which one of the following is the main reason for pruning a Decision Tree?",
+      "options": {
+        "A": "To save computing time during testing",
+        "B": "To save space for storing the Decision Tree",
+        "C": "To make the training set error smaller",
+        "D": "To avoid overfitting the training set"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - To avoid overfitting the training set",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6871"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews.\nStatement 2| The Penn Treebank has been used for language modeling.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - True, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6896"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following\nis true?",
+      "options": {
+        "A": "P(A|B) decreases",
+        "B": "P(B|A) decreases",
+        "C": "P(B) decreases",
+        "D": "All of above"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - P(B|A) decreases",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6935"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Transforming the data to a zero median is sufficient to achieve the same projection as SVD in PCA.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Transform data to zero mean'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6918"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "The original ResNets were exclusively optimized using the SGD optimizer.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6854"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "Grid search cannot be applied to non-continuous functions, limiting its applicability in various scenarios.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'It runs reasonably slow for multiple linear regression.'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6868"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "Fully connected networks are the best architecture for classifying high-resolution images due to their ability to capture complex patterns.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'convolutional networks'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6839"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The Bayesian network H -> U <- P <- W requires 8 independent parameters to fully characterize its probability distribution.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6843"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the cumulative sum of all the values that are present in the\ngiven tuple list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def cummulative_sum(test_list): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "614"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_undergraduate_doc_17_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to toggle all even bits of a given number.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def even_bit_toggle_number(n) : | return n ^ res",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "155"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "docid": "physics_undergraduate_doc_21",
+  "document_name": "Physics - Undergraduate Level Assessment 21",
+  "domain": "physics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_physics"
+  ],
+  "combination_used": [
+    "mmlu_physics_mcq",
+    "mmlu_physics_tf",
+    "mmlu_pro_physics_mcq",
+    "physics_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\physics\\undergraduate\\latex_documents\\physics_undergraduate_doc_21.tex",
+    "pdf_file": "output\\physics\\undergraduate\\pdf_documents\\physics_undergraduate_doc_21.pdf",
+    "metadata_file": "data/metadata_hierarchical/physics_undergraduate_doc_21_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/physics_undergraduate_doc_21_gold.json",
+    "answer_key_latex_file": "output\\physics\\undergraduate\\answer_keys\\latex\\physics_undergraduate_doc_21_answer_key.tex",
+    "answer_key_pdf_file": "output\\physics\\undergraduate\\answer_keys\\pdf\\physics_undergraduate_doc_21_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "physics_undergraduate_doc_21_physics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A satellite of mass m orbits a planet of mass M in a circular orbit of radius R. The time\nrequired for one revolution is",
+      "options": {
+        "A": "independent of M",
+        "B": "proportional to m^(1/2)",
+        "C": "linear in R",
+        "D": "proportional to R^(3/2)"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - proportional to R^(3/2)",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1470"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "physics_undergraduate_doc_21_physics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "The energy required to remove both electrons from the helium atom in its ground state is\n79.0 eV. How much energy is required to ionize helium (i.e., to remove one electron)?",
+      "options": {
+        "A": "24.6 eV",
+        "B": "39.5 eV",
+        "C": "51.8 eV",
+        "D": "54.4 eV"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 24.6 eV",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1436"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "physics_undergraduate_doc_21_physics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "A grating spectrometer can just barely resolve two wavelengths of 500 nm and 502 nm,\nrespectively. Which of the following gives the resolving power of the spectrometer?",
+      "options": {
+        "A": "2",
+        "B": "250",
+        "C": "5,000",
+        "D": "10,000"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 250",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "14194"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "physics_undergraduate_doc_21_physics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "The eigenvalues of a Hermitian operator are always",
+      "options": {
+        "A": "real",
+        "B": "imaginary",
+        "C": "degenerate",
+        "D": "linear"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - real",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1421"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "physics_undergraduate_doc_21_physics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "The negative muon, mu^-, has properties most similar to which of the following?",
+      "options": {
+        "A": "Electron",
+        "B": "Meson",
+        "C": "Photon",
+        "D": "Boson"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Electron",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1406"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "physics_undergraduate_doc_21_physics_tf_1",
+      "question_type": "TF",
+      "stem_text": "Electromagnetic radiation emitted from a nucleus is often observed as visible light.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'gamma rays'.",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1430"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "physics_undergraduate_doc_21_physics_tf_2",
+      "question_type": "TF",
+      "stem_text": "Electrons in metals possess fewer degrees of freedom than the atoms in the lattice, resulting in lower kinetic energy.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'the electrons form a degenerate Fermi gas'.",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1444"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "physics_undergraduate_doc_21_physics_tf_3",
+      "question_type": "TF",
+      "stem_text": "A helium-neon laser is the best type of laser for spectroscopy over a range of visible wavelengths.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'a dye laser'.",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1420"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "physics_undergraduate_doc_21_physics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The angular magnification of the refracting telescope can be calculated as 5 with the given focal lengths.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '4'.",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "15623"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "physics_undergraduate_doc_21_physics_tf_5",
+      "question_type": "TF",
+      "stem_text": "An observer must move at 0.60 c parallel to a rod measuring 1.00 m in its rest frame to measure its length as 0.80 m.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "physics_college_physics",
+        "source_id": "1396"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "physics_undergraduate_doc_21_physics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the motion of a payload dropped from an airplane traveling north at 100 m/s,\nanalyzing its velocity relative to the plane 4.0 seconds after release, assuming no air\nresistance.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "40 m/s down. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1468"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "physics_undergraduate_doc_21_physics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications of a reversible thermodynamic process on the entropy of a system\nand its environment, and analyze how this reflects the principles of thermodynamics.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The entropy of the system and its environment remains unchanged.. Explain why this is the\ncorrect answer and provide supporting evidence. Reference key facts or concepts that\nsupport this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1371"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

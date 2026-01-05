@@ -1,0 +1,290 @@
+{
+  "docid": "mathematics_undergraduate_doc_13",
+  "document_name": "Mathematics - Undergraduate Level Assessment 13",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_pro_math_mcq",
+    "mmlu_pro_math_tf",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_13.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_13.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_13_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_13_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_13_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_13_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | Every integral domain has a field of quotients. Statement 2 | A polynomial\nof degree n over a ring can have at most n zeros counting multiplicity.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - True, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14051"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | The homomorphic image of a cyclic group is cyclic. Statement 2 | The\nhomomorphic image of an Abelian group is Abelian.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - True, True",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "29"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "For which value of n are there exactly two abelian groups of order n up to isomorphism?",
+      "options": {
+        "A": "4",
+        "B": "7",
+        "C": "8",
+        "D": "12"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 4",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1150"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Let f(x, y) = x^3 + y^3 + 3 xy for all real x and y. Then there exist distinct points P\nand Q such that f has a",
+      "options": {
+        "A": "local maximum at P and at Q",
+        "B": "saddle point at P and at Q",
+        "C": "local maximum at P and a saddle point at Q",
+        "D": "local minimum at P and a saddle point at Q"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - local maximum at P and a saddle point at Q",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1180"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Find the maximum possible order for an element of S_n for n = 6.",
+      "options": {
+        "A": "6",
+        "B": "12",
+        "C": "30",
+        "D": "105"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 6",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "93"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The polynomial 4 x - 2 is irreducible over the integers Z.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'False, True'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "56"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "If R is a ring and f(x) and g(x) are in R[x], then deg(f(x)g(x)) = deg(f(x)) - deg(g(x)).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, False'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "48"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "The area of an equilateral triangle with an inscribed circle of radius 2 is 16.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '12*sqrt(3)'.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1149"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "There are exactly two homomorphisms from the group of integers Z into the group Z_2.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "64"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The integers n such that 3 <= n <= 11 with only one group of order n (up to isomorphism) are 3, 5, 7, and 11.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1128"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Analyze the given system of linear equations and determine which statements about its\nsolutions are true or false. Discuss the implications of your findings regarding the\nsolution's form.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Every solution is a scalar multiple of (-5, 1, 1, 0).. Explain why this is the correct\nanswer and provide supporting evidence. Show the calculation or reasoning that leads to\nthis conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1167"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_13_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications of two similar n x n invertible matrices A and B, specifically\naddressing the similarity of the matrices A - 2 I, the preservation of trace, and the\nsimilarity of their inverses.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "I, II, and III. Explain why this is the correct answer and provide supporting evidence.\nShow the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1130"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "docid": "health_sciences_undergraduate_doc_09",
+  "document_name": "Health Sciences - Undergraduate Level Assessment 9",
+  "domain": "health_sciences",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "anatomy",
+    "human_aging",
+    "human_sexuality",
+    "medical_genetics",
+    "virology"
+  ],
+  "combination_used": [
+    "mmlu_pro_health_mcq",
+    "mmlu_pro_health_tf",
+    "health_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health_sciences\\undergraduate\\latex_documents\\health_sciences_undergraduate_doc_09.tex",
+    "pdf_file": "output\\health_sciences\\undergraduate\\pdf_documents\\health_sciences_undergraduate_doc_09.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_sciences_undergraduate_doc_09_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_sciences_undergraduate_doc_09_gold.json",
+    "answer_key_latex_file": "output\\health_sciences\\undergraduate\\answer_keys\\latex\\health_sciences_undergraduate_doc_09_answer_key.tex",
+    "answer_key_pdf_file": "output\\health_sciences\\undergraduate\\answer_keys\\pdf\\health_sciences_undergraduate_doc_09_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following conditions does not show multifactorial inheritance?",
+      "options": {
+        "A": "Pyloric stenosis",
+        "B": "Schizophrenia",
+        "C": "Spina bifida (neural tube defects)",
+        "D": "Marfan syndrome"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Marfan syndrome",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "15776"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Familial hypercholesterolaemia is caused by mutations in the gene which encodes what?",
+      "options": {
+        "A": "High density lipoprotein",
+        "B": "HMG-CoA reductase",
+        "C": "Low density lipoprotein",
+        "D": "Low density lipoprotein receptor"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Low density lipoprotein receptor",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7316"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is the most important for controlling disease caused by norovirus?",
+      "options": {
+        "A": "A norovirus vaccine",
+        "B": "Attention to handwashing and hygiene",
+        "C": "Quarantine",
+        "D": "New antiviral drugs"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Attention to handwashing and hygiene",
+      "source": {
+        "dataset": "health_sciences_virology",
+        "source_id": "13827"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following karyotypes is diagnostic of Down syndrome",
+      "options": {
+        "A": "46,XX,der(14;21)(q 10;q 10)pat+21",
+        "B": "47,XY,+13",
+        "C": "45,XX,rob,(14;21)(q 10;q 10)",
+        "D": "46,XY,t(2;3)(q 21;q 12)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 46,XX,der(14;21)(q 10;q 10)pat+21",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7308"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which virus infection was not first identified by clinical observation?",
+      "options": {
+        "A": "HIV",
+        "B": "Rubella teratogenicity",
+        "C": "Microcephaly and Zika",
+        "D": "Hepatitis C"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Hepatitis C",
+      "source": {
+        "dataset": "health_sciences_virology",
+        "source_id": "13727"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_tf_1",
+      "question_type": "TF",
+      "stem_text": "The aorta is responsible for transporting air to the lungs from the atmosphere.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Trachea'.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "119"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_tf_2",
+      "question_type": "TF",
+      "stem_text": "Speaking loudly into their best ear is the most effective way to ensure older adults with hearing loss understand you.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Face them so they can watch your lips'.",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6308"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_tf_3",
+      "question_type": "TF",
+      "stem_text": "A homeotic mutation substitutes one body part for another during an organism's development.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7321"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_tf_4",
+      "question_type": "TF",
+      "stem_text": "Adenoviruses used in gene therapy have a low risk of insertional mutagenesis, making them safer for therapeutic applications.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7358"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_tf_5",
+      "question_type": "TF",
+      "stem_text": "Recombinant alpha-iduronidase is primarily used to treat Fabry disease, which is caused by a different enzyme deficiency.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Hurler syndrome'.",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7311"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the factors that may contribute to higher rates of depression in young survivors\nfollowing a loss, and analyze the implications for their mental health and support needs.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Are young survivors. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6181"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_sciences_undergraduate_doc_09_health_sciences_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the significance of clonal expansion in the adaptive immune system and analyze how\nit contributes to the effectiveness of immune responses against pathogens.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Clonal expansion of pre-existing antibodies and/or T cells. Explain why this is the\ncorrect answer and provide supporting evidence. Reference key facts or concepts that\nsupport this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "13713"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

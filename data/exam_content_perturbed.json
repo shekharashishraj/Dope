@@ -1,5 +1,5 @@
 {
-  "title": "Cybersecurity - Undergraduate Level Assessment 1",
+  "title": "Biology - Undergraduate Level Assessment 2",
   "instructions": [
     "Answer all questions."
   ],
@@ -10,211 +10,175 @@
       "title": "Multiple Choice",
       "questions": [
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_mcq_1",
-          "prompt": "Buffer-overflow may remain as a bug in apps if __________ are not done fully.",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_mcq_1",
+          "prompt": "In most ecosystems, net primary productivity is important because it represents the",
           "options": [
             {
               "id": "A",
-              "text": "boundary hacks"
+              "text": "biomass of all producers"
             },
             {
               "id": "B",
-              "text": "memory checks"
+              "text": "biomass of all consumers"
             },
             {
               "id": "C",
-              "text": "boundary checks"
+              "text": "energy available to heterotrophs"
             },
             {
               "id": "D",
-              "text": "buffer checks"
+              "text": "energy consumed by decomposers"
+            },
+            {
+              "id": "E",
+              "text": "total solar energy converted to chemical energy by producers"
             }
           ],
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1520"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3051"
             },
             "gold_answer": "C"
           },
           "perturbations": []
         },
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_mcq_2",
-          "prompt": "The four Primary Security Principles related to messages are",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_mcq_2",
+          "prompt": "What prevents the stomach from being digested by itsown secretions?",
           "options": [
             {
               "id": "A",
-              "text": "Confidentiality, Integrity, Non repudiation and Authentication"
+              "text": "The stomach has a high permeability to hydrogen ions"
             },
             {
               "id": "B",
-              "text": "Confidentiality, Access Control, Integrity, Non repudiation"
+              "text": "The presence of beneficial bacteria that neutralize stomach acid"
             },
             {
               "id": "C",
-              "text": "Authentication, Authorization, Availability, Integrity"
+              "text": "The stomach lining is replaced every month"
             },
             {
               "id": "D",
-              "text": "Availability, Authorization, Confidentiality, Integrity"
+              "text": "The stomach lining secretes digestive enzymes only when food is present"
+            },
+            {
+              "id": "E",
+              "text": "The production of bile in the stomach neutralizes the digestive acids"
             }
           ],
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1567"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3476"
             },
             "gold_answer": "A"
-          },
-          "perturbations": [
-            {
-              "question_index": 2,
-              "original_substring": "Primary Security Principles",
-              "replacement_substring": "main security features",
-              "start_pos": 9,
-              "end_pos": 37,
-              "left_context": "The four ",
-              "right_context": " related to m",
-              "target_wrong_answer": "B",
-              "after_best_answer": "B",
-              "supporting_keywords": [
-                "Access Control",
-                "Integrity",
-                "Non repudiation"
-              ],
-              "reasoning": "Changing 'Primary Security Principles' to 'main security features' aligns with the inclusion of Access Control, which is a key part of option B."
-            }
-          ]
-        },
-        {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_mcq_3",
-          "prompt": "Failed sessions allow brute-force attacks on access credentials. This type of attacks are\ndone in which layer of the OSI model?",
-          "options": [
-            {
-              "id": "A",
-              "text": "Physical layer"
-            },
-            {
-              "id": "B",
-              "text": "Data-link Layer"
-            },
-            {
-              "id": "C",
-              "text": "Session layer"
-            },
-            {
-              "id": "D",
-              "text": "Presentation layer"
-            }
-          ],
-          "meta": {
-            "marks": 2,
-            "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1504"
-            },
-            "gold_answer": "C"
           },
           "perturbations": []
         },
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_mcq_4",
-          "prompt": "Why apps developed in languages like C, C++ is prone to Buffer-overflow?",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_mcq_3",
+          "prompt": "In modern terminology, diversity is understood to be a result of genetic variation.\nSources of variation for evolution include all of the following except",
           "options": [
             {
               "id": "A",
-              "text": "No string boundary checks in predefined functions"
+              "text": "mistakes in translation of structural genes."
             },
             {
               "id": "B",
-              "text": "No storage check in the external memory"
+              "text": "mistakes in DNA replication."
             },
             {
               "id": "C",
-              "text": "No processing power check"
+              "text": "translocations and mistakes in meiosis."
             },
             {
               "id": "D",
-              "text": "No database check"
+              "text": "recombination at fertilization."
             }
           ],
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1479"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3201"
             },
             "gold_answer": "A"
           },
-          "perturbations": [
-            {
-              "question_index": 4,
-              "original_substring": "Buffer-overflow",
-              "replacement_substring": "storage issues",
-              "start_pos": 56,
-              "end_pos": 71,
-              "left_context": "to ",
-              "right_context": "?",
-              "target_wrong_answer": "B",
-              "after_best_answer": "B",
-              "supporting_keywords": [
-                "storage",
-                "external memory"
-              ],
-              "reasoning": "The replacement aligns the question with option B by focusing on storage issues, suggesting that the reason for the issue is related to storage checks in external memory, as indicated by the keywords."
-            }
-          ]
+          "perturbations": []
         },
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_mcq_5",
-          "prompt": "What tool can be used to perform SNMP enumeration?",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_mcq_4",
+          "prompt": "Charles Darwin was the first person to propose",
           "options": [
             {
               "id": "A",
-              "text": "DNSlookup"
+              "text": "that humans evolved from apes."
             },
             {
               "id": "B",
-              "text": "Whois"
+              "text": "that evolution occurs."
             },
             {
               "id": "C",
-              "text": "Nslookup"
+              "text": "that evolution occurs through a process of gradual change."
             },
             {
               "id": "D",
-              "text": "IP Network Browser"
+              "text": "that the Earth is older than a few thousand years."
+            },
+            {
+              "id": "E",
+              "text": "a mechanism for how evolution occurs."
             }
           ],
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1501"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3492"
             },
-            "gold_answer": "D"
+            "gold_answer": "A"
           },
-          "perturbations": [
+          "perturbations": []
+        },
+        {
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_mcq_5",
+          "prompt": "How can you determine whether or not a given population is in genetic equilibrium?",
+          "options": [
             {
-              "question_index": 5,
-              "original_substring": "SNMP enumeration",
-              "replacement_substring": "domain registration",
-              "start_pos": 33,
-              "end_pos": 49,
-              "left_context": "used to perform ",
-              "right_context": "?",
-              "target_wrong_answer": "B",
-              "after_best_answer": "B",
-              "supporting_keywords": [
-                "domain",
-                "registration"
-              ],
-              "reasoning": "The phrase 'domain registration' closely aligns with the functionality of the Whois tool, which provides information about domain ownership and registration details."
+              "id": "A",
+              "text": "Compare gene frequencies and genotype frequencies of two generations."
+            },
+            {
+              "id": "B",
+              "text": "Evaluate the population's response to environmental stress"
+            },
+            {
+              "id": "C",
+              "text": "Assess the mutation rates of the population's genes"
+            },
+            {
+              "id": "D",
+              "text": "Compare the population size over generations"
+            },
+            {
+              "id": "E",
+              "text": "Calculate the ratio of males to females in the population"
             }
-          ]
+          ],
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3021"
+            },
+            "gold_answer": "A"
+          },
+          "perturbations": []
         }
       ]
     },
@@ -224,134 +188,69 @@
       "title": "True / False",
       "questions": [
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_1",
-          "prompt": "The OTP key can be computed using the formula k = m xor c, where m is the message and c is the ciphertext.",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_tf_1",
+          "prompt": "If messenger RNA molecules were not destroyed, they would replicate rapidly, leading to excessive polypeptide production.",
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1540"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "2906"
             },
             "gold_answer": "True"
           },
-          "perturbations": [
-            {
-              "question_index": 1,
-              "original_substring": "xor",
-              "replacement_substring": "plus",
-              "start_pos": 52,
-              "end_pos": 55,
-              "left_context": "k = m ",
-              "right_context": " c, where m",
-              "target_wrong_answer": "False",
-              "after_answer": "False",
-              "reasoning": "Using 'plus' instead of 'xor' in the formula changes the operation and invalidates the computation of the OTP key, making the statement false."
-            }
-          ]
+          "perturbations": []
         },
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_2",
-          "prompt": "Unauthorized network access is not considered a vulnerability specific to the transport layer.",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_tf_2",
+          "prompt": "Autoradiography can effectively demonstrate the incorporation of amino acids into proteins within cells.",
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1491"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3430"
             },
             "gold_answer": "True"
           },
-          "perturbations": [
-            {
-              "question_index": 2,
-              "original_substring": "not considered",
-              "replacement_substring": "often considered",
-              "start_pos": 31,
-              "end_pos": 45,
-              "left_context": "access is ",
-              "right_context": " a vulnerab",
-              "target_wrong_answer": "False",
-              "after_answer": "False",
-              "reasoning": "Replacing 'not considered' with 'often considered' implies that unauthorized network access is indeed a vulnerability specific to the transport layer, thus making the statement false."
-            }
-          ]
+          "perturbations": []
         },
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_3",
-          "prompt": "SQL queries based on user input are particularly vulnerable to injection attacks due to improper input validation.",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_tf_3",
+          "prompt": "Normal somatic cells of a human male do not contain an inactivated X chromosome due to the presence of only one X chromosome.",
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1514"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3333"
             },
             "gold_answer": "True"
           },
-          "perturbations": [
-            {
-              "question_index": 3,
-              "original_substring": "particularly",
-              "replacement_substring": "rarely",
-              "start_pos": 36,
-              "end_pos": 48,
-              "left_context": "queries based on ",
-              "right_context": " vulnerable to in",
-              "target_wrong_answer": "False",
-              "after_answer": "False",
-              "reasoning": "By replacing 'particularly' with 'rarely', the statement now implies that SQL queries based on user input are not often vulnerable to injection attacks, which is not true."
-            }
-          ]
+          "perturbations": []
         },
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_4",
-          "prompt": "The Firefox browser provides built-in access to the Tor network without any additional tools.",
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_tf_4",
+          "prompt": "Viruses are not independent organisms and require a host cell to replicate.",
           "meta": {
             "marks": 2,
             "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1530"
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3210"
+            },
+            "gold_answer": "True"
+          },
+          "perturbations": []
+        },
+        {
+          "id": "biology_undergraduate_doc_02_biology_mmlu_pro_tf_5",
+          "prompt": "The symplastic pathway for sucrose movement includes fibers, bundle sheath, companion cell, and phloem parenchyma.",
+          "meta": {
+            "marks": 2,
+            "source": {
+              "dataset": "mmlu_pro_biology_biology",
+              "source_id": "3062"
             },
             "gold_answer": "False"
           },
-          "perturbations": [
-            {
-              "question_index": 4,
-              "original_substring": "Firefox",
-              "replacement_substring": "Brave",
-              "start_pos": 4,
-              "end_pos": 11,
-              "left_context": "The ",
-              "right_context": " browser pro",
-              "target_wrong_answer": "True",
-              "after_answer": "True",
-              "reasoning": "The Brave browser provides built-in access to the Tor network without additional tools, unlike Firefox."
-            }
-          ]
-        },
-        {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_tf_5",
-          "prompt": "Snort is primarily designed for network analysis in multiprotocol diverse networks.",
-          "meta": {
-            "marks": 2,
-            "source": {
-              "dataset": "cybersecurity_computer_security",
-              "source_id": "1549"
-            },
-            "gold_answer": "False"
-          },
-          "perturbations": [
-            {
-              "question_index": 5,
-              "original_substring": "network analysis",
-              "replacement_substring": "intrusion detection",
-              "start_pos": 32,
-              "end_pos": 48,
-              "left_context": "designed for ",
-              "right_context": " in multiprotocol",
-              "target_wrong_answer": "True",
-              "after_answer": "True",
-              "reasoning": "Snort is primarily designed for intrusion detection, not network analysis, which makes the statement true with the replacement."
-            }
-          ]
+          "perturbations": []
         }
       ]
     },
@@ -361,56 +260,30 @@
       "title": "Long Form",
       "questions": [
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_long_1",
-          "prompt": "Write a python function to find nth bell number.",
+          "id": "biology_undergraduate_doc_02_biology_long_1",
+          "prompt": "Discuss the emergence of the first mammals during the Carboniferous Period and analyze the\nkey differences between monotremes and marsupials in terms of their reproductive\nstrategies and adaptations.",
           "meta": {
             "marks": 10,
             "source": {
-              "dataset": "mbpp_plus:test",
-              "source_id": "608"
+              "dataset": "mmlu_pro_mcq_to_long",
+              "source_id": "3252"
             },
-            "gold_answer": "def bell_Number(n): | return bell[n][0]"
+            "gold_answer": "The first mammals originated during the Carboniferous Period of the Paleozoic Era..\nExplain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice."
           },
-          "perturbations": [
-            {
-              "question_index": 1,
-              "original_substring": "nth bell number",
-              "replacement_substring": "factorial of n",
-              "start_pos": 32,
-              "end_pos": 47,
-              "left_context": "to find ",
-              "right_context": ".",
-              "target_wrong_answer": "focuses on calculating factorials instead of Bell numbers",
-              "after_answer_description": "The answer should compute n! (factorial of n), not relate to Bell numbers",
-              "reasoning": "Replacing 'nth bell number' with 'factorial of n' shifts the focus from combinatorial Bell numbers to calculating factorials, thus expecting a completely different function."
-            }
-          ]
+          "perturbations": []
         },
         {
-          "id": "cybersecurity_undergraduate_doc_01_cybersecurity_long_2",
-          "prompt": "Write a function to check the occurrences of records which occur similar times in the\ngiven tuples.",
+          "id": "biology_undergraduate_doc_02_biology_long_2",
+          "prompt": "Discuss the challenges associated with classifying the tissues of higher plants,\nhighlighting the role of evolutionary heritage in their characterization.",
           "meta": {
             "marks": 10,
             "source": {
-              "dataset": "mbpp_plus:test",
-              "source_id": "237"
+              "dataset": "mmlu_pro_mcq_to_long",
+              "source_id": "3041"
             },
-            "gold_answer": "def check_occurences(test_list): | return  (res)"
+            "gold_answer": "Plant tissues can be fully characterized based on their evolutionary heritage. Explain why\nthis is the correct answer and provide supporting evidence. Reference key facts or\nconcepts that support this choice."
           },
-          "perturbations": [
-            {
-              "question_index": 2,
-              "original_substring": "occurrences of records",
-              "replacement_substring": "unique records",
-              "start_pos": 30,
-              "end_pos": 52,
-              "left_context": "check the ",
-              "right_context": " which occur similar",
-              "target_wrong_answer": "focuses on finding unique records",
-              "after_answer_description": "The function should identify how many unique records are in the tuples, not just counting occurrences.",
-              "reasoning": "By changing the focus from occurrences to uniqueness, the expected function logic shifts from counting to identifying unique elements."
-            }
-          ]
+          "perturbations": []
         }
       ]
     }

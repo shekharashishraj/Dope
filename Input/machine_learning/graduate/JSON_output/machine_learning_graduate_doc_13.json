@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_13",
+  "document_name": "Machine Learning - Graduate Level Assessment 13",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_13.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_13.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_13_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_13_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_13_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_13_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Neural networks:",
+      "options": {
+        "A": "Optimize a convex objective function",
+        "B": "Can only be trained with stochastic gradient descent",
+        "C": "Can use a mix of different activation functions",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Can use a mix of different activation functions",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6865"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "_ refers to a model that can neither model the training data nor generalize to new data.",
+      "options": {
+        "A": "good fitting",
+        "B": "overfitting",
+        "C": "underfitting",
+        "D": "all of the above"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - underfitting",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6846"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following sentence is FALSE regarding regression?",
+      "options": {
+        "A": "It relates inputs to outputs.",
+        "B": "It is used for prediction.",
+        "C": "It may be used for interpretation.",
+        "D": "It discovers causal relationships"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - It discovers causal relationships",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6870"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What would you do in PCA to get the same projection as SVD?",
+      "options": {
+        "A": "Transform data to zero mean",
+        "B": "Transform data to zero median",
+        "C": "Not possible",
+        "D": "None of these"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Transform data to zero mean",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6918"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following\nis true?",
+      "options": {
+        "A": "P(A|B) decreases",
+        "B": "P(B|A) decreases",
+        "C": "P(B) decreases",
+        "D": "All of above"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - P(B|A) decreases",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6935"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "ImageNet contains images of various resolutions, providing a diverse dataset for training deep learning models.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6925"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "Random crop and horizontal flip are commonly used image data augmentation techniques for enhancing natural images.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "15759"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "A smaller number of test examples is sufficient to obtain statistically significant results when the error rate is smaller.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Larger if the error rate is smaller.'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14785"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "DenseNets generally require more memory than ResNets due to their high connectivity patterns.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6884"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "Lasso regression is more appropriate for feature selection because it can shrink some coefficients to zero, effectively performing variable selection.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6926"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the joint probability of the variables H, U, P, and W within the specified\nBayesian Network structure. Provide a detailed analysis of how to express this as a\nproduct of conditional probabilities.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P). Explain why this is the correct\nanswer and provide supporting evidence. Reference key facts or concepts that support this\nchoice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6876"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_13_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the existential risks associated with artificial intelligence as articulated by\nStuart Russell, analyzing their implications for future AI development and safety\nmeasures.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Stuart Russell. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6909"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

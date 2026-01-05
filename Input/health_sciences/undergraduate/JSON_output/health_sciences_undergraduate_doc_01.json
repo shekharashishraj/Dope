@@ -1,0 +1,293 @@
+{
+  "docid": "health_sciences_undergraduate_doc_01",
+  "document_name": "Health Sciences - Undergraduate Level Assessment 1",
+  "domain": "health_sciences",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "anatomy",
+    "human_aging",
+    "human_sexuality",
+    "medical_genetics",
+    "virology"
+  ],
+  "combination_used": [
+    "mmlu_pro_health_mcq",
+    "mmlu_pro_health_tf",
+    "health_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health_sciences\\undergraduate\\latex_documents\\health_sciences_undergraduate_doc_01.tex",
+    "pdf_file": "output\\health_sciences\\undergraduate\\pdf_documents\\health_sciences_undergraduate_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_sciences_undergraduate_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_sciences_undergraduate_doc_01_gold.json",
+    "answer_key_latex_file": "output\\health_sciences\\undergraduate\\answer_keys\\latex\\health_sciences_undergraduate_doc_01_answer_key.tex",
+    "answer_key_pdf_file": "output\\health_sciences\\undergraduate\\answer_keys\\pdf\\health_sciences_undergraduate_doc_01_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following appears to remain relatively stable over the adult years?",
+      "options": {
+        "A": "Sensory memories",
+        "B": "Personal concerns",
+        "C": "Marital strain",
+        "D": "Job satisfaction"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Sensory memories",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6236"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Tonsillar tissue is commonly found",
+      "options": {
+        "A": "on the posterior wall of the oropharynx.",
+        "B": "under the mucosa of the ventral surface of the tongue.",
+        "C": "between the palatoglossal and palatopharyngeal folds.",
+        "D": "at all three sites."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - between the palatoglossal and palatopharyngeal folds.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "14058"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which component of transcribed RNA in eukaryotes is present in the initial transcript but\nis removed before translation occurs?",
+      "options": {
+        "A": "Intron",
+        "B": "3' Poly A tail",
+        "C": "Ribosome binding site",
+        "D": "5' cap"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Intron",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7362"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Stan is out having a few beers with some friends. Which of the following will be DECREASED\nif Stan only consumes 1 beer?",
+      "options": {
+        "A": "arousal",
+        "B": "erection",
+        "C": "inhibition",
+        "D": "orgasm"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - inhibition",
+      "source": {
+        "dataset": "health_sciences_human_sexuality",
+        "source_id": "6383"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "When a researcher takes part in the situation he or she is observing, he or she is said to\nbe a(n)",
+      "options": {
+        "A": "Active observer",
+        "B": "Participant observer",
+        "C": "Indiscreet observer",
+        "D": "Meddling observer"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Participant observer",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6152"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_tf_1",
+      "question_type": "TF",
+      "stem_text": "An egg can be fertilized for up to 72 hours after ovulation.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '24 hours'.",
+      "source": {
+        "dataset": "health_sciences_human_sexuality",
+        "source_id": "6337"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_tf_2",
+      "question_type": "TF",
+      "stem_text": "The prostate gland is responsible for the production of male hormones in the male reproductive system.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Testes'.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "117"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_tf_3",
+      "question_type": "TF",
+      "stem_text": "A dental panoramic radiograph should display the mandibular canal, maxillary sinus, hard palate, and zygomatic arch.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "234"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_tf_4",
+      "question_type": "TF",
+      "stem_text": "Those with a strong external locus of control attribute their successes to their skills and abilities rather than chance or others.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Internal'.",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6198"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_tf_5",
+      "question_type": "TF",
+      "stem_text": "The risk of acquiring HIV from a unit of blood in the United States is approximately 1 in 2 million units.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_virology",
+        "source_id": "13847"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of fibrillin in the pathophysiology of Marfan syndrome and analyze how\nmutations in its gene contribute to the symptoms and complications associated with the\ndisorder.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Fibrillin. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "14829"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_sciences_undergraduate_doc_01_health_sciences_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the characteristics of chromosome instability syndromes and evaluate why\nKlinefelter syndrome does not fit into this category.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Klinefelter syndrome. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "7294"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

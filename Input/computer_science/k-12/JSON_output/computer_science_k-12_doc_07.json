@@ -1,0 +1,289 @@
+{
+  "docid": "computer_science_k-12_doc_07",
+  "document_name": "Computer Science - K-12 Level Assessment 7",
+  "domain": "computer_science",
+  "academic_level": "K-12",
+  "subjects": [
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf",
+    "cs_basic_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\k-12\\latex_documents\\computer_science_k-12_doc_07.tex",
+    "pdf_file": "output\\computer_science\\k-12\\pdf_documents\\computer_science_k-12_doc_07.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_k-12_doc_07_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_k-12_doc_07_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\k-12\\answer_keys\\latex\\computer_science_k-12_doc_07_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\k-12\\answer_keys\\pdf\\computer_science_k-12_doc_07_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_k-12_doc_07_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Let l = [1,2,3,4]. What is sum(l) in Python 3?",
+      "options": {
+        "A": "4",
+        "B": "1",
+        "C": "10",
+        "D": "8"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 10",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3254"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_k-12_doc_07_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, which of the following operator in python performs exponential (power)\ncalculation on operands?",
+      "options": {
+        "A": "**",
+        "B": "//",
+        "C": "is",
+        "D": "not in"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - **",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3219"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_k-12_doc_07_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is ['a', 'Chemistry', 0, 1][-3]?",
+      "options": {
+        "A": "a",
+        "B": "Chemistry",
+        "C": "0",
+        "D": "1"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Chemistry",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3279"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_k-12_doc_07_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Let l = [1,2,3,4]. What is min(l) in Python 3?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 1",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3241"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_k-12_doc_07_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following spreadsheet functions would be most useful for detecting improbably\nhigh or low values that have become part of a data set as a result of data entry errors?",
+      "options": {
+        "A": "A function that averages numeric values in a column or row",
+        "B": "A function that counts the values in a column or row",
+        "C": "A function that rounds a numeric value",
+        "D": "A function that sorts values in a column or row"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - A function that sorts values in a column or row",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3221"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_k-12_doc_07_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the expression ['a', 'Chemistry', 0, 1][1] evaluates to 0.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Chemistry'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3265"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_k-12_doc_07_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the function max(list) returns the item with the highest value from the given list.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3233"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_k-12_doc_07_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "The function O(log N) grows slower than O(log log N).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'O(log log N)'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3231"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_k-12_doc_07_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The value of the Python expression 4 + 3 % 2 is 5.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3250"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_k-12_doc_07_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the output of the expression 'a' + 'ab' is 'aab'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3203"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_k-12_doc_07_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to generate all sublists of a given list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def sub_lists(my_list): | return subs",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "859"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_k-12_doc_07_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to remove a specified column from a given nested list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def remove_column(list1, n): | return list1",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "353"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

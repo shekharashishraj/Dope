@@ -1,0 +1,290 @@
+{
+  "docid": "cybersecurity_undergraduate_doc_21",
+  "document_name": "Cybersecurity - Undergraduate Level Assessment 21",
+  "domain": "cybersecurity",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_cybersecurity_mcq",
+    "mmlu_cybersecurity_tf",
+    "mmlu_pro_cybersecurity_mcq",
+    "cybersecurity_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\cybersecurity\\undergraduate\\latex_documents\\cybersecurity_undergraduate_doc_21.tex",
+    "pdf_file": "output\\cybersecurity\\undergraduate\\pdf_documents\\cybersecurity_undergraduate_doc_21.pdf",
+    "metadata_file": "data/metadata_hierarchical/cybersecurity_undergraduate_doc_21_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/cybersecurity_undergraduate_doc_21_gold.json",
+    "answer_key_latex_file": "output\\cybersecurity\\undergraduate\\answer_keys\\latex\\cybersecurity_undergraduate_doc_21_answer_key.tex",
+    "answer_key_pdf_file": "output\\cybersecurity\\undergraduate\\answer_keys\\pdf\\cybersecurity_undergraduate_doc_21_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A digital signature needs a",
+      "options": {
+        "A": "Private-key system",
+        "B": "Shared-key system",
+        "C": "Public-key system",
+        "D": "All of them"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Public-key system",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1507"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Exploitation of the Heartbleed bug permits",
+      "options": {
+        "A": "overwriting cryptographic keys in memory",
+        "B": "a kind of code injection",
+        "C": "a read outside bounds of a buffer",
+        "D": "a format string attack"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - a read outside bounds of a buffer",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "15631"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Failed sessions allow brute-force attacks on access credentials. This type of attacks are\ndone in which layer of the OSI model?",
+      "options": {
+        "A": "Physical layer",
+        "B": "Data-link Layer",
+        "C": "Session layer",
+        "D": "Presentation layer"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Session layer",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1504"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "SHA-1 has a message digest of",
+      "options": {
+        "A": "160 bits",
+        "B": "512 bits",
+        "C": "628 bits",
+        "D": "820 bits"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 160 bits",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "15628"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "How is IP address spoofing detected?",
+      "options": {
+        "A": "Installing and configuring a IDS that can read the IP header",
+        "B": "Comparing the TTL values of the actual and spoofed addresses",
+        "C": "Implementing a firewall to the network",
+        "D": "Identify all TCP sessions that are initiated but does not complete successfully"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Comparing the TTL values of the actual and spoofed addresses",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1563"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_tf_1",
+      "question_type": "TF",
+      "stem_text": "Eavesdropping is a security exploit that can compromise the confidentiality of transmitted information.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Authentication'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1485"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_tf_2",
+      "question_type": "TF",
+      "stem_text": "A MAC with a fixed length of 5 bits is insecure because an attacker can easily guess the tag for any message.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1509"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_tf_3",
+      "question_type": "TF",
+      "stem_text": "MD 5 generates a message digest that is 160 bits in length.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '128'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1487"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_tf_4",
+      "question_type": "TF",
+      "stem_text": "A session symmetric key between two parties is used only once during a specific communication session.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1544"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_tf_5",
+      "question_type": "TF",
+      "stem_text": "A virus is a type of malware that operates as a separate infected program, unrelated to backdoors.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'backdoor'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1562"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find element at a given index after number of rotations.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def find_Element(arr,ranges,rotations,index) : | return arr[index]",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "304"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "cybersecurity_undergraduate_doc_21_cybersecurity_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to count the number of lists in a given number of lists.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def count_list(input_list): | return len(input_list)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "792"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

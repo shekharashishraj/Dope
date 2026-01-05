@@ -1,0 +1,288 @@
+{
+  "docid": "cybersecurity_graduate_doc_13",
+  "document_name": "Cybersecurity - Graduate Level Assessment 13",
+  "domain": "cybersecurity",
+  "academic_level": "Graduate",
+  "subjects": [
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cybersecurity_mcq",
+    "mmlu_pro_cybersecurity_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\cybersecurity\\graduate\\latex_documents\\cybersecurity_graduate_doc_13.tex",
+    "pdf_file": "output\\cybersecurity\\graduate\\pdf_documents\\cybersecurity_graduate_doc_13.pdf",
+    "metadata_file": "data/metadata_hierarchical/cybersecurity_graduate_doc_13_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/cybersecurity_graduate_doc_13_gold.json",
+    "answer_key_latex_file": "output\\cybersecurity\\graduate\\answer_keys\\latex\\cybersecurity_graduate_doc_13_answer_key.tex",
+    "answer_key_pdf_file": "output\\cybersecurity\\graduate\\answer_keys\\pdf\\cybersecurity_graduate_doc_13_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is an authentication method?",
+      "options": {
+        "A": "Secret question",
+        "B": "Biometric",
+        "C": "SMS code",
+        "D": "All of the above"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - All of the above",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1505"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "A hash function guarantees the integrity of a message. It guarantees that the message has\nnot be",
+      "options": {
+        "A": "Replaced",
+        "B": "Overview",
+        "C": "Changed",
+        "D": "Violated"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Changed",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "14209"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "The AH Protocol provides source authentication and data integrity, but not",
+      "options": {
+        "A": "Integrity",
+        "B": "Privacy",
+        "C": "Nonrepudiation",
+        "D": "Both A & C"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Privacy",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1484"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be\nsecure?",
+      "options": {
+        "A": "No, an attacker can simply guess the tag for messages",
+        "B": "It depends on the details of the MAC",
+        "C": "Yes, the attacker cannot generate a valid tag for any message",
+        "D": "Yes, the PRG is pseudorandom"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - No, an attacker can simply guess the tag for messages",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1509"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "_______________ is the central node of 802.11 wireless operations.",
+      "options": {
+        "A": "WPA",
+        "B": "Access Point",
+        "C": "WAP",
+        "D": "Access Port"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Access Point",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1486"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_tf_1",
+      "question_type": "TF",
+      "stem_text": "A session symmetric key can be reused multiple times for different sessions between the same parties.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Only once'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1544"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_tf_2",
+      "question_type": "TF",
+      "stem_text": "A buffer overflow occurs when a pointer is used to access memory not allocated to it, leading to potential security vulnerabilities.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1506"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_tf_3",
+      "question_type": "TF",
+      "stem_text": "Weak or non-existent authentication mechanisms are not issues associated with the presentation layer in cybersecurity.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1564"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_tf_4",
+      "question_type": "TF",
+      "stem_text": "The message must be encrypted and decrypted at the sender site to maintain confidentiality during transmission.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Receiver site'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1561"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_tf_5",
+      "question_type": "TF",
+      "stem_text": "A proxy firewall operates primarily at the application layer, filtering traffic based on application-specific protocols.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1528"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the concept of message integrity in cybersecurity, analyzing its significance in\nensuring that data arrives at the receiver exactly as it was sent.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Message Integrity. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1542"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "cybersecurity_graduate_doc_13_cybersecurity_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of the session layer in the OSI model and analyze how failed session\nattempts can facilitate brute-force attacks on access credentials in cybersecurity.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Session layer. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1504"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

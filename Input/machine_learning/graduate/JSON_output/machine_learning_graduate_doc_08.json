@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_08",
+  "document_name": "Machine Learning - Graduate Level Assessment 8",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_08.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_08.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_08_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_08_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_08_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_08_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A and B are two events. If P(A, B) decreases while P(A) increases, which of the following\nis true?",
+      "options": {
+        "A": "P(A|B) decreases",
+        "B": "P(B|A) decreases",
+        "C": "P(B) decreases",
+        "D": "All of above"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - P(B|A) decreases",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6935"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| Industrial-scale neural networks are normally trained on CPUs, not GPUs.\nStatement 2| The ResNet-50 model has over 1 billion parameters.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6907"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Consider the Bayesian network given below. How many independent parameters are needed for\nthis Bayesian Network H -> U <- P <- W?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "8",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 8",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6843"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| The softmax function is commonly used in mutliclass logistic regression.\nStatement 2| The temperature of a nonuniform softmax distribution affects its entropy.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - True, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6874"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which one of the following is the main reason for pruning a Decision Tree?",
+      "options": {
+        "A": "To save computing time during testing",
+        "B": "To save space for storing the Decision Tree",
+        "C": "To make the training set error smaller",
+        "D": "To avoid overfitting the training set"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - To avoid overfitting the training set",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6871"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Random crop and horizontal flip are among the most common image data augmentation techniques used for natural images.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "15759"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "Overfitting is more likely when the set of training data is small, as a larger dataset typically improves generalization.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'False, True'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6914"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "To calculate P(H|E, F), the sufficient numbers are P(E, F), P(H), and P(E, F|H).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6893"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "Discriminative approaches aim to model the joint probability p(y, x), capturing both input features and output labels simultaneously.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'p(y|x, w)'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6921"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The tanh function is a linear activation function commonly used in neural networks.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6899"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications of an increasing training loss with the number of epochs in a\nmachine learning model. What potential issues could arise, particularly regarding the\nchoice of step size?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Step size is too large. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6900"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_08_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the joint probability of the variables H, U, P, and W in the specified Bayesian\nNetwork H -> U <- P <- W, detailing how to derive it from the conditional probabilities\ninvolved.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P). Explain why this is the correct\nanswer and provide supporting evidence. Reference key facts or concepts that support this\nchoice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6876"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

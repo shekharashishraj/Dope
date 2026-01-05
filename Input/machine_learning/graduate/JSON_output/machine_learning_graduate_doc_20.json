@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_20",
+  "document_name": "Machine Learning - Graduate Level Assessment 20",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_20.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_20.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_20_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_20_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_20_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_20_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Consider the Bayesian network given below. How many independent parameters are needed for\nthis Bayesian Network H -> U <- P <- W?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "8",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 8",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6843"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural\nnetworks trained with gradient descent with high probability converge to the global\noptimum.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - False, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6887"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and\nreduce the overfitting?",
+      "options": {
+        "A": "Increase the amount of training data.",
+        "B": "Improve the optimisation algorithm being used for error minimisation.",
+        "C": "Decrease the model complexity.",
+        "D": "Reduce the noise in the training data."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Improve the optimisation algorithm being used for error minimisation.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6873"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes the joint probability distribution P(X, Y, Z) for\nthe given Bayes net. X <- Y -> Z?",
+      "options": {
+        "A": "P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)",
+        "B": "P(X, Y, Z) = P(X) * P(Y|X) * P(Z|Y)",
+        "C": "P(X, Y, Z) = P(Z) * P(X|Z) * P(Y|Z)",
+        "D": "P(X, Y, Z) = P(X) * P(Y) * P(Z)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14787"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes what discriminative approaches try to model? (w are\nthe parameters in the model)",
+      "options": {
+        "A": "p(y|x, w)",
+        "B": "p(y, x)",
+        "C": "p(w|x, w)",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - p(y|x, w)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6921"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Overfitting happens when a model is too simple and cannot accurately capture the training data or generalize to new data.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'underfitting'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6846"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "In Naive Bayes, attributes are statistically independent of one another given the class value.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14780"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "The variance of the Maximum A Posteriori (MAP) estimate is lower than that of the Maximum Likelihood Estimate (MLE).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14786"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "If P(A, B) decreases while P(A) increases, then P(B|A) decreases in accordance with conditional probability principles.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6935"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The cost of one gradient descent update, given the gradient, is O(D), where D represents the number of dimensions in the feature space.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6841"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss how the assumption of full versus diagonal class covariance matrices in a Gaussian\nBayes classifier influences the balance between underfitting and overfitting.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Whether we assume full class covariance matrices or diagonal class covariance matrices.\nExplain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6928"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_20_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss how to generate a $10\\times 5$ Gaussian matrix with entries sampled from\n$\\mathcal{N}(\\mu=5,\\sigma^2=16)$ and a $10\\times 10$ uniform matrix from $U[-1,1)$.\nInclude the relevant PyTorch commands and the rationale behind your choices.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "\\texttt{5 + torch.randn(10,5) * 4} ; \\texttt{2 * torch.rand(10,10) - 1}. Explain why this\nis the correct answer and provide supporting evidence. Reference key facts or concepts\nthat support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6938"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

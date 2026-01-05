@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_undergraduate_doc_17",
+  "document_name": "Computer Science - Undergraduate Level Assessment 17",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf",
+    "mmlu_pro_cs_mcq",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_17.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_17.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_17_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_17_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_17_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_17_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which types of functions grow the slowest?",
+      "options": {
+        "A": "O(log e^N)",
+        "B": "O(log N)",
+        "C": "O(log log N)",
+        "D": "O(N)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - O(log log N)",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3231"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, which of the following function sets the integer starting value used in\ngenerating random numbers?",
+      "options": {
+        "A": "choice(seq)",
+        "B": "randrange ([start,] stop [,step])",
+        "C": "random()",
+        "D": "seed([x])"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - seed([x])",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3261"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Of the following sorting algorithms, which has a running time that is LEAST dependent on\nthe initial ordering of the input?",
+      "options": {
+        "A": "Insertion sort",
+        "B": "Quicksort",
+        "C": "Merge sort",
+        "D": "Selection sort"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Merge sort",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1032"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which types of functions grow the slowest?",
+      "options": {
+        "A": "O(N^(1/2))",
+        "B": "O(N^(1/4))",
+        "C": "O(N^(1/N))",
+        "D": "O(N)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - O(N^(1/N))",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14392"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Let x = 1. What is x << 3 in Python 3?",
+      "options": {
+        "A": "1",
+        "B": "3",
+        "C": "8",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 8",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3182"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "In Python 3, accessing the first element of the tuple ( 'abcd', 786 , 2.23, 'john', 70.2 ) returns 'abcd'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3191"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The one-time pad is considered a perfectly secure encryption scheme when used correctly, as it provides unconditional security.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1016"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "Adding the two's-complement numbers 10000001 and 10101010 results in an overflow condition.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1068"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the output of print(list[1:3]) given the list is [786, 2.23].",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3223"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "In a complete K-ary tree of depth N, the ratio of nonterminal nodes to total nodes is approximately (K-1)/K.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '1/K'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1019"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def change_date_format(dt): | return re.sub(r'(\\d{4})-(\\d{1,2})-(\\d{1,2})', '\\\\3-\\\\2-\\\\1', dt) | return change_date_format(dt)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "928"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_17_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find out the number of ways of painting the fence such that at most 2\nadjacent posts have the same color for the given fence with n posts and k colors.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def count_no_of_ways(n, k): | return dp[n]",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "291"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

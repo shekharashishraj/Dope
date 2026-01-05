@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_graduate_doc_03",
+  "document_name": "Computer Science - Graduate Level Assessment 3",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_03.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_03_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_03_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_03_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_03_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "The Message condentiality or privacy means that the sender and the receiver expect",
+      "options": {
+        "A": "Integrity",
+        "B": "Condentiality",
+        "C": "Authentication",
+        "D": "Nonrepudiation"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Condentiality",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1511"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_03_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which among the following is the least strong security encryption standard?",
+      "options": {
+        "A": "WEP",
+        "B": "WPA",
+        "C": "WPA 2",
+        "D": "WPA 3"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - WEP",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1556"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_03_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "The ____________ is anything which your search engine cannot search.",
+      "options": {
+        "A": "Haunted web",
+        "B": "World Wide Web",
+        "C": "Surface web",
+        "D": "Deep Web"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Deep Web",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "15632"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_03_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Of the following sorting algorithms, which has a running time that is LEAST dependent on\nthe initial ordering of the input?",
+      "options": {
+        "A": "Insertion sort",
+        "B": "Quicksort",
+        "C": "Merge sort",
+        "D": "Selection sort"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Merge sort",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1032"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_03_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "A/an ___________ is a program that steals your logins & passwords for instant messaging\napplications.",
+      "options": {
+        "A": "IM - Trojans",
+        "B": "Backdoor Trojans",
+        "C": "Trojan-Downloader",
+        "D": "Ransom Trojan"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - IM - Trojans",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1523"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_03_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "Merging tables can help mitigate SQL injection vulnerabilities in web applications.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Escape queries'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1489"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_03_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "A stack is a sequential segment of memory used for storing data like character strings or arrays of integers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'buffer'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1551"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_03_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "Finding all spanning trees of an undirected graph G is solvable in polynomial time.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Finding a shortest cycle in G'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1017"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_03_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "A packet filter firewall functions at the application or transport layer, analyzing data payloads for filtering.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Network or transport layer'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1508"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_03_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "The four primary security principles related to messages are Confidentiality, Access Control, Integrity, and Non-repudiation.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Confidentiality, Integrity, Non repudiation and Authentication'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1567"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_03_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the nested list elements which are present in another list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def intersection_nested_lists(l1, l2): | return result",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "298"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_03_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find the maximum difference between any two elements in a given\narray.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def max_Abs_Diff(arr,n): | return (maxEle - minEle)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "145"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

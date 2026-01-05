@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_02",
+  "document_name": "Machine Learning - Graduate Level Assessment 2",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_02.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_02.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_02_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_02_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_02_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_02_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Suppose we like to calculate P(H|E, F) and we have no conditional independence\ninformation. Which of the following sets of numbers are sufficient for the calculation?",
+      "options": {
+        "A": "P(E, F), P(H), P(E|H), P(F|H)",
+        "B": "P(E, F), P(H), P(E, F|H)",
+        "C": "P(H), P(E|H), P(F|H)",
+        "D": "P(E, F), P(E|H), P(F|H)"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - P(E, F), P(H), P(E, F|H)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6893"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Consider the Bayesian network given below. How many independent parameters would we need\nif we made no assumptions about independence or conditional independence H -> U <- P <- W?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "7",
+        "D": "15"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 15",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6881"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "The number of test examples needed to get statistically significant results should be _",
+      "options": {
+        "A": "Larger if the error rate is larger.",
+        "B": "Larger if the error rate is smaller.",
+        "C": "Smaller if the error rate is smaller.",
+        "D": "It does not matter."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Larger if the error rate is smaller.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14785"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes the joint probability distribution P(X, Y, Z) for\nthe given Bayes net. X <- Y -> Z?",
+      "options": {
+        "A": "P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)",
+        "B": "P(X, Y, Z) = P(X) * P(Y|X) * P(Z|Y)",
+        "C": "P(X, Y, Z) = P(Z) * P(X|Z) * P(Y|Z)",
+        "D": "P(X, Y, Z) = P(X) * P(Y) * P(Z)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14787"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Adding more basis functions in a linear model, pick the most probably option:",
+      "options": {
+        "A": "Decreases model bias",
+        "B": "Decreases estimation bias",
+        "C": "Decreases variance",
+        "D": "Doesn't affect bias and variance"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Decreases model bias",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6880"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "The softmax function is commonly used in multiclass logistic regression to convert logits into probabilities.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6874"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "DenseNets typically require more memory than ResNets due to their densely connected architecture.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6884"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "The variance of the Maximum A Posteriori (MAP) estimate is the same as that of the Maximum Likelihood Estimate (MLE).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'lower'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14786"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "Neural networks can only be effectively trained using stochastic gradient descent as their optimization method.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Can use a mix of different activation functions'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6865"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "P(A | B, C) * P(B | A, C) * P(C | A, B) is a correct formulation for P(A, B, C) in the absence of independence assumptions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'P(A, B | C) * P(C)'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6932"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the effectiveness of convolutional networks in classifying high-resolution images,\nhighlighting their architectural features, advantages, and any limitations compared to\nother approaches.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "convolutional networks. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6839"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_02_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications and methodologies of using unsupervised learning to identify\ndistinct patient clusters in a dataset of medical records for heart disease treatment.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Unsupervised learning. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6917"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

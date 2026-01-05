@@ -1,0 +1,291 @@
+{
+  "docid": "mathematics_undergraduate_doc_24",
+  "document_name": "Mathematics - Undergraduate Level Assessment 24",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf",
+    "mmlu_pro_math_mcq",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_24.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_24.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_24_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_24_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_24_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_24_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Find all zeros in the indicated finite field of the given polynomial with coefficients in\nthat field. x^3 + 2 x + 2 in Z_7",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "2,3",
+        "D": "6"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 2,3",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "9"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Using Fermat's theorem, find the remainder of 3^47 when it is divided by 23.",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 4",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "72"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | A homomorphism may have an empty kernel. Statement 2 | It is not possible to\nhave a nontrivial homomorphism of some finite group into some infinite group.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "46"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | Q is an extension field of Z_2. Statement 2 | Every non-constant polynomial\nover a field has a zero in some extension field.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - False, True",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "94"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "If f(z) is an analytic function that maps the entire finite complex plane into the real\naxis, then the imaginary axis must be mapped onto",
+      "options": {
+        "A": "the entire real axis",
+        "B": "a point",
+        "C": "a ray",
+        "D": "an open finite interval"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - a point",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1136"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The order of a finite group G containing a subgroup of order five and no elements other than the identity as their own inverses can be 35.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "14167"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The polynomial 8 x^3 + 6 x^2 - 9 x + 24 satisfies the Eisenstein criterion for irreducibility over Q with p=5.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Yes, with p=3.'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "27"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "If R is a ring and f(x) and g(x) are in R[x], then deg(f(x) + g(x)) = deg(f(x)) + deg(g(x)).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'False, True'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "66"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The degree of the field extension Q(\\sqrt 2, \\sqrt 3) over Q is 4.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "35"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "Every field is also a ring, as fields satisfy all the properties required for a ring.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "65"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the validity of the following statements: (1) If H and K are subgroups of a group\nG, then |HK| = |H||K|/|H \u2229 K|, and (2) A group of order 2 p, where p is an odd prime, is\neither cyclic or isomorphic to D_p. Provide detailed reasoning and examples to support\nyour analysis.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "True, True. Explain why this is the correct answer and provide supporting evidence. Show\nthe calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "86"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_24_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Given the characteristic polynomial det(A - \u03bbI) = -\u03bb^3 + 3\u03bb^2 + \u03bb - 3 for a 3 \\times 3\nmatrix A, analyze the implications for the trace, determinant, and eigenvalues of A.\nDiscuss your findings.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "I and II only. Explain why this is the correct answer and provide supporting evidence.\nShow the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1169"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

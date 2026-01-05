@@ -1,0 +1,289 @@
+{
+  "docid": "cybersecurity_undergraduate_doc_22",
+  "document_name": "Cybersecurity - Undergraduate Level Assessment 22",
+  "domain": "cybersecurity",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cybersecurity_mcq",
+    "mmlu_pro_cybersecurity_tf",
+    "cybersecurity_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\cybersecurity\\undergraduate\\latex_documents\\cybersecurity_undergraduate_doc_22.tex",
+    "pdf_file": "output\\cybersecurity\\undergraduate\\pdf_documents\\cybersecurity_undergraduate_doc_22.pdf",
+    "metadata_file": "data/metadata_hierarchical/cybersecurity_undergraduate_doc_22_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/cybersecurity_undergraduate_doc_22_gold.json",
+    "answer_key_latex_file": "output\\cybersecurity\\undergraduate\\answer_keys\\latex\\cybersecurity_undergraduate_doc_22_answer_key.tex",
+    "answer_key_pdf_file": "output\\cybersecurity\\undergraduate\\answer_keys\\pdf\\cybersecurity_undergraduate_doc_22_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "To verify a digital signature we need the",
+      "options": {
+        "A": "Sender's Private key",
+        "B": "Sender's Public key",
+        "C": "Receiver's Private key",
+        "D": "Receiver's Public key"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Sender's Public key",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1498"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following deals with network intrusion detection and real-time traffic\nanalysis?",
+      "options": {
+        "A": "John the Ripper",
+        "B": "L 0 phtCrack",
+        "C": "Snort",
+        "D": "Nessus"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Snort",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1510"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "The digest created by a hash function is normally called a",
+      "options": {
+        "A": "Modication detection code (MDC)",
+        "B": "Modify authentication connection",
+        "C": "Message authentication control",
+        "D": "Message authentication cipher"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Modication detection code (MDC)",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1532"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What does EXE do when the STP solver times out on a constraint query for a particular\npath?",
+      "options": {
+        "A": "Assume that the query is satisfiable and continue executing the path.",
+        "B": "Assume that the query is not satisfiable and stop executing the path",
+        "C": "Restart STP and retry the query, up to a limited number of retries.",
+        "D": "Remove a subset of the constraints and retry the query."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Assume that the query is not satisfiable and stop executing the path",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1497"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Can a stream cipher have perfect secrecy?",
+      "options": {
+        "A": "Yes, if the PRG is really \"secure\"",
+        "B": "No, there are no ciphers with perfect secrecy",
+        "C": "Yes, every cipher has perfect secrecy",
+        "D": "No, since the key is shorter than the message"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - No, since the key is shorter than the message",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1559"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_tf_1",
+      "question_type": "TF",
+      "stem_text": "A man-in-the-middle attack cannot affect the Diffie-Hellman method if the two parties are joined in a secure network.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Authenticated'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1480"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_tf_2",
+      "question_type": "TF",
+      "stem_text": "The sub key length at each round of DES is 56 bits.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '56'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1524"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_tf_3",
+      "question_type": "TF",
+      "stem_text": "SQL queries based on user input are particularly vulnerable to injection attacks due to improper sanitization of user data.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1514"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_tf_4",
+      "question_type": "TF",
+      "stem_text": "EtterPeak is a widely used tool for network analysis in multiprotocol diverse networks.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1549"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_tf_5",
+      "question_type": "TF",
+      "stem_text": "The four primary security principles related to messages are Confidentiality, Access Control, Integrity, and Non-repudiation.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Confidentiality, Integrity, Non repudiation and Authentication'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1567"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function that matches a string that has an a followed by zero or one 'b'.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def text_match_zero_one(text): | return 'Found a match!'",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "756"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "cybersecurity_undergraduate_doc_22_cybersecurity_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to check whether the given string starts and ends with the same character\nor not using regex.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def check_char(string): | return \"Valid\" | return \"Invalid\"",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "396"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

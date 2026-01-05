@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_graduate_doc_02",
+  "document_name": "Computer Science - Graduate Level Assessment 2",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_02.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_02.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_02_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_02_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_02_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_02_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_02_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following language features requires that stack-based storage allocation be\nused rather than static allocation?",
+      "options": {
+        "A": "Recursive procedures",
+        "B": "Arbitrary goto's",
+        "C": "Two-dimensional arrays",
+        "D": "Integer-valued functions"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Recursive procedures",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1059"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_02_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "What was the first buffer overflow attack?",
+      "options": {
+        "A": "Love Bug",
+        "B": "SQL Slammer",
+        "C": "Morris Worm",
+        "D": "Code Red"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Morris Worm",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1568"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_02_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "To verify a digital signature we need the",
+      "options": {
+        "A": "Sender's Private key",
+        "B": "Sender's Public key",
+        "C": "Receiver's Private key",
+        "D": "Receiver's Public key"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Sender's Public key",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1498"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_02_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is not a block cipher operating mode?",
+      "options": {
+        "A": "ECB",
+        "B": "CFB",
+        "C": "CBF",
+        "D": "CBC"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - CBF",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1518"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_02_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following characteristics of a programming language is best specified using a\ncontext-free grammar?",
+      "options": {
+        "A": "Identifier length",
+        "B": "Maximum level of nesting",
+        "C": "Operator precedence",
+        "D": "Type compatibility"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Operator precedence",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1077"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_02_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "The Abstract Syntax Tree (AST) is responsible for managing information about variables and their attributes in a compiler.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Symbol Table'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1022"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_02_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "A secure pseudorandom permutation (PRP) can be constructed from a secure pseudorandom generator (PRG) using the GGM construction and Luby-Rackoff theorem.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "14208"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_02_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "Silk Road was a notorious Dark Web marketplace known for facilitating the sale of illegal drugs and various illicit goods.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1495"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_02_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "Biometric authentication is not considered a secure method for verifying user identity.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'All of the above'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1505"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_02_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "The Heartbleed bug enables code injection attacks by overwriting cryptographic keys stored in memory.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'a read outside bounds of a buffer'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "15631"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_02_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to check whether the given ip address is valid or not using regex.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def check_IP(Ip): | return (\"Valid IP address\") | return (\"Invalid IP address\")",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "669"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_02_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find minimum sum of factors of a given number.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def find_Min_Sum(num): | return sum",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "511"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

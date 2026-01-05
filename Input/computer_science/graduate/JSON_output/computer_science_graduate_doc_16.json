@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_graduate_doc_16",
+  "document_name": "Computer Science - Graduate Level Assessment 16",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_16.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_16.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_16_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_16_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_16_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_16_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_16_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which among the following is the least strong security encryption standard?",
+      "options": {
+        "A": "WEP",
+        "B": "WPA",
+        "C": "WPA 2",
+        "D": "WPA 3"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - WEP",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1556"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_16_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "What was the first buffer overflow attack?",
+      "options": {
+        "A": "Love Bug",
+        "B": "SQL Slammer",
+        "C": "Morris Worm",
+        "D": "Code Red"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Morris Worm",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1568"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_16_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Buffer-overflow may remain as a bug in apps if __________ are not done fully.",
+      "options": {
+        "A": "boundary hacks",
+        "B": "memory checks",
+        "C": "boundary checks",
+        "D": "buffer checks"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - boundary checks",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1520"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_16_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What tool can be used to perform SNMP enumeration?",
+      "options": {
+        "A": "DNSlookup",
+        "B": "Whois",
+        "C": "Nslookup",
+        "D": "IP Network Browser"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - IP Network Browser",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1501"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_16_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "A 3-way, set-associative cache is",
+      "options": {
+        "A": "one in which each main memory word can be stored at any of 3 cache locations",
+        "B": "effective only if 3 or fewer processes are running alternately on the processor",
+        "C": "possible only with write-back",
+        "D": "faster to access than a direct-mapped cache"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - one in which each main memory word can be stored at any of 3 cache locations",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1091"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_16_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "A MAC can be secure even if it produces a short output, provided the underlying algorithm is strong.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'No, an attacker can simply guess the tag for messages'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1509"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_16_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "Operator precedence in a programming language can be effectively defined using a context-free grammar.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1077"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_16_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "EXE restarts the STP solver and retries the query until a solution is found, regardless of the timeout.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Assume that the query is not satisfiable and stop executing the path'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1497"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_16_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "Buffer overflows occur in C and C++ due to the absence of string boundary checks in predefined functions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1479"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_16_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "Public key encryption is generally faster than symmetric key cryptography due to its simpler algorithmic processes.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Key exchange'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1494"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_16_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to calculate the sum of the positive numbers of a given list of numbers\nusing lambda function.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def sum_positivenum(nums): | return sum(sum_positivenum)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "870"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_16_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to check if a nested list is a subset of another nested list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def check_subset_list(list1, list2): | return exist",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "216"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

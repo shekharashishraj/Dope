@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_03",
+  "document_name": "Machine Learning - Graduate Level Assessment 3",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_03.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_03_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_03_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_03_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "_ refers to a model that can neither model the training data nor generalize to new data.",
+      "options": {
+        "A": "good fitting",
+        "B": "overfitting",
+        "C": "underfitting",
+        "D": "all of the above"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - underfitting",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6846"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is NOT supervised learning?",
+      "options": {
+        "A": "PCA",
+        "B": "Decision Tree",
+        "C": "Linear Regression",
+        "D": "Naive Bayesian"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - PCA",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6930"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which image data augmentation is most common for natural images?",
+      "options": {
+        "A": "random crop and horizontal flip",
+        "B": "random crop and vertical flip",
+        "C": "posterization",
+        "D": "dithering"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - random crop and horizontal flip",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "15759"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Predicting the amount of rainfall in a region based on various cues is a ______ problem.",
+      "options": {
+        "A": "Supervised learning",
+        "B": "Unsupervised learning",
+        "C": "Clustering",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Supervised learning",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6869"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following tasks can be best solved using Clustering.",
+      "options": {
+        "A": "Predicting the amount of rainfall based on various cues",
+        "B": "Detecting fraudulent credit card transactions",
+        "C": "Training a robot to solve a maze",
+        "D": "All of the above"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Detecting fraudulent credit card transactions",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6933"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "DCGANs employ self-attention mechanisms to enhance the quality of generated images during training.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'False, False'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6850"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "The original ResNet employs self-attention mechanisms similar to those found in Transformers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6886"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "Using an L 2 norm regularization penalty in linear regression can result in some coefficients being zeroed out.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'either (a) or (b)'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6934"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "The joint probability P(H, U, P, W) can be expressed as P(H) * P(W) * P(P | W) * P(U | H, P).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6876"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The classification run time of the nearest neighbors algorithm is O(N), where N is the number of instances in the training dataset.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6885"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss how the choice of polynomial degree in polynomial regression influences the\nbalance between underfitting and overfitting, providing examples to support your analysis.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The polynomial degree. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6853"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_03_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the importance of centering the data to zero mean in Principal Component Analysis\n(PCA) and explain how this step enables PCA to yield projections equivalent to those\nobtained via Singular Value Decomposition (SVD).",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Transform data to zero mean. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6918"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

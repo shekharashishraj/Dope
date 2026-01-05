@@ -1,0 +1,290 @@
+{
+  "docid": "computer_science_undergraduate_doc_12",
+  "document_name": "Computer Science - Undergraduate Level Assessment 12",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_12.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_12.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_12_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_12_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_12_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_12_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the following function returns item from the list with max value?",
+      "options": {
+        "A": "cmp(list)",
+        "B": "len(list)",
+        "C": "max(list)",
+        "D": "min(list)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - max(list)",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3233"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, b = [11,13,15,17,19,21]; print(b[::2]) outputs what?",
+      "options": {
+        "A": "[19,21]",
+        "B": "[11,15]",
+        "C": "[11,15,19]",
+        "D": "[13,17,21]"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - [11,15,19]",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3274"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, which of the following operator in python performs exponential (power)\ncalculation on operands?",
+      "options": {
+        "A": "**",
+        "B": "//",
+        "C": "is",
+        "D": "not in"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - **",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3219"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is the hexadecimal representation of the decimal number 231_{10} ?",
+      "options": {
+        "A": "17_{16}",
+        "B": "E 4_{16}",
+        "C": "E 7_{16}",
+        "D": "F 4_{16}"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - E 7_{16}",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3220"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which types of functions grow the slowest?",
+      "options": {
+        "A": "O(N^(1/2))",
+        "B": "O(N^(1/4))",
+        "C": "O(N^(1/N))",
+        "D": "O(N)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - O(N^(1/N))",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14392"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "The addition of the two's-complement numbers 11111111 and 00000001 will result in overflow.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '10000001, 10101010'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1068"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the expression ['Hi!'] * 4 results in a syntax error.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '['Hi!', 'Hi!', 'Hi!', 'Hi!']'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3262"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the expression x << 3 evaluates to 8 when x is equal to 1.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3182"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, accessing the first element of the tuple ( 'abcd', 786 , 2.23, 'john', 70.2 ) will output 'abcd'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3191"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "The one-time pad is the only encryption scheme proven to be perfectly secure when used correctly.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1016"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the most common elements and their counts of a specified text.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def most_common_elem(s,a): | return most_common_elem",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "946"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_12_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to remove words from a given list of strings containing a character or\nstring.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def remove_words(list1, charlist): | return new_list",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "570"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

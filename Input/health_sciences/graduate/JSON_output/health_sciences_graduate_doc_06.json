@@ -1,0 +1,296 @@
+{
+  "docid": "health_sciences_graduate_doc_06",
+  "document_name": "Health Sciences - Graduate Level Assessment 6",
+  "domain": "health_sciences",
+  "academic_level": "Graduate",
+  "subjects": [
+    "clinical_knowledge",
+    "college_medicine",
+    "professional_medicine",
+    "health"
+  ],
+  "combination_used": [
+    "mmlu_pro_health_mcq",
+    "mmlu_pro_health_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health_sciences\\graduate\\latex_documents\\health_sciences_graduate_doc_06.tex",
+    "pdf_file": "output\\health_sciences\\graduate\\pdf_documents\\health_sciences_graduate_doc_06.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_sciences_graduate_doc_06_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_sciences_graduate_doc_06_gold.json",
+    "answer_key_latex_file": "output\\health_sciences\\graduate\\answer_keys\\latex\\health_sciences_graduate_doc_06_answer_key.tex",
+    "answer_key_pdf_file": "output\\health_sciences\\graduate\\answer_keys\\pdf\\health_sciences_graduate_doc_06_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following statements about glucose metabolism is correct?",
+      "options": {
+        "A": "The end-product of glycolysis in all cells is glucose",
+        "B": "Glycolysis doesn't require any enzymes",
+        "C": "In glycolysis, glucose is cleaved into two three-carbon products",
+        "D": "Glucose metabolism only occurs in the presence of oxygen",
+        "E": "In glycolysis, glucose is converted into two molecules of fructose"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - In glycolysis, glucose is cleaved into two three-carbon products",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6815"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following vitamins is required for fatty acid b-oxidation?",
+      "options": {
+        "A": "Vitamin C",
+        "B": "Vitamin E",
+        "C": "Vitamin B 12",
+        "D": "Thiamin",
+        "E": "Riboflavin"
+      },
+      "marks": 2,
+      "gold_answer": "E",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: E - Riboflavin",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6191"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "An example of a discontinuous change over the adult years is the change in",
+      "options": {
+        "A": "Personality",
+        "B": "Skin elasticity",
+        "C": "Physical strength",
+        "D": "Male hormone levels",
+        "E": "Hair color"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Personality",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6019"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Deficiency of vitamin A in children causes:",
+      "options": {
+        "A": "Poor muscle development",
+        "B": "Increased risk of mortality",
+        "C": "Goitre",
+        "D": "Increased risk of obesity",
+        "E": "Increased risk of heart disease"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Increased risk of mortality",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6769"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Disease can most often be prevented by which of the following:",
+      "options": {
+        "A": "Sunscreen",
+        "B": "Vaccines",
+        "C": "Antivirals",
+        "D": "Pain Relievers",
+        "E": "Hand Sanitizer"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Vaccines",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6069"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "Familial hypercholesterolaemia is caused by mutations in the gene that encodes high density lipoprotein.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Low density lipoprotein receptor'.",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6477"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "Phosphocreatine is predominantly found in the mitochondria of muscle cells, facilitating ATP production during aerobic respiration.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'the cytoplasm.'.",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6280"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "Placing a stoma directly on the umbilicus is recommended for improved patient comfort and care.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'The rectus sheath abdominus.'.",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6211"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "Astroviruses cause widespread replication in the liver and can lead to liver infections.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Very restricted replication in the gut'.",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6716"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "Hepatitis C was not first identified through clinical observation, but rather through serological testing methods.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_health_sciences_health",
+        "source_id": "6771"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the various limitations of food balance sheets in assessing nutritional health and\nfood security, providing a critical analysis of their impact on public health policy.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "All of the options given are correct. Explain why this is the correct answer and provide\nsupporting evidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "6320"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_sciences_graduate_doc_06_health_sciences_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the effectiveness of various treatments for depression in older adults,\nspecifically analyzing why mental stimulation may not be considered an effective\nintervention.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Mental stimulation. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "6786"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

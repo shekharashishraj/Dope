@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+Machine Learning - Graduate Level Assessment 12 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item Consider the Bayesian network given below. How many independent parameters are needed for this Bayesian Network H -\textgreater{} U \textless{}- P \textless{}- W?
+\begin{enumerate}[label=(\alph*)]
+    \item 2
+    \item 4
+    \item 8
+    \item 16
+\end{enumerate}
+\item Predicting the amount of rainfall in a region based on various cues is a \_\_\_\_\_\_ problem.
+\begin{enumerate}[label=(\alph*)]
+    \item Supervised learning
+    \item Unsupervised learning
+    \item Clustering
+    \item None of the above
+\end{enumerate}
+\item For polynomial regression, which one of these structural assumptions is the one that most affects the trade-off between underfitting and overfitting:
+\begin{enumerate}[label=(\alph*)]
+    \item The polynomial degree
+    \item Whether we learn the weights by matrix inversion or gradient descent
+    \item The assumed variance of the Gaussian noise
+    \item The use of a constant-term unit input
+\end{enumerate}
+\item As the number of training examples goes to infinity, your model trained on that data will have:
+\begin{enumerate}[label=(\alph*)]
+    \item Lower variance
+    \item Higher variance
+    \item Same variance
+    \item None of the above
+\end{enumerate}
+\item Which among the following prevents overfitting when we perform bagging?
+\begin{enumerate}[label=(\alph*)]
+    \item The use of sampling with replacement as the sampling technique
+    \item The use of weak classifiers
+    \item The use of classification algorithms which are not prone to overfitting
+    \item The practice of validation performed on every classifier trained
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: Grid search cannot be applied to non-differentiable functions, limiting its use in various optimization scenarios.
+\item True or False: All methods, including PCA, can be categorized as supervised learning approaches in machine learning.
+\item True or False: As of 2020, certain models achieve over 98\% accuracy on the CIFAR-10 dataset, demonstrating significant advancements in image classification.
+\item True or False: The model obtained by applying linear regression may differ during forward stage wise selection compared to the final subset model.
+\item True or False: Residual connections are commonly utilized in both ResNets and Transformers to facilitate training of deep networks.
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Discuss how you would modify the EM algorithm to compute MAP estimates instead of maximum likelihood estimates, focusing on the necessary changes to the maximization step.
+\item Discuss the implications of applying regularization in linear regression, specifically addressing how certain penalties can lead to some coefficients being zeroed out.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

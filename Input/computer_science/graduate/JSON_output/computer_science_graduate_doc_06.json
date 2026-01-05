@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_graduate_doc_06",
+  "document_name": "Computer Science - Graduate Level Assessment 6",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_06.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_06.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_06_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_06_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_06_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_06_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_06_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A proxy rewall lters at the",
+      "options": {
+        "A": "Physical layer",
+        "B": "Application layer",
+        "C": "Data link layer",
+        "D": "Network layer"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Application layer",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1528"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_06_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Three of the following are classic security properties; which one is not?",
+      "options": {
+        "A": "Confidentiality",
+        "B": "Availability",
+        "C": "Correctness",
+        "D": "Integrity"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Availability",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1570"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_06_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is not a security exploit?",
+      "options": {
+        "A": "Eavesdropping",
+        "B": "Cross-site scripting",
+        "C": "Authentication",
+        "D": "SQL Injection"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Authentication",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1485"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_06_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Of the following, which best approximates the ratio of the number of nonterminal nodes to\nthe total number of nodes in a complete K-ary tree of depth N?",
+      "options": {
+        "A": "1/K",
+        "B": "K-1/K",
+        "C": "log_10 (1/N)",
+        "D": "N-1/m"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 1/K",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1019"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_06_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "______________ is a widespread app's coding mistake made by developers which could be\nexploited by an attacker for gaining access or malfunctioning your system.",
+      "options": {
+        "A": "Memory leakage",
+        "B": "Buffer-overrun",
+        "C": "Less processing power",
+        "D": "Inefficient programming"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Buffer-overrun",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1476"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_06_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "Wireless security involves measures taken to protect computers and data from unauthorized access via wireless networks.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1537"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_06_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "Church's thesis was first proven by Alan Turing and is widely accepted as a formal theorem in computability theory.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'It can never be proven.'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "14151"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_06_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "WPS is a protocol designed to simplify the process of connecting new devices to wireless access points.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1554"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_06_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The set of Boolean operators {AND, OR} is not complete for representing all Boolean expressions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1000"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_06_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "A backdoor is a method that allows unauthorized access to a computer system while bypassing security mechanisms.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1517"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_06_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to create a list taking alternate elements from another given list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def alternate_elements(list1): | return result",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "718"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_06_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to sort a given mixed list of integers and strings.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def sort_mixed_list(mixed_list): | return int_part + str_part",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "37"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

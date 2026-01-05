@@ -1,0 +1,288 @@
+{
+  "docid": "computer_science_k-12_doc_06",
+  "document_name": "Computer Science - K-12 Level Assessment 6",
+  "domain": "computer_science",
+  "academic_level": "K-12",
+  "subjects": [
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\k-12\\latex_documents\\computer_science_k-12_doc_06.tex",
+    "pdf_file": "output\\computer_science\\k-12\\pdf_documents\\computer_science_k-12_doc_06.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_k-12_doc_06_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_k-12_doc_06_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\k-12\\answer_keys\\latex\\computer_science_k-12_doc_06_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\k-12\\answer_keys\\pdf\\computer_science_k-12_doc_06_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_k-12_doc_06_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "options": {
+        "A": "['Hi!', 'Hi!', 'Hi!', 'Hi!']",
+        "B": "['Hi!'] * 4",
+        "C": "Error",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - ['Hi!', 'Hi!', 'Hi!', 'Hi!']",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3262"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_k-12_doc_06_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of \"abc\"[-1] in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "a",
+        "C": "b",
+        "D": "c"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - c",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3247"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_k-12_doc_06_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes the primary way in which a distributed denial-\nofservice (D D o S) attack differs from a denial-ofservice (D o S) attack?",
+      "options": {
+        "A": "The goal of the attack",
+        "B": "The number of computers being attacked",
+        "C": "The number of computers launching the attack",
+        "D": "The time period in which the attack occurs"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - The number of computers launching the attack",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3266"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_k-12_doc_06_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is the hexadecimal representation of the decimal number 231_{10} ?",
+      "options": {
+        "A": "17_{16}",
+        "B": "E 4_{16}",
+        "C": "E 7_{16}",
+        "D": "F 4_{16}"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - E 7_{16}",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3220"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_k-12_doc_06_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Let l = [1,2,2,3,4]. In Python 3, what is a possible output of set(l)?",
+      "options": {
+        "A": "{1}",
+        "B": "{1,2,2,3,4}",
+        "C": "{1,2,3,4}",
+        "D": "{4,3,2,2,1}"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - {1,2,3,4}",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3270"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_k-12_doc_06_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "Authentication is compromised when someone uses stolen login credentials to access a system.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3237"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_k-12_doc_06_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The function O(N^(1/N)) grows the slowest among the given types of functions as N increases.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14392"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_k-12_doc_06_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "The boolean expression a[i] == max || !(max != a[i]) simplifies to a[i] < max || a[i] > max.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'a[i] == max'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3229"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_k-12_doc_06_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, floor division is represented by the operator '/'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '//'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3204"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_k-12_doc_06_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "The method 'sort()' can be used directly on string objects to sort their characters in Python.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'sorted('ab')'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14393"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_k-12_doc_06_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the importance of clearly defining problem specifications in programming. How\nshould a method be designed to handle cases with multiple values larger than a given item\nin an array?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The specification should be modified to indicate what should be done if there is more than\none index of larger values.. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3202"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_k-12_doc_06_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the potential benefits of an upgraded system in a company. In your analysis,\nidentify which benefit is least likely to be realized and explain your reasoning.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The company will be able to provide a human representative for any incoming call.. Explain\nwhy this is the correct answer and provide supporting evidence. Reference key facts or\nconcepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3192"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

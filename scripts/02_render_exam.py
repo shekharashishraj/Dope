@@ -33,31 +33,55 @@ def setup_logging(log_dir="logs"):
 
 
 def extract_subject_from_path(input_file):
-    """Extract subject name from input file path.
+    """Extract domain name from input file path.
     
-    Expected path pattern: Input/<Subject>/<file>.json
-    Returns the subject name (e.g., 'Maths', 'Science')
+    Expected path pattern: Input/<domain>/<education_level>/JSON_output/<file>.json
+    Returns the domain name (e.g., 'chemistry', 'mathematics').
     """
     input_path = Path(input_file)
-    # Get the parent directory name (should be the subject)
-    # Input/Maths/file.json -> Maths
-    parent_dir = input_path.parent.name
+    parts = input_path.parts
     
-    # If parent is 'Input', try to get from the path components
-    if parent_dir.lower() == 'input' or parent_dir == '':
-        # Try to find Input/<Subject> pattern
-        parts = input_path.parts
-        try:
-            input_idx = [p.lower() for p in parts].index('input')
-            if input_idx + 1 < len(parts):
-                return parts[input_idx + 1]
-        except ValueError:
-            pass
-        # Fallback: use 'default' if we can't determine
-        logging.warning(f"Could not extract subject from path {input_file}, using 'default'")
-        return 'default'
+    try:
+        input_idx = [p.lower() for p in parts].index('input')
+        if input_idx + 1 < len(parts):
+            return parts[input_idx + 1]
+    except ValueError:
+        pass
     
-    return parent_dir
+    # Fallback from the tail
+    try:
+        if len(parts) >= 4:
+            return parts[-4]
+    except Exception:
+        pass
+    
+    logging.warning(f"Could not extract domain from path {input_file}, using 'default'")
+    return 'default'
+
+
+def extract_education_level_from_path(input_file):
+    """Extract education level from input file path.
+    
+    Expected path pattern: Input/<domain>/<education_level>/JSON_output/<file>.json
+    """
+    input_path = Path(input_file)
+    parts = input_path.parts
+    
+    try:
+        input_idx = [p.lower() for p in parts].index('input')
+        if input_idx + 2 < len(parts):
+            return parts[input_idx + 2]
+    except ValueError:
+        pass
+    
+    try:
+        if len(parts) >= 3:
+            return parts[-3]
+    except Exception:
+        pass
+    
+    logging.warning(f"Could not extract education level from path {input_file}, using 'default'")
+    return 'default'
 
 
 def normalize_prompt_text(text: str) -> str:
@@ -164,8 +188,12 @@ def render_exam(input_file, output_dir, subject_name=None, attack_variant="basel
     
     # Extract subject name from input path if not provided
     if subject_name is None:
-        subject_name = extract_subject_from_path(input_file)
-        logging.info(f"Extracted subject name: {subject_name}")
+        domain = extract_subject_from_path(input_file)
+        edu_level = extract_education_level_from_path(input_file)
+        subject_name = f"{domain}/{edu_level}" if edu_level else domain
+        logging.info(f"Extracted domain: {domain}")
+        logging.info(f"Extracted education level: {edu_level}")
+        logging.info(f"Subject name: {subject_name}")
     else:
         logging.info(f"Using provided subject name: {subject_name}")
     

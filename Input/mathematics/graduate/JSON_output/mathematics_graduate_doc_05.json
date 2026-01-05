@@ -1,0 +1,294 @@
+{
+  "docid": "mathematics_graduate_doc_05",
+  "document_name": "Mathematics - Graduate Level Assessment 5",
+  "domain": "mathematics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "math"
+  ],
+  "combination_used": [
+    "mmlu_pro_math_mcq",
+    "mmlu_pro_math_tf",
+    "mmlu_pro_math_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\graduate\\latex_documents\\mathematics_graduate_doc_05.tex",
+    "pdf_file": "output\\mathematics\\graduate\\pdf_documents\\mathematics_graduate_doc_05.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_graduate_doc_05_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_graduate_doc_05_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\graduate\\answer_keys\\latex\\mathematics_graduate_doc_05_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\graduate\\answer_keys\\pdf\\mathematics_graduate_doc_05_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "If r(t) = (6 t+2)i + 5 t^2 j - 8 tk, find the Binormal vector as [xi, yj, zk]. What are x,\ny, z? Return them as a list.",
+      "options": {
+        "A": "[0.7, 0.0, 0.7]",
+        "B": "[0.6, 0.0, 0.8]",
+        "C": "[0.0, 0.8, 0.6]",
+        "D": "[0.0, 0.7, 0.7]",
+        "E": "[0.8, 0.6, 0.0]"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - [0.7, 0.0, 0.7]",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8301"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Use the Trapezoidal Rule with to approximate $\\int_0^{\\pi} sin^2(x)dx$. Return the\napproximated demical value.",
+      "options": {
+        "A": "1.414214",
+        "B": "1.000000",
+        "C": "0.785398",
+        "D": "1.570796",
+        "E": "1.234567"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 1.570796",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8059"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "What is the smallest whole number that has a remainder of 1 when divided by 4, a remainder\nof 1 when divided by 3, and a remainder of 2 when divided by 5?",
+      "options": {
+        "A": "72",
+        "B": "76",
+        "C": "67",
+        "D": "64",
+        "E": "57"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 72",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8598"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Find all zeros in the indicated finite field of the given polynomial with coefficients in\nthat field. x^5 + 3 x^3 + x^2 + 2 x in Z_5",
+      "options": {
+        "A": "1,2",
+        "B": "0,1,2,3",
+        "C": "1",
+        "D": "3,4",
+        "E": "0,1,2"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 1,2",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8001"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Each story of a building is 14.3 feet tall. If the height of the building is 185.9 feet,\nhow many floors does the building have?",
+      "options": {
+        "A": "10",
+        "B": "15",
+        "C": "17",
+        "D": "9",
+        "E": "11"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 10",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7824"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "The bakers can make a total of 41 apple pies using 270 apples from 15 boxes.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '37'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7716"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "The field of real numbers R is indeed a splitting field for polynomials with real coefficients over the rational numbers Q.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7688"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The volume of the solid bounded by the elliptical paraboloid and the plane is 1.5 cubic units.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '0.75'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8428"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The transformation from sin x to 3 sin 2 x does not change the domain, but it scales the range by a factor of three.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7841"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_graduate_doc_05_mathematics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "Every ring must have a multiplicative identity, which is not true for all rings, such as some rings of functions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, False'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8972"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_graduate_doc_05_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "A patient administers a daily dosage of 150 mg of a drug, with 5% remaining in the body\njust before each dose. Calculate and explain the quantity of the drug present after the\nthird administration.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "145.5 $\\mathrm{mg}$. Explain why this is the correct answer and provide supporting\nevidence. Show the calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "7771"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_graduate_doc_05_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Using the divergence theorem, evaluate the surface integral $\\iint_S \\vec{F} \\cdot d\n\\vec{S}$ for the vector field $\\vec{F} = \\sin(\\pi x) \\vec{i} + (z y^3) \\vec{j} + (z^2 + 4\nx) \\vec{k}$ over the specified box. Discuss the steps and reasoning behind your solution.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "80.1. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "7982"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

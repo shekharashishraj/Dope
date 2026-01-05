@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_graduate_doc_05",
+  "document_name": "Computer Science - Graduate Level Assessment 5",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_05.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_05.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_05_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_05_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_05_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_05_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_05_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "The message must be encrypted at the sender site and decrypted at the",
+      "options": {
+        "A": "Sender Site",
+        "B": "Site",
+        "C": "Receiver site",
+        "D": "Conferencing"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Receiver site",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1561"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_05_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Let A be a finite set with m elements, and let B be a finite set with n elements. The\nnumber of distinct functions mapping A into B is",
+      "options": {
+        "A": "n^m",
+        "B": "n!/(n - m)!",
+        "C": "n!",
+        "D": "n!/(m!(n - m)!)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - n^m",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1072"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_05_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Encapsulating Security Payload (ESP) belongs to which Internet Security Protocol?",
+      "options": {
+        "A": "Secure Socket Layer Protocol",
+        "B": "Secure IP Protocol",
+        "C": "Secure Http Protocol",
+        "D": "Transport Layer Security Protocol"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Secure IP Protocol",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1529"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_05_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Let f(X) = if x = 1 then 0 else [x * f(x - 1) + x**2]. The value of f(4) is",
+      "options": {
+        "A": "53",
+        "B": "29",
+        "C": "50",
+        "D": "100"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 100",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "14150"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_05_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "The access matrix approach to protection has the difficulty that",
+      "options": {
+        "A": "the matrix, if stored directly, is large and can be clumsy to manage",
+        "B": "it is not capable of expressing complex protection requirements",
+        "C": "deciding whether a process has access to a resource is undecidable",
+        "D": "there is no way to express who has rights to change the access matrix itself"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - the matrix, if stored directly, is large and can be clumsy to manage",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "996"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_05_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "The length of the message digest produced by the MD 5 hashing algorithm is 160 bits.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '128'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1487"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_05_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "Poor handling of unexpected input is an example of a presentation layer issue related to user interface design.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Weak or non-existent authentication mechanisms'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1564"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_05_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "The IP Network Browser is a tool used for performing SNMP enumeration effectively.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1501"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_05_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The SYN stealth scan does not complete the TCP handshake, making it less detectable by firewalls.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1546"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_05_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "Windows 7 is known for its robust defenses against buffer-overflow attacks, making it less vulnerable than older systems.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'UNIX'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1534"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_05_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the maximum sum of bi-tonic sub-sequence for the given array.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def max_sum(arr, n): | return max_sum",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "245"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_05_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to join the tuples if they have similar initial elements.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def join_tuples(test_list): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "969"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "docid": "mathematics_graduate_doc_10",
+  "document_name": "Mathematics - Graduate Level Assessment 10",
+  "domain": "mathematics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "math"
+  ],
+  "combination_used": [
+    "mmlu_pro_math_mcq",
+    "mmlu_pro_math_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\graduate\\latex_documents\\mathematics_graduate_doc_10.tex",
+    "pdf_file": "output\\mathematics\\graduate\\pdf_documents\\mathematics_graduate_doc_10.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_graduate_doc_10_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_graduate_doc_10_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\graduate\\answer_keys\\latex\\mathematics_graduate_doc_10_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\graduate\\answer_keys\\pdf\\mathematics_graduate_doc_10_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Solve the equation 14 = w + 23.",
+      "options": {
+        "A": "9",
+        "B": "37",
+        "C": "-23",
+        "D": "14",
+        "E": "-14"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 9",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7719"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "When the expression $-2 x^2-20 x-53$ is written in the form $a(x+d)^2+e$, where $a$, $d$,\nand $e$ are constants, what is the sum $a+d+e$?",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "6",
+        "D": "80",
+        "E": "20"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 0",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8183"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Use mental math to solve 8 y = 56.",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "4",
+        "D": "14",
+        "E": "6"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 8",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8701"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Suppose X and Y are random variables with E(X) = 312, var(X) = 6, E(X) = 307, and var(Y) =\n8. What are the expected value and variance of the random variable X + Y?",
+      "options": {
+        "A": "E(X + Y) = 307, var(X + Y) = 10",
+        "B": "E(X + Y) = 307, var(X + Y) = 6",
+        "C": "E(X + Y) = 619, var(X + Y) = 14",
+        "D": "E(X + Y) = 619, var(X + Y) = 7",
+        "E": "E(X + Y) = 312, var(X + Y) = 14"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - E(X + Y) = 307, var(X + Y) = 10",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7914"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Suppose today is Wednesday. What day of the week will it be 10^(10^(10)) days from now?",
+      "options": {
+        "A": "Sunday",
+        "B": "Wednesday",
+        "C": "Tuesday",
+        "D": "Saturday",
+        "E": "The day of the week cannot be determined"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Sunday",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8041"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "Every integral domain with prime characteristic must be infinite in size.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'False, Not Enough Information'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7789"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "The determinant of the matrix A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] is 6.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '0'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8757"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The critical value for the distribution $F(8,4)$ at the 0.01 significance level is 16.30.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7781"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "The sum of all possible values of x that satisfy the equation is 3.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '-2'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8276"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_graduate_doc_10_mathematics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "There are 220 ways to distribute 13 identical balls into 4 distinct boxes, ensuring no box is empty.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8408"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_graduate_doc_10_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Analyze the initial value problem \\( 2 y^{\\prime \\prime}+3 y^{\\prime}-2 y=0 \\) with\nconditions \\( y(0)=1 \\) and \\( y^{\\prime}(0)=-\\beta \\). Determine the smallest value of \\(\n\\beta \\) such that the solution lacks a minimum point, and discuss the implications of\nyour findings on the behavior of the solution.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "2. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "8957"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_graduate_doc_10_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Given 19 points placed arbitrarily within a unit square, analyze the geometric\nimplications of covering these points with a circle of diameter $\\frac{\\sqrt{2}}{3}$.\nDiscuss the minimum number of points that can be guaranteed to be covered and justify your\nreasoning with mathematical proofs and concepts.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "3. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "8060"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

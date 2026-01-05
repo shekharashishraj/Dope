@@ -1,0 +1,288 @@
+{
+  "docid": "computer_science_k-12_doc_05",
+  "document_name": "Computer Science - K-12 Level Assessment 5",
+  "domain": "computer_science",
+  "academic_level": "K-12",
+  "subjects": [
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\k-12\\latex_documents\\computer_science_k-12_doc_05.tex",
+    "pdf_file": "output\\computer_science\\k-12\\pdf_documents\\computer_science_k-12_doc_05.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_k-12_doc_05_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_k-12_doc_05_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\k-12\\answer_keys\\latex\\computer_science_k-12_doc_05_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\k-12\\answer_keys\\pdf\\computer_science_k-12_doc_05_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of \"abc\"[::-1] in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "abc",
+        "C": "cba",
+        "D": "c"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - cba",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "15675"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Let x = 1. What is x << 3 in Python 3?",
+      "options": {
+        "A": "1",
+        "B": "3",
+        "C": "8",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 8",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3182"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Let x = 8. What is x>>1 in Python 3?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "2",
+        "D": "8"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 4",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3227"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, which of the following function convert a string to an int in python?",
+      "options": {
+        "A": "int(x [,base])",
+        "B": "long(x [,base] )",
+        "C": "float(x)",
+        "D": "str(x)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - int(x [,base])",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3183"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_k-12_doc_05_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is correct about Python?",
+      "options": {
+        "A": "It supports automatic garbage collection.",
+        "B": "It can be easily integrated with C, C++, COM, ActiveX, CORBA, and Java.",
+        "C": "Both of the above.",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Both of the above.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3226"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "O(n) is larger than O(n^2) when comparing their growth rates for large inputs.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'O(n^2)'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3213"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the output of print(list[1:3]) with the given list is [786, 2.23].",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3223"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "In Python 3, using b[::2] on the list [11, 13, 15, 17, 19, 21] results in the output [11, 15, 19].",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3274"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "A group of cookies stored by the user's web browser can significantly compromise a user's personal privacy.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3267"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_k-12_doc_05_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "In Python, applying the lambda function r to the argument 3 results in the value 6.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14389"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_k-12_doc_05_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "After extensively testing a large Java program with no errors found, discuss the\nimplications of this outcome and explain why it's still possible for the program to\ncontain bugs.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The program may have bugs.. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3216"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_k-12_doc_05_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the purpose of the `isupper()` function in Python 3. How does it determine if all\ncharacters in a string are uppercase, and what are potential use cases for this function?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "isupper(). Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3197"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

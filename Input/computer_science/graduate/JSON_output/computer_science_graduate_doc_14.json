@@ -1,0 +1,290 @@
+{
+  "docid": "computer_science_graduate_doc_14",
+  "document_name": "Computer Science - Graduate Level Assessment 14",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mbpp_coding_long",
+    "cs_research",
+    "cs_implementation"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_14.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_14.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_14_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_14_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_14_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_14_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_14_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is NOT a reasonable justification for choosing to busy-wait on an\nasynchronous event?",
+      "options": {
+        "A": "The wait is expected to be short.",
+        "B": "A busy-wait loop is easier to code than an interrupt handler.",
+        "C": "There is no other work for the processor to do.",
+        "D": "The program executes on a time-sharing system."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - The program executes on a time-sharing system.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1012"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_14_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following sets of bit strings CANNOT be described with a regular expression?",
+      "options": {
+        "A": "All bit strings whose number of zeros is a multiple of five",
+        "B": "All bit strings starting with a zero and ending with a one",
+        "C": "All bit strings with an even number of zeros",
+        "D": "All bit strings with more ones than zeros"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - All bit strings with more ones than zeros",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1037"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_14_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following are most vulnerable to injection attacks?",
+      "options": {
+        "A": "Session IDs",
+        "B": "Registry keys",
+        "C": "Network communications",
+        "D": "SQL queries based on user input"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - SQL queries based on user input",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1514"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_14_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "You are given a message (m) and its OTP encryption (c). Can you compute the OTP key from m\nand c ?",
+      "options": {
+        "A": "No, I cannot compute the key.",
+        "B": "Yes, the key is k = m xor c.",
+        "C": "I can only compute half the bits of the key.",
+        "D": "Yes, the key is k = m xor m."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Yes, the key is k = m xor c.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1540"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_14_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "A ___________ is a method in which a computer security mechanism is bypassed untraceable\nfor accessing the computer or its information.",
+      "options": {
+        "A": "front-door",
+        "B": "backdoor",
+        "C": "clickjacking",
+        "D": "key-logging"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - backdoor",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1517"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_14_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "Mutation-based fuzzing exclusively applies to file-based inputs and is not suitable for network protocol testing.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'It generates each different input by modifying a prior input'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1525"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_14_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The decimal number 0.1 can be represented exactly in binary notation without approximation.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '0.5'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1042"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_14_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "WPA 2 is a recent protocol that simplifies the process of connecting devices to wireless networks.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'WPS'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1554"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_14_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "Encryption and decryption provide both confidentiality and integrity by ensuring that data is secure and unaltered.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Integrity'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1522"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_14_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "A packet filter firewall functions at the application or transport layer, analyzing data payloads for filtering.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Network or transport layer'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1508"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_14_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to check whether the given number is a perfect square or not.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def is_Perfect_Square(n) : | return True | return False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "803"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_14_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find the minimum operations required to make two numbers equal.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def min_Operations(A,B): | return B - 1",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "218"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

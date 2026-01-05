@@ -1,0 +1,290 @@
+{
+  "docid": "computer_science_undergraduate_doc_05",
+  "document_name": "Computer Science - Undergraduate Level Assessment 5",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_05.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_05.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_05_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_05_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_05_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_05_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of 4*1**4 in python?",
+      "options": {
+        "A": "4",
+        "B": "1",
+        "C": "256",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 4",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3272"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following sets of bit strings CANNOT be described with a regular expression?",
+      "options": {
+        "A": "All bit strings whose number of zeros is a multiple of five",
+        "B": "All bit strings starting with a zero and ending with a one",
+        "C": "All bit strings with an even number of zeros",
+        "D": "All bit strings with more ones than zeros"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - All bit strings with more ones than zeros",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1037"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "In python 3, which of the following is floor division?",
+      "options": {
+        "A": "/",
+        "B": "//",
+        "C": "%",
+        "D": "|"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - //",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3204"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Let l = [1,2,3,4]. What is max(l) in Python 3?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 4",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3242"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Let f(X) = if x = 1 then 0 else [x * f(x - 1) + x**2]. The value of f(4) is",
+      "options": {
+        "A": "53",
+        "B": "29",
+        "C": "50",
+        "D": "100"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 100",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "14150"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "In a complete K-ary tree of depth N, the ratio of nonterminal nodes to total nodes is approximately K-1/K.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '1/K'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1019"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "O(log n) indicates a smaller time complexity than O(1) in asymptotic analysis.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'O(1)'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3234"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "A 3-way, set-associative cache is effective only if 3 or fewer processes are running alternately on the processor.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'one in which each main memory word can be stored at any of 3 cache locations'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1091"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The function O(log N) grows slower than O(log log N), making it a better choice for optimizing performance.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'O(log log N)'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3231"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "The maximum possible degree of the minimal-degree interpolating polynomial p(x) for n + 1 distinct points is n.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1007"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to search a literals string in a string and also find the location within\nthe original string where the pattern occurs.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def search_literal(pattern,text): | return (s, e)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "534"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_05_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to count the number of digits in factorial of a given number.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def find_Digits(n): | return 0; | return 1; | return math.floor(x) + 1;",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "845"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

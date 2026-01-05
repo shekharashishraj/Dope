@@ -1,0 +1,290 @@
+{
+  "docid": "computer_science_graduate_doc_21",
+  "document_name": "Computer Science - Graduate Level Assessment 21",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mbpp_coding_long",
+    "cs_research",
+    "cs_implementation"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_21.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_21.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_21_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_21_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_21_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_21_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_21_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Local caching of files is common in distributed file systems, but it has the disadvantage\nthat",
+      "options": {
+        "A": "Temporary inconsistencies among views of a file by different machines can result",
+        "B": "The file system is likely to be corrupted when a computer crashes",
+        "C": "A much higher amount of network traffic results",
+        "D": "Caching makes file migration impossible"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Temporary inconsistencies among views of a file by different machines can result",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1085"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_21_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Of the following, which gives the best upper bound for the value of f(N) where f is a\nsolution to the recurrence f(2 N + 1) = f(2 N) = f(N) + log N for N >= 1, with f(1) = 0?",
+      "options": {
+        "A": "O(log N)",
+        "B": "O(N log N)",
+        "C": "O(log N) + 0(1)",
+        "D": "O((log N)^2)"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - O((log N)^2)",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1080"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_21_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Applications developed by programming languages like ____ and ______ have this common\nbuffer-overflow error.",
+      "options": {
+        "A": "C, Ruby",
+        "B": "Python, Ruby",
+        "C": "C, C++",
+        "D": "Tcl, C#"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - C, C++",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1521"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_21_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "The stack is memory for storing",
+      "options": {
+        "A": "Local variables",
+        "B": "Program code",
+        "C": "Dynamically linked libraries",
+        "D": "Global variables"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Local variables",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1558"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_21_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Of the following problems concerning a given undirected graph G, which is currently known\nto be solvable in polynomial time?",
+      "options": {
+        "A": "Finding a longest simple cycle in G",
+        "B": "Finding a shortest cycle in G",
+        "C": "Finding ALL spanning trees of G",
+        "D": "Finding a largest clique in G"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Finding a shortest cycle in G",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1017"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_21_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "A session symmetric key can be reused multiple times across different sessions without compromising security.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Only once'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1544"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_21_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "Message integrity ensures that data arrives at the receiver exactly as it was sent, without alteration during transmission.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1542"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_21_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "UNIX-based operating systems have historically been vulnerable to buffer-overflow attacks due to their handling of memory management.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1534"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_21_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The AH Protocol provides source authentication and data integrity, but it does not provide privacy for the transmitted data.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1484"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_21_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "Church's thesis was first proven by Alan Turing, establishing a formal basis for computable functions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'It can never be proven.'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "14151"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_21_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to remove particular data type elements from the given tuple.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def remove_datatype(test_tuple, data_type): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "533"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_21_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to separate and print the numbers and their position of a given string.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def num_position(text): | return m.start()",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "944"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

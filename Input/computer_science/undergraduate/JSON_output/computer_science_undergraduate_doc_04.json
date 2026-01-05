@@ -1,0 +1,289 @@
+{
+  "docid": "computer_science_undergraduate_doc_04",
+  "document_name": "Computer Science - Undergraduate Level Assessment 4",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mbpp_coding_long",
+    "cs_algorithm_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_04.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_04.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_04_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_04_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_04_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_04_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A starvation-free job-scheduling policy guarantees that no job waits indefinitely for\nservice. Which of the following job-scheduling policies is starvation-free?",
+      "options": {
+        "A": "Round-robin",
+        "B": "Priority queuing",
+        "C": "Shortest job first",
+        "D": "Youngest job first"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Round-robin",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1079"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Any set of Boolean operators that is sufficient to represent all Boolean expressions is\nsaid to be complete. Which of the following is NOT complete?",
+      "options": {
+        "A": "{AND, NOT}",
+        "B": "{NOT, OR}",
+        "C": "{AND, OR}",
+        "D": "{NAND}"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - {AND, OR}",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1000"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the output of print tuple[0] if tuple = ( 'abcd', 786 , 2.23, 'john',\n70.2 )?",
+      "options": {
+        "A": "( 'abcd', 786 , 2.23, 'john', 70.2 )",
+        "B": "abcd",
+        "C": "Error",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - abcd",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3191"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Local caching of files is common in distributed file systems, but it has the disadvantage\nthat",
+      "options": {
+        "A": "Temporary inconsistencies among views of a file by different machines can result",
+        "B": "The file system is likely to be corrupted when a computer crashes",
+        "C": "A much higher amount of network traffic results",
+        "D": "Caching makes file migration impossible"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Temporary inconsistencies among views of a file by different machines can result",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1085"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is correct about Python?",
+      "options": {
+        "A": "It supports automatic garbage collection.",
+        "B": "It can be easily integrated with C, C++, COM, ActiveX, CORBA, and Java.",
+        "C": "Both of the above.",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Both of the above.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3226"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "The regular expression a*(c + d)* + b(c + d)* describes the same set of strings as (a* + b)*(c + d).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '(a + b)*c +(a + b)*d'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "15608"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The value of the Python expression 4 + 3 % 2 is 5, since the modulus operator has a higher precedence than addition.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3250"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "The expression 'a' + 'ab' in Python 3 results in an error due to incompatible types.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'aab'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3203"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The number of distinct functions mapping a finite set A with m elements into a finite set B with n elements is n^m.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1072"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the expression ['a', 'Chemistry', 0, 1][1] evaluates to 'Chemistry'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3265"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to check whether the two numbers differ at one bit position only\nor not.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def is_Power_Of_Two (x): | return x and (not(x & (x - 1))) | def differ_At_One_Bit_Pos(a,b): | return is_Power_Of_Two(a ^ b)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "6"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_04_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to convert more than one list to nested dictionary.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def convert_list_dictionary(l1, l2, l3): | return result",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "391"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

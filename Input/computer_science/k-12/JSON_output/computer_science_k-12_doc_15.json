@@ -1,0 +1,288 @@
+{
+  "docid": "computer_science_k-12_doc_15",
+  "document_name": "Computer Science - K-12 Level Assessment 15",
+  "domain": "computer_science",
+  "academic_level": "K-12",
+  "subjects": [
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\k-12\\latex_documents\\computer_science_k-12_doc_15.tex",
+    "pdf_file": "output\\computer_science\\k-12\\pdf_documents\\computer_science_k-12_doc_15.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_k-12_doc_15_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_k-12_doc_15_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\k-12\\answer_keys\\latex\\computer_science_k-12_doc_15_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\k-12\\answer_keys\\pdf\\computer_science_k-12_doc_15_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_k-12_doc_15_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Let x = 8. What is x>>1 in Python 3?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "2",
+        "D": "8"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 4",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3227"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_k-12_doc_15_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best explains what happens when a new device is connected to the\nInternet?",
+      "options": {
+        "A": "A device driver is assigned to the device.",
+        "B": "An Internet Protocol (IP) address is assigned to the device.",
+        "C": "A packet number is assigned to the device.",
+        "D": "A Web site is assigned to the device."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - An Internet Protocol (IP) address is assigned to the device.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3268"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_k-12_doc_15_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of \"abc\"[-1] in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "a",
+        "C": "b",
+        "D": "c"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - c",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3247"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_k-12_doc_15_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, which of the following function removes all leading and trailing whitespace\nin string?",
+      "options": {
+        "A": "replace(old, new [, max])",
+        "B": "strip([chars])",
+        "C": "swapcase()",
+        "D": "title()"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - strip([chars])",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14386"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_k-12_doc_15_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes the primary way in which a distributed denial-\nofservice (D D o S) attack differs from a denial-ofservice (D o S) attack?",
+      "options": {
+        "A": "The goal of the attack",
+        "B": "The number of computers being attacked",
+        "C": "The number of computers launching the attack",
+        "D": "The time period in which the attack occurs"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - The number of computers launching the attack",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3266"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_k-12_doc_15_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the expression ['Hi!'] * 4 results in an error due to incorrect syntax.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '['Hi!', 'Hi!', 'Hi!', 'Hi!']'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3262"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_k-12_doc_15_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "O(1) represents the smallest asymptotic complexity, indicating constant time regardless of input size.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3234"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_k-12_doc_15_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "O(n^2) grows faster than O(n) as the input size increases, making it the largest asymptotic notation among the options.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3213"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_k-12_doc_15_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, floor division is performed using the single forward slash operator '/'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '//'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3204"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_k-12_doc_15_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "A function that sorts values in a column or row can help identify unusually high or low data entry errors.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3221"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_k-12_doc_15_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss how the Python function `set()` processes a list with duplicate elements, using\nthe list l = [1, 2, 2, 3, 4] as an example. What output would you expect and why?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "{1,2,3,4}. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3270"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_k-12_doc_15_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss how the observation that computer processing speeds double approximately every two\nyears can influence technology companies' research and development strategies.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Technology companies can set research and development goals based on anticipated\nprocessing speeds.. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "3193"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

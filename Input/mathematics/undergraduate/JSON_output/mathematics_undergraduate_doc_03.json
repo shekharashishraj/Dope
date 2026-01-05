@@ -1,0 +1,290 @@
+{
+  "docid": "mathematics_undergraduate_doc_03",
+  "document_name": "Mathematics - Undergraduate Level Assessment 3",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_03.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_03_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_03_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_03_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | If aH is an element of a factor group, then |aH| divides |a|. Statement 2 |\nIf H and K are subgroups of G then HK is a subgroup of G.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15574"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "The set of all real numbers under the usual multiplication operation is not a group since",
+      "options": {
+        "A": "multiplication is not a binary operation",
+        "B": "multiplication is not associative",
+        "C": "identity element does not exist",
+        "D": "zero has no inverse"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - zero has no inverse",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "18"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | If H is a subgroup of G and a belongs to G then |aH| = |Ha|. Statement 2 |\nIf H is a subgroup of G and a and b belong to G, then aH and Hb are identical or disjoint.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - True, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "10"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Find all c in Z_3 such that Z_3[x]/(x^2 + c) is a field.",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 1",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15573"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | If R is a ring and f(x) and g(x) are in R[x], then deg (f(x)+g(x)) = maximum\n(deg f(x), deg g(x)). Statement 2 | If F is a field then every ideal of F[x] is principal.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - False, True",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "66"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The characteristic of the ring 2 Z is 12, suggesting it has a finite order with respect to addition.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '0'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "15577"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "A complete graph with 10 vertices has 45 edges, as each vertex is connected to every other vertex.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1106"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "A group of order 2 p, where p is an odd prime, is always cyclic and cannot be isomorphic to D_p.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "86"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The polynomial x^2 + 1 has a zero in the finite field Z_2 at the element 1.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "96"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The symmetric group S_3 is a cyclic group, meaning it can be generated by a single element.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'False, True'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14047"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Analyze the function f(x,y) = x^2 - 2 xy + y^3 and discuss the significance of its\nrelative extrema, particularly focusing on the line x = y. What implications does this\nhave for the function's behavior?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "f has all of its relative extrema on the line x = y.. Explain why this is the correct\nanswer and provide supporting evidence. Show the calculation or reasoning that leads to\nthis conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1124"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_03_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Analyze the polynomial function \\( f(x) = 2 x^5 + 8 x - 7 \\) and determine the number of\nreal roots it possesses. Discuss your reasoning and the methods used in your analysis.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "One. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1156"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_12",
+  "document_name": "Machine Learning - Graduate Level Assessment 12",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_12.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_12.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_12_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_12_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_12_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_12_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Consider the Bayesian network given below. How many independent parameters are needed for\nthis Bayesian Network H -> U <- P <- W?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "8",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 8",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6843"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Predicting the amount of rainfall in a region based on various cues is a ______ problem.",
+      "options": {
+        "A": "Supervised learning",
+        "B": "Unsupervised learning",
+        "C": "Clustering",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Supervised learning",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6869"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "For polynomial regression, which one of these structural assumptions is the one that most\naffects the trade-off between underfitting and overfitting:",
+      "options": {
+        "A": "The polynomial degree",
+        "B": "Whether we learn the weights by matrix inversion or gradient descent",
+        "C": "The assumed variance of the Gaussian noise",
+        "D": "The use of a constant-term unit input"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - The polynomial degree",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6853"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "As the number of training examples goes to infinity, your model trained on that data will\nhave:",
+      "options": {
+        "A": "Lower variance",
+        "B": "Higher variance",
+        "C": "Same variance",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Lower variance",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6844"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which among the following prevents overfitting when we perform bagging?",
+      "options": {
+        "A": "The use of sampling with replacement as the sampling technique",
+        "B": "The use of weak classifiers",
+        "C": "The use of classification algorithms which are not prone to overfitting",
+        "D": "The practice of validation performed on every classifier trained"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - The use of weak classifiers",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6894"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Grid search cannot be applied to non-differentiable functions, limiting its use in various optimization scenarios.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'It runs reasonably slow for multiple linear regression.'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6868"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "All methods, including PCA, can be categorized as supervised learning approaches in machine learning.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'PCA'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6930"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "As of 2020, certain models achieve over 98% accuracy on the CIFAR-10 dataset, demonstrating significant advancements in image classification.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6854"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "The model obtained by applying linear regression may differ during forward stage wise selection compared to the final subset model.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6864"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "Residual connections are commonly utilized in both ResNets and Transformers to facilitate training of deep networks.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6892"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss how you would modify the EM algorithm to compute MAP estimates instead of maximum\nlikelihood estimates, focusing on the necessary changes to the maximization step.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Maximization. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6927"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_12_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications of applying regularization in linear regression, specifically\naddressing how certain penalties can lead to some coefficients being zeroed out.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "either (a) or (b). Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6934"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

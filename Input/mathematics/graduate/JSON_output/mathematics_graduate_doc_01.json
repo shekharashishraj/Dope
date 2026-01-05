@@ -1,0 +1,293 @@
+{
+  "docid": "mathematics_graduate_doc_01",
+  "document_name": "Mathematics - Graduate Level Assessment 1",
+  "domain": "mathematics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "math"
+  ],
+  "combination_used": [
+    "mbpp_coding_long",
+    "mmlu_pro_math_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\graduate\\latex_documents\\mathematics_graduate_doc_01.tex",
+    "pdf_file": "output\\mathematics\\graduate\\pdf_documents\\mathematics_graduate_doc_01.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_graduate_doc_01_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_graduate_doc_01_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\graduate\\answer_keys\\latex\\mathematics_graduate_doc_01_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\graduate\\answer_keys\\pdf\\mathematics_graduate_doc_01_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "If f(z) is an analytic function that maps the entire finite complex plane into the real\naxis, then the imaginary axis must be mapped onto",
+      "options": {
+        "A": "a circle",
+        "B": "an infinite interval",
+        "C": "the negative real axis",
+        "D": "the positive real axis",
+        "E": "a ray"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - a circle",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8575"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "The original price of a new bicycle is $138.00. If the bicycle is marked down 15%, what is\nthe new price?",
+      "options": {
+        "A": "$125.00",
+        "B": "$20.70",
+        "C": "$130.00",
+        "D": "$133.00",
+        "E": "$115.00"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - $125.00",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8793"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Consider the initial value problem $$ y^{\\prime}+\\frac{1}{4} y=3+2 \\cos 2 t, \\quad y(0)=0\n$$ Determine the value of $t$ for which the solution first intersects the line $y=12$.",
+      "options": {
+        "A": "11.234567",
+        "B": "10.065778",
+        "C": "6.789012",
+        "D": "7.654321",
+        "E": "9.876543"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 10.065778",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8639"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Write the ratio of 96 runners to 216 swimmers in simplest form.",
+      "options": {
+        "A": "16 over 36",
+        "B": "9 over 4",
+        "C": "8 over 18",
+        "D": "48 over 108",
+        "E": "24 over 54"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 16 over 36",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8260"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "In the group G = {2, 4, 6, 8) under multiplication modulo 10, the identity element is",
+      "options": {
+        "A": "9",
+        "B": "7",
+        "C": "8",
+        "D": "1",
+        "E": "4"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 9",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8330"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "Including 12 people in a group guarantees that at least two will have birthdays in the same month.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '24'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8411"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "The cumulative distribution function of the standard Gaussian distribution is log-concave.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7962"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The double integral of the function f(x,y)=x*y^3 exp^{x^2+y^2} over the region I=[0,1]\\times[0,1] equals 0.5234.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '0.4295'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "7964"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "When selecting 3 toppings from 8 available options, there are 72 different combinations possible.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '56'.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8313"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_graduate_doc_01_mathematics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "The number that satisfies the equation is 17, as it fulfills the condition of the problem statement.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_mathematics_math",
+        "source_id": "8921"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_graduate_doc_01_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "For a certain natural number $n$, $n^2$ gives a remainder of 4 when divided by 5, and\n$n^3$ gives a remainder of 2 when divided by 5. What remainder does $n$ give when divided\nby 5?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "16. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "8591"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_graduate_doc_01_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Given the equation \\( |x-4| - 10 = 2 \\), analyze the steps to solve for \\( x \\) and\ndiscuss the significance of the product of all possible values of \\( x \\).",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "16. Explain why this is the correct answer and provide supporting evidence. Show the\ncalculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "8591"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

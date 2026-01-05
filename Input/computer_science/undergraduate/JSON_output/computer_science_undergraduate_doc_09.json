@@ -1,0 +1,290 @@
+{
+  "docid": "computer_science_undergraduate_doc_09",
+  "document_name": "Computer Science - Undergraduate Level Assessment 9",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_09.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_09.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_09_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_09_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_09_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_09_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, which of the following function removes all leading and trailing whitespace\nin string?",
+      "options": {
+        "A": "replace(old, new [, max])",
+        "B": "strip([chars])",
+        "C": "swapcase()",
+        "D": "title()"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - strip([chars])",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "14386"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following regular expressions is equivalent to (describes the same set of\nstrings as) (a* + b)*(c + d)?",
+      "options": {
+        "A": "a*(c + d)+ b(c + d)",
+        "B": "a*(c + d)* + b(c + d)*",
+        "C": "a*(c + d)+ b*(c + d)",
+        "D": "(a + b)*c +(a + b)*d"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - (a + b)*c +(a + b)*d",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "15608"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the output of print list[1:3] if list = [ 'abcd', 786 , 2.23, 'john',\n70.2 ]?",
+      "options": {
+        "A": "[ 'abcd', 786 , 2.23, 'john', 70.2 ]",
+        "B": "abcd",
+        "C": "[786, 2.23]",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - [786, 2.23]",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3223"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of the statement \"a\" + \"ab\" in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "aab",
+        "C": "ab",
+        "D": "a ab"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - aab",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3203"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best explains what happens when a new device is connected to the\nInternet?",
+      "options": {
+        "A": "A device driver is assigned to the device.",
+        "B": "An Internet Protocol (IP) address is assigned to the device.",
+        "C": "A packet number is assigned to the device.",
+        "D": "A Web site is assigned to the device."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - An Internet Protocol (IP) address is assigned to the device.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3268"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "The set of operators {AND, OR} is not complete, as it cannot represent all Boolean expressions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1000"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The access matrix approach can be large and cumbersome to manage when stored directly.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "996"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "A distributed denial-of-service (DDoS) attack involves multiple computers launching the attack simultaneously.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3266"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The maximum possible degree of the minimal-degree interpolating polynomial p(x) for n + 1 distinct points is n.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1007"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "A function that averages numeric values in a column or row is effective for detecting outliers from data entry errors.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'A function that sorts values in a column or row'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3221"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to extract the maximum numeric value from a string by using regex.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def extract_max(input): | return max(numbers)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "832"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_09_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the minimum total path sum in the given triangle.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def min_sum_path(A): | return memo[0]",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "974"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

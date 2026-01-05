@@ -1,0 +1,290 @@
+{
+  "docid": "machine_learning_undergraduate_doc_11",
+  "document_name": "Machine Learning - Undergraduate Level Assessment 11",
+  "domain": "machine_learning",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_machine_learning_mcq",
+    "mmlu_machine_learning_tf",
+    "mmlu_pro_machine_learning_mcq",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\undergraduate\\latex_documents\\machine_learning_undergraduate_doc_11.tex",
+    "pdf_file": "output\\machine_learning\\undergraduate\\pdf_documents\\machine_learning_undergraduate_doc_11.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_undergraduate_doc_11_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_undergraduate_doc_11_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\undergraduate\\answer_keys\\latex\\machine_learning_undergraduate_doc_11_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\undergraduate\\answer_keys\\pdf\\machine_learning_undergraduate_doc_11_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "High entropy means that the partitions in classification are",
+      "options": {
+        "A": "pure",
+        "B": "not pure",
+        "C": "useful",
+        "D": "useless"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - not pure",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6849"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following statements about Naive Bayes is incorrect?",
+      "options": {
+        "A": "Attributes are equally important.",
+        "B": "Attributes are statistically dependent of one another given the class value.",
+        "C": "Attributes are statistically independent of one another given the class value.",
+        "D": "Attributes can be nominal or numeric"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Attributes are statistically dependent of one another given the class value.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14780"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| RoBERTa pretrains on a corpus that is approximate 10 x larger than the corpus\nBERT pretrained on. Statement 2| ResNeXts in 2018 usually used tanh activation functions.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - True, False",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6836"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is the joint probability of H, U, P, and W described by the given\nBayesian Network H -> U <- P <- W? [note: as the product of the conditional probabilities]",
+      "options": {
+        "A": "P(H, U, P, W) = P(H) * P(W) * P(P) * P(U)",
+        "B": "P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(W | H, P)",
+        "C": "P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P)",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - P(H, U, P, W) = P(H) * P(W) * P(P | W) * P(U | H, P)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6876"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes what discriminative approaches try to model? (w are\nthe parameters in the model)",
+      "options": {
+        "A": "p(y|x, w)",
+        "B": "p(y, x)",
+        "C": "p(w|x, w)",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - p(y|x, w)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6921"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Batch Normalization is used in the original ResNet paper, while Layer Normalization is not.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6850"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "DenseNets typically require more memory than ResNets due to their dense connectivity pattern.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6884"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "A neural network's convergence is indeed influenced by the learning rate used during training.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6931"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "The cost of one gradient descent update, given the gradient vector g, is O(D), where D is the number of dimensions.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6841"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "Regression can be effectively used to identify direct causal relationships between input and output variables.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'It discovers causal relationships'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6870"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to extract all the adjacent coordinates of the given coordinate tuple.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def adjac(ele, sub = []): | def get_coordinates(test_tup): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "630"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_undergraduate_doc_11_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find number of odd elements in the given list using lambda function.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def count_odd(array_nums): | return count_odd",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "258"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

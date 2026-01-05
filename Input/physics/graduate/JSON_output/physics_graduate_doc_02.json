@@ -1,0 +1,294 @@
+{
+  "docid": "physics_graduate_doc_02",
+  "document_name": "Physics - Graduate Level Assessment 2",
+  "domain": "physics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "physics"
+  ],
+  "combination_used": [
+    "mmlu_pro_physics_mcq",
+    "mmlu_pro_physics_tf",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\physics\\graduate\\latex_documents\\physics_graduate_doc_02.tex",
+    "pdf_file": "output\\physics\\graduate\\pdf_documents\\physics_graduate_doc_02.pdf",
+    "metadata_file": "data/metadata_hierarchical/physics_graduate_doc_02_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/physics_graduate_doc_02_gold.json",
+    "answer_key_latex_file": "output\\physics\\graduate\\answer_keys\\latex\\physics_graduate_doc_02_answer_key.tex",
+    "answer_key_pdf_file": "output\\physics\\graduate\\answer_keys\\pdf\\physics_graduate_doc_02_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Light of wavelength 400 nm is incident upon lithium (phi = 2.93 eV). Calculate the\nstopping potential in V.",
+      "options": {
+        "A": "0.87",
+        "B": "-0.23",
+        "C": "0.07",
+        "D": "0.57",
+        "E": "0.97"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 0.87",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9949"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "A voltage will be induced in a wire loop when the magnetic field within that loop",
+      "options": {
+        "A": "is amplified",
+        "B": "converts to magnetic energy",
+        "C": "is parallel to the electric field",
+        "D": "changes",
+        "E": "is at right angles to the electric field"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - changes",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9311"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Calculate the binding energy of the hydrogen atom in its ground state.",
+      "options": {
+        "A": "14.1 eV",
+        "B": "10.6 eV",
+        "C": "11.2 eV",
+        "D": "17.0 eV",
+        "E": "15.3 eV"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 14.1 eV",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9516"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "B^10 is bombarded with neutrons, and \\alpha particles are observed to be emitted. What is\nthe residual nucleus?",
+      "options": {
+        "A": "^8_4 Be",
+        "B": "^13_6 C",
+        "C": "^7_4 Be",
+        "D": "^6_3 Li",
+        "E": "^5_2 He"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - ^8_4 Be",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "10025"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "The quantum efficiency of a photon detector is 0.1. If 100 photons are sent into the\ndetector, one after the other, the detector will detect photons",
+      "options": {
+        "A": "an average of 10 times, with an rms deviation of about 5",
+        "B": "an average of 10 times, with an rms deviation of about 3",
+        "C": "an average of 10 times, with an rms deviation of about 0.1",
+        "D": "an average of 10 times, with an rms deviation of about 1",
+        "E": "an average of 10 times, with an rms deviation of about 6"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - an average of 10 times, with an rms deviation of about 3",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9995"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "The resistance of an electric toaster operating at 5 amperes on a 120-volt circuit is 28 ohms, calculated using Ohm's law.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9779"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "In a spring-block oscillator, the maximum speed of the block is inversely proportional to the amplitude of oscillation.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'proportional to amplitude'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "10158"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The refracting power of a combination of a concave lens with focal length 12 cm and a convex lens with focal length 7.5 cm is -5 diopters.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9353"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "A step-up transformer can increase both the current and the power delivered to the load without any losses.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Current and power'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9214"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "physics_graduate_doc_02_physics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "An object with a mass of 1 gram experiences an acceleration of 500 cm/s^2 when subjected to a force of 2000 dynes.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9389"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "physics_graduate_doc_02_physics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the relationship between capacitance, potential difference, and charge in\ncapacitors. Given a capacitor with a capacitance of 2 mF charged to 5 V, calculate the\ncharge on the positive plate and analyze the implications of your result.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "2 C. Explain why this is the correct answer and provide supporting evidence. Reference key\nfacts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "9716"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "physics_graduate_doc_02_physics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the conditions under which Avogadro's number of translational states becomes\navailable for $\\mathrm{O}_2$ in a confined volume of 1000 $\\mathrm{cm}^3$, and determine\nthe corresponding temperature.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "0.068 $\\mathrm{~K}$. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "9270"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

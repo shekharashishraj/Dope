@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_undergraduate_doc_15",
+  "document_name": "Computer Science - Undergraduate Level Assessment 15",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_cs_mcq",
+    "mmlu_cs_tf",
+    "mmlu_pro_cs_mcq",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_15.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_15.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_15_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_15_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_15_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_15_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of \"abc\"[-1] in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "a",
+        "C": "b",
+        "D": "c"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - c",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3247"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Let l = [1,2,3,4]. What is sum(l) in Python 3?",
+      "options": {
+        "A": "4",
+        "B": "1",
+        "C": "10",
+        "D": "8"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 10",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3254"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is NOT a reasonable justification for choosing to busy-wait on an\nasynchronous event?",
+      "options": {
+        "A": "The wait is expected to be short.",
+        "B": "A busy-wait loop is easier to code than an interrupt handler.",
+        "C": "There is no other work for the processor to do.",
+        "D": "The program executes on a time-sharing system."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - The program executes on a time-sharing system.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1012"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following sets of bit strings CANNOT be described with a regular expression?",
+      "options": {
+        "A": "All bit strings whose number of zeros is a multiple of five",
+        "B": "All bit strings starting with a zero and ending with a one",
+        "C": "All bit strings with an even number of zeros",
+        "D": "All bit strings with more ones than zeros"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - All bit strings with more ones than zeros",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1037"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of 4*1**4 in python?",
+      "options": {
+        "A": "4",
+        "B": "1",
+        "C": "256",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 4",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3272"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "The number of distinct functions mapping a finite set A with m elements into a finite set B with n elements is n!/(n - m)!",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'n^m'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1072"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "O(n^2) is the largest asymptotic notation among O(1), O(n), O(log n), and O(n^2).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3213"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "Local caching of files in distributed file systems can lead to temporary inconsistencies among different machines' views of a file.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1085"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "Priority queuing is a starvation-free job-scheduling policy that ensures all jobs receive timely service without delays.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Round-robin'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1079"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "The function random() in Python 3 sets the integer starting value used in generating random numbers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'seed([x])'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3261"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find the maximum occurring character in a given string.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def get_max_occuring_char(str1): | return ch",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "480"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_15_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to multiply two lists using map and lambda function.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def mul_list(nums1,nums2): | return list(result)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "682"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

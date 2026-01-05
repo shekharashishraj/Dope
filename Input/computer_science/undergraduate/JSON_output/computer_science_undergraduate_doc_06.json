@@ -1,0 +1,290 @@
+{
+  "docid": "computer_science_undergraduate_doc_06",
+  "document_name": "Computer Science - Undergraduate Level Assessment 6",
+  "domain": "computer_science",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "college_computer_science",
+    "high_school_computer_science"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\undergraduate\\latex_documents\\computer_science_undergraduate_doc_06.tex",
+    "pdf_file": "output\\computer_science\\undergraduate\\pdf_documents\\computer_science_undergraduate_doc_06.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_undergraduate_doc_06_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_undergraduate_doc_06_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\undergraduate\\answer_keys\\latex\\computer_science_undergraduate_doc_06_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\undergraduate\\answer_keys\\pdf\\computer_science_undergraduate_doc_06_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Let x = 1. What is x << 3 in Python 3?",
+      "options": {
+        "A": "1",
+        "B": "3",
+        "C": "8",
+        "D": "16"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 8",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3182"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which is the largest asymptotically?",
+      "options": {
+        "A": "O(1)",
+        "B": "O(n)",
+        "C": "O(n^2)",
+        "D": "O(log n)"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - O(n^2)",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3213"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following statements about a remote procedure call is true?",
+      "options": {
+        "A": "It is used to call procedures with addresses that are farther than 2^16 bytes away.",
+        "B": "It cannot return a value.",
+        "C": "It cannot pass parameters by reference.",
+        "D": "It cannot call procedures implemented in a different language."
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - It cannot pass parameters by reference.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1031"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What is the output of \"abc\"[::-1] in Python 3?",
+      "options": {
+        "A": "Error",
+        "B": "abc",
+        "C": "cba",
+        "D": "c"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - cba",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "15675"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "In Python 3, what is the output of ['Hi!'] * 4?",
+      "options": {
+        "A": "['Hi!', 'Hi!', 'Hi!', 'Hi!']",
+        "B": "['Hi!'] * 4",
+        "C": "Error",
+        "D": "None of the above."
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - ['Hi!', 'Hi!', 'Hi!', 'Hi!']",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3262"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "In Python 3, converting a list with duplicates to a set results in a collection of unique elements, such as {1, 2, 3, 4}.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3270"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "Operator precedence in a programming language can be effectively specified using a context-free grammar.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1077"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "Choosing to busy-wait on an asynchronous event is not reasonable on a time-sharing system due to resource contention.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1012"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the isupper() function checks if all characters in a string are uppercase.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3197"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "In Python 3, the operator '//' is used to perform exponential (power) calculations on operands.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '**'.",
+      "source": {
+        "dataset": "computer_science_high_school_computer_science",
+        "source_id": "3219"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function that gives profit amount if the given amount has profit else return none.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def profit_amount(actual_cost,sale_amount): | return amount | return None",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "954"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_undergraduate_doc_06_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the maximum sum possible by using the given equation f(n) = max(\n(f(n/2) + f(n/3) + f(n/4) + f(n/5)), n).",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def get_max_sum (n): | return res[n]",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "392"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

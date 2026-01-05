@@ -1,0 +1,289 @@
+{
+  "docid": "machine_learning_graduate_doc_10",
+  "document_name": "Machine Learning - Graduate Level Assessment 10",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_10.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_10.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_10_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_10_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_10_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_10_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Computational complexity of Gradient descent is,",
+      "options": {
+        "A": "linear in D",
+        "B": "linear in N",
+        "C": "polynomial in D",
+        "D": "dependent on the number of iterations"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - polynomial in D",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6862"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "The disadvantage of Grid search is",
+      "options": {
+        "A": "It can not be applied to non-differentiable functions.",
+        "B": "It can not be applied to non-continuous functions.",
+        "C": "It is hard to implement.",
+        "D": "It runs reasonably slow for multiple linear regression."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - It runs reasonably slow for multiple linear regression.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6868"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| The BLEU metric uses precision, while the ROGUE metric uses recall. Statement\n2| Hidden markov models were frequently used to model English sentences.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - True, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6924"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Consider the Bayesian network given below. How many independent parameters would we need\nif we made no assumptions about independence or conditional independence H -> U <- P <- W?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "7",
+        "D": "15"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 15",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6881"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following are the spatial clustering algorithms?",
+      "options": {
+        "A": "Partitioning based clustering",
+        "B": "K-means clustering",
+        "C": "Grid based clustering",
+        "D": "All of the above"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - All of the above",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6890"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Lasso regression is more suitable for feature selection due to its ability to shrink some coefficients to zero.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6926"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "The model obtained from forward stage wise selection may differ from the model derived from the full subset selection process.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6864"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "The dimensionality of the null space of the matrix A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]] is 1.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '2'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14784"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "The joint probability distribution P(X, Y, Z) can be expressed as P(X) * P(Y|X) * P(Z|X) in the given Bayes net.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14787"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The original ResNet employs self-attention mechanisms similar to those in Transformers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6886"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to count occurences of a character in a repeated string.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def count_Char(str,x): | return count",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "684"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_10_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to check whether the given number can be represented as difference\nof two squares or not.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def dif_Square(n): | return True | return False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "72"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

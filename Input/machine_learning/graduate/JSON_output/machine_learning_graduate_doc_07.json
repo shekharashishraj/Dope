@@ -1,0 +1,288 @@
+{
+  "docid": "machine_learning_graduate_doc_07",
+  "document_name": "Machine Learning - Graduate Level Assessment 7",
+  "domain": "machine_learning",
+  "academic_level": "Graduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\graduate\\latex_documents\\machine_learning_graduate_doc_07.tex",
+    "pdf_file": "output\\machine_learning\\graduate\\pdf_documents\\machine_learning_graduate_doc_07.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_graduate_doc_07_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_graduate_doc_07_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\graduate\\answer_keys\\latex\\machine_learning_graduate_doc_07_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\graduate\\answer_keys\\pdf\\machine_learning_graduate_doc_07_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "As the number of training examples goes to infinity, your model trained on that data will\nhave:",
+      "options": {
+        "A": "Lower variance",
+        "B": "Higher variance",
+        "C": "Same variance",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Lower variance",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6844"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "In Yann LeCun's cake, the cherry on top is",
+      "options": {
+        "A": "reinforcement learning",
+        "B": "self-supervised learning",
+        "C": "unsupervised learning",
+        "D": "supervised learning"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - reinforcement learning",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14783"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Let us say that we have computed the gradient of our cost function and stored it in a\nvector g. What is the cost of one gradient descent update given the gradient?",
+      "options": {
+        "A": "O(D)",
+        "B": "O(N)",
+        "C": "O(ND)",
+        "D": "O(ND^2)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - O(D)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6841"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "MLE estimates are often undesirable because",
+      "options": {
+        "A": "they are biased",
+        "B": "they have high variance",
+        "C": "they are not consistent estimators",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - they have high variance",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6861"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| RELUs are not monotonic, but sigmoids are monotonic. Statement 2| Neural\nnetworks trained with gradient descent with high probability converge to the global\noptimum.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - False, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6887"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "DenseNets generally require more memory than ResNets due to their high connectivity patterns.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6884"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "The numerical output of a sigmoid node in a neural network is unbounded, encompassing all real numbers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Is bounded between 0 and 1.'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6888"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "Batch Normalization was used in the original ResNet paper, rather than Layer Normalization.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6850"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "Predicting the amount of rainfall in a region based on various cues is a supervised learning problem.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6869"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The convergence of a neural network is significantly influenced by the choice of learning rate during training.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6931"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the validity of the ID 3 algorithm in finding optimal decision trees and analyze\nthe implications of continuous probability distributions with nonzero density functions.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "False, False. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6878"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_graduate_doc_07_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss how you would modify the EM algorithm to compute MAP estimates instead of maximum\nlikelihood estimates, focusing on the necessary changes in the maximization step.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Maximization. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6927"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

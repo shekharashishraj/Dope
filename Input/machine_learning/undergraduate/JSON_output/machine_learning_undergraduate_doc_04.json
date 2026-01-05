@@ -1,0 +1,289 @@
+{
+  "docid": "machine_learning_undergraduate_doc_04",
+  "document_name": "Machine Learning - Undergraduate Level Assessment 4",
+  "domain": "machine_learning",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\undergraduate\\latex_documents\\machine_learning_undergraduate_doc_04.tex",
+    "pdf_file": "output\\machine_learning\\undergraduate\\pdf_documents\\machine_learning_undergraduate_doc_04.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_undergraduate_doc_04_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_undergraduate_doc_04_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\undergraduate\\answer_keys\\latex\\machine_learning_undergraduate_doc_04_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\undergraduate\\answer_keys\\pdf\\machine_learning_undergraduate_doc_04_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| RoBERTa pretrains on a corpus that is approximate 10 x larger than the corpus\nBERT pretrained on. Statement 2| ResNeXts in 2018 usually used tanh activation functions.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - True, False",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6836"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following tasks can be best solved using Clustering.",
+      "options": {
+        "A": "Predicting the amount of rainfall based on various cues",
+        "B": "Detecting fraudulent credit card transactions",
+        "C": "Training a robot to solve a maze",
+        "D": "All of the above"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Detecting fraudulent credit card transactions",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6933"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| Word 2 Vec parameters were not initialized using a Restricted Boltzman\nMachine. Statement 2| The tanh function is a nonlinear activation function.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - True, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6899"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| The BLEU metric uses precision, while the ROGUE metric uses recall. Statement\n2| Hidden markov models were frequently used to model English sentences.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - True, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6924"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "The disadvantage of Grid search is",
+      "options": {
+        "A": "It can not be applied to non-differentiable functions.",
+        "B": "It can not be applied to non-continuous functions.",
+        "C": "It is hard to implement.",
+        "D": "It runs reasonably slow for multiple linear regression."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - It runs reasonably slow for multiple linear regression.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6868"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "The computational complexity of gradient descent is linear in the number of data points, N.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'polynomial in D'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6862"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "Using an L 2 norm regularization penalty will result in some coefficients of w being exactly zeroed out.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'either (a) or (b)'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6934"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "Residual connections are utilized in both ResNets and Transformers to improve training and performance of deep networks.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6892"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "The models obtained from all selection methods, including best-subset and forward stepwise, will always be identical.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Forward stage wise selection'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6864"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "To achieve the same projection as SVD in PCA, the data must be transformed to have a zero mean.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6918"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the area of a rombus.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def rombus_area(p,q): | return area",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "814"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_undergraduate_doc_04_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to convert all possible convertible elements in the list to float.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def list_to_float(test_list): | return (str(res))",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "117"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

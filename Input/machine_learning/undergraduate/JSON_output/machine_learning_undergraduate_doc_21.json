@@ -1,0 +1,290 @@
+{
+  "docid": "machine_learning_undergraduate_doc_21",
+  "document_name": "Machine Learning - Undergraduate Level Assessment 21",
+  "domain": "machine_learning",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_machine_learning_mcq",
+    "mmlu_machine_learning_tf",
+    "mmlu_pro_machine_learning_mcq",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\undergraduate\\latex_documents\\machine_learning_undergraduate_doc_21.tex",
+    "pdf_file": "output\\machine_learning\\undergraduate\\pdf_documents\\machine_learning_undergraduate_doc_21.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_undergraduate_doc_21_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_undergraduate_doc_21_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\undergraduate\\answer_keys\\latex\\machine_learning_undergraduate_doc_21_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\undergraduate\\answer_keys\\pdf\\machine_learning_undergraduate_doc_21_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Neural networks:",
+      "options": {
+        "A": "Optimize a convex objective function",
+        "B": "Can only be trained with stochastic gradient descent",
+        "C": "Can use a mix of different activation functions",
+        "D": "None of the above"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Can use a mix of different activation functions",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6865"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "What is the dimensionality of the null space of the following matrix? A = [[3, 2, -9],\n[-6, -4, 18], [12, 8, -36]]",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 2",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6897"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "What is the rank of the following matrix? A = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 1",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6857"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes the joint probability distribution P(X, Y, Z) for\nthe given Bayes net. X <- Y -> Z?",
+      "options": {
+        "A": "P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)",
+        "B": "P(X, Y, Z) = P(X) * P(Y|X) * P(Z|Y)",
+        "C": "P(X, Y, Z) = P(Z) * P(X|Z) * P(Y|Z)",
+        "D": "P(X, Y, Z) = P(X) * P(Y) * P(Z)"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14787"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| The Stanford Sentiment Treebank contained movie reviews, not book reviews.\nStatement 2| The Penn Treebank has been used for language modeling.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - True, True",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6896"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "If the training loss increases with the number of epochs, a possible issue is that the step size is too large.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6900"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "The method used to learn weights, such as matrix inversion, is the primary factor affecting underfitting and overfitting in polynomial regression.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'The polynomial degree'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6853"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "Maximum likelihood estimates (MLE) are always unbiased and consistent estimators in statistical modeling.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'they have high variance'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6861"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "The original ResNet uses self-attention mechanisms, similar to those found in Transformers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6886"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "If P(A, B) decreases while P(A) increases, then P(A|B) must also decrease, suggesting A becomes less likely given B.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'P(B|A) decreases'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6935"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find the triplet with sum of the given array",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def check_triplet(A, n, sum, count): | return True | return False | return check_triplet(A, n - 1, sum - A[n - 1], count + 1) or\\",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "121"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_undergraduate_doc_21_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to repeat the given tuple n times.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def repeat_tuples(test_tup, N): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "368"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

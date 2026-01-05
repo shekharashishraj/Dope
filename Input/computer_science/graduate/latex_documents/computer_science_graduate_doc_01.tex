@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+Computer Science - Graduate Level Assessment 1 \
+Total Marks: 40 \
+Answer all questions.
+\end{center}
+
+\section*{Multiple Choice (10 marks)}
+\begin{enumerate}[label=\arabic*.]
+\item \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ is the central node of 802.11 wireless operations.
+\begin{enumerate}[label=(\alph*)]
+    \item WPA
+    \item Access Point
+    \item WAP
+    \item Access Port
+\end{enumerate}
+\item How does a buffer overflow on the stack facilitate running attacker-injected code?
+\begin{enumerate}[label=(\alph*)]
+    \item By overwriting the return address to point to the location of that code
+    \item By writing directly to the instruction pointer register the address of the code
+    \item By writing directly to \%eax the address of the code
+    \item By changing the name of the running executable, stored on the stack
+\end{enumerate}
+\item Which of the following styles of fuzzer is more likely to explore paths covering every line of code in the following program?
+\begin{enumerate}[label=(\alph*)]
+    \item Generational
+    \item Blackbox
+    \item Whitebox
+    \item Mutation-based
+\end{enumerate}
+\item Local caching of files is common in distributed file systems, but it has the disadvantage that
+\begin{enumerate}[label=(\alph*)]
+    \item Temporary inconsistencies among views of a file by different machines can result
+    \item The file system is likely to be corrupted when a computer crashes
+    \item A much higher amount of network traffic results
+    \item Caching makes file migration impossible
+\end{enumerate}
+\item A digital signature needs a
+\begin{enumerate}[label=(\alph*)]
+    \item Private-key system
+    \item Shared-key system
+    \item Public-key system
+    \item All of them
+\end{enumerate}
+\end{enumerate}
+
+\section*{True / False (10 marks)}
+\textit{Answer True or False}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{5}
+\item True or False: Encryption and decryption ensure both confidentiality and integrity of the data being transmitted.
+\item True or False: The addition of the 8-bit two's-complement numbers 10000001 and 10101010 results in overflow.
+\item True or False: A virus is a type of malware that operates solely as a standalone infected program without any hidden components.
+\item True or False: All bit strings with an even number of zeros can be described with a regular expression.
+\item True or False: The solution to the recurrence f(2 N + 1) = f(2 N) = f(N) + log N is O((log $N)^2$).
+\end{enumerate}
+
+\section*{Long Form Response (20 marks)}
+\textit{Answer each question with a clear and complete explanation.}
+\begin{enumerate}[label=\arabic*.]
+\setcounter{enumi}{10}
+\item Write a python function to find the nth digit in the proper fraction of two given numbers.
+\item Write a function to group the 1 st elements on the basis of 2 nd elements in the given tuple list.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

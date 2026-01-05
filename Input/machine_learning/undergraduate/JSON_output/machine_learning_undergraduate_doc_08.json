@@ -1,0 +1,289 @@
+{
+  "docid": "machine_learning_undergraduate_doc_08",
+  "document_name": "Machine Learning - Undergraduate Level Assessment 8",
+  "domain": "machine_learning",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_pro_machine_learning_mcq",
+    "mmlu_pro_machine_learning_tf",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\undergraduate\\latex_documents\\machine_learning_undergraduate_doc_08.tex",
+    "pdf_file": "output\\machine_learning\\undergraduate\\pdf_documents\\machine_learning_undergraduate_doc_08.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_undergraduate_doc_08_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_undergraduate_doc_08_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\undergraduate\\answer_keys\\latex\\machine_learning_undergraduate_doc_08_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\undergraduate\\answer_keys\\pdf\\machine_learning_undergraduate_doc_08_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "The number of test examples needed to get statistically significant results should be _",
+      "options": {
+        "A": "Larger if the error rate is larger.",
+        "B": "Larger if the error rate is smaller.",
+        "C": "Smaller if the error rate is smaller.",
+        "D": "It does not matter."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Larger if the error rate is smaller.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14785"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and\nreduce the overfitting?",
+      "options": {
+        "A": "Increase the amount of training data.",
+        "B": "Improve the optimisation algorithm being used for error minimisation.",
+        "C": "Decrease the model complexity.",
+        "D": "Reduce the noise in the training data."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Improve the optimisation algorithm being used for error minimisation.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6873"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which image data augmentation is most common for natural images?",
+      "options": {
+        "A": "random crop and horizontal flip",
+        "B": "random crop and vertical flip",
+        "C": "posterization",
+        "D": "dithering"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - random crop and horizontal flip",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "15759"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "For polynomial regression, which one of these structural assumptions is the one that most\naffects the trade-off between underfitting and overfitting:",
+      "options": {
+        "A": "The polynomial degree",
+        "B": "Whether we learn the weights by matrix inversion or gradient descent",
+        "C": "The assumed variance of the Gaussian noise",
+        "D": "The use of a constant-term unit input"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - The polynomial degree",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6853"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "The disadvantage of Grid search is",
+      "options": {
+        "A": "It can not be applied to non-differentiable functions.",
+        "B": "It can not be applied to non-continuous functions.",
+        "C": "It is hard to implement.",
+        "D": "It runs reasonably slow for multiple linear regression."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - It runs reasonably slow for multiple linear regression.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6868"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "The joint probability distribution P(X, Y, Z) is given by P(X) * P(Y|X) * P(Z|Y).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14787"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "Hidden Markov models are primarily used for image recognition tasks rather than modeling English sentences.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6924"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "Word 2 Vec parameters are typically not initialized using a Restricted Boltzmann Machine.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6899"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "As of 2020, certain models have achieved accuracy levels exceeding 98% on the CIFAR-10 dataset.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6854"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "Adding more basis functions in a linear model decreases model bias by allowing for greater flexibility in fitting the data.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6880"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find the first repeated word in a given string.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def first_repeated_word(str1): | return word; | return 'None'",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "537"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_undergraduate_doc_08_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to count those characters which have vowels as their neighbors in the\ngiven string.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def count_vowels(test_str): | return (res)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "776"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

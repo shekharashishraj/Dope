@@ -1,0 +1,288 @@
+{
+  "docid": "cybersecurity_graduate_doc_06",
+  "document_name": "Cybersecurity - Graduate Level Assessment 6",
+  "domain": "cybersecurity",
+  "academic_level": "Graduate",
+  "subjects": [
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cybersecurity_mcq",
+    "mmlu_pro_cybersecurity_tf"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\cybersecurity\\graduate\\latex_documents\\cybersecurity_graduate_doc_06.tex",
+    "pdf_file": "output\\cybersecurity\\graduate\\pdf_documents\\cybersecurity_graduate_doc_06.pdf",
+    "metadata_file": "data/metadata_hierarchical/cybersecurity_graduate_doc_06_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/cybersecurity_graduate_doc_06_gold.json",
+    "answer_key_latex_file": "output\\cybersecurity\\graduate\\answer_keys\\latex\\cybersecurity_graduate_doc_06_answer_key.tex",
+    "answer_key_pdf_file": "output\\cybersecurity\\graduate\\answer_keys\\pdf\\cybersecurity_graduate_doc_06_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "The ______________ can cost you money, by sending text messages from your mobile phone\nnumbers.",
+      "options": {
+        "A": "IM - Trojans",
+        "B": "Backdoor Trojans",
+        "C": "SMS Trojan",
+        "D": "Ransom Trojan"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - SMS Trojan",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1569"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Can we build a secure PRP from a secure PRG?",
+      "options": {
+        "A": "No, it cannot be done",
+        "B": "Yes, just plug the GGM PRF into the Luby-Rackoff theorem",
+        "C": "It depends on the underlying PRG",
+        "D": "Option text"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Yes, just plug the GGM PRF into the Luby-Rackoff theorem",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "14208"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following are most vulnerable to injection attacks?",
+      "options": {
+        "A": "Session IDs",
+        "B": "Registry keys",
+        "C": "Network communications",
+        "D": "SQL queries based on user input"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - SQL queries based on user input",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1514"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Why apps developed in languages like C, C++ is prone to Buffer-overflow?",
+      "options": {
+        "A": "No string boundary checks in predefined functions",
+        "B": "No storage check in the external memory",
+        "C": "No processing power check",
+        "D": "No database check"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - No string boundary checks in predefined functions",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1479"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is not a block cipher operating mode?",
+      "options": {
+        "A": "ECB",
+        "B": "CFB",
+        "C": "CBF",
+        "D": "CBC"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - CBF",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1518"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_tf_1",
+      "question_type": "TF",
+      "stem_text": "A buffer is a sequential segment of memory allocated for storing data, such as character strings or arrays of integers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1551"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_tf_2",
+      "question_type": "TF",
+      "stem_text": "Blackbox fuzzers can effectively cover every line of code in a program without access to its internal structure.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Whitebox'.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1471"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_tf_3",
+      "question_type": "TF",
+      "stem_text": "Buffer-overflow vulnerabilities may persist in applications if boundary checks are not properly implemented.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1520"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_tf_4",
+      "question_type": "TF",
+      "stem_text": "Encapsulating Security Payload (ESP) is a component of the Secure IP Protocol used to provide confidentiality and integrity in network communications.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1529"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_tf_5",
+      "question_type": "TF",
+      "stem_text": "Nmap determines port states as open, filtered, and unfiltered during its scanning process.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "cybersecurity_computer_security",
+        "source_id": "1555"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the classic security properties in cybersecurity and critically analyze why\navailability is often considered distinct from these fundamental principles.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Availability. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1570"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "cybersecurity_graduate_doc_06_cybersecurity_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of authorization in cybersecurity, focusing on how it restricts user\naccess to operations and data, and analyze its importance in protecting sensitive\ninformation.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "Restrict what operations/data the user can access. Explain why this is the correct answer\nand provide supporting evidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "1560"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

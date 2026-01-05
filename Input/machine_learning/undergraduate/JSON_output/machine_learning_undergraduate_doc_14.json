@@ -1,0 +1,290 @@
+{
+  "docid": "machine_learning_undergraduate_doc_14",
+  "document_name": "Machine Learning - Undergraduate Level Assessment 14",
+  "domain": "machine_learning",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "machine_learning"
+  ],
+  "combination_used": [
+    "mmlu_machine_learning_mcq",
+    "mmlu_machine_learning_tf",
+    "mmlu_pro_machine_learning_mcq",
+    "machine_learning_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\machine_learning\\undergraduate\\latex_documents\\machine_learning_undergraduate_doc_14.tex",
+    "pdf_file": "output\\machine_learning\\undergraduate\\pdf_documents\\machine_learning_undergraduate_doc_14.pdf",
+    "metadata_file": "data/metadata_hierarchical/machine_learning_undergraduate_doc_14_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/machine_learning_undergraduate_doc_14_gold.json",
+    "answer_key_latex_file": "output\\machine_learning\\undergraduate\\answer_keys\\latex\\machine_learning_undergraduate_doc_14_answer_key.tex",
+    "answer_key_pdf_file": "output\\machine_learning\\undergraduate\\answer_keys\\pdf\\machine_learning_undergraduate_doc_14_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "If N is the number of instances in the training dataset, nearest neighbors has a\nclassification run time of",
+      "options": {
+        "A": "O(1)",
+        "B": "O( N )",
+        "C": "O(log N )",
+        "D": "O( N^2 )"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - O( N )",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6885"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "If your training loss increases with number of epochs, which of the following could be a\npossible issue with the learning process?",
+      "options": {
+        "A": "Regularization is too low and model is overfitting",
+        "B": "Regularization is too high and model is underfitting",
+        "C": "Step size is too large",
+        "D": "Step size is too small"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Step size is too large",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6900"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Suppose your model is overfitting. Which of the following is NOT a valid way to try and\nreduce the overfitting?",
+      "options": {
+        "A": "Increase the amount of training data.",
+        "B": "Improve the optimisation algorithm being used for error minimisation.",
+        "C": "Decrease the model complexity.",
+        "D": "Reduce the noise in the training data."
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Improve the optimisation algorithm being used for error minimisation.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6873"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following sentence is FALSE regarding regression?",
+      "options": {
+        "A": "It relates inputs to outputs.",
+        "B": "It is used for prediction.",
+        "C": "It may be used for interpretation.",
+        "D": "It discovers causal relationships"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - It discovers causal relationships",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6870"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1| Industrial-scale neural networks are normally trained on CPUs, not GPUs.\nStatement 2| The ResNet-50 model has over 1 billion parameters.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6907"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_tf_1",
+      "question_type": "TF",
+      "stem_text": "Clustering is the best method for predicting the amount of rainfall based on various environmental cues.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Detecting fraudulent credit card transactions'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6933"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_tf_2",
+      "question_type": "TF",
+      "stem_text": "The joint probability distribution P(X, Y, Z) is equal to P(X) * P(Y|X) * P(Z|X).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'P(X, Y, Z) = P(Y) * P(X|Y) * P(Z|Y)'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14787"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_tf_3",
+      "question_type": "TF",
+      "stem_text": "Out-of-distribution detection is often referred to as anomaly detection in machine learning.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6882"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_tf_4",
+      "question_type": "TF",
+      "stem_text": "A smaller error rate requires fewer test examples to obtain statistically significant results.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Larger if the error rate is smaller.'.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "14785"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_tf_5",
+      "question_type": "TF",
+      "stem_text": "The dimensionality of the null space of the matrix A is 2.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "machine_learning_machine_learning",
+        "source_id": "6897"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find average value of the numbers in a given tuple of tuples.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def average_tuple(nums): | return result",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "615"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "machine_learning_undergraduate_doc_14_machine_learning_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a function to check whether the given key is present in the dictionary or not.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def is_key_present(d,x): | return True | return False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "703"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

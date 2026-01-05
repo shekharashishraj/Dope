@@ -16,13 +16,13 @@ Input JSON → Normalize → Render Baseline → [Generate Perturbations] → Ap
 
 The pipeline can run in two modes:
 - **Basic Mode**: Traditional CSS-based hidden text attacks (9 variants)
-- **Advanced Mode**: Includes perturbation generation and advanced attacks (CSS ::before and Image/Canvas)
+- **Advanced Mode**: Includes perturbation generation and advanced attacks (CSS inline span overlay and Image/Canvas)
 
 ## Features
 
 - **Canvas-style exam rendering** - Clean, professional HTML layout with MathJax support
 - **9 traditional attack variants** - Multiple CSS-based hiding techniques
-- **Advanced perturbation attacks** - LLM-generated content variations with CSS ::before and Image/Canvas techniques
+- **Advanced perturbation attacks** - LLM-generated content variations with CSS inline span overlay and Image/Canvas techniques
 - **Subject-based organization** - Automatic organization by subject (Maths, Science, etc.)
 - **Comprehensive logging** - All steps log to `logs/` directory with timestamps
 - **Automated auditing** - Playwright-based visibility verification
@@ -36,7 +36,7 @@ The pipeline executes steps in this specific order:
 2. **Render Baseline HTML** - Generate clean HTML from normalized JSON
 3. **Generate Perturbations** (optional) - Extract text from rendered HTML and generate LLM perturbations
 4. **Apply Traditional Attacks** - Inject 9 CSS-based hidden text attacks
-5. **Apply CSS ::before Attack** (optional) - Use perturbations to replace DOM text while showing original via CSS
+5. **Apply CSS Inline Span Overlay Attack** (optional) - Use perturbations to replace DOM text while showing original via inline span overlays
 6. **Apply Image/Canvas Attack** (optional) - Use perturbations to replace DOM text while rendering original as canvas
 7. **Apply Print Occlusion Layer** (optional) - Make canvas attack print-safe for PDF generation
 8. **Audit Visibility** - Verify attacks work correctly (DOM has tokens, visible text doesn't)
@@ -58,12 +58,13 @@ The pipeline executes steps in this specific order:
 │   ├── exam_base.html.j2          # Main exam template
 │   └── styles.css                  # Canvas-style CSS
 ├── scripts/                        # Pipeline scripts
-│   ├── 00_run_pipeline.py         # Master pipeline script (recommended)
+│   ├── 00_run_pipeline.py         # Master pipeline script (single file)
+│   ├── 00_run_batch_pipeline.py   # Batch pipeline script (multiple files)
 │   ├── 01_normalize_json.py       # Normalize input JSON to unified schema
 │   ├── 01b_generate_perturbations.py  # Generate LLM perturbations (optional)
 │   ├── 02_render_exam.py           # Render baseline HTML/CSS
 │   ├── 03_apply_attacks.py         # Apply traditional CSS attacks
-│   ├── 03b_apply_css_before_attack.py  # Apply CSS ::before attack
+│   ├── 03b_apply_css_before_attack.py  # Apply CSS inline span overlay attack
 │   ├── 03c_apply_image_canvas_attack.py  # Apply Image/Canvas attack
 │   ├── 03d_apply_print_occlusion_layer.py  # Apply print occlusion layer
 │   └── 04_audit_visibility.js      # Audit visibility with Playwright
@@ -296,7 +297,7 @@ This will:
 2. Render baseline HTML
 3. Generate perturbations using LLM API (extracts text from rendered HTML)
 4. Apply 9 traditional CSS attacks
-5. Apply CSS ::before attack (using perturbations)
+5. Apply CSS inline span overlay attack (using perturbations)
 6. Apply Image/Canvas attack (using perturbations)
 7. Apply Print Occlusion Layer (makes canvas attack print-safe for PDF generation)
 
@@ -328,6 +329,83 @@ python scripts/00_run_pipeline.py Input/Science/science_k-12_doc_01.json --gener
 ```
 
 Each subject's output will be organized in separate directories under `out/baseline/<Subject>/` and `out/attacked/<Subject>/`.
+
+### Batch Processing (Multiple Files)
+
+To process multiple JSON files at once (e.g., 50, 100, or any number), use the batch pipeline script:
+
+#### Basic Batch Mode (Traditional Attacks Only)
+
+```bash
+python scripts/00_run_batch_pipeline.py --count 100 --seed 42
+```
+
+This will:
+- Randomly select 100 JSON files from all domains/education levels in the `Input/` directory
+- Process each file through the complete pipeline (normalize → render → apply traditional attacks)
+- Generate baseline and attacked HTML files for each selected file
+- Log progress and results to `logs/00_batch_pipeline_<timestamp>.log`
+
+#### Advanced Batch Mode (With Perturbation Generation)
+
+```bash
+python scripts/00_run_batch_pipeline.py \
+    --count 100 \
+    --seed 42 \
+    --generate-perturbations \
+    --model gpt-4o \
+    --k 3
+```
+
+This will:
+- Process 100 random files with all attack types (traditional + CSS span overlay + image/canvas)
+- Generate perturbations for each file using the LLM API
+- Apply all three attack families to each file
+
+#### Batch Processing Options
+
+```bash
+python scripts/00_run_batch_pipeline.py --count N [options]
+
+Required:
+  --count, -n N          Number of random JSON files to process (any positive integer)
+
+Optional:
+  --generate-perturbations
+                          Enable perturbation generation and advanced attacks
+  --api-key KEY           OpenAI API key (or set OPENAI_API_KEY env var)
+  --model MODEL           OpenAI model to use (default: gpt-4o)
+  --k N                   Number of perturbations per question (default: 3)
+  --seed N                Random seed for reproducibility (optional)
+```
+
+**Notes:**
+- The script automatically scans all JSON files in `Input/<domain>/<education_level>/JSON_output/`
+- Files are randomly selected across all domains and education levels
+- If `--count` exceeds available files, all files will be processed
+- A warning is shown if processing more than 100 files (you can proceed with 'y')
+- Use `--seed` for reproducible random selection across runs
+- Each file is processed independently; failures in one file don't stop the batch
+
+**Example Output:**
+```
+BATCH PIPELINE STARTED
+Target count: 100 files
+Found 500 total JSON files
+Selected 100 files for processing
+
+PROCESSING FILE 1/100
+Processing: mathematics/graduate
+...
+
+BATCH PIPELINE COMPLETED
+Total files processed: 100
+Successful: 98
+Failed: 2
+Success rate: 98.0%
+```
+
+**Logs:** `logs/00_batch_pipeline_<timestamp>.log`
 
 ### Step-by-Step Usage
 
@@ -431,9 +509,9 @@ python scripts/03_apply_attacks.py \
 
 **Logs:** `logs/03_apply_attacks_<timestamp>.log`
 
-#### Step 5: Apply CSS ::before Attack (Optional)
+#### Step 5: Apply CSS Inline Span Overlay Attack (Optional)
 
-Apply advanced CSS ::before attack using perturbations:
+Apply advanced CSS inline span overlay attack using perturbations:
 
 ```bash
 python scripts/03b_apply_css_before_attack.py \
@@ -445,11 +523,14 @@ python scripts/03b_apply_css_before_attack.py \
 
 **What it does:**
 - Replaces question text in DOM with perturbed versions
-- Uses CSS `::before` pseudo-element to display original text
+- Uses nested inline spans (`.orig` and `.r`) to display original text while keeping perturbed text in DOM
 - Creates `css_before/` subdirectory in attacked output
+- Note: Despite the script name, this attack uses inline span overlays, not CSS `::before` pseudo-elements
 
 **Output:**
 - `out/attacked/<Subject>/css_before/exam.html`
+- `out/attacked/<Subject>/css_before/styles_enhanced.css`
+- `out/attacked/<Subject>/css_before/width_calc.js`
 - `out/attacked/<Subject>/css_before/styles.css`
 
 **Requirements:**
@@ -565,15 +646,16 @@ Each attack includes:
 
 ### Advanced Attacks (2 variants)
 
-These attacks use LLM-generated perturbations:
+These attacks use LLM-generated perturbations to create render/parse mismatches:
 
-1. **CSS ::before Attack** - Replaces DOM text with perturbations, displays original via CSS `::before`
-2. **Image/Canvas Attack** - Replaces DOM text with perturbations, renders original as canvas image
+1. **CSS Inline Span Overlay Attack** (misnamed "css_before" in code) - Replaces DOM text with perturbations using nested inline spans. The original text is displayed via a visible span, while the perturbed text is overlaid as a transparent absolute-positioned span. This creates a mismatch where humans see the original text but LLMs parsing the DOM see the perturbed version.
+
+2. **Image/Canvas Attack** - Replaces DOM text with perturbations, then renders the original text as a canvas overlay positioned over the prompt. Works both on-screen and when printing to PDF (via print occlusion layer). Humans see the original text rendered as graphics, while LLMs parsing the DOM see the perturbed version.
 
 Both advanced attacks:
 - Use perturbations from `exam_content_perturbed.json`
 - Replace substrings in question prompts (using start_pos/end_pos from perturbations)
-- Keep original text visible to humans (via CSS ::before or canvas rendering)
+- Keep original text visible to humans (via span overlay or canvas rendering)
 - Make perturbed text accessible to LLMs via DOM (the actual DOM contains perturbed text)
 
 **How perturbations work:**
@@ -914,6 +996,40 @@ The prompt templates in `prompts/` directory are used to generate perturbations:
 - Test with small subset of questions first
 - Review generated perturbations for quality
 - Ensure constraints are maintained in prompt templates
+
+## Recent Changes
+
+### Attack Family Organization
+
+The pipeline now implements **three distinct attack families**:
+
+1. **Hidden Instructions Attack Family** (9 CSS-based variants)
+   - Injects global adversarial instructions at the beginning of `<body>`
+   - Uses various CSS techniques to hide the instruction from human view
+   - Each variant uses a different CSS hiding method (display:none, opacity:0, etc.)
+
+2. **CSS Inline Span Overlay Attack Family**
+   - Creates render/parse mismatch using nested inline spans
+   - Original text visible via `.orig` span, perturbed text in transparent `.r` span
+   - Note: Despite being named "css_before" in code, this attack does NOT use CSS `::before` pseudo-elements
+
+3. **Image/Canvas Attack Family**
+   - Creates render/parse mismatch using canvas rendering
+   - Works for both on-screen viewing and PDF printing
+   - Print occlusion layer ensures consistent behavior when printing to PDF
+
+### Pipeline Improvements
+
+- **Batch Processing**: Added `00_run_batch_pipeline.py` for processing multiple files at once
+- **Flexible Count**: Can process any number of files (50, 100, 200+, etc.) via `--count` parameter
+- **Reproducible Selection**: Added `--seed` parameter for deterministic random file selection
+- **Better Error Handling**: Individual file failures don't stop batch processing
+
+### Documentation Updates
+
+- Clarified that "CSS ::before attack" actually uses inline span overlays, not CSS `::before`
+- Documented that Image/Canvas attack includes print-safe extension as one unified attack
+- Added batch processing documentation for large-scale evaluation
 
 ## License
 

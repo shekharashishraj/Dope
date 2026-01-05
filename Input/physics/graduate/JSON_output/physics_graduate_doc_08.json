@@ -1,0 +1,294 @@
+{
+  "docid": "physics_graduate_doc_08",
+  "document_name": "Physics - Graduate Level Assessment 8",
+  "domain": "physics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "physics"
+  ],
+  "combination_used": [
+    "mmlu_pro_physics_mcq",
+    "mmlu_pro_physics_tf",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\physics\\graduate\\latex_documents\\physics_graduate_doc_08.tex",
+    "pdf_file": "output\\physics\\graduate\\pdf_documents\\physics_graduate_doc_08.pdf",
+    "metadata_file": "data/metadata_hierarchical/physics_graduate_doc_08_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/physics_graduate_doc_08_gold.json",
+    "answer_key_latex_file": "output\\physics\\graduate\\answer_keys\\latex\\physics_graduate_doc_08_answer_key.tex",
+    "answer_key_pdf_file": "output\\physics\\graduate\\answer_keys\\pdf\\physics_graduate_doc_08_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A sound wave with frequency f travels through air at speed v. With what speed will a sound\nwave with frequency 4 f travel through the air?",
+      "options": {
+        "A": "v^2",
+        "B": "v/4",
+        "C": "v/2",
+        "D": "4 v",
+        "E": "4 v^2"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - v^2",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9305"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "A 60-ohm electric lamp is left connected to a 240-volt line for 3.00 min. How much energy\nis taken from the line?",
+      "options": {
+        "A": "1.2 \\times 10^4 Joules",
+        "B": "3.6 \\times 10^4 Joules",
+        "C": "2.2 \\times 10^4 Joules",
+        "D": "1.72 \\times 10^4 Joules",
+        "E": "1.9 \\times 10^4 Joules"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - 1.72 \\times 10^4 Joules",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9089"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "As more lamps are connected in parallel in a circuit, the current in the power source",
+      "options": {
+        "A": "remains the same",
+        "B": "Not enough information to say",
+        "C": "is not affected",
+        "D": "triples",
+        "E": "decreases"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - remains the same",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9213"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Two spheres of net charge +5 e and -6 e briefly come into contact. Afterward, which of the\nfollowing is a possible combination of net charges for the two spheres?",
+      "options": {
+        "A": "Both of the above",
+        "B": "+3 e and -4 e",
+        "C": "+5 e and -6 e",
+        "D": "+2.5 e and -3.5 e",
+        "E": "+4 e and -5 e"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - +3 e and -4 e",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9419"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "During the time an aircraft produces a sonic boom the aircraft is",
+      "options": {
+        "A": "Breaking the speed of light",
+        "B": "Flying slower than sound",
+        "C": "pulling out of a subsonic dive",
+        "D": "flying faster than sound",
+        "E": "Flying at constant speed"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - flying faster than sound",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9638"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "The color of light most intense in the solar radiation curve is white, representing a combination of all visible wavelengths.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "10255"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "An electric motor with 75% efficiency can lift a 6 kg mass at a constant speed of 1.5 m/s when supplied with 120 V AC.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9536"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "The big fish undergoes a change in direction immediately after consuming the small fish, altering its trajectory.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'speed'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9313"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "A body weighing 48 lb with an acceleration of 6 ft/sec^2 experiences a resultant force of 48 lb.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '9 lb'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9404"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "physics_graduate_doc_08_physics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "The minimum escape speed from Earth at an altitude of 200 km is approximately 6.42 km/s.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '3.23 $ \\mathrm{~km} / \\mathrm{s}$'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9335"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "physics_graduate_doc_08_physics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the relationship between the emission spectra of the doubly ionized lithium atom\n(Li++) and hydrogen, focusing on the factors that lead to their similarities and\ndifferences.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "increased by a factor of 16. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "9056"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "physics_graduate_doc_08_physics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Given a resistor with a potential difference of 120 volts resulting in a current of 8.00\namps, analyze how the current would change if the potential difference is increased to 180\nvolts. Discuss the underlying principles that govern this relationship.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "12.0 amp. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "10016"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

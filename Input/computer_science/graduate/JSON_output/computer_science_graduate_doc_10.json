@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_graduate_doc_10",
+  "document_name": "Computer Science - Graduate Level Assessment 10",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_10.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_10.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_10_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_10_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_10_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_10_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_10_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "A sender must not be able to deny sending a message that was sent, is known as",
+      "options": {
+        "A": "Message Nonrepudiation",
+        "B": "Message Integrity",
+        "C": "Message Condentiality",
+        "D": "Message Sending"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Message Nonrepudiation",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1527"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_10_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Of the following page-replacement policies, which is guaranteed to incur the minimum\nnumber of page faults?",
+      "options": {
+        "A": "Replace the page whose next reference will be the longest time in the future.",
+        "B": "Replace the page whose next reference will be the shortest time in the future.",
+        "C": "Replace the page whose most recent reference was the shortest time in the past.",
+        "D": "Replace the page whose most recent reference was the longest time in the past."
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Replace the page whose next reference will be the longest time in the future.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "14149"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_10_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following deals with network intrusion detection and real-time traffic\nanalysis?",
+      "options": {
+        "A": "John the Ripper",
+        "B": "L 0 phtCrack",
+        "C": "Snort",
+        "D": "Nessus"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Snort",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1510"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_10_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Failed sessions allow brute-force attacks on access credentials. This type of attacks are\ndone in which layer of the OSI model?",
+      "options": {
+        "A": "Physical layer",
+        "B": "Data-link Layer",
+        "C": "Session layer",
+        "D": "Presentation layer"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Session layer",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1504"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_10_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which form of encryption does WPA use?",
+      "options": {
+        "A": "Shared key",
+        "B": "LEAP",
+        "C": "TKIP",
+        "D": "AES"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - TKIP",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1552"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_10_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "Message authentication is a service that ensures message integrity by verifying that the message has not been altered during transmission.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1513"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_10_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "The stack is primarily used for storing local variables within a function's execution context.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1558"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_10_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "Bubble sort achieves an average-case time complexity of O(n log n) in most scenarios.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Merge sort'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1049"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_10_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "The authentication process between a wireless user and an access point is known as the 4-way handshake.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1512"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_10_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "The string 'xyz' can be derived from the grammar, as it follows the production rules provided.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'xyz'.",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "1060"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_10_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find sum and average of first n natural numbers.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def sum_average(number): | return (total,average)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "599"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_10_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to convert the given string to lower case.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def is_lower(string): | return (string.lower())",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "477"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

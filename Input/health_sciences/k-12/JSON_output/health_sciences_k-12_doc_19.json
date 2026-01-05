@@ -1,0 +1,289 @@
+{
+  "docid": "health_sciences_k-12_doc_19",
+  "document_name": "Health Sciences - K-12 Level Assessment 19",
+  "domain": "health_sciences",
+  "academic_level": "K-12",
+  "subjects": [
+    "nutrition"
+  ],
+  "combination_used": [
+    "mmlu_health_mcq",
+    "mmlu_health_tf",
+    "health_basic_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health_sciences\\k-12\\latex_documents\\health_sciences_k-12_doc_19.tex",
+    "pdf_file": "output\\health_sciences\\k-12\\pdf_documents\\health_sciences_k-12_doc_19.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_sciences_k-12_doc_19_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_sciences_k-12_doc_19_gold.json",
+    "answer_key_latex_file": "output\\health_sciences\\k-12\\answer_keys\\latex\\health_sciences_k-12_doc_19_answer_key.tex",
+    "answer_key_pdf_file": "output\\health_sciences\\k-12\\answer_keys\\pdf\\health_sciences_k-12_doc_19_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "In adolescence:",
+      "options": {
+        "A": "Brain growth is faster than at any other stage in life",
+        "B": "Peak bone mass occurs before the growth spurt ends",
+        "C": "Girls physiologically increase their percentage body fat",
+        "D": "Type 2 obesity related diabetes remains a very rare problem"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - Girls physiologically increase their percentage body fat",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9508"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Supplementation with long-chain fatty acids EPA and DHA during pregnancy and infancy will\nlikely benefit the following:",
+      "options": {
+        "A": "Visual performance",
+        "B": "Motor performance",
+        "C": "Behaviour disorders",
+        "D": "Memory"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Visual performance",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9548"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which one of these organs has the lowest energy expenditure per unit of body mass (kg)?",
+      "options": {
+        "A": "Brain",
+        "B": "Kidney",
+        "C": "Liver",
+        "D": "Skeletal Muscle"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - Skeletal Muscle",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9536"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "It has been observed that a reduction in family size and improved sanitary condition have\nled to an increase in allergic conditions. The 'hygiene hypothesis' suggests that",
+      "options": {
+        "A": "The frequent use of antiseptic swipes will reduce allergies",
+        "B": "Living on a working farm will help reducing the development of atopic diseases",
+        "C": "Particular care must be taken during breast feeding in high risk infants",
+        "D": "Living on a working farm will increase the development of atopic diseases"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Living on a working farm will help reducing the development of atopic diseases",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9441"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Bone mineral accretion",
+      "options": {
+        "A": "Is rapid in the first 10 weeks of foetal life",
+        "B": "Is slow in infancy",
+        "C": "In childhood, adolescence and young adulthood predicts risk of fracture in old age",
+        "D": "Is particularly high after the menopause in women"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - In childhood, adolescence and young adulthood predicts risk of fracture in old age",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9546"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_tf_1",
+      "question_type": "TF",
+      "stem_text": "Infants born to mothers who are vegan are at increased risk of deficiency in Vitamin C.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Vitamin B 12'.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9640"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_tf_2",
+      "question_type": "TF",
+      "stem_text": "The concentration of a substance in food is the only factor needed to assess its safety for consumers.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'The daily intake of the substance by humans consuming the food'.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9634"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_tf_3",
+      "question_type": "TF",
+      "stem_text": "The safety of pesticide chemicals, substances from food packaging, and color additives must be shown before they can be used in food.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9466"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_tf_4",
+      "question_type": "TF",
+      "stem_text": "Muscle glycogen is the primary fuel source for muscle contraction during short-term intense activities like sprinting.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9668"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_tf_5",
+      "question_type": "TF",
+      "stem_text": "In type 2 diabetes, impaired insulin secretion is not a factor in causing hyperglycemia.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'All of the options given are correct'.",
+      "source": {
+        "dataset": "health_sciences_nutrition",
+        "source_id": "9573"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the Mediterranean diet and analyze how its components may contribute to preventing\nage-related cognitive decline.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "The Mediterranean diet. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "9578"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_sciences_k-12_doc_19_health_sciences_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of plant sources of amino acids in human nutrition, focusing on how they\nprovide essential amino acids and the implications of varying amino acid profiles.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "All plant protein sources contain all essential amino acids although some may be limited\nby the amount of particular amino acids. Explain why this is the correct answer and\nprovide supporting evidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "9642"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

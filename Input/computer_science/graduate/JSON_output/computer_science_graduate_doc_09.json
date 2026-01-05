@@ -1,0 +1,291 @@
+{
+  "docid": "computer_science_graduate_doc_09",
+  "document_name": "Computer Science - Graduate Level Assessment 9",
+  "domain": "computer_science",
+  "academic_level": "Graduate",
+  "subjects": [
+    "college_computer_science",
+    "computer_security"
+  ],
+  "combination_used": [
+    "mmlu_pro_cs_mcq",
+    "mmlu_pro_cs_tf",
+    "mbpp_coding_long",
+    "cs_research"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\computer_science\\graduate\\latex_documents\\computer_science_graduate_doc_09.tex",
+    "pdf_file": "output\\computer_science\\graduate\\pdf_documents\\computer_science_graduate_doc_09.pdf",
+    "metadata_file": "data/metadata_hierarchical/computer_science_graduate_doc_09_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/computer_science_graduate_doc_09_gold.json",
+    "answer_key_latex_file": "output\\computer_science\\graduate\\answer_keys\\latex\\computer_science_graduate_doc_09_answer_key.tex",
+    "answer_key_pdf_file": "output\\computer_science\\graduate\\answer_keys\\pdf\\computer_science_graduate_doc_09_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "computer_science_graduate_doc_09_computer_science_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "The ______________ can cost you money, by sending text messages from your mobile phone\nnumbers.",
+      "options": {
+        "A": "IM - Trojans",
+        "B": "Backdoor Trojans",
+        "C": "SMS Trojan",
+        "D": "Ransom Trojan"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - SMS Trojan",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1569"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "computer_science_graduate_doc_09_computer_science_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Can a stream cipher have perfect secrecy?",
+      "options": {
+        "A": "Yes, if the PRG is really \"secure\"",
+        "B": "No, there are no ciphers with perfect secrecy",
+        "C": "Yes, every cipher has perfect secrecy",
+        "D": "No, since the key is shorter than the message"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - No, since the key is shorter than the message",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1559"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "computer_science_graduate_doc_09_computer_science_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following regular expressions is equivalent to (describes the same set of\nstrings as) (a* + b)*(c + d)?",
+      "options": {
+        "A": "a*(c + d)+ b(c + d)",
+        "B": "a*(c + d)* + b(c + d)*",
+        "C": "a*(c + d)+ b*(c + d)",
+        "D": "(a + b)*c +(a + b)*d"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - (a + b)*c +(a + b)*d",
+      "source": {
+        "dataset": "computer_science_college_computer_science",
+        "source_id": "15608"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "computer_science_graduate_doc_09_computer_science_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "What are the types of scanning?",
+      "options": {
+        "A": "Port, network, and services",
+        "B": "Network, vulnerability, and port",
+        "C": "Passive, active, and interactive",
+        "D": "Server, client, and network"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - Network, vulnerability, and port",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1526"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "computer_science_graduate_doc_09_computer_science_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is a remote Trojan?",
+      "options": {
+        "A": "Troya",
+        "B": "DaCryptic",
+        "C": "BankerA",
+        "D": "Game-Troj"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Troya",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1475"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "computer_science_graduate_doc_09_computer_science_tf_1",
+      "question_type": "TF",
+      "stem_text": "WiFi traffic sniffing exclusively analyzes traffic from WiFi networks and cannot be used for other wireless technologies.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Wireless Traffic Sniffing'.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "14212"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "computer_science_graduate_doc_09_computer_science_tf_2",
+      "question_type": "TF",
+      "stem_text": "Freenet is a decentralized network designed for anonymous file sharing and communication.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1478"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "computer_science_graduate_doc_09_computer_science_tf_3",
+      "question_type": "TF",
+      "stem_text": "In Message Confidentiality, the transmitted message must be comprehensible only to the intended receiver.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1474"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "computer_science_graduate_doc_09_computer_science_tf_4",
+      "question_type": "TF",
+      "stem_text": "Wireshark is a widely used tool for capturing and analyzing wireless network traffic.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1516"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "computer_science_graduate_doc_09_computer_science_tf_5",
+      "question_type": "TF",
+      "stem_text": "Applications developed using C and C++ are susceptible to common buffer-overflow errors due to their low-level memory management.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "computer_science_computer_security",
+        "source_id": "1521"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "computer_science_graduate_doc_09_computer_science_long_1",
+      "question_type": "LONG",
+      "stem_text": "Write a function to find all index positions of the minimum values in a given list.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def position_min(list1): | return min_result",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "322"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "computer_science_graduate_doc_09_computer_science_long_2",
+      "question_type": "LONG",
+      "stem_text": "Write a python function to find quotient of two numbers.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "def find(n,m): | return (q)",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should provide a detailed explanation referencing algorithm steps.",
+      "source": {
+        "dataset": "mbpp_plus:test",
+        "source_id": "292"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

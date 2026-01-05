@@ -1,0 +1,290 @@
+{
+  "docid": "mathematics_undergraduate_doc_06",
+  "document_name": "Mathematics - Undergraduate Level Assessment 6",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_06.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_06.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_06_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_06_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_06_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_06_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "For what value of b is the line y = 10 x tangent to the curve y = e^(bx) at some point in\nthe xy-plane?",
+      "options": {
+        "A": "10/e",
+        "B": "10",
+        "C": "10 e",
+        "D": "e^10"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - 10/e",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "14166"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "How many structurally distinct Abelian groups have order 72?",
+      "options": {
+        "A": "4",
+        "B": "6",
+        "C": "8",
+        "D": "9"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 6",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1178"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is an equation of the line tangent to the graph of y = x + e^x at x\n= 0 ?",
+      "options": {
+        "A": "y = 2 x + 1",
+        "B": "y = 2 x",
+        "C": "y = x + 2",
+        "D": "y = x + 1"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - y = 2 x + 1",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1132"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "The element (4, 2) of Z_12 x Z_8 has order",
+      "options": {
+        "A": "4",
+        "B": "8",
+        "C": "12",
+        "D": "6"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 12",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "98"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Find all c in Z_3 such that Z_3[x]/(x^3 + cx^2 + 1) is a field.",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "1",
+        "D": "3"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 2",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "51"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "There exists a group of order 102 that does not have a nontrivial proper normal subgroup.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'True, True'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "58"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The order of the factor group Z_6/<3> is 3.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14043"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "Every compact space in a metric space is complete.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1105"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "The set of all nth roots of unity under multiplication of complex numbers forms an abelian group.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "23"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The degree of the field extension Q(\\sqrt 2 + \\sqrt 3) over Q is 4.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "8"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Find the minimum value of \\[f(x) = \\sqrt{5 x^2 + 2 x \\sqrt{5} + 1} + x \\sqrt{5},\\]over all\n$x$ for which $f(x)$ is defined.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "We can write \\begin{align*} f(x) &= \\sqrt{5 x^2 + 2 x \\sqrt{5} + 1} + x \\sqrt{5} \\\\ &=\n\\sqrt{(x \\sqrt{5} + 1)^2} + x \\sqrt{5} \\\\ &= |x \\sqrt{5} + 1| + x \\sqrt{5}. \\end{align*}If\n$x \\le -\\frac{1}{\\sqrt{5}},$ then \\[f(x) = |x \\sqrt{5} + 1| + x \\sqrt{5} = -x \\sqrt{5} - 1\n+ x \\sqrt{5} = -1.\\]If $x \\ge -\\frac{1}{\\sqrt{5}},$ then \\begin{align*} f(x) &= |x\n\\sqrt{5} + 1| + x \\sqrt{5} \\\\ &= x \\sqrt{5} + 1 + x \\sqrt{5} \\\\ &= (x \\sqrt{5} + 1) + (x\n\\sqrt{5} + 1) - 1 \\\\ &\\ge -1. \\end{align*}Thus, the minimum value of $f(x)$ is\n$\\boxed{-1}.$",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should show all steps in their mathematical solution.",
+      "source": {
+        "dataset": "gsm8k_math",
+        "source_id": "9403"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_06_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "A polynomial with integer coefficients is of the form \\[3 x^3 + a_2 x^2 + a_1 x - 6 =\n0.\\]Enter all the possible integer roots of this polynomial, separated by commas.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "By the Integer Root Theorem, the possible integer roots are all the divisors of 6\n(including negative divisors), so they are $\\boxed{-6, -3, -2, -1, 1, 2, 3, 6}.$",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Students should show all steps in their mathematical solution.",
+      "source": {
+        "dataset": "gsm8k_math",
+        "source_id": "9947"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

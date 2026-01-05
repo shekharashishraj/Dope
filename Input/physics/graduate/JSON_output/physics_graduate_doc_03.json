@@ -1,0 +1,294 @@
+{
+  "docid": "physics_graduate_doc_03",
+  "document_name": "Physics - Graduate Level Assessment 3",
+  "domain": "physics",
+  "academic_level": "Graduate",
+  "subjects": [
+    "physics"
+  ],
+  "combination_used": [
+    "mmlu_pro_physics_mcq",
+    "mmlu_pro_physics_tf",
+    "gsm8k_math_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\physics\\graduate\\latex_documents\\physics_graduate_doc_03.tex",
+    "pdf_file": "output\\physics\\graduate\\pdf_documents\\physics_graduate_doc_03.pdf",
+    "metadata_file": "data/metadata_hierarchical/physics_graduate_doc_03_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/physics_graduate_doc_03_gold.json",
+    "answer_key_latex_file": "output\\physics\\graduate\\answer_keys\\latex\\physics_graduate_doc_03_answer_key.tex",
+    "answer_key_pdf_file": "output\\physics\\graduate\\answer_keys\\pdf\\physics_graduate_doc_03_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Among these colors, the one that has the most energy per photon is",
+      "options": {
+        "A": "violet",
+        "B": "turquoise",
+        "C": "green",
+        "D": "blue",
+        "E": "red"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - violet",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9114"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "The red glow in the neon tube of an advertising sign is a result of",
+      "options": {
+        "A": "fluorescence.",
+        "B": "absorption.",
+        "C": "resonance.",
+        "D": "de-excitation.",
+        "E": "refraction."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - de-excitation.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9120"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "A heavy rock and a light rock in free fall (zero air resistance) have the same\nacceleration. The heavy rock doesn't have a greater acceleration because the",
+      "options": {
+        "A": "air resistance is always zero in free fall.",
+        "B": "volume of both rocks is the same.",
+        "C": "force due to gravity is the same on each.",
+        "D": "gravitational constant is the same for both rocks.",
+        "E": "force due to gravity is zero in free fall."
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - air resistance is always zero in free fall.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9117"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "When small pieces of material are assembled into a larger piece, the combined surface area",
+      "options": {
+        "A": "greatly increases",
+        "B": "slightly increases",
+        "C": "is halved",
+        "D": "becomes zero",
+        "E": "greatly decreases"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - greatly increases",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9738"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "A corrective lens of refractive power - 10.00 diopters corrects a myopic eye. What would\nbe the effective power of this lens if it were 12 mm. from the eye?",
+      "options": {
+        "A": "-11.00 diopters",
+        "B": "-9.50 diopters",
+        "C": "-10.50 diopters",
+        "D": "-9.00 diopters",
+        "E": "-7.93 diopters"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - -11.00 diopters",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9662"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_tf_1",
+      "question_type": "TF",
+      "stem_text": "An electron confined within a nuclear radius can have a minimum kinetic energy of 8.7 MeV due to its wave nature.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '15.9'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9837"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_tf_2",
+      "question_type": "TF",
+      "stem_text": "The correct answer to 'Determine the total collisional frequency for $\\mathrm{CO}_2$ at $1 \\mathrm{~atm}$ and $298 \\mathrm{~K}$.' is '8.44 $10^{34} \\mathrm{~m}^{-3} \\mathrm{~s}^{-1}$'.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Actual answer is '6.28 $10^{34} \\mathrm{~m}^{-3} \\mathrm{~s}^{-1}$'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9379"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_tf_3",
+      "question_type": "TF",
+      "stem_text": "An electron can be effectively accelerated by a magnetic field when it is at rest.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'an electric field'.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9323"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_tf_4",
+      "question_type": "TF",
+      "stem_text": "When relatively slow-moving molecules condense from the air, the temperature of the remaining air tends to decrease.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "10256"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "physics_graduate_doc_03_physics_mmlu_pro_tf_5",
+      "question_type": "TF",
+      "stem_text": "The complementary color of blue in the additive color model is green.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mmlu_pro_physics_physics",
+        "source_id": "9829"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "physics_graduate_doc_03_physics_long_1",
+      "question_type": "LONG",
+      "stem_text": "Given a projector with a 40 cm focal length illuminating a 4.0 cm object, analyze how the\ndistance from the lens to the screen affects the size of the projected image. Calculate\nthe image size and discuss the underlying optical principles involved.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "240 cm. Explain why this is the correct answer and provide supporting evidence. Reference\nkey facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "9660"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "physics_graduate_doc_03_physics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the process of uranium nucleus fission, focusing on the forms of energy released,\nparticularly the role of alpha particles, and analyze their significance in nuclear\nreactions.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "energy of alpha particles.. Explain why this is the correct answer and provide supporting\nevidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_pro_mcq_to_long",
+        "source_id": "9316"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "docid": "mathematics_undergraduate_doc_19",
+  "document_name": "Mathematics - Undergraduate Level Assessment 19",
+  "domain": "mathematics",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "combination_used": [
+    "mmlu_math_mcq",
+    "mmlu_math_tf",
+    "mbpp_coding_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\mathematics\\undergraduate\\latex_documents\\mathematics_undergraduate_doc_19.tex",
+    "pdf_file": "output\\mathematics\\undergraduate\\pdf_documents\\mathematics_undergraduate_doc_19.pdf",
+    "metadata_file": "data/metadata_hierarchical/mathematics_undergraduate_doc_19_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/mathematics_undergraduate_doc_19_gold.json",
+    "answer_key_latex_file": "output\\mathematics\\undergraduate\\answer_keys\\latex\\mathematics_undergraduate_doc_19_answer_key.tex",
+    "answer_key_pdf_file": "output\\mathematics\\undergraduate\\answer_keys\\pdf\\mathematics_undergraduate_doc_19_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "The maximum number of acute angles in a convex 10-gon in the Euclidean plane is",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "marks": 2,
+      "gold_answer": "C",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: C - 3",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1135"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | Every solvable group is of prime-power order. Statement 2 | Every group of\nprime-power order is solvable.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - False, True",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "50"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Find the degree for the given field extension Q(sqrt(2)) over Q.",
+      "options": {
+        "A": "0",
+        "B": "2",
+        "C": "1",
+        "D": "3"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 2",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "54"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Find the maximum possible order for an element of S_n for n = 7.",
+      "options": {
+        "A": "6",
+        "B": "12",
+        "C": "30",
+        "D": "105"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - 12",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14050"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Statement 1 | If a and b are elements of finite order in an Abelian group, then |ab| is\nthe lcm (|a|,|b|). Statement 2 | If g is a group element and g^n = e, then |g| = n.",
+      "options": {
+        "A": "True, True",
+        "B": "False, False",
+        "C": "True, False",
+        "D": "False, True"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - False, False",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14048"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_tf_1",
+      "question_type": "TF",
+      "stem_text": "The product of (2,3) and (3,5) in the ring Z_5 x Z_9 is (3,1).",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '(1,6)'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "17"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_tf_2",
+      "question_type": "TF",
+      "stem_text": "The circle defined by x^2 + y^2 = 9 intersects the parabola x^2 = y + 4 at the greatest number of points.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1193"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_tf_3",
+      "question_type": "TF",
+      "stem_text": "The area of an equilateral triangle whose inscribed circle has a radius of 2 is 12\\sqrt 3 square units.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_college_mathematics",
+        "source_id": "1149"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_tf_4",
+      "question_type": "TF",
+      "stem_text": "In the group G = {2, 4, 6, 8} under multiplication modulo 10, the identity element is 2.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: '6'.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "52"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_tf_5",
+      "question_type": "TF",
+      "stem_text": "The maximum possible order for an element of S_10 is 30.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "mathematics_abstract_algebra",
+        "source_id": "14"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "The inhabitants of the island of Jumble use the standard Kobish alphabet ($20$ letters, A\nthrough T). Each word in their language is $4$ letters or less, and for some reason, they\ninsist that all words contain the letter A at least once. How many words are possible?",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "True, True. Explain why this is the correct answer and provide supporting evidence. Show\nthe calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "59"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "mathematics_undergraduate_doc_19_mathematics_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the implications of Statement 1, which asserts that if H and K are subgroups of G\nand one is normal, then HK is a subgroup of G. Additionally, analyze Statement 2 regarding\nthe abelian nature of groups of order p^2, where p is prime. Evaluate the validity of both\nstatements and their interrelation in group theory.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "True, True. Explain why this is the correct answer and provide supporting evidence. Show\nthe calculation or reasoning that leads to this conclusion.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "59"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "docid": "health_sciences_undergraduate_doc_06",
+  "document_name": "Health Sciences - Undergraduate Level Assessment 6",
+  "domain": "health_sciences",
+  "academic_level": "Undergraduate",
+  "subjects": [
+    "anatomy",
+    "human_aging",
+    "human_sexuality",
+    "medical_genetics",
+    "virology"
+  ],
+  "combination_used": [
+    "mmlu_pro_health_mcq",
+    "mmlu_pro_health_tf",
+    "health_long"
+  ],
+  "total_marks": 40,
+  "number_of_questions": 12,
+  "number_of_pages": 2,
+  "generated_at": "2023-01-01",
+  "version": "1.0",
+  "file_paths": {
+    "latex_file": "output\\health_sciences\\undergraduate\\latex_documents\\health_sciences_undergraduate_doc_06.tex",
+    "pdf_file": "output\\health_sciences\\undergraduate\\pdf_documents\\health_sciences_undergraduate_doc_06.pdf",
+    "metadata_file": "data/metadata_hierarchical/health_sciences_undergraduate_doc_06_metadata.json",
+    "gold_labels_file": "data/gold_labels_hierarchical/health_sciences_undergraduate_doc_06_gold.json",
+    "answer_key_latex_file": "output\\health_sciences\\undergraduate\\answer_keys\\latex\\health_sciences_undergraduate_doc_06_answer_key.tex",
+    "answer_key_pdf_file": "output\\health_sciences\\undergraduate\\answer_keys\\pdf\\health_sciences_undergraduate_doc_06_answer_key.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_mcq_1",
+      "question_type": "MCQ",
+      "stem_text": "Emissary veins connect the intracranial venous sinuses to",
+      "options": {
+        "A": "veins draining the scalp.",
+        "B": "veins draining the eye.",
+        "C": "the pterygoid venous plexus.",
+        "D": "All of the above areas."
+      },
+      "marks": 2,
+      "gold_answer": "D",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: D - All of the above areas.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "14060"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 2,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_mcq_2",
+      "question_type": "MCQ",
+      "stem_text": "If links between various diseases are found, then future older adults will probably",
+      "options": {
+        "A": "Take fewer medications",
+        "B": "Be able to avoid certain diseases",
+        "C": "Pay far less for pharmaceuticals",
+        "D": "Pick and choose the disease(s) they want"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - Take fewer medications",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6200"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 3,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_mcq_3",
+      "question_type": "MCQ",
+      "stem_text": "Research on the effects of sexually explicit material using material that the viewer finds\nacceptable has shown that:",
+      "options": {
+        "A": "erotica has no effect on sexual behavior",
+        "B": "erotica may lead to increases in sexual arousal for men and women",
+        "C": "nonaggressive erotica leads to massive increases in aggressive behavior",
+        "D": "erotica decreases sexual arousal and sexual interest"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - erotica may lead to increases in sexual arousal for men and women",
+      "source": {
+        "dataset": "health_sciences_human_sexuality",
+        "source_id": "6357"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 4,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_mcq_4",
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is NOT one of the major reasons for the increase in numbers of\nolder adults?",
+      "options": {
+        "A": "The Baby Boom generation",
+        "B": "The steadily increasing birth rate",
+        "C": "Increases in life expectancy at birth",
+        "D": "Increases in life expectancy at a specified age"
+      },
+      "marks": 2,
+      "gold_answer": "B",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: B - The steadily increasing birth rate",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6215"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 5,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_mcq_5",
+      "question_type": "MCQ",
+      "stem_text": "Older adults may be more attached to a place than younger adults because",
+      "options": {
+        "A": "That place holds many memories",
+        "B": "It's much harder to move when you're older",
+        "C": "Young adults pay less attention to place then do older adults",
+        "D": "That place represents transcendence"
+      },
+      "marks": 2,
+      "gold_answer": "A",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Correct option: A - That place holds many memories",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6107"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 6,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_tf_1",
+      "question_type": "TF",
+      "stem_text": "The labia minora are homologous to the glans of the penis, sharing similar embryonic origins.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'clitoris'.",
+      "source": {
+        "dataset": "health_sciences_human_sexuality",
+        "source_id": "6352"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 7,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_tf_2",
+      "question_type": "TF",
+      "stem_text": "Parasympathetic preganglionic nerves exit the central nervous system via the fifth cranial nerves.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'third cranial nerves.'.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "196"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 8,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_tf_3",
+      "question_type": "TF",
+      "stem_text": "The Philadelphia chromosome is a product of a reciprocal translocation between chromosomes 9 and 22.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "True",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated true statement based on MCQ.",
+      "source": {
+        "dataset": "health_sciences_medical_genetics",
+        "source_id": "7378"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 9,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_tf_4",
+      "question_type": "TF",
+      "stem_text": "The bones of the viscerocranium develop initially by endochondral ossification and follow the neural growth pattern.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'intramembranous ossification and follow the somatic growth pattern.'.",
+      "source": {
+        "dataset": "health_sciences_anatomy",
+        "source_id": "145"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 10,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_tf_5",
+      "question_type": "TF",
+      "stem_text": "Significant cardiovascular changes are mainly concentrated in the heart rather than the blood vessels.",
+      "options": {
+        "True": "True",
+        "False": "False"
+      },
+      "marks": 2,
+      "gold_answer": "False",
+      "gold_confidence": 1.0,
+      "answer_explanation": "LLM-generated false statement. Correct answer: 'Blood vessels'.",
+      "source": {
+        "dataset": "health_sciences_human_aging",
+        "source_id": "6146"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 11,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_long_1",
+      "question_type": "LONG",
+      "stem_text": "Discuss the role of secondary sex characteristics in both males and females, analyzing\ntheir significance in human development and social identity.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "both A and B. Explain why this is the correct answer and provide supporting evidence.\nReference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "6385"
+      },
+      "has_image": false,
+      "image_path": null
+    },
+    {
+      "question_number": 12,
+      "question_id": "health_sciences_undergraduate_doc_06_health_sciences_long_2",
+      "question_type": "LONG",
+      "stem_text": "Discuss the epidemiology of Hirschsprung disease, focusing on its prevalence in different\ngenders, and analyze the implications of misconceptions surrounding this condition.",
+      "options": null,
+      "marks": 10,
+      "gold_answer": "It is more common in girls than in boys.. Explain why this is the correct answer and\nprovide supporting evidence. Reference key facts or concepts that support this choice.",
+      "gold_confidence": 1.0,
+      "answer_explanation": "Long-form derived from MCQ; award credit for stating the correct idea and giving supporting reasoning.",
+      "source": {
+        "dataset": "mmlu_mcq_to_long",
+        "source_id": "7359"
+      },
+      "has_image": false,
+      "image_path": null
+    }
+  ],
+  "question_statistics": {
+    "by_type": {
+      "MCQ": 5,
+      "TF": 5,
+      "LONG": 2
+    },
+    "by_marks": {
+      "2": 10,
+      "10": 2
+    },
+    "total_marks_by_type": {
+      "MCQ": 10,
+      "TF": 10,
+      "LONG": 20
+    }
+  }
+}
