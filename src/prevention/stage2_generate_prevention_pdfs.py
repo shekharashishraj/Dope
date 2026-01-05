@@ -11,6 +11,8 @@ import pytz
 
 from .injection.prevention_orchestrator import generate_prevention_dual_layer_pdf
 from .injection.prevention_orchestrator import generate_prevention_font_attack_pdf
+from .injection.prevention_orchestrator import generate_prevention_icw_dual_layer_pdf
+from .injection.prevention_orchestrator import generate_prevention_icw_font_attack_pdf
 
 
 def _tz_now_str(tz_name: str = "America/Denver") -> str:
@@ -43,9 +45,9 @@ def main() -> int:
     parser.add_argument(
         "--method",
         type=str,
-        choices=["dual_layer", "font_attack"],
+        choices=["dual_layer", "font_attack", "icw_dual_layer", "icw_font_attack"],
         default="dual_layer",
-        help="Method to run (for now: dual_layer only)",
+        help="Method to run",
     )
     parser.add_argument(
         "--font-cache-dir",
@@ -89,6 +91,19 @@ def main() -> int:
             )
         elif args.method == "font_attack":
             generate_prevention_font_attack_pdf(
+                prevention_json_path=pjson,
+                output_base=output_base,
+                font_cache_dir=font_cache_dir,
+                compile_pdf=not args.no_pdf,
+            )
+        elif args.method == "icw_dual_layer":
+            generate_prevention_icw_dual_layer_pdf(
+                prevention_json_path=pjson,
+                output_base=output_base,
+                compile_pdf=not args.no_pdf,
+            )
+        elif args.method == "icw_font_attack":
+            generate_prevention_icw_font_attack_pdf(
                 prevention_json_path=pjson,
                 output_base=output_base,
                 font_cache_dir=font_cache_dir,

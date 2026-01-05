@@ -17,6 +17,7 @@ import re
 
 from .prevention_dual_layer_injector import apply_prevention_dual_layer
 from .prevention_font_attack_injector import apply_prevention_font_attack
+from .prevention_icw_injector import apply_prevention_icw
 from ..constants import PREVENTION_VARIANT_GIBBERISH, PREVENTION_VARIANT_REFUSAL
 
 
@@ -219,6 +220,122 @@ def generate_prevention_font_attack_pdf(
         "variant": (doc.get("prevention") or {}).get("variant"),
         "modified_tex_path": str(tex_out),
         "metadata": attack.metadata,
+        "font_cache_dir": str(font_cache_dir),
+        "fonts_copied": len(font_files),
+    }
+
+    if compile_pdf:
+        pdf_out = output_base.with_suffix(".pdf")
+        pdf_compile = _compile_latex(
+            tex_source=mutated_tex,
+            assets_dir=latex_path.parent,
+            output_pdf=pdf_out,
+            require_xetex=True,
+            extra_font_files=font_files,
+        )
+        result["pdf_compilation"] = pdf_compile
+        if pdf_compile.get("success"):
+            result["pdf_path"] = str(pdf_out)
+
+    return result
+
+
+def generate_prevention_icw_dual_layer_pdf(
+    *,
+    prevention_json_path: Path,
+    output_base: Path,
+    compile_pdf: bool = True,
+) -> Dict[str, Any]:
+    """Hybrid: prevention ICW + prevention dual_layer."""
+
+    repo_root = _resolve_repo_root()
+    doc = json.loads(prevention_json_path.read_text(encoding="utf-8"))
+    file_paths = doc.get("file_paths") or {}
+    latex_file = file_paths.get("latex_file")
+    if not latex_file:
+        raise ValueError("Missing file_paths.latex_file in prevention JSON")
+
+    latex_path = _resolve_latex_path(repo_root, latex_file)
+    tex_content = _read_text(latex_path)
+
+    qnums = [q.get("question_number") for q in doc.get("questions", []) if isinstance(q.get("question_number"), int)]
+    tex_with_icw, icw_meta = apply_prevention_icw(tex_content, question_numbers=qnums)
+
+    perturbations: List[Dict[str, Any]] = []
+    for q in doc.get("questions", []):
+        perturbations.extend(q.get("perturbations") or [])
+
+    mutated_tex, dl_meta = apply_prevention_dual_layer(tex_with_icw, perturbations)
+    mutated_tex = _normalize_latex_for_missing_packages(mutated_tex)
+
+    output_base.parent.mkdir(parents=True, exist_ok=True)
+    tex_out = output_base.with_suffix(".tex")
+    tex_out.write_text(mutated_tex, encoding="utf-8")
+
+    result: Dict[str, Any] = {
+        "success": True,
+        "method": "icw_dual_layer",
+        "variant": (doc.get("prevention") or {}).get("variant"),
+        "modified_tex_path": str(tex_out),
+        "metadata": {"icw": icw_meta, "dual_layer": dl_meta},
+    }
+
+    if compile_pdf:
+        pdf_out = output_base.with_suffix(".pdf")
+        pdf_compile = _compile_latex(
+            tex_source=mutated_tex,
+            assets_dir=latex_path.parent,
+            output_pdf=pdf_out,
+            require_xetex=False,
+        )
+        result["pdf_compilation"] = pdf_compile
+        if pdf_compile.get("success"):
+            result["pdf_path"] = str(pdf_out)
+
+    return result
+
+
+def generate_prevention_icw_font_attack_pdf(
+    *,
+    prevention_json_path: Path,
+    output_base: Path,
+    font_cache_dir: Path,
+    compile_pdf: bool = True,
+) -> Dict[str, Any]:
+    """Hybrid: prevention ICW + prevention font_attack."""
+
+    repo_root = _resolve_repo_root()
+    doc = json.loads(prevention_json_path.read_text(encoding="utf-8"))
+    file_paths = doc.get("file_paths") or {}
+    latex_file = file_paths.get("latex_file")
+    if not latex_file:
+        raise ValueError("Missing file_paths.latex_file in prevention JSON")
+
+    latex_path = _resolve_latex_path(repo_root, latex_file)
+    tex_content = _read_text(latex_path)
+
+    qnums = [q.get("question_number") for q in doc.get("questions", []) if isinstance(q.get("question_number"), int)]
+    tex_with_icw, icw_meta = apply_prevention_icw(tex_content, question_numbers=qnums)
+
+    perturbations: List[Dict[str, Any]] = []
+    for q in doc.get("questions", []):
+        perturbations.extend(q.get("perturbations") or [])
+
+    attack = apply_prevention_font_attack(tex_with_icw, perturbations, font_cache_dir=font_cache_dir)
+    mutated_tex = _normalize_latex_for_missing_packages(attack.modified_tex)
+
+    output_base.parent.mkdir(parents=True, exist_ok=True)
+    tex_out = output_base.with_suffix(".tex")
+    tex_out.write_text(mutated_tex, encoding="utf-8")
+
+    font_files = [(font_cache_dir / name).resolve() for name in attack.font_files_needed]
+
+    result: Dict[str, Any] = {
+        "success": True,
+        "method": "icw_font_attack",
+        "variant": (doc.get("prevention") or {}).get("variant"),
+        "modified_tex_path": str(tex_out),
+        "metadata": {"icw": icw_meta, "font_attack": attack.metadata},
         "font_cache_dir": str(font_cache_dir),
         "fonts_copied": len(font_files),
     }
