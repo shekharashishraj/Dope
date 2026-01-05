@@ -102,6 +102,7 @@ def _compile_latex(
                     cwd=temp_dir,
                     capture_output=True,
                     text=True,
+                    errors="replace",
                     timeout=timeout,
                 )
                 compile_log.write_text(
