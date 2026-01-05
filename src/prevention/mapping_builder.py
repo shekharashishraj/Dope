@@ -1,8 +1,13 @@
 """Build prevention perturbation mappings (no LLM).
 
-This generates many small, exact-match substitutions across stems + options.
-We avoid spaces in replacements by operating at word-token granularity, so TeX
-line-breaking remains stable (spaces remain untouched between replaced words).
+Updated prevention strategy:
+- Target ONLY question stems (NOT options).
+- Do NOT preserve the original whitespace/space structure: replacements may
+  introduce/remove spaces within replaced spans.
+
+To keep LaTeX compilation stable, we:
+- avoid modifying LaTeX commands (segments containing backslashes/braces)
+- avoid generating mapping spans that include newlines
 """
 
 from __future__ import annotations
@@ -23,7 +28,7 @@ from .constants import (
 from .latex_struct_parser import QuestionSpans
 
 
-_WORD_TOKEN_RE = re.compile(r"(?<!\\)[A-Za-z0-9]+")
+_SAFE_CHUNK_CHAR_RE = re.compile(r"[^\n\\{}]+")  # avoid newline, backslash, braces
 
 
 def _stable_seed(*parts: str) -> int:
@@ -31,17 +36,28 @@ def _stable_seed(*parts: str) -> int:
     return int(h[:16], 16)
 
 
-def _gibberish_token(length: int, rng: random.Random) -> str:
+def _gibberish_chunk(length: int, rng: random.Random) -> str:
     if length <= 0:
         return ""
-    return "".join(rng.choice(GIBBERISH_ALPHABET) for _ in range(length))
+    # Allow spaces, but not newlines. This intentionally breaks original space structure.
+    alphabet = GIBBERISH_ALPHABET + "     "
+    s = "".join(rng.choice(alphabet) for _ in range(length))
+    # Ensure we don't return all-whitespace
+    if s.strip() == "":
+        s = "".join(rng.choice(GIBBERISH_ALPHABET) for _ in range(length))
+    return s
 
 
-def _refusal_token(length: int, keyword_index: int) -> str:
+def _refusal_chunk(length: int, offset: int, refusal_string: str) -> str:
     if length <= 0:
         return ""
-    kw = REFUSAL_KEYWORDS[keyword_index % len(REFUSAL_KEYWORDS)]
-    return (kw * ((length // len(kw)) + 1))[:length]
+    # Use the configured refusal string, repeat+slice with a shifting offset so
+    # space pattern changes across chunks.
+    base = (refusal_string + " ") * ((length // (len(refusal_string) + 1)) + 3)
+    start = offset % max(len(base), 1)
+    s = (base[start:] + base)[:length]
+    # No newlines
+    return s.replace("\n", " ")
 
 
 def build_prevention_mappings_for_text(
@@ -51,50 +67,68 @@ def build_prevention_mappings_for_text(
     docid: str,
     variant: str,
     refusal_string: str = DEFAULT_REFUSAL_STRING,
-    keyword_start_index: int = 0,
+    chunk_size: int = 24,
 ) -> Tuple[List[Dict], int]:
-    """Return a list of mapping dicts for a single text span and the next keyword index."""
+    """Return mapping dicts for a single text span (stem only).
+
+    We generate mappings over *safe* chunks that:
+    - do not include newlines
+    - do not include LaTeX command delimiters (\\, {, })
+    """
 
     mappings: List[Dict] = []
-    keyword_idx = keyword_start_index
     rng = random.Random(_stable_seed(docid, str(question_number), variant, text))
+    offset = _stable_seed(docid, str(question_number), variant) % 10_000
 
-    for m in _WORD_TOKEN_RE.finditer(text):
-        orig = m.group(0)
-        if not orig:
-            continue
-        start_pos = m.start()
-        end_pos = m.end()
-
-        if variant == PREVENTION_VARIANT_GIBBERISH:
-            repl = _gibberish_token(len(orig), rng)
-        elif variant == PREVENTION_VARIANT_REFUSAL:
-            # Word-level refusal semantics: cycle keywords (no spaces).
-            repl = _refusal_token(len(orig), keyword_idx)
-            keyword_idx += 1
-        else:
-            raise ValueError(f"Unknown prevention variant: {variant}")
-
-        if not repl or repl == orig:
+    for safe_match in _SAFE_CHUNK_CHAR_RE.finditer(text):
+        safe_segment = safe_match.group(0)
+        if not safe_segment:
             continue
 
-        mappings.append(
-            {
-                "question_index": question_number,
-                "latex_stem_text": text,
-                "original_substring": orig,
-                "replacement_substring": repl,
-                "start_pos": start_pos,
-                "end_pos": end_pos,
-                # For prevention we care about refusal; keep this field for schema completeness.
-                "target_wrong_answer": "REFUSE",
-                "reasoning": f"Prevention({variant}) token replacement to degrade model reading and encourage refusal.",
-                # Extra fields (allowed by Pydantic models, extra='allow')
-                "prevention_variant": variant,
-            }
-        )
+        seg_start = safe_match.start()
+        seg_end = safe_match.end()
 
-    return mappings, keyword_idx
+        # Chunk within the safe segment.
+        i = 0
+        while i < len(safe_segment):
+            take = min(chunk_size, len(safe_segment) - i)
+            orig = safe_segment[i : i + take]
+            if not orig or orig.strip() == "":
+                i += take
+                continue
+
+            start_pos = seg_start + i
+            end_pos = start_pos + len(orig)
+
+            if variant == PREVENTION_VARIANT_GIBBERISH:
+                repl = _gibberish_chunk(len(orig), rng)
+            elif variant == PREVENTION_VARIANT_REFUSAL:
+                repl = _refusal_chunk(len(orig), offset, refusal_string)
+                offset += len(orig)
+            else:
+                raise ValueError(f"Unknown prevention variant: {variant}")
+
+            if not repl or repl == orig:
+                i += take
+                continue
+
+            mappings.append(
+                {
+                    "question_index": question_number,
+                    "latex_stem_text": text,
+                    "original_substring": orig,
+                    "replacement_substring": repl,
+                    "start_pos": start_pos,
+                    "end_pos": end_pos,
+                    "target_wrong_answer": "REFUSE",
+                    "reasoning": f"Prevention({variant}) chunk replacement to degrade readability and encourage refusal.",
+                    "prevention_variant": variant,
+                    "prevention_scope": "stem",
+                }
+            )
+            i += take
+
+    return mappings, offset
 
 
 def build_prevention_mappings_for_question(
@@ -104,37 +138,14 @@ def build_prevention_mappings_for_question(
     variant: str,
     refusal_string: str = DEFAULT_REFUSAL_STRING,
 ) -> List[Dict]:
-    """Build mappings for one question across stem + options (word-level)."""
+    """Build mappings for one question (stem only)."""
 
-    all_dicts: List[Dict] = []
-
-    # Stem
-    stem_dicts, next_idx = build_prevention_mappings_for_text(
+    stem_dicts, _ = build_prevention_mappings_for_text(
         text=q_spans.stem_text,
         question_number=q_spans.question_number,
         docid=docid,
         variant=variant,
         refusal_string=refusal_string,
-        keyword_start_index=0,
     )
-    for d in stem_dicts:
-        d["prevention_scope"] = "stem"
-    all_dicts.extend(stem_dicts)
-
-    # Options (if any)
-    for opt_i, opt in enumerate(q_spans.options):
-        opt_dicts, next_idx = build_prevention_mappings_for_text(
-            text=opt.text,
-            question_number=q_spans.question_number,
-            docid=docid,
-            variant=variant,
-            refusal_string=refusal_string,
-            keyword_start_index=next_idx,
-        )
-        for d in opt_dicts:
-            d["prevention_scope"] = "option"
-            d["option_index"] = opt_i
-        all_dicts.extend(opt_dicts)
-
-    return all_dicts
+    return stem_dicts
 
