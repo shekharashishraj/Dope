@@ -158,6 +158,12 @@ def extract_question_spans(latex: str) -> Dict[int, QuestionSpans]:
                     end = nxt.start()
                     break
 
+            # Also cap at the matching \\end{enumerate} for the *current* top-level enumerate
+            # to avoid leaking trailing LaTeX (e.g., \\end{enumerate}, \\vfill, \\end{document})
+            top_enum_end = section_content.find("\\end{enumerate}", start)
+            if top_enum_end != -1 and top_enum_end < end:
+                end = top_enum_end
+
             item_text = section_content[start:end]
 
             # Identify nested enumerate for MCQ options (first nested enumerate in the item)
