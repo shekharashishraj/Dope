@@ -112,7 +112,10 @@ def apply_prevention_dual_layer(
                 abs_start = span_start + li
                 abs_end = abs_start + len(orig)
 
-        wrapped = f"\\duallayerbox{{{escape_tex(orig)}}}{{{escape_tex(repl)}}}"
+        # Add an explicit break opportunity after each box. Without this, TeX often
+        # can't break lines (each \\duallayerbox is effectively an unbreakable unit),
+        # causing overfull \\hbox and stem text running into options.
+        wrapped = f"\\duallayerbox{{{escape_tex(orig)}}}{{{escape_tex(repl)}}}\\allowbreak"
         meta = {
             "question_index": p.get("question_index"),
             "scope": p.get("prevention_scope"),
