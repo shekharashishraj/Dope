@@ -11,6 +11,7 @@ import pytz
 
 from .injection.prevention_orchestrator import generate_prevention_dual_layer_pdf
 from .injection.prevention_orchestrator import generate_prevention_font_attack_pdf
+from .injection.prevention_orchestrator import generate_prevention_icw_pdf
 from .injection.prevention_orchestrator import generate_prevention_icw_dual_layer_pdf
 from .injection.prevention_orchestrator import generate_prevention_icw_font_attack_pdf
 
@@ -45,7 +46,7 @@ def main() -> int:
     parser.add_argument(
         "--method",
         type=str,
-        choices=["dual_layer", "font_attack", "icw_dual_layer", "icw_font_attack"],
+        choices=["icw", "dual_layer", "font_attack", "icw_dual_layer", "icw_font_attack"],
         default="dual_layer",
         help="Method to run",
     )
@@ -73,6 +74,7 @@ def main() -> int:
     if args.limit:
         jsons = jsons[: args.limit]
 
+    processed_icw_docids = set()
     for pjson in jsons:
         # Keep a mirrored layout under output root
         rel = pjson.relative_to(prevention_folder)
@@ -83,7 +85,19 @@ def main() -> int:
         base_name = pjson.stem.replace("_prevention_perturbation_", "_")
         output_base = method_dir / f"{base_name}_{args.method}"
 
-        if args.method == "dual_layer":
+        if args.method == "icw":
+            # Avoid generating duplicates across variants (ICW does not depend on mappings).
+            docid = pjson.name.split("_prevention_perturbation_")[0]
+            if docid in processed_icw_docids:
+                continue
+            processed_icw_docids.add(docid)
+            output_base = method_dir / f"{docid}_icw"
+            generate_prevention_icw_pdf(
+                prevention_json_path=pjson,
+                output_base=output_base,
+                compile_pdf=not args.no_pdf,
+            )
+        elif args.method == "dual_layer":
             generate_prevention_dual_layer_pdf(
                 prevention_json_path=pjson,
                 output_base=output_base,
