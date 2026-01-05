@@ -84,6 +84,11 @@ def build_prevention_mappings_for_text(
         safe_segment = safe_match.group(0)
         if not safe_segment:
             continue
+        # If this segment is immediately preceded by a backslash in the original text,
+        # it is very likely a LaTeX control sequence name (e.g., "\textquotedblleft").
+        # Never replace inside control sequence names.
+        if safe_match.start() > 0 and text[safe_match.start() - 1] == "\\":
+            continue
 
         seg_start = safe_match.start()
         seg_end = safe_match.end()

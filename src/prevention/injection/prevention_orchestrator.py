@@ -98,12 +98,13 @@ def _compile_latex(
                     encoding="utf-8",
                 )
                 compiled_pdf = temp_dir / "document.pdf"
-                if proc.returncode == 0 and compiled_pdf.exists():
+                # Some TeX runs can exit non-zero due to warnings, yet still emit a PDF.
+                if compiled_pdf.exists():
                     output_pdf.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(compiled_pdf, output_pdf)
                     success = True
                     break
-                error_msg = f"{compiler} compilation failed"
+                error_msg = f"{compiler} compilation failed (returncode={proc.returncode})"
             except FileNotFoundError:
                 error_msg = f"{compiler} not found"
                 continue
