@@ -203,6 +203,8 @@ def build_latex_from_document(document: Document, output_tex_path: Path) -> None
         "\\usepackage{enumitem}",
         "\\usepackage{graphicx}",
         "\\usepackage{xcolor}",
+        "\\usepackage{amsmath}",
+        "\\newcommand{\\rupee}{\\texttt{Rs.}}",
     ]
     if document.geometry and document.geometry.strip():
         preamble_lines.append(f"\\usepackage[{document.geometry.strip()}]{{geometry}}")

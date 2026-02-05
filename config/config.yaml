@@ -111,7 +111,7 @@ pdf_generation:
   compile_pdf: true  # Compile LaTeX to PDF
   output_base_dir: "output_attacked_pdfs"
   # LaTeX compilation settings
-  latex_compiler: "auto"  # "auto", "pdflatex", "xelatex", "lualatex"
+  latex_compiler: "xelatex"  # "auto", "pdflatex", "xelatex", "lualatex" — xelatex for Unicode (e.g. ₹)
   require_xetex_for_fonts: true  # Require XeLaTeX for font attack
   compilation_timeout: 300  # Seconds to wait for PDF compilation
   cleanup_fonts_after_compile: true  # Delete fonts after successful compilation

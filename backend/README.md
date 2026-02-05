@@ -2,17 +2,35 @@
 
 FastAPI server that exposes the IGSHIELD pipeline as HTTP endpoints for the frontend.
 
-## Install
+## Setup
 
-```bash
-pip install -r requirements.txt
-```
+1. **From the repository root**, create and activate a virtual environment (recommended):
 
-## Run
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
 
-```bash
-uvicorn backend.app:app --host 0.0.0.0 --port 8001
-```
+2. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment:**
+
+   ```bash
+   cp .env.example .env
+   # Edit .env and set OPENAI_API_KEY=your-key-here
+   ```
+
+4. **Run the server:**
+
+   ```bash
+   uvicorn backend.app:app --host 0.0.0.0 --port 8001
+   ```
+
+   API base URL: **http://localhost:8001**. The frontend expects this URL by default (see `frontend/js/config.js`).
 
 ## Endpoints
 

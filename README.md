@@ -47,6 +47,67 @@ cp .env.example .env
 4. Configure settings (optional):
    - Edit `config/config.yaml` to adjust batch size, model, etc.
 
+## Backend & Frontend Setup (Web Demo)
+
+The project includes a web interface to run the full pipeline (upload PDF → extract → perturb → inject → evaluate). Run both the backend API and the frontend.
+
+### Prerequisites
+
+- Python 3.9+
+- [OpenAI API key](https://platform.openai.com/api-keys)
+
+### Backend setup
+
+1. **From the repository root**, create and activate a virtual environment (recommended):
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment variables:**
+
+   ```bash
+   cp .env.example .env
+   # Edit .env and set OPENAI_API_KEY=your-key-here
+   ```
+
+4. **Start the backend server:**
+
+   ```bash
+   uvicorn backend.app:app --host 0.0.0.0 --port 8001
+   ```
+
+   The API will be available at **http://localhost:8001**. Leave this terminal running.
+
+### Frontend setup
+
+1. **In a new terminal**, from the repository root, serve the frontend:
+
+   ```bash
+   python -m http.server 8080 --directory frontend
+   ```
+
+2. **Open http://localhost:8080** in your browser.
+
+3. **(Optional)** If the backend runs on a different host or port, edit `frontend/js/config.js` and set `endpoint` to your backend URL (default: `http://localhost:8001`).
+
+### Quick check
+
+| Service   | URL                      |
+|----------|---------------------------|
+| Backend  | http://localhost:8001     |
+| Health   | http://localhost:8001/health |
+| Frontend | http://localhost:8080     |
+
+The frontend calls the backend in sequence: **Ingest** (upload PDF) → **Extract** → **Perturb** → **Inject** → **Evaluate**. See `backend/README.md` for API details and `frontend/README.md` for frontend-only notes.
+
 ## Usage
 
 ### Basic Usage
@@ -238,6 +299,17 @@ prompts:
 
 ```
 IGSHIELD/
+├── backend/                 # FastAPI backend (web demo)
+│   ├── app.py               # API routes (ingest, extract, perturb, inject, evaluate)
+│   ├── runs/                # Per-run uploads and outputs
+│   └── README.md             # Backend setup & API
+├── frontend/                 # Static frontend (web demo)
+│   ├── index.html
+│   ├── js/
+│   │   ├── config.js        # Backend endpoint (default: http://localhost:8001)
+│   │   ├── app.js
+│   │   └── ...
+│   └── README.md             # Frontend setup
 ├── src/
 │   ├── __init__.py
 │   ├── processor.py          # Main processing pipeline

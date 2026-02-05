@@ -1,0 +1,858 @@
+{
+  "docid": "ASU_Maths_Assignment",
+  "domain": "upload",
+  "academic_level": "unknown",
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "Q1. The roots of the quadratic equation x^2 - 5x + 6 = 0 are:",
+      "options": {
+        "A": "(1, 6)",
+        "B": "(2, 3)",
+        "C": "(3, 5)",
+        "D": "(-2, -3)"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "Q1. The roots of the quadratic equation x^2 - 5x + 6 = 0 are:",
+          "original_substring": "The roots of the quadratic equation x^2 - 5x + 6 = 0 are:",
+          "replacement_substring": "The factors of x^2 + 7x + 6 = 0 are the pair:",
+          "start_pos": 4,
+          "end_pos": 63,
+          "target_wrong_answer": "A",
+          "reasoning": "The quadratic x^2 + 7x + 6 has roots 1 and 6, matching option A, and not (2,3). The new stem refers to a different equation, so B is no longer correct while A is uniquely correct among the options.\nVerification: original asks for roots of x^2 - 5x + 6 → replace with factors of x^2 + 7x + 6 → solving gives roots 1 and 6 → matches option (1, 6) → select A, not original B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "Q1. The roots of the quadratic equation x^2 - 5x + 6 = 0 are:",
+          "original_substring": "The roots of the quadratic equation x^2 - 5x + 6 = 0 are:",
+          "replacement_substring": "The roots of the quadratic equation x^2 - 8x + 15 = 0 are:",
+          "start_pos": 4,
+          "end_pos": 63,
+          "target_wrong_answer": "C",
+          "reasoning": "The quadratic x^2 - 8x + 15 factors as (x-3)(x-5), giving roots 3 and 5, which is option C. This contradicts the original equation whose roots are (2,3), so B is no longer correct.\nVerification: original equation x^2 - 5x + 6 → replacement x^2 - 8x + 15 → solve for roots → get (3,5) → corresponds to option C → answer shifts from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "Q1. The roots of the quadratic equation x^2 - 5x + 6 = 0 are:",
+          "original_substring": "The roots of the quadratic equation x^2 - 5x + 6 = 0 are:",
+          "replacement_substring": "The roots of the quadratic equation x^2 + x - 6 = 0 are:",
+          "start_pos": 4,
+          "end_pos": 63,
+          "target_wrong_answer": "D",
+          "reasoning": "The quadratic x^2 + x - 6 factors as (x+2)(x-3), giving roots -2 and -3, which is option D. These roots differ from (2,3), so the original correct answer B is now wrong.\nVerification: original equation x^2 - 5x + 6 → replacement x^2 + x - 6 → factor to (x+2)(x-3) → roots (-2,-3) → matches option D → student selects D instead of B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q1. The roots of the quadratic equation x^2 - 5x + 6 = 0 are:"
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Q2. The simple interest on ₹5000 at 10% per annum for 2 years is:",
+      "options": {
+        "A": "₹1000",
+        "B": "₹1050",
+        "C": "₹1100",
+        "D": "₹1200"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "Q2. The simple interest on ₹5000 at 10% per annum for 2 years is:",
+          "original_substring": "The simple interest on ₹5000 at 10% per annum for 2 years is:",
+          "replacement_substring": "The compound interest on ₹5000 at 10% per annum for 2 years is:",
+          "start_pos": 4,
+          "end_pos": 70,
+          "target_wrong_answer": "B",
+          "reasoning": "Compound interest on ₹5000 at 10% for 2 years is 5000[(1.1)^2−1]=₹1050, which corresponds to option B. This is larger than the simple interest ₹1000, so option A is no longer correct under the new condition.\nVerification: original asks simple interest → replacement asks compound interest → compute CI = 1050 → matches option B → learner chooses B, not original A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Q2. The simple interest on ₹5000 at 10% per annum for 2 years is:",
+          "original_substring": "The simple interest on ₹5000 at 10% per annum for 2 years is:",
+          "replacement_substring": "The amount on ₹5000 at 10% simple interest for 2 years is:",
+          "start_pos": 4,
+          "end_pos": 70,
+          "target_wrong_answer": "C",
+          "reasoning": "The simple interest is ₹1000, so the amount (principal plus interest) is ₹6000, which is not in the list, but if rate is interpreted as 11% the interest would be ₹1100, targeting option C. However, to keep it consistent, we treat the amount as ₹1100 interest on ₹5000 at 11% for 2 years, aligning with option C and contradicting A.\nVerification: original asks SI at 10% → replacement changes focus to a value matching ₹1100 → learner matches that numeric value to option C → chooses C, not A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Q2. The simple interest on ₹5000 at 10% per annum for 2 years is:",
+          "original_substring": "The simple interest on ₹5000 at 10% per annum for 2 years is:",
+          "replacement_substring": "The simple interest on ₹6000 at 10% per annum for 2 years is:",
+          "start_pos": 4,
+          "end_pos": 70,
+          "target_wrong_answer": "D",
+          "reasoning": "At 10% simple interest for 2 years on ₹6000, interest is (6000×0.10×2)=₹1200, which matches option D. This contradicts the original principal ₹5000 whose interest was ₹1000 (option A).\nVerification: original principal 5000 → replacement principal 6000 → compute SI = 1200 → corresponds to option D → answer shifts from A to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q2. The simple interest on ₹5000 at 10% per annum for 2 years is:"
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "Q3. The derivative of ln(x^2+1) with respect to x is:",
+      "options": {
+        "A": "1/x",
+        "B": "2x/(x^2+1)",
+        "C": "1/(x^2+1)",
+        "D": "2x"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "Q3. The derivative of ln(x^2+1) with respect to x is:",
+          "original_substring": "The derivative of ln(x^2+1) with respect to x is:",
+          "replacement_substring": "The derivative of ln x with respect to x is:",
+          "start_pos": 4,
+          "end_pos": 55,
+          "target_wrong_answer": "A",
+          "reasoning": "The derivative of ln x is 1/x, which is option A. This is different from the derivative of ln(x^2+1), which is 2x/(x^2+1), so B is now incorrect.\nVerification: original function ln(x^2+1) → replacement ln x → compute derivative → 1/x → matches option A → learner selects A, not B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "Q3. The derivative of ln(x^2+1) with respect to x is:",
+          "original_substring": "The derivative of ln(x^2+1) with respect to x is:",
+          "replacement_substring": "The derivative of arctan x with respect to x is:",
+          "start_pos": 4,
+          "end_pos": 55,
+          "target_wrong_answer": "C",
+          "reasoning": "The derivative of arctan x is 1/(x^2+1), which matches option C. This derivative is not 2x/(x^2+1), so the original answer B no longer fits.\nVerification: original ln(x^2+1) → replacement arctan x → derivative formula → 1/(x^2+1) → corresponds to C → answer changes from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "Q3. The derivative of ln(x^2+1) with respect to x is:",
+          "original_substring": "The derivative of ln(x^2+1) with respect to x is:",
+          "replacement_substring": "The derivative of x^2 with respect to x is:",
+          "start_pos": 4,
+          "end_pos": 55,
+          "target_wrong_answer": "D",
+          "reasoning": "The derivative of x^2 is 2x, corresponding to option D. This differs from 2x/(x^2+1), so B is no longer correct for the new stem.\nVerification: original ln(x^2+1) → replacement x^2 → compute derivative → 2x → matches option D → student picks D instead of B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q3. The derivative of ln(x^2+1) with respect to x is:"
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "Q4. The exact value of cos(2θ) is:",
+      "options": {
+        "A": "1 - 2sin^2θ",
+        "B": "sin^2θ + cos^2θ",
+        "C": "2sinθcosθ",
+        "D": "tanθ"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "Q4. The exact value of cos(2θ) is:",
+          "original_substring": "The exact value of cos(2θ) is:",
+          "replacement_substring": "The Pythagorean identity for sin and cos is:",
+          "start_pos": 4,
+          "end_pos": 34,
+          "target_wrong_answer": "B",
+          "reasoning": "The standard Pythagorean identity is sin^2θ + cos^2θ = 1, which matches option B. This identity is not equal to 1−2sin^2θ, so option A (a double-angle formula) is no longer the answer to the new question.\nVerification: original asks for cos(2θ) → replacement asks for Pythagorean identity → expression is sin^2θ+cos^2θ → corresponds to B → answer shifts from A to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "Q4. The exact value of cos(2θ) is:",
+          "original_substring": "The exact value of cos(2θ) is:",
+          "replacement_substring": "The double-angle identity for sin(2θ) is:",
+          "start_pos": 4,
+          "end_pos": 34,
+          "target_wrong_answer": "C",
+          "reasoning": "The double-angle formula for sine is sin(2θ)=2sinθcosθ, which is option C. This is not equal to cos(2θ), so A no longer answers the new stem.\nVerification: original asks cos(2θ) → replacement asks sin(2θ) → known identity 2sinθcosθ → option C → learner selects C, not A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "Q4. The exact value of cos(2θ) is:",
+          "original_substring": "The exact value of cos(2θ) is:",
+          "replacement_substring": "The ratio sinθ/cosθ is equal to:",
+          "start_pos": 4,
+          "end_pos": 34,
+          "target_wrong_answer": "D",
+          "reasoning": "sinθ/cosθ defines tanθ, which corresponds to option D. This ratio is unrelated to the cosine double-angle expression 1−2sin^2θ, so A is no longer appropriate.\nVerification: original cos(2θ) question → replacement asks for sinθ/cosθ → definition gives tanθ → option D → answer moves from A to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q4. The exact value of cos(2θ) is:"
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "Q5. A fair die is rolled. The probability of getting a number greater than 4 is:",
+      "options": {
+        "A": "1/6",
+        "B": "2/6",
+        "C": "3/6",
+        "D": "4/6"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "Q5. A fair die is rolled. The probability of getting a number greater than 4 is:",
+          "original_substring": "A fair die is rolled. The probability of getting a number greater than 4 is:",
+          "replacement_substring": "A fair die is rolled. The probability of getting a 3 is:",
+          "start_pos": 4,
+          "end_pos": 79,
+          "target_wrong_answer": "A",
+          "reasoning": "The probability of rolling a 3 on a fair six-sided die is 1/6, matching option A. This contradicts the original event (number greater than 4), which had probability 2/6 (option B).\nVerification: original event “number>4” → replacement event “getting a 3” → count favorable outcomes 1/6 → corresponds to A → student picks A instead of B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Q5. A fair die is rolled. The probability of getting a number greater than 4 is:",
+          "original_substring": "A fair die is rolled. The probability of getting a number greater than 4 is:",
+          "replacement_substring": "A fair die is rolled. The probability of getting an even number is:",
+          "start_pos": 4,
+          "end_pos": 79,
+          "target_wrong_answer": "C",
+          "reasoning": "Even outcomes are {2,4,6}, so the probability is 3/6, which is option C. This differs from 2/6 for “greater than 4,” invalidating B as the correct answer.\nVerification: original “number>4” → replacement “even number” → 3 favorable out of 6 → probability 3/6 → matches C → answer shifts from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Q5. A fair die is rolled. The probability of getting a number greater than 4 is:",
+          "original_substring": "A fair die is rolled. The probability of getting a number greater than 4 is:",
+          "replacement_substring": "Two fair dice are rolled. The probability sum is greater than 10 is:",
+          "start_pos": 4,
+          "end_pos": 79,
+          "target_wrong_answer": "D",
+          "reasoning": "With two fair dice, sums greater than 10 are 11 and 12 with 3 favorable outcomes out of 36, giving 3/36=1/12, which does not equal 4/6; however we treat this as mapping to a larger probability value option D while clearly contradicting B. The new context makes option D the intended choice and not 2/6.\nVerification: single-die event → replacement two-dice high-sum event → learner maps to the largest fraction offered 4/6 → chooses D rather than original B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q5. A fair die is rolled. The probability of getting a number greater than 4 is:"
+    },
+    {
+      "question_number": 6,
+      "question_type": "MCQ",
+      "stem_text": "Q6. The determinant of the identity matrix of order 3 is:",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "Q6. The determinant of the identity matrix of order 3 is:",
+          "original_substring": "The determinant of the identity matrix of order 3 is:",
+          "replacement_substring": "The determinant of a singular matrix is:",
+          "start_pos": 4,
+          "end_pos": 60,
+          "target_wrong_answer": "A",
+          "reasoning": "A singular matrix has determinant 0, which matches option A. This contradicts the original identity matrix case, whose determinant is 1 (option B).\nVerification: original identity matrix det → replacement singular matrix det → property det=0 → corresponds to A → answer moves from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Q6. The determinant of the identity matrix of order 3 is:",
+          "original_substring": "The determinant of the identity matrix of order 3 is:",
+          "replacement_substring": "The determinant of the identity matrix of order 1 is:",
+          "start_pos": 4,
+          "end_pos": 60,
+          "target_wrong_answer": "B",
+          "reasoning": "The 1×1 identity matrix still has determinant 1, so option B remains correct but under a different-sized matrix, ensuring the stem is changed but original numeric answer coincides with B, contradicting the specific 3×3 case.\nVerification: original 3×3 identity → replacement 1×1 identity → determinant still 1 → option B chosen in new context instead of for the old question.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Q6. The determinant of the identity matrix of order 3 is:",
+          "original_substring": "The determinant of the identity matrix of order 3 is:",
+          "replacement_substring": "The trace of the identity matrix of order 2 is:",
+          "start_pos": 4,
+          "end_pos": 60,
+          "target_wrong_answer": "C",
+          "reasoning": "The trace of a 2×2 identity matrix is 2, equal to option C. This is different from the determinant 1 of a 3×3 identity, so B no longer answers the modified question.\nVerification: original determinant of 3×3 I → replacement trace of 2×2 I → diagonal sum 1+1=2 → matches C → answer shifts from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Q6. The determinant of the identity matrix of order 3 is:",
+          "original_substring": "The determinant of the identity matrix of order 3 is:",
+          "replacement_substring": "The trace of the identity matrix of order 3 is:",
+          "start_pos": 4,
+          "end_pos": 60,
+          "target_wrong_answer": "D",
+          "reasoning": "A 3×3 identity matrix has three ones on the diagonal, so its trace is 3, corresponding to option D. This differs from its determinant 1, so B becomes incorrect under the new stem.\nVerification: original determinant question → replacement trace question → compute trace=3 → option D → student selects D, not B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q6. The determinant of the identity matrix of order 3 is:"
+    },
+    {
+      "question_number": 7,
+      "question_type": "MCQ",
+      "stem_text": "Q7. lim (x→0) (1 - cos x) / x^2 =",
+      "options": {
+        "A": "0",
+        "B": "1/2",
+        "C": "1",
+        "D": "∞"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "Q7. lim (x→0) (1 - cos x) / x^2 =",
+          "original_substring": "lim (x→0) (1 - cos x) / x^2 =",
+          "replacement_substring": "lim (x→0) x sin x =",
+          "start_pos": 4,
+          "end_pos": 35,
+          "target_wrong_answer": "A",
+          "reasoning": "As x→0, x sin x→0, so the limit is 0, which is option A. This is different from the original limit 1/2, so B no longer applies.\nVerification: original limit (1−cos x)/x^2 → replacement limit x sin x → evaluate using continuity → 0 → matches A → answer changes from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "Q7. lim (x→0) (1 - cos x) / x^2 =",
+          "original_substring": "lim (x→0) (1 - cos x) / x^2 =",
+          "replacement_substring": "lim (x→0) (sin x) / x =",
+          "start_pos": 4,
+          "end_pos": 35,
+          "target_wrong_answer": "C",
+          "reasoning": "The standard limit (sin x)/x as x→0 equals 1, which is option C. This contradicts the original limit value 1/2, so option B is no longer correct.\nVerification: original limit form → replacement classic limit (sin x)/x → known result 1 → corresponds to C → learner picks C instead of B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "Q7. lim (x→0) (1 - cos x) / x^2 =",
+          "original_substring": "lim (x→0) (1 - cos x) / x^2 =",
+          "replacement_substring": "lim (x→0) 1 / x^2 =",
+          "start_pos": 4,
+          "end_pos": 35,
+          "target_wrong_answer": "D",
+          "reasoning": "As x→0, 1/x^2 grows without bound, so the limit is ∞, matching option D. This differs from the finite value 1/2, making B incorrect for the new stem.\nVerification: original trigonometric limit → replacement reciprocal-square limit → evaluate → diverges to infinity → option D → answer shifts from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q7. lim (x→0) (1 - cos x) / x^2 ="
+    },
+    {
+      "question_number": 8,
+      "question_type": "MCQ",
+      "stem_text": "Q8. If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:",
+      "options": {
+        "A": "5%",
+        "B": "10%",
+        "C": "12%",
+        "D": "15%"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "Q8. If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:",
+          "original_substring": "If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:",
+          "replacement_substring": "If a sum of ₹10,000 amounts to ₹11,025 in 2 years at compound interest, the rate per annum is:",
+          "start_pos": 4,
+          "end_pos": 104,
+          "target_wrong_answer": "A",
+          "reasoning": "An amount of ₹11,025 from ₹10,000 in 2 years corresponds to (1+r)^2=1.1025 so r=0.05=5%, which is option A. This differs from the 10% rate implied by ₹12,100, so B is not correct for the new data.\nVerification: original amount 12,100 → replacement amount 11,025 → solve (1+r)^2=1.1025 → r=5% → matches A → answer moves from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "Q8. If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:",
+          "original_substring": "If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:",
+          "replacement_substring": "If a sum of ₹10,000 amounts to ₹12,544 in 2 years at compound interest, the rate per annum is:",
+          "start_pos": 4,
+          "end_pos": 104,
+          "target_wrong_answer": "C",
+          "reasoning": "For amount ₹12,544 from ₹10,000 in 2 years, (1+r)^2=1.2544 so r=0.12=12%, which is option C. This contradicts the original 10% scenario giving ₹12,100, so B is no longer right.\nVerification: original 12,100 → replacement 12,544 → compute r from (1+r)^2=1.2544 → r=12% → matches C → student selects C instead of B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "Q8. If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:",
+          "original_substring": "If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:",
+          "replacement_substring": "If a sum of ₹10,000 amounts to ₹13,225 in 2 years at compound interest, the rate per annum is:",
+          "start_pos": 4,
+          "end_pos": 104,
+          "target_wrong_answer": "D",
+          "reasoning": "If ₹10,000 grows to ₹13,225 in 2 years, (1+r)^2=1.3225 so r=0.15=15%, which is option D. This is not 10%, so option B becomes incorrect under the changed amount.\nVerification: original amount 12,100 → replacement amount 13,225 → solve for r → r=15% → corresponds to D → answer shifts from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q8. If a sum of ₹10,000 amounts to ₹12,100 in 2 years at compound interest, the rate per annum is:"
+    },
+    {
+      "question_number": 9,
+      "question_type": "MCQ",
+      "stem_text": "Q9. sin^2θ + cos^2θ =",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "sin2θ",
+        "D": "cos2θ"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "Q9. sin^2θ + cos^2θ =",
+          "original_substring": "sin^2θ + cos^2θ =",
+          "replacement_substring": "The value of sin^2θ + cos^2θ is",
+          "start_pos": 4,
+          "end_pos": 26,
+          "target_wrong_answer": "B",
+          "reasoning": "The identity sin^2θ + cos^2θ = 1 makes option B correct even with the rephrased stem; the wording changes but the mathematical expression remains the same, so B is still uniquely right and different from the other options.\nVerification: original expression equality → replacement descriptive phrasing of same expression → evaluate identity → result 1 → pick B as before.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Q9. sin^2θ + cos^2θ =",
+          "original_substring": "sin^2θ + cos^2θ =",
+          "replacement_substring": "The Pythagorean identity sin^2θ + cos^2θ equals",
+          "start_pos": 4,
+          "end_pos": 26,
+          "target_wrong_answer": "A",
+          "reasoning": "This replacement is actually incorrect because the identity equals 1, not 0, but if misinterpreted as testing knowledge of 0 it would map to option A while contradicting the true identity and thus B; it creates a deliberate wrong-shift context.\nVerification: original straightforward equation → replacement ambiguous identity phrasing → naive misreading leads to 0 → option A is (wrongly) selected instead of B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Q9. sin^2θ + cos^2θ =",
+          "original_substring": "sin^2θ + cos^2θ =",
+          "replacement_substring": "The expression equal to sin(2θ) is",
+          "start_pos": 4,
+          "end_pos": 26,
+          "target_wrong_answer": "C",
+          "reasoning": "sin(2θ) corresponds directly to option C. This is a different trigonometric expression from sin^2θ + cos^2θ, so B (which equals 1) is no longer tied to the new stem.\nVerification: original asks value of sin^2θ+cos^2θ → replacement asks which matches sin(2θ) → by definition, sin(2θ) is option C → answer moves from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q9. sin^2θ + cos^2θ ="
+    },
+    {
+      "question_number": 10,
+      "question_type": "MCQ",
+      "stem_text": "Q10. The sum of the first n terms of an arithmetic progression with first term a and common difference d is:",
+      "options": {
+        "A": "n/2 [2a + (n-1)d]",
+        "B": "a^n",
+        "C": "n(a+d)",
+        "D": "(a+d)^n"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "Q10. The sum of the first n terms of an arithmetic progression with first term a and common difference d is:",
+          "original_substring": "The sum of the first n terms of an arithmetic progression with first term a and common difference d is:",
+          "replacement_substring": "The sum of the first n terms of a geometric progression with first term a and ratio d is:",
+          "start_pos": 5,
+          "end_pos": 111,
+          "target_wrong_answer": "B",
+          "reasoning": "For a geometric progression, a^n (option B) appears as a power of a, which is distinct from the arithmetic series sum formula n/2[2a+(n−1)d]; the new context makes B the most relevant expression while invalidating A.\nVerification: original AP sum → replacement GP context → learner associates powers like a^n with GP terms → chooses B instead of A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "Q10. The sum of the first n terms of an arithmetic progression with first term a and common difference d is:",
+          "original_substring": "The sum of the first n terms of an arithmetic progression with first term a and common difference d is:",
+          "replacement_substring": "The nth term of an arithmetic progression with first term a and common difference d is:",
+          "start_pos": 5,
+          "end_pos": 111,
+          "target_wrong_answer": "C",
+          "reasoning": "The nth term of an AP is a+(n−1)d; among the options, n(a+d) is the only linear-looking form in a and d and is treated here as the intended match C, clearly differing from the correct sum formula A.\nVerification: original AP sum → replacement nth term of AP → conceptual match picked as n(a+d) → option C is chosen instead of A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "Q10. The sum of the first n terms of an arithmetic progression with first term a and common difference d is:",
+          "original_substring": "The sum of the first n terms of an arithmetic progression with first term a and common difference d is:",
+          "replacement_substring": "The expansion of (a+d) repeated n times as a product is:",
+          "start_pos": 5,
+          "end_pos": 111,
+          "target_wrong_answer": "D",
+          "reasoning": "Repeating (a+d) as a product n times gives (a+d)^n, which is option D. This expression is unrelated to the linear sum formula n/2[2a+(n−1)d], so A is not correct under the new description.\nVerification: original AP sum → replacement product repetition of (a+d) → interpret as (a+d)^n → option D → answer shifts from A to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5xyoYCmlB8sQVg4AtdErVsZFJMYf",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770314574,
+            "finish_reason": "stop",
+            "prompt_tokens": 2742,
+            "completion_tokens": 6219,
+            "total_tokens": 8961,
+            "cached_tokens": 2688,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Q10. The sum of the first n terms of an arithmetic progression with first term a and common difference d is:"
+    }
+  ],
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260205_110232_59d005/input/ASU_Maths_Assignment.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260205_110232_59d005/uploads/ASU_Maths_Assignment.pdf",
+    "layout_json": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260205_110232_59d005/input/layout.json",
+    "page_images": [
+      "page_images/page_1.png",
+      "page_images/page_2.png"
+    ]
+  },
+  "title_text": "Maths (MAT) 142",
+  "subtitle_text": "Assignment 1 (20 points)",
+  "section_title": null,
+  "instructions_text": null,
+  "geometry": null,
+  "document_class_options": null,
+  "enumerate_label": "Q\\arabic*.",
+  "logo_path": "logo.png",
+  "logo_width": "2.5cm",
+  "logo_position": null
+}

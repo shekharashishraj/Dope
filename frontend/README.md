@@ -1,40 +1,38 @@
 # IGSHIELD Frontend Demo
 
-This is a static frontend for showcasing the IGSHIELD pipeline at demos/expos.
+Static frontend for the IGSHIELD pipeline (upload PDF → extract → perturb → inject → evaluate). Requires the backend to be running.
 
-## Run locally
+## Setup
 
-1. From the repo root, start a simple web server:
+1. **Backend must be running** at the URL configured in `frontend/js/config.js` (default: `http://localhost:8001`). See the main [README](../README.md#backend--frontend-setup-web-demo) for backend setup.
 
-```bash
-python -m http.server 8080 --directory frontend
-```
+2. **From the repo root**, start a simple web server:
 
-2. Open `http://localhost:8080` in a browser.
+   ```bash
+   python -m http.server 8080 --directory frontend
+   ```
+
+3. **Open http://localhost:8080** in a browser.
 
 ## Backend endpoint
 
-Set the backend endpoint in `frontend/js/config.js`:
+The frontend talks to the backend via `frontend/js/config.js`:
 
 ```js
 export const config = {
-  endpoint: "http://localhost:5000",
+  endpoint: "http://localhost:8001",
 };
 ```
 
-The frontend calls the step endpoints in sequence (`/ingest`, `/perturb`, `/inject`, `/evaluate`) and updates the UI from their responses.
+To use a different host/port, change `endpoint` (e.g. `http://localhost:8001` or `http://your-server:8001`).
 
-## Backend API
+## API usage
 
-This frontend is wired to the FastAPI server in `backend/` and calls:
+The frontend calls these backend endpoints in sequence:
 
-- `POST /ingest`
-- `POST /perturb`
-- `POST /inject`
-- `POST /evaluate`
+- `POST /ingest` — upload PDF (and optional answer key)
+- `POST /perturb` — generate or load perturbations
+- `POST /inject` — run injection methods and compile PDFs
+- `POST /evaluate` — run detection pipeline
 
-Run the backend:
-
-```bash
-uvicorn backend.app:app --host 0.0.0.0 --port 8001
-```
+See [backend/README.md](../backend/README.md) for request/response shapes.

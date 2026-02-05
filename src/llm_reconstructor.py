@@ -32,6 +32,8 @@ def _build_preamble(document: Document) -> str:
         "\\usepackage{enumitem}",
         "\\usepackage{graphicx}",
         "\\usepackage{xcolor}",
+        "\\usepackage{amsmath}",
+        "\\newcommand{\\rupee}{\\texttt{Rs.}}",
     ]
     if document.geometry and document.geometry.strip():
         lines.append(f"\\usepackage[{document.geometry.strip()}]{{geometry}}")
@@ -472,7 +474,9 @@ def build_latex_with_vision_template(
         "\\usepackage[utf8]{inputenc}\n"
         "\\usepackage{enumitem}\n"
         "\\usepackage{graphicx}\n"
-        "\\usepackage{xcolor}\n\n"
+        "\\usepackage{xcolor}\n"
+        "\\usepackage{amsmath}\n"
+        "\\newcommand{\\rupee}{\\texttt{Rs.}}\n\n"
         "\\begin{document}\n\n"
         "<<<LOGO_BLOCK>>>\n\n"
         "\\begin{center}\n"
