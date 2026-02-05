@@ -1,0 +1,319 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\title{CSE-476: Introduction to Natural Language Processing}
+\date{}
+\usepackage{fontspec}
+\setmainfont{Roboto-Regular}[Path=fonts/,Extension=.ttf]
+\expandafter\newfontfamily\csname fa0000Font2\endcsname{fa0000_pos2}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font3\endcsname{fa0000_pos3}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font4\endcsname{fa0000_pos4}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font0\endcsname{fa0001_pos0}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font1\endcsname{fa0001_pos1}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font2\endcsname{fa0001_pos2}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font3\endcsname{fa0001_pos3}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font4\endcsname{fa0001_pos4}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font0\endcsname{fa0002_pos0}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font1\endcsname{fa0002_pos1}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font2\endcsname{fa0002_pos2}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font3\endcsname{fa0002_pos3}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font4\endcsname{fa0002_pos4}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font0\endcsname{fa0003_pos0}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font1\endcsname{fa0003_pos1}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font2\endcsname{fa0003_pos2}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font3\endcsname{fa0003_pos3}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font4\endcsname{fa0003_pos4}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font0\endcsname{fa0004_pos0}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font0\endcsname{fa0005_pos0}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font1\endcsname{fa0005_pos1}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font2\endcsname{fa0005_pos2}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font3\endcsname{fa0005_pos3}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font4\endcsname{fa0005_pos4}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font4\endcsname{fa0006_pos4}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font5\endcsname{fa0006_pos5}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font0\endcsname{fa0007_pos0}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font1\endcsname{fa0007_pos1}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font2\endcsname{fa0007_pos2}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font3\endcsname{fa0007_pos3}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font4\endcsname{fa0007_pos4}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font5\endcsname{fa0007_pos5}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font0\endcsname{fa0008_pos0}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font1\endcsname{fa0008_pos1}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font2\endcsname{fa0008_pos2}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font3\endcsname{fa0008_pos3}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font4\endcsname{fa0008_pos4}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font5\endcsname{fa0008_pos5}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font0\endcsname{fa0009_pos0}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font1\endcsname{fa0009_pos1}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font2\endcsname{fa0009_pos2}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font3\endcsname{fa0009_pos3}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font4\endcsname{fa0009_pos4}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font5\endcsname{fa0009_pos5}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font0\endcsname{fa0010_pos0}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font1\endcsname{fa0010_pos1}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font2\endcsname{fa0010_pos2}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font3\endcsname{fa0010_pos3}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font4\endcsname{fa0010_pos4}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font5\endcsname{fa0010_pos5}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font0\endcsname{fa0011_pos0}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font1\endcsname{fa0011_pos1}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font2\endcsname{fa0011_pos2}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font3\endcsname{fa0011_pos3}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font4\endcsname{fa0011_pos4}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font5\endcsname{fa0011_pos5}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font0\endcsname{fa0012_pos0}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font1\endcsname{fa0012_pos1}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font2\endcsname{fa0012_pos2}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+
+\begin{document}
+\includegraphics[width=2.5cm]{logo.png}
+
+\maketitle
+\textbf{Quiz 1}
+
+\section{Multiple Choice Questions (Single correct)}
+
+\textbf{Instructions:} Instructions: Select the correct option with a short explanation.
+
+\begin{enumerate}[leftmargin=*]
+  \item {\char"0049}{\char"006E}{\csname fa0000Font2\endcsname\char"0020}{\csname fa0000Font3\endcsname\char"0074}{\csname fa0000Font4\endcsname\char"0068} {\csname fa0001Font0\endcsname\char"0065}{\csname fa0001Font1\endcsname\char"0020}{\csname fa0001Font2\endcsname\char"0042}{\csname fa0001Font3\endcsname\char"0049}{\csname fa0001Font4\endcsname\char"004F} {\csname fa0002Font0\endcsname\char"0020}{\csname fa0002Font1\endcsname\char"0074}{\csname fa0002Font2\endcsname\char"0061}{\csname fa0002Font3\endcsname\char"0067}{\csname fa0002Font4\endcsname\char"0067} {\csname fa0003Font0\endcsname\char"0069}{\csname fa0003Font1\endcsname\char"006E}{\csname fa0003Font2\endcsname\char"0067}{\csname fa0003Font3\endcsname\char"0020}{\csname fa0003Font4\endcsname\char"0073} {\csname fa0004Font0\endcsname\char"0063}{\char"0068}{\char"0065}{\char"006D}{\char"0065} {\csname fa0005Font0\endcsname\char"0020}{\csname fa0005Font1\endcsname\char"0066}{\csname fa0005Font2\endcsname\char"006F}{\csname fa0005Font3\endcsname\char"0072}{\csname fa0005Font4\endcsname\char"0020} {\char"004E}{\char"0045}{\char"0052}{\char"002C}{\csname fa0006Font4\endcsname\char"0020}{\csname fa0006Font5\endcsname\char"0077} {\csname fa0007Font0\endcsname\char"0068}{\csname fa0007Font1\endcsname\char"0061}{\csname fa0007Font2\endcsname\char"0074}{\csname fa0007Font3\endcsname\char"0020}{\csname fa0007Font4\endcsname\char"0064}{\csname fa0007Font5\endcsname\char"006F} {\csname fa0008Font0\endcsname\char"0065}{\csname fa0008Font1\endcsname\char"0073}{\csname fa0008Font2\endcsname\char"0020}{\csname fa0008Font3\endcsname\char"0074}{\csname fa0008Font4\endcsname\char"0068}{\csname fa0008Font5\endcsname\char"0065} {\csname fa0009Font0\endcsname\char"0020}{\csname fa0009Font1\endcsname\char"0060}{\csname fa0009Font2\endcsname\char"0060}{\csname fa0009Font3\endcsname\char"0049}{\csname fa0009Font4\endcsname\char"002D}{\csname fa0009Font5\endcsname\char"0027} {\csname fa0010Font0\endcsname\char"0027}{\csname fa0010Font1\endcsname\char"0020}{\csname fa0010Font2\endcsname\char"0070}{\csname fa0010Font3\endcsname\char"0072}{\csname fa0010Font4\endcsname\char"0065}{\csname fa0010Font5\endcsname\char"0066} {\csname fa0011Font0\endcsname\char"0069}{\csname fa0011Font1\endcsname\char"0078}{\csname fa0011Font2\endcsname\char"0020}{\csname fa0011Font3\endcsname\char"0069}{\csname fa0011Font4\endcsname\char"006E}{\csname fa0011Font5\endcsname\char"0064} {\csname fa0012Font0\endcsname\char"0069}{\csname fa0012Font1\endcsname\char"0063}{\csname fa0012Font2\endcsname\char"0061}{\char"0074}{\char"0065}{\char"003F}
+    \textbf{A.} Beginning of an entity
+    \textbf{B.} Inside an entity
+    \textbf{C.} Outside any entity
+    \textbf{D.} Between two tokens
+
+  \item Which statement best describes a (plain) Markov chain in sequence tagging?
+    \textbf{A.} It uses only words (observations) and ignores labels
+    \textbf{B.} It is identical to an HMM
+    \textbf{C.} It models transitions between labels but does not consider the words
+    \textbf{D.} It models emissions P(word | label)
+
+  \item In a Hidden Markov Model (HMM) for NER, an emission probability is:
+    \textbf{A.} P(label | previous label)
+    \textbf{B.} P(label | word)
+    \textbf{C.} P(word | previous word)
+    \textbf{D.} P(word | label)
+
+  \item Which of the following best describes Semantic Role Labeling (SRL)?:
+    \textbf{A.} A task that identifies predicates in a sentence and labels roles of elements such as agent, theme, or location
+    \textbf{B.} A process that assigns grammatical roles like subject and object based on syntactic structure
+    \textbf{C.} A method that classifies named entities and links them to a knowledge base
+    \textbf{D.} A technique that labels words with their parts of speech and morphological features
+
+  \item Which of the following best describes Byte Pair Encoding (BPE)?
+    \textbf{A.} A technique that compresses text by replacing consecutive repeated characters with a count and a symbol
+    \textbf{B.} A tokenization method that iteratively merges the most frequent pair of symbols in a corpus
+    \textbf{C.} A tokenization method that splits text based on whitespace and punctuation
+    \textbf{D.} A character-level encoding scheme that assigns fixed-length binary codes to characters
+
+  \item Which of the following best describes the main goal of tokenization in NLP?
+    \textbf{A.} To label each token with a grammatical category
+    \textbf{B.} To convert text into a sequence of symbols suitable for modeling
+    \textbf{C.} To reduce vocabulary size to zero
+    \textbf{D.} To assign probabilities to sentences
+
+  \item Why is splitting text by spaces (text.split(" ")) considered an insufficient tokenizer?
+    \textbf{A.} It produces too many tokens
+    \textbf{B.} It does not work well for languages without explicit word boundaries
+    \textbf{C.} It cannot tokenize English at all
+    \textbf{D.} It ignores punctuation entirely
+
+  \item Which of the following is NOT listed as a common sequence tagging task?
+    \textbf{A.} Part-of-speech tagging
+    \textbf{B.} Named Entity Recognition
+    \textbf{C.} Dependency parsing
+    \textbf{D.} Sentiment analysis
+
+  \item What is a common limitation of BIO tagging for Named Entity Recognition?
+    \textbf{A.} It cannot represent overlapping or nested entities
+    \textbf{B.} It requires too many labels
+    \textbf{C.} It does not support multiple entity types
+    \textbf{D.} It ignores entity boundaries
+
+  \item When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?
+    \textbf{A.} Speed vs accuracy
+    \textbf{B.} Tokenized sequence length vs vocabulary size
+    \textbf{C.} Precision vs recall
+    \textbf{D.} Memory vs computation
+
+\end{enumerate}
+\end{document}

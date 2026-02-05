@@ -1,0 +1,90 @@
+{
+  "document_name": "health_k-12_doc_04",
+  "metrics": {
+    "by_question_type": {
+      "MCQ": {
+        "total_perturbations": 15,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 15,
+          "finish_reasons": {
+            "stop": 15
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 5582.0,
+          "total_prompt_tokens": 83730,
+          "avg_completion_tokens": 7704.0,
+          "total_completion_tokens": 115560,
+          "avg_total_tokens": 13286.0,
+          "total_tokens": 199290
+        },
+        "cost_analysis": {
+          "total_cost": 1.364925,
+          "input_cost": 0.20932499999999998,
+          "output_cost": 1.1556,
+          "cost_per_perturbation": 0.09099499999999999
+        }
+      },
+      "TF": {
+        "total_perturbations": 15,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 15,
+          "finish_reasons": {
+            "stop": 15
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 5582.0,
+          "total_prompt_tokens": 83730,
+          "avg_completion_tokens": 7704.0,
+          "total_completion_tokens": 115560,
+          "avg_total_tokens": 13286.0,
+          "total_tokens": 199290
+        },
+        "cost_analysis": {
+          "total_cost": 1.364925,
+          "input_cost": 0.20932499999999998,
+          "output_cost": 1.1556,
+          "cost_per_perturbation": 0.09099499999999999
+        }
+      },
+      "LONG": {
+        "total_perturbations": 6,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 5582.0,
+          "total_prompt_tokens": 33492,
+          "avg_completion_tokens": 7704.0,
+          "total_completion_tokens": 46224,
+          "avg_total_tokens": 13286.0,
+          "total_tokens": 79716
+        },
+        "cost_analysis": {
+          "total_cost": 0.54597,
+          "input_cost": 0.08373,
+          "output_cost": 0.46224,
+          "cost_per_perturbation": 0.09099499999999999
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 36,
+      "total_questions": 12,
+      "questions_by_type": {
+        "MCQ": 5,
+        "TF": 5,
+        "LONG": 2
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

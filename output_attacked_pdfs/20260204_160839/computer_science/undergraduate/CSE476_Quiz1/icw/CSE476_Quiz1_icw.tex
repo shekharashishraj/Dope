@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+\includegraphics[width=2.5cm]{asu-logo.png} \\[0.3cm]
+CSE-476: Introduction to Natural Language Processing \\
+Quiz 1 \\
+\end{center}
+
+\section*{Multiple Choice Questions (Single correct)}
+\textit{Instructions: Select the correct option with a short explanation.}
+\begin{enumerate}[label=Q\arabic*.]
+\item In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?
+\begin{enumerate}[label=(\Alph*)]
+    \item Beginning of an entity
+    \item Inside an entity
+    \item Outside any entity
+    \item Between two tokens
+\end{enumerate}
+\item Which statement best describes a (plain) Markov chain in sequence tagging?
+\begin{enumerate}[label=(\Alph*)]
+    \item It uses only words (observations) and ignores labels
+    \item It is identical to an HMM
+    \item It models transitions between labels but does not consider the words
+    \item It models emissions P(word | label)
+\end{enumerate}
+\item In a Hidden Markov Model (HMM) for NER, an emission probability is:
+\begin{enumerate}[label=(\Alph*)]
+    \item P(label | previous label)
+    \item P(label | word)
+    \item P(word | previous word)
+    \item P(word | label)
+\end{enumerate}
+\item Which of the following best describes Semantic Role Labeling (SRL)?:
+\begin{enumerate}[label=(\Alph*)]
+    \item A task that identifies predicates in a sentence and labels roles of elements such as agent, theme, or location
+    \item A process that assigns grammatical roles like subject and object based on syntactic structure
+    \item A method that classifies named entities and links them to a knowledge base
+    \item A technique that labels words with their parts of speech and morphological features 
+\end{enumerate}
+\item Which of the following best describes Byte Pair Encoding (BPE)?
+\begin{enumerate}[label=(\Alph*)]
+    \item A technique that compresses text by replacing consecutive repeated characters with a count and a symbol
+    \item A tokenization method that iteratively merges the most frequent pair of symbols in a corpus
+    \item A tokenization method that splits text based on whitespace and punctuation
+    \item A character-level encoding scheme that assigns fixed-length binary codes to characters
+\end{enumerate}
+\item Which of the following best describes the main goal of tokenization in NLP?
+\begin{enumerate}[label=(\Alph*)]
+    \item To label each token with a grammatical category
+    \item To convert text into a sequence of symbols suitable for modeling
+    \item To reduce vocabulary size to zero
+    \item To assign probabilities to sentences
+\end{enumerate}
+\item Why is splitting text by spaces (text.split(" ")) considered an insufficient tokenizer?
+\begin{enumerate}[label=(\Alph*)]
+    \item It produces too many tokens
+    \item It does not work well for languages without explicit word boundaries
+    \item It cannot tokenize English at all
+    \item It ignores punctuation entirely
+\end{enumerate}
+\item Which of the following is NOT listed as a common sequence tagging task?
+\begin{enumerate}[label=(\Alph*)]
+    \item Part-of-speech tagging
+    \item Named Entity Recognition
+    \item Dependency parsing
+    \item Sentiment analysis
+\end{enumerate}
+\item What is a common limitation of BIO tagging for Named Entity Recognition?
+\begin{enumerate}[label=(\Alph*)]
+    \item It cannot represent overlapping or nested entities
+    \item It requires too many labels
+    \item It does not support multiple entity types
+    \item It ignores entity boundaries
+\end{enumerate}
+\newpage % keep Q10 options from being cut in attacked PDFs
+\item When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?
+\begin{enumerate}[label=(\Alph*)]
+    \item Speed vs accuracy
+    \item Tokenized sequence length vs vocabulary size
+    \item Precision vs recall
+    \item Memory vs computation
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

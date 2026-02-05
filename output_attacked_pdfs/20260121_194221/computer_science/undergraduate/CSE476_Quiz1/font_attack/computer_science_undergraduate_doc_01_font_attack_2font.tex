@@ -1,0 +1,1846 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in}
+\usepackage{fontspec}
+\setmainfont{Roboto-Regular}[Path=fonts/,Extension=.ttf]
+\expandafter\newfontfamily\csname fa0000Font0\endcsname{fa0000_pos0}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font1\endcsname{fa0000_pos1}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0000Font2\endcsname{fa0000_pos2}[
+    Path=fonts/fa0000/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font0\endcsname{fa0001_pos0}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0001Font2\endcsname{fa0001_pos2}[
+    Path=fonts/fa0001/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font0\endcsname{fa0002_pos0}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font1\endcsname{fa0002_pos1}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0002Font2\endcsname{fa0002_pos2}[
+    Path=fonts/fa0002/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font0\endcsname{fa0003_pos0}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font1\endcsname{fa0003_pos1}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0003Font2\endcsname{fa0003_pos2}[
+    Path=fonts/fa0003/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font0\endcsname{fa0004_pos0}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font1\endcsname{fa0004_pos1}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0004Font2\endcsname{fa0004_pos2}[
+    Path=fonts/fa0004/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font1\endcsname{fa0005_pos1}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font2\endcsname{fa0005_pos2}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0005Font3\endcsname{fa0005_pos3}[
+    Path=fonts/fa0005/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font0\endcsname{fa0006_pos0}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font1\endcsname{fa0006_pos1}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font2\endcsname{fa0006_pos2}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0006Font3\endcsname{fa0006_pos3}[
+    Path=fonts/fa0006/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font0\endcsname{fa0007_pos0}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font1\endcsname{fa0007_pos1}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font2\endcsname{fa0007_pos2}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0007Font3\endcsname{fa0007_pos3}[
+    Path=fonts/fa0007/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font0\endcsname{fa0008_pos0}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font2\endcsname{fa0008_pos2}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0008Font3\endcsname{fa0008_pos3}[
+    Path=fonts/fa0008/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font0\endcsname{fa0009_pos0}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font1\endcsname{fa0009_pos1}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font2\endcsname{fa0009_pos2}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0009Font3\endcsname{fa0009_pos3}[
+    Path=fonts/fa0009/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font0\endcsname{fa0010_pos0}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font1\endcsname{fa0010_pos1}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font2\endcsname{fa0010_pos2}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0010Font3\endcsname{fa0010_pos3}[
+    Path=fonts/fa0010/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font0\endcsname{fa0011_pos0}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font1\endcsname{fa0011_pos1}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font2\endcsname{fa0011_pos2}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0011Font3\endcsname{fa0011_pos3}[
+    Path=fonts/fa0011/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font0\endcsname{fa0012_pos0}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font1\endcsname{fa0012_pos1}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font2\endcsname{fa0012_pos2}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0012Font3\endcsname{fa0012_pos3}[
+    Path=fonts/fa0012/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font0\endcsname{fa0013_pos0}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font1\endcsname{fa0013_pos1}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font2\endcsname{fa0013_pos2}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0013Font3\endcsname{fa0013_pos3}[
+    Path=fonts/fa0013/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font0\endcsname{fa0014_pos0}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font1\endcsname{fa0014_pos1}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font2\endcsname{fa0014_pos2}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0014Font3\endcsname{fa0014_pos3}[
+    Path=fonts/fa0014/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font0\endcsname{fa0015_pos0}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font1\endcsname{fa0015_pos1}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font2\endcsname{fa0015_pos2}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0015Font3\endcsname{fa0015_pos3}[
+    Path=fonts/fa0015/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font0\endcsname{fa0016_pos0}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font1\endcsname{fa0016_pos1}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font2\endcsname{fa0016_pos2}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0016Font3\endcsname{fa0016_pos3}[
+    Path=fonts/fa0016/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font0\endcsname{fa0017_pos0}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font1\endcsname{fa0017_pos1}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font2\endcsname{fa0017_pos2}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0017Font3\endcsname{fa0017_pos3}[
+    Path=fonts/fa0017/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font0\endcsname{fa0018_pos0}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font1\endcsname{fa0018_pos1}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font2\endcsname{fa0018_pos2}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0018Font3\endcsname{fa0018_pos3}[
+    Path=fonts/fa0018/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font0\endcsname{fa0019_pos0}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font1\endcsname{fa0019_pos1}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font2\endcsname{fa0019_pos2}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0019Font3\endcsname{fa0019_pos3}[
+    Path=fonts/fa0019/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font0\endcsname{fa0020_pos0}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font1\endcsname{fa0020_pos1}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font2\endcsname{fa0020_pos2}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0020Font3\endcsname{fa0020_pos3}[
+    Path=fonts/fa0020/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font0\endcsname{fa0021_pos0}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font1\endcsname{fa0021_pos1}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font2\endcsname{fa0021_pos2}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0021Font3\endcsname{fa0021_pos3}[
+    Path=fonts/fa0021/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0022Font0\endcsname{fa0022_pos0}[
+    Path=fonts/fa0022/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0022Font1\endcsname{fa0022_pos1}[
+    Path=fonts/fa0022/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0022Font2\endcsname{fa0022_pos2}[
+    Path=fonts/fa0022/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0022Font3\endcsname{fa0022_pos3}[
+    Path=fonts/fa0022/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0022Font4\endcsname{fa0022_pos4}[
+    Path=fonts/fa0022/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0023Font0\endcsname{fa0023_pos0}[
+    Path=fonts/fa0023/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0023Font1\endcsname{fa0023_pos1}[
+    Path=fonts/fa0023/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0023Font2\endcsname{fa0023_pos2}[
+    Path=fonts/fa0023/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0023Font3\endcsname{fa0023_pos3}[
+    Path=fonts/fa0023/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0024Font0\endcsname{fa0024_pos0}[
+    Path=fonts/fa0024/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0024Font1\endcsname{fa0024_pos1}[
+    Path=fonts/fa0024/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0025Font0\endcsname{fa0025_pos0}[
+    Path=fonts/fa0025/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0025Font1\endcsname{fa0025_pos1}[
+    Path=fonts/fa0025/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0026Font0\endcsname{fa0026_pos0}[
+    Path=fonts/fa0026/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0026Font1\endcsname{fa0026_pos1}[
+    Path=fonts/fa0026/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0027Font0\endcsname{fa0027_pos0}[
+    Path=fonts/fa0027/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0027Font1\endcsname{fa0027_pos1}[
+    Path=fonts/fa0027/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0028Font0\endcsname{fa0028_pos0}[
+    Path=fonts/fa0028/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0028Font1\endcsname{fa0028_pos1}[
+    Path=fonts/fa0028/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0028Font2\endcsname{fa0028_pos2}[
+    Path=fonts/fa0028/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0029Font0\endcsname{fa0029_pos0}[
+    Path=fonts/fa0029/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0029Font1\endcsname{fa0029_pos1}[
+    Path=fonts/fa0029/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0029Font2\endcsname{fa0029_pos2}[
+    Path=fonts/fa0029/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0030Font0\endcsname{fa0030_pos0}[
+    Path=fonts/fa0030/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0030Font1\endcsname{fa0030_pos1}[
+    Path=fonts/fa0030/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0030Font2\endcsname{fa0030_pos2}[
+    Path=fonts/fa0030/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0031Font0\endcsname{fa0031_pos0}[
+    Path=fonts/fa0031/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0031Font1\endcsname{fa0031_pos1}[
+    Path=fonts/fa0031/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0031Font2\endcsname{fa0031_pos2}[
+    Path=fonts/fa0031/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0032Font0\endcsname{fa0032_pos0}[
+    Path=fonts/fa0032/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0032Font1\endcsname{fa0032_pos1}[
+    Path=fonts/fa0032/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0032Font2\endcsname{fa0032_pos2}[
+    Path=fonts/fa0032/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0033Font0\endcsname{fa0033_pos0}[
+    Path=fonts/fa0033/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0033Font1\endcsname{fa0033_pos1}[
+    Path=fonts/fa0033/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0033Font2\endcsname{fa0033_pos2}[
+    Path=fonts/fa0033/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0034Font0\endcsname{fa0034_pos0}[
+    Path=fonts/fa0034/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0034Font1\endcsname{fa0034_pos1}[
+    Path=fonts/fa0034/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0034Font2\endcsname{fa0034_pos2}[
+    Path=fonts/fa0034/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0035Font0\endcsname{fa0035_pos0}[
+    Path=fonts/fa0035/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0035Font1\endcsname{fa0035_pos1}[
+    Path=fonts/fa0035/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0035Font2\endcsname{fa0035_pos2}[
+    Path=fonts/fa0035/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0037Font0\endcsname{fa0037_pos0}[
+    Path=fonts/fa0037/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0037Font1\endcsname{fa0037_pos1}[
+    Path=fonts/fa0037/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0037Font2\endcsname{fa0037_pos2}[
+    Path=fonts/fa0037/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0037Font3\endcsname{fa0037_pos3}[
+    Path=fonts/fa0037/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0037Font4\endcsname{fa0037_pos4}[
+    Path=fonts/fa0037/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0038Font0\endcsname{fa0038_pos0}[
+    Path=fonts/fa0038/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0038Font1\endcsname{fa0038_pos1}[
+    Path=fonts/fa0038/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0038Font2\endcsname{fa0038_pos2}[
+    Path=fonts/fa0038/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0038Font3\endcsname{fa0038_pos3}[
+    Path=fonts/fa0038/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0038Font4\endcsname{fa0038_pos4}[
+    Path=fonts/fa0038/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0038Font5\endcsname{fa0038_pos5}[
+    Path=fonts/fa0038/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0039Font0\endcsname{fa0039_pos0}[
+    Path=fonts/fa0039/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0039Font1\endcsname{fa0039_pos1}[
+    Path=fonts/fa0039/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0039Font2\endcsname{fa0039_pos2}[
+    Path=fonts/fa0039/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0039Font3\endcsname{fa0039_pos3}[
+    Path=fonts/fa0039/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0039Font4\endcsname{fa0039_pos4}[
+    Path=fonts/fa0039/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0039Font5\endcsname{fa0039_pos5}[
+    Path=fonts/fa0039/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0040Font0\endcsname{fa0040_pos0}[
+    Path=fonts/fa0040/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0040Font2\endcsname{fa0040_pos2}[
+    Path=fonts/fa0040/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0040Font4\endcsname{fa0040_pos4}[
+    Path=fonts/fa0040/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0040Font5\endcsname{fa0040_pos5}[
+    Path=fonts/fa0040/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0041Font0\endcsname{fa0041_pos0}[
+    Path=fonts/fa0041/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0041Font1\endcsname{fa0041_pos1}[
+    Path=fonts/fa0041/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0041Font2\endcsname{fa0041_pos2}[
+    Path=fonts/fa0041/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0041Font3\endcsname{fa0041_pos3}[
+    Path=fonts/fa0041/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0041Font4\endcsname{fa0041_pos4}[
+    Path=fonts/fa0041/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0041Font5\endcsname{fa0041_pos5}[
+    Path=fonts/fa0041/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0042Font0\endcsname{fa0042_pos0}[
+    Path=fonts/fa0042/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0042Font1\endcsname{fa0042_pos1}[
+    Path=fonts/fa0042/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0042Font2\endcsname{fa0042_pos2}[
+    Path=fonts/fa0042/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0042Font3\endcsname{fa0042_pos3}[
+    Path=fonts/fa0042/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0042Font4\endcsname{fa0042_pos4}[
+    Path=fonts/fa0042/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0042Font5\endcsname{fa0042_pos5}[
+    Path=fonts/fa0042/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0043Font0\endcsname{fa0043_pos0}[
+    Path=fonts/fa0043/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0043Font1\endcsname{fa0043_pos1}[
+    Path=fonts/fa0043/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0043Font2\endcsname{fa0043_pos2}[
+    Path=fonts/fa0043/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0043Font3\endcsname{fa0043_pos3}[
+    Path=fonts/fa0043/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0043Font4\endcsname{fa0043_pos4}[
+    Path=fonts/fa0043/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0043Font5\endcsname{fa0043_pos5}[
+    Path=fonts/fa0043/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0044Font0\endcsname{fa0044_pos0}[
+    Path=fonts/fa0044/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0044Font1\endcsname{fa0044_pos1}[
+    Path=fonts/fa0044/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0044Font2\endcsname{fa0044_pos2}[
+    Path=fonts/fa0044/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0044Font3\endcsname{fa0044_pos3}[
+    Path=fonts/fa0044/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0044Font4\endcsname{fa0044_pos4}[
+    Path=fonts/fa0044/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0044Font5\endcsname{fa0044_pos5}[
+    Path=fonts/fa0044/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0045Font0\endcsname{fa0045_pos0}[
+    Path=fonts/fa0045/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0045Font1\endcsname{fa0045_pos1}[
+    Path=fonts/fa0045/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0045Font2\endcsname{fa0045_pos2}[
+    Path=fonts/fa0045/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0045Font3\endcsname{fa0045_pos3}[
+    Path=fonts/fa0045/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0045Font4\endcsname{fa0045_pos4}[
+    Path=fonts/fa0045/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0045Font5\endcsname{fa0045_pos5}[
+    Path=fonts/fa0045/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0047Font0\endcsname{fa0047_pos0}[
+    Path=fonts/fa0047/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0047Font1\endcsname{fa0047_pos1}[
+    Path=fonts/fa0047/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0047Font2\endcsname{fa0047_pos2}[
+    Path=fonts/fa0047/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0047Font3\endcsname{fa0047_pos3}[
+    Path=fonts/fa0047/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0047Font4\endcsname{fa0047_pos4}[
+    Path=fonts/fa0047/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0048Font0\endcsname{fa0048_pos0}[
+    Path=fonts/fa0048/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0048Font1\endcsname{fa0048_pos1}[
+    Path=fonts/fa0048/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0048Font2\endcsname{fa0048_pos2}[
+    Path=fonts/fa0048/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0048Font3\endcsname{fa0048_pos3}[
+    Path=fonts/fa0048/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0048Font4\endcsname{fa0048_pos4}[
+    Path=fonts/fa0048/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0049Font0\endcsname{fa0049_pos0}[
+    Path=fonts/fa0049/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0049Font1\endcsname{fa0049_pos1}[
+    Path=fonts/fa0049/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0049Font2\endcsname{fa0049_pos2}[
+    Path=fonts/fa0049/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0049Font3\endcsname{fa0049_pos3}[
+    Path=fonts/fa0049/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0049Font4\endcsname{fa0049_pos4}[
+    Path=fonts/fa0049/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0049Font5\endcsname{fa0049_pos5}[
+    Path=fonts/fa0049/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0050Font0\endcsname{fa0050_pos0}[
+    Path=fonts/fa0050/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0050Font1\endcsname{fa0050_pos1}[
+    Path=fonts/fa0050/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0050Font2\endcsname{fa0050_pos2}[
+    Path=fonts/fa0050/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0050Font3\endcsname{fa0050_pos3}[
+    Path=fonts/fa0050/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0050Font4\endcsname{fa0050_pos4}[
+    Path=fonts/fa0050/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0050Font5\endcsname{fa0050_pos5}[
+    Path=fonts/fa0050/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0051Font0\endcsname{fa0051_pos0}[
+    Path=fonts/fa0051/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0051Font1\endcsname{fa0051_pos1}[
+    Path=fonts/fa0051/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0051Font2\endcsname{fa0051_pos2}[
+    Path=fonts/fa0051/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0051Font3\endcsname{fa0051_pos3}[
+    Path=fonts/fa0051/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0051Font4\endcsname{fa0051_pos4}[
+    Path=fonts/fa0051/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0051Font5\endcsname{fa0051_pos5}[
+    Path=fonts/fa0051/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0052Font0\endcsname{fa0052_pos0}[
+    Path=fonts/fa0052/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0052Font1\endcsname{fa0052_pos1}[
+    Path=fonts/fa0052/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0052Font2\endcsname{fa0052_pos2}[
+    Path=fonts/fa0052/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0052Font3\endcsname{fa0052_pos3}[
+    Path=fonts/fa0052/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0052Font4\endcsname{fa0052_pos4}[
+    Path=fonts/fa0052/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0052Font5\endcsname{fa0052_pos5}[
+    Path=fonts/fa0052/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0053Font0\endcsname{fa0053_pos0}[
+    Path=fonts/fa0053/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0053Font1\endcsname{fa0053_pos1}[
+    Path=fonts/fa0053/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0053Font2\endcsname{fa0053_pos2}[
+    Path=fonts/fa0053/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0053Font3\endcsname{fa0053_pos3}[
+    Path=fonts/fa0053/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0053Font4\endcsname{fa0053_pos4}[
+    Path=fonts/fa0053/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0053Font5\endcsname{fa0053_pos5}[
+    Path=fonts/fa0053/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0054Font0\endcsname{fa0054_pos0}[
+    Path=fonts/fa0054/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0054Font1\endcsname{fa0054_pos1}[
+    Path=fonts/fa0054/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0054Font2\endcsname{fa0054_pos2}[
+    Path=fonts/fa0054/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0054Font3\endcsname{fa0054_pos3}[
+    Path=fonts/fa0054/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0054Font4\endcsname{fa0054_pos4}[
+    Path=fonts/fa0054/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0054Font5\endcsname{fa0054_pos5}[
+    Path=fonts/fa0054/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0055Font0\endcsname{fa0055_pos0}[
+    Path=fonts/fa0055/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0055Font1\endcsname{fa0055_pos1}[
+    Path=fonts/fa0055/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0055Font2\endcsname{fa0055_pos2}[
+    Path=fonts/fa0055/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0055Font3\endcsname{fa0055_pos3}[
+    Path=fonts/fa0055/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0055Font4\endcsname{fa0055_pos4}[
+    Path=fonts/fa0055/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0056Font0\endcsname{fa0056_pos0}[
+    Path=fonts/fa0056/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0056Font1\endcsname{fa0056_pos1}[
+    Path=fonts/fa0056/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0056Font2\endcsname{fa0056_pos2}[
+    Path=fonts/fa0056/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0057Font0\endcsname{fa0057_pos0}[
+    Path=fonts/fa0057/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0057Font1\endcsname{fa0057_pos1}[
+    Path=fonts/fa0057/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0057Font2\endcsname{fa0057_pos2}[
+    Path=fonts/fa0057/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0058Font0\endcsname{fa0058_pos0}[
+    Path=fonts/fa0058/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0058Font1\endcsname{fa0058_pos1}[
+    Path=fonts/fa0058/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0058Font2\endcsname{fa0058_pos2}[
+    Path=fonts/fa0058/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0059Font0\endcsname{fa0059_pos0}[
+    Path=fonts/fa0059/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0059Font1\endcsname{fa0059_pos1}[
+    Path=fonts/fa0059/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0059Font2\endcsname{fa0059_pos2}[
+    Path=fonts/fa0059/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0059Font3\endcsname{fa0059_pos3}[
+    Path=fonts/fa0059/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0060Font0\endcsname{fa0060_pos0}[
+    Path=fonts/fa0060/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0060Font1\endcsname{fa0060_pos1}[
+    Path=fonts/fa0060/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0060Font2\endcsname{fa0060_pos2}[
+    Path=fonts/fa0060/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0060Font3\endcsname{fa0060_pos3}[
+    Path=fonts/fa0060/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0061Font0\endcsname{fa0061_pos0}[
+    Path=fonts/fa0061/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0061Font1\endcsname{fa0061_pos1}[
+    Path=fonts/fa0061/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0061Font2\endcsname{fa0061_pos2}[
+    Path=fonts/fa0061/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0061Font3\endcsname{fa0061_pos3}[
+    Path=fonts/fa0061/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0062Font0\endcsname{fa0062_pos0}[
+    Path=fonts/fa0062/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0062Font1\endcsname{fa0062_pos1}[
+    Path=fonts/fa0062/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0062Font2\endcsname{fa0062_pos2}[
+    Path=fonts/fa0062/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0062Font3\endcsname{fa0062_pos3}[
+    Path=fonts/fa0062/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0063Font0\endcsname{fa0063_pos0}[
+    Path=fonts/fa0063/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0063Font1\endcsname{fa0063_pos1}[
+    Path=fonts/fa0063/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0063Font2\endcsname{fa0063_pos2}[
+    Path=fonts/fa0063/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0063Font3\endcsname{fa0063_pos3}[
+    Path=fonts/fa0063/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0064Font0\endcsname{fa0064_pos0}[
+    Path=fonts/fa0064/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0064Font1\endcsname{fa0064_pos1}[
+    Path=fonts/fa0064/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0064Font2\endcsname{fa0064_pos2}[
+    Path=fonts/fa0064/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0064Font3\endcsname{fa0064_pos3}[
+    Path=fonts/fa0064/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0065Font0\endcsname{fa0065_pos0}[
+    Path=fonts/fa0065/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0065Font1\endcsname{fa0065_pos1}[
+    Path=fonts/fa0065/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0065Font2\endcsname{fa0065_pos2}[
+    Path=fonts/fa0065/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0065Font3\endcsname{fa0065_pos3}[
+    Path=fonts/fa0065/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0066Font0\endcsname{fa0066_pos0}[
+    Path=fonts/fa0066/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0066Font1\endcsname{fa0066_pos1}[
+    Path=fonts/fa0066/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0066Font2\endcsname{fa0066_pos2}[
+    Path=fonts/fa0066/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0066Font3\endcsname{fa0066_pos3}[
+    Path=fonts/fa0066/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0067Font0\endcsname{fa0067_pos0}[
+    Path=fonts/fa0067/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0067Font1\endcsname{fa0067_pos1}[
+    Path=fonts/fa0067/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0067Font2\endcsname{fa0067_pos2}[
+    Path=fonts/fa0067/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0067Font3\endcsname{fa0067_pos3}[
+    Path=fonts/fa0067/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0068Font0\endcsname{fa0068_pos0}[
+    Path=fonts/fa0068/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0068Font1\endcsname{fa0068_pos1}[
+    Path=fonts/fa0068/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0068Font2\endcsname{fa0068_pos2}[
+    Path=fonts/fa0068/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0069Font2\endcsname{fa0069_pos2}[
+    Path=fonts/fa0069/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0070Font0\endcsname{fa0070_pos0}[
+    Path=fonts/fa0070/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0070Font1\endcsname{fa0070_pos1}[
+    Path=fonts/fa0070/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0070Font2\endcsname{fa0070_pos2}[
+    Path=fonts/fa0070/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0071Font0\endcsname{fa0071_pos0}[
+    Path=fonts/fa0071/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0071Font1\endcsname{fa0071_pos1}[
+    Path=fonts/fa0071/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0071Font2\endcsname{fa0071_pos2}[
+    Path=fonts/fa0071/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0072Font0\endcsname{fa0072_pos0}[
+    Path=fonts/fa0072/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0072Font1\endcsname{fa0072_pos1}[
+    Path=fonts/fa0072/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0072Font2\endcsname{fa0072_pos2}[
+    Path=fonts/fa0072/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0072Font3\endcsname{fa0072_pos3}[
+    Path=fonts/fa0072/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0073Font0\endcsname{fa0073_pos0}[
+    Path=fonts/fa0073/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0073Font1\endcsname{fa0073_pos1}[
+    Path=fonts/fa0073/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0073Font2\endcsname{fa0073_pos2}[
+    Path=fonts/fa0073/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0073Font3\endcsname{fa0073_pos3}[
+    Path=fonts/fa0073/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0074Font0\endcsname{fa0074_pos0}[
+    Path=fonts/fa0074/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0074Font1\endcsname{fa0074_pos1}[
+    Path=fonts/fa0074/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0074Font2\endcsname{fa0074_pos2}[
+    Path=fonts/fa0074/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0074Font3\endcsname{fa0074_pos3}[
+    Path=fonts/fa0074/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0075Font0\endcsname{fa0075_pos0}[
+    Path=fonts/fa0075/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0075Font1\endcsname{fa0075_pos1}[
+    Path=fonts/fa0075/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0075Font2\endcsname{fa0075_pos2}[
+    Path=fonts/fa0075/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0075Font3\endcsname{fa0075_pos3}[
+    Path=fonts/fa0075/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0076Font0\endcsname{fa0076_pos0}[
+    Path=fonts/fa0076/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0076Font1\endcsname{fa0076_pos1}[
+    Path=fonts/fa0076/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0076Font2\endcsname{fa0076_pos2}[
+    Path=fonts/fa0076/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0076Font3\endcsname{fa0076_pos3}[
+    Path=fonts/fa0076/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0077Font0\endcsname{fa0077_pos0}[
+    Path=fonts/fa0077/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0077Font1\endcsname{fa0077_pos1}[
+    Path=fonts/fa0077/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0077Font2\endcsname{fa0077_pos2}[
+    Path=fonts/fa0077/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0077Font3\endcsname{fa0077_pos3}[
+    Path=fonts/fa0077/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0078Font0\endcsname{fa0078_pos0}[
+    Path=fonts/fa0078/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0078Font1\endcsname{fa0078_pos1}[
+    Path=fonts/fa0078/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0078Font2\endcsname{fa0078_pos2}[
+    Path=fonts/fa0078/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0078Font3\endcsname{fa0078_pos3}[
+    Path=fonts/fa0078/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0079Font0\endcsname{fa0079_pos0}[
+    Path=fonts/fa0079/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0079Font1\endcsname{fa0079_pos1}[
+    Path=fonts/fa0079/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0079Font2\endcsname{fa0079_pos2}[
+    Path=fonts/fa0079/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0079Font3\endcsname{fa0079_pos3}[
+    Path=fonts/fa0079/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0080Font0\endcsname{fa0080_pos0}[
+    Path=fonts/fa0080/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0080Font1\endcsname{fa0080_pos1}[
+    Path=fonts/fa0080/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0080Font2\endcsname{fa0080_pos2}[
+    Path=fonts/fa0080/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0080Font3\endcsname{fa0080_pos3}[
+    Path=fonts/fa0080/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0081Font0\endcsname{fa0081_pos0}[
+    Path=fonts/fa0081/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0081Font1\endcsname{fa0081_pos1}[
+    Path=fonts/fa0081/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0081Font2\endcsname{fa0081_pos2}[
+    Path=fonts/fa0081/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0082Font0\endcsname{fa0082_pos0}[
+    Path=fonts/fa0082/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0082Font1\endcsname{fa0082_pos1}[
+    Path=fonts/fa0082/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0082Font2\endcsname{fa0082_pos2}[
+    Path=fonts/fa0082/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0083Font0\endcsname{fa0083_pos0}[
+    Path=fonts/fa0083/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0083Font1\endcsname{fa0083_pos1}[
+    Path=fonts/fa0083/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0083Font2\endcsname{fa0083_pos2}[
+    Path=fonts/fa0083/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0084Font0\endcsname{fa0084_pos0}[
+    Path=fonts/fa0084/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0084Font1\endcsname{fa0084_pos1}[
+    Path=fonts/fa0084/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0084Font2\endcsname{fa0084_pos2}[
+    Path=fonts/fa0084/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0085Font0\endcsname{fa0085_pos0}[
+    Path=fonts/fa0085/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0085Font1\endcsname{fa0085_pos1}[
+    Path=fonts/fa0085/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0085Font2\endcsname{fa0085_pos2}[
+    Path=fonts/fa0085/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0086Font0\endcsname{fa0086_pos0}[
+    Path=fonts/fa0086/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0086Font1\endcsname{fa0086_pos1}[
+    Path=fonts/fa0086/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0086Font2\endcsname{fa0086_pos2}[
+    Path=fonts/fa0086/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0087Font0\endcsname{fa0087_pos0}[
+    Path=fonts/fa0087/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0087Font1\endcsname{fa0087_pos1}[
+    Path=fonts/fa0087/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0087Font2\endcsname{fa0087_pos2}[
+    Path=fonts/fa0087/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0088Font0\endcsname{fa0088_pos0}[
+    Path=fonts/fa0088/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0088Font1\endcsname{fa0088_pos1}[
+    Path=fonts/fa0088/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0088Font2\endcsname{fa0088_pos2}[
+    Path=fonts/fa0088/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0089Font0\endcsname{fa0089_pos0}[
+    Path=fonts/fa0089/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0089Font1\endcsname{fa0089_pos1}[
+    Path=fonts/fa0089/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0089Font2\endcsname{fa0089_pos2}[
+    Path=fonts/fa0089/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0090Font0\endcsname{fa0090_pos0}[
+    Path=fonts/fa0090/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0090Font1\endcsname{fa0090_pos1}[
+    Path=fonts/fa0090/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0090Font2\endcsname{fa0090_pos2}[
+    Path=fonts/fa0090/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0091Font0\endcsname{fa0091_pos0}[
+    Path=fonts/fa0091/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0091Font1\endcsname{fa0091_pos1}[
+    Path=fonts/fa0091/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0091Font2\endcsname{fa0091_pos2}[
+    Path=fonts/fa0091/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0092Font0\endcsname{fa0092_pos0}[
+    Path=fonts/fa0092/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0092Font1\endcsname{fa0092_pos1}[
+    Path=fonts/fa0092/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0092Font2\endcsname{fa0092_pos2}[
+    Path=fonts/fa0092/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0092Font3\endcsname{fa0092_pos3}[
+    Path=fonts/fa0092/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0093Font0\endcsname{fa0093_pos0}[
+    Path=fonts/fa0093/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0093Font1\endcsname{fa0093_pos1}[
+    Path=fonts/fa0093/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0093Font2\endcsname{fa0093_pos2}[
+    Path=fonts/fa0093/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0094Font2\endcsname{fa0094_pos2}[
+    Path=fonts/fa0094/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0094Font3\endcsname{fa0094_pos3}[
+    Path=fonts/fa0094/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0095Font0\endcsname{fa0095_pos0}[
+    Path=fonts/fa0095/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0095Font1\endcsname{fa0095_pos1}[
+    Path=fonts/fa0095/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0095Font2\endcsname{fa0095_pos2}[
+    Path=fonts/fa0095/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0095Font3\endcsname{fa0095_pos3}[
+    Path=fonts/fa0095/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0096Font0\endcsname{fa0096_pos0}[
+    Path=fonts/fa0096/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0096Font1\endcsname{fa0096_pos1}[
+    Path=fonts/fa0096/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0096Font2\endcsname{fa0096_pos2}[
+    Path=fonts/fa0096/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0096Font3\endcsname{fa0096_pos3}[
+    Path=fonts/fa0096/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0097Font0\endcsname{fa0097_pos0}[
+    Path=fonts/fa0097/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0097Font1\endcsname{fa0097_pos1}[
+    Path=fonts/fa0097/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0097Font2\endcsname{fa0097_pos2}[
+    Path=fonts/fa0097/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0097Font3\endcsname{fa0097_pos3}[
+    Path=fonts/fa0097/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0098Font0\endcsname{fa0098_pos0}[
+    Path=fonts/fa0098/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0098Font1\endcsname{fa0098_pos1}[
+    Path=fonts/fa0098/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0098Font2\endcsname{fa0098_pos2}[
+    Path=fonts/fa0098/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0098Font3\endcsname{fa0098_pos3}[
+    Path=fonts/fa0098/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0099Font0\endcsname{fa0099_pos0}[
+    Path=fonts/fa0099/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0099Font1\endcsname{fa0099_pos1}[
+    Path=fonts/fa0099/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0099Font2\endcsname{fa0099_pos2}[
+    Path=fonts/fa0099/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0099Font3\endcsname{fa0099_pos3}[
+    Path=fonts/fa0099/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0100Font0\endcsname{fa0100_pos0}[
+    Path=fonts/fa0100/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0100Font1\endcsname{fa0100_pos1}[
+    Path=fonts/fa0100/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0100Font2\endcsname{fa0100_pos2}[
+    Path=fonts/fa0100/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0100Font3\endcsname{fa0100_pos3}[
+    Path=fonts/fa0100/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0101Font0\endcsname{fa0101_pos0}[
+    Path=fonts/fa0101/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0101Font1\endcsname{fa0101_pos1}[
+    Path=fonts/fa0101/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0101Font2\endcsname{fa0101_pos2}[
+    Path=fonts/fa0101/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0101Font3\endcsname{fa0101_pos3}[
+    Path=fonts/fa0101/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0102Font0\endcsname{fa0102_pos0}[
+    Path=fonts/fa0102/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0102Font1\endcsname{fa0102_pos1}[
+    Path=fonts/fa0102/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0102Font2\endcsname{fa0102_pos2}[
+    Path=fonts/fa0102/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0102Font3\endcsname{fa0102_pos3}[
+    Path=fonts/fa0102/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0103Font0\endcsname{fa0103_pos0}[
+    Path=fonts/fa0103/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0103Font1\endcsname{fa0103_pos1}[
+    Path=fonts/fa0103/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0103Font2\endcsname{fa0103_pos2}[
+    Path=fonts/fa0103/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0103Font3\endcsname{fa0103_pos3}[
+    Path=fonts/fa0103/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0104Font0\endcsname{fa0104_pos0}[
+    Path=fonts/fa0104/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0104Font2\endcsname{fa0104_pos2}[
+    Path=fonts/fa0104/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0104Font3\endcsname{fa0104_pos3}[
+    Path=fonts/fa0104/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0104Font4\endcsname{fa0104_pos4}[
+    Path=fonts/fa0104/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0105Font0\endcsname{fa0105_pos0}[
+    Path=fonts/fa0105/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0105Font1\endcsname{fa0105_pos1}[
+    Path=fonts/fa0105/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0105Font2\endcsname{fa0105_pos2}[
+    Path=fonts/fa0105/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0105Font3\endcsname{fa0105_pos3}[
+    Path=fonts/fa0105/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0105Font4\endcsname{fa0105_pos4}[
+    Path=fonts/fa0105/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0106Font0\endcsname{fa0106_pos0}[
+    Path=fonts/fa0106/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0106Font1\endcsname{fa0106_pos1}[
+    Path=fonts/fa0106/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0107Font0\endcsname{fa0107_pos0}[
+    Path=fonts/fa0107/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0107Font1\endcsname{fa0107_pos1}[
+    Path=fonts/fa0107/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0108Font0\endcsname{fa0108_pos0}[
+    Path=fonts/fa0108/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0108Font1\endcsname{fa0108_pos1}[
+    Path=fonts/fa0108/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0109Font0\endcsname{fa0109_pos0}[
+    Path=fonts/fa0109/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0109Font1\endcsname{fa0109_pos1}[
+    Path=fonts/fa0109/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0109Font2\endcsname{fa0109_pos2}[
+    Path=fonts/fa0109/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0110Font0\endcsname{fa0110_pos0}[
+    Path=fonts/fa0110/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0110Font1\endcsname{fa0110_pos1}[
+    Path=fonts/fa0110/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0110Font2\endcsname{fa0110_pos2}[
+    Path=fonts/fa0110/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0111Font0\endcsname{fa0111_pos0}[
+    Path=fonts/fa0111/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0111Font1\endcsname{fa0111_pos1}[
+    Path=fonts/fa0111/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0111Font2\endcsname{fa0111_pos2}[
+    Path=fonts/fa0111/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0112Font0\endcsname{fa0112_pos0}[
+    Path=fonts/fa0112/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0112Font1\endcsname{fa0112_pos1}[
+    Path=fonts/fa0112/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0112Font2\endcsname{fa0112_pos2}[
+    Path=fonts/fa0112/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0113Font0\endcsname{fa0113_pos0}[
+    Path=fonts/fa0113/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0113Font1\endcsname{fa0113_pos1}[
+    Path=fonts/fa0113/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0113Font2\endcsname{fa0113_pos2}[
+    Path=fonts/fa0113/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0114Font0\endcsname{fa0114_pos0}[
+    Path=fonts/fa0114/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0114Font1\endcsname{fa0114_pos1}[
+    Path=fonts/fa0114/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0114Font2\endcsname{fa0114_pos2}[
+    Path=fonts/fa0114/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0115Font0\endcsname{fa0115_pos0}[
+    Path=fonts/fa0115/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0115Font1\endcsname{fa0115_pos1}[
+    Path=fonts/fa0115/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0115Font2\endcsname{fa0115_pos2}[
+    Path=fonts/fa0115/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0116Font0\endcsname{fa0116_pos0}[
+    Path=fonts/fa0116/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0116Font1\endcsname{fa0116_pos1}[
+    Path=fonts/fa0116/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0116Font2\endcsname{fa0116_pos2}[
+    Path=fonts/fa0116/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0117Font0\endcsname{fa0117_pos0}[
+    Path=fonts/fa0117/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0117Font1\endcsname{fa0117_pos1}[
+    Path=fonts/fa0117/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0117Font2\endcsname{fa0117_pos2}[
+    Path=fonts/fa0117/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0118Font0\endcsname{fa0118_pos0}[
+    Path=fonts/fa0118/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0118Font1\endcsname{fa0118_pos1}[
+    Path=fonts/fa0118/,
+    Extension=.ttf
+]
+\expandafter\newfontfamily\csname fa0118Font2\endcsname{fa0118_pos2}[
+    Path=fonts/fa0118/,
+    Extension=.ttf
+]
+
+\begin{document}
+\begin{center}
+\includegraphics[width=2.5cm]{asu-logo.png} \\[0.3cm]
+CSE-476: Introduction to Natural Language Processing \\
+Quiz 1 \\
+\end{center}
+
+\section*{Multiple Choice Questions (Single correct)}
+\textit{Instructions: Select the correct option with a short explanation.}
+\begin{enumerate}[label=Q\arabic*.]
+\item {\csname fa0000Font0\endcsname\char"0057}{\csname fa0000Font1\endcsname\char"0068}{\csname fa0000Font2\endcsname\char"0069} {\csname fa0001Font0\endcsname\char"0063}{\char"0068}{\csname fa0001Font2\endcsname\char"0020} {\csname fa0002Font0\endcsname\char"006F}{\csname fa0002Font1\endcsname\char"0070}{\csname fa0002Font2\endcsname\char"0074} {\csname fa0003Font0\endcsname\char"0069}{\csname fa0003Font1\endcsname\char"006F}{\csname fa0003Font2\endcsname\char"006E} {\csname fa0004Font0\endcsname\char"0020}{\csname fa0004Font1\endcsname\char"0064}{\csname fa0004Font2\endcsname\char"0065} {\char"0066}{\csname fa0005Font1\endcsname\char"0069}{\csname fa0005Font2\endcsname\char"006E}{\csname fa0005Font3\endcsname\char"0065} {\csname fa0006Font0\endcsname\char"0073}{\csname fa0006Font1\endcsname\char"0020}{\csname fa0006Font2\endcsname\char"0074}{\csname fa0006Font3\endcsname\char"006F} {\csname fa0007Font0\endcsname\char"006B}{\csname fa0007Font1\endcsname\char"0065}{\csname fa0007Font2\endcsname\char"006E}{\csname fa0007Font3\endcsname\char"0073} {\csname fa0008Font0\endcsname\char"0020}{\char"006F}{\csname fa0008Font2\endcsname\char"0075}{\csname fa0008Font3\endcsname\char"0074} {\csname fa0009Font0\endcsname\char"0073}{\csname fa0009Font1\endcsname\char"0069}{\csname fa0009Font2\endcsname\char"0064}{\csname fa0009Font3\endcsname\char"0065} {\csname fa0010Font0\endcsname\char"0020}{\csname fa0010Font1\endcsname\char"0061}{\csname fa0010Font2\endcsname\char"006E}{\csname fa0010Font3\endcsname\char"0079} {\csname fa0011Font0\endcsname\char"0020}{\csname fa0011Font1\endcsname\char"0065}{\csname fa0011Font2\endcsname\char"006E}{\csname fa0011Font3\endcsname\char"0074} {\csname fa0012Font0\endcsname\char"0069}{\csname fa0012Font1\endcsname\char"0074}{\csname fa0012Font2\endcsname\char"0079}{\csname fa0012Font3\endcsname\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item Beginning of an entity
+    \item Inside an entity
+    \item Outside any entity
+    \item Between two tokens
+\end{enumerate}
+\item {\csname fa0013Font0\endcsname\char"0057}{\csname fa0013Font1\endcsname\char"0068}{\csname fa0013Font2\endcsname\char"0069}{\csname fa0013Font3\endcsname\char"0063} {\csname fa0014Font0\endcsname\char"0068}{\csname fa0014Font1\endcsname\char"0020}{\csname fa0014Font2\endcsname\char"006F}{\csname fa0014Font3\endcsname\char"0070} {\csname fa0015Font0\endcsname\char"0074}{\csname fa0015Font1\endcsname\char"0069}{\csname fa0015Font2\endcsname\char"006F}{\csname fa0015Font3\endcsname\char"006E} {\csname fa0016Font0\endcsname\char"0020}{\csname fa0016Font1\endcsname\char"0063}{\csname fa0016Font2\endcsname\char"006C}{\csname fa0016Font3\endcsname\char"0061} {\csname fa0017Font0\endcsname\char"0069}{\csname fa0017Font1\endcsname\char"006D}{\csname fa0017Font2\endcsname\char"0073}{\csname fa0017Font3\endcsname\char"0020} {\csname fa0018Font0\endcsname\char"0069}{\csname fa0018Font1\endcsname\char"0074}{\csname fa0018Font2\endcsname\char"0020}{\csname fa0018Font3\endcsname\char"0069} {\csname fa0019Font0\endcsname\char"0073}{\csname fa0019Font1\endcsname\char"0020}{\csname fa0019Font2\endcsname\char"0069}{\csname fa0019Font3\endcsname\char"0064} {\csname fa0020Font0\endcsname\char"0065}{\csname fa0020Font1\endcsname\char"006E}{\csname fa0020Font2\endcsname\char"0074}{\csname fa0020Font3\endcsname\char"0069} {\csname fa0021Font0\endcsname\char"0063}{\csname fa0021Font1\endcsname\char"0061}{\csname fa0021Font2\endcsname\char"006C}{\csname fa0021Font3\endcsname\char"0020} {\csname fa0022Font0\endcsname\char"0074}{\csname fa0022Font1\endcsname\char"006F}{\csname fa0022Font2\endcsname\char"0020}{\csname fa0022Font3\endcsname\char"0061}{\csname fa0022Font4\endcsname\char"006E} {\csname fa0023Font0\endcsname\char"0020}{\csname fa0023Font1\endcsname\char"0048}{\csname fa0023Font2\endcsname\char"004D}{\csname fa0023Font3\endcsname\char"004D}{\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item It uses only words (observations) and ignores labels
+    \item It is identical to an HMM
+    \item It models transitions between labels but does not consider the words
+    \item It models emissions P(word | label)
+\end{enumerate}
+\item {\csname fa0024Font0\endcsname\char"0057}{\csname fa0024Font1\endcsname\char"0068} {\csname fa0025Font0\endcsname\char"0069}{\csname fa0025Font1\endcsname\char"0063} {\csname fa0026Font0\endcsname\char"0068}{\csname fa0026Font1\endcsname\char"0020} {\csname fa0027Font0\endcsname\char"006F}{\csname fa0027Font1\endcsname\char"0070} {\csname fa0028Font0\endcsname\char"0074}{\csname fa0028Font1\endcsname\char"0069}{\csname fa0028Font2\endcsname\char"006F} {\csname fa0029Font0\endcsname\char"006E}{\csname fa0029Font1\endcsname\char"0020}{\csname fa0029Font2\endcsname\char"0069} {\csname fa0030Font0\endcsname\char"0073}{\csname fa0030Font1\endcsname\char"0020}{\csname fa0030Font2\endcsname\char"0050} {\csname fa0031Font0\endcsname\char"0028}{\csname fa0031Font1\endcsname\char"006C}{\csname fa0031Font2\endcsname\char"0061} {\csname fa0032Font0\endcsname\char"0062}{\csname fa0032Font1\endcsname\char"0065}{\csname fa0032Font2\endcsname\char"006C} {\csname fa0033Font0\endcsname\char"0020}{\csname fa0033Font1\endcsname\char"007C}{\csname fa0033Font2\endcsname\char"0020} {\csname fa0034Font0\endcsname\char"0077}{\csname fa0034Font1\endcsname\char"006F}{\csname fa0034Font2\endcsname\char"0072} {\csname fa0035Font0\endcsname\char"0064}{\csname fa0035Font1\endcsname\char"0029}{\csname fa0035Font2\endcsname\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item P(label | previous label)
+    \item P(label | word)
+    \item P(word | previous word)
+    \item P(word | label)
+\end{enumerate}
+\item {\char"0057}{\char"0068}{\char"0069}{\char"0063}{\char"0068} {\csname fa0037Font0\endcsname\char"0020}{\csname fa0037Font1\endcsname\char"006F}{\csname fa0037Font2\endcsname\char"0070}{\csname fa0037Font3\endcsname\char"0074}{\csname fa0037Font4\endcsname\char"0069} {\csname fa0038Font0\endcsname\char"006F}{\csname fa0038Font1\endcsname\char"006E}{\csname fa0038Font2\endcsname\char"0020}{\csname fa0038Font3\endcsname\char"0064}{\csname fa0038Font4\endcsname\char"0065}{\csname fa0038Font5\endcsname\char"0073} {\csname fa0039Font0\endcsname\char"0063}{\csname fa0039Font1\endcsname\char"0072}{\csname fa0039Font2\endcsname\char"0069}{\csname fa0039Font3\endcsname\char"0062}{\csname fa0039Font4\endcsname\char"0065}{\csname fa0039Font5\endcsname\char"0073} {\csname fa0040Font0\endcsname\char"0020}{\char"0065}{\csname fa0040Font2\endcsname\char"006E}{\char"0074}{\csname fa0040Font4\endcsname\char"0069}{\csname fa0040Font5\endcsname\char"0074} {\csname fa0041Font0\endcsname\char"0079}{\csname fa0041Font1\endcsname\char"0020}{\csname fa0041Font2\endcsname\char"006C}{\csname fa0041Font3\endcsname\char"0069}{\csname fa0041Font4\endcsname\char"006E}{\csname fa0041Font5\endcsname\char"006B} {\csname fa0042Font0\endcsname\char"0069}{\csname fa0042Font1\endcsname\char"006E}{\csname fa0042Font2\endcsname\char"0067}{\csname fa0042Font3\endcsname\char"0020}{\csname fa0042Font4\endcsname\char"0074}{\csname fa0042Font5\endcsname\char"006F} {\csname fa0043Font0\endcsname\char"0020}{\csname fa0043Font1\endcsname\char"0061}{\csname fa0043Font2\endcsname\char"0020}{\csname fa0043Font3\endcsname\char"006B}{\csname fa0043Font4\endcsname\char"006E}{\csname fa0043Font5\endcsname\char"006F} {\csname fa0044Font0\endcsname\char"0077}{\csname fa0044Font1\endcsname\char"006C}{\csname fa0044Font2\endcsname\char"0065}{\csname fa0044Font3\endcsname\char"0064}{\csname fa0044Font4\endcsname\char"0067}{\csname fa0044Font5\endcsname\char"0065} {\csname fa0045Font0\endcsname\char"0020}{\csname fa0045Font1\endcsname\char"0062}{\csname fa0045Font2\endcsname\char"0061}{\csname fa0045Font3\endcsname\char"0073}{\csname fa0045Font4\endcsname\char"0065}{\csname fa0045Font5\endcsname\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item A task that identifies predicates in a sentence and labels roles of elements such as agent, theme, or location
+    \item A process that assigns grammatical roles like subject and object based on syntactic structure
+    \item A method that classifies named entities and links them to a knowledge base
+    \item A technique that labels words with their parts of speech and morphological features 
+\end{enumerate}
+\item {\char"0057}{\char"0068}{\char"0069}{\char"0063}{\char"0068} {\csname fa0047Font0\endcsname\char"0020}{\csname fa0047Font1\endcsname\char"006F}{\csname fa0047Font2\endcsname\char"0070}{\csname fa0047Font3\endcsname\char"0074}{\csname fa0047Font4\endcsname\char"0069} {\csname fa0048Font0\endcsname\char"006F}{\csname fa0048Font1\endcsname\char"006E}{\csname fa0048Font2\endcsname\char"0020}{\csname fa0048Font3\endcsname\char"0073}{\csname fa0048Font4\endcsname\char"0070} {\csname fa0049Font0\endcsname\char"006C}{\csname fa0049Font1\endcsname\char"0069}{\csname fa0049Font2\endcsname\char"0074}{\csname fa0049Font3\endcsname\char"0073}{\csname fa0049Font4\endcsname\char"0020}{\csname fa0049Font5\endcsname\char"0074} {\csname fa0050Font0\endcsname\char"006F}{\csname fa0050Font1\endcsname\char"006B}{\csname fa0050Font2\endcsname\char"0065}{\csname fa0050Font3\endcsname\char"006E}{\csname fa0050Font4\endcsname\char"0073}{\csname fa0050Font5\endcsname\char"0020} {\csname fa0051Font0\endcsname\char"0062}{\csname fa0051Font1\endcsname\char"0079}{\csname fa0051Font2\endcsname\char"0020}{\csname fa0051Font3\endcsname\char"0077}{\csname fa0051Font4\endcsname\char"0068}{\csname fa0051Font5\endcsname\char"0069} {\csname fa0052Font0\endcsname\char"0074}{\csname fa0052Font1\endcsname\char"0065}{\csname fa0052Font2\endcsname\char"0073}{\csname fa0052Font3\endcsname\char"0070}{\csname fa0052Font4\endcsname\char"0061}{\csname fa0052Font5\endcsname\char"0063} {\csname fa0053Font0\endcsname\char"0065}{\csname fa0053Font1\endcsname\char"0020}{\csname fa0053Font2\endcsname\char"0061}{\csname fa0053Font3\endcsname\char"006E}{\csname fa0053Font4\endcsname\char"0064}{\csname fa0053Font5\endcsname\char"0020} {\csname fa0054Font0\endcsname\char"0070}{\csname fa0054Font1\endcsname\char"0075}{\csname fa0054Font2\endcsname\char"006E}{\csname fa0054Font3\endcsname\char"0063}{\csname fa0054Font4\endcsname\char"0074}{\csname fa0054Font5\endcsname\char"0075} {\csname fa0055Font0\endcsname\char"0061}{\csname fa0055Font1\endcsname\char"0074}{\csname fa0055Font2\endcsname\char"0069}{\csname fa0055Font3\endcsname\char"006F}{\csname fa0055Font4\endcsname\char"006E}{\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item A technique that compresses text by replacing consecutive repeated characters with a count and a symbol
+    \item A tokenization method that iteratively merges the most frequent pair of symbols in a corpus
+    \item A tokenization method that splits text based on whitespace and punctuation
+    \item A character-level encoding scheme that assigns fixed-length binary codes to characters
+\end{enumerate}
+\item {\csname fa0056Font0\endcsname\char"0057}{\csname fa0056Font1\endcsname\char"0068}{\csname fa0056Font2\endcsname\char"0069} {\csname fa0057Font0\endcsname\char"0063}{\csname fa0057Font1\endcsname\char"0068}{\csname fa0057Font2\endcsname\char"0020} {\csname fa0058Font0\endcsname\char"006F}{\csname fa0058Font1\endcsname\char"0070}{\csname fa0058Font2\endcsname\char"0074} {\csname fa0059Font0\endcsname\char"0069}{\csname fa0059Font1\endcsname\char"006F}{\csname fa0059Font2\endcsname\char"006E}{\csname fa0059Font3\endcsname\char"0020} {\csname fa0060Font0\endcsname\char"0063}{\csname fa0060Font1\endcsname\char"006C}{\csname fa0060Font2\endcsname\char"0061}{\csname fa0060Font3\endcsname\char"0069} {\csname fa0061Font0\endcsname\char"006D}{\csname fa0061Font1\endcsname\char"0073}{\csname fa0061Font2\endcsname\char"0020}{\csname fa0061Font3\endcsname\char"0076} {\csname fa0062Font0\endcsname\char"006F}{\csname fa0062Font1\endcsname\char"0063}{\csname fa0062Font2\endcsname\char"0061}{\csname fa0062Font3\endcsname\char"0062} {\csname fa0063Font0\endcsname\char"0075}{\csname fa0063Font1\endcsname\char"006C}{\csname fa0063Font2\endcsname\char"0061}{\csname fa0063Font3\endcsname\char"0072} {\csname fa0064Font0\endcsname\char"0079}{\csname fa0064Font1\endcsname\char"0020}{\csname fa0064Font2\endcsname\char"0073}{\csname fa0064Font3\endcsname\char"0069} {\csname fa0065Font0\endcsname\char"007A}{\csname fa0065Font1\endcsname\char"0065}{\csname fa0065Font2\endcsname\char"0020}{\csname fa0065Font3\endcsname\char"0062} {\csname fa0066Font0\endcsname\char"0065}{\csname fa0066Font1\endcsname\char"0063}{\csname fa0066Font2\endcsname\char"006F}{\csname fa0066Font3\endcsname\char"006D} {\csname fa0067Font0\endcsname\char"0065}{\csname fa0067Font1\endcsname\char"0073}{\csname fa0067Font2\endcsname\char"0020}{\csname fa0067Font3\endcsname\char"007A} {\csname fa0068Font0\endcsname\char"0065}{\csname fa0068Font1\endcsname\char"0072}{\csname fa0068Font2\endcsname\char"006F}{\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item To label each token with a grammatical category
+    \item To convert text into a sequence of symbols suitable for modeling
+    \item To reduce vocabulary size to zero
+    \item To assign probabilities to sentences
+\end{enumerate}
+\item {\char"0057}{\char"0068}{\csname fa0069Font2\endcsname\char"0069} {\csname fa0070Font0\endcsname\char"0063}{\csname fa0070Font1\endcsname\char"0068}{\csname fa0070Font2\endcsname\char"0020} {\csname fa0071Font0\endcsname\char"006F}{\csname fa0071Font1\endcsname\char"0070}{\csname fa0071Font2\endcsname\char"0074} {\csname fa0072Font0\endcsname\char"0069}{\csname fa0072Font1\endcsname\char"006F}{\csname fa0072Font2\endcsname\char"006E}{\csname fa0072Font3\endcsname\char"0020} {\csname fa0073Font0\endcsname\char"0073}{\csname fa0073Font1\endcsname\char"0061}{\csname fa0073Font2\endcsname\char"0079}{\csname fa0073Font3\endcsname\char"0073} {\csname fa0074Font0\endcsname\char"0020}{\csname fa0074Font1\endcsname\char"0069}{\csname fa0074Font2\endcsname\char"0074}{\csname fa0074Font3\endcsname\char"0020} {\csname fa0075Font0\endcsname\char"0063}{\csname fa0075Font1\endcsname\char"0061}{\csname fa0075Font2\endcsname\char"006E}{\csname fa0075Font3\endcsname\char"006E} {\csname fa0076Font0\endcsname\char"006F}{\csname fa0076Font1\endcsname\char"0074}{\csname fa0076Font2\endcsname\char"0020}{\csname fa0076Font3\endcsname\char"0074} {\csname fa0077Font0\endcsname\char"006F}{\csname fa0077Font1\endcsname\char"006B}{\csname fa0077Font2\endcsname\char"0065}{\csname fa0077Font3\endcsname\char"006E} {\csname fa0078Font0\endcsname\char"0069}{\csname fa0078Font1\endcsname\char"007A}{\csname fa0078Font2\endcsname\char"0065}{\csname fa0078Font3\endcsname\char"0020} {\csname fa0079Font0\endcsname\char"0045}{\csname fa0079Font1\endcsname\char"006E}{\csname fa0079Font2\endcsname\char"0067}{\csname fa0079Font3\endcsname\char"006C} {\csname fa0080Font0\endcsname\char"0069}{\csname fa0080Font1\endcsname\char"0073}{\csname fa0080Font2\endcsname\char"0068}{\csname fa0080Font3\endcsname\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item It produces too many tokens
+    \item It does not work well for languages without explicit word boundaries
+    \item It cannot tokenize English at all
+    \item It ignores punctuation entirely
+\end{enumerate}
+\item {\csname fa0081Font0\endcsname\char"0057}{\csname fa0081Font1\endcsname\char"0068}{\csname fa0081Font2\endcsname\char"0069} {\csname fa0082Font0\endcsname\char"0063}{\csname fa0082Font1\endcsname\char"0068}{\csname fa0082Font2\endcsname\char"0020} {\csname fa0083Font0\endcsname\char"006F}{\csname fa0083Font1\endcsname\char"0070}{\csname fa0083Font2\endcsname\char"0074} {\csname fa0084Font0\endcsname\char"0069}{\csname fa0084Font1\endcsname\char"006F}{\csname fa0084Font2\endcsname\char"006E} {\csname fa0085Font0\endcsname\char"0020}{\csname fa0085Font1\endcsname\char"0069}{\csname fa0085Font2\endcsname\char"0073} {\csname fa0086Font0\endcsname\char"0020}{\csname fa0086Font1\endcsname\char"004E}{\csname fa0086Font2\endcsname\char"0061} {\csname fa0087Font0\endcsname\char"006D}{\csname fa0087Font1\endcsname\char"0065}{\csname fa0087Font2\endcsname\char"0064} {\csname fa0088Font0\endcsname\char"0020}{\csname fa0088Font1\endcsname\char"0045}{\csname fa0088Font2\endcsname\char"006E} {\csname fa0089Font0\endcsname\char"0074}{\csname fa0089Font1\endcsname\char"0069}{\csname fa0089Font2\endcsname\char"0074} {\csname fa0090Font0\endcsname\char"0079}{\csname fa0090Font1\endcsname\char"0020}{\csname fa0090Font2\endcsname\char"0052} {\csname fa0091Font0\endcsname\char"0065}{\csname fa0091Font1\endcsname\char"0063}{\csname fa0091Font2\endcsname\char"006F} {\csname fa0092Font0\endcsname\char"0067}{\csname fa0092Font1\endcsname\char"006E}{\csname fa0092Font2\endcsname\char"0069}{\csname fa0092Font3\endcsname\char"0074} {\csname fa0093Font0\endcsname\char"0069}{\csname fa0093Font1\endcsname\char"006F}{\csname fa0093Font2\endcsname\char"006E}{\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item Part-of-speech tagging
+    \item Named Entity Recognition
+    \item Dependency parsing
+    \item Sentiment analysis
+\end{enumerate}
+\item {\char"0057}{\char"0068}{\csname fa0094Font2\endcsname\char"0069}{\csname fa0094Font3\endcsname\char"0063} {\csname fa0095Font0\endcsname\char"0068}{\csname fa0095Font1\endcsname\char"0020}{\csname fa0095Font2\endcsname\char"006F}{\csname fa0095Font3\endcsname\char"0070} {\csname fa0096Font0\endcsname\char"0074}{\csname fa0096Font1\endcsname\char"0069}{\csname fa0096Font2\endcsname\char"006F}{\csname fa0096Font3\endcsname\char"006E} {\csname fa0097Font0\endcsname\char"0020}{\csname fa0097Font1\endcsname\char"0073}{\csname fa0097Font2\endcsname\char"0061}{\csname fa0097Font3\endcsname\char"0079} {\csname fa0098Font0\endcsname\char"0073}{\csname fa0098Font1\endcsname\char"0020}{\csname fa0098Font2\endcsname\char"0042}{\csname fa0098Font3\endcsname\char"0049} {\csname fa0099Font0\endcsname\char"004F}{\csname fa0099Font1\endcsname\char"0020}{\csname fa0099Font2\endcsname\char"006C}{\csname fa0099Font3\endcsname\char"0061} {\csname fa0100Font0\endcsname\char"0063}{\csname fa0100Font1\endcsname\char"006B}{\csname fa0100Font2\endcsname\char"0073}{\csname fa0100Font3\endcsname\char"0020} {\csname fa0101Font0\endcsname\char"006D}{\csname fa0101Font1\endcsname\char"0075}{\csname fa0101Font2\endcsname\char"006C}{\csname fa0101Font3\endcsname\char"0074} {\csname fa0102Font0\endcsname\char"0069}{\csname fa0102Font1\endcsname\char"0070}{\csname fa0102Font2\endcsname\char"006C}{\csname fa0102Font3\endcsname\char"0065} {\csname fa0103Font0\endcsname\char"0020}{\csname fa0103Font1\endcsname\char"0065}{\csname fa0103Font2\endcsname\char"006E}{\csname fa0103Font3\endcsname\char"0074} {\csname fa0104Font0\endcsname\char"0069}{\char"0074}{\csname fa0104Font2\endcsname\char"0079}{\csname fa0104Font3\endcsname\char"0020}{\csname fa0104Font4\endcsname\char"0074} {\csname fa0105Font0\endcsname\char"0079}{\csname fa0105Font1\endcsname\char"0070}{\csname fa0105Font2\endcsname\char"0065}{\csname fa0105Font3\endcsname\char"0073}{\csname fa0105Font4\endcsname\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item It cannot represent overlapping or nested entities
+    \item It requires too many labels
+    \item It does not support multiple entity types
+    \item It ignores entity boundaries
+\end{enumerate}
+\item {\csname fa0106Font0\endcsname\char"0057}{\csname fa0106Font1\endcsname\char"0068} {\csname fa0107Font0\endcsname\char"0069}{\csname fa0107Font1\endcsname\char"0063} {\csname fa0108Font0\endcsname\char"0068}{\csname fa0108Font1\endcsname\char"0020} {\csname fa0109Font0\endcsname\char"006F}{\csname fa0109Font1\endcsname\char"0070}{\csname fa0109Font2\endcsname\char"0074} {\csname fa0110Font0\endcsname\char"0069}{\csname fa0110Font1\endcsname\char"006F}{\csname fa0110Font2\endcsname\char"006E} {\csname fa0111Font0\endcsname\char"0020}{\csname fa0111Font1\endcsname\char"0069}{\csname fa0111Font2\endcsname\char"0073} {\csname fa0112Font0\endcsname\char"0020}{\csname fa0112Font1\endcsname\char"0070}{\csname fa0112Font2\endcsname\char"0072} {\csname fa0113Font0\endcsname\char"0065}{\csname fa0113Font1\endcsname\char"0063}{\csname fa0113Font2\endcsname\char"0069} {\csname fa0114Font0\endcsname\char"0073}{\csname fa0114Font1\endcsname\char"0069}{\csname fa0114Font2\endcsname\char"006F} {\csname fa0115Font0\endcsname\char"006E}{\csname fa0115Font1\endcsname\char"0020}{\csname fa0115Font2\endcsname\char"0076} {\csname fa0116Font0\endcsname\char"0073}{\csname fa0116Font1\endcsname\char"0020}{\csname fa0116Font2\endcsname\char"0072} {\csname fa0117Font0\endcsname\char"0065}{\csname fa0117Font1\endcsname\char"0063}{\csname fa0117Font2\endcsname\char"0061} {\csname fa0118Font0\endcsname\char"006C}{\csname fa0118Font1\endcsname\char"006C}{\csname fa0118Font2\endcsname\char"003F}
+\begin{enumerate}[label=(\Alph*)]
+    \item Speed vs accuracy
+    \item Tokenized sequence length vs vocabulary size
+    \item Precision vs recall
+    \item Memory vs computation
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

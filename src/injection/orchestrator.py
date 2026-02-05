@@ -74,30 +74,48 @@ class InjectionOrchestrator:
         latex_path_str = None
         if data.file_paths and data.file_paths.latex_file:
             latex_path_str = data.file_paths.latex_file
+        # Fallback: attempt to infer <run_dir>/input/<docid>.tex if latex_file is missing
         if not latex_path_str:
-            raise ValueError(f"No LaTeX file path found in {perturbation_json_path}")
+            docid = data.docid or perturbation_json_path.stem.replace("_perturbation", "")
+            inferred_tex = perturbation_json_path.parent.parent / "input" / f"{docid}.tex"
+            if inferred_tex.exists():
+                latex_path_str = str(inferred_tex)
+                logger.warning(
+                    "latex_file missing in %s; using inferred path %s",
+                    perturbation_json_path,
+                    latex_path_str,
+                )
+            else:
+                raise ValueError(
+                    f"No LaTeX file path found in {perturbation_json_path}. "
+                    f"Ensure extract wrote file_paths.latex_file and perturbation JSON preserved it. "
+                    f"Tried fallback {inferred_tex} but it was not found."
+                )
         
         # Handle Windows/Unix path separators
         latex_path_str = latex_path_str.replace('\\', '/')
         
         # Resolve LaTeX path: try multiple strategies
         latex_path = None
-        
+        if self.output_dir and self.output_dir.name.startswith('output_'):
+            workspace_root = self.output_dir.parent
+        else:
+            workspace_root = Path.cwd()
+
         # Strategy 1: If path starts with "output/", resolve relative to workspace root
         if latex_path_str.startswith('output/'):
-            # Get workspace root (parent of output_dir if output_dir is like "output_attacked_pdfs")
-            if self.output_dir and self.output_dir.name.startswith('output_'):
-                workspace_root = self.output_dir.parent
-            else:
-                workspace_root = Path.cwd()
             latex_path = workspace_root / latex_path_str
         # Strategy 2: Try as absolute path
         elif Path(latex_path_str).is_absolute():
             latex_path = Path(latex_path_str)
-        # Strategy 3: Try relative to output_dir parent
+        # Strategy 3: Paths under backend/runs (upload pipeline) - resolve relative to workspace root
+        elif "backend/runs" in latex_path_str.replace("\\", "/") or latex_path_str.replace("\\", "/").startswith("runs/"):
+            norm = latex_path_str.replace("\\", "/").lstrip("/")
+            latex_path = workspace_root / norm
+        # Strategy 4: Try relative to output_dir parent
         elif self.output_dir:
             latex_path = self.output_dir.parent / latex_path_str
-        # Strategy 4: Try as relative path from current directory
+        # Strategy 5: Try as relative path from current directory
         else:
             latex_path = Path(latex_path_str)
         
@@ -231,28 +249,53 @@ class InjectionOrchestrator:
                             pert_result["fonts_dir"] = str(fonts_dir)
                             pert_result["fonts_generated"] = len(generated_fonts) if "generated_fonts" in locals() else 0
                         
-                        # Compile PDF if requested
-                        if compile_pdf and (not self.config or self.config.pdf_generation.compile_pdf):
-                            require_xetex = self.config.pdf_generation.require_xetex_for_fonts if self.config else True  # Font attack always uses XeTeX
-                            compilation_timeout = self.config.pdf_generation.compilation_timeout if self.config else 300
+                        # Compile PDF if requested and enabled by config
+                        compile_enabled_by_config = (
+                            not self.config
+                            or getattr(getattr(self.config, "pdf_generation", None), "compile_pdf", True)
+                        )
+                        compile_allowed = bool(compile_pdf and compile_enabled_by_config)
+                        if compile_allowed:
+                            require_xetex = (
+                                self.config.pdf_generation.require_xetex_for_fonts
+                                if self.config
+                                else True
+                            )  # Font attack always uses XeTeX
+                            compilation_timeout = (
+                                self.config.pdf_generation.compilation_timeout
+                                if self.config
+                                else 300
+                            )
                             pdf_result = self._compile_pdf(
                                 modified_tex_path,
                                 latex_path.parent,
                                 output_base.with_suffix('.pdf'),
                                 require_xetex=require_xetex,
                                 fonts_dir=fonts_dir,
-                                timeout=compilation_timeout
+                                timeout=compilation_timeout,
                             )
                             pert_result["pdf_compilation"] = pdf_result
                             if pdf_result.get("success"):
                                 compiled_pdf = output_base.with_suffix('.pdf')
                                 pert_result["pdf_path"] = str(compiled_pdf)
-                                
+
                                 # Clean up malicious fonts after successful PDF compilation
-                                cleanup_fonts = self.config.pdf_generation.cleanup_fonts_after_compile if self.config else True
+                                cleanup_fonts = (
+                                    self.config.pdf_generation.cleanup_fonts_after_compile
+                                    if self.config
+                                    else True
+                                )
                                 if fonts_dir and fonts_dir.exists() and cleanup_fonts:
                                     self._cleanup_fonts(fonts_dir)
                                     pert_result["fonts_cleaned"] = True
+                        else:
+                            pert_result["pdf_compilation"] = {
+                                "success": False,
+                                "error": "Compilation skipped by flags",
+                                "skipped": True,
+                                "compile_pdf_requested": bool(compile_pdf),
+                                "compile_pdf_enabled": bool(compile_enabled_by_config),
+                            }
                         
                         perturbation_results.append(pert_result)
                     
@@ -317,26 +360,36 @@ class InjectionOrchestrator:
                         "metadata": metadata
                     }
                     
-                    # Compile PDF if requested
-                    if compile_pdf:
+                    # Compile PDF if requested and enabled by config
+                    compile_enabled_by_config = (
+                        not self.config
+                        or getattr(getattr(self.config, "pdf_generation", None), "compile_pdf", True)
+                    )
+                    compile_allowed = bool(compile_pdf and compile_enabled_by_config)
+                    if compile_allowed:
                         require_xetex = "font_attack" in method_name
                         pdf_result = self._compile_pdf(
                             modified_tex_path,
                             latex_path.parent,
                             output_base.with_suffix('.pdf'),
-                            require_xetex=require_xetex
+                            require_xetex=require_xetex,
                         )
                         result["pdf_compilation"] = pdf_result
                         if pdf_result.get("success"):
                             compiled_pdf = output_base.with_suffix('.pdf')
                             result["pdf_path"] = str(compiled_pdf)
-                            
+
                             # Apply PDF-level dual-layer image overlay if needed
-                            apply_overlay = self.config.pdf_generation.apply_pdf_overlay if self.config else True
+                            apply_overlay = (
+                                self.config.pdf_generation.apply_pdf_overlay
+                                if self.config
+                                else True
+                            )
                             if apply_overlay and "dual_layer" in method_name and "font_attack" not in method_name:
                                 from .pdf_overlay_dual_layer import apply_image_overlay_dual_layer
+
                                 final_pdf = output_base.parent / f"{output_base.name}_final.pdf"
-                                
+
                                 # Build mappings with geometry info
                                 mappings = []
                                 for q in questions:
@@ -344,78 +397,114 @@ class InjectionOrchestrator:
                                         if p.original_substring and p.replacement_substring:
                                             # Try to get geometry from perturbation
                                             mapping = {
-                                                'original': p.original_substring,
-                                                'replacement': p.replacement_substring,
-                                                'page_index': getattr(p, 'page_index', None),  # Will be determined from PDF search
-                                                'bbox': getattr(p, 'bbox', None),
-                                                'selection_rect': getattr(p, 'selection_rect', None)
+                                                "original": p.original_substring,
+                                                "replacement": p.replacement_substring,
+                                                "page_index": getattr(
+                                                    p, "page_index", None
+                                                ),  # Will be determined from PDF search
+                                                "bbox": getattr(p, "bbox", None),
+                                                "selection_rect": getattr(p, "selection_rect", None),
                                             }
                                             # Add any geometry info if available (from extra fields)
                                             p_dict = p.model_dump()
-                                            if 'bbox' in p_dict:
-                                                mapping['bbox'] = p_dict['bbox']
-                                            if 'selection_rect' in p_dict:
-                                                mapping['selection_rect'] = p_dict['selection_rect']
-                                            if 'page_index' in p_dict:
-                                                mapping['page_index'] = p_dict['page_index']
+                                            if "bbox" in p_dict:
+                                                mapping["bbox"] = p_dict["bbox"]
+                                            if "selection_rect" in p_dict:
+                                                mapping["selection_rect"] = p_dict["selection_rect"]
+                                            if "page_index" in p_dict:
+                                                mapping["page_index"] = p_dict["page_index"]
                                             mappings.append(mapping)
-                                
+
                                 # Find original PDF from perturbation JSON file_paths
-                                print(f"[Orchestrator] Searching for original PDF for dual layer overlay...")
+                                print("[Orchestrator] Searching for original PDF for dual layer overlay...")
                                 original_pdf = None
                                 if data.file_paths:
                                     # Check for pdf_file in extra fields (not in model)
                                     data_dict = data.model_dump()
-                                    if 'file_paths' in data_dict and isinstance(data_dict['file_paths'], dict):
-                                        pdf_path_str = data_dict['file_paths'].get('pdf_file', '')
+                                    if "file_paths" in data_dict and isinstance(
+                                        data_dict["file_paths"], dict
+                                    ):
+                                        pdf_path_str = data_dict["file_paths"].get("pdf_file", "")
                                     else:
-                                        pdf_path_str = ''
+                                        pdf_path_str = ""
                                     if pdf_path_str:
                                         # Handle Windows/Unix path separators
-                                        pdf_path_str = pdf_path_str.replace('\\', '/')
+                                        pdf_path_str = pdf_path_str.replace("\\", "/")
                                         original_pdf = Path(pdf_path_str)
                                         if not original_pdf.is_absolute():
                                             # Resolve relative to output directory
                                             original_pdf = self.output_dir.parent / pdf_path_str
-                                        print(f"[Orchestrator] Original PDF from file_paths: {original_pdf} (exists: {original_pdf.exists()})")
-                                
+                                        print(
+                                            f"[Orchestrator] Original PDF from file_paths: {original_pdf} (exists: {original_pdf.exists()})"
+                                        )
+
                                 # Fallback: try common locations
-                                search_original = self.config.pdf_generation.overlay_search_original_pdf if self.config else True
+                                search_original = (
+                                    self.config.pdf_generation.overlay_search_original_pdf
+                                    if self.config
+                                    else True
+                                )
                                 if search_original and (not original_pdf or not original_pdf.exists()):
                                     # Try pdf_documents folder
                                     base_name = latex_path.stem
                                     # Remove method suffixes
-                                    for suffix in ['_icw', '_dual_layer', '_font_attack', '_icw_dual_layer', '_icw_font_attack']:
-                                        base_name = base_name.replace(suffix, '')
-                                    
+                                    for suffix in [
+                                        "_icw",
+                                        "_dual_layer",
+                                        "_font_attack",
+                                        "_icw_dual_layer",
+                                        "_icw_font_attack",
+                                    ]:
+                                        base_name = base_name.replace(suffix, "")
+
                                     pdf_dir = latex_path.parent.parent / "pdf_documents"
                                     original_pdf = pdf_dir / f"{base_name}.pdf"
-                                    print(f"[Orchestrator] Trying pdf_documents folder: {original_pdf} (exists: {original_pdf.exists()})")
-                                
+                                    print(
+                                        f"[Orchestrator] Trying pdf_documents folder: {original_pdf} (exists: {original_pdf.exists()})"
+                                    )
+
                                 # Last fallback: use compiled PDF (will still work but less effective)
                                 if not original_pdf or not original_pdf.exists():
-                                    print(f"[Orchestrator] WARNING: Original PDF not found! Will use compiled PDF as fallback.")
-                                    print(f"[Orchestrator] This means the overlay will show replacement text instead of original.")
+                                    print(
+                                        "[Orchestrator] WARNING: Original PDF not found! Will use compiled PDF as fallback."
+                                    )
+                                    print(
+                                        "[Orchestrator] This means the overlay will show replacement text instead of original."
+                                    )
                                     original_pdf = None
                                 else:
                                     print(f"[Orchestrator] ✓ Original PDF found: {original_pdf}")
-                                
-                                print(f"[Orchestrator] Applying dual layer overlay with {len(mappings)} mappings...")
+
+                                print(
+                                    f"[Orchestrator] Applying dual layer overlay with {len(mappings)} mappings..."
+                                )
                                 if apply_image_overlay_dual_layer(
-                                    original_pdf_path=original_pdf if original_pdf and original_pdf.exists() else None,
+                                    original_pdf_path=original_pdf
+                                    if original_pdf and original_pdf.exists()
+                                    else None,
                                     compiled_pdf_path=compiled_pdf,
                                     output_pdf_path=final_pdf,
                                     mappings=mappings,
-                                    search_pdf_path=compiled_pdf  # Fallback to compiled PDF
+                                    search_pdf_path=compiled_pdf,  # Fallback to compiled PDF
                                 ):
                                     result["pdf_path"] = str(final_pdf)
                                     result["dual_layer_applied"] = True
                                     result["overlay_method"] = "image_overlay"
-                                    result["original_pdf_used"] = str(original_pdf) if original_pdf else "fallback (compiled PDF)"
-                                    print(f"[Orchestrator] ✓ Dual layer overlay applied successfully")
+                                    result["original_pdf_used"] = (
+                                        str(original_pdf) if original_pdf else "fallback (compiled PDF)"
+                                    )
+                                    print("[Orchestrator] ✓ Dual layer overlay applied successfully")
                                 else:
-                                    print(f"[Orchestrator] ✗ Dual layer overlay failed")
+                                    print("[Orchestrator] ✗ Dual layer overlay failed")
                                     result["overlay_error"] = "Overlay application failed"
+                    else:
+                        result["pdf_compilation"] = {
+                            "success": False,
+                            "error": "Compilation skipped by flags",
+                            "skipped": True,
+                            "compile_pdf_requested": bool(compile_pdf),
+                            "compile_pdf_enabled": bool(compile_enabled_by_config),
+                        }
                 
                 results[method_name] = result
                 

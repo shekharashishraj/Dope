@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IGSHIELD Demo Console</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">IG</div>
+      <div>
+        <div class="brand-title">IGSHIELD</div>
+        <div class="brand-sub">Document Integrity Pipeline</div>
+      </div>
+    </div>
+    <div class="status-chip" id="status-chip">Idle</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel controls">
+      <div class="panel-header">
+        <div>
+          <h2>Inputs</h2>
+          <p>Upload a PDF and optional answer key to run the live attack pipeline.</p>
+        </div>
+      </div>
+
+      <div class="upload-grid">
+        <label class="upload-card">
+          <input type="file" id="pdf-input" accept="application/pdf" />
+          <div class="upload-title">PDF Document</div>
+          <div class="upload-meta" id="pdf-meta">No file selected</div>
+        </label>
+
+        <label class="upload-card">
+          <input type="file" id="answer-input" accept="application/pdf,.txt,.csv" />
+          <div class="upload-title">Answer Key (Optional)</div>
+          <div class="upload-meta" id="answer-meta">No file selected</div>
+        </label>
+      </div>
+
+      <div class="method-block">
+        <div class="method-title">Attack Methods</div>
+        <div class="method-grid" id="method-grid">
+          <label class="method-chip">
+            <input type="checkbox" value="icw" checked />
+            <span>ICW</span>
+          </label>
+          <label class="method-chip">
+            <input type="checkbox" value="dual_layer" checked />
+            <span>Dual Layer</span>
+          </label>
+          <label class="method-chip">
+            <input type="checkbox" value="font_attack" checked />
+            <span>Font Attack</span>
+          </label>
+          <label class="method-chip">
+            <input type="checkbox" value="icw_dual_layer" />
+            <span>ICW + Dual Layer</span>
+          </label>
+          <label class="method-chip">
+            <input type="checkbox" value="icw_font_attack" />
+            <span>ICW + Font</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="method-block">
+        <div class="method-title">Compilation</div>
+        <label class="method-chip">
+          <input type="checkbox" id="compile-toggle" checked />
+          <span>Compile attacked PDFs (otherwise only .tex is generated)</span>
+        </label>
+      </div>
+
+      <div class="controls-row">
+        <button id="run-btn" class="primary">Run Pipeline</button>
+        <button id="reset-btn" class="ghost">Reset</button>
+      </div>
+
+      <div class="panel-header slim">
+        <div>
+          <h3>Artifacts</h3>
+          <p>Generated files and intermediate outputs.</p>
+        </div>
+      </div>
+      <ul class="artifact-list" id="artifact-list"></ul>
+    </section>
+
+    <section class="panel steps">
+      <div class="panel-header">
+        <div>
+          <h2>Pipeline Overview</h2>
+          <p>Track each stage from ingestion to evaluation.</p>
+        </div>
+      </div>
+      <ul class="step-list" id="step-list">
+        <li class="step" data-step="ingest">
+          <div class="step-indicator"></div>
+          <div class="step-content">
+            <div class="step-title">PDF Ingestion</div>
+            <div class="step-desc">Parse the PDF and extract metadata.</div>
+            <div class="step-detail" data-step-detail></div>
+          </div>
+        </li>
+        <li class="step" data-step="extract">
+          <div class="step-indicator"></div>
+          <div class="step-content">
+            <div class="step-title">Document extraction</div>
+            <div class="step-desc">Extract questions and build LaTeX.</div>
+            <div class="step-detail" data-step-detail></div>
+          </div>
+        </li>
+        <li class="step" data-step="perturb">
+          <div class="step-indicator"></div>
+          <div class="step-content">
+            <div class="step-title">Perturbation Planning</div>
+            <div class="step-desc">Identify target spans and generate replacements.</div>
+            <div class="step-detail" data-step-detail></div>
+          </div>
+        </li>
+        <li class="step" data-step="inject">
+          <div class="step-indicator"></div>
+          <div class="step-content">
+            <div class="step-title">Attack Injection</div>
+            <div class="step-desc">Apply dual-layer or font injection strategies.</div>
+            <div class="step-detail" data-step-detail></div>
+          </div>
+        </li>
+        <li class="step" data-step="compile">
+          <div class="step-indicator"></div>
+          <div class="step-content">
+            <div class="step-title">Compilation</div>
+            <div class="step-desc">Generate the perturbed PDFs.</div>
+            <div class="step-detail" data-step-detail></div>
+          </div>
+        </li>
+        <li class="step" data-step="evaluate">
+          <div class="step-indicator"></div>
+          <div class="step-content">
+            <div class="step-title">Evaluation</div>
+            <div class="step-desc">Run detector checks and summarize results.</div>
+            <div class="step-detail" data-step-detail></div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="metrics" id="metrics">
+        <div class="metric">
+          <div class="metric-label">Detection Risk</div>
+          <div class="metric-value" id="metric-risk">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Perturbations</div>
+          <div class="metric-value" id="metric-perturb">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Selected Attack</div>
+          <div class="metric-value" id="metric-attacks">--</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel log">
+      <div class="panel-header">
+        <div>
+          <h2>Event Log</h2>
+          <p>Real-time debug output.</p>
+        </div>
+        <button id="copy-log" class="chip">Copy Logs</button>
+      </div>
+      <div class="log-stream" id="log-stream"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>IGSHIELD demo console. Built for expo walkthroughs.</div>
+    <div class="footer-meta">Pipeline reference: ingest → extract → perturb → inject → compile → evaluate</div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

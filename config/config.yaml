@@ -4,7 +4,7 @@ openai:
   model: "gpt-5.1-2025-11-13"
   batch_size: 5  # Number of documents per batch
   max_retries: 3
-  timeout: 120  # Timeout in seconds
+  timeout: 300  # Timeout in seconds
   temperature: 0.2  # Deprecated for GPT-5.1, kept for backward compatibility
   # Additional OpenAI settings (deprecated for GPT-5.1)
   top_p: null  # Null means use default, set 0.0-1.0 to override (deprecated for GPT-5.1)
@@ -27,6 +27,21 @@ processing:
   use_organized_structure: true  # Use timestamp-based organized structure
   output_base_dir: "output_perturbation"  # Base directory for organized outputs
   shared_timestamp: true  # Use same timestamp for all docs in a run
+  # Original LaTeX override (upload flow): when set, use original .tex from this dir if {doc_id}.tex exists
+  original_latex_dir: null  # null or omit = disabled; "." = project root
+  original_latex_assets: ["asu-logo.png"]  # Filenames to copy from original_latex_dir into run_dir/input/
+  # Document extraction: images from first page (for logo/layout in reconstructed LaTeX)
+  extract_images: true  # Set false to skip image extraction
+  max_images_first_page: 5  # Max images to extract from first page
+  # Vision-assisted layout inference + LaTeX reconstruction
+  vision_reconstructor_enabled: true  # Legacy flag (kept for backward compatibility)
+  vision_layout_enabled: true  # Enable vision layout refinement (uses page renders + layout JSON)
+  vision_model: "gpt-5.1-2025-11-13"  # Vision-capable model for layout inference
+  vision_mode: "per_page"  # per_page (default) or full_doc
+  page_render_dpi: 200  # DPI for rendering PDF pages to PNG for vision input
+  vision_temperature: null  # Optional temperature override for vision calls
+  vision_max_completion_tokens: 3000  # Optional max completion tokens override for vision calls
+  vision_template_reconstruction_enabled: true  # Enable template-constrained full LaTeX reconstruction with vision
 
 # Retry & Backoff Configuration
 retry:

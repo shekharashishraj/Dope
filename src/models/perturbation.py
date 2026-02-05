@@ -85,6 +85,9 @@ class Question(BaseModel):
 class FilePaths(BaseModel):
     """File paths model."""
     latex_file: Optional[str] = None
+    pdf_file: Optional[str] = None
+    layout_json: Optional[str] = None
+    page_images: Optional[List[str]] = None
     
     class Config:
         """Pydantic config."""
@@ -98,7 +101,18 @@ class Document(BaseModel):
     academic_level: Optional[str] = None
     questions: List[Question]
     file_paths: Optional[FilePaths] = None
-    
+    # Optional layout and image fields for reconstruction (Option A)
+    title_text: Optional[str] = None
+    subtitle_text: Optional[str] = None
+    section_title: Optional[str] = None
+    instructions_text: Optional[str] = None
+    geometry: Optional[str] = None
+    document_class_options: Optional[str] = None
+    enumerate_label: Optional[str] = None
+    logo_path: Optional[str] = None
+    logo_width: Optional[str] = None
+    logo_position: Optional[str] = None  # e.g. "top_center", "top_left"
+
     class Config:
         """Pydantic config."""
         extra = "allow"  # Allow extra fields for backward compatibility

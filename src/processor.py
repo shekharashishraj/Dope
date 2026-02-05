@@ -517,7 +517,157 @@ class Processor:
             logger.info(f"    - File save: {save_time:.2f}s")
         logger.info(f"    - Total: {doc_total_time:.2f}s")
         logger.info(f"  Output directory: {output_dir}")
-    
+
+    def process_single_document(
+        self,
+        json_path: Path,
+        output_dir: Path,
+        run_pdf_path: Optional[Path] = None,
+        run_latex_path: Optional[Path] = None,
+        mode: str = "immediate",
+    ) -> Optional[Path]:
+        """
+        Process a single document (e.g. from upload pipeline). Uses batch_generate_perturbations
+        for one doc and saves to output_dir with file_paths pointing to run_dir.
+
+        Args:
+            json_path: Path to document JSON (e.g. run_dir/input/<doc_name>.json).
+            output_dir: Output directory (e.g. run_dir/perturbations).
+            run_pdf_path: Optional PDF path for file_paths.
+            run_latex_path: Optional LaTeX path for stem extraction (uses question.latex_stem_text if None).
+            mode: "immediate" only (batch not used for single-doc upload runs).
+
+        Returns:
+            Path to saved perturbation JSON, or None on failure.
+        """
+        from .models.perturbation import Document, PerturbationMapping
+
+        tz = get_timezone(self.config)
+        doc_start_time = datetime.now(tz)
+        logger.info("=== process_single_document: %s ===", json_path.name)
+
+        data = self.file_handler.load_json_file(json_path)
+        questions = data.questions
+        if not questions:
+            logger.warning("No questions in %s", json_path)
+            return None
+
+        output_dir = Path(output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        latex_file = Path(run_latex_path) if run_latex_path else None
+        if latex_file and not latex_file.exists():
+            latex_file = None
+
+        question_prompts: Dict[int, str] = {}
+        question_metadata: Dict[int, Any] = {}
+
+        for question in questions:
+            question_number = question.question_number
+            question_type = question.question_type.value.upper()
+            latex_stem_text = self.file_handler.get_latex_stem_for_question(latex_file, question_number)
+            if not latex_stem_text:
+                latex_stem_text = question.latex_stem_text or question.stem_text or ""
+            copyable_text = question.stem_text or ""
+            gold_answer = question.gold_answer
+            options = question.options or {}
+
+            try:
+                if question_type == "MCQ":
+                    prompt = format_mcq_prompt(
+                        latex_stem_text=latex_stem_text,
+                        copyable_text=copyable_text,
+                        gold_answer=gold_answer,
+                        question_type=question_type,
+                        options=options,
+                        question_index=question_number,
+                        k=self.mappings_per_question,
+                        reasoning_steps="",
+                        prefix_note="",
+                        answer_guidance="",
+                        retry_instructions="",
+                    )
+                elif question_type == "TF":
+                    prompt = format_tf_prompt(
+                        latex_stem_text=latex_stem_text,
+                        copyable_text=copyable_text,
+                        gold_answer=gold_answer,
+                        question_type=question_type,
+                        question_index=question_number,
+                        k=self.mappings_per_question,
+                        reasoning_steps="",
+                        prefix_note="",
+                        answer_guidance="",
+                        retry_instructions="",
+                    )
+                elif question_type == "LONG":
+                    prompt = format_long_prompt(
+                        latex_stem_text=latex_stem_text,
+                        copyable_text=copyable_text,
+                        gold_answer=gold_answer,
+                        question_type=question_type,
+                        question_index=question_number,
+                        k=self.mappings_per_question,
+                        reasoning_steps="",
+                        prefix_note="",
+                        answer_guidance="",
+                        retry_instructions="",
+                    )
+                else:
+                    continue
+                question_prompts[question_number] = prompt
+                question_metadata[question_number] = question
+            except Exception as e:
+                logger.warning("Prompt format failed for question %s: %s", question_number, e)
+                continue
+
+        if not question_prompts:
+            logger.warning("No prompts built for %s", json_path)
+            return None
+
+        question_metadata_dict = {}
+        for q_num, question in question_metadata.items():
+            latex_stem = self.file_handler.get_latex_stem_for_question(latex_file, q_num) if latex_file else None
+            if not latex_stem:
+                latex_stem = question.latex_stem_text or question.stem_text or ""
+            question_metadata_dict[q_num] = {
+                "question_type": question.question_type.value.upper(),
+                "latex_stem_text": latex_stem,
+                "copyable_text": question.stem_text or "",
+                "gold_answer": question.gold_answer,
+                "options": question.options or {},
+            }
+
+        perturbations = self.openai_client.batch_generate_perturbations(
+            question_prompts,
+            output_dir=output_dir,
+            question_metadata=question_metadata_dict,
+            use_grouped_format=True,
+        )
+
+        total_perturbations = 0
+        for question in questions:
+            question_number = question.question_number
+            if question_number in perturbations:
+                pert_models = []
+                for pert_dict in perturbations[question_number]:
+                    try:
+                        pert_models.append(PerturbationMapping.model_validate(pert_dict))
+                    except Exception as e:
+                        logger.warning("Validate perturbation q%s: %s", question_number, e)
+                        continue
+                question.perturbations = pert_models
+                total_perturbations += len(pert_models)
+            else:
+                question.perturbations = []
+
+        output_path = self.file_handler.save_perturbed_json(
+            output_dir=output_dir,
+            original_json_path=json_path,
+            perturbed_data=data,
+        )
+        logger.info("process_single_document saved to %s (%s perturbations)", output_path, total_perturbations)
+        return output_path
+
     def _save_batch_info(self, json_file: Path, batch_id: str, batch_file: Path, output_dir: Path, data = None):
         """
         Save batch information for later retrieval.

@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+Answer Key - CSE-476: Introduction to Natural Language Processing \\
+Quiz 1 \\
+\small (Answers are ordered exactly as in the question paper.)
+\end{center}
+
+\section*{Multiple Choice Questions}
+\begin{enumerate}[label=Q\arabic*.]
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) Beginning of an entity; B) Inside an entity; C) Outside any entity; D) Between two tokens
+\\ \textit{Note:} Correct option: A - Beginning of an entity. In BIO tagging, B- marks the first token of an entity, I- marks tokens inside an entity, and O marks tokens outside any entity.
+\item \textbf{Answer:} C
+\\ \textit{Options:} A) It uses only words (observations) and ignores labels; B) It is identical to an HMM; C) It models transitions between labels but does not consider the words; D) It models emissions P(word | label)
+\\ \textit{Note:} Correct option: C - It models transitions between labels but does not consider the words. A plain Markov chain only models state (label) transitions, unlike an HMM which also includes emission probabilities.
+\item \textbf{Answer:} D
+\\ \textit{Options:} A) P(label | previous label); B) P(label | word); C) P(word | previous word); D) P(word | label)
+\\ \textit{Note:} Correct option: D - P(word | label). Emission probability in an HMM is the probability of observing a word given a hidden state (label). Option A describes transition probability.
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) A task that identifies predicates in a sentence and labels roles of elements such as agent, theme, or location; B) A process that assigns grammatical roles like subject and object based on syntactic structure; C) A method that classifies named entities and links them to a knowledge base; D) A technique that labels words with their parts of speech and morphological features
+\\ \textit{Note:} Correct option: A - Semantic Role Labeling (SRL) identifies predicates (verbs) and labels the semantic roles of their arguments, such as agent (who does the action), theme (what is affected), location (where), etc.
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) A technique that compresses text by replacing consecutive repeated characters with a count and a symbol; B) A tokenization method that iteratively merges the most frequent pair of symbols in a corpus; C) A tokenization method that splits text based on whitespace and punctuation; D) A character-level encoding scheme that assigns fixed-length binary codes to characters
+\\ \textit{Note:} Correct option: B - Byte Pair Encoding (BPE) is a tokenization algorithm that starts with character-level tokens and iteratively merges the most frequent pair of adjacent symbols, creating subword units that balance vocabulary size and sequence length.
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) To label each token with a grammatical category; B) To convert text into a sequence of symbols suitable for modeling; C) To reduce vocabulary size to zero; D) To assign probabilities to sentences
+\\ \textit{Note:} Correct option: B - Tokenization converts raw text into discrete symbols (tokens) that can be processed by NLP models.
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) It produces too many tokens; B) It does not work well for languages without explicit word boundaries; C) It cannot tokenize English at all; D) It ignores punctuation entirely
+\\ \textit{Note:} Correct option: B - Space-based splitting fails for languages like Chinese, Japanese, and Thai that don't use spaces between words.
+\item \textbf{Answer:} D
+\\ \textit{Options:} A) Part-of-speech tagging; B) Named Entity Recognition; C) Dependency parsing; D) Sentiment analysis
+\\ \textit{Note:} Correct option: D - Sentiment analysis is a classification task, not a sequence tagging task. Dependency parsing, while related to sequences, is typically considered a parsing task rather than sequence tagging.
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) It cannot represent overlapping or nested entities; B) It requires too many labels; C) It does not support multiple entity types; D) It ignores entity boundaries
+\\ \textit{Note:} Correct option: A - BIO tagging assigns exactly one label per token, making it impossible to represent nested or overlapping entities (e.g., "New York University" containing both "New York" and the full name).
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) Speed vs accuracy; B) Tokenized sequence length vs vocabulary size; C) Precision vs recall; D) Memory vs computation
+\\ \textit{Note:} Correct option: B - Character-level tokenization has small vocabulary but long sequences; sentence-level has huge vocabulary but short sequences. Subword tokenization balances this trade-off.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Answer Key}
+\end{document}

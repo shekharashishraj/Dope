@@ -1,0 +1,837 @@
+{
+  "docid": "CSE476_Quiz1",
+  "domain": "upload",
+  "academic_level": "unknown",
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "In the BIO tagging scheme for NER, what does the “B-” prefix indicate?",
+      "options": {
+        "A": "Beginning of an entity",
+        "B": "Inside an entity",
+        "C": "Outside any entity",
+        "D": "Between two tokens"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "original_substring": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "replacement_substring": "In BIO tagging for NER, which tag marks tokens inside but not starting an entity?",
+          "start_pos": 0,
+          "end_pos": 79,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks which tag marks inside tokens of an entity, which is option B, not the beginning tag in option A. Option A refers to the beginning of an entity, which contradicts the request for non-starting tokens inside an entity, so it becomes incorrect while B is correct now. \n\nVerification: Original stem asks about the B- prefix → replacement asks about the tag for inside, non-initial tokens → interpretation is that 'Inside an entity' is the correct description → answer selection shifts from A to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "original_substring": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "replacement_substring": "In BIO tagging for NER, which tag describes tokens that are not part of any entity span?",
+          "start_pos": 0,
+          "end_pos": 79,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks for the tag used for tokens outside any entity, which is option C. Option A is about beginning an entity, which is incompatible with being outside all entities, so A is now wrong and C is right. \n\nVerification: Original stem about B- prefix → replacement about outside-entity tokens → interpretation is that 'Outside any entity' matches this → answer changes from A to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "original_substring": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "replacement_substring": "In BIO tagging for NER, which option could describe a tag placed between two tokens?",
+          "start_pos": 0,
+          "end_pos": 79,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem asks for a tag notionally placed between two tokens, matching the wording of option D. Option A is about the beginning of an entity, which is a property of a single token, not something between tokens, so A no longer answers the question. \n\nVerification: Original question about B- prefix → replacement about a between-tokens tag → interpretation focuses on the phrase 'between two tokens' → student selects D instead of A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?"
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+      "options": {
+        "A": "It uses only words (observations) and ignores labels",
+        "B": "It is identical to an HMM",
+        "C": "It models transitions between labels but does not consider the words",
+        "D": "It models emissions P(word | label)"
+      },
+      "gold_answer": "C",
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "original_substring": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "replacement_substring": "Which option describes a model in tagging that relies only on words and ignores label transitions?",
+          "start_pos": 0,
+          "end_pos": 72,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem explicitly asks for a model that uses only words and ignores labels, which is exactly option A. Option C instead talks about modeling transitions between labels without words, the opposite behavior, so it becomes incorrect. \n\nVerification: Original about plain Markov chain over labels → replacement about a model using only observations → interpretation matches 'uses only words (observations) and ignores labels' → answer shifts from C to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "original_substring": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "replacement_substring": "Which option states that a sequence model is identical to a Hidden Markov Model?",
+          "start_pos": 0,
+          "end_pos": 72,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks which statement claims the model is identical to an HMM, matching option B verbatim. Option C does not mention HMM identity and instead focuses on label transitions only, so it is no longer correct. \n\nVerification: Original about plain Markov chain → replacement about a model being the same as an HMM → interpretation highlights 'identical to an HMM' → answer changes from C to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "original_substring": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "replacement_substring": "Which option characterizes a model in tagging that focuses on emission probabilities P(word | label)?",
+          "start_pos": 0,
+          "end_pos": 72,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem now asks for a description of a model centered on emission probabilities P(word | label), exactly what option D states. Option C, which talks about transitions between labels without words, does not mention emissions, so it becomes wrong. \n\nVerification: Original about plain Markov chain → replacement about emission-focused model → interpretation is that 'models emissions P(word | label)' fits → answer moves from C to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?"
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+      "options": {
+        "A": "P(label | previous label)",
+        "B": "P(label | word)",
+        "C": "P(word | previous word)",
+        "D": "P(word | label)"
+      },
+      "gold_answer": "D",
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "original_substring": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "replacement_substring": "In an HMM for NER, which option gives the form of a transition probability between labels?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem asks specifically for a transition probability between labels, which is P(label | previous label) in option A. Option D describes emissions P(word | label), which is not a transition, so it no longer matches the question. \n\nVerification: Original about emission probability → replacement about transition probability → interpretation focuses on transitions between labels → answer shifts from D to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "original_substring": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "replacement_substring": "In an HMM for NER, which option wrongly conditions the label directly on the observed word?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks for the form that conditions the label on the word, which is P(label | word) in option B. Option D has the opposite conditioning P(word | label), so under this wording it is incorrect. \n\nVerification: Original about emission probability → replacement about a probability of label given word → interpretation matches 'P(label | word)' → answer moves from D to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "original_substring": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "replacement_substring": "In an HMM-style sequence model, which option gives a probability depending on the previous word?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks for a probability that depends on the previous word, which is expressed as P(word | previous word) in option C. Option D conditions the word on the label, not on the previous word, so D becomes incorrect. \n\nVerification: Original about emission P(word | label) → replacement about a probability conditioned on previous word → interpretation points to 'P(word | previous word)' → answer changes from D to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:"
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes Semantic Role Labeling (SRL)?:",
+      "options": {
+        "A": "A task that identifies predicates in a sentence and labels roles of elements such as agent, theme, or location",
+        "B": "A process that assigns grammatical roles like subject and object based on syntactic structure",
+        "C": "A method that classifies named entities and links them to a knowledge base",
+        "D": "A technique that labels words with their parts of speech and morphological features"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "Which of the following best describes Semantic Role Labeling (SRL)?:",
+          "original_substring": "Which of the following best describes Semantic Role Labeling (SRL)?:",
+          "replacement_substring": "Which option best describes a process that assigns grammatical roles like subject and object?",
+          "start_pos": 0,
+          "end_pos": 79,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem now asks about assigning grammatical roles such as subject and object, which is exactly what option B describes. Option A focuses on semantic roles like agent or theme, not strictly grammatical subjects and objects, so it is no longer correct. \n\nVerification: Original about SRL task → replacement about grammatical role assignment → interpretation fits 'assigns grammatical roles like subject and object' → answer shifts from A to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "Which of the following best describes Semantic Role Labeling (SRL)?:",
+          "original_substring": "Which of the following best describes Semantic Role Labeling (SRL)?:",
+          "replacement_substring": "Which option best describes a method that classifies named entities and links them to a knowledge base?",
+          "start_pos": 0,
+          "end_pos": 79,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks for a method that classifies named entities and links them to a knowledge base, which matches option C. Semantic role labeling in option A is about predicates and semantic roles, not entity classification and linking, so A becomes incorrect. \n\nVerification: Original about SRL → replacement about named entity classification and linking → interpretation matches 'classifies named entities and links them to a knowledge base' → answer moves from A to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "Which of the following best describes Semantic Role Labeling (SRL)?:",
+          "original_substring": "Which of the following best describes Semantic Role Labeling (SRL)?:",
+          "replacement_substring": "Which option best describes a technique that labels words with parts of speech and morphological features?",
+          "start_pos": 0,
+          "end_pos": 79,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem now asks about labeling words with POS and morphological features, which is option D. Option A instead describes identifying predicates and semantic roles, not POS or morphology, so it no longer answers the question. \n\nVerification: Original about SRL → replacement about POS and morphology tagging → interpretation aligns with 'labels words with their parts of speech and morphological features' → answer changes from A to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which of the following best describes Semantic Role Labeling (SRL)?:"
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes Byte Pair Encoding (BPE)?",
+      "options": {
+        "A": "A technique that compresses text by replacing consecutive repeated characters with a count and a symbol",
+        "B": "A tokenization method that iteratively merges the most frequent pair of symbols in a corpus",
+        "C": "A tokenization method that splits text based on whitespace and punctuation",
+        "D": "A character-level encoding scheme that assigns fixed-length binary codes to characters"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "Which of the following best describes Byte Pair Encoding (BPE)?",
+          "original_substring": "Which of the following best describes Byte Pair Encoding (BPE)?",
+          "replacement_substring": "Which option describes a compression method that replaces repeated characters with a count and symbol?",
+          "start_pos": 0,
+          "end_pos": 68,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem now asks about compressing text by replacing consecutive repeated characters with a count and a symbol, which is option A. Option B’s iterative symbol-pair merges for tokenization no longer match the described behavior, so B becomes incorrect. \n\nVerification: Original about BPE tokenization → replacement about run-length style compression → interpretation matches 'replacing consecutive repeated characters with a count and a symbol' → answer shifts from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Which of the following best describes Byte Pair Encoding (BPE)?",
+          "original_substring": "Which of the following best describes Byte Pair Encoding (BPE)?",
+          "replacement_substring": "Which option describes a tokenization method that splits text only by whitespace and punctuation?",
+          "start_pos": 0,
+          "end_pos": 68,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks for a tokenizer that simply splits on whitespace and punctuation, which is option C. BPE in option B instead merges frequent symbol pairs, so B is now incorrect. \n\nVerification: Original about BPE → replacement about basic whitespace-and-punctuation tokenization → interpretation points to 'splits text based on whitespace and punctuation' → answer moves from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Which of the following best describes Byte Pair Encoding (BPE)?",
+          "original_substring": "Which of the following best describes Byte Pair Encoding (BPE)?",
+          "replacement_substring": "Which option describes an encoding scheme assigning fixed-length binary codes to characters?",
+          "start_pos": 0,
+          "end_pos": 68,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem now asks about a fixed-length binary character encoding scheme, which corresponds to option D. BPE in option B is a variable-length subword tokenization algorithm, not fixed-length character encoding, so B becomes wrong. \n\nVerification: Original about BPE → replacement about fixed-length binary character encoding → interpretation matches 'assigns fixed-length binary codes to characters' → answer changes from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which of the following best describes Byte Pair Encoding (BPE)?"
+    },
+    {
+      "question_number": 6,
+      "question_type": "MCQ",
+      "stem_text": "Which of the following best describes the main goal of tokenization in NLP?",
+      "options": {
+        "A": "To label each token with a grammatical category",
+        "B": "To convert text into a sequence of symbols suitable for modeling",
+        "C": "To reduce vocabulary size to zero",
+        "D": "To assign probabilities to sentences"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "Which of the following best describes the main goal of tokenization in NLP?",
+          "original_substring": "Which of the following best describes the main goal of tokenization in NLP?",
+          "replacement_substring": "Which option describes a task whose main goal is to label each token with a grammatical category?",
+          "start_pos": 0,
+          "end_pos": 76,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem now asks about labeling each token with a grammatical category, which is POS tagging in option A. Tokenization’s goal in option B is to convert text into symbol sequences, not to assign grammatical labels, so B is now incorrect. \n\nVerification: Original about goal of tokenization → replacement about task of assigning grammatical categories → interpretation fits 'label each token with a grammatical category' → answer shifts from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Which of the following best describes the main goal of tokenization in NLP?",
+          "original_substring": "Which of the following best describes the main goal of tokenization in NLP?",
+          "replacement_substring": "Which option claims a process whose aim is to reduce the vocabulary size to zero?",
+          "start_pos": 0,
+          "end_pos": 76,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks explicitly for a process aiming to reduce vocabulary size to zero, matching option C. Tokenization in option B creates a usable symbol sequence and does not try to eliminate vocabulary, so B becomes incorrect. \n\nVerification: Original about tokenization → replacement about process reducing vocabulary to zero → interpretation aligns with 'reduce vocabulary size to zero' → answer changes from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Which of the following best describes the main goal of tokenization in NLP?",
+          "original_substring": "Which of the following best describes the main goal of tokenization in NLP?",
+          "replacement_substring": "Which option describes a procedure whose primary goal is to assign probabilities to sentences?",
+          "start_pos": 0,
+          "end_pos": 76,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem asks for a procedure whose main goal is assigning probabilities to sentences, which matches option D. Tokenization in option B is about representing text as symbol sequences, not estimating sentence probabilities, so it becomes wrong. \n\nVerification: Original about tokenization goal → replacement about assigning sentence probabilities → interpretation matches 'assign probabilities to sentences' → answer moves from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which of the following best describes the main goal of tokenization in NLP?"
+    },
+    {
+      "question_number": 7,
+      "question_type": "MCQ",
+      "stem_text": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?",
+      "options": {
+        "A": "It produces too many tokens",
+        "B": "It does not work well for languages without explicit word boundaries",
+        "C": "It cannot tokenize English at all",
+        "D": "It ignores punctuation entirely"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?",
+          "original_substring": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?",
+          "replacement_substring": "Why might splitting text by spaces be criticized mainly for producing too many tokens in simple texts?",
+          "start_pos": 0,
+          "end_pos": 87,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem reframes the criticism as producing too many tokens, which is option A. The original correct reason (B) about languages without spaces is no longer mentioned, so B ceases to be the correct answer. \n\nVerification: Original about insufficiency due to languages without spaces → replacement focusing on excess token count → interpretation aligns with 'It produces too many tokens' → answer shifts from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?",
+          "original_substring": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?",
+          "replacement_substring": "Why is a tokenizer that splits only on spaces obviously unable to tokenize English at all?",
+          "start_pos": 0,
+          "end_pos": 87,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asserts inability to tokenize English at all and asks for that explanation, which matches option C’s wording. The real-world limitation in option B about languages without word boundaries is different and thus becomes incorrect here. \n\nVerification: Original about insufficiency mostly for non-space languages → replacement about total failure for English → interpretation fits 'cannot tokenize English at all' → answer moves from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?",
+          "original_substring": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?",
+          "replacement_substring": "Why is a tokenizer that splits only on spaces criticized mainly for ignoring punctuation entirely?",
+          "start_pos": 0,
+          "end_pos": 87,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem now singles out ignoring punctuation as the main criticism, which is option D. Option B about languages without explicit boundaries is a different issue and not what the question asks, so B is no longer correct. \n\nVerification: Original about issues for languages without spaces → replacement about failure to handle punctuation → interpretation matches 'ignores punctuation entirely' → answer changes from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Why is splitting text by spaces (text.split(\" \")) considered an insufficient tokenizer?"
+    },
+    {
+      "question_number": 8,
+      "question_type": "MCQ",
+      "stem_text": "Which of the following is NOT listed as a common sequence tagging task?",
+      "options": {
+        "A": "Part-of-speech tagging",
+        "B": "Named Entity Recognition",
+        "C": "Dependency parsing",
+        "D": "Sentiment analysis"
+      },
+      "gold_answer": "C",
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "Which of the following is NOT listed as a common sequence tagging task?",
+          "original_substring": "Which of the following is NOT listed as a common sequence tagging task?",
+          "replacement_substring": "Which of the following is listed as a common task that assigns parts of speech to tokens?",
+          "start_pos": 0,
+          "end_pos": 74,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem now asks for a common task that assigns POS tags, which is option A. Dependency parsing in option C was originally the non-sequence-tagging task, but here the focus is on POS tagging as a common tagging task, so C becomes wrong and A is correct. \n\nVerification: Original asks for task NOT common for sequence tagging → replacement asks for a listed common POS tagging task → interpretation aligns with 'Part-of-speech tagging' → answer shifts from C to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "Which of the following is NOT listed as a common sequence tagging task?",
+          "original_substring": "Which of the following is NOT listed as a common sequence tagging task?",
+          "replacement_substring": "Which of the following is listed as a common sequence tagging task involving entities?",
+          "start_pos": 0,
+          "end_pos": 74,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks for a common tagging task that involves entities, which is Named Entity Recognition in option B. Dependency parsing in option C is not the entity-focused tagging task being requested and thus is not correct under this wording. \n\nVerification: Original about task not common for sequence tagging → replacement about entity-focused sequence tagging → interpretation points to 'Named Entity Recognition' → answer moves from C to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "Which of the following is NOT listed as a common sequence tagging task?",
+          "original_substring": "Which of the following is NOT listed as a common sequence tagging task?",
+          "replacement_substring": "Which of the following is listed as a sentiment-related sequence tagging task?",
+          "start_pos": 0,
+          "end_pos": 74,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem asks for a sentiment-related tagging task, which corresponds to sentiment analysis in option D. Dependency parsing in option C does not describe a sentiment task and thus becomes incorrect for this stem. \n\nVerification: Original about non-common sequence tagging task → replacement about sentiment-oriented tagging → interpretation matches 'Sentiment analysis' → answer changes from C to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which of the following is NOT listed as a common sequence tagging task?"
+    },
+    {
+      "question_number": 9,
+      "question_type": "MCQ",
+      "stem_text": "What is a common limitation of BIO tagging for Named Entity Recognition?",
+      "options": {
+        "A": "It cannot represent overlapping or nested entities",
+        "B": "It requires too many labels",
+        "C": "It does not support multiple entity types",
+        "D": "It ignores entity boundaries"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "What is a common limitation of BIO tagging for Named Entity Recognition?",
+          "original_substring": "What is a common limitation of BIO tagging for Named Entity Recognition?",
+          "replacement_substring": "Which limitation claims that BIO tagging requires too many distinct labels for entities?",
+          "start_pos": 0,
+          "end_pos": 76,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks for the limitation that BIO requires too many labels, which is option B. Option A about overlapping or nested entities is no longer mentioned, so it ceases to be the answer. \n\nVerification: Original about inability to represent overlaps → replacement about excessive number of labels → interpretation fits 'requires too many labels' → answer shifts from A to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "What is a common limitation of BIO tagging for Named Entity Recognition?",
+          "original_substring": "What is a common limitation of BIO tagging for Named Entity Recognition?",
+          "replacement_substring": "Which limitation states that BIO tagging cannot support multiple different entity types?",
+          "start_pos": 0,
+          "end_pos": 76,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem now asks for the claim that BIO cannot support multiple entity types, corresponding to option C. The original true limitation in option A about overlapping entities is no longer referenced, so A becomes wrong. \n\nVerification: Original about nested or overlapping entities → replacement about supporting multiple entity types → interpretation matches 'does not support multiple entity types' → answer moves from A to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "What is a common limitation of BIO tagging for Named Entity Recognition?",
+          "original_substring": "What is a common limitation of BIO tagging for Named Entity Recognition?",
+          "replacement_substring": "Which limitation suggests that BIO tagging ignores all entity boundaries in text?",
+          "start_pos": 0,
+          "end_pos": 76,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem asks for the limitation that BIO ignores all entity boundaries, which is option D. Option A instead says BIO cannot represent overlapping or nested entities, which involves boundaries but not ignoring them, so A is no longer correct. \n\nVerification: Original about representing overlaps/nesting → replacement about ignoring boundaries entirely → interpretation aligns with 'ignores entity boundaries' → answer changes from A to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is a common limitation of BIO tagging for Named Entity Recognition?"
+    },
+    {
+      "question_number": 10,
+      "question_type": "MCQ",
+      "stem_text": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?",
+      "options": {
+        "A": "Speed vs accuracy",
+        "B": "Tokenized sequence length vs vocabulary size",
+        "C": "Precision vs recall",
+        "D": "Memory vs computation"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?",
+          "original_substring": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?",
+          "replacement_substring": "When comparing different tokenization granularities, which trade-off involves speed and accuracy?",
+          "start_pos": 0,
+          "end_pos": 129,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem asks for a trade-off framed as speed versus accuracy, which is option A. The original correct trade-off between sequence length and vocabulary size (option B) is not mentioned now, so B becomes incorrect. \n\nVerification: Original about char vs sentence tokenization trade-off length vs vocab → replacement about generic speed vs accuracy trade-off → interpretation matches 'Speed vs accuracy' → answer shifts from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?",
+          "original_substring": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?",
+          "replacement_substring": "In designing an evaluation for a classifier, which trade-off is typically framed as precision versus recall?",
+          "start_pos": 0,
+          "end_pos": 129,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem now talks about evaluating a classifier and asks for the precision–recall trade-off, which is option C. The tokenization-related length vs vocabulary trade-off in option B is irrelevant under this wording and thus incorrect. \n\nVerification: Original about tokenization level trade-off → replacement about classifier evaluation trade-off → interpretation focuses on 'Precision vs recall' → answer moves from B to C.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?",
+          "original_substring": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?",
+          "replacement_substring": "When optimizing a model, which trade-off is commonly discussed as memory usage versus computation time?",
+          "start_pos": 0,
+          "end_pos": 129,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem asks about a trade-off between memory usage and computation time, which is option D. The original tokenization concern about sequence length and vocabulary size is not referenced, so option B is no longer correct. \n\nVerification: Original about tokenization granularity → replacement about model optimization resource trade-off → interpretation matches 'Memory vs computation' → answer changes from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-D5pYSleqt3Z97M8O4AyqMOhLOq4hz",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1770282188,
+            "finish_reason": "stop",
+            "prompt_tokens": 2795,
+            "completion_tokens": 5237,
+            "total_tokens": 8032,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?"
+    }
+  ],
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260205_020251_c5e13d/input/CSE476_Quiz1.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260205_020251_c5e13d/uploads/CSE476_Quiz1.pdf",
+    "layout_json": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260205_020251_c5e13d/input/layout.json",
+    "page_images": [
+      "page_images/page_1.png",
+      "page_images/page_2.png",
+      "page_images/page_3.png"
+    ]
+  },
+  "title_text": "CSE-476: Introduction to Natural Language Processing",
+  "subtitle_text": "Quiz 1",
+  "section_title": "Multiple Choice Questions (Single correct)",
+  "instructions_text": "Instructions: Select the correct option with a short explanation.",
+  "geometry": null,
+  "document_class_options": null,
+  "enumerate_label": "Q\\arabic*.",
+  "logo_path": "logo.png",
+  "logo_width": "2.5cm",
+  "logo_position": null
+}

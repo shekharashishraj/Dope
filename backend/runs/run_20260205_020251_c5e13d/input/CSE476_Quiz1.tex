@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\title{CSE-476: Introduction to Natural Language Processing}
+\date{}
+\begin{document}
+\includegraphics[width=3cm]{logo.png}
+
+\maketitle
+\textbf{Quiz 1}
+
+\section{Multiple Choice Questions (Single correct)}
+
+\textbf{Instructions:} Instructions: Select the correct option with a short explanation.
+
+\begin{enumerate}[leftmargin=*]
+  \item In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?
+    \textbf{A.} Beginning of an entity
+    \textbf{B.} Inside an entity
+    \textbf{C.} Outside any entity
+    \textbf{D.} Between two tokens
+
+  \item Which statement best describes a (plain) Markov chain in sequence tagging?
+    \textbf{A.} It uses only words (observations) and ignores labels
+    \textbf{B.} It is identical to an HMM
+    \textbf{C.} It models transitions between labels but does not consider the words
+    \textbf{D.} It models emissions P(word | label)
+
+  \item In a Hidden Markov Model (HMM) for NER, an emission probability is:
+    \textbf{A.} P(label | previous label)
+    \textbf{B.} P(label | word)
+    \textbf{C.} P(word | previous word)
+    \textbf{D.} P(word | label)
+
+  \item Which of the following best describes Semantic Role Labeling (SRL)?:
+    \textbf{A.} A task that identifies predicates in a sentence and labels roles of elements such as agent, theme, or location
+    \textbf{B.} A process that assigns grammatical roles like subject and object based on syntactic structure
+    \textbf{C.} A method that classifies named entities and links them to a knowledge base
+    \textbf{D.} A technique that labels words with their parts of speech and morphological features
+
+  \item Which of the following best describes Byte Pair Encoding (BPE)?
+    \textbf{A.} A technique that compresses text by replacing consecutive repeated characters with a count and a symbol
+    \textbf{B.} A tokenization method that iteratively merges the most frequent pair of symbols in a corpus
+    \textbf{C.} A tokenization method that splits text based on whitespace and punctuation
+    \textbf{D.} A character-level encoding scheme that assigns fixed-length binary codes to characters
+
+  \item Which of the following best describes the main goal of tokenization in NLP?
+    \textbf{A.} To label each token with a grammatical category
+    \textbf{B.} To convert text into a sequence of symbols suitable for modeling
+    \textbf{C.} To reduce vocabulary size to zero
+    \textbf{D.} To assign probabilities to sentences
+
+  \item Why is splitting text by spaces (text.split(" ")) considered an insufficient tokenizer?
+    \textbf{A.} It produces too many tokens
+    \textbf{B.} It does not work well for languages without explicit word boundaries
+    \textbf{C.} It cannot tokenize English at all
+    \textbf{D.} It ignores punctuation entirely
+
+  \item Which of the following is NOT listed as a common sequence tagging task?
+    \textbf{A.} Part-of-speech tagging
+    \textbf{B.} Named Entity Recognition
+    \textbf{C.} Dependency parsing
+    \textbf{D.} Sentiment analysis
+
+  \item What is a common limitation of BIO tagging for Named Entity Recognition?
+    \textbf{A.} It cannot represent overlapping or nested entities
+    \textbf{B.} It requires too many labels
+    \textbf{C.} It does not support multiple entity types
+    \textbf{D.} It ignores entity boundaries
+
+  \item When choosing between character-level tokenization and sentence-level tokenization, which trade-off must be considered?
+    \textbf{A.} Speed vs accuracy
+    \textbf{B.} Tokenized sequence length vs vocabulary size
+    \textbf{C.} Precision vs recall
+    \textbf{D.} Memory vs computation
+
+\end{enumerate}
+\end{document}

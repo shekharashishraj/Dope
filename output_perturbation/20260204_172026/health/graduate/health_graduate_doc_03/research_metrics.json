@@ -1,0 +1,66 @@
+{
+  "document_name": "health_graduate_doc_03",
+  "metrics": {
+    "by_question_type": {
+      "TF": {
+        "total_perturbations": 12,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 12,
+          "finish_reasons": {
+            "stop": 12
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 893.0,
+          "total_prompt_tokens": 10716,
+          "avg_completion_tokens": 347.5,
+          "total_completion_tokens": 4170,
+          "avg_total_tokens": 1240.5,
+          "total_tokens": 14886
+        },
+        "cost_analysis": {
+          "total_cost": 0.06849,
+          "input_cost": 0.02679,
+          "output_cost": 0.0417,
+          "cost_per_perturbation": 0.0057075
+        }
+      },
+      "LONG": {
+        "total_perturbations": 6,
+        "logprob_analysis": {},
+        "api_metadata_summary": {
+          "total_responses": 6,
+          "finish_reasons": {
+            "stop": 6
+          },
+          "truncation_rate": 0.0,
+          "filter_rate": 0.0,
+          "avg_prompt_tokens": 1064.5,
+          "total_prompt_tokens": 6387,
+          "avg_completion_tokens": 510.5,
+          "total_completion_tokens": 3063,
+          "avg_total_tokens": 1575.0,
+          "total_tokens": 9450
+        },
+        "cost_analysis": {
+          "total_cost": 0.0465975,
+          "input_cost": 0.015967500000000003,
+          "output_cost": 0.03063,
+          "cost_per_perturbation": 0.00776625
+        }
+      }
+    },
+    "overall": {
+      "total_perturbations": 18,
+      "total_questions": 12,
+      "questions_by_type": {
+        "MCQ": 5,
+        "TF": 5,
+        "LONG": 2
+      },
+      "truncation_rate": 0.0,
+      "filter_rate": 0.0
+    }
+  }
+}

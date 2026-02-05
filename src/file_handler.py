@@ -137,6 +137,12 @@ class FileHandler:
         # Save JSON using model_dump, but exclude logprobs (they're saved separately)
         # This keeps the main perturbation JSON file small and manageable
         data_dict = perturbed_data.model_dump(mode='json', exclude_none=False)
+
+        # Ensure file_paths is present and carries latex_file (and any layout/page images)
+        if "file_paths" not in data_dict or data_dict["file_paths"] is None:
+            data_dict["file_paths"] = {}
+        elif not isinstance(data_dict["file_paths"], dict):
+            data_dict["file_paths"] = dict(data_dict["file_paths"]) if hasattr(data_dict["file_paths"], "items") else {}
         
         # Remove logprobs from perturbations to reduce file size
         # Logprobs are already saved separately in logprobs/ folders

@@ -92,7 +92,7 @@ def apply_image_overlay_dual_layer(
             page_index = mapping.get('page_index')
             rect = _get_rect_from_mapping(mapping, original_doc, page_index)
             
-            if rect and rect.get_area() > 0:
+            if rect and not rect.is_empty:
                 # Determine page index from rect or mapping
                 if page_index is None:
                     # Try to find which page contains this rect
@@ -137,7 +137,7 @@ def apply_image_overlay_dual_layer(
                 # This captures the entire page as an image
                 logger.debug(f"[DualLayerOverlay] Page {page_index + 1}: Extracting pixmap from original PDF")
                 pix = original_page.get_pixmap(
-                    matrix=fitz.Matrix(1.5, 1.5),  # Higher resolution for better quality
+                    matrix=fitz.Matrix(2.0, 2.0),  # ~144 DPI (72 * 2.0)
                     alpha=False
                 )
                 

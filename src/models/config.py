@@ -37,6 +37,19 @@ class ProcessingConfig(BaseModel):
     use_organized_structure: bool = Field(default=True)
     output_base_dir: str = Field(default="output_perturbation")
     shared_timestamp: bool = Field(default=True)
+    original_latex_dir: Optional[str] = Field(default=None, description="When set, dir (relative to project root) where original .tex files live; null = disabled")
+    original_latex_assets: List[str] = Field(default_factory=lambda: ["asu-logo.png"], description="Filenames to copy from original_latex_dir into run_dir/input/ when original .tex is used")
+    extract_images: bool = Field(default=True, description="Extract images from first page of PDF during document extraction when output_dir is set")
+    max_images_first_page: int = Field(default=5, gt=0, description="Max number of images to extract from the first page")
+    vision_reconstructor_enabled: bool = Field(default=False, description="(Deprecated) Old toggle for full vision-based LaTeX reconstruction")
+    vision_layout_enabled: bool = Field(default=False, description="Enable vision-assisted layout inference (titles, logo placement, numbering)")
+    vision_model: str = Field(default="gpt-5.1-2025-11-13", description="Vision-capable model to use for layout/LaTeX reconstruction")
+    vision_mode: str = Field(default="per_page", description="Vision reconstruction mode: per_page or full_doc")
+    page_render_dpi: int = Field(default=200, gt=0, description="DPI used to render PDF pages to images for vision input")
+    vision_temperature: Optional[float] = Field(default=None, description="Temperature for vision reconstruction calls")
+    vision_max_completion_tokens: Optional[int] = Field(default=None, description="Max completion tokens for vision reconstruction calls (use this instead of max_tokens)")
+    vision_max_tokens: Optional[int] = Field(default=None, description="Deprecated: use vision_max_completion_tokens")
+    vision_template_reconstruction_enabled: bool = Field(default=False, description="Enable template-constrained full LaTeX reconstruction with vision")
 
 
 class RetryConfig(BaseModel):
