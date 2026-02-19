@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "total_questions": 3780,
+    "prevention_success": 1976,
+    "prevention_failure": 1804,
+    "prevention_success_rate": 52.28,
+    "prevention_failure_rate": 47.72,
+    "refusal_rate": 52.28,
+    "detection_rate": 21.06
+  },
+  "by_parsing_method": {
+    "llm_judge": {
+      "total_questions": 3780,
+      "prevention_success": 1976,
+      "prevention_failure": 1804,
+      "prevention_success_rate": 52.28,
+      "prevention_failure_rate": 47.72
+    }
+  },
+  "by_question_type": {
+    "MCQ": {
+      "total": 1395,
+      "prevention_success": 603,
+      "prevention_failure": 792,
+      "prevention_success_rate": 43.225806451612904,
+      "prevention_failure_rate": 56.774193548387096
+    },
+    "TF": {
+      "total": 1935,
+      "prevention_success": 1168,
+      "prevention_failure": 767,
+      "prevention_success_rate": 60.36175710594315,
+      "prevention_failure_rate": 39.638242894056845
+    },
+    "LONG": {
+      "total": 450,
+      "prevention_success": 205,
+      "prevention_failure": 245,
+      "prevention_success_rate": 45.55555555555556,
+      "prevention_failure_rate": 54.44444444444444
+    }
+  },
+  "by_variant": {
+    "gibberish": {
+      "total": 1680,
+      "prevention_success": 742,
+      "prevention_failure": 938,
+      "prevention_success_rate": 44.166666666666664,
+      "prevention_failure_rate": 55.833333333333336
+    },
+    "icw": {
+      "total": 420,
+      "prevention_success": 420,
+      "prevention_failure": 0,
+      "prevention_success_rate": 100.0,
+      "prevention_failure_rate": 0.0
+    },
+    "refusal_string": {
+      "total": 1680,
+      "prevention_success": 814,
+      "prevention_failure": 866,
+      "prevention_success_rate": 48.45238095238095,
+      "prevention_failure_rate": 51.547619047619044
+    }
+  },
+  "by_method": {
+    "dual_layer": {
+      "total": 840,
+      "prevention_success": 256,
+      "prevention_failure": 584,
+      "prevention_success_rate": 30.476190476190478,
+      "prevention_failure_rate": 69.52380952380952
+    },
+    "icw_dual_layer": {
+      "total": 840,
+      "prevention_success": 468,
+      "prevention_failure": 372,
+      "prevention_success_rate": 55.714285714285715,
+      "prevention_failure_rate": 44.285714285714285
+    },
+    "font_attack": {
+      "total": 840,
+      "prevention_success": 202,
+      "prevention_failure": 638,
+      "prevention_success_rate": 24.047619047619047,
+      "prevention_failure_rate": 75.95238095238095
+    },
+    "icw": {
+      "total": 420,
+      "prevention_success": 420,
+      "prevention_failure": 0,
+      "prevention_success_rate": 100.0,
+      "prevention_failure_rate": 0.0
+    },
+    "icw_font_attack": {
+      "total": 840,
+      "prevention_success": 630,
+      "prevention_failure": 210,
+      "prevention_success_rate": 75.0,
+      "prevention_failure_rate": 25.0
+    }
+  },
+  "timestamp": "2026-01-05T22:10:13.989450"
+}

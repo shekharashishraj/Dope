@@ -1,0 +1,111 @@
+{
+  "summary": {
+    "total_questions": 3780,
+    "prevention_success": 1411,
+    "prevention_failure": 2369,
+    "prevention_success_rate": 37.33,
+    "prevention_failure_rate": 62.67,
+    "refusal_rate": 37.33,
+    "detection_rate": 24.21
+  },
+  "by_parsing_method": {
+    "llm_judge": {
+      "total_questions": 3750,
+      "prevention_success": 1381,
+      "prevention_failure": 2369,
+      "prevention_success_rate": 36.83,
+      "prevention_failure_rate": 63.17
+    },
+    "regex": {
+      "total_questions": 30,
+      "prevention_success": 30,
+      "prevention_failure": 0,
+      "prevention_success_rate": 100.0,
+      "prevention_failure_rate": 0.0
+    }
+  },
+  "by_question_type": {
+    "MCQ": {
+      "total": 1395,
+      "prevention_success": 424,
+      "prevention_failure": 971,
+      "prevention_success_rate": 30.39426523297491,
+      "prevention_failure_rate": 69.60573476702508
+    },
+    "TF": {
+      "total": 1935,
+      "prevention_success": 841,
+      "prevention_failure": 1094,
+      "prevention_success_rate": 43.4625322997416,
+      "prevention_failure_rate": 56.53746770025839
+    },
+    "LONG": {
+      "total": 450,
+      "prevention_success": 146,
+      "prevention_failure": 304,
+      "prevention_success_rate": 32.44444444444444,
+      "prevention_failure_rate": 67.55555555555556
+    }
+  },
+  "by_variant": {
+    "gibberish": {
+      "total": 1680,
+      "prevention_success": 449,
+      "prevention_failure": 1231,
+      "prevention_success_rate": 26.726190476190474,
+      "prevention_failure_rate": 73.27380952380952
+    },
+    "refusal_string": {
+      "total": 1680,
+      "prevention_success": 839,
+      "prevention_failure": 841,
+      "prevention_success_rate": 49.94047619047619,
+      "prevention_failure_rate": 50.05952380952381
+    },
+    "icw": {
+      "total": 420,
+      "prevention_success": 123,
+      "prevention_failure": 297,
+      "prevention_success_rate": 29.28571428571429,
+      "prevention_failure_rate": 70.71428571428572
+    }
+  },
+  "by_method": {
+    "icw_dual_layer": {
+      "total": 840,
+      "prevention_success": 516,
+      "prevention_failure": 324,
+      "prevention_success_rate": 61.42857142857143,
+      "prevention_failure_rate": 38.57142857142858
+    },
+    "icw_font_attack": {
+      "total": 840,
+      "prevention_success": 167,
+      "prevention_failure": 673,
+      "prevention_success_rate": 19.88095238095238,
+      "prevention_failure_rate": 80.11904761904762
+    },
+    "font_attack": {
+      "total": 840,
+      "prevention_success": 202,
+      "prevention_failure": 638,
+      "prevention_success_rate": 24.047619047619047,
+      "prevention_failure_rate": 75.95238095238095
+    },
+    "dual_layer": {
+      "total": 840,
+      "prevention_success": 403,
+      "prevention_failure": 437,
+      "prevention_success_rate": 47.976190476190474,
+      "prevention_failure_rate": 52.023809523809526
+    },
+    "icw": {
+      "total": 420,
+      "prevention_success": 123,
+      "prevention_failure": 297,
+      "prevention_success_rate": 29.28571428571429,
+      "prevention_failure_rate": 70.71428571428572
+    }
+  },
+  "timestamp": "2026-01-05T22:10:19.720341"
+}

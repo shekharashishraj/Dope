@@ -90,13 +90,17 @@ class ResponseCollector:
             import time as time_module
             max_wait = 60
             wait_time = 0
+            logger.info(f"Waiting for file {file_id} to be processed (max {max_wait}s)...")
             while wait_time < max_wait:
                 file_status = self.client.files.retrieve(file_id)
+                logger.info(f"File status: {file_status.status} (waited {wait_time}s)")
                 if file_status.status == "processed":
-                    logger.info(f"✓ File processed")
+                    logger.info(f"✓ File processed after {wait_time}s")
                     break
                 time_module.sleep(2)
                 wait_time += 2
+            if wait_time >= max_wait:
+                logger.warning(f"File processing timeout after {max_wait}s, proceeding anyway")
         except Exception as e:
             logger.error(f"PDF upload via v1/files failed: {e}")
             raise

@@ -1,0 +1,518 @@
+{
+  "metadata": {
+    "description": "Model-wise refusal rates by question type and attack type",
+    "confidence_level": 0.95,
+    "models": [
+      "claude-opus-4-5",
+      "claude-sonnet-4-5",
+      "gpt-4o",
+      "gpt-5.1"
+    ]
+  },
+  "by_model": {
+    "claude-opus-4-5": {
+      "by_question_type": {
+        "LONG": {
+          "total_questions": 450,
+          "refused_count": 146,
+          "answered_count": 304,
+          "refusal_rate": 32.44,
+          "confidence_interval_95": {
+            "lower": 28.28,
+            "upper": 36.9
+          }
+        },
+        "MCQ": {
+          "total_questions": 1400,
+          "refused_count": 424,
+          "answered_count": 976,
+          "refusal_rate": 30.29,
+          "confidence_interval_95": {
+            "lower": 27.94,
+            "upper": 32.74
+          }
+        },
+        "TF": {
+          "total_questions": 1955,
+          "refused_count": 842,
+          "answered_count": 1113,
+          "refusal_rate": 43.07,
+          "confidence_interval_95": {
+            "lower": 40.89,
+            "upper": 45.28
+          }
+        }
+      },
+      "by_attack_type": {
+        "dual_layer_gibberish": {
+          "total_questions": 425,
+          "refused_count": 76,
+          "answered_count": 349,
+          "refusal_rate": 17.88,
+          "confidence_interval_95": {
+            "lower": 14.53,
+            "upper": 21.81
+          }
+        },
+        "dual_layer_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 327,
+          "answered_count": 93,
+          "refusal_rate": 77.86,
+          "confidence_interval_95": {
+            "lower": 73.64,
+            "upper": 81.57
+          }
+        },
+        "font_attack_gibberish": {
+          "total_questions": 425,
+          "refused_count": 100,
+          "answered_count": 325,
+          "refusal_rate": 23.53,
+          "confidence_interval_95": {
+            "lower": 19.74,
+            "upper": 27.79
+          }
+        },
+        "font_attack_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 103,
+          "answered_count": 317,
+          "refusal_rate": 24.52,
+          "confidence_interval_95": {
+            "lower": 20.65,
+            "upper": 28.86
+          }
+        },
+        "icw": {
+          "total_questions": 425,
+          "refused_count": 123,
+          "answered_count": 302,
+          "refusal_rate": 28.94,
+          "confidence_interval_95": {
+            "lower": 24.83,
+            "upper": 33.43
+          }
+        },
+        "icw_dual_layer_gibberish": {
+          "total_questions": 425,
+          "refused_count": 177,
+          "answered_count": 248,
+          "refusal_rate": 41.65,
+          "confidence_interval_95": {
+            "lower": 37.06,
+            "upper": 46.39
+          }
+        },
+        "icw_dual_layer_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 339,
+          "answered_count": 81,
+          "refusal_rate": 80.71,
+          "confidence_interval_95": {
+            "lower": 76.67,
+            "upper": 84.2
+          }
+        },
+        "icw_font_attack_gibberish": {
+          "total_questions": 425,
+          "refused_count": 97,
+          "answered_count": 328,
+          "refusal_rate": 22.82,
+          "confidence_interval_95": {
+            "lower": 19.09,
+            "upper": 27.05
+          }
+        },
+        "icw_font_attack_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 70,
+          "answered_count": 350,
+          "refusal_rate": 16.67,
+          "confidence_interval_95": {
+            "lower": 13.41,
+            "upper": 20.53
+          }
+        }
+      }
+    },
+    "claude-sonnet-4-5": {
+      "by_question_type": {
+        "LONG": {
+          "total_questions": 450,
+          "refused_count": 205,
+          "answered_count": 245,
+          "refusal_rate": 45.56,
+          "confidence_interval_95": {
+            "lower": 41.01,
+            "upper": 50.18
+          }
+        },
+        "MCQ": {
+          "total_questions": 1395,
+          "refused_count": 603,
+          "answered_count": 792,
+          "refusal_rate": 43.23,
+          "confidence_interval_95": {
+            "lower": 40.65,
+            "upper": 45.84
+          }
+        },
+        "TF": {
+          "total_questions": 1935,
+          "refused_count": 1168,
+          "answered_count": 767,
+          "refusal_rate": 60.36,
+          "confidence_interval_95": {
+            "lower": 58.16,
+            "upper": 62.52
+          }
+        }
+      },
+      "by_attack_type": {
+        "dual_layer_gibberish": {
+          "total_questions": 420,
+          "refused_count": 120,
+          "answered_count": 300,
+          "refusal_rate": 28.57,
+          "confidence_interval_95": {
+            "lower": 24.46,
+            "upper": 33.07
+          }
+        },
+        "dual_layer_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 136,
+          "answered_count": 284,
+          "refusal_rate": 32.38,
+          "confidence_interval_95": {
+            "lower": 28.08,
+            "upper": 37.0
+          }
+        },
+        "font_attack_gibberish": {
+          "total_questions": 420,
+          "refused_count": 108,
+          "answered_count": 312,
+          "refusal_rate": 25.71,
+          "confidence_interval_95": {
+            "lower": 21.77,
+            "upper": 30.1
+          }
+        },
+        "font_attack_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 94,
+          "answered_count": 326,
+          "refusal_rate": 22.38,
+          "confidence_interval_95": {
+            "lower": 18.66,
+            "upper": 26.61
+          }
+        },
+        "icw": {
+          "total_questions": 420,
+          "refused_count": 420,
+          "answered_count": 0,
+          "refusal_rate": 100.0,
+          "confidence_interval_95": {
+            "lower": 99.09,
+            "upper": 100.0
+          }
+        },
+        "icw_dual_layer_gibberish": {
+          "total_questions": 420,
+          "refused_count": 186,
+          "answered_count": 234,
+          "refusal_rate": 44.29,
+          "confidence_interval_95": {
+            "lower": 39.61,
+            "upper": 49.07
+          }
+        },
+        "icw_dual_layer_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 282,
+          "answered_count": 138,
+          "refusal_rate": 67.14,
+          "confidence_interval_95": {
+            "lower": 62.51,
+            "upper": 71.46
+          }
+        },
+        "icw_font_attack_gibberish": {
+          "total_questions": 420,
+          "refused_count": 328,
+          "answered_count": 92,
+          "refusal_rate": 78.1,
+          "confidence_interval_95": {
+            "lower": 73.89,
+            "upper": 81.79
+          }
+        },
+        "icw_font_attack_refusal_string": {
+          "total_questions": 420,
+          "refused_count": 302,
+          "answered_count": 118,
+          "refusal_rate": 71.9,
+          "confidence_interval_95": {
+            "lower": 67.42,
+            "upper": 75.99
+          }
+        }
+      }
+    },
+    "gpt-4o": {
+      "by_question_type": {
+        "LONG": {
+          "total_questions": 2223,
+          "refused_count": 1611,
+          "answered_count": 612,
+          "refusal_rate": 72.47,
+          "confidence_interval_95": {
+            "lower": 70.58,
+            "upper": 74.29
+          }
+        },
+        "MCQ": {
+          "total_questions": 6147,
+          "refused_count": 4237,
+          "answered_count": 1910,
+          "refusal_rate": 68.93,
+          "confidence_interval_95": {
+            "lower": 67.76,
+            "upper": 70.07
+          }
+        },
+        "TF": {
+          "total_questions": 6903,
+          "refused_count": 4996,
+          "answered_count": 1907,
+          "refusal_rate": 72.37,
+          "confidence_interval_95": {
+            "lower": 71.31,
+            "upper": 73.42
+          }
+        }
+      },
+      "by_attack_type": {
+        "dual_layer_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 337,
+          "answered_count": 1360,
+          "refusal_rate": 19.86,
+          "confidence_interval_95": {
+            "lower": 18.03,
+            "upper": 21.82
+          }
+        },
+        "dual_layer_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 1439,
+          "answered_count": 258,
+          "refusal_rate": 84.8,
+          "confidence_interval_95": {
+            "lower": 83.01,
+            "upper": 86.43
+          }
+        },
+        "font_attack_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 460,
+          "answered_count": 1237,
+          "refusal_rate": 27.11,
+          "confidence_interval_95": {
+            "lower": 25.05,
+            "upper": 29.27
+          }
+        },
+        "font_attack_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 818,
+          "answered_count": 879,
+          "refusal_rate": 48.2,
+          "confidence_interval_95": {
+            "lower": 45.83,
+            "upper": 50.58
+          }
+        },
+        "icw": {
+          "total_questions": 1697,
+          "refused_count": 1606,
+          "answered_count": 91,
+          "refusal_rate": 94.64,
+          "confidence_interval_95": {
+            "lower": 93.46,
+            "upper": 95.61
+          }
+        },
+        "icw_dual_layer_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 1597,
+          "answered_count": 100,
+          "refusal_rate": 94.11,
+          "confidence_interval_95": {
+            "lower": 92.88,
+            "upper": 95.13
+          }
+        },
+        "icw_dual_layer_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 1528,
+          "answered_count": 169,
+          "refusal_rate": 90.04,
+          "confidence_interval_95": {
+            "lower": 88.52,
+            "upper": 91.38
+          }
+        },
+        "icw_font_attack_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 1579,
+          "answered_count": 118,
+          "refusal_rate": 93.05,
+          "confidence_interval_95": {
+            "lower": 91.74,
+            "upper": 94.16
+          }
+        },
+        "icw_font_attack_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 1480,
+          "answered_count": 217,
+          "refusal_rate": 87.21,
+          "confidence_interval_95": {
+            "lower": 85.54,
+            "upper": 88.72
+          }
+        }
+      }
+    },
+    "gpt-5.1": {
+      "by_question_type": {
+        "LONG": {
+          "total_questions": 2223,
+          "refused_count": 1860,
+          "answered_count": 363,
+          "refusal_rate": 83.67,
+          "confidence_interval_95": {
+            "lower": 82.08,
+            "upper": 85.15
+          }
+        },
+        "MCQ": {
+          "total_questions": 6147,
+          "refused_count": 5046,
+          "answered_count": 1101,
+          "refusal_rate": 82.09,
+          "confidence_interval_95": {
+            "lower": 81.11,
+            "upper": 83.03
+          }
+        },
+        "TF": {
+          "total_questions": 6903,
+          "refused_count": 5678,
+          "answered_count": 1225,
+          "refusal_rate": 82.25,
+          "confidence_interval_95": {
+            "lower": 81.33,
+            "upper": 83.14
+          }
+        }
+      },
+      "by_attack_type": {
+        "dual_layer_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 829,
+          "answered_count": 868,
+          "refusal_rate": 48.85,
+          "confidence_interval_95": {
+            "lower": 46.48,
+            "upper": 51.23
+          }
+        },
+        "dual_layer_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 1571,
+          "answered_count": 126,
+          "refusal_rate": 92.58,
+          "confidence_interval_95": {
+            "lower": 91.23,
+            "upper": 93.73
+          }
+        },
+        "font_attack_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 972,
+          "answered_count": 725,
+          "refusal_rate": 57.28,
+          "confidence_interval_95": {
+            "lower": 54.91,
+            "upper": 59.61
+          }
+        },
+        "font_attack_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 807,
+          "answered_count": 890,
+          "refusal_rate": 47.55,
+          "confidence_interval_95": {
+            "lower": 45.19,
+            "upper": 49.93
+          }
+        },
+        "icw": {
+          "total_questions": 1697,
+          "refused_count": 1697,
+          "answered_count": 0,
+          "refusal_rate": 100.0,
+          "confidence_interval_95": {
+            "lower": 99.77,
+            "upper": 100.0
+          }
+        },
+        "icw_dual_layer_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 1649,
+          "answered_count": 48,
+          "refusal_rate": 97.17,
+          "confidence_interval_95": {
+            "lower": 96.27,
+            "upper": 97.86
+          }
+        },
+        "icw_dual_layer_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 1690,
+          "answered_count": 7,
+          "refusal_rate": 99.59,
+          "confidence_interval_95": {
+            "lower": 99.15,
+            "upper": 99.8
+          }
+        },
+        "icw_font_attack_gibberish": {
+          "total_questions": 1697,
+          "refused_count": 1685,
+          "answered_count": 12,
+          "refusal_rate": 99.29,
+          "confidence_interval_95": {
+            "lower": 98.77,
+            "upper": 99.6
+          }
+        },
+        "icw_font_attack_refusal_string": {
+          "total_questions": 1697,
+          "refused_count": 1684,
+          "answered_count": 13,
+          "refusal_rate": 99.23,
+          "confidence_interval_95": {
+            "lower": 98.69,
+            "upper": 99.55
+          }
+        }
+      }
+    }
+  }
+}
