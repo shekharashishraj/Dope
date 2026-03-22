@@ -1,0 +1,396 @@
+{
+  "docid": "SQ3",
+  "domain": "upload",
+  "academic_level": "unknown",
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "In a standard RNN, what is the primary purpose of the “hidden state”?",
+      "options": {
+        "A": "To store the final output of the entire sequence.",
+        "B": "To act as a memory that carries information from previous time steps",
+        "C": "To calculate the loss function for the current word",
+        "D": "To normalize the input embeddings"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "original_substring": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "replacement_substring": "In a standard RNN, which option denotes the final output of the entire sequence?",
+          "start_pos": 0,
+          "end_pos": 84,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem now asks which option corresponds to the final output of the entire sequence, which matches option A, not the original correct option B about memory across time steps. B is therefore incorrect under the new question, while A is correct.`,`verification`:`Original asks about hidden state memory (B) → replacement asks about final sequence output → interpreting options, only A mentions final output of entire sequence → answer shifts from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In a standard RNN, what is the primary purpose of the ``hidden state''?"
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+      "options": {
+        "A": "To ensure the output values sum to 1, representing a probability distribution",
+        "B": "To prevent the gradients from exploding",
+        "C": "To increase the speed of the training process",
+        "D": "To allow the model to handle variable-length sequences"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "original_substring": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "replacement_substring": "In training deep networks, which option describes a method to prevent gradients from exploding?",
+          "start_pos": 0,
+          "end_pos": 89,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks for a method to prevent exploding gradients, which corresponds to option B, not to Softmax’s probability normalization in option A. Since A is irrelevant to gradient explosion, A becomes incorrect and B becomes correct.`,`verification`:`Original asks why Softmax is used (A) → replacement asks about preventing exploding gradients → reader looks for option mentioning that effect → option B matches → answer shifts from A to B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?"
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+      "options": {
+        "A": "They cannot use embeddings",
+        "B": "They assume fixed input size and struggle with temporal order",
+        "C": "They cannot be trained with gradient descent",
+        "D": "They do not use activation functions"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "original_substring": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "replacement_substring": "In basic neural networks, which option correctly states that they cannot use embeddings?",
+          "start_pos": 0,
+          "end_pos": 73,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem explicitly asks which option states that networks cannot use embeddings, which is exactly the text of option A. The original correct option B about fixed input size no longer answers the new question, so A becomes correct and B becomes incorrect.`,`verification`:`Original asks key limitation (B) → replacement asks for statement claiming networks cannot use embeddings → only A contains that claim → reader selects A, not B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?"
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "What is the purpose of the “Forward Pass” in training?",
+      "options": {
+        "A": "To update weights based on the loss",
+        "B": "To calculate the predicted output and compute the loss",
+        "C": "To unroll the network into a sequence",
+        "D": "To calculate the gradient for each parameter"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "What is the purpose of the ``Forward Pass'' in training?",
+          "original_substring": "What is the purpose of the ``Forward Pass'' in training?",
+          "replacement_substring": "During gradient-based learning, which step is responsible for updating the weights?",
+          "start_pos": 0,
+          "end_pos": 55,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem asks which step updates the weights, which corresponds to option A, not to option B that describes computing predictions and loss. Thus, A becomes the correct choice and B no longer matches the question.`,`verification`:`Original asks purpose of forward pass (B) → replacement asks which step updates weights → only A mentions updating weights → answer shifts from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is the purpose of the ``Forward Pass'' in training?"
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+      "options": {
+        "A": "They are randomly re-initialized at every step",
+        "B": "They are reused across timestamps",
+        "C": "They increase in value as the sequence progresses",
+        "D": "Only the output weight V is reused"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "What is true about the weights $U$, $V$, and $W$ across different timestamps in an RNN?",
+          "original_substring": "What is true about the weights $U$, $V$, and $W$ across different timestamps in an RNN?",
+          "replacement_substring": "In some unstable training setups, which option claims the weights are randomly re-initialized at every step?",
+          "start_pos": 0,
+          "end_pos": 92,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem asks which option claims random re-initialization at every step, directly pointing to the text of option A. The original correct statement about reuse across timestamps in B no longer answers this new question, so A becomes correct.`,`verification`:`Original asks true fact about RNN weights (B) → replacement asks for option that claims per-step re-initialization → only A says this → reader selects A instead of B.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is true about the weights $U$, $V$, and $W$ across different timestamps in an RNN?"
+    },
+    {
+      "question_number": 6,
+      "question_type": "MCQ",
+      "stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+      "options": {
+        "A": "A deeper network with more representational power",
+        "B": "A single linear model",
+        "C": "A recurrent neural network",
+        "D": "A decision tree"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "original_substring": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "replacement_substring": "Among the options, which one describes a model that uses hierarchical if–then rules for prediction?",
+          "start_pos": 0,
+          "end_pos": 120,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem asks for a model based on hierarchical if–then rules, which corresponds to a decision tree in option D. The original correct option B about a single linear model no longer fits the new description, so D is now correct.`,`verification`:`Original asks about linear activations equivalence (B) → replacement asks for hierarchical if–then rule model → decision tree (D) matches → answer shifts from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?"
+    },
+    {
+      "question_number": 7,
+      "question_type": "MCQ",
+      "stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+      "options": {
+        "A": "The next word given the predicted history",
+        "B": "The next word given the ground-truth history",
+        "C": "The current word given itself",
+        "D": "All words simultaneously"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "original_substring": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "replacement_substring": "In fully autoregressive generation without teacher forcing, the model predicts:",
+          "start_pos": 0,
+          "end_pos": 90,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem now describes autoregressive generation without teacher forcing, where the model uses its own predicted history, matching option A. Option B about ground-truth history is no longer correct under this modified setting.`,`verification`:`Original asks about teacher forcing (B) → replacement specifies no teacher forcing and autoregressive use of predictions → this matches A → answer moves from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:"
+    },
+    {
+      "question_number": 8,
+      "question_type": "MCQ",
+      "stem_text": "In an RNN, the hidden state at time t depends on:",
+      "options": {
+        "A": "Only the input at time t",
+        "B": "Only the hidden state at time t −1",
+        "C": "Both the input at time t and the hidden state at time t −1",
+        "D": "All future inputs"
+      },
+      "gold_answer": "C",
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "In an RNN, the hidden state at time $t$ depends on:",
+          "original_substring": "In an RNN, the hidden state at time $t$ depends on:",
+          "replacement_substring": "In a memoryless feed-forward model processing sequences independently, the current representation depends on:",
+          "start_pos": 0,
+          "end_pos": 55,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem refers to a memoryless feed-forward model where each position depends only on its own input, matching option A. The original correct statement C about dependence on both input and previous hidden state no longer applies.`,`verification`:`Original asks about RNN hidden state dependence (C) → replacement asks about memoryless model with independent processing → only A (only input at time t) fits → answer shifts from C to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In an RNN, the hidden state at time $t$ depends on:"
+    },
+    {
+      "question_number": 9,
+      "question_type": "MCQ",
+      "stem_text": "Consider a neural network layer defined as: h = f(Wx). The input vector x has shape (n0 × 1), and the output vector h has shape (n1 × 1). What must be the shape of W?",
+      "options": {
+        "A": "(n0 × n1)",
+        "B": "(n1 × n0)",
+        "C": "(n0 × 1)",
+        "D": "(1 × n1)"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "original_substring": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "replacement_substring": "If we mistakenly define multiplication as $x^\\top W$ producing a row vector of shape $(1 \\times n_1)$, what shape must $W$ have?",
+          "start_pos": 0,
+          "end_pos": 178,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem defines the operation as x^T W giving a (1 × n1) row vector, which implies W must be (n0 × n1), but since x^T is (1 × n0), the product yields (1 × n1), so the answer corresponding to a row output is option D with shape (1 × n1). The original correct (n1 × n0) in B no longer matches this altered setup.`,`verification`:`Original uses Wx with shapes implying (n1 × n0) for W (B) → replacement switches to x^T W yielding (1 × n1) → under this, W must align with producing a (1 × n1) output as in D → answer changes from B to D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?"
+    },
+    {
+      "question_number": 10,
+      "question_type": "MCQ",
+      "stem_text": "What is the main role of backpropagation in neural network training?",
+      "options": {
+        "A": "To compute predictions during inference",
+        "B": "To calculate gradients of the loss with respect to parameters",
+        "C": "To initialize weights randomly",
+        "D": "To normalize input data"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "What is the main role of backpropagation in neural network training?",
+          "original_substring": "What is the main role of backpropagation in neural network training?",
+          "replacement_substring": "During model deployment in production, which option describes the main task performed?",
+          "start_pos": 0,
+          "end_pos": 73,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem asks about deployment in production, where the main task is computing predictions during inference, matching option A. Option B about calculating gradients is a training-time concept and thus becomes incorrect.`,`verification`:`Original asks role of backprop (B) → replacement asks about what happens during deployment → inference and prediction (A) is correct → answer shifts from B to A.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DGBbKO0hlE1DWSgYplEyVuTkcqATD",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772750214,
+            "finish_reason": "stop",
+            "prompt_tokens": 2879,
+            "completion_tokens": 1960,
+            "total_tokens": 4839,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is the main role of backpropagation in neural network training?"
+    }
+  ],
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260305_153632_92f6e5/input/SQ3.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260305_153632_92f6e5/uploads/SQ3.pdf",
+    "layout_json": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260305_153632_92f6e5/input/layout.json",
+    "page_images": [
+      "page_images/page_1.png",
+      "page_images/page_2.png"
+    ]
+  },
+  "title_text": "CSE-476: Introduction to Natural Language Processing",
+  "subtitle_text": "Quiz 3",
+  "section_title": "Multiple Choice Questions (Single correct)",
+  "instructions_text": "Instructions: Select the correct option with a short explanation.",
+  "geometry": null,
+  "document_class_options": null,
+  "enumerate_label": "Q\\arabic*.",
+  "logo_path": "logo.png",
+  "logo_width": "2.5cm",
+  "logo_position": null
+}

@@ -1,0 +1,166 @@
+{
+  "docid": "CSE476_Quiz2",
+  "domain": "upload",
+  "academic_level": "unknown",
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "What is the main difference between generative and discriminative classifiers?",
+      "options": {
+        "A": "Generative models model P(x, y), while discriminative models model P(y | x)",
+        "B": "Discriminative models learn the data distribution and use that knowledge for classification",
+        "C": "Discriminative models require no training data",
+        "D": "Generative models are less explainable"
+      },
+      "gold_answer": "A",
+      "perturbations": [],
+      "latex_stem_text": "What is the main difference between generative and discriminative classifiers?"
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Which technique is used to mitigate overfitting by penalizing large weights?",
+      "options": {
+        "A": "Laplace smoothing",
+        "B": "Regularization",
+        "C": "TF-IDF",
+        "D": "Softmax normalization"
+      },
+      "gold_answer": "B",
+      "perturbations": [],
+      "latex_stem_text": "Which technique is used to mitigate overfitting by penalizing large weights?"
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "What is the limitation of the perceptron algorithm?",
+      "options": {
+        "A": "It cannot use vector representations",
+        "B": "It only works for linearly separable data",
+        "C": "It requires probabilistic outputs",
+        "D": "It cannot be trained with gradient descent"
+      },
+      "gold_answer": "B",
+      "perturbations": [],
+      "latex_stem_text": "What is the limitation of the perceptron algorithm?"
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "Why is Laplace smoothing important?",
+      "options": {
+        "A": "It improves cosine similarity",
+        "B": "It reduces dimensionality",
+        "C": "It avoids zero probabilities for unseen words",
+        "D": "It speeds up gradient descent"
+      },
+      "gold_answer": "C",
+      "perturbations": [],
+      "latex_stem_text": "Why is Laplace smoothing important?"
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "What happens in stochastic gradient descent (SGD) compared to gradient descent (GD)?",
+      "options": {
+        "A": "SGD updates weights using the entire dataset every step",
+        "B": "SGD updates weights using one or a subset of training examples",
+        "C": "GD converges faster because updates are noisier",
+        "D": "SGD cannot be used with neural networks"
+      },
+      "gold_answer": "B",
+      "perturbations": [],
+      "latex_stem_text": "What happens in stochastic gradient descent (SGD) compared to gradient descent (GD)?"
+    },
+    {
+      "question_number": 6,
+      "question_type": "MCQ",
+      "stem_text": "What is the core intuition behind word embeddings?",
+      "options": {
+        "A": "Words are represented by their dictionary definitions",
+        "B": "Words that appear in similar contexts have similar meanings",
+        "C": "Words are clustered by part of speech",
+        "D": "Words are ranked by frequency"
+      },
+      "gold_answer": "B",
+      "perturbations": [],
+      "latex_stem_text": "What is the core intuition behind word embeddings?"
+    },
+    {
+      "question_number": 7,
+      "question_type": "MCQ",
+      "stem_text": "What is the primary purpose of the Softmax function?",
+      "options": {
+        "A": "To penalize large model weights",
+        "B": "To reduce feature dimensionality",
+        "C": "To select the class with the largest raw score without normalization",
+        "D": "To convert raw class scores into a valid probability distribution"
+      },
+      "gold_answer": "D",
+      "perturbations": [],
+      "latex_stem_text": "What is the primary purpose of the Softmax function?"
+    },
+    {
+      "question_number": 8,
+      "question_type": "MCQ",
+      "stem_text": "In the perceptron algorithm, when are the weights updated?",
+      "options": {
+        "A": "After every training example",
+        "B": "Only when the prediction is correct",
+        "C": "Only when the prediction is incorrect",
+        "D": "Only after one full pass over the data"
+      },
+      "gold_answer": "C",
+      "perturbations": [],
+      "latex_stem_text": "In the perceptron algorithm, when are the weights updated?"
+    },
+    {
+      "question_number": 9,
+      "question_type": "MCQ",
+      "stem_text": "What is the main goal of TF-IDF weighting?",
+      "options": {
+        "A": "Increase the weight of very common words",
+        "B": "Represent word order",
+        "C": "Convert sparse vectors into dense embeddings",
+        "D": "Highlight words that are frequent in a document but rare across documents"
+      },
+      "gold_answer": "D",
+      "perturbations": [],
+      "latex_stem_text": "What is the main goal of TF-IDF weighting?"
+    },
+    {
+      "question_number": 10,
+      "question_type": "MCQ",
+      "stem_text": "Why is cosine similarity preferred over dot product when comparing word vectors?",
+      "options": {
+        "A": "It ignores vector length while calculating similarity",
+        "B": "It increases the influence of high-frequency words",
+        "C": "It converts similarity scores into probabilities",
+        "D": "It reduces the dimensionality of word embeddings"
+      },
+      "gold_answer": "A",
+      "perturbations": [],
+      "latex_stem_text": "Why is cosine similarity preferred over dot product when comparing word vectors?"
+    }
+  ],
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260306_155653_617d8d/input/CSE476_Quiz2.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260306_155653_617d8d/uploads/CSE476_Quiz2.pdf",
+    "layout_json": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260306_155653_617d8d/input/layout.json",
+    "page_images": [
+      "page_images/page_1.png",
+      "page_images/page_2.png"
+    ]
+  },
+  "title_text": "CSE-476: Introduction to Natural Language Processing",
+  "subtitle_text": "Quiz 2",
+  "section_title": "Multiple Choice Questions (Single correct)",
+  "instructions_text": "Instructions: Select the correct option with a short explanation.",
+  "geometry": null,
+  "document_class_options": null,
+  "enumerate_label": "Q\\arabic*.",
+  "logo_path": "logo.png",
+  "logo_width": "2.5cm",
+  "logo_position": null
+}

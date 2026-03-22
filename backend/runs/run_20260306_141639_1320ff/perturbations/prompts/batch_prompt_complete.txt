@@ -1,0 +1,236 @@
+================================================================================
+COMPLETE BATCH PROMPT SENT TO API
+================================================================================
+
+
+## SITUATION:
+We are creating substitue questions by looking at the options of the original question in MCQ questions 
+for making more question using same options of the original question.
+It's not necessary to change parts of the question/statement only, replacing it entirely
+is acceptable given it's answer is being changed towards another option which it must do .
+
+## Role:
+You are an expert at generating question substitutions for academic multiple-choice questions 
+that cause predictable answer shifts to one of the other 3 options. Let's say the correct answer is A) and the other options are B, C, D.
+Your accuracy is critical.
+You have to come up with clever and natural question substitutions that are semantically meaningful 
+and cause predictable answer shifts to one of the other 3 options (A, B, C, D).
+
+## Task:
+You also know the correct answer for each question.
+## INSTRUCTIONS (apply to ALL questions below)
+**Strategy:** 
+1) Replacement of the question with a statement true about one of the other 3 options (replace only the question stem, do not edit the options)
+2) It can be ANY semantically meaningful statement true about one of the other 3 options.
+3) It should not be in any way related to correct option.
+4) It must contradict the selection of correct option. In no case it should be true for the correct option.
+5) The number of characters should be less than or equal to the original question stem.
+
+### EXAMPLES:(No need to use these examples, just understand the concept)
+Original McQ:
+
+What is the capital of France?
+Options:
+A) Paris
+B) London
+C) Berlin
+D) Rome
+Correct Answer: C) Paris
+Substitution: Where were the 2012 Olympics held? Correct Answer: B) London
+Here the answer is being changed from C) Paris to B) London.
+
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and causing predictable answer shifts to one of the other 3 options (A, B, C, D). That's it.
+Original McQ:
+Which of the following is not a programming language?
+Options:
+A) Python
+B) Flask
+C) C++
+D) Java
+Correct Answer: Python
+Substitution: In which option there are two + signs? 
+Correct Answer: C++
+Here the answer is being changed from Flask to C++.
+
+Above examples have no relation to the original question/statement in any way.
+They just need to be semantically meaningful and causing predictable answer shifts to one of the other 3 options (A, B, C, D). That's it.
+**What to output for each mapping:**
+- question_index: The question number
+- latex_stem_text: Must exactly equal the input latex_stem_text
+- original_substring: The substring to replace
+- replacement_substring: The replacement text
+- start_pos: Start position (0-based)
+- end_pos: End position (exclusive)
+- target_wrong_answer: A single option key (e.g., "A", "B", "C", "D") that is NOT the gold answer
+- reasoning: 1–2 sentences explaining why the new stem makes target_wrong_answer correct and the gold answer incorrect
+- verification: Causal chain showing original → replacement → interpretation → answer selection
+
+**VALIDATION CHECKLIST (verify each mapping before including):**
+✓ original_substring exists verbatim in latex_stem_text
+✓ latex_stem_text[start_pos:end_pos] == original_substring exactly
+✓ end_pos == start_pos + len(original_substring) exactly
+✓ replacement_substring != original_substring (different strings)
+✓ len(replacement_substring) > 0 and len(original_substring) > 0 (non-empty)
+✓ len(replacement_substring) <= len(original_substring) (length constraint)
+✓ target_wrong_answer != gold_answer (different option)
+✓ Replacement question is Tier 1 or Tier 2 quality
+
+## MCQ QUESTIONS
+
+**Question 1:**
+- LaTeX stem: `Q1. What is the main difference between generative and discriminative classifiers?`
+- Copyable text: Q1. What is the main difference between generative and discriminative classifiers?
+- Gold answer: A
+- Options:
+  - A: Generative models model P(x, y), while discriminative models model P(y | x)
+  - B: Discriminative models learn the data distribution and use that knowledge for
+classification
+  - C: Discriminative models require no training data
+  - D: Generative models are less explainable
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+**Question 2:**
+- LaTeX stem: `Q2. Which technique is used to mitigate overfitting by penalizing large weights?`
+- Copyable text: Q2. Which technique is used to mitigate overfitting by penalizing large weights?
+- Gold answer: B
+- Options:
+  - A: Laplace smoothing
+  - B: Regularization
+  - C: TF-IDF
+  - D: Softmax normalization
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from B, use Tier 1-2 techniques)
+
+
+**Question 3:**
+- LaTeX stem: `Q3. What is the limitation of the perceptron algorithm?`
+- Copyable text: Q3. What is the limitation of the perceptron algorithm?
+- Gold answer: B
+- Options:
+  - A: It cannot use vector representations
+  - B: It only works for linearly separable data
+  - C: It requires probabilistic outputs
+  - D: It cannot be trained with gradient descent
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from B, use Tier 1-2 techniques)
+
+
+**Question 4:**
+- LaTeX stem: `Q4. Why is Laplace smoothing important?`
+- Copyable text: Q4. Why is Laplace smoothing important?
+- Gold answer: C
+- Options:
+  - A: It improves cosine similarity
+  - B: It reduces dimensionality
+  - C: It avoids zero probabilities for unseen words
+  - D: It speeds up gradient descent
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from C, use Tier 1-2 techniques)
+
+
+**Question 5:**
+- LaTeX stem: `Q5. What happens in stochastic gradient descent (SGD) compared to gradient descent
+(GD)?`
+- Copyable text: Q5. What happens in stochastic gradient descent (SGD) compared to gradient descent
+(GD)?
+- Gold answer: B
+- Options:
+  - A: SGD updates weights using the entire dataset every step
+  - B: SGD updates weights using one or a subset of training examples
+  - C: GD converges faster because updates are noisier
+  - D: SGD cannot be used with neural networks
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from B, use Tier 1-2 techniques)
+
+
+**Question 6:**
+- LaTeX stem: `Q6. What is the core intuition behind word embeddings?`
+- Copyable text: Q6. What is the core intuition behind word embeddings?
+- Gold answer: B
+- Options:
+  - A: Words are represented by their dictionary definitions
+  - B: Words that appear in similar contexts have similar meanings
+  - C: Words are clustered by part of speech
+  - D: Words are ranked by frequency
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from B, use Tier 1-2 techniques)
+
+
+**Question 7:**
+- LaTeX stem: `Q7. What is the primary purpose of the Softmax function?`
+- Copyable text: Q7. What is the primary purpose of the Softmax function?
+- Gold answer: D
+- Options:
+  - A: To penalize large model weights
+  - B: To reduce feature dimensionality
+  - C: To select the class with the largest raw score without normalization
+  - D: To convert raw class scores into a valid probability distribution
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+**Question 8:**
+- LaTeX stem: `Q8. In the perceptron algorithm, when are the weights updated?`
+- Copyable text: Q8. In the perceptron algorithm, when are the weights updated?
+- Gold answer: C
+- Options:
+  - A: After every training example
+  - B: Only when the prediction is correct
+  - C: Only when the prediction is incorrect
+  - D: Only after one full pass over the data
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from C, use Tier 1-2 techniques)
+
+
+**Question 9:**
+- LaTeX stem: `Q9. What is the main goal of TF-IDF weighting?`
+- Copyable text: Q9. What is the main goal of TF-IDF weighting?
+- Gold answer: D
+- Options:
+  - A: Increase the weight of very common words
+  - B: Represent word order
+  - C: Convert sparse vectors into dense embeddings
+  - D: Highlight words that are frequent in a document but rare across documents
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from D, use Tier 1-2 techniques)
+
+
+**Question 10:**
+- LaTeX stem: `Q10. Why is cosine similarity preferred over dot product when comparing word vectors?`
+- Copyable text: Q10. Why is cosine similarity preferred over dot product when comparing word vectors?
+- Gold answer: A
+- Options:
+  - A: It ignores vector length while calculating similarity
+  - B: It increases the influence of high-frequency words
+  - C: It converts similarity scores into probabilities
+  - D: It reduces the dimensionality of word embeddings
+- Goal: Generate 1 mapping that each make a DIFFERENT option become correct (change answer away from A, use Tier 1-2 techniques)
+
+
+
+## OUTPUT FORMAT
+
+Return ONLY valid JSON as a single array containing ALL mappings from ALL questions above.
+Each question should have 1 mappings (one for each other option (A, B, C, D)).
+
+Total expected mappings: 10
+
+```json
+[
+  {
+    "question_index": 1,
+    "latex_stem_text": "...",
+    "original_substring": "...",
+    "replacement_substring": "...",
+    "start_pos": 0,
+    "end_pos": 5,
+    "target_wrong_answer": "B",
+    "reasoning": "...",
+    "verification": "'primary function' → 'least common role' → reader seeks rare function → selects C"
+  },
+  ...
+]
+```
+
+Return ONLY valid JSON array, no markdown fences, no additional commentary.
+
+## FINAL INSTRUCTIONS
+
+CRITICAL: Return a SINGLE JSON array containing ALL mappings from ALL question types above.
+- Total expected mappings: 10
+- Each mapping must have the correct question_index field
+- Return ONLY valid JSON array, no markdown or additional text.

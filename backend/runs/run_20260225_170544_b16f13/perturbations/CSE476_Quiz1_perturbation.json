@@ -1,0 +1,431 @@
+{
+  "docid": "CSE476_Quiz1",
+  "domain": "upload",
+  "academic_level": "unknown",
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "In the BIO tagging scheme for NER, what does the “B-” prefix indicate?",
+      "options": {
+        "A": "Between two tokens",
+        "B": "Beginning of an entity",
+        "C": "Inside an entity",
+        "D": "Outside any entity"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "original_substring": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "replacement_substring": "In the BIO scheme, which tag marks a token outside any entity?",
+          "start_pos": 0,
+          "end_pos": 83,
+          "target_wrong_answer": "D",
+          "reasoning": "The new question asks which tag marks a token outside any entity, which corresponds to option D, not the original correct answer B (Beginning of an entity). B is specifically for entity starts, so it is incorrect here while D is correct and contradicts B’s meaning.\nverification: Original asks about B- prefix → replacement asks about tag for outside-any-entity tokens → reader maps this to the standard BIO tag \"O\" → among the options, only D describes outside any entity → selects D, making B clearly wrong since it is about beginnings of entities, not outside tokens.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "original_substring": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "replacement_substring": "In the BIO scheme, which tag marks a token that follows the start within an entity?",
+          "start_pos": 0,
+          "end_pos": 83,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks for the tag that marks a token inside an entity after its start, which matches option C (Inside an entity), not B (Beginning of an entity). Thus C becomes correct and B is wrong because it refers to the initial token, not a following one.\nverification: Original asks what B- indicates → replacement asks about the tag for a token following the start within an entity → conceptually this is the I- tag (inside) → among the textual descriptions, C corresponds to inside an entity → student picks C and rejects B, since beginning vs inside are mutually exclusive roles.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "original_substring": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?",
+          "replacement_substring": "In the BIO scheme, which description fits a tag that is between two tokens?",
+          "start_pos": 0,
+          "end_pos": 83,
+          "target_wrong_answer": "A",
+          "reasoning": "The replacement question asks for a description that literally matches \"between two tokens,\" which is option A. This has nothing to do with the correct semantics of the B- prefix (Beginning of an entity), so B is incorrect under the new stem.\nverification: Original focuses on the B- prefix meaning → replacement asks for a tag described as between two tokens → the only option with that wording is A → student chooses A; B is rejected because beginning of an entity does not describe a position between tokens.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?"
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+      "options": {
+        "A": "It uses only words (observations) and ignores labels",
+        "B": "It models transitions between labels but does not consider the words",
+        "C": "It models emissions P(word | label)",
+        "D": "It is identical to an HMM"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "original_substring": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "replacement_substring": "Which statement best describes how an HMM models transitions between labels?",
+          "start_pos": 0,
+          "end_pos": 73,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks specifically about modeling transitions between labels, independent of observations, which corresponds to option B. Option A about using only words and ignoring labels no longer describes the asked concept and thus becomes incorrect.\nverification: Original refers to a plain Markov chain → replacement narrows to how an HMM handles label transitions → in an HMM, the transition model is over labels and ignores words → option B states this → student picks B, and A is clearly wrong because it talks about using only words instead of label transitions.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "original_substring": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "replacement_substring": "Which statement best describes how an HMM models P(word | label)?",
+          "start_pos": 0,
+          "end_pos": 73,
+          "target_wrong_answer": "C",
+          "reasoning": "The modified stem is now asking about the emission component of an HMM, P(word | label), which is exactly option C. The original answer A about using only words and ignoring labels does not describe emission probabilities and is therefore wrong here.\nverification: Original asked about a plain Markov chain → replacement asks which statement matches P(word | label) in an HMM → this is the emission model → option C states this explicitly → student selects C, and discards A because it contradicts the idea of conditioning words on labels.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "original_substring": "Which statement best describes a (plain) Markov chain in sequence tagging?",
+          "replacement_substring": "Which statement best describes a model that is identical to an HMM?",
+          "start_pos": 0,
+          "end_pos": 73,
+          "target_wrong_answer": "D",
+          "reasoning": "The new question now directly asks which option describes a model identical to an HMM, which is option D. Option A, about using only words and ignoring labels, clearly does not define something identical to an HMM and is thus incorrect.\nverification: Original focused on a plain Markov chain → replacement stem: \"model that is identical to an HMM\" → only option D states this → student chooses D, while A is rejected because such a model would fundamentally differ from an HMM which uses hidden labels.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which statement best describes a (plain) Markov chain in sequence tagging?"
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+      "options": {
+        "A": "P(label | previous label)",
+        "B": "P(word | label)",
+        "C": "P(label | word)",
+        "D": "P(word | previous word)"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "original_substring": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "replacement_substring": "In an HMM for NER, what is the probability of a label given the previous label?",
+          "start_pos": 0,
+          "end_pos": 69,
+          "target_wrong_answer": "A",
+          "reasoning": "The new question explicitly asks for P(label | previous label), which is a transition probability, matching option A. The original correct answer B is about P(word | label), emissions, and so becomes wrong for this stem.\nverification: Original asked about emission probabilities → replacement asks directly for probability of label given previous label → this is the definition of a transition model → among options, A matches exactly → student picks A; B is now incorrect because it conditions words on labels, not labels on previous labels.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "original_substring": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "replacement_substring": "In an HMM for NER, which option corresponds to P(label | word)?",
+          "start_pos": 0,
+          "end_pos": 69,
+          "target_wrong_answer": "C",
+          "reasoning": "The replacement stem now asks directly which option is P(label | word), which is option C. This is not the emission probability in a standard HMM (which is P(word | label)), so B becomes incorrect under the new interpretation.\nverification: Original focused on emission probability → replacement focuses on P(label | word) instead → among the options, only C matches this conditional → student chooses C; B is rejected because it describes the inverse conditional P(word | label).",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "original_substring": "In a Hidden Markov Model (HMM) for NER, an emission probability is:",
+          "replacement_substring": "In an HMM for NER, which option is the probability of a word given previous word?",
+          "start_pos": 0,
+          "end_pos": 69,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem asks for P(word | previous word), which is not an HMM emission but matches option D. Option B is no longer correct because it is P(word | label), which does not satisfy the wording of the replacement question.\nverification: Original asks what an emission probability is → replacement asks for probability of a word given the previous word → this corresponds to a word bigram model, not standard HMM emissions → option D states this → student selects D, while B is clearly wrong for this specific conditional form.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In a Hidden Markov Model (HMM) for NER, an emission probability is:"
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "In an n-gram language model, a bigram LM predicts the next word using:",
+      "options": {
+        "A": "No previous words",
+        "B": "The previous 1 word",
+        "C": "The previous 2 words",
+        "D": "The entire sentence history"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "In an n-gram language model, a bigram LM predicts the next word using:",
+          "original_substring": "In an n-gram language model, a bigram LM predicts the next word using:",
+          "replacement_substring": "In an n-gram LM, what does a unigram model use to predict the next word?",
+          "start_pos": 0,
+          "end_pos": 72,
+          "target_wrong_answer": "A",
+          "reasoning": "The replacement stem now asks about a unigram model, which predicts each word independently of context, effectively using no previous words, matching option A. Option B about using the previous 1 word describes a bigram model and is thus incorrect here.\nverification: Original asks about bigram prediction context → replacement asks about unigram prediction context → unigram ignores history, i.e., no previous words → option A states this → student chooses A and rejects B, since using one previous word contradicts the unigram definition.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "In an n-gram language model, a bigram LM predicts the next word using:",
+          "original_substring": "In an n-gram language model, a bigram LM predicts the next word using:",
+          "replacement_substring": "In an n-gram LM, what does a trigram model use to predict the next word?",
+          "start_pos": 0,
+          "end_pos": 72,
+          "target_wrong_answer": "C",
+          "reasoning": "The new question now refers to a trigram model, which uses the previous two words, corresponding to option C. Option B about using the previous 1 word (bigram) is therefore wrong under this stem.\nverification: Original focused on bigram prediction → replacement asks specifically about trigram prediction → trigram uses two-word history → option C expresses \"previous 2 words\" → student picks C; B is false because it mentions only one prior word.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "In an n-gram language model, a bigram LM predicts the next word using:",
+          "original_substring": "In an n-gram language model, a bigram LM predicts the next word using:",
+          "replacement_substring": "In an n-gram LM, which model uses the entire sentence history to predict a word?",
+          "start_pos": 0,
+          "end_pos": 72,
+          "target_wrong_answer": "D",
+          "reasoning": "The modified stem asks for a model that uses the entire sentence history, which matches option D. Option B, describing use of only the previous one word, contradicts this requirement and thus becomes incorrect.\nverification: Original asked about a bigram → replacement asks which model uses complete history → full-history models (e.g., non-Markovian or RNN-like) conceptually use the entire sentence history → only D mentions entire history → student selects D and rejects B because a bigram’s one-word context is not the entire history.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In an n-gram language model, a bigram LM predicts the next word using:"
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "Which statement about perplexity is correct?",
+      "options": {
+        "A": "It’s the raw probability of a sentence",
+        "B": "It’s the inverse probability of a test text, normalized by length",
+        "C": "It’s the fraction of correctly labeled tokens",
+        "D": "It’s the number of unique words in the corpus"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "Which statement about perplexity is correct?",
+          "original_substring": "Which statement about perplexity is correct?",
+          "replacement_substring": "Which statement correctly defines accuracy in token-level classification?",
+          "start_pos": 0,
+          "end_pos": 44,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks about accuracy in token-level classification, which is the fraction of correctly labeled tokens, matching option C. Option B, which defines perplexity, no longer answers the question and is thus incorrect here.\nverification: Original asks about perplexity → replacement asks for definition of token-level accuracy → accuracy is fraction of correctly labeled tokens → option C says exactly this → student chooses C; B is discarded because inverse probability normalized by length describes perplexity, not accuracy.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Which statement about perplexity is correct?",
+          "original_substring": "Which statement about perplexity is correct?",
+          "replacement_substring": "Which statement correctly defines the vocabulary size of a corpus?",
+          "start_pos": 0,
+          "end_pos": 44,
+          "target_wrong_answer": "D",
+          "reasoning": "The modified stem asks for the definition of vocabulary size, which is the number of unique words in a corpus, described by option D. Option B about inverse probability of a test text is unrelated and becomes wrong under this stem.\nverification: Original focuses on perplexity → replacement asks about vocabulary size → vocabulary size equals number of unique word types → option D states this → student picks D; B is rejected because it refers to perplexity, not vocabulary size.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "Which statement about perplexity is correct?",
+          "original_substring": "Which statement about perplexity is correct?",
+          "replacement_substring": "Which statement correctly defines the raw probability of a sentence?",
+          "start_pos": 0,
+          "end_pos": 44,
+          "target_wrong_answer": "A",
+          "reasoning": "The new question requests the definition of raw sentence probability, matching option A. Option B, which defines perplexity, is therefore not correct in the context of the replacement stem.\nverification: Original asks about perplexity → replacement asks about raw sentence probability → raw probability is simply P(sentence), described by A → student chooses A and not B; B is wrong because inverse probability normalized by length is perplexity, not the raw probability itself.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DDJB89cyX2tZQEgNMhToGVgQlVzA5",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1772064358,
+            "finish_reason": "stop",
+            "prompt_tokens": 2066,
+            "completion_tokens": 2887,
+            "total_tokens": 4953,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which statement about perplexity is correct?"
+    }
+  ],
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260225_170544_b16f13/input/CSE476_Quiz1.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260225_170544_b16f13/uploads/CSE476_Quiz1.pdf",
+    "layout_json": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260225_170544_b16f13/input/layout.json",
+    "page_images": [
+      "page_images/page_1.png",
+      "page_images/page_2.png"
+    ]
+  },
+  "title_text": "CSE-476: Introduction to Natural Language Processing",
+  "subtitle_text": "Date: 01/22/2026",
+  "section_title": "Multiple Choice Questions (Single correct)",
+  "instructions_text": "Instructions: Select the correct option with a short explanation",
+  "geometry": null,
+  "document_class_options": null,
+  "enumerate_label": "Q\\arabic*.",
+  "logo_path": null,
+  "logo_width": null,
+  "logo_position": null
+}

@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\newcommand{\rupee}{\texttt{Rs.}}
+
+\usepackage{calc}
+% --- latex-dual-layer macros (auto-generated) ---
+\newlength{\dlboxwidth}
+\newlength{\dlboxheight}
+\newlength{\dlboxdepth}
+\newcommand{\duallayerbox}[2]{%
+  \begingroup
+  \settowidth{\dlboxwidth}{\strut #1}%
+  \settoheight{\dlboxheight}{\strut #1}%
+  \settodepth{\dlboxdepth}{\strut #1}%
+  \ifdim\dlboxwidth=0pt
+    \settowidth{\dlboxwidth}{#2}%
+  \fi
+  \raisebox{0pt}[\dlboxheight][\dlboxdepth]{%
+    \makebox[\dlboxwidth][l]{\resizebox{\dlboxwidth}{!}{\strut #2}}%
+  }%
+  \endgroup
+}
+% --- end latex-dual-layer macros ---
+\begin{document}
+
+\begin{center}\includegraphics[width=0.25\textwidth]{logo.png}\\[1.5em]\end{center}
+
+\begin{center}
+\textbf{CSE-476: Introduction to Natural Language Processing}
+\\% optional subtitle line(s)
+\textbf{Date: 01/22/2026}
+\end{center}
+
+\vspace{2em}
+
+\textbf{Multiple Choice Questions (Single correct)}\\[0.5em]
+Instructions: Select the correct option with a short explanation.
+
+\begin{enumerate}[label=Q\arabic*., leftmargin=*]
+\item \duallayerbox{In the BIO tagging scheme for NER, what does the ``B-'' prefix indicate?}{In the BIO scheme, which tag marks a token outside any entity?}\\[0.25em]
+\textbf{A.} Between two tokens\\
+\textbf{B.} Beginning of an entity\\
+\textbf{C.} Inside an entity\\
+\textbf{D.} Outside any entity
+
+\item \duallayerbox{Which statement best describes a (plain) Markov chain in sequence tagging?}{Which statement best describes how an HMM models transitions between labels?}\\[0.25em]
+\textbf{A.} It uses only words (observations) and ignores labels\\
+\textbf{B.} It models transitions between labels but does not consider the words\\
+\textbf{C.} It models emissions $P(\text{word} \mid \text{label})$\\
+\textbf{D.} It is identical to an HMM
+
+\item \duallayerbox{In a Hidden Markov Model (HMM) for NER, an emission probability is:}{In an HMM for NER, what is the probability of a label given the previous label?}\\[0.25em]
+\textbf{A.} $P(\text{label} \mid \text{previous label})$\\
+\textbf{B.} $P(\text{word} \mid \text{label})$\\
+\textbf{C.} $P(\text{label} \mid \text{word})$\\
+\textbf{D.} $P(\text{word} \mid \text{previous word})$
+
+\item \duallayerbox{In an n-gram language model, a bigram LM predicts the next word using:}{In an n-gram LM, what does a unigram model use to predict the next word?}\\[0.25em]
+\textbf{A.} No previous words\\
+\textbf{B.} The previous 1 word\\
+\textbf{C.} The previous 2 words\\
+\textbf{D.} The entire sentence history
+
+\item \duallayerbox{Which statement about perplexity is correct?}{Which statement correctly defines accuracy in token-level classification?}\\[0.25em]
+\textbf{A.} It’s the raw probability of a sentence\\
+\textbf{B.} It’s the inverse probability of a test text, normalized by length\\
+\textbf{C.} It’s the fraction of correctly labeled tokens\\
+\textbf{D.} It’s the number of unique words in the corpus
+
+\end{enumerate}
+
+\end{document}

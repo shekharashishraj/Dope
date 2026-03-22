@@ -1,0 +1,461 @@
+{
+  "docid": "SQ3",
+  "domain": "computer_science",
+  "academic_level": "undergraduate",
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/SQ3.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/SQ3.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "In a standard RNN, what is the primary purpose of the \"hidden state\"?",
+      "options": {
+        "A": "To store the final output of the entire sequence.",
+        "B": "To act as a memory that carries information from previous time steps",
+        "C": "To calculate the loss function for the current word",
+        "D": "To normalize the input embeddings"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "original_substring": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "replacement_substring": "What stores the final output of the entire sequence?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem asks what stores the final output; option A states the hidden state stores the final output, so A becomes correct."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "original_substring": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "replacement_substring": "What calculates the loss function for the current word?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks what calculates the loss for the current word; option C matches, making C correct."
+        },
+        {
+          "question_index": 1,
+          "latex_stem_text": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "original_substring": "In a standard RNN, what is the primary purpose of the ``hidden state''?",
+          "replacement_substring": "What normalizes the input embeddings?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks what normalizes input embeddings; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+      "options": {
+        "A": "To ensure the output values sum to 1, representing a probability distribution",
+        "B": "To prevent the gradients from exploding",
+        "C": "To increase the speed of the training process",
+        "D": "To allow the model to handle variable-length sequences"
+      },
+      "gold_answer": "A",
+      "latex_stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "original_substring": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "replacement_substring": "What prevents the gradients from exploding?",
+          "start_pos": 0,
+          "end_pos": 89,
+          "target_wrong_answer": "B",
+          "reasoning": "The stem asks what prevents gradient explosion; option B matches, making B correct."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "original_substring": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "replacement_substring": "What increases the speed of the training process?",
+          "start_pos": 0,
+          "end_pos": 89,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks what increases training speed; option C matches, making C correct."
+        },
+        {
+          "question_index": 2,
+          "latex_stem_text": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "original_substring": "Why is the Softmax function typically used in the final layer of a Neural Language Model?",
+          "replacement_substring": "What allows the model to handle variable-length sequences?",
+          "start_pos": 0,
+          "end_pos": 89,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks what allows variable-length sequences; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+      "options": {
+        "A": "They cannot use embeddings",
+        "B": "They assume fixed input size and struggle with temporal order",
+        "C": "They cannot be trained with gradient descent",
+        "D": "They do not use activation functions"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "original_substring": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "replacement_substring": "Which networks cannot use embeddings?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks which cannot use embeddings; option A matches, making A correct."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "original_substring": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "replacement_substring": "Which cannot be trained with gradient descent?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks which cannot be trained with gradient descent; option C matches, making C correct."
+        },
+        {
+          "question_index": 3,
+          "latex_stem_text": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "original_substring": "What is a key limitation of feed-forward neural networks for NLP tasks?",
+          "replacement_substring": "Which do not use activation functions?",
+          "start_pos": 0,
+          "end_pos": 71,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks which do not use activation functions; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "What is the purpose of the \"Forward Pass\" in training?",
+      "options": {
+        "A": "To update weights based on the loss",
+        "B": "To calculate the predicted output and compute the loss",
+        "C": "To unroll the network into a sequence",
+        "D": "To calculate the gradient for each parameter"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "What is the purpose of the ``Forward Pass'' in training?",
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "What is the purpose of the ``Forward Pass'' in training?",
+          "original_substring": "What is the purpose of the ``Forward Pass'' in training?",
+          "replacement_substring": "What updates weights based on the loss?",
+          "start_pos": 0,
+          "end_pos": 56,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks what updates weights based on loss; option A matches, making A correct."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "What is the purpose of the ``Forward Pass'' in training?",
+          "original_substring": "What is the purpose of the ``Forward Pass'' in training?",
+          "replacement_substring": "What unrolls the network into a sequence?",
+          "start_pos": 0,
+          "end_pos": 56,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks what unrolls the network; option C matches, making C correct."
+        },
+        {
+          "question_index": 4,
+          "latex_stem_text": "What is the purpose of the ``Forward Pass'' in training?",
+          "original_substring": "What is the purpose of the ``Forward Pass'' in training?",
+          "replacement_substring": "What calculates the gradient for each parameter?",
+          "start_pos": 0,
+          "end_pos": 56,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks what calculates gradients; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+      "options": {
+        "A": "They are randomly re-initialized at every step",
+        "B": "They are reused across timestamps",
+        "C": "They increase in value as the sequence progresses",
+        "D": "Only the output weight V is reused"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+          "original_substring": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+          "replacement_substring": "When are weights re-initialized at every step?",
+          "start_pos": 0,
+          "end_pos": 81,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks when weights are re-initialized every step; option A matches, making A correct."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+          "original_substring": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+          "replacement_substring": "When do weights increase in value as the sequence progresses?",
+          "start_pos": 0,
+          "end_pos": 81,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks when weights increase with sequence; option C matches, making C correct."
+        },
+        {
+          "question_index": 5,
+          "latex_stem_text": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+          "original_substring": "What is true about the weights U, V, and W across different timestamps in an RNN?",
+          "replacement_substring": "When is only the output weight V reused?",
+          "start_pos": 0,
+          "end_pos": 81,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks when only V is reused; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 6,
+      "question_type": "MCQ",
+      "stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+      "options": {
+        "A": "A deeper network with more representational power",
+        "B": "A single linear model",
+        "C": "A recurrent neural network",
+        "D": "A decision tree"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "original_substring": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "replacement_substring": "What is equivalent to a deeper network with more representational power?",
+          "start_pos": 0,
+          "end_pos": 115,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks what is equivalent to a deeper network; option A matches, making A correct."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "original_substring": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "replacement_substring": "What is equivalent to a recurrent neural network?",
+          "start_pos": 0,
+          "end_pos": 115,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks what is equivalent to an RNN; option C matches, making C correct."
+        },
+        {
+          "question_index": 6,
+          "latex_stem_text": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "original_substring": "Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?",
+          "replacement_substring": "What is equivalent to a decision tree?",
+          "start_pos": 0,
+          "end_pos": 115,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks what is equivalent to a decision tree; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 7,
+      "question_type": "MCQ",
+      "stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+      "options": {
+        "A": "The next word given the predicted history",
+        "B": "The next word given the ground-truth history",
+        "C": "The current word given itself",
+        "D": "All words simultaneously"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "original_substring": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "replacement_substring": "When does the model predict the next word given predicted history?",
+          "start_pos": 0,
+          "end_pos": 85,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks when model uses predicted history; option A matches, making A correct."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "original_substring": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "replacement_substring": "When does the model predict the current word given itself?",
+          "start_pos": 0,
+          "end_pos": 85,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks when model predicts current word given itself; option C matches, making C correct."
+        },
+        {
+          "question_index": 7,
+          "latex_stem_text": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "original_substring": "When training an RNN for language modeling using teacher forcing, the model predicts:",
+          "replacement_substring": "When does the model predict all words simultaneously?",
+          "start_pos": 0,
+          "end_pos": 85,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks when model predicts all words at once; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 8,
+      "question_type": "MCQ",
+      "stem_text": "In an RNN, the hidden state at time t depends on:",
+      "options": {
+        "A": "Only the input at time t",
+        "B": "Only the hidden state at time t-1",
+        "C": "Both the input at time t and the hidden state at time t-1",
+        "D": "All future inputs"
+      },
+      "gold_answer": "C",
+      "latex_stem_text": "In an RNN, the hidden state at time $t$ depends on:",
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "In an RNN, the hidden state at time $t$ depends on:",
+          "original_substring": "In an RNN, the hidden state at time $t$ depends on:",
+          "replacement_substring": "When does it depend only on the input at time $t$?",
+          "start_pos": 0,
+          "end_pos": 51,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks when it depends only on input at t; option A matches, making A correct."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "In an RNN, the hidden state at time $t$ depends on:",
+          "original_substring": "In an RNN, the hidden state at time $t$ depends on:",
+          "replacement_substring": "When does it depend only on hidden state at $t-1$?",
+          "start_pos": 0,
+          "end_pos": 51,
+          "target_wrong_answer": "B",
+          "reasoning": "The stem asks when it depends only on h at t-1; option B matches, making B correct."
+        },
+        {
+          "question_index": 8,
+          "latex_stem_text": "In an RNN, the hidden state at time $t$ depends on:",
+          "original_substring": "In an RNN, the hidden state at time $t$ depends on:",
+          "replacement_substring": "When does it depend on all future inputs?",
+          "start_pos": 0,
+          "end_pos": 51,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks when it depends on future inputs; option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 9,
+      "question_type": "MCQ",
+      "stem_text": "Consider a neural network layer defined as: h = f(Wx). The input vector x has shape (n_0 x 1), and the output vector h has shape (n_1 x 1). What must be the shape of W?",
+      "options": {
+        "A": "(n_0 x n_1)",
+        "B": "(n_1 x n_0)",
+        "C": "(n_0 x 1)",
+        "D": "(1 x n_1)"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "original_substring": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "replacement_substring": "For $h = f(Wx)$ with $x$ of shape $(n_0 \\times 1)$ and $h$ of shape $(n_1 \\times 1)$, which shape is $(n_0 \\times n_1)$?",
+          "start_pos": 0,
+          "end_pos": 190,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks for shape (n_0 x n_1); option A matches, making A correct."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "original_substring": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "replacement_substring": "For $h = f(Wx)$ with $x$ $(n_0 \\times 1)$ and $h$ $(n_1 \\times 1)$, which shape is $(n_0 \\times 1)$?",
+          "start_pos": 0,
+          "end_pos": 190,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks for shape (n_0 x 1); option C matches, making C correct."
+        },
+        {
+          "question_index": 9,
+          "latex_stem_text": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "original_substring": "Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \\times 1)$, and the output vector $h$ has shape $(n_1 \\times 1)$. What must be the shape of $W$?",
+          "replacement_substring": "For $h = f(Wx)$ with $x$ $(n_0 \\times 1)$ and $h$ $(n_1 \\times 1)$, which shape is $(1 \\times n_1)$?",
+          "start_pos": 0,
+          "end_pos": 190,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks for shape (1 x n_1); option D matches, making D correct."
+        }
+      ]
+    },
+    {
+      "question_number": 10,
+      "question_type": "MCQ",
+      "stem_text": "What is the main role of backpropagation in neural network training?",
+      "options": {
+        "A": "To compute predictions during inference",
+        "B": "To calculate gradients of the loss with respect to parameters",
+        "C": "To initialize weights randomly",
+        "D": "To normalize input data"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "What is the main role of backpropagation in neural network training?",
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "What is the main role of backpropagation in neural network training?",
+          "original_substring": "What is the main role of backpropagation in neural network training?",
+          "replacement_substring": "What computes predictions during inference?",
+          "start_pos": 0,
+          "end_pos": 68,
+          "target_wrong_answer": "A",
+          "reasoning": "The stem asks what computes predictions during inference; option A matches, making A correct."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "What is the main role of backpropagation in neural network training?",
+          "original_substring": "What is the main role of backpropagation in neural network training?",
+          "replacement_substring": "What initializes weights randomly?",
+          "start_pos": 0,
+          "end_pos": 68,
+          "target_wrong_answer": "C",
+          "reasoning": "The stem asks what initializes weights randomly; option C matches, making C correct."
+        },
+        {
+          "question_index": 10,
+          "latex_stem_text": "What is the main role of backpropagation in neural network training?",
+          "original_substring": "What is the main role of backpropagation in neural network training?",
+          "replacement_substring": "What normalizes input data?",
+          "start_pos": 0,
+          "end_pos": 68,
+          "target_wrong_answer": "D",
+          "reasoning": "The stem asks what normalizes input data; option D matches, making D correct."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "docid": "Q4",
+  "domain": "computer_science",
+  "academic_level": "undergraduate",
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/Q4.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/Q4.pdf"
+  },
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "What is one of the key limitations of RNN?",
+      "options": {
+        "A": "They cannot process sequences",
+        "B": "They are too computationally cheap",
+        "C": "They cannot use embeddings",
+        "D": "They struggle with long-range dependencies"
+      },
+      "gold_answer": "D",
+      "latex_stem_text": "What is one of the key limitations of RNN?",
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "What is one of the key limitations of RNN?",
+          "original_substring": "What is one of the key limitations of RNN?",
+          "replacement_substring": "What is one of the key limitations of standard feed-forward neural networks (MLPs) when applied to sequential data such as text or time series?",
+          "start_pos": 0,
+          "end_pos": 42,
+          "target_wrong_answer": "A",
+          "reasoning": "Reframes the stem so option A is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Which model type is generally best for text classification tasks (e.g., sentiment analysis)?",
+      "options": {
+        "A": "Encoder-only",
+        "B": "Decoder-only",
+        "C": "Encoder-decoder",
+        "D": "None of the above"
+      },
+      "gold_answer": "A",
+      "latex_stem_text": "Which model type is generally best for text classification tasks (e.g., sentiment analysis)?",
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which model type is generally best for text classification tasks (e.g., sentiment analysis)?",
+          "original_substring": "Which model type is generally best for text classification tasks (e.g., sentiment analysis)?",
+          "replacement_substring": "Which model type is generally best for sequence-to-sequence tasks (e.g., machine translation or abstractive summarization)?",
+          "start_pos": 0,
+          "end_pos": 92,
+          "target_wrong_answer": "C",
+          "reasoning": "Reframes the stem so option C is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "What does self-attention allow a model to do?",
+      "options": {
+        "A": "Process only one token at a time",
+        "B": "Attend to other tokens within the same sequence",
+        "C": "Ignore context entirely",
+        "D": "Only use previous tokens"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "What does self-attention allow a model to do?",
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "What does self-attention allow a model to do?",
+          "original_substring": "What does self-attention allow a model to do?",
+          "replacement_substring": "In causal/masked self-attention (as used during autoregressive decoding in GPT-style models), what does self-attention allow a model to do?",
+          "start_pos": 0,
+          "end_pos": 45,
+          "target_wrong_answer": "D",
+          "reasoning": "Reframes the stem so option D is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "What is a key characteristic of transformers compared to RNNs?",
+      "options": {
+        "A": "They process tokens strictly sequentially",
+        "B": "They rely on recurrence",
+        "C": "They use self-attention instead of recurrence",
+        "D": "They cannot handle sequences"
+      },
+      "gold_answer": "C",
+      "latex_stem_text": "What is a key characteristic of transformers compared to RNNs?",
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "What is a key characteristic of transformers compared to RNNs?",
+          "original_substring": "What is a key characteristic of transformers compared to RNNs?",
+          "replacement_substring": "What is a key characteristic of RNNs compared to transformers?",
+          "start_pos": 0,
+          "end_pos": 62,
+          "target_wrong_answer": "B",
+          "reasoning": "Reframes the stem so option B is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "Which model would work best for a task like summarization?",
+      "options": {
+        "A": "Encoder-only",
+        "B": "Decoder-only",
+        "C": "Encoder-decoder",
+        "D": "None"
+      },
+      "gold_answer": "C",
+      "latex_stem_text": "Which model would work best for a task like summarization?",
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "Which model would work best for a task like summarization?",
+          "original_substring": "Which model would work best for a task like summarization?",
+          "replacement_substring": "Which model would work best for a task like summarization when using modern prompting-based large language models (e.g., GPT-3/4 or Llama)?",
+          "start_pos": 0,
+          "end_pos": 58,
+          "target_wrong_answer": "B",
+          "reasoning": "Reframes the stem so option B is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 6,
+      "question_type": "MCQ",
+      "stem_text": "What is a key advantage of Rotary Positional Embeddings?",
+      "options": {
+        "A": "They require no training data",
+        "B": "They eliminate attention",
+        "C": "They only work for short sequences",
+        "D": "They preserve relative positions and generalize well"
+      },
+      "gold_answer": "D",
+      "latex_stem_text": "What is a key advantage of Rotary Positional Embeddings?",
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "What is a key advantage of Rotary Positional Embeddings?",
+          "original_substring": "What is a key advantage of Rotary Positional Embeddings?",
+          "replacement_substring": "What is a key advantage of Fixed Sinusoidal Positional Embeddings?",
+          "start_pos": 0,
+          "end_pos": 56,
+          "target_wrong_answer": "A",
+          "reasoning": "Reframes the stem so option A is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 7,
+      "question_type": "MCQ",
+      "stem_text": "What type of transformer is BERT?",
+      "options": {
+        "A": "Encoder-only",
+        "B": "Decoder-only",
+        "C": "Encoder-decoder",
+        "D": "Recurrent transformers"
+      },
+      "gold_answer": "A",
+      "latex_stem_text": "What type of transformer is BERT?",
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "What type of transformer is BERT?",
+          "original_substring": "What type of transformer is BERT?",
+          "replacement_substring": "What type of transformer is GPT?",
+          "start_pos": 0,
+          "end_pos": 33,
+          "target_wrong_answer": "B",
+          "reasoning": "Reframes the stem so option B is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 8,
+      "question_type": "MCQ",
+      "stem_text": "What is the main objective used to pre-train BERT?",
+      "options": {
+        "A": "Next-word prediction",
+        "B": "Image classification",
+        "C": "Masked language modeling",
+        "D": "Reinforcement learning"
+      },
+      "gold_answer": "C",
+      "latex_stem_text": "What is the main objective used to pre-train BERT?",
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "What is the main objective used to pre-train BERT?",
+          "original_substring": "What is the main objective used to pre-train BERT?",
+          "replacement_substring": "What is the main objective used to align / fine-tune pre-trained models like InstructGPT or ChatGPT after the initial pre-training phase?",
+          "start_pos": 0,
+          "end_pos": 50,
+          "target_wrong_answer": "D",
+          "reasoning": "Reframes the stem so option D is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 9,
+      "question_type": "MCQ",
+      "stem_text": "Which type of positional encoding uses sine and cosine functions?",
+      "options": {
+        "A": "Learned positional encoding",
+        "B": "Relative positional encoding",
+        "C": "Rotary positional encoding",
+        "D": "Sinusoidal positional encoding"
+      },
+      "gold_answer": "D",
+      "latex_stem_text": "Which type of positional encoding uses sine and cosine functions?",
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "Which type of positional encoding uses sine and cosine functions?",
+          "original_substring": "Which type of positional encoding uses sine and cosine functions?",
+          "replacement_substring": "Which type of positional encoding is typically implemented as a set of trainable embedding vectors added to token embeddings?",
+          "start_pos": 0,
+          "end_pos": 65,
+          "target_wrong_answer": "A",
+          "reasoning": "Reframes the stem so option A is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    },
+    {
+      "question_number": 10,
+      "question_type": "MCQ",
+      "stem_text": "What is multi-head attention used for?",
+      "options": {
+        "A": "Reducing model parameters",
+        "B": "Capturing diverse relationships in data",
+        "C": "Eliminating positional encoding",
+        "D": "Replacing embeddings"
+      },
+      "gold_answer": "B",
+      "latex_stem_text": "What is multi-head attention used for?",
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "What is multi-head attention used for?",
+          "original_substring": "What is multi-head attention used for?",
+          "replacement_substring": "What does ALBERT do?",
+          "start_pos": 0,
+          "end_pos": 38,
+          "target_wrong_answer": "A",
+          "reasoning": "Reframes the stem so option A is the preferred answer signal for this perturbation variant."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in, top=0.5in}
+\begin{document}
+\begin{center}
+\includegraphics[width=2.5cm]{asu-logo.png} \\[0.2cm]
+CSE-476: Introduction to Natural Language Processing \\
+Quiz 3 \\
+\end{center}
+
+\section*{Multiple Choice Questions (Single correct)}
+\textit{Instructions: Select the correct option with a short explanation.}
+\begin{enumerate}[label=Q\arabic*.]
+\item In a standard RNN, what is the primary purpose of the ``hidden state''?
+\begin{enumerate}[label=(\Alph*)]
+    \item To store the final output of the entire sequence.
+    \item To act as a memory that carries information from previous time steps
+    \item To calculate the loss function for the current word
+    \item To normalize the input embeddings
+\end{enumerate}
+\item Why is the Softmax function typically used in the final layer of a Neural Language Model?
+\begin{enumerate}[label=(\Alph*)]
+    \item To ensure the output values sum to 1, representing a probability distribution
+    \item To prevent the gradients from exploding
+    \item To increase the speed of the training process
+    \item To allow the model to handle variable-length sequences
+\end{enumerate}
+\item What is a key limitation of feed-forward neural networks for NLP tasks?
+\begin{enumerate}[label=(\Alph*)]
+    \item They cannot use embeddings
+    \item They assume fixed input size and struggle with temporal order
+    \item They cannot be trained with gradient descent
+    \item They do not use activation functions
+\end{enumerate}
+\item What is the purpose of the ``Forward Pass'' in training?
+\begin{enumerate}[label=(\Alph*)]
+    \item To update weights based on the loss
+    \item To calculate the predicted output and compute the loss
+    \item To unroll the network into a sequence
+    \item To calculate the gradient for each parameter
+\end{enumerate}
+\item What is true about the weights U, V, and W across different timestamps in an RNN?
+\begin{enumerate}[label=(\Alph*)]
+    \item They are randomly re-initialized at every step
+    \item They are reused across timestamps
+    \item They increase in value as the sequence progresses
+    \item Only the output weight V is reused
+\end{enumerate}
+\item Suppose all activation functions in a 3-layer neural network are linear. What is the effective model equivalent to?
+\begin{enumerate}[label=(\Alph*)]
+    \item A deeper network with more representational power
+    \item A single linear model
+    \item A recurrent neural network
+    \item A decision tree
+\end{enumerate}
+\item When training an RNN for language modeling using teacher forcing, the model predicts:
+\begin{enumerate}[label=(\Alph*)]
+    \item The next word given the predicted history
+    \item The next word given the ground-truth history
+    \item The current word given itself
+    \item All words simultaneously
+\end{enumerate}
+\item In an RNN, the hidden state at time $t$ depends on:
+\begin{enumerate}[label=(\Alph*)]
+    \item Only the input at time $t$
+    \item Only the hidden state at time $t-1$
+    \item Both the input at time $t$ and the hidden state at time $t-1$
+    \item All future inputs
+\end{enumerate}
+\item Consider a neural network layer defined as: $h = f(Wx)$. The input vector $x$ has shape $(n_0 \times 1)$, and the output vector $h$ has shape $(n_1 \times 1)$. What must be the shape of $W$?
+\begin{enumerate}[label=(\Alph*)]
+    \item $(n_0 \times n_1)$
+    \item $(n_1 \times n_0)$
+    \item $(n_0 \times 1)$
+    \item $(1 \times n_1)$
+\end{enumerate}
+\item What is the main role of backpropagation in neural network training?
+\begin{enumerate}[label=(\Alph*)]
+    \item To compute predictions during inference
+    \item To calculate gradients of the loss with respect to parameters
+    \item To initialize weights randomly
+    \item To normalize input data
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

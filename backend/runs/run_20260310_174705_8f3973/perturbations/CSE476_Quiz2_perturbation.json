@@ -1,0 +1,396 @@
+{
+  "docid": "CSE476_Quiz2",
+  "domain": "upload",
+  "academic_level": "unknown",
+  "questions": [
+    {
+      "question_number": 1,
+      "question_type": "MCQ",
+      "stem_text": "Q1. What is the main difference between generative and discriminative classifiers?",
+      "options": {
+        "A": "Generative models model P(x, y), while discriminative models model P(y | x)",
+        "B": "Discriminative models learn the data distribution and use that knowledge for classification",
+        "C": "Discriminative models require no training data",
+        "D": "Generative models are less explainable"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 1,
+          "latex_stem_text": "What is the main difference between generative and discriminative classifiers?",
+          "original_substring": "What is the main difference between generative and discriminative classifiers?",
+          "replacement_substring": "Which option describes a model that learns the data distribution for classification?",
+          "start_pos": 0,
+          "end_pos": 90,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem asks for a model that learns the data distribution, which matches option B. Option A contrasts P(x, y) vs P(y | x) and does not state that discriminative models learn the data distribution, so A is no longer correct.\nverification: Original stem asks about generative vs discriminative difference → replacement asks which option states that a model learns the data distribution → interpretation focuses on the phrase 'learn the data distribution' → only option B explicitly says this → answer shifts from A to B, and A is excluded because it does not mention learning the distribution directly.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is the main difference between generative and discriminative classifiers?"
+    },
+    {
+      "question_number": 2,
+      "question_type": "MCQ",
+      "stem_text": "Q2. Which technique is used to mitigate overfitting by penalizing large weights?",
+      "options": {
+        "A": "Laplace smoothing",
+        "B": "Regularization",
+        "C": "TF-IDF",
+        "D": "Softmax normalization"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 2,
+          "latex_stem_text": "Which technique is used to mitigate overfitting by penalizing large weights?",
+          "original_substring": "Which technique is used to mitigate overfitting by penalizing large weights?",
+          "replacement_substring": "Which technique converts raw term counts into importance scores for words in documents?",
+          "start_pos": 0,
+          "end_pos": 84,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem describes TF-IDF, which turns raw counts into importance weights, matching option C. Regularization (B) does not convert term counts into word importance scores, so the original correct answer becomes incorrect.\nverification: Original stem focuses on penalizing large weights → replacement focuses on converting term counts to importance scores → interpretation moves to document-term weighting schemes → TF-IDF uniquely fits this description (C) → answer shifts from B to C while B no longer satisfies the new stem.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Which technique is used to mitigate overfitting by penalizing large weights?"
+    },
+    {
+      "question_number": 3,
+      "question_type": "MCQ",
+      "stem_text": "Q3. What is the limitation of the perceptron algorithm?",
+      "options": {
+        "A": "It cannot use vector representations",
+        "B": "It only works for linearly separable data",
+        "C": "It requires probabilistic outputs",
+        "D": "It cannot be trained with gradient descent"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 3,
+          "latex_stem_text": "What is the limitation of the perceptron algorithm?",
+          "original_substring": "What is the limitation of the perceptron algorithm?",
+          "replacement_substring": "Which option describes a method that fails when classes are not linearly separable?",
+          "start_pos": 0,
+          "end_pos": 48,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem directly points to the method that does not work when data is not linearly separable, which is option B. Other options mention unrelated constraints like vector use or probabilistic outputs, so they remain incorrect.\nverification: Original stem asks for any perceptron limitation → replacement narrows to failure on non-linearly separable data → reader recalls that the classic perceptron only converges for linearly separable data → selects B as uniquely matching → answer stays B but is now explicitly tied to that limitation and excludes A, C, and D.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is the limitation of the perceptron algorithm?"
+    },
+    {
+      "question_number": 4,
+      "question_type": "MCQ",
+      "stem_text": "Q4. Why is Laplace smoothing important?",
+      "options": {
+        "A": "It improves cosine similarity",
+        "B": "It reduces dimensionality",
+        "C": "It avoids zero probabilities for unseen words",
+        "D": "It speeds up gradient descent"
+      },
+      "gold_answer": "C",
+      "perturbations": [
+        {
+          "question_index": 4,
+          "latex_stem_text": "Why is Laplace smoothing important?",
+          "original_substring": "Why is Laplace smoothing important?",
+          "replacement_substring": "In language models, which option prevents unseen words from having probability zero?",
+          "start_pos": 0,
+          "end_pos": 32,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem explicitly asks about preventing zero probabilities for unseen words, which is exactly what option C states. Options A, B, and D address unrelated effects like similarity, dimensionality, or speed, so they are incorrect.\nverification: Original stem asks broadly why Laplace smoothing is important → replacement specifies the role in handling unseen words’ probabilities → interpretation centers on smoothing to avoid zeros → option C matches this verbatim → answer remains C while other options are ruled out.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Why is Laplace smoothing important?"
+    },
+    {
+      "question_number": 5,
+      "question_type": "MCQ",
+      "stem_text": "Q5. What happens in stochastic gradient descent (SGD) compared to gradient descent (GD)?",
+      "options": {
+        "A": "SGD updates weights using the entire dataset every step",
+        "B": "SGD updates weights using one or a subset of training examples",
+        "C": "GD converges faster because updates are noisier",
+        "D": "SGD cannot be used with neural networks"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 5,
+          "latex_stem_text": "What happens in stochastic gradient descent (SGD) compared to gradient descent (GD)?",
+          "original_substring": "What happens in stochastic gradient descent (SGD) compared to gradient descent (GD)?",
+          "replacement_substring": "Which option describes an algorithm that updates parameters using the full dataset each step?",
+          "start_pos": 0,
+          "end_pos": 86,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem now asks for a method that uses the entire dataset for each update, which is standard batch gradient descent and is described by option A. Option B refers to using one or a subset of examples (SGD), so it no longer matches the new stem.\nverification: Original stem contrasts SGD vs GD focusing on SGD behavior → replacement asks specifically about full-dataset updates → interpretation shifts to batch gradient descent behavior → option A uniquely states this → answer moves from B to A, making B incorrect for the new question.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What happens in stochastic gradient descent (SGD) compared to gradient descent (GD)?"
+    },
+    {
+      "question_number": 6,
+      "question_type": "MCQ",
+      "stem_text": "Q6. What is the core intuition behind word embeddings?",
+      "options": {
+        "A": "Words are represented by their dictionary definitions",
+        "B": "Words that appear in similar contexts have similar meanings",
+        "C": "Words are clustered by part of speech",
+        "D": "Words are ranked by frequency"
+      },
+      "gold_answer": "B",
+      "perturbations": [
+        {
+          "question_index": 6,
+          "latex_stem_text": "What is the core intuition behind word embeddings?",
+          "original_substring": "What is the core intuition behind word embeddings?",
+          "replacement_substring": "Which option states that similar meanings arise from words sharing similar contexts?",
+          "start_pos": 0,
+          "end_pos": 44,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem directly encodes the distributional hypothesis that underlies word embeddings, matching option B. Options A, C, and D talk about definitions, POS clustering, or frequency ranking, which are not the core intuition asked for.\nverification: Original stem asks for the core intuition of embeddings → replacement restates the 'similar contexts → similar meanings' idea → interpretation highlights distributional similarity → option B matches exactly → answer remains B while other options are excluded.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is the core intuition behind word embeddings?"
+    },
+    {
+      "question_number": 7,
+      "question_type": "MCQ",
+      "stem_text": "Q7. What is the primary purpose of the Softmax function?",
+      "options": {
+        "A": "To penalize large model weights",
+        "B": "To reduce feature dimensionality",
+        "C": "To select the class with the largest raw score without normalization",
+        "D": "To convert raw class scores into a valid probability distribution"
+      },
+      "gold_answer": "D",
+      "perturbations": [
+        {
+          "question_index": 7,
+          "latex_stem_text": "What is the primary purpose of the Softmax function?",
+          "original_substring": "What is the primary purpose of the Softmax function?",
+          "replacement_substring": "Which option selects the class with the largest raw score without any normalization?",
+          "start_pos": 0,
+          "end_pos": 49,
+          "target_wrong_answer": "C",
+          "reasoning": "The new stem asks about simply choosing the largest raw score without normalization, which matches option C. The original correct option D involves producing a probability distribution, which contradicts the requirement of no normalization, so D becomes incorrect.\nverification: Original stem asks for Softmax’s primary purpose → replacement describes argmax over raw scores without normalization → interpretation focuses on a non-normalizing decision rule → option C states exactly that → answer shifts from D to C, and D is ruled out by the 'without normalization' clause.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is the primary purpose of the Softmax function?"
+    },
+    {
+      "question_number": 8,
+      "question_type": "MCQ",
+      "stem_text": "Q8. In the perceptron algorithm, when are the weights updated?",
+      "options": {
+        "A": "After every training example",
+        "B": "Only when the prediction is correct",
+        "C": "Only when the prediction is incorrect",
+        "D": "Only after one full pass over the data"
+      },
+      "gold_answer": "C",
+      "perturbations": [
+        {
+          "question_index": 8,
+          "latex_stem_text": "In the perceptron algorithm, when are the weights updated?",
+          "original_substring": "In the perceptron algorithm, when are the weights updated?",
+          "replacement_substring": "In online learning, which option updates model parameters after each training example?",
+          "start_pos": 0,
+          "end_pos": 56,
+          "target_wrong_answer": "A",
+          "reasoning": "The new stem refers to an online learning-style update after every example, which corresponds to option A. Option C restricts updates to incorrect predictions only, which contradicts the 'after each training example' phrasing, so C is no longer correct.\nverification: Original stem asks when perceptron updates weights → replacement generalizes to online learning updates after each example → interpretation focuses on per-example updates regardless of correctness → option A matches this → answer moves from C to A, invalidating C for the revised question.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "In the perceptron algorithm, when are the weights updated?"
+    },
+    {
+      "question_number": 9,
+      "question_type": "MCQ",
+      "stem_text": "Q9. What is the main goal of TF-IDF weighting?",
+      "options": {
+        "A": "Increase the weight of very common words",
+        "B": "Represent word order",
+        "C": "Convert sparse vectors into dense embeddings",
+        "D": "Highlight words that are frequent in a document but rare across documents"
+      },
+      "gold_answer": "D",
+      "perturbations": [
+        {
+          "question_index": 9,
+          "latex_stem_text": "What is the main goal of TF-IDF weighting?",
+          "original_substring": "What is the main goal of TF-IDF weighting?",
+          "replacement_substring": "Which option best describes a scheme that emphasizes words frequent in a document but rare overall?",
+          "start_pos": 0,
+          "end_pos": 42,
+          "target_wrong_answer": "D",
+          "reasoning": "The new stem paraphrases the usual description of TF-IDF, which is exactly spelled out in option D. Options A, B, and C mention common words, order, or dense embeddings, which do not match the emphasis on rare-across-documents words.\nverification: Original stem asks about TF-IDF’s main goal → replacement explicitly describes its effect on term frequencies across documents → interpretation identifies TF-IDF behavior → option D restates this effect → answer remains D while other options are rejected.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "What is the main goal of TF-IDF weighting?"
+    },
+    {
+      "question_number": 10,
+      "question_type": "MCQ",
+      "stem_text": "Q10. Why is cosine similarity preferred over dot product when comparing word vectors?",
+      "options": {
+        "A": "It ignores vector length while calculating similarity",
+        "B": "It increases the influence of high-frequency words",
+        "C": "It converts similarity scores into probabilities",
+        "D": "It reduces the dimensionality of word embeddings"
+      },
+      "gold_answer": "A",
+      "perturbations": [
+        {
+          "question_index": 10,
+          "latex_stem_text": "Why is cosine similarity preferred over dot product when comparing word vectors?",
+          "original_substring": "Why is cosine similarity preferred over dot product when comparing word vectors?",
+          "replacement_substring": "Which option describes a measure that boosts the influence of very frequent words?",
+          "start_pos": 0,
+          "end_pos": 86,
+          "target_wrong_answer": "B",
+          "reasoning": "The new stem now asks about boosting the influence of very frequent words, which aligns with option B. Option A’s property of ignoring vector length is unrelated to emphasizing high-frequency words, so A is not correct for this revised question.\nverification: Original stem contrasts cosine similarity vs dot product regarding length normalization → replacement asks about increasing influence of high-frequency words → interpretation shifts to frequency-based weighting rather than geometric similarity → option B uniquely mentions high-frequency words → answer changes from A to B, and A no longer satisfies the stem.",
+          "api_metadata": {
+            "response_id": "chatcmpl-DI21N6q8B5TcXfGojYqMaAE4g5ShB",
+            "model": "gpt-5.1-2025-11-13",
+            "system_fingerprint": null,
+            "created": 1773190045,
+            "finish_reason": "stop",
+            "prompt_tokens": 2731,
+            "completion_tokens": 1856,
+            "total_tokens": 4587,
+            "cached_tokens": 0,
+            "prompt_tokens_by_role": null
+          }
+        }
+      ],
+      "latex_stem_text": "Why is cosine similarity preferred over dot product when comparing word vectors?"
+    }
+  ],
+  "file_paths": {
+    "latex_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260310_174705_8f3973/input/CSE476_Quiz2.tex",
+    "pdf_file": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260310_174705_8f3973/uploads/CSE476_Quiz2.pdf",
+    "layout_json": "/Users/priyanujbordoloi/Documents/IGSHIELD/backend/runs/run_20260310_174705_8f3973/input/layout.json",
+    "page_images": [
+      "page_images/page_1.png",
+      "page_images/page_2.png"
+    ]
+  },
+  "title_text": "CSE-476: Introduction to Natural Language Processing",
+  "subtitle_text": "Quiz 2",
+  "section_title": "Multiple Choice Questions (Single correct)",
+  "instructions_text": "Instructions: Select the correct option with a short explanation.",
+  "geometry": null,
+  "document_class_options": null,
+  "enumerate_label": "Q\\arabic*.",
+  "logo_path": "logo.png",
+  "logo_width": "2.5cm",
+  "logo_position": null
+}
