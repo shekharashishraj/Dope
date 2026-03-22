@@ -112,17 +112,19 @@ def format_mcq_question_entry(
     latex_stem_text: str,
     copyable_text: str,
     gold_answer: str,
-    options: Dict[str, str]
+    options: Dict[str, str],
+    k: int = 3
 ) -> str:
     """Format a single MCQ question entry for grouped batch prompt."""
     options_str = "\n".join([f"  - {key}: {value}" for key, value in options.items()])
+    mapping_word = "mapping" if k == 1 else "mappings"
     return f"""**Question {question_index}:**
 - LaTeX stem: `{latex_stem_text}`
 - Copyable text: {copyable_text}
 - Gold answer: {gold_answer}
 - Options:
 {options_str}
-- Goal: Generate 3 mappings that each make a DIFFERENT option become correct (change answer away from {gold_answer}, use Tier 1-2 techniques)
+- Goal: Generate {k} {mapping_word} that each make a DIFFERENT option become correct (change answer away from {gold_answer}, use Tier 1-2 techniques)
 
 """
 
@@ -149,7 +151,8 @@ def format_grouped_mcq_batch(
             latex_stem_text=q['latex_stem_text'],
             copyable_text=q['copyable_text'],
             gold_answer=q['gold_answer'],
-            options=q['options']
+            options=q['options'],
+            k=k
         ))
     
     total_mappings = len(questions) * k

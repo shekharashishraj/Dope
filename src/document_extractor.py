@@ -9,6 +9,7 @@ from pydantic import ValidationError
 
 from .models.perturbation import Document, Question
 from .models.enums import QuestionType
+from .stem_utils import normalize_latex_stem
 
 logger = logging.getLogger(__name__)
 
@@ -129,7 +130,7 @@ Given the raw text extracted from a PDF (and optionally an answer key), produce 
   - question_number: integer (1-based)
   - question_type: one of "MCQ", "TF", "LONG"
   - stem_text: string (the question text as it appears, plain text)
-  - latex_stem_text: string (same as stem_text, or LaTeX-escaped if needed; use double backticks for quotes)
+  - latex_stem_text: string (question text only, no "Q1."/label prefix; same as stem_text or LaTeX-escaped; use double backticks for quotes)
   - options: object for MCQ with keys "A", "B", "C", "D" and string values; omit for TF/LONG
   - gold_answer: string (correct answer: option letter for MCQ, "True"/"False" for TF, or summary for LONG)
 Optional layout fields (include only if you can infer them from the PDF text):
@@ -258,6 +259,7 @@ def _parse_document_from_llm_response(content: str, doc_id: str) -> Document:
             q["question_type"] = qt
         if not q.get("latex_stem_text") and q.get("stem_text"):
             q["latex_stem_text"] = q["stem_text"]
+        q["latex_stem_text"] = normalize_latex_stem(q.get("latex_stem_text") or q.get("stem_text") or "")
     # Preserve optional layout keys if present (strip empty strings to None)
     for key in ("title_text", "subtitle_text", "section_title", "instructions_text", "geometry", "document_class_options", "enumerate_label"):
         if key in data and (data[key] is None or (isinstance(data[key], str) and not data[key].strip())):

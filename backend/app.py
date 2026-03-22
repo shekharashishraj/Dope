@@ -8,6 +8,7 @@ from uuid import uuid4
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from src.config import Config
@@ -102,6 +103,33 @@ app.add_middleware(
 RUN_STORE: Dict[str, RunContext] = {}
 
 
+def _persist_run(ctx: RunContext) -> None:
+    """Write run context to run_dir/context.json. Log errors but do not fail the request."""
+    try:
+        run_dir = RUNS_ROOT / ctx.run_id
+        run_dir.mkdir(parents=True, exist_ok=True)
+        path = run_dir / "context.json"
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(ctx.model_dump(), f, indent=2, ensure_ascii=False)
+    except OSError as e:
+        logger.warning("Failed to persist run %s: %s", ctx.run_id, e)
+
+
+def _load_persisted_runs() -> None:
+    """Load all run contexts from backend/runs/run_*/context.json into RUN_STORE."""
+    for path in RUNS_ROOT.glob("run_*/context.json"):
+        try:
+            with path.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+            ctx = RunContext.model_validate(data)
+            RUN_STORE[ctx.run_id] = ctx
+        except (OSError, json.JSONDecodeError, Exception) as e:
+            logger.warning("Skip loading %s: %s", path, e)
+
+
+_load_persisted_runs()
+
+
 def _resolve_path(path_str: str) -> Path:
     path = Path(path_str)
     if not path.is_absolute():
@@ -111,7 +139,13 @@ def _resolve_path(path_str: str) -> Path:
 
 def _load_config(config_path: str) -> Config:
     resolved = _resolve_path(config_path)
-    return Config.from_yaml(str(resolved))
+    config = Config.from_yaml(str(resolved))
+    logger.info(
+        "Loaded config from %s (mappings_per_question=%s)",
+        resolved,
+        config.processing.mappings_per_question,
+    )
+    return config
 
 
 def _create_run_id() -> str:
@@ -333,6 +367,7 @@ async def ingest(
         answer_key_path=str(answer_path) if answer_path else None,
     )
     RUN_STORE[run_id] = ctx
+    _persist_run(ctx)
 
     logger.info("Ingested run %s (doc_name=%s)", run_id, resolved_doc_name)
     return {
@@ -460,6 +495,7 @@ def extract(request: ExtractRequest) -> Dict[str, Any]:
                     logger.info("Copied asset %s to run input", name)
     ctx.document_json_path = str(output_json_path)
     RUN_STORE[ctx.run_id] = ctx
+    _persist_run(ctx)
     logger.info("Extract complete for run %s: document_path=%s, latex_path=%s", request.run_id, output_json_path, output_tex_path)
     return {
         "run_id": ctx.run_id,
@@ -507,6 +543,7 @@ def perturb(request: PerturbRequest) -> Dict[str, Any]:
         attached_jsons = [str(output_path)]
         ctx.perturbation_jsons = attached_jsons
         RUN_STORE[ctx.run_id] = ctx
+        _persist_run(ctx)
         stats = _count_perturbations(output_path)
         detail = f"Generated {stats['perturbations']} perturbations for {stats['questions']} questions"
         logger.info("Perturbations ready for run %s (single-doc)", request.run_id)
@@ -554,6 +591,7 @@ def perturb(request: PerturbRequest) -> Dict[str, Any]:
 
     ctx.perturbation_jsons = attached_jsons
     RUN_STORE[ctx.run_id] = ctx
+    _persist_run(ctx)
 
     stats = _count_perturbations(Path(attached_jsons[0]))
     detail = f"Loaded {stats['perturbations']} perturbations"
@@ -618,6 +656,7 @@ def inject(request: InjectRequest) -> Dict[str, Any]:
     ctx.attacked_output_dir = config.pdf_generation.output_base_dir
     ctx.attacked_pdfs = summary["pdf_paths"]
     RUN_STORE[ctx.run_id] = ctx
+    _persist_run(ctx)
 
     if summary["compiled_pdfs"] == 0 and not compile_pdf_effective:
         logger.warning(
@@ -703,11 +742,13 @@ def evaluate(request: EvaluateRequest) -> Dict[str, Any]:
 
     ctx.detection_output_dir = str(output_dir)
     RUN_STORE[ctx.run_id] = ctx
+    _persist_run(ctx)
 
     logger.info("Evaluation complete for run %s", request.run_id)
     return {
         "run_id": ctx.run_id,
-        "metrics": metrics.get("summary", {}),
+        "metrics": metrics,
+        "sample_results": detection_results[:20],
         "report_path": str(report_path),
         "output_dir": str(output_dir),
         "detail": "Evaluation complete"
@@ -718,3 +759,34 @@ def evaluate(request: EvaluateRequest) -> Dict[str, Any]:
 def get_run(run_id: str) -> Dict[str, Any]:
     ctx = _get_run(run_id)
     return ctx.model_dump()
+
+
+@app.get("/runs/{run_id}/artifacts/{filename}")
+def get_run_artifact(run_id: str, filename: str):
+    """Serve a PDF artifact for a run. Only paths in the run's attacked_pdfs are allowed."""
+    ctx = _get_run(run_id)
+    if not ctx.attacked_pdfs:
+        raise HTTPException(status_code=404, detail="No artifacts for this run")
+    path_str = None
+    for p in ctx.attacked_pdfs:
+        if Path(p).name == filename:
+            path_str = p
+            break
+    if not path_str:
+        raise HTTPException(status_code=404, detail=f"Artifact not found: {filename}")
+    path = _resolve_path(path_str)
+    path = path.resolve()
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="File not found")
+    root_resolved = ROOT.resolve()
+    try:
+        if not path.is_relative_to(root_resolved):
+            raise HTTPException(status_code=403, detail="Access denied")
+    except AttributeError:
+        root_parts = root_resolved.parts
+        path_parts = path.parts
+        if path_parts[: len(root_parts)] != root_parts:
+            raise HTTPException(status_code=403, detail="Access denied")
+    response = FileResponse(path, media_type="application/pdf")
+    response.headers["Content-Disposition"] = f'inline; filename="{filename}"'
+    return response

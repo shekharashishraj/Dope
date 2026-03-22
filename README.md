@@ -86,27 +86,48 @@ The project includes a web interface to run the full pipeline (upload PDF → ex
 
    The API will be available at **http://localhost:8001**. Leave this terminal running.
 
-### Frontend setup
+### Frontend setup (React UI)
 
-1. **In a new terminal**, from the repository root, serve the frontend:
+The recommended web UI is the React app in `frontend-app/` (Setup → Pipeline Timeline → Results layout, Developer Mode for logs).
+
+1. **In a new terminal**, from the repository root:
 
    ```bash
-   python -m http.server 8080 --directory frontend
+   cd frontend-app
+   npm install
+   npm run dev
    ```
 
-2. **Open http://localhost:8080** in your browser.
+2. **Open http://localhost:5173** in your browser.
 
-3. **(Optional)** If the backend runs on a different host or port, edit `frontend/js/config.js` and set `endpoint` to your backend URL (default: `http://localhost:8001`).
+3. **(Optional)** If the backend runs on a different host or port, set the API endpoint when starting the dev server:
+
+   ```bash
+   VITE_API_ENDPOINT=http://localhost:8001 npm run dev
+   ```
+
+   Or create a `.env` in `frontend-app/` with `VITE_API_ENDPOINT=http://your-backend-url`.
+
+### Legacy static frontend (optional)
+
+To use the original static UI instead:
+
+```bash
+python -m http.server 8080 --directory frontend
+```
+
+Then open http://localhost:8080. Configure the backend URL in `frontend/js/config.js` if needed (default: `http://localhost:8001`).
 
 ### Quick check
 
-| Service   | URL                      |
-|----------|---------------------------|
-| Backend  | http://localhost:8001     |
+| Service   | URL                         |
+|----------|-----------------------------|
+| Backend  | http://localhost:8001       |
 | Health   | http://localhost:8001/health |
-| Frontend | http://localhost:8080     |
+| Frontend (React) | http://localhost:5173 |
+| Frontend (legacy) | http://localhost:8080  |
 
-The frontend calls the backend in sequence: **Ingest** (upload PDF) → **Extract** → **Perturb** → **Inject** → **Evaluate**. See `backend/README.md` for API details and `frontend/README.md` for frontend-only notes.
+The frontend calls the backend in sequence: **Ingest** (upload PDF) → **Extract** → **Perturb** → **Inject** → **Evaluate**. See `backend/README.md` for API details and `frontend-app/README.md` for the React UI.
 
 ## Usage
 
@@ -302,14 +323,21 @@ IGSHIELD/
 ├── backend/                 # FastAPI backend (web demo)
 │   ├── app.py               # API routes (ingest, extract, perturb, inject, evaluate)
 │   ├── runs/                # Per-run uploads and outputs
-│   └── README.md             # Backend setup & API
-├── frontend/                 # Static frontend (web demo)
+│   └── README.md            # Backend setup & API
+├── frontend-app/            # React UI (recommended web demo)
+│   ├── src/
+│   │   ├── components/      # Shell, setup, pipeline, results, dev drawer
+│   │   ├── hooks/           # usePipelineRunner, useRunStream
+│   │   ├── lib/             # types, api, utils
+│   │   └── pages/           # Dashboard
+│   └── README.md            # React UI setup (Vite, Tailwind)
+├── frontend/                # Legacy static frontend (optional)
 │   ├── index.html
 │   ├── js/
 │   │   ├── config.js        # Backend endpoint (default: http://localhost:8001)
 │   │   ├── app.js
 │   │   └── ...
-│   └── README.md             # Frontend setup
+│   └── README.md            # Legacy frontend setup
 ├── src/
 │   ├── __init__.py
 │   ├── processor.py          # Main processing pipeline

@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import List, Optional
 
 from .models.perturbation import Document, FilePaths
+from .stem_utils import normalize_latex_stem
 
 logger = logging.getLogger(__name__)
 
@@ -221,7 +222,7 @@ def build_latex_from_document(document: Document, output_tex_path: Path) -> None
     body_parts.append(f"\\begin{{enumerate}}[{enum_opts}]")
 
     for q in document.questions:
-        stem = (q.latex_stem_text or q.stem_text or "").strip()
+        stem = normalize_latex_stem((q.latex_stem_text or q.stem_text or "").strip())
         stem_escaped = _escape_latex(stem) if stem else ""
         body_parts.append("  \\item " + stem_escaped)
         if q.options and q.question_type.value.upper() == "MCQ":
@@ -255,6 +256,9 @@ def build_latex_from_document(document: Document, output_tex_path: Path) -> None
         data["file_paths"] = dict(data["file_paths"]) if hasattr(data["file_paths"], "items") else {}
     # Store absolute path so orchestrator can resolve it from any cwd
     data["file_paths"]["latex_file"] = str(output_tex_path.resolve())
+    # Normalize latex_stem_text to stem-only (no "Q1." prefix) so it matches .tex item body
+    for q in data.get("questions", []):
+        q["latex_stem_text"] = normalize_latex_stem(q.get("latex_stem_text") or q.get("stem_text") or "")
     with doc_json_path.open("w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     logger.info("Updated %s with file_paths.latex_file", doc_json_path)

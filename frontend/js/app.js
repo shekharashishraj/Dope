@@ -13,10 +13,12 @@ const resetBtn = document.getElementById("reset-btn");
 const copyLogBtn = document.getElementById("copy-log");
 const compileToggle = document.getElementById("compile-toggle");
 
+const ATTACK_METHOD_VALUES = ["icw", "dual_layer", "font_attack", "icw_dual_layer", "icw_font_attack"];
+
 function getSelectedMethods() {
-  const selections = Array.from(document.querySelectorAll(".method-chip input:checked")).map(
-    (input) => input.value
-  );
+  const selections = Array.from(document.querySelectorAll("#method-grid .method-chip input:checked"))
+    .map((input) => input.value)
+    .filter((value) => ATTACK_METHOD_VALUES.includes(value));
   if (selections.length === 0) {
     log("warn", "No attack methods selected; defaulting to dual_layer");
     return ["dual_layer"];

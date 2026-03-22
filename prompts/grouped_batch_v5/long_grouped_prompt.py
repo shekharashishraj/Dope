@@ -127,14 +127,16 @@ def format_long_question_entry(
     question_index: int,
     latex_stem_text: str,
     copyable_text: str,
-    gold_answer: str
+    gold_answer: str,
+    k: int = 3
 ) -> str:
     """Format a single LONG question entry for grouped batch prompt."""
+    mapping_word = "mapping" if k == 1 else "mappings"
     return f"""**Question {question_index}:**
 - LaTeX stem: `{latex_stem_text}`
 - Copyable text: {copyable_text}
 - Gold answer: {gold_answer}
-- Goal: Generate 3 mappings that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
+- Goal: Generate {k} {mapping_word} that cause verifiable deviation from the gold answer (use Tier 1-3 techniques)
 
 """
 
@@ -160,7 +162,8 @@ def format_grouped_long_batch(
             question_index=q['question_index'],
             latex_stem_text=q['latex_stem_text'],
             copyable_text=q['copyable_text'],
-            gold_answer=q['gold_answer']
+            gold_answer=q['gold_answer'],
+            k=k
         ))
     
     total_mappings = len(questions) * k

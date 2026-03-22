@@ -13,6 +13,11 @@ class FontAttackInjector(BaseInjector):
     """Applies font attack using custom fonts."""
     
     UNIVERSAL_HIDDEN_CHAR = 'a'  # All characters map to 'a' in hidden layer
+    # Max length ratio between stem and replacement segment to apply font attack;
+    # beyond this we skip the attack for that segment to preserve layout.
+    MAX_LENGTH_RATIO = 3
+    # Regex for simple LaTeX macros (e.g., \&, \_, \log, \(, \))
+    MACRO_PATTERN = re.compile(r"(\\[A-Za-z]+|\\.)")
     
     def __init__(self, fonts_dir: Optional[Path] = None, base_font_path: Optional[Path] = None):
         """
@@ -199,6 +204,124 @@ class FontAttackInjector(BaseInjector):
                     abs_start = stem_start + substring_index
                     abs_end = abs_start + len(original_substring)
                 
+                # If stem contains macros (e.g., \&, \(, \)), preserve them verbatim
+                # and only apply font attack to surrounding plain-text segments.
+                stem_tex = mutated_tex[abs_start:abs_end]
+                if "\\" in original_substring and "\\" in stem_tex:
+                    segments = self._split_macros_typed(stem_tex)
+                    # Collect indices of non-macro segments to distribute hidden text.
+                    plain_indices = [i for i, (is_macro, _) in enumerate(segments) if not is_macro]
+                    if not plain_indices:
+                        # Nothing but macros; leave stem as-is.
+                        replacements.append((abs_start, abs_end, stem_tex))
+                        metadata_replacements.append({
+                            "question_number": question_number,
+                            "original": original_substring,
+                            "replacement": replacement_substring,
+                            "position": (abs_start, abs_end),
+                            "attack_id": None,
+                            "font_info": [],
+                            "plan": "macros_only"
+                        })
+                        continue
+
+                    dummy_spans = [(0, 0, "") for _ in plain_indices]
+                    hidden_chunks = self._split_hidden_text_for_words(
+                        replacement_substring,
+                        dummy_spans
+                    )
+
+                    latex_parts: List[str] = []
+                    chunk_idx = 0
+                    for is_macro, seg_text in segments:
+                        if is_macro:
+                            latex_parts.append(seg_text)
+                            continue
+                        hidden_chunk = hidden_chunks[chunk_idx] if chunk_idx < len(hidden_chunks) else ""
+                        chunk_idx += 1
+                        if not hidden_chunk:
+                            latex_parts.append(seg_text)
+                            continue
+                        plan = self._build_attack_plan(
+                            hidden_text=hidden_chunk,
+                            visual_text=seg_text
+                        )
+                        if not plan:
+                            latex_parts.append(seg_text)
+                            continue
+                        attack_id = self._next_attack_id()
+                        latex_seg = self._render_plan(attack_id, plan)
+                        latex_parts.append(latex_seg)
+
+                    latex_replacement = "".join(latex_parts)
+                    replacements.append((abs_start, abs_end, latex_replacement))
+                    metadata_replacements.append({
+                        "question_number": question_number,
+                        "original": original_substring,
+                        "replacement": replacement_substring,
+                        "position": (abs_start, abs_end),
+                        "attack_id": None,
+                        "font_info": [],
+                        "plan": "macros_preserved"
+                    })
+                    continue
+
+                # If stem contains math ($...$), use segment-based path: align by type
+                # (math↔math, text↔text), emit space after math when stem text starts with space,
+                # and skip font attack when segment length ratio is too skewed.
+                if "$" in original_substring and "$" in stem_tex:
+                    stem_typed = self._split_math_segments_typed(stem_tex)
+                    repl_typed = self._split_math_segments_typed(replacement_substring)
+                    # Skip full-string attack when segment counts differ a lot (e.g. Q9): it would
+                    # use raw LaTeX as visual and break rendering (\t, garbled words). Use segment
+                    # loop so visual stays correct; copy-paste may be original for mismatched parts.
+                    latex_parts: List[str] = []
+                    i_stem, i_repl = 0, 0
+                    last_was_math = False
+                    while i_stem < len(stem_typed) and i_repl < len(repl_typed):
+                        is_math_stem, seg_stem = stem_typed[i_stem]
+                        is_math_repl, seg_repl = repl_typed[i_repl]
+                        if is_math_stem and is_math_repl:
+                            latex_parts.append(seg_stem)
+                            last_was_math = True
+                            i_stem += 1
+                            i_repl += 1
+                        elif not is_math_stem and not is_math_repl:
+                            # Always run font attack so PDF stores replacement (copy-paste = decoy), fonts show original
+                            if last_was_math and seg_stem.startswith(" "):
+                                latex_parts.append("\\ ")
+                            plan = self._build_attack_plan(
+                                hidden_text=seg_repl,
+                                visual_text=seg_stem
+                            )
+                            if plan:
+                                attack_id = self._next_attack_id()
+                                latex_parts.append(self._render_plan(attack_id, plan))
+                            else:
+                                latex_parts.append(seg_stem)
+                            last_was_math = False
+                            i_stem += 1
+                            i_repl += 1
+                        else:
+                            # Mismatch: one math, one text — output stem verbatim, advance stem only
+                            latex_parts.append(seg_stem)
+                            last_was_math = False
+                            i_stem += 1
+                    for i in range(i_stem, len(stem_typed)):
+                        latex_parts.append(stem_typed[i][1])
+                    latex_replacement = "".join(latex_parts)
+                    replacements.append((abs_start, abs_end, latex_replacement))
+                    metadata_replacements.append({
+                        "question_number": question_number,
+                        "original": original_substring,
+                        "replacement": replacement_substring,
+                        "position": (abs_start, abs_end),
+                        "attack_id": None,
+                        "font_info": [],
+                        "plan": "math_segments_preserved"
+                    })
+                    continue
+
                 # If perturbation spans multiple words, attack each word
                 # separately so LaTeX can still break across spaces.
                 multiword_handled = False
@@ -310,9 +433,23 @@ class FontAttackInjector(BaseInjector):
                     # Not adjacent or overlapping, add as new replacement
                     merged_replacements.append((start, end, replacement))
         
-        # Now apply in reverse order (from end to start)
-        merged_replacements.sort(key=lambda x: x[0], reverse=True)
+        # Skip replacements that overlap math regions (avoids "Missing $ inserted")
+        math_regions = self._get_math_regions(mutated_tex)
+        replacements_to_apply: List[Tuple[int, int, str]] = []
         for start, end, replacement in merged_replacements:
+            overlaps_math = any(
+                start < m_end and end > m_start for m_start, m_end in math_regions
+            )
+            if overlaps_math:
+                print(
+                    f"[FontAttackInjector] Skipping replacement ({start}, {end}) - overlaps math region"
+                )
+            else:
+                replacements_to_apply.append((start, end, replacement))
+        
+        # Now apply in reverse order (from end to start)
+        replacements_to_apply.sort(key=lambda x: x[0], reverse=True)
+        for start, end, replacement in replacements_to_apply:
             mutated_tex = mutated_tex[:start] + replacement + mutated_tex[end:]
         
         # Add font declarations to preamble
@@ -566,6 +703,79 @@ class FontAttackInjector(BaseInjector):
             plan[-1]['visual_text'] += ''.join(visual_chars[visual_index:])
 
         return plan
+
+    def _split_math_segments(self, text: str) -> List[str]:
+        """
+        Split text into segments of alternating text and math ($...$).
+        Math segments are preserved so LaTeX can render them; they are not
+        wrapped in font commands (which would show literal $ and break math).
+        """
+        if not text or "$" not in text:
+            return [text] if text else []
+        # Split on $...$ and keep the math parts (odd-indexed results)
+        parts = re.split(r"(\$[^$]*\$)", text)
+        return [s for s in parts if s]
+
+    def _split_math_segments_typed(self, text: str) -> List[Tuple[bool, str]]:
+        """
+        Split text into typed segments: (is_math, segment).
+        is_math True means the segment is $...$ and should be preserved verbatim.
+        """
+        if not text or "$" not in text:
+            return [(False, text)] if text else []
+        parts = re.split(r"(\$[^$]*\$)", text)
+        result: List[Tuple[bool, str]] = []
+        for s in parts:
+            if not s:
+                continue
+            result.append((s.startswith("$") and s.endswith("$"), s))
+        return result
+
+    def _get_math_regions(self, tex: str) -> List[Tuple[int, int]]:
+        """
+        Return character ranges (start, end) of math in tex so replacements
+        overlapping these regions can be skipped (avoids breaking math mode).
+        Includes $...$, \\(...\\), and \\[...\\].
+        """
+        regions: List[Tuple[int, int]] = []
+        # Inline $...$ (do not treat \$ as start of math)
+        for m in re.finditer(r"(?<!\\)\$[^$]*(?<!\\)\$", tex):
+            regions.append((m.start(), m.end()))
+        # Inline \(...\)
+        for m in re.finditer(r"\\\(.+?\\\)", tex, re.DOTALL):
+            regions.append((m.start(), m.end()))
+        # Display \[...\]
+        for m in re.finditer(r"\\\[.+?\\\]", tex, re.DOTALL):
+            regions.append((m.start(), m.end()))
+        regions.sort(key=lambda r: r[0])
+        # Merge overlapping or adjacent
+        merged: List[Tuple[int, int]] = []
+        for start, end in regions:
+            if merged and start <= merged[-1][1]:
+                prev_start, prev_end = merged[-1]
+                merged[-1] = (prev_start, max(prev_end, end))
+            else:
+                merged.append((start, end))
+        return merged
+
+    def _split_macros_typed(self, text: str) -> List[Tuple[bool, str]]:
+        """
+        Split text into typed segments: (is_macro, segment) where LaTeX macros
+        like \\&, \\_, \\log, \\(, \\) are preserved as separate segments.
+        """
+        if not text or "\\" not in text:
+            return [(False, text)] if text else []
+
+        parts = self.MACRO_PATTERN.split(text)
+        result: List[Tuple[bool, str]] = []
+        for p in parts:
+            if not p:
+                continue
+            if self.MACRO_PATTERN.fullmatch(p):
+                result.append((True, p))
+            else:
+                result.append((False, p))
+        return result
 
     def _word_spans(self, text: str) -> List[Tuple[int, int, str]]:
         """Return (start, end, token) tuples for non-whitespace sequences."""

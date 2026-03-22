@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Tuple
 from ..models.perturbation import PerturbationMapping, Question
+from ..stem_utils import normalize_latex_stem
 
 
 class BaseInjector(ABC):
@@ -85,6 +86,17 @@ class BaseInjector(ABC):
         index = tex_content.find(stem_escaped)
         if index != -1:
             return (index, index + len(stem_escaped))
+        
+        # Try stem without "Q<n>." prefix (LaTeX item body has no label in source)
+        normalized = normalize_latex_stem(stem_text)
+        if normalized != stem_text.strip():
+            index = tex_content.find(normalized)
+            if index != -1:
+                return (index, index + len(normalized))
+            norm_escaped = normalized.replace('_', '\\_')
+            index = tex_content.find(norm_escaped)
+            if index != -1:
+                return (index, index + len(norm_escaped))
         
         # Handle case where LaTeX has "\item " prefix before question number
         # e.g., LaTeX: "\item 1. text..." but stem_text: "1. text..."

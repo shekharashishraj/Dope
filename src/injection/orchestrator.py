@@ -165,10 +165,11 @@ class InjectionOrchestrator:
             try:
                 # For font attack methods, generate separate PDFs for each perturbation (1, 2, 3)
                 if "font_attack" in method_name:
-                    # Process each perturbation separately
+                    # Process each perturbation separately (dynamic: only indices that exist)
                     perturbation_results = []
-                    
-                    for pert_idx in range(1, 4):  # 1, 2, 3
+                    max_perturbations = max((len(q.perturbations) for q in questions), default=0)
+
+                    for pert_idx in range(1, max_perturbations + 1):
                         print(f"[Orchestrator] Processing {method_name} with perturbation {pert_idx}...")
                         
                         # Filter perturbations to only include the pert_idx-th one for each question

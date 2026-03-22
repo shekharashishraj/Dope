@@ -115,3 +115,9 @@ python3 analyze_font_attack_issue.py
 
 **The font attack code is working correctly.** The issue is that `cybersecurity_undergraduate_doc_01` has no perturbations to apply. The real problem is in the perturbation generation step, not the font attack injection step.
 
+## Recent Improvements (Macros & Layout Preservation)
+
+- LaTeX macros such as `\&`, `\(`, `\)`, and similar commands are now detected and preserved verbatim by the font-attack injector; only surrounding plain text is font-attacked.
+- The attack planner now caps the number of visible characters assigned to each hidden character and skips segments with extreme length mismatches, which keeps spacing and line breaks much closer to the original LaTeX.
+- These changes were validated on the `SET_D` exam, specifically questions with LaTeX macros and long stems (e.g., Q19, Q27, Q33), to ensure the attacked PDFs are visually indistinguishable from the original while still embedding the perturbed text for copy-paste.
+
