@@ -162,5 +162,5 @@ Quick start for testing.
 - Keep documentation up to date with code changes
 
 ## Last Updated
-2026-01-02 - Added GPT-5.1 implementation documentation
+2026-03-25 - Repository cleanup: generated outputs and manual perturbation JSONs are gitignored; UI blueprint markdown files at repo root were removed as superseded by `frontend-app/`. Course materials, experiment folders (`human_responses/`, `test_verbatim_outputs/`, `test_detection_temp/`), and ad-hoc root scripts/data are gitignored; web UI logo is tracked under `frontend-app/public/IGShield_Logo.png`.
 

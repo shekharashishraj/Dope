@@ -1,5 +1,7 @@
 # Quick Start: Testing PDF Attacks
 
+The `test_pdf_upload.py` / `test_verbatim_questions.py` helpers are optional local scripts (not committed; see `.gitignore`).
+
 ## Quick Commands
 
 ### Test Single PDF (Answer All Questions)

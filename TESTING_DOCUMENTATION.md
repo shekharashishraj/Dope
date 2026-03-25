@@ -1,5 +1,7 @@
 # Testing Documentation
 
+**Repository note:** The root-level helper scripts described below (`test_pdf_upload.py`, `test_verbatim_questions.py`, etc.) are **not committed** to this repository (see `.gitignore`). Keep copies locally if you use these workflows.
+
 ## Overview
 
 This document describes the testing methodology, scripts, and findings for evaluating PDF attack detection using OpenAI's v1/files API.

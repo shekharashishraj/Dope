@@ -1,5 +1,7 @@
 # Injection Methods Guide
 
+**Repository note:** `test_injector_question_level.py` (mentioned below) is an optional local helper and is not committed (see `.gitignore`).
+
 ## Overview
 
 The IntegrityShield injection system applies perturbations to LaTeX documents to create manipulated PDFs that exploit the render-parse gap. This guide covers how the injection system works and recent improvements.

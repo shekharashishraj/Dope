@@ -108,16 +108,6 @@ The recommended web UI is the React app in `frontend-app/` (Setup → Pipeline T
 
    Or create a `.env` in `frontend-app/` with `VITE_API_ENDPOINT=http://your-backend-url`.
 
-### Legacy static frontend (optional)
-
-To use the original static UI instead:
-
-```bash
-python -m http.server 8080 --directory frontend
-```
-
-Then open http://localhost:8080. Configure the backend URL in `frontend/js/config.js` if needed (default: `http://localhost:8001`).
-
 ### Quick check
 
 | Service   | URL                         |
@@ -125,7 +115,6 @@ Then open http://localhost:8080. Configure the backend URL in `frontend/js/confi
 | Backend  | http://localhost:8001       |
 | Health   | http://localhost:8001/health |
 | Frontend (React) | http://localhost:5173 |
-| Frontend (legacy) | http://localhost:8080  |
 
 The frontend calls the backend in sequence: **Ingest** (upload PDF) → **Extract** → **Perturb** → **Inject** → **Evaluate**. See `backend/README.md` for API details and `frontend-app/README.md` for the React UI.
 
@@ -322,22 +311,15 @@ prompts:
 IGSHIELD/
 ├── backend/                 # FastAPI backend (web demo)
 │   ├── app.py               # API routes (ingest, extract, perturb, inject, evaluate)
-│   ├── runs/                # Per-run uploads and outputs
+│   ├── runs/                # Per-run uploads and outputs (created at runtime)
 │   └── README.md            # Backend setup & API
-├── frontend-app/            # React UI (recommended web demo)
+├── frontend-app/            # React UI (web demo)
 │   ├── src/
 │   │   ├── components/      # Shell, setup, pipeline, results, dev drawer
 │   │   ├── hooks/           # usePipelineRunner, useRunStream
 │   │   ├── lib/             # types, api, utils
 │   │   └── pages/           # Dashboard
 │   └── README.md            # React UI setup (Vite, Tailwind)
-├── frontend/                # Legacy static frontend (optional)
-│   ├── index.html
-│   ├── js/
-│   │   ├── config.js        # Backend endpoint (default: http://localhost:8001)
-│   │   ├── app.js
-│   │   └── ...
-│   └── README.md            # Legacy frontend setup
 ├── src/
 │   ├── __init__.py
 │   ├── processor.py          # Main processing pipeline
@@ -381,6 +363,9 @@ IGSHIELD/
 │       └── long_grouped_prompt.py
 ├── config/
 │   └── config.yaml          # Configuration file
+├── scripts/
+│   └── build_set_d_perturbations.py  # Optional: generate manual_perturbations/SET_D_perturbation.json
+├── manual_perturbations/    # Hand-authored perturbation JSON (contents gitignored; see .gitignore)
 ├── output/                  # Input directory (JSON files)
 ├── output_perturbation/     # Organized perturbation outputs
 │   └── <timestamp>/
@@ -411,6 +396,8 @@ IGSHIELD/
 ├── .env.example             # Environment variable template
 └── README.md                # This file
 ```
+
+`output_perturbation/`, `output_attacked_pdfs/`, `output_detection/`, repo-level `logs/`, and JSON under `manual_perturbations/` are **generated** and listed in `.gitignore` so they are not committed; they are recreated when you run the pipeline or backend.
 
 ## Input Format
 

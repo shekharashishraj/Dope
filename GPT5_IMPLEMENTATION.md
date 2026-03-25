@@ -272,7 +272,7 @@ def format_tf_question_entry_v2(
 
 ### Verification Script
 
-A verification script (`verify_gpt5_changes.py`) was created to check all changes:
+A small verification script (`verify_gpt5_changes.py`) was used during the GPT‑5.1 rollout to check config and client wiring. It is **not shipped in the repository** (keep a local copy if you still use it; see `.gitignore`). When present, it verifies:
 
 ```bash
 python3 verify_gpt5_changes.py
@@ -362,7 +362,7 @@ The code will automatically use traditional parameters.
 
 ### New Files
 
-1. **`verify_gpt5_changes.py`** - Verification script (can be deleted after verification)
+1. **`verify_gpt5_changes.py`** - Optional local verification script (not committed; see `.gitignore`)
 
 ---
 

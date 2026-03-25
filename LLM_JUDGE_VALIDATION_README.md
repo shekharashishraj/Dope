@@ -2,11 +2,13 @@
 
 This folder contains validation data for the LLM-as-a-judge component used in long-form question detection.
 
+**Repository note:** The CSV and Python helpers listed below are **optional local artifacts** and are **not committed** (see `.gitignore`). This document describes the intended layout when you generate or maintain that data yourself.
+
 ## Files
 
-- `llm_judge_validation_data.csv`: Validation dataset with 300 long-form responses
-- `generate_llm_judge_validation_data.py`: Script to generate the validation data
-- `analyze_llm_judge_validation.py`: Script to calculate validation metrics from the CSV
+- `llm_judge_validation_data.csv`: Validation dataset with 300 long-form responses (local)
+- `generate_llm_judge_validation_data.py`: Script to generate the validation data (local)
+- `analyze_llm_judge_validation.py`: Script to calculate validation metrics from the CSV (local)
 
 ## Dataset Description
 

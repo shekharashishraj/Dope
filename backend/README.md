@@ -30,7 +30,7 @@ FastAPI server that exposes the IGSHIELD pipeline as HTTP endpoints for the fron
    uvicorn backend.app:app --host 0.0.0.0 --port 8001
    ```
 
-   API base URL: **http://localhost:8001**. The frontend expects this URL by default (see `frontend/js/config.js`).
+   API base URL: **http://localhost:8001**. The React app (`frontend-app/`) uses this URL by default via `VITE_API_ENDPOINT` (see `frontend-app/README.md`).
 
 ## Endpoints
 
