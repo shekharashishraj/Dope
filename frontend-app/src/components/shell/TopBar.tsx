@@ -1,7 +1,8 @@
-import { Bug, Play } from "lucide-react";
+import { Bug, Moon, Play, Sun } from "lucide-react";
 import { Button } from "../ui/button";
 import { Switch } from "../ui/switch";
 import { useRunState } from "../../context/RunStateContext";
+import { useTheme } from "../../context/ThemeContext";
 import { useTab } from "../../context/TabContext";
 import { cn } from "../../lib/utils";
 
@@ -18,22 +19,23 @@ export function TopBar({
   onOpenDeveloper: () => void;
 }) {
   const { state, setDevMode } = useRunState();
+  const { theme, toggleTheme } = useTheme();
   const { activeTab, setActiveTab } = useTab();
 
   const tabClass = cn(
     "px-3 py-1.5 rounded-md text-sm font-medium uppercase transition-colors"
   );
-  const activeClass = "bg-[var(--accent)]/20 text-[var(--accent)]";
-  const inactiveClass = "text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--card)]/50";
+  const activeClass = "bg-white/20 text-[var(--header-text)]";
+  const inactiveClass = "text-[var(--header-muted)] hover:text-[var(--header-text)] hover:bg-[var(--header-hover)]";
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 border-b border-[var(--card-border)] bg-[var(--bg-2)]">
+    <header className="app-header sticky top-0 z-50 flex items-center justify-between px-6 py-4 border-b border-[var(--header-border)]">
       <div className="flex flex-1 items-center gap-4 justify-start min-w-0">
         <div className="flex shrink-0">
           <img src="/IGShield_Logo.png" alt="IntegrityShield" className="h-14 w-14 sm:h-16 sm:w-16 object-contain" />
         </div>
         <div>
-          <div className="font-semibold text-2xl sm:text-3xl tracking-tight">IntegrityShield</div>
+          <div className="font-semibold text-2xl sm:text-3xl tracking-tight text-[var(--header-text)]">IntegrityShield</div>
         </div>
       </div>
 
@@ -65,7 +67,9 @@ export function TopBar({
         <span
           className={cn(
             "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium",
-            statusVariant[state.status]
+            theme === "light"
+              ? "bg-white/20 text-[var(--header-text)]"
+              : statusVariant[state.status]
           )}
         >
           {state.status === "running" && <Play className="h-3 w-3 animate-pulse" />}
@@ -76,8 +80,21 @@ export function TopBar({
               : state.status.charAt(0).toUpperCase() + state.status.slice(1)}
         </span>
 
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label="Toggle light and dark mode"
+          className="p-2 rounded-md text-[var(--header-muted)] hover:text-[var(--header-text)] hover:bg-[var(--header-hover)] transition-colors"
+        >
+          {theme === "dark" ? (
+            <Sun className="h-4 w-4" />
+          ) : (
+            <Moon className="h-4 w-4" />
+          )}
+        </button>
+
         <div className="flex items-center gap-2">
-          <span className="text-xs text-[var(--muted)]">Developer Mode</span>
+          <span className="text-xs text-[var(--header-muted)]">Developer Mode</span>
           <Switch
             checked={state.devMode}
             onCheckedChange={setDevMode}

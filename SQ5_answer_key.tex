@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+Answer Key - CSE-476: Introduction to Natural Language Processing \\
+Quiz 5 \\
+\small (Answers are ordered exactly as in the question paper.)
+\end{center}
+
+\section*{Multiple Choice Questions}
+\begin{enumerate}[label=Q\arabic*.]
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) Pre-training on raw text with a next-word loss; B) Post-training on instruction--response pairs to follow tasks; C) Adding more layers to reduce perplexity values; D) Using masks to block attention to future tokens
+\\ \textit{Note:} Correct option: B - Instruction tuning fine-tunes (or trains further) on curated instruction--response data so the model learns to follow user tasks; it is distinct from next-word pre-training on raw text.
+\item \textbf{Answer:} D
+\\ \textit{Options:} A) HotpotQA (generative multi-hop answers); B) HumanEval (code generation via execution); C) SQuAD (extractive span selection); D) MMLU (multiple-choice benchmark)
+\\ \textit{Note:} Correct option: D - MMLU (Massive Multitask Language Understanding) is a standard multiple-choice benchmark spanning many subjects; HotpotQA, HumanEval, and SQuAD are not primarily multiple-choice LLM QA in that sense.
+\item \textbf{Answer:} C
+\\ \textit{Options:} A) Factual hallucination (wrong world facts); B) Commonsense hallucination (unsafe commonsense); C) Reasoning hallucination (faulty logical steps); D) No hallucination: answer is correct
+\\ \textit{Note:} Correct option: C - ``All but 3 run away'' leaves 3 sheep; answering 7 reflects incorrect reasoning about the puzzle, not a wrong fact about sheep or an unsafe claim.
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) They're easier than absolute ``goodness'' scores and capture relative quality; B) They strictly reduce compute and memory costs; C) They guarantee perfect annotator fairness; D) They remove the need for any supervised data
+\\ \textit{Note:} Correct option: A - Pairwise comparisons (which response is better?) are often more reliable and scalable than scoring absolute quality, and they encode relative preference for alignment.
+\item \textbf{Answer:} D
+\\ \textit{Options:} A) Set attention masks during decoding; B) Collect human preference pairs online; C) Tune optimizer hyper-parameters each step; D) Score whole model responses so PPO can assign rewards
+\\ \textit{Note:} Correct option: D - In RLHF with PPO, the reward model provides a scalar reward for (prompt, response) pairs that PPO uses to optimize the policy; it does not set masks or collect data by itself.
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) DPO trains directly on preference pairs without a separate reward model; B) DPO requires a value network to compute advantages; C) DPO prohibits using preference data; D) DPO only optimizes next-word likelihood
+\\ \textit{Note:} Correct option: A - Direct Preference Optimization (DPO) reparameterizes the RL objective so the policy can be trained from preferences without fitting an explicit reward model and running PPO.
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) Grounding generations by retrieving external sources; B) Increasing the parameter count to store more facts; C) Replacing tokenization with sub-word merges; D) Eliminating the need for instruction tuning
+\\ \textit{Note:} Correct option: A - Retrieval-Augmented Generation (RAG) conditions the generator on retrieved documents to reduce hallucination and anchor answers in external evidence.
+\item \textbf{Answer:} D
+\\ \textit{Options:} A) Backpropagates through retrieval to update encoders; B) Byte-pair encoding to compress queries; C) Learned neural embeddings for queries and documents; D) Document-length normalization and tunable term saturation on term frequency
+\\ \textit{Note:} Correct option: D - BM25 extends TF-IDF-style scoring with length normalization and a saturating transformation on term frequency (Okapi BM25); it is not neural backprop or BPE.
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) All retrieved docs; B) Relevant docs retrieved out of all relevant ones; C) Model accuracy; D) Token overlap
+\\ \textit{Note:} Correct option: B - Recall@$k$ is the fraction of all truly relevant documents that appear in the top-$k$ retrieved set (coverage of relevant items), not raw retrieval count or accuracy.
+\item \textbf{Answer:} C
+\\ \textit{Options:} A) RNNs; B) Decision Trees; C) BERT-like models; D) Linear Regression
+\\ \textit{Note:} Correct option: C - DPR typically uses separate Transformer encoders (e.g., BERT-style) for queries and passages to produce dense embeddings for similarity-based retrieval.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Answer Key}
+\end{document}

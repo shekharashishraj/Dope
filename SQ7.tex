@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in, top=0.5in}
+\begin{document}
+\begin{center}
+\includegraphics[width=2.5cm]{asu-logo.png} \\[0.2cm]
+CSE-476: Introduction to Natural Language Processing \\
+Quiz 7 \\
+\end{center}
+
+\section*{Multiple Choice Questions (Single correct)}
+\textit{Instructions: Select the correct option with a short explanation.}
+\begin{enumerate}[label=Q\arabic*.]
+\item What is a key limitation of a simple Retrieval-Augmented Generation (RAG) system?
+\begin{enumerate}[label=(\Alph*)]
+    \item It cannot process text input
+    \item It struggles with noisy or irrelevant retrieved data
+    \item It cannot use neural networks
+    \item It only works for images
+\end{enumerate}
+\item Which situation would most likely produce a high MRR but relatively low MAP?
+\begin{enumerate}[label=(\Alph*)]
+    \item Relevant documents are evenly distributed across rankings
+    \item The first relevant document appears early, but others are ranked poorly
+    \item All relevant documents appear at the top
+    \item No relevant documents are retrieved
+\end{enumerate}
+\item Why does Mean Average Precision provide a more comprehensive evaluation than Precision@k?
+\begin{enumerate}[label=(\Alph*)]
+    \item It accounts for ranking positions of all relevant documents
+    \item It only considers the first relevant document
+    \item It ignores irrelevant documents
+    \item It requires fewer computations
+\end{enumerate}
+\item In Dense Passage Retrieval, what is the primary role of negative samples during training?
+\begin{enumerate}[label=(\Alph*)]
+    \item To enforce similarity between unrelated queries and documents
+    \item To push irrelevant documents away in embedding space
+    \item To reduce model complexity
+    \item To increase dataset size
+\end{enumerate}
+\item Which statement best explains why BM25 may outperform DPR on unseen domains?
+\begin{enumerate}[label=(\Alph*)]
+    \item DPR requires labeled training data and may not generalize well
+    \item BM25 uses neural embeddings
+    \item BM25 ignores word frequencies
+    \item DPR does not use queries
+\end{enumerate}
+\item What is the key reason self-consistency requires a non-zero temperature during inference?
+\begin{enumerate}[label=(\Alph*)]
+    \item To produce diverse reasoning paths
+    \item To reduce computation time
+    \item To eliminate randomness
+    \item To ensure deterministic outputs
+\end{enumerate}
+\item During DPR training, what happens if negative samples are too easy (clearly unrelated)?
+\begin{enumerate}[label=(\Alph*)]
+    \item The model may fail to learn fine-grained differences
+    \item The model learns stronger distinctions
+    \item The training becomes unstable
+    \item The embeddings collapse
+\end{enumerate}
+\item Which issue arises in RAG when retrieved documents contain conflicting information?
+\begin{enumerate}[label=(\Alph*)]
+    \item Improved model confidence
+    \item Reduced inference time
+    \item Automatic conflict resolution
+    \item Increased hallucination risk
+\end{enumerate}
+\item Why does increasing Chain-of-Thought (CoT) length sometimes improve reasoning?
+\begin{enumerate}[label=(\Alph*)]
+    \item It reduces randomness
+    \item It allows more intermediate reasoning steps
+    \item It eliminates errors
+    \item It speeds up inference
+\end{enumerate}
+\item What is the key idea behind test-time scaling?
+\begin{enumerate}[label=(\Alph*)]
+    \item Train larger models
+    \item Increase dataset size
+    \item Extend reasoning at inference time
+    \item Reduce token usage
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\geometry{margin=1in, top=0.5in}
+\begin{document}
+\begin{center}
+\includegraphics[width=2.5cm]{asu-logo.png} \\[0.2cm]
+CSE-476: Introduction to Natural Language Processing \\
+Quiz 5 \\
+\end{center}
+
+\section*{Multiple Choice Questions (Single correct)}
+\textit{Instructions: Select the correct option with a short explanation.}
+\begin{enumerate}[label=Q\arabic*.]
+\item Which option best describes instruction tuning?
+\begin{enumerate}[label=(\Alph*)]
+    \item Pre-training on raw text with a next-word loss
+    \item Post-training on instruction--response pairs to follow tasks
+    \item Adding more layers to reduce perplexity values
+    \item Using masks to block attention to future tokens
+\end{enumerate}
+\item Which benchmark is a widely used multiple-choice QA test for LLMs?
+\begin{enumerate}[label=(\Alph*)]
+    \item HotpotQA (generative multi-hop answers)
+    \item HumanEval (code generation via execution)
+    \item SQuAD (extractive span selection)
+    \item MMLU (multiple-choice benchmark)
+\end{enumerate}
+\item A model answers 7 to ``A farmer has 10 sheep; all but 3 run away.'' What type of hallucination is this?
+\begin{enumerate}[label=(\Alph*)]
+    \item Factual hallucination (wrong world facts)
+    \item Commonsense hallucination (unsafe commonsense)
+    \item Reasoning hallucination (faulty logical steps)
+    \item No hallucination: answer is correct
+\end{enumerate}
+\item Why use pairwise human preferences for alignment after instruction tuning?
+\begin{enumerate}[label=(\Alph*)]
+    \item They're easier than absolute ``goodness'' scores and capture relative quality
+    \item They strictly reduce compute and memory costs
+    \item They guarantee perfect annotator fairness
+    \item They remove the need for any supervised data
+\end{enumerate}
+\item In PPO-based RLHF, what is the reward model's job?
+\begin{enumerate}[label=(\Alph*)]
+    \item Set attention masks during decoding
+    \item Collect human preference pairs online
+    \item Tune optimizer hyper-parameters each step
+    \item Score whole model responses so PPO can assign rewards
+\end{enumerate}
+\item What is a key difference between DPO and PPO-based RLHF?
+\begin{enumerate}[label=(\Alph*)]
+    \item DPO trains directly on preference pairs without a separate reward model
+    \item DPO requires a value network to compute advantages
+    \item DPO prohibits using preference data
+    \item DPO only optimizes next-word likelihood
+\end{enumerate}
+\item What primary issue is RAG introduced to help with?
+\begin{enumerate}[label=(\Alph*)]
+    \item Grounding generations by retrieving external sources
+    \item Increasing the parameter count to store more facts
+    \item Replacing tokenization with sub-word merges
+    \item Eliminating the need for instruction tuning
+\end{enumerate}
+\item In the retrieval primer, what does BM25 add beyond plain TF-IDF?
+\begin{enumerate}[label=(\Alph*)]
+    \item Backpropagates through retrieval to update encoders
+    \item Byte-pair encoding to compress queries
+    \item Learned neural embeddings for queries and documents
+    \item Document-length normalization and tunable term saturation on term frequency
+\end{enumerate}
+\item What does Recall@k measure?
+\begin{enumerate}[label=(\Alph*)]
+    \item All retrieved docs
+    \item Relevant docs retrieved out of all relevant ones
+    \item Model accuracy
+    \item Token overlap
+\end{enumerate}
+\item In Dense Passage Retrieval (DPR), what are the Query Encoder and Passage Encoder typically based on?
+\begin{enumerate}[label=(\Alph*)]
+    \item RNNs
+    \item Decision Trees
+    \item BERT-like models
+    \item Linear Regression
+\end{enumerate}
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Paper}
+\end{document}

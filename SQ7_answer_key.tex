@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\begin{document}
+\begin{center}
+Answer Key - CSE-476: Introduction to Natural Language Processing \\
+Quiz 7 \\
+\small (Answers are ordered exactly as in the question paper.)
+\end{center}
+
+\section*{Multiple Choice Questions}
+\begin{enumerate}[label=Q\arabic*.]
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) It cannot process text input; B) It struggles with noisy or irrelevant retrieved data; C) It cannot use neural networks; D) It only works for images
+\\ \textit{Note:} Correct option: B - A core weakness of vanilla RAG is that wrong or noisy context still gets fed to the generator, which can mislead the model even when retrieval ``works.''
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) Relevant documents are evenly distributed across rankings; B) The first relevant document appears early, but others are ranked poorly; C) All relevant documents appear at the top; D) No relevant documents are retrieved
+\\ \textit{Note:} Correct option: B - MRR rewards finding one relevant item high early; MAP averages precision over all relevant items, so if later relevant docs rank badly, MAP can stay low while MRR stays high.
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) It accounts for ranking positions of all relevant documents; B) It only considers the first relevant document; C) It ignores irrelevant documents; D) It requires fewer computations
+\\ \textit{Note:} Correct option: A - MAP incorporates where every relevant document appears in the ranked list, not just a single cutoff like Precision@$k$.
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) To enforce similarity between unrelated queries and documents; B) To push irrelevant documents away in embedding space; C) To reduce model complexity; D) To increase dataset size
+\\ \textit{Note:} Correct option: B - Contrastive training in DPR uses negatives so the model learns to separate query--passage pairs that should not match (large margin in embedding space).
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) DPR requires labeled training data and may not generalize well; B) BM25 uses neural embeddings; C) BM25 ignores word frequencies; D) DPR does not use queries
+\\ \textit{Note:} Correct option: A - Dense retrievers depend on domain-matched training; BM25 is unsupervised lexical scoring and can be more stable out-of-domain when DPR has domain shift.
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) To produce diverse reasoning paths; B) To reduce computation time; C) To eliminate randomness; D) To ensure deterministic outputs
+\\ \textit{Note:} Correct option: A - Self-consistency samples multiple reasoning chains; non-zero temperature yields diversity so different paths can be aggregated (e.g., majority vote).
+\item \textbf{Answer:} A
+\\ \textit{Options:} A) The model may fail to learn fine-grained differences; B) The model learns stronger distinctions; C) The training becomes unstable; D) The embeddings collapse
+\\ \textit{Note:} Correct option: A - If negatives are trivially dissimilar, the task is too easy and the encoder may not learn subtle discrimination between hard/confusable passages.
+\item \textbf{Answer:} D
+\\ \textit{Options:} A) Improved model confidence; B) Reduced inference time; C) Automatic conflict resolution; D) Increased hallucination risk
+\\ \textit{Note:} Correct option: D - Conflicting evidence in context can confuse the model or encourage it to blend or invent a unified answer, raising hallucination risk without explicit conflict handling.
+\item \textbf{Answer:} B
+\\ \textit{Options:} A) It reduces randomness; B) It allows more intermediate reasoning steps; C) It eliminates errors; D) It speeds up inference
+\\ \textit{Note:} Correct option: B - Longer CoT gives room for explicit intermediate steps, which can improve multi-step reasoning when the model uses them correctly (length alone does not guarantee correctness).
+\item \textbf{Answer:} C
+\\ \textit{Options:} A) Train larger models; B) Increase dataset size; C) Extend reasoning at inference time; D) Reduce token usage
+\\ \textit{Note:} Correct option: C - Test-time scaling allocates more compute or search (e.g., more samples, longer chains, verifier steps) at inference rather than only scaling training size or parameters.
+\end{enumerate}
+
+\vfill
+\noindent\textit{End of Answer Key}
+\end{document}

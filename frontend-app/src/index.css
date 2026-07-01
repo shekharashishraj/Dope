@@ -15,6 +15,30 @@
   --radius-lg: 1.25rem;
   --radius-md: 0.875rem;
   --radius-sm: 0.625rem;
+  --header-bg: var(--bg-2);
+  --header-text: var(--text);
+  --header-muted: var(--muted);
+  --header-border: var(--card-border);
+  --header-hover: var(--card);
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f6f8;
+  --bg-2: #ffffff;
+  --card: #ffffff;
+  --card-border: rgba(15, 23, 42, 0.1);
+  --text: #1f2430;
+  --muted: #6b7280;
+  --accent: #f0641e;
+  --accent-2: #ff8a4c;
+  --danger: #e2483d;
+  --warning: #d9911f;
+  --success: #2fae6b;
+  --header-bg: linear-gradient(90deg, #e2620f 0%, #d2540a 100%);
+  --header-text: #ffffff;
+  --header-muted: rgba(255, 255, 255, 0.92);
+  --header-border: rgba(255, 255, 255, 0.22);
+  --header-hover: rgba(255, 255, 255, 0.18);
 }
 
 body {
@@ -23,6 +47,13 @@ body {
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+}
+
+/* Header background uses the `background` shorthand so it supports both a
+   solid color (dark theme) and a gradient (light theme). Tailwind's
+   bg-[var(--x)] maps to background-color, which silently ignores gradients. */
+.app-header {
+  background: var(--header-bg);
 }
 
 /* Focus ring for accessibility */
